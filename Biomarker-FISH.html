@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FISH tests</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<style>
+div.ex1 {
+    margin-left: 30px;
+}
+
+.dropbtn {
+    background-color: #e6e6ff;
+    color: #003366;
+    padding: 16px;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size:small; 
+    border: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+	text-align:left;
+    background-color: #f1f1f1;
+    min-width: 160px; relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: pink;}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+
+
+<div>
+
+<img id="top" src="top.png" alt="">
+<div id="form_container">
+	<div class="form_description">
+		<h2 align="center">
+		<img src="data:image/png;base64,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">
+			<br>
+			Fluorescence <i>in situ</i> hybridization tests
+		</h2>
+	</div>
+<p align="center">Lising of the FISH tests available in the laboratory. <br>
+Click the web-link for further information for each of these tests.<br>
+Please order the test through the desktop little fox.<br>
+<img src="data:image/png;base64,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">
+</p>
+
+<div class= "ex1">
+<p>
+	<li><a href="https://oncologypro.esmo.org/education-library/factsheets-on-biomarkers/1p-19q-co-deletion-in-glioma" target="_blank">
+	<div class="tooltip">1p19q co-deletion probes
+	<span class="tooltiptext">
+	For glioma.
+	</span>
+	</div>	
+	</a></li>
+<br>	
+	<li><a href="http://www.pathologyoutlines.com/topic/stainsbcl2.html" target="_blank">
+	<div class="tooltip">BCL2 (BCL2 apoptosis regulator) dual color breakapart probe
+	<span class="tooltiptext">
+	For identification of double hit or triple hit high-grade B-cell lymphomas.
+	</span>
+	</div></a></li>
+<br>	
+	<li><a href="http://www.pathologyoutlines.com/topic/stainsbcl6.html" target="_blank">
+	<div class="tooltip">BCL6 (BCL6 transcription repressor) dual color breakapart probe<span class="tooltiptext">
+	For identification of double hit or triple hit high-grade B-cell lymphomas.
+	</span>
+	</div>
+	</a></li>
+<br>	
+	<li><a href="https://www.zytovision.com/products/zytolight/z-2285" target="_blank">
+	<div class="tooltip">CIC (capicua transcriptional repressor) dual color breakapart probe
+	<span class="tooltiptext">
+	For EWSR1-negative small blue round cell tumors.
+	</span>
+	</div>
+	</a></li>
+<br>	
+	<li><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/his.13744" target="_blank">
+	<div class="tooltip">CSF1 (colony stimulating factor 1) dual color breakapart probe
+	<span class="tooltiptext">
+	For pigmented villonodular synovitis.
+	</span>
+	</div>	
+	</a></li>
+<br>	
+	<li><a href="https://www.molecular.abbott/int/en/chromosome/12.html" target="_blank">
+	<div class="tooltip">DDIT3 (DNA damage inducible transcript 3) dual color breakapart probe
+	<span class="tooltiptext">
+	For myxoid liposarcoma.
+	</span>
+	</div>
+	</a></li>
+<br>	
+	<li><a href="https://www.zytovision.com/products/zytolight/z-2033" target="_blank">
+	<div class="tooltip">EGFR (epidermal growth factor receptor) gene amplification probe
+	<span class="tooltiptext">
+	Not for the detection of common EGFR mutations. Not recommended for use in non small cell lung cancers according to 2018 CAP-IASLC-AMP guidelines.
+	</span>
+	</div>
+	</a></li>
+<br>	
+	<li><a href="http://www.pathologyoutlines.com/topic/stainsewsr1.html" target="_blank">
+	<div class="tooltip">EWSR1 (EWS RNA binding protein 1) dual color breakapart probe
+	<span class="tooltiptext">
+	See Sanger's Catalogue of Somatic Mutations In Cancer (COSMIC) fusion database for potential partners of EWSR1.
+	</span>
+	</div>	
+	</a></li>
+<br>
+	<li><a href="https://www.molecular.abbott/int/en/chromosome/16.html" target="_blank">
+	<div class="tooltip">FUS (FUS RNA binding protein) dual color breakapart probe
+	<span class="tooltiptext">
+	For myxoid liposarcoma.
+	</span>
+	</div>
+	</a></li>
+<br>
+	<li><a href="http://www.pathologyoutlines.com/topic/stainsbreasther2.html" target="_blank">
+	<div class="tooltip">HER2 (erb-b2 receptor tyrosine kinase 2) gene amplification probe
+	<span class="tooltiptext">
+	For breast cancers.
+	</span>
+	</div>
+	</a></li>
+<br>	
+	<li><a href="https://www.zytovision.com/products/zytolight/z-2014" target="_blank">
+	<div class="tooltip">MAML2 (mastermind like transcriptional coactivator 2) dual color breakapart probe
+	<span class="tooltiptext">
+	For mucoepidermoid carcinoma.
+	</span>
+	</div>
+	</a></li>
+<br>
+	<li><a href="https://www.molecular.abbott/int/en/chromosome/8.html" target="_blank">
+	<div class="tooltip">c-Myc (MYC proto-oncogene, bHLH transcription factor) dual color breakapart probe
+	<span class="tooltiptext">
+	In high-grade B-cell lymphomas, the presence of MYC aberrations identifies a patient subset with a very poor prognosis, particularly 
+	when there is concomitant rearrangement of BCL2 or BCL6, a condition referred to as "double hit” DLBCL. In rare cases translocation 
+	involves MYC, BCL2 and BCL6, so called “triple hit”. MYC translocations confer a worse prognosis in patients treated with 
+	cyclophosphamide, doxorubicin, vincristine, and prednisone (CHOP), both in combination with and without rituximab.
+	</span>
+	</div>
+	</a></li>
+<br>
+	<li><a href="https://www.molecular.abbott/int/en/chromosome/2.html" target="_blank">
+	<div class="tooltip">N-myc (MYCN proto-oncogene, bHLH transcription factor) probe
+	<span class="tooltiptext">
+	For neuroblastoma.
+	</span>
+	</div>
+	</a></li>
+<br>
+	<li><a href="https://www.zytovision.com/products/zytolight/z-2145" target="_blank">
+	<div class="tooltip">NR4A3 (nuclear receptor subfamily 4 group A member 3) dual color breakapart probe
+	<span class="tooltiptext">
+	For extraskeletal myxoid chondrosarcoma, among differential diagnosis of EWSR1 break apart-positive tumors.
+	</span>
+	</div>
+	</a></li>
+<br>
+	<li><a href="http://www.pathologyoutlines.com/topic/stainsmdm2.html" target="_blank">
+	<div class="tooltip">MDM2 (Murine Double Minute 2) gene amplification probe
+	<span class="tooltiptext">
+	Distinguish well differentiated liposarcoma from benign adipose tumors; distinguish dedifferentiated liposarcoma from poorly differentiated sarcomas; distinguish low grade osteosarcoma (positive) from benign fibrous and fibro-osseous lesions (negative, Mod Pathol 2011;24:624)
+	</span>
+	</div>
+	</a></li>
+<br>
+	<li><a href="http://www.pathologyoutlines.com/topic/stainsros1.html" target="_blank">
+	<div class="tooltip">ROS1 (ROS proto-oncogene 1, receptor tyrosine kinase) dual color breakapart probe
+	<span class="tooltiptext">
+	For confirmation of ROS1 translocation after IHC test.
+	</span>
+	</div>
+	</a></li>
+<br>	
+	<li><a href="https://www.zytovision.com/products/zytolight/z-2097" target="_blank">
+	<div class="tooltip">SS18 (SS18 subunit of BAF chromatin remodeling complex) dual color breakapart probe
+	<span class="tooltiptext">
+	For synovial sarcoma.
+	</span>
+	</div>	
+	</a></li>
+</p>
+ </div>
+ 
+<br>
+<div id = "footer">
+Last upated on 11-Feb-2020.<br><br>
+Gene names commonly used in the laboratory and the official names by <a href="https://https://www.genenames.org/" target="_blank">HGNC</a> are provided.<br> 
+The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
+with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
+and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
+<br>
+<br>
+<br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+
+
+</body>
+</html>

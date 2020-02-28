@@ -1,0 +1,782 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Testis tumors</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "Orchidectomy" + "\n" +  "- Specimen laterality: " + "\n" + "   - " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Specimen focality: " + "\n" + "   - " + frm.A02.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor size of main tumor nodule: " + "\n" + "  - "+ frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Greatest dimensions of additional tumor nodules: " + frm.A04.value + "\n";
+}
+
+if (frm.A56.value !== ""){
+	Template += "- Predurgical treatment: " + "\n" + "  - " + frm.A56.value + "\n";
+}
+
+if (document.getElementById("A06").checked || document.getElementById("A07").checked ||
+	document.getElementById("A08").checked || document.getElementById("A09").checked ||
+	document.getElementById("A05").checked){
+	Template += "- Pre-orchidectomy serum tumor markers: " + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked || document.getElementById("A11").checked ||
+	document.getElementById("A12").checked || document.getElementById("A13").checked ||
+	document.getElementById("A14").checked){
+	Template += "- Post-orchidectomy serum tumor markers: " + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += frm.A11.value + "\n";
+}
+
+if (document.getElementById("A12").checked){
+	Template += frm.A12.value + "\n";
+}
+
+if (document.getElementById("A13").checked){
+	Template += frm.A13.value + "\n";
+}
+
+if (document.getElementById("A14").checked){
+	Template += frm.A14.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "- Serum tumor markers: " + "\n" + "  " + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A16.value + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A18.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A19.value + "\n";
+}
+
+if (frm.A20.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A20.value + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A21.value + "\n";
+}
+
+if (frm.A22.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A22.value + "\n";
+}
+
+if (frm.A23.value !== ""){
+	Template += "- Perineural invasion: " + "\n" + "  - " + frm.A23.value + "\n";
+}
+
+if (document.getElementById("A24").checked ||
+	document.getElementById("A25").checked || document.getElementById("A26").checked ||
+	document.getElementById("A27").checked || document.getElementById("A28").checked ||
+	document.getElementById("A29").checked || document.getElementById("A30").checked ||
+	document.getElementById("A31").checked || document.getElementById("A32").checked ||
+	document.getElementById("A33").checked || document.getElementById("A34").checked ||
+	document.getElementById("A35").checked){
+	Template += "- Tumor extension): " + "\n";
+}
+
+if (document.getElementById("A24").checked){
+	Template += frm.A24.value + "\n";
+}
+
+if (document.getElementById("A25").checked){
+	Template += frm.A25.value + "\n";
+}
+
+if (document.getElementById("A26").checked){
+	Template += frm.A26.value + "\n";
+}
+
+if (document.getElementById("A27").checked){
+	Template += frm.A27.value + "\n";
+}
+
+if (document.getElementById("A28").checked){
+	Template += frm.A28.value + "\n";
+}
+
+if (document.getElementById("A29").checked){
+	Template += frm.A29.value + "\n";
+}
+
+if (document.getElementById("A30").checked){
+	Template += frm.A30.value + "\n";
+}
+
+if (document.getElementById("A31").checked){
+	Template += frm.A31.value + "\n";
+}
+
+if (document.getElementById("A32").checked){
+	Template += frm.A32.value + "\n";
+}
+
+if (document.getElementById("A33").checked){
+	Template += frm.A33.value + "\n";
+}
+
+if (document.getElementById("A34").checked){
+	Template += frm.A34.value + "\n";
+}
+
+if (document.getElementById("A35").checked){
+	Template += frm.A35.value + "\n";
+}
+
+if (frm.A36.value !== "" || frm.A37.value !== ""){
+	Template += "\n" + "- Resection margins: " +"\n" ;
+}
+
+if (frm.A36.value !== ""){
+	Template +=  "  - Spermatic cord margin: "  +"\n" + "    - " +  frm.A36.value + "\n" ;
+}
+
+if (frm.A37.value !== ""){
+	Template +=  "  - Other margin(s) (specify): "  +"\n" + "    - " +  frm.A37.value + "\n" ;
+}
+
+if (document.getElementById("A57").checked || document.getElementById("A58").checked ||
+	document.getElementById("A59").checked || 
+	frm.A38.value + frm.A39.value + frm.A40.value + frm.A41.value + frm.A42.value !== ""){
+	Template += "- Regional lymph nodes: " + "\n";
+}	
+
+if (document.getElementById("A57").checked || document.getElementById("A58").checked ||
+	document.getElementById("A59").checked){
+	Template += "  - Histologic Viability of Tumor " + "\n";
+}
+
+if (document.getElementById("A57").checked){
+	Template += "    " + frm.A57.value + "\n";
+}
+
+if (document.getElementById("A58").checked){
+	Template += "    " + frm.A58.value + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += "    " +frm.A59.value + "\n";
+}
+
+if (frm.A38.value !== ""){
+	Template += "  - Number of regional lymph nodes examined and sites: " + frm.A38.value + "\n";
+}
+
+if (frm.A39.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A39.value + "\n";
+}
+
+if (frm.A40.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A40.value + "\n";
+}
+
+if (frm.A41.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A41.value + " mm" + "\n";
+}
+
+if (frm.A42.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A42.value + " mm" + "\n";
+}
+
+if (document.getElementById("A57A").checked || document.getElementById("A58A").checked ||
+	document.getElementById("A59A").checked ||
+	frm.A38A.value + frm.A39A.value + frm.A40A.value + frm.A41A.value + frm.A42A.value !== ""){
+	Template += "- Non-Regional lymph nodes (AJCC 8e pM1a): " + "\n";
+}	
+
+if (document.getElementById("A57A").checked || document.getElementById("A58A").checked ||
+	document.getElementById("A59A").checked){
+	Template += "  - Histologic Viability of Tumor " + "\n";
+}
+
+if (document.getElementById("A57A").checked){
+	Template += "    " + frm.A57A.value + "\n";
+}
+
+if (document.getElementById("A58A").checked){
+	Template += "    " + frm.A58A.value + "\n";
+}
+
+if (document.getElementById("A59A").checked){
+	Template += "    " +frm.A59A.value + "\n";
+}
+
+if (frm.A38A.value !== ""){
+	Template += "  - Number of non-regional lymph nodes examined and sites: " + frm.A38A.value + "\n";
+}
+
+if (frm.A39A.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A39A.value + "\n";
+}
+
+if (frm.A40A.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A40A.value + "\n";
+}
+
+if (frm.A41A.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A41A.value + " mm" + "\n";
+}
+
+if (frm.A42A.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A42A.value + " mm" + "\n";
+}
+
+if (document.getElementById("A43").checked || document.getElementById("A44").checked ||
+	document.getElementById("A45").checked || frm.A46.value + frm.A47.value + frm.A48.value + frm.A49.value !== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A43").checked || document.getElementById("A44").checked ||
+	document.getElementById("A45").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += "    " + frm.A43.value + "\n";
+}
+
+if (document.getElementById("A44").checked){
+	Template += "    " + frm.A44.value + "\n";
+}
+
+if (document.getElementById("A45").checked){
+	Template += "    " +frm.A45.value + "\n";
+}
+
+if (frm.A46.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "    - " + frm.A46.value + "\n";
+}
+
+if (frm.A47.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "    - " + frm.A47.value + "\n";
+}
+
+if (frm.A48.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + "    - " + frm.A48.value + "\n";
+}
+
+if (frm.A49.value !== ""){
+	Template += "    - Specify site: " + frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked || document.getElementById("A51").checked ||
+	document.getElementById("A52").checked || document.getElementById("A53").checked ||
+	frm.A54.value !==""){
+	Template += "\n" + "- Additional pathologic findings: " + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (frm.A54.value !== ""){
+	Template += "  - " +  frm.A54.value + "\n";
+}
+
+if (frm.A55.value !== ""){
+	Template += "- Additional notes: " + "\n" + "  - " +  frm.A55.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf" target="_blank">
+		<div class="tooltip">
+		Malignant germ cell and sex cord-stromal tumos of the testis
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a>
+		</h2>
+	</div>
+<p>There is separated <a href=".\cap\cp-malegenital-testis-lymphadenectomy-19-4011.pdf" target="_blank">protocol for lymphadenectomy</a>.</p>	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+
+<li><p><label class="description">- Specimen laterality:</label>
+<select class="element select medium" ID="A01">
+	<option value=""></option>
+	<option value="Right">Right</option> 
+	<option value="Left">Left</option>
+	<option value="Not specified">Not specified</option>
+	</select>
+</p></li>
+
+<li><p><label class="description">- Specimen focality:</label>
+<select class="element select medium" ID="A02">
+	<option value=""></option>
+	<option value="Unifocal">Unfocal</option> 
+	<option value="Multifocal">Multifocal</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+	</select>
+</p></li>
+
+<li><p><label class="description">- Tumor size of main tumor nodule:</label> 
+<select class="element select medium" ID="A03">
+		<option value=""></option>
+		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
+</p>
+
+<p>- Greatest dimensions of additional tumor nodules:
+<input type="text" class="element text small" ID="A04" size="10"></p></li>
+
+<li><p><label class="description">- Presurgical Treatment : </label>
+<select class="element select medium" ID="A56">
+	<option value=""></option>
+	<option value="Chemo/radiation therapy">Chemo/radiation therapy</option>
+	<option value="No chemo/radiation therapy">No chemo/radiation therapy </option>
+	<option value="Unknown">Unknown</option>
+</select>
+</p></li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Serum tumor markers:</label></legend>
+<li><p><label class="description">- Pre-orchiectomy serum tumor markers:</label> 
+<input type="checkbox" class="element checkbox" id="A05" value="  - Unknown"><label class="choice">Unknown</label>
+<input type="checkbox" class="element checkbox" id="A06" value="  - Serum marker studies within normal limits"><label class="choice">Serum marker studies within normal limits</label>
+<input type="checkbox" class="element checkbox" id="A07" value="  - Alpha-fetoprotein (AFP) elevation"><label class="choice">Alpha-fetoprotein (AFP) elevation</label>
+<input type="checkbox" class="element checkbox" id="A08" value="  - Beta subunit of human chorionic gonadotropin (b-hCG) elevation"><label class="choice">Beta subunit of human chorionic gonadotropin (b-hCG) elevation</label>
+<input type="checkbox" class="element checkbox" id="A09" value="  - Lactate dehydrogenase (LDH) elevation"><label class="choice">Lactate dehydrogenase (LDH) elevation</label>
+</p></li>
+
+<li><p><label class="description">- Post-orchiectomy serum tumor markers:</label> 
+<input type="checkbox" class="element checkbox" id="A10" value="  - Unknown"><label class="choice">Unknown</label>
+<input type="checkbox" class="element checkbox" id="A11" value="  - Serum marker studies within normal limits"><label class="choice">Serum marker studies within normal limits</label>
+<input type="checkbox" class="element checkbox" id="A12" value="  - Alpha-fetoprotein (AFP) elevation"><label class="choice">Alpha-fetoprotein (AFP) elevation</label>
+<input type="checkbox" class="element checkbox" id="A13" value="  - Beta subunit of human chorionic gonadotropin (b-hCG) elevation"><label class="choice">Beta subunit of human chorionic gonadotropin (b-hCG) elevation</label>
+<input type="checkbox" class="element checkbox" id="A14" value="  - Lactate dehydrogenase (LDH) elevation"><label class="choice">Lactate dehydrogenase (LDH) elevation</label>
+</p></li>
+
+<li><p><label class="description">- Serum tumor markers:</label>
+<select class="element select medium" ID="A15">
+	<option value=""></option>
+	<option value="SX: Serum marker studies not available or performed">SX: Serum marker studies not available or performed</option> 
+	<option value="S0: Serum marker study levels within normal limits">S0: Serum marker study levels within normal limits</option>
+	<option value="S1: LDH < 1.5x and hCG < 5,000 (mIU/ml) and AFP < 1,000 (ng/ml)">S1: LDH < 1.5x and hCG < 5,000 (mIU/ml) and AFP < 1,000 (ng/ml)</option>
+	<option value="S2: LDH 1.5-10x and hCG 5,000-50,000 (mIU/ml) and AFP 1,000-10,000 (ng/ml)">S2: LDH 1.5-10x and hCG 5,000-50,000 (mIU/ml) and AFP 1,000-10,000 (ng/ml)</option>
+	<option value="S3: LDH > 10x and hCG > 50,000 (mIU/ml) and AFP > 10,000 (ng/ml)">S3: LDH > 10x and hCG > 50,000 (mIU/ml) and AFP > 10,000 (ng/ml)</option>
+	</select>
+</p></li>
+<br>
+</fieldset>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A16" class="element textarea medium"></textarea>
+</p></li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+
+<li><p><label class="description">- Histologic type (intratubular germ cell neoplasia):</label> 
+<select class="element select medium" ID="A17">
+	<option value=""></option>
+	<option value="Germ cell neoplasia in situ (GCNIS)">Germ cell neoplasia in situ (GCNIS)</option>
+	<option value="Intratubular seminoma">Intratubular seminoma</option>
+	<option value="Intratubular embryonal carcinoma">Intratubular embryonal carcinoma</option>	
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+</select>
+</p>
+
+<p><label class="description">- Histologic type:</label> 
+<select class="element select medium" ID="A18">
+	<option value=""></option>
+	<option value="Seminoma">Seminoma</option>
+	<option value="Seminoma with syncytiotrophoblastic cells">Seminoma with syncytiotrophoblastic cells</option>
+	<option value="Seminoma with associated scar">Seminoma with associated scar</option>	
+	<option value="Embryonal carcinoma">Embryonal carcinoma</option>
+	<option value="Yolk sac tumor, postpubertal type">Yolk sac tumor, postpubertal type</option>
+	<option value="Choriocarcinoma">Choriocarcinoma</option>	
+	<option value="Mixed germ cell tumor">Mixed germ cell tumor</option>
+	<option value="Mixed germ cell tumor, Seminoma (specify percentage):">Mixed germ cell tumor, Seminoma (specify percentage):</option>
+	<option value="Mixed germ cell tumor, Embryonal carcinoma (specify percentage):">Mixed germ cell tumor, Embryonal carcinoma (specify percentage):</option>
+	<option value="Mixed germ cell tumor, Yolk sac tumor, postpubertal type (specify percentage): ">Mixed germ cell tumor, Yolk sac tumor, postpubertal type (specify percentage):</option>
+	<option value="Mixed germ cell tumor, Teratoma (specify percentage):">Mixed germ cell tumor, Teratoma (specify percentage):</option>
+	<option value="Mixed germ cell tumor, Other (specify type and percentage):">Mixed germ cell tumor, Other (specify type and percentage):</option>
+	<option value="Spermatocytic tumor">Spermatocytic tumor</option>
+	<option value="Spermatocytic tumor with a sarcomatous component">Spermatocytic tumor with a sarcomatous component</option>
+	<option value="Prepubertal type teratoma">Prepubertal type teratoma</option>
+	<option value="Prepubertal type teratoma, dermoid cyst">Prepubertal type teratoma, dermoid cyst</option>
+	<option value="Prepubertal type teratoma, epidermoid cyst">Prepubertal type teratoma, epidermoid cyst</option>
+	<option value="Prepubertal type teratoma, well-differentiated neuroendocrine tumor (monodermal teratoma)">Prepubertal type teratoma, well-differentiated neuroendocrine tumor (monodermal teratoma)</option>
+	<option value="Prepubertal type teratoma, other (specify):">Prepubertal type teratoma, other (specify):</option>
+	<option value="Mixed germ cell-sex cord stromal tumor, gonadoblastoma">Mixed germ cell-sex cord stromal tumor, gonadoblastoma</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+</select>
+</p>
+
+<p><label class="description">- Histologic type (non-choriocarcinoma trophoblastic tumor):</label> 
+<select class="element select medium" ID="A19">
+	<option value=""></option>
+	<option value="Non-choriocarcinomatous trophoblastic tumor, NOS">Non-choriocarcinomatous trophoblastic tumor, NOS</option>
+	<option value="Placental site trophoblastic tumor">Placental site trophoblastic tumor</option>
+	<option value="Epithelioid trophoblastic tumor">Epithelioid trophoblastic tumor</option>	
+	<option value="Cystic trophoblastic tumor">Cystic trophoblastic tumor</option>
+	<option value="Teratoma, postpubertal type">Teratoma, postpubertal type</option>
+	<option value="Teratoma with somatic-type malignancy (specify type):">Teratoma with somatic-type malignancy (specify type):</option>	
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+</select>
+</p>
+
+<p><label class="description">- Histologic type (testicular scar/regressed germ cell tumor):</label> 
+<select class="element select medium" ID="A20">
+	<option value=""></option>
+	<option value="Scar diagnostic of regressed germ cell tumor">Scar diagnostic of regressed germ cell tumor</option>
+	<option value="Scar suspicious for regressed germ cell tumor">Scar suspicious for regressed germ cell tumor</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+</select>
+</p>
+
+<p><label class="description">- Histologic type (sex cord-stromal tumor):</label> 
+<select class="element select medium" ID="A21">
+	<option value=""></option>
+	<option value="Leydig cell tumor">Leydig cell tumor</option>
+	<option value="Malignant Leydig cell tumor">Malignant Leydig cell tumor</option>
+	<option value="Sertoli cell tumor, NOS">Sertoli cell tumor, NOS</option>	
+	<option value="Sertoli cell tumor, malignant">Sertoli cell tumor, malignant</option>
+	<option value="Sertoli cell tumor, large cell calcifying">Sertoli cell tumor, large cell calcifying</option>
+	<option value="Sertoli cell tumor, intratubular large cell hyalinizing">Sertoli cell tumor, intratubular large cell hyalinizing</option>	
+	<option value="Granulosa cell tumor, adult type">Granulosa cell tumor, adult type</option>
+	<option value="Granulosa cell tumor, juvenile type">Granulosa cell tumor, juvenile type</option>
+	<option value="Fibroma-thecoma">Fibroma-thecoma</option>
+	<option value="Sex cord-stromal tumor, mixed type (specify components and approximate percentages):">Sex cord-stromal tumor, mixed type (specify components and approximate percentages):</option>
+	<option value="Sex cord-stromal tumor type, unclassified">Sex cord-stromal tumor type, unclassified</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<li><p><label class="description">- Lymphovascular invasion: </label>
+<select class="element select medium" ID="A22">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- Perineural invasion: </label>
+<select class="element select medium" ID="A23">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- Tumor extension :</label> 
+<input type="checkbox" class="element checkbox" id="A24" value="  - No evidence of primary tumor"><label class="choice">No evidence of primary tumor</label>
+<input type="checkbox" class="element checkbox" id="A25" value="  - Germ cell neoplasia in situ only"><label class="choice">Germ cell neoplasia in situ only</label>
+<input type="checkbox" class="element checkbox" id="A26" value="  - Tumor limited to testis"><label class="choice">Tumor limited to testis</label>
+<input type="checkbox" class="element checkbox" id="A27" value="  - Tumor invades rete testis"><label class="choice">Tumor invades rete testis</label>
+<input type="checkbox" class="element checkbox" id="A28" value="  - Tumor invades hilar soft tissue"><label class="choice">Tumor invades hilar soft tissue</label>
+<input type="checkbox" class="element checkbox" id="A29" value="  - Tumor invades epididymis"><label class="choice">Tumor invades epididymis</label>
+<input type="checkbox" class="element checkbox" id="A30" value="  - Tumor invades through tunica albuginea and perforates tunica vaginalis (mesothelium)"><label class="choice">Tumor invades through tunica albuginea and perforates tunica vaginalis (mesothelium)</label>
+<input type="checkbox" class="element checkbox" id="A31" value="  - Tumor invades spermatic cord"><label class="choice">Tumor invades spermatic cord</label>
+<input type="checkbox" class="element checkbox" id="A32" value="  - Tumor invades scrotum"><label class="choice">Tumor invades scrotum</label>
+<input type="checkbox" class="element checkbox" id="A33" value="  - Tumor invades adjacent structures, rectum"><label class="choice">Tumor invades adjacent structures, rectum</label>
+<input type="checkbox" class="element checkbox" id="A34" value="  - Tumor invades adjacent structures, other (specify):"><label class="choice">Tumor invades adjacent structures, other (specify):</label>
+<input type="checkbox" class="element checkbox" id="A35" value="  - Cannot be assessed"><label class="choice">Cannot be assessed</label>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins of excision specimen: </label></legend>
+
+<li><p><label class="description">- Spermatic cord margin:</label>
+<select class="element select medium" ID="A36">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p><label class="description">-  Other margin(s) (specify):</label>
+<select class="element select medium" ID="A37">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+
+<li><p>- Histologic viability of tumor:<br>
+<input type="checkbox" class="element checkbox" id="A57" value="- Viable teratoma present"><label class="choice">Viable teratoma present</label>
+<input type="checkbox" class="element checkbox" id="A58" value="- Viable nonteratomatous tumor present"><label class="choice">Viable nonteratomatous tumor present</label>
+<input type="checkbox" class="element checkbox" id="A59" value="- No viable tumor present"><label class="choice">No viable tumor present</label>
+</p></li>
+
+<li><p>- Number of regional lymph nodes examined and sites:
+<input type="text" class="element text small" ID="A38" size="10"></p>
+
+<p>- Number of lymph nodes involved:
+<input type="text" class="element text small" ID="A39" size="10"></p></li>
+
+<li><p>- Extranodal extension:
+<select class="element select small" ID="A40">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>- Size of largest metastatic deposit (mm), specify site:
+<input type="text" class="element text small" ID="A41" size="20"></p>
+
+<p>- Size of largest lymph node involved (mm), specify site:
+<input type="text" class="element text small" ID="A42" size="20"></p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Non-regional lymph nodes AJCC 8e pM1a: </label></legend>
+
+<li><p>- Histologic viability of tumor:<br>
+<input type="checkbox" class="element checkbox" id="A57A" value="- Viable teratoma present"><label class="choice">Viable teratoma present</label>
+<input type="checkbox" class="element checkbox" id="A58A" value="- Viable nonteratomatous tumor present"><label class="choice">Viable nonteratomatous tumor present</label>
+<input type="checkbox" class="element checkbox" id="A59A" value="- No viable tumor present"><label class="choice">No viable tumor present</label>
+</p></li>
+
+<li><p>- Number of non-regional lymph nodes examined and sites:
+<input type="text" class="element text small" ID="A38A" size="10"></p>
+
+<p>- Number of lymph nodes involved:
+<input type="text" class="element text small" ID="A39A" size="10"></p></li>
+
+<li><p>- Extranodal extension:
+<select class="element select small" ID="A40A">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>- Size of largest metastatic deposit (mm), specify site:
+<input type="text" class="element text small" ID="A41A" size="20"></p>
+
+<p>- Size of largest lymph node involved (mm), specify site:
+<input type="text" class="element text small" ID="A42A" size="20"></p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	
+<li><p>  - TNM Descriptors:<br>
+<input type="checkbox" class="element checkbox" id="A43" value="m (multiple primary tumors) "><label class="choice">m (multiple primary tumors)</label>
+<input type="checkbox" class="element checkbox" id="A44" value="r (recurrent) "><label class="choice">r (recurrent)</label>
+<input type="checkbox" class="element checkbox" id="A45" value="y (post treatment) "><label class="choice">y (post treatment)</label>
+</p></li>
+
+<li><p>  - Primary tumor (pT) :<br>
+<select class="element select medium" ID="A46">
+	<option value=""></option>
+	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="pTis: Germ cell neoplasia in situ">pTis: Germ cell neoplasia in situ</option>
+	<option value="pT1: Tumor invades subepithelial connective tissueGerm cell neoplasia in situ">pT1: Tumor invades subepithelial connective tissueGerm cell neoplasia in situ</option>
+	<option value="pT1a: Tumor < 3 cm in size">pT1a: Tumor < 3 cm in size</option>
+	<option value="pT1b: Tumor > or = 3 cm">pT1b: Tumor > or = 3 cm</option>
+	<option value="pT2: Tumor limited to testis (including rete testis invasion) with lymphovascular invasion">pT2: Tumor limited to testis (including rete testis invasion) with lymphovascular invasion</option>
+	<option value="pT2: Tumor invading hilar soft tissue or epididymis or penetrating visceral mesothelial layer covering the external surface of tunica albuginea with or without lymphovascular invasion">pT2: Tumor invading hilar soft tissue or epididymis or penetrating visceral mesothelial layer covering the external surface of tunica albuginea with or without lymphovascular invasion</option> 
+	<option value="pT3: Tumor directly invades spermatic cord soft tissue with or without lymphovascular invasion">pT3: Tumor directly invades spermatic cord soft tissue with or without lymphovascular invasion</option>
+	<option value="pT4: Tumor invades scrotum with or without lymphovascular invasion">pT4: Tumor invades scrotum with or without lymphovascular invasion</option>
+</select>
+</p></li>
+
+
+<li><p>  - Regional lymph nodes (pN): <br>
+<select class="element select medium" ID="A47">
+	<option value=""></option>
+	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="pN1: Metastasis with a lymph node mass < or = 2 cm and < or = 5 nodes positive (none > 2 cm)">pN1: Metastasis with a lymph node mass < or = 2 cm and < or = 5 nodes positive (none > 2 cm)</option>
+	<option value="pN2: Metastasis with a lymph node mass > 2 cm but = or < 5 cm">pN2: Metastasis with a lymph node mass > 2 cm but = or < 5 cm</option>
+	<option value="pN2: > 5 nodes positive, none > 5 cm">pN2:  > 5 nodes positive, none > 5 cm</option>
+	<option value="pN2: Extranodal extension of tumor">pN2:  Extranodal extension of tumor</option>
+	<option value="pN3: Metastasis with a lymph node mass > 5 cm">pN3: Metastasis with a lymph node mass > 5 cm</option>
+</select>
+</p></li>
+
+<li><p>  - Distant metastasis (pM): <br>
+<select class="element select medium" ID="A48">
+	<option value=""></option>
+	<option value="pM1: Distant metastasis">pM1: Distant metastasis</option>
+	<option value="pM1a: Nonretroperitoneal nodal or pulmonary metastases">pM1a: Nonretroperitoneal nodal or pulmonary metastases</option>
+	<option value="pM1b: Nonpulmonary visceral metastases">pM1b: Nonpulmonary visceral metastases</option>
+</select>
+</p>
+
+<p>    - Specify site(s), if known:<br>
+<input type="text" class="element text medium" ID="A49" size="35">
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+
+<li><p>
+<input type="checkbox" class="element checkbox" id="A50" value="  - Germ cell neoplasia in situ (GCNIS)"><label class="choice">Germ cell neoplasia in situ (GCNIS)</label>
+<input type="checkbox" class="element checkbox" id="A51" value="  - Microlith"><label class="choice">Microlith</label>
+<input type="checkbox" class="element checkbox" id="A52" value="  - Sertoli cell nodule (Pick’s adenoma)"><label class="choice">Sertoli cell nodule (Pick’s adenoma)</label>
+<input type="checkbox" class="element checkbox" id="A53" value="  - Atrophy"><label class="choice">Atrophy</label>
+</p>
+<p>- Other (specify):
+<input type="text" class="element text medium" ID="A54" size="35">
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A55" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 19-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Testis Radical Orchiectomy 4.0.1.2 (August 2019) and Testis Lymphadenectomy 4.0.1.1 (February 2019), <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

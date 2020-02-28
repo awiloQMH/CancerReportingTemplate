@@ -1,0 +1,641 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Thyroid cancers</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor focality: " + "\n" + frm.A02.value + "\n";
+}
+
+if (document.getElementById("A03").checked ||
+	document.getElementById("A04").checked || document.getElementById("A05").checked ||
+	document.getElementById("A06").checked || document.getElementById("A07").checked){
+	Template += "- Tumor site: " + "\n";
+}
+
+if (document.getElementById("A03").checked){
+	Template += frm.A03.value + "\n";
+}
+
+if (document.getElementById("A04").checked){
+	Template += frm.A04.value + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "- Tumor size: " + "\n" + frm.A08.value + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A09.value + "\n";
+}
+
+if (frm.A10.value !== ""){
+	Template += "- Histologic type: " + "\n" + frm.A10.value + "\n";
+} 
+
+if (frm.A11.value !== ""){
+	Template += "- Histologic type: " + "\n" + frm.A11.value + "\n";
+} 
+
+if (frm.A12.value !== ""){
+	Template += "- Histologic type: " + "\n" + frm.A12.value + "\n";
+} 
+
+if (frm.A13.value !== ""){
+	Template += "- Mitotic count (per 2 mm2): " + frm.A13.value + "\n";
+} 
+
+if (frm.A14.value !== ""){
+	Template += "- Angionvasion: " + "\n" + frm.A14.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "- Perineural invasion: " + "\n" + frm.A16.value + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Extrathyroidal extension: " + "\n" + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "\n" + "- Surgical margins: "  +"\n" + frm.A18.value + "\n" ;
+}
+
+if (frm.A19.value + frm.A20.value + frm.A21.value + frm.A22.value + frm.A23.value +
+    frm.A24.value + frm.A25.value + frm.A26.value + frm.A21A.value + frm.A22A.value +
+	frm.A23A.value + frm.A24A.value + frm.A25A.value+ frm.A27.value + frm.A28.value + frm.A29.value
+	!== "0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ...0 out of total of ..."){
+	Template += "- Lymph nodes examination: " + "\n";
+}	
+
+if (frm.A19.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at level VI: " + frm.A19.value + "\n";
+}
+
+if (frm.A20.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at level VII: " + frm.A20.value + "\n";
+}
+
+if (frm.A21.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Right level I: " + frm.A21.value + "\n";
+}
+
+if (frm.A22.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Right level II: " + frm.A22.value + "\n";
+}
+
+if (frm.A23.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Right level III: " + frm.A23.value + "\n";
+}
+
+if (frm.A24.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Right level IV: " + frm.A24.value + "\n";
+}
+
+if (frm.A25.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Right level V: " + frm.A25.value + "\n";
+}
+
+if (frm.A21A.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Left level I: " + frm.A21A.value + "\n";
+}
+
+if (frm.A22A.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Left level II: " + frm.A22A.value + "\n";
+}
+
+if (frm.A23A.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Left level III: " + frm.A23A.value + "\n";
+}
+
+if (frm.A24A.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Left level IV: " + frm.A24A.value + "\n";
+}
+
+if (frm.A25A.value !== "0 out of total of ..."){
+	Template += "  - Number of regional lymph nodes involved at Left level V: " + frm.A25A.value + "\n";
+}
+
+if (frm.A26.value !== "0 out of total of ..."){
+	Template += "  - Number of lymph nodes involved, specify group: " + frm.A26.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "  - Extranodal extension (ENE) : " + frm.A27.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A28.value + " mm" + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A29.value + " mm" + "\n";
+}
+
+if (document.getElementById("A30").checked || document.getElementById("A31").checked || 
+	document.getElementById("A32").checked || frm.A33.value + frm.A34.value + frm.A35.value + 
+	frm.A36.value + frm.A36.value !== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A30").checked || document.getElementById("A31").checked || 
+	document.getElementById("A32").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A30").checked){
+	Template += "    " + frm.A30.value + "\n";
+}
+
+if (document.getElementById("A31").checked){
+	Template += "    " + frm.A31.value + "\n";
+}
+
+if (document.getElementById("A32").checked){
+	Template += "    " +frm.A32.value + "\n";
+}
+
+if (frm.A33.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A33.value + "\n";
+}
+
+if (frm.A34.value !== ""){
+	Template += "  - Primary tumor (pT, for medullary carcinioma): " + "\n" + "  " + frm.A34.value + "\n";
+}
+
+if (frm.A35.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n"  + "  " + frm.A35.value + "\n";
+}
+
+if (frm.A36.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" +  "  " + frm.A36.value + "\n";
+}
+
+if (frm.A37.value !== ""){
+	Template += "    - Specify site(s): " + frm.A37.value + "\n";
+}
+
+if (document.getElementById("A38").checked || document.getElementById("A39").checked ||
+	document.getElementById("A40").checked ||  document.getElementById("A41").checked ||
+	document.getElementById("A42").checked ||  document.getElementById("A43").checked ||  
+	frm.A44.value !==""){
+	Template += "- Additional pathologic findings: " + "\n";
+}
+
+if (document.getElementById("A38").checked){
+	Template += frm.A38.value + "\n";
+}
+
+if (document.getElementById("A39").checked){
+	Template += frm.A39.value + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += frm.A40.value + "\n";
+}
+
+if (document.getElementById("A41").checked){
+	Template += frm.A41.value + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += frm.A43.value + "\n";
+}
+
+if (frm.A44.value !== ""){
+	Template += "  - Others (specify): " +  frm.A44.value + "\n";
+}
+
+if (frm.A45.value !== ""){
+	Template += "- Additional notes: " + "\n" + "  - " +  frm.A45.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-endocrine-thyroid-19-4200.pdf" target="_blank">
+		<div class="tooltip">Carcinoma of the thyroid
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+<li><p><label class="description">- Procedure:</label>
+<select class="element select medium" ID="A01">
+	<option value=""></option>
+	<option value="  - Completion thyroidectomy (reoperative)">Completion thyroidectomy (reoperative)</option> 
+	<option value="  - Right partial excision">Right partial excision</option>
+	<option value="  - Left partial excision">Left partial excision</option> 
+	<option value="  - Partial excision# (specify type):">Partial excision (specify type):</option>
+	<option value="  - Right lobectomy">Right lobectomy</option> 
+	<option value="  - Left lobectomy">Left lobectomy</option>
+	<option value="  - Right lobectomy with isthmusectomy (hemithyroidectomy)">Right lobectomy with isthmusectomy (hemithyroidectomy)</option> 
+	<option value="  - Left lobectomy with isthmusectomy (hemithyroidectomy)">Left lobectomy with isthmusectomy (hemithyroidectomy)</option>
+	<option value="  - Right lobe with partial left lobectomy (subtotal or near total thyroidectomy)">Right lobe with partial left lobectomy (subtotal or near total thyroidectomy)</option> 
+	<option value="  - Left lobe with partial right lobectomy (subtotal or near total thyroidectomy)">Left lobe with partial right lobectomy (subtotal or near total thyroidectomy)</option>
+	<option value="  - Total thyroidectomy">Total thyroidectomy</option> 
+	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="  - Not specified">Not specified</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor focality:</label> 
+<select class="element select medium" ID="A02">
+	<option value=""></option>
+	<option value="  - Unifocal">Unifocal</option>
+	<option value="  - Multifocal ">Multifocal </option>
+	<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor site:</label>
+<input type="checkbox" class = "element checkbox"  id="A03" value="  - Right lobe"><label class="element choice">Right lobe</label>
+<input type="checkbox" class = "element checkbox"  id="A04" value="  - Left lobe"><label class="element choice">Left lobe</label>
+<input type="checkbox" class = "element checkbox"  id="A05" value="  - Isthmus"><label class="element choice">Isthmus</label>
+<input type="checkbox" class = "element checkbox"  id="A06" value="  - Pyramidal lobe"><label class="element choice">Pyramidal lobe</label>
+<input type="checkbox" class = "element checkbox"  id="A07" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor size:</label> 
+<select class="element select medium" ID="A08">
+		<option value=""></option>
+		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A09" class="element textarea medium"></textarea>
+</p></li>
+
+
+<li><p>
+<label class="description">- Histologic type (Papillary carcinoma):</label> 
+<select class="element select medium" ID="A10">
+	<option value=""></option>
+	<option value="  - Papillary carcinoma, classic (usual, conventional)">Papillary carcinoma, classic (usual, conventional)</option>
+	<option value="  - Papillary carcinoma, follicular variant, encapsulated/well demarcated, with tumor capsular invasion">Papillary carcinoma, follicular variant, encapsulated/well demarcated, with tumor capsular invasion</option>
+	<option value="  - Papillary carcinoma, follicular variant, encapsulated/well demarcated, noninvasive">Papillary carcinoma, follicular variant, encapsulated/well demarcated, with tumor capsular invasion</option>
+	<option value="  - Papillary carcinoma, follicular variant, infiltrative">Papillary carcinoma, follicular variant, infiltrative</option>
+	<option value="  - Papillary carcinoma, tall cell variant">Papillary carcinoma, tall cell variant</option>
+	<option value="  - Papillary carcinoma, cribriform-morular variant">Papillary carcinoma, cribriform-morular variant</option>
+	<option value="  - Papillary carcinoma, diffuse sclerosing variant">Papillary carcinoma, diffuse sclerosing variant</option>
+	<option value="  - Papillary carcinoma, other variant (specify):">Papillary carcinoma, other variant (specify):</option>
+	<option value="  - Papillary carcinoma">Papillary carcinoma</option>
+	<option value="  - Noninvasive follicular thyroid neoplasm with papillary like nuclear features (NIFTP)">Noninvasive follicular thyroid neoplasm with papillary like nuclear features (NIFTP)</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Histologic type (Follicular carcinoma):</label> 
+<select class="element select medium" ID="A11">
+	<option value=""></option>
+	<option value="  - Follicular carcinoma, minimally invasive">Follicular carcinoma, minimally invasive</option>
+	<option value="  - Follicular carcinoma, encapsulated angioinvasive">Follicular carcinoma, encapsulated angioinvasive</option>
+	<option value="  - Follicular carcinoma, widely invasive">Follicular carcinoma, widely invasive</option>
+	<option value="  - Follicular carcinoma, minimally invasive, oncocytic (Hurthle cell)">Follicular carcinoma, minimally invasive, oncocytic (Hurthle cell)</option>
+	<option value="  - Follicular carcinoma, encapsulated angioinvasive, oncocytic (Hurthle cell)">Follicular carcinoma, encapsulated angioinvasive, oncocytic (Hurthle cell)</option>
+	<option value="  - Follicular carcinoma, widely invasive, oncocytic (Hurthle cell)">Follicular carcinoma, widely invasive, oncocytic (Hurthle cell)</option>
+	<option value="  - Follicular carcinoma, minimally invasive, other variant (specify):">Follicular carcinoma, minimally invasive, other variant (specify):</option>
+	<option value="  - Follicular carcinoma, encapsulated angioinvasive, other variant (specify):">Follicular carcinoma, encapsulated angioinvasive, other variant (specify):</option>
+	<option value="  - Follicular carcinoma, widely invasive, other variant (specify):">Follicular carcinoma, widely invasive, other variant (specify):</option>
+	<option value="  - Follicular carcinoma">Follicular carcinoma</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Histologic type (Others):</label> 
+<select class="element select medium" ID="A12">
+	<option value=""></option>
+	<option value="  - Poorly differentiated thyroid carcinoma">Poorly differentiated thyroid carcinoma</option>
+	<option value="  - Undifferentiated (anaplastic) carcinoma, focal or minor component without extrathyroidal extension">Undifferentiated (anaplastic) carcinoma, focal or minor component without extrathyroidal extension</option>
+	<option value="  - Undifferentiated (anaplastic) carcinoma, major component">Undifferentiated (anaplastic) carcinoma, major component</option>
+	<option value="  - Undifferentiated (anaplastic) carcinoma, not otherwise specify">Undifferentiated (anaplastic) carcinoma, not otherwise specify</option>
+	<option value="  - Medullary carcinoma">Medullary carcinoma</option>
+	<option value="  - Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+	<option value="  - Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Mitotic count:</label>
+<input type="text" ID="A13" class = "element text small" size="10"><br>
+Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup><br>
+Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup><br>
+</p></li>
+
+
+<li><p>
+<label class="description">- Angionvasion: </label>
+<select class="element select medium" ID="A14">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Focal (< 4 vessels)">Focal (< 4 vessels)</option>
+	<option value="  - Extensive (= or > 4 vessels)">Extensive (= or > 4 vessels)</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Lymphovascular invasion: </label>
+<select class="element select medium" ID="A15">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present">Present</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Perineural invasion: </label>
+<select class="element select medium" ID="A16">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present">Present</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Extrathyroidal extension:</label>
+<select class="element select medium" ID="A17">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Invading only strap muscles">Invading only strap muscles</option>
+	<option value="  - Invading subcutaneous soft tissues, larynx, trachea, esophagus or recurrent laryngeal nerve">Invading subcutaneous soft tissues, larynx, trachea, esophagus or recurrent laryngeal nerve</option>
+	<option value="  - Invading prevertebral fascia or encasing the carotid artery or mediastinal vessels">Invading prevertebral fascia or encasing the carotid artery or mediastinal vessels</option>	
+	<option value="  - Cannot be determined">Cannot be determined</option>	
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of excision specimen:</label></legend>
+<li><p>
+- Surgical margin:<br>
+<select class="element select medium" ID="A18">
+	<option value=""></option>
+	<option value="  - Cannot be assessed">Cannot be assessed</option>
+	<option value="  - Involved by carcinoma, specify:">Involved by carcinoma, specify:</option>
+	<option value="  - Uninvolved by carcinoma, specify location and distance (mm):">Uninvolved by carcinoma, specify location and distance (mm):</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Lymph nodes examination: </label></legend>
+
+<li><p>- Number of regional lymph nodes involved at level VI <br>
+(pretracheal, paratracheal and prelaryngeal/Delphian, <br>
+perithyroidal (central compartment dissection):
+<input type="text" ID="A19" class = "element text small" size="10" value="0 out of total of ..."></p><li>
+
+<li><p>- Number of regional lymph nodes involved at level VII <br>
+(superior mediastinal lymph nodes):
+<input type="text" ID="A20" class = "element text small" size="10" value="0 out of total of ..."></p></li>
+
+<li><p>- Number of regional lymph nodes involved at Right level I:
+<input type="text" ID="A21" class = "element text small" size="10" value="0 out of total of ..."></p><li>
+
+<li><p>- Number of regional lymph nodes involved at Right level II:
+<input type="text" ID="A22" class = "element text small" size="10" value="0 out of total of ..."></p></li>
+
+<li><p>- Number of regional lymph nodes involved at Right level III:
+<input type="text" ID="A23" class = "element text small" size="10" value="0 out of total of ..."></p><li>
+
+<li><p>- Number of regional lymph nodes involved at Right level IV:
+<input type="text" ID="A24" class = "element text small" size="10" value="0 out of total of ..."></p></li>
+
+<li><p>- Number of regional lymph nodes involved at Right level V:
+<input type="text" ID="A25" class = "element text small" size="10" value="0 out of total of ..."></p><li>
+
+<li><p>- Number of regional lymph nodes involved at Left level I:
+<input type="text" ID="A21A" class = "element text small" size="10" value="0 out of total of ..."></p><li>
+
+<li><p>- Number of regional lymph nodes involved at Left level II:
+<input type="text" ID="A22A" class = "element text small" size="10" value="0 out of total of ..."></p></li>
+
+<li><p>- Number of regional lymph nodes involved at Left level III:
+<input type="text" ID="A23A" class = "element text small" size="10" value="0 out of total of ..."></p><li>
+
+<li><p>- Number of regional lymph nodes involved at Left level IV:
+<input type="text" ID="A24A" class = "element text small" size="10" value="0 out of total of ..."></p></li>
+
+<li><p>- Number of regional lymph nodes involved at Left level V:
+<input type="text" ID="A25A" class = "element text small" size="10" value="0 out of total of ..."></p><li>
+
+<li><p>- Number of regional lymph nodes involved, specify group:
+<input type="text" ID="A26" class = "element text small" size="10" value="0 out of total of ..."></p></li>
+
+<li><p>- Extranodal extension:
+<select class="element select small" ID="A27">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>- Size of largest metastatic deposit (mm), specify site:
+<input type="text" ID="A28" class = "element text small" size="20"></p>
+
+<p>- Size of largest lymph node involved (mm), specify site:
+<input type="text" ID="A29" class = "element text small" size="20"></p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	
+<li><p>  - TNM Descriptors:<br>
+<input type="checkbox" id="A30" class = "element checkbox" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
+<input type="checkbox" id="A31" class = "element checkbox"  value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
+<input type="checkbox" id="A32" class = "element checkbox"  value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
+</p></li>
+
+<li><p>  - Primary tumor (pT) for all carcinoma, except MTC:<br>
+<select class="element select medium" ID="A33">
+	<option value=""></option>
+	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="  - pT1a: Tumor < or = 1 cm, limited to the thyroid">pT1a: Tumor < or = 1 cm, limited to the thyroid</option>
+	<option value="  - pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid">pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid</option>
+	<option value="  - pT2: Tumor > 2 cm, but < or = 4 cm, limited to thyroid">pT2: Tumor > 2 cm, but < or = 4 cm, limited to thyroid</option>
+	<option value="  - pT3a: Tumor > 4 cm limited to the thyroid">pT3a: Tumor > 4 cm limited to the thyroid</option>
+	<option value="  - pT3b: Gross extrathyroidal extension invading only strap muscles (sternohyoid, sternothyroid, thyrohyoid, or omohyoid muscles) from a tumor of any size">pT3b: Gross extrathyroidal extension invading only strap muscles (sternohyoid, sternothyroid, thyrohyoid, or omohyoid muscles) from a tumor of any size</option>
+	<option value="  - pT4a: Gross extrathyroidal extension invading subcutaneous soft tissues, larynx, trachea, esophagus, or recurrent laryngeal nerve from a tumor of any size">pT4a: Gross extrathyroidal extension invading subcutaneous soft tissues, larynx, trachea, esophagus, or recurrent laryngeal nerve from a tumor of any size</option>
+	<option value="  - pT4b: Gross extrathyroidal extension invading prevertebral fascia or encasing the carotid artery or mediastinal vessels from a tumor of any size">pT4b: Gross extrathyroidal extension invading prevertebral fascia or encasing the carotid artery or mediastinal vessels from a tumor of any size</option>
+</select>
+</p></li>
+
+<li><p>  - Primary tumor (pT) for medullary thyroid carcinoma:<br>
+<select class="element select medium" ID="A34">
+	<option value=""></option>
+	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="  - pT1a: Tumor < or = 1 cm, limited to the thyroid">pT1a: Tumor < or = 1 cm, limited to the thyroid</option>
+	<option value="  - pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid">pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid</option>
+	<option value="  - pT2: Tumor > 2 cm, but < or = 4 cm, limited to thyroid">pT2: Tumor > 2 cm, but < or = 4 cm, limited to thyroid</option>
+	<option value="  - pT3a: Tumor > 4 cm limited to the thyroid">pT3a: Tumor > 4 cm limited to the thyroid</option>
+	<option value="  - pT3b: Gross extrathyroidal extension invading only strap muscles (sternohyoid, sternothyroid, thyrohyoid, or omohyoid muscles) from a tumor of any size">pT3b: Gross extrathyroidal extension invading only strap muscles (sternohyoid, sternothyroid, thyrohyoid, or omohyoid muscles) from a tumor of any size</option>
+	<option value="  - pT4a: Moderately advanced disease; tumor of any size with gross extrathyroidal extension into the nearby tissues of the neck, including subcutaneous soft tissue, larynx, trachea, esophagus, or recurrent laryngeal nerve">pT4a: Moderately advanced disease; tumor of any size with gross extrathyroidal extension into the nearby tissues of the neck, including subcutaneous soft tissue, larynx, trachea, esophagus, or recurrent laryngeal nerve</option>
+	<option value="  - pT4b: Very advanced disease; tumor of any size with extension toward the spine or into nearby large blood vessels, gross extrathyroidal extension invading the prevertebral fascia, or encasing the carotid artery or mediastinal vessels">pT4b: Very advanced disease; tumor of any size with extension toward the spine or into nearby large blood vessels, gross extrathyroidal extension invading the prevertebral fascia, or encasing the carotid artery or mediastinal vessels</option>
+</select>
+</p></li>
+
+<li><p>  - Regional lymph nodes (pN): <br>
+<select class="element select medium" ID="A35">
+	<option value=""></option>
+	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="  - pN0a: One or more cytologically or histologically confirmed benign lymph nodes">pN0a: One or more cytologically or histologically confirmed benign lymph nodes</option>
+	<option value="  - pN1: Metastasis to regional nodes">pN1: Metastasis to regional nodes</option>
+	<option value="  - pN1a: Metastasis to level VI or VII (pretracheal, paratracheal, or prelaryngeal/Delphian, or upper mediastinal) lymph nodes. This can be unilateral or bilateral disease">pN1a: Metastasis to level VI or VII (pretracheal, paratracheal, or prelaryngeal/Delphian, or upper mediastinal) lymph nodes. This can be unilateral or bilateral disease</option>
+	<option value="  - pN1b: Metastasis to unilateral, bilateral, or contralateral lateral neck lymph nodes (levels I, II, III, IV, or V) or retropharyngeal lymph nodes">pN1b: Metastasis to unilateral, bilateral, or contralateral lateral neck lymph nodes (levels I, II, III, IV, or V) or retropharyngeal lymph nodes</option>
+</select>
+</p></li>
+
+<li><p>  - Distant metastasis (pM): <br>
+<p><select class="element select medium" ID="A36">
+	<option value=""></option>
+	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
+</select>
+</p>
+
+<p>    - Specify site(s), if known:<br>
+<input type="text" ID="A37" class = "element text small" size="35">
+</p>
+<br>
+</fieldset>
+</p></li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+
+<li><p>
+<input type="checkbox" class = "element checkbox"  id="A38" value="  - Adenoma"><label class="element choice">Adenoma</label>
+<input type="checkbox" class = "element checkbox"  id="A39" value="  - Adenomatoid nodule(s) or nodular follicular disease"><label class="element choice">Adenomatoid nodule(s) or nodular follicular disease</label>
+<input type="checkbox" class = "element checkbox"  id="A40" value="  - Diffuse hyperplasia (Graves’ disease)"><label class="element choice">Diffuse hyperplasia (Graves’ disease)</label>
+<input type="checkbox" class = "element checkbox"  id="A41" value="  - Thyroiditis (specify type):"><label class="element choice">Thyroiditis (specify type):</label>
+<input type="checkbox" class = "element checkbox"  id="A42" value="  - Parathyroid gland(s) present (specify number, location, and findings):"><label class="element choice">Parathyroid gland(s) present (specify number, location, and findings):</label>
+<input type="checkbox" class = "element checkbox"  id="A43" value="  - C-cell hyperplasia (specify type and focality:"><label class="element choice">C-cell hyperplasia (specify type and focality</label>
+</p>
+<p>
+- Other (specify):
+<input type="text" class = "element text medium" ID="A44" size="35">
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A45" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 18-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Thyroid 4.2.0.0 (August 2019), <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

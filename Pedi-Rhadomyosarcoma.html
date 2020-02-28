@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Rhadomyosarcoma</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor site: " + "\n" + "   - " + frm.A02.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A04.value + "\n";
+}
+
+if (frm.A05.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A05.value + "\n";
+}
+
+if (frm.A06.value !== ""){
+	Template += "- Preoperative treatment: " + "\n" + "  - " + frm.A06.value + "\n";
+}
+
+if (frm.A07.value !== ""){
+	Template += "- Treatment effects:  " + "\n" + "  - " + frm.A07.value + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "- Anaplasia: " + "\n" + "  - " + frm.A08.value + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "- Fusion status: " + "\n" + "  - " + frm.A09.value + "\n";
+}
+
+if (frm.A10.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A10.value + "\n";
+}
+
+if (frm.A11.value !== ""){
+	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A11.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "\n" + "- Surgical margins: " + "\n" + "  - " + frm.A12.value + "\n";
+}
+
+if (frm.A13.value + frm.A14.value + frm.A15.value + frm.A16.value + frm.A17.value!== ""){
+	Template += "\n" + "- Regional lymph nodes: " + "\n";
+}	
+
+if (frm.A13.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A13.value + "\n";
+}
+
+if (frm.A14.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A14.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A16.value + " mm" + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A17.value + " mm" + "\n";
+}
+
+if (frm.A18.value + frm.A19.value !== ""){
+	Template += "\n" + "- Status of metastases:" + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "  - " + frm.A18.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "  - Sites of distant metastasis: " + frm.A19.value + "\n";
+}
+
+if (frm.A20.value !== ""){
+	Template += "\n" + "- The Intergroup Rhabdomyosarcoma Study Postsurgical Clinical Grouping System: " + "\n" + "  - " +  frm.A20.value + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "\n" + "- Modified Site, Size, Metastasis Staging for Rhabdomyosarcomas: " + "\n" + "  - " +  frm.A21.value + "\n";
+}
+
+if (frm.A22.value !== ""){
+	Template += "\n" + "- Additional pathologic findings: " + "\n" + "  - " +  frm.A22.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-pediatric-rhabdomyosarcoma-resection-19-4000.pdf" target="_blank">
+		<div class="tooltip">
+		Rhadomyosarcoma
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+
+
+<table border="1">
+<col width="20%">
+
+<tr>
+<td>- Procedure:</td>
+<td><select class="element select large" ID="A01">
+	<option value=""></option>
+	<option value="Marginal resection">Marginal resection</option>
+	<option value="Wide local resection">Wide local resection</option>
+	<option value="Radical resection">Radical resection</option>
+	<option value="Amputation (specify type): ">Amputation (specify type): </option>
+	<option value="Resection">Resection </option> 
+	<option value="Other (specify): ">Other (specify): </option>
+	<option value="Not specified">Not specified</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>- Tumor site:</td>
+<td><select class="element select large" ID="A02">
+	<option value=""></option>
+	<option value="Bile duct">Bile duct</option>
+	<option value="Bladder/prostate">Bladder/prostate</option>
+	<option value="Cranial parameningeal">Cranial parameningeal</option>
+	<option value="Extremity">Extremity</option>
+	<option value="Genitourinary (not bladder/prostate)">Genitourinary (not bladder/prostate)</option>
+	<option value="Head and neck (excluding parameningeal)">Head and neck (excluding parameningeal)</option>
+	<option value="Orbit">Orbit</option>
+	<option value="Specify site(s): ">Specify site(s): </option>
+	<option value="Not specified">Not specified</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Tumor size:</td>
+<td><select class="element select large" ID="A03">
+		<option value=""></option>
+		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select></td>
+</tr>
+
+<tr>
+<td>  </td>
+<td>  </td>
+</tr>
+
+</table>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A04" class="element textarea medium"></textarea>
+</p>
+
+
+<table border="1"> 
+<col width="60%">
+
+<tr>
+<td>- Histologic type: 
+</td>
+<td><select class="element select large" ID="A05">
+	<option value=""></option>
+	<option value="Embryonal">Embryonal</option>
+	<option value="Alveolar">Alveolar</option>
+	<option value="Spindle cell/sclerosing">Spindle cell/sclerosing</option>
+	<option value="Ectomesenchymoma">Ectomesenchymoma</option>
+	<option value="Rhabdomyosarcoma, not otherwise specified (NOS)">Rhabdomyosarcoma, not otherwise specified (NOS)</option>
+	<option value="Other (specify): ">Other (specify): </option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Preoperative treatment: </td>
+<td><select class="element select large" ID="A06">
+	<option value=""></option>
+	<option value="No known preoperative therapy">No known preoperative therapy</option>
+	<option value="Chemotherapy given">Chemotherapy given</option>
+	<option value="Radiation therapy given">Radiation therapy given</option>
+	<option value="Preoperative therapy given, type not specified">Preoperative therapy given, type not specified</option>
+	<option value="Other (specify): ">Other (specify): </option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Treatment effect: </td>
+<td><select class="element select large" ID="A07">
+	<option value=""></option>
+	<option value="Necrosis not identified">Necrosis not identified</option>
+	<option value="Necrosis present (specify tumor necrosis % and therapy-induced cytodifferentiation: )">Necrosis present (specify tumor necrosis % and therapy-induced cytodifferentiation: )</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+	<option value="Not applicable">Not applicable</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Anaplasia: 
+</td>
+<td><select class="element select large" ID="A08">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Focal (single or few scattered anaplastic cells)">Focal (single or few scattered anaplastic cells)</option>
+	<option value="Diffuse (clusters or sheets of anaplastic cells)">Diffuse (clusters or sheets of anaplastic cells)</option>
+	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Fusion Status: </td>
+<td><select class="element select large" ID="A09">
+	<option value=""></option>
+	<option value="Not performed">Not performed</option>
+	<option value="Pending">Pending</option>
+	<option value="No FOXO1 rearrangement">No FOXO1 rearrangement</option>
+	<option value="FOXO1 rearrangement present, specify amplification, PAX3 or PAX7">FOXO1 rearrangement present, specify amplification, PAX3 or PAX7</option>
+	<option value="Other (eg, PAX3-NCOA1 or other variant translocation) (specify): ">Other (eg, PAX3-NCOA1 or other variant translocation) (specify): </option>
+	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
+	<option value="Not applicable ">Not applicable </option>
+	</select></td>
+</tr>
+
+<tr>
+<td>- Lymphovascular invasion: </td>
+<td><select class="element select large" ID="A10">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Perineural invasion: </td>
+<td><select class="element select large" ID="A11">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+</table>
+</fieldset>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins: </label></legend>
+<p>
+<select class="element select medium" ID="A12">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, closest bone margin, specify distance (mm):">Uninvolved by tumor, closest bone margin, specify distance (mm):</option>
+	<option value="Uninvolved by tumor, closest soft tissue margin, specify distance (mm):">Uninvolved by tumor, closest soft tissue margin, specify distance (mm):</option>
+	<option value="Uninvolved by tumor, closest margin, specify distance and locations (mm):">Uninvolved by tumor, closest margin, specify distance and locations (mm):</option>
+	<option value="Involved by tumor, specify margins: ">Involved by invasive carcinoma, specify margins: </option>
+</select>
+</p>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+
+<table border="1">
+<col width="70%">
+<tr>
+<td>
+- Number of regional lymph nodes examined:
+</td>
+<td>
+<input type="text" class="element text large" ID="A13" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Number of lymph nodes involved (specify locations):
+</td>
+<td>
+<input type="text" class="element text large" ID="A14" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Extranodal extension:
+</td>
+<td>
+<select class="element select large" ID="A15">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+- Size of largest metastatic deposit (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A16" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Size of largest lymph node involved (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A17" size="15">
+</td>
+</tr>
+</table>
+
+<br>
+</fieldset>
+
+</p>
+<p>
+<table border="1">
+<col width="20%">
+<label class="description">- Status of metastases:</label>
+
+<tr>
+<td rowspan="2" valign="top">- Metastases: </td>
+<td><select class="element select large" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr> 
+<td>- Sites of distant metastasis: 
+<input type="text" class="element text large" ID="A19" size="35"></td>
+</tr>
+</table>
+</p>
+
+<p>
+<label class="description">- The Intergroup Rhabdomyosarcoma Study Postsurgical Clinical Grouping System (Raney 2001): </label>
+<select class="element select medium" ID="A20">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Cannot be assessed (explain): ">Cannot be assessed (explain): </option>
+	<option value="Group IA: Localized tumor, confined to site of origin, completely resected">Group IA: Localized tumor, confined to site of origin, completely resected</option>
+	<option value="Group IB:Localized tumor, infiltrating beyond site of origin, completely resected">Group IB:Localized tumor, infiltrating beyond site of origin, completely resected</option>
+	<option value="Group IIA: Localized tumor, gross total resection, but with microscopic residual disease">Group IIA: Localized tumor, gross total resection, but with microscopic residual disease</option>
+	<option value="Group IIB: Locally extensive tumor (spread to regional lymph nodes), completely resected">Group IIB: Locally extensive tumor (spread to regional lymph nodes), completely resected</option>
+	<option value="Group IIC: Locally extensive tumor (spread to regional lymph nodes), gross total resection, but microscopic residual disease">Group IIC: Locally extensive tumor (spread to regional lymph nodes), gross total resection, but microscopic residual disease</option>
+	<option value="Group IIIA: Localized or locally extensive tumor, gross residual disease after biopsy only">Group IIIA: Localized or locally extensive tumor, gross residual disease after biopsy only</option>
+	<option value="Group IIIB: Localized or locally extensive tumor, gross residual disease after major resection (greater than 50% debulking)">Group IIIB: Localized or locally extensive tumor, gross residual disease after major resection (greater than 50% debulking)</option>
+	<option value="Group IV: Any size primary tumor, with or without regional lymph node involvement, with distant metastases, without respect to surgical approach to primary tumor">Group IV: Any size primary tumor, with or without regional lymph node involvement, with distant metastases, without respect to surgical approach to primary tumor</option>
+</select>
+</p>
+
+
+<p>
+<label class="description">- Modified Site, Size, Metastasis Staging for Rhabdomyosarcoma (Coffin 1997): </label>
+<select class="element select medium" ID="A21">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Cannot be assessed (explain): ">Cannot be assessed (explain): </option>
+	<option value="Stage I: Tumor involves favorable site (ie, bile ducts, orbit, head and neck or genitourinary site [excluding bladder, prostate, and cranial parameningeal]); and, Tumor metastatic to distant site not identified">Stage I: Tumor involves favorable site (ie, bile ducts, orbit, head and neck or genitourinary site [excluding bladder, prostate, and cranial parameningeal]); and, Tumor metastatic to distant site not identified</option>
+	<option value="Stage II: Tumor involves unfavorable site (ie, bladder/prostate, extremity, parameningeal or other site not mentioned in stage I); and, Tumor size 5 cm or greater; and,  Tumor involvement of lymph nodes not identified; and, Tumor metastatic to distant site not identified">Stage II: Tumor involves unfavorable site (ie, bladder/prostate, extremity, parameningeal or other site not mentioned in stage I); and, Tumor size 5 cm or greater; and,  Tumor involvement of lymph nodes not identified; and, Tumor metastatic to distant site not identified</option>
+	<option value="Stage III: Tumor involves unfavorable site, is 5 cm or less, and involves regional lymph nodes, but distant metastases are not identified; or, Tumor involves unfavorable site and is greater than 5 cm, with or without regional lymph node involvement, but distant metastases are not identified">Stage III: Tumor involves unfavorable site, is 5 cm or less, and involves regional lymph nodes, but distant metastases are not identified; or, Tumor involves unfavorable site and is greater than 5 cm, with or without regional lymph node involvement, but distant metastases are not identified</option>
+	<option value="Stage IV: Distant metastases present">Stage IV: Distant metastases present</option>
+</select>
+</p>
+
+<p>
+<label class="description">- Additional pathologic findings:</label>
+ <textarea ID="A22" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 29-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Rhabdomyosarcoma Resection 4.0.0.0 (February 2019, <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

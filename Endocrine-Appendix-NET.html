@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Appendix NET</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor site: " + "\n" + "   - " + frm.A02.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A04.value + "\n";
+}
+
+if (frm.A05.value !== ""){
+	Template += "- Histologic type and grade: " + "\n" + "  - " + frm.A05.value + "\n";
+}
+
+if (frm.A06.value !== ""){
+	Template += "- Mitotic count: " + "\n" + "  - " + frm.A06.value + "\n";
+}
+
+if (frm.A07.value !== ""){
+	Template += "- Ki-67 labeling index: " + "\n" + "  - "  + frm.A07.value + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "- Tumor extension: " + "\n" + "  - " + frm.A08.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A18.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A19.value + "\n";
+}
+
+
+if (frm.A09.value + frm.A10.value + frm.A11.value + frm.A12.value + frm.A13.value + frm.A14.value + frm.A15.value + frm.A16.value + frm.A17.value!== ""){
+	Template += "- Resection margins: " +"\n" + "  ";
+}
+
+if (frm.A09.value !== ""){
+	Template += "- Proximal margin: " + frm.A09.value + "\n" + "  ";
+}
+
+if (frm.A10.value !== ""){
+	Template += "- Radial or mesenteric margin: " +  frm.A10.value + "\n" + "  ";
+}
+
+if (frm.A11.value !== ""){
+	Template += "- Other margin(s) (required only if applicable, specify:): " + frm.A11.value + "\n" + "  ";
+}
+
+if (frm.A12.value !== ""){
+	Template += "- Distance of tumor from closest margin (specify: ): " + frm.A12.value + " mm" + "\n";
+}
+
+if (frm.A13.value !== ""){
+	Template += "- Proximal margin: " + frm.A13.value + "\n" + "  ";
+}
+
+if (frm.A14.value !== ""){
+	Template += "- Distal margin: " + frm.A14.value + "\n" + "  ";
+}
+
+if (frm.A15.value !== ""){
+	Template += "- Radial or mesenteric margin: " + frm.A15.value + "\n" + "  ";
+}
+
+if (frm.A16.value !== ""){
+	Template += "- Other margin(s) (required only if applicable, specify:): " + frm.A16.value + "\n" + "  ";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Distance of tumor from closest margin (specify: ): " + frm.A17.value + " mm" + "\n";
+}
+
+if (frm.A20.value + frm.A21.value + frm.A22.value !== ""){
+	Template += "- Regional lymph nodes: " + "\n";
+}	
+
+if (frm.A20.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A20.value + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A21.value + "\n";
+}
+
+if (frm.A22.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A22.value + "\n";
+}
+
+if (document.getElementById("A23").checked || document.getElementById("A24").checked || document.getElementById("A25").checked || frm.A26.value!=="" || frm.A27.value!=="" || frm.A28.value!=="" || frm.A29.value!==""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A23").checked || document.getElementById("A24").checked || document.getElementById("A25").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A23").checked){
+	Template += "    " + frm.A23.value + "\n";
+}
+
+if (document.getElementById("A24").checked){
+	Template += "    " + frm.A24.value + "\n";
+}
+
+if (document.getElementById("A25").checked){
+	Template += "    " +frm.A25.value + "\n";
+}
+
+if (frm.A26.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "    - " + frm.A26.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "    - " + frm.A27.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "  - Distant metastasis (required only if confirmed pathologically in this case): " + "\n" + "    - " + frm.A28.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "    - Specify site(s), if known: " + frm.A29.value + "\n";
+}
+
+if (document.getElementById("A31").checked || document.getElementById("A32").checked || frm.A33.value !==""){
+	Template += "\n" + "- Additional pathologic findings: " + "\n";
+}
+
+if (document.getElementById("A31").checked){
+	Template += "  - " +  frm.A31.value + "\n";
+}
+
+if (document.getElementById("A32").checked){
+	Template += "  - " +  frm.A32.value + "\n";
+}
+
+
+if (frm.A33.value !== ""){
+	Template += "  - " +  frm.A33.value + "\n";
+}
+
+if (frm.A34.value !== ""){
+	Template += "- Additional notes: " + "\n" + "  - " +  frm.A34.value + "\n";
+}
+
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href= ".\cap\cp-appendix-net-17protocol-4001.pdf" target="_blank">
+		<div class="tooltip">Appendix neuroendocrine tumor
+		<span class="tooltiptext">click to access further explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+<li>
+<p>
+<label class="description">- Procedure:</label>
+<select class="element select medium" ID="A01">
+	<option value=""></option>
+	<option value="Appendectomy">Appendectomy</option> 
+	<option value="Right hemicolectomy">Right hemicolectomy</option>
+	<option value="Other (specify):">Other (specify):</option>
+</select>
+</p>
+</li>
+
+<li>
+<p>
+<label class="description">- Tumor site:</label> 
+<select class="element select medium" ID="A02">
+	<option value=""></option>
+	<option value="Proximal half of appendix">Proximal half of appendix</option>
+	<option value="Distal half of appendix">Distal half of appendix</option>
+	<option value="Diffusely involving appendix">Diffusely involving appendix</option>
+	<option value="Appendix, not otherwise specified">Appendix, not otherwise specified</option>
+	<option value="Other (specify):">Other (specify):</option>
+</select>
+</p>
+</li>
+
+<li>
+<p>
+<label class="description">- Tumor size:</label> 
+<select class="element select medium" ID="A03">
+		<option value=""></option>
+		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
+</p>
+</li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<li>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A04" name="A04" class="element textarea medium"></textarea>
+</p>
+</li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">- Histologic type and grade:</label></legend> 
+<li><p> 
+<select class="element select medium" ID="A05">
+	<option value=""></option>
+	<option value="G1: Well-differentiated neuroendocrine tumor">G1: Well-differentiated neuroendocrine tumor (mitosis < 2, Ki67 < 3)</option>
+	<option value="G2: Well-differentiated neuroendocrine tumor">G2: Well-differentiated neuroendocrine tumor (mitosis  2-20, Ki67 3-20)</option>
+	<option value="G3: Well-differentiated neuroendocrine tumor">G3: Well-differentiated neuroendocrine tumor (mitosis > 20, Ki67 > 20)</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="GX: Well-differentiated neuroendocrine tumor, grade cannot be assessed">GX: Well-differentiated neuroendocrine tumor, grade cannot be assessed:</option>
+	<option value="Not applicable">Not applicable</option>
+</select>
+</p>
+</li>
+
+<li>
+<p><label class="description">- Mitotic count:</label>
+Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup><br>
+Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup><br>
+<select class="element select medium" ID="A06">
+	<option value=""></option>
+	<option value="< 2 mitoses/2 mm2"> < 2 mitoses/2 mm2</option>
+	<option value="2 to 20 mitoses/2 mm2 (specify: )"> 2 to 20 mitoses/2 mm2 (specify: )</option>
+	<option value="> 20 mitoses per 2 mm2 (specify: )"> > 20 mitoses per 2 mm2 (specify: )</option> 
+	<option value="Cannot be determined (explain):"> Cannot be determined (explain):</option> 
+	<option value="Not applicable"> Not applicable</option> 
+</select>
+</p>
+</li>
+
+<li>
+<p><label class="description">- Ki-67 labeling index:</label>
+<select class="element select medium" ID="A07">
+	<option value=""></option>
+	<option value="< 3%">< 3%</option>
+	<option value="3% to 20% (specify: )"> 3% to 20% (specify: )</option>
+	<option value="> 20% (specify: )"> > 20% (specify: )</option>
+	<option value="Cannot be determined (explain):"> Cannot be determined (explain):</option> 
+	<option value="Not applicable"> Not applicable</option> 
+</select>
+</p>
+</li>
+<br>
+</fieldset>
+</p>
+
+<li>
+<p><label class="description">- Tumor extension:</label> 
+<select class="element select medium" ID="A08">
+	<option value=""></option>
+	<option value="No evidence of primary tumor">No evidence of primary tumor</option>
+	<option value="Tumor invades the lamina propria">Tumor invades the lamina propria</option>
+	<option value="Tumor invades the submucosa">Tumor invades the submucosa</option>
+	<option value="Tumor invades the muscularis propria">Tumor invades the muscularis propria</option>
+	<option value="Tumor invades the subserosa/mesoappendix without involvement of visceral peritoneum">Tumor invades the subserosa/mesoappendix without involvement of visceral peritoneum</option>
+	<option value="Tumor perforates the visceral peritoneum (serosa)">Tumor perforates the visceral peritoneum (serosa)</option>
+	<option value="Tumor directly invades other adjacent organs or structures (specify):">Tumor directly invades other adjacent organs or structures (specify):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+</select>
+</p>
+</li>
+
+<li>
+<p><label class="description">- Lymphovascular invasion: </label>
+<select class="element select medium" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p>
+</li>
+
+<li>
+<p><label class="description">- Perineural invasion: </label>
+<select class="element select medium" ID="A19">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p>
+</li>
+<br>
+</fieldset>
+</p>
+
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">For appendectomy specimens:</label></legend>
+<li>
+<p>- Proximal margin:<br>
+<select class="element select medium" ID="A09">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p>
+
+<p>- Radial or mesenteric margin: <br>
+<select class="element select medium" ID="A10">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p>
+
+<p>- Other margin(s) (specify: ): <br>
+<select class="element select medium" ID="A11">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p>
+
+<p>- Distance of tumor from closest margin (specify: ):      
+<input type="text" class="element text medium" name="A12" ID = "A12" size="10">(mm)
+</p>
+</li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">For right hemicolectomy specimens:</label></legend>
+<li>
+<p>- Proximal margin:<br>
+<select class="element select medium" ID="A13">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p>
+
+<p>- Distal margin:<br>
+<select class="element select medium" ID="A14">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p>
+
+<p>- Radial or mesenteric margin:<br>
+<select class="element select medium" ID="A15">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p>
+
+<p>- Other margin(s) (specify: ):<br>
+<select class="element select medium" ID="A16">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p>
+
+<p>- Distance of tumor from closest margin (specify: ):      
+<input type="text" class="element text medium" ID= "A17" name="A17" size="10">(mm)
+</p>
+</li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+<li>
+<p>- Number of regional lymph nodes examined:
+<input type="text" class="element text small" name="A20" size="10"></p>
+<p>- Number of lymph nodes involved:
+<input type="text" class="element text small" name="A21" size="10"></p>
+<p>- Extranodal extension:
+<select class="element select small" ID="A22">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p>
+</li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e): </label></legend>
+
+<li><p>  - TNM Descriptors: <br>
+
+<input type="checkbox" class="element checkbox" id="A23" value="m (multiple primary tumors)"><label class="choice">m (multiple primary tumors)</label>
+<input type="checkbox" class="element checkbox" id="A24" value="r (recurrent)"><label class="choice">r (recurrent)</label>
+<input type="checkbox" class="element checkbox" id="A25" value="y (post treatment)"><label class="choice">y (post treatment)</label>
+</p></li>
+
+<li>
+<p>  - Primary tumor (pT):<br>
+<select class="element select medium" ID="A26">
+	<option value=""></option>
+	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="pT1: Tumor 2 cm or less in greatest dimension">pT1: Tumor 2 cm or less in greatest dimension</option>
+	<option value="pT2: Tumor more than 2 cm but less than or equal to 4 cm">pT2: Tumor more than 2 cm but less than or equal to 4 cm</option>
+	<option value="pT3: Tumor more than 4 cm or with subserosal invasion or involvement of the mesoappendix">pT3: Tumor more than 4 cm or with subserosal invasion or involvement of the mesoappendix</option>
+	<option value="pT4: Tumor perforates the peritoneum or directly invades other adjacent organs or structures">pT4: Tumor perforates the peritoneum or directly invades other adjacent organs or structures</option>
+</select>
+</p>
+</li>
+
+<li>
+<p>  - Regional lymph nodes (pN): <br>
+<select class="element select medium" ID="A27">
+	<option value=""></option>
+	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
+</select>
+</p>
+</li>
+
+<li>
+<p>  - Distant metastasis (pM): <br>
+<select class="element select medium" ID="A28">
+	<option value=""></option>
+	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
+	<option value="pM1a: Metastasis confined to liver">pM1a: Metastasis confined to liver</option>
+	<option value="pM1b: Metastasis in at least one extrahepatic site">pM1b: Metastasis in at least one extrahepatic site</option>
+	<option value="pM1c: Both hepatic and extrahepatic metastases">pM1c: Both hepatic and extrahepatic metastases</option>
+</select><br>
+- Specify site(s), if known:
+<input type="text" class="element text medium" name="A29" ID="A29" size="35">
+</p>
+</li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+<li><p>
+<input type="checkbox" class="element checkbox" id="A31" value="Tumor necrosis"><label class="choice">Tumor necrosis</label>
+<input type="checkbox" class="element checkbox" id="A32" value="Acute appendicitis"><label class="choice">Acute appendicitis</label>
+
+- Other (specify):
+<input type="text" name="A33" class="element text medium" ID="A33" size="35">
+</p></li>
+<br>
+</fieldset>
+<p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A34" name="A34" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 18-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+AppendixNET 4.0.0.1 (June 2017), <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MMR IHC test</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = ""
+
+if (frm.MLH1.value !== ""){
+Template += "- MLH1 (mutL homolog 1): " + "\n" + "  - " + frm.MLH1.value + "\n";
+}
+
+if (frm.MSH2.value !== ""){
+Template += "- MSH2 (mutS homolog 2): " + "\n" + "  - "+ frm.MSH2.value + "\n";
+}
+
+if (frm.MSH6.value !== ""){
+Template += "- MSH6 (mutS homolog 6): " + "\n" + "  - "+ frm.MSH6.value + "\n";
+}
+
+if (frm.PMS2.value !== ""){
+Template += "- PMS2 (PMS1 homolog 2, mismatch repair system component): " + "\n" + "  - " + frm.PMS2.value + "\n"+ "\n";
+}
+
+if (frm.IHC.value !== ""){
+Template += "- IHC Interpretation for tumor: " + "\n" + "  - " + frm.IHC.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-general-dnamismatchrepair-18biomarker-1001.pdf" target="_blank">
+		<div class="tooltip">DNA microsatellite mismatch repair immunohistochemistry test
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	- there are different references for    
+		<a href=".\cap\cp-gilower-colonrectum-14biomarker-1201.pdf" target="_blank">
+		<div class="tooltip">colorectal cancers
+		<span class="tooltiptext">click to access the original CAP template</span>
+		</div>
+		</a>
+	and
+		<a href=".\cap\cp-femalereproductive-endometrium-biomarker-19-1201.pdf" target="_blank">
+		<div class="tooltip">endometrial cancers.
+		<span class="tooltiptext">click to access the original CAP template</span>
+		</div>
+		</a>
+<br>
+<br>
+
+<form>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Immunohistochemical staining:</label></legend>
+
+<li><p><label class="description">- MLH1 (mutL homolog 1):</label>
+<select class="element select medium"  ID="MLH1">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- MSH2 (mutS homolog 2):</label>
+<select class="element select medium"  ID="MSH2">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- MSH6 (mutS homolog 6):</label>
+<select class="element select medium"  ID="MSH6">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- PMS2 (PMS1 homolog 2, mismatch repair system component):</label>
+<select class="element select medium"  ID="PMS2">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+<br>
+
+<li><p><label class="description">- IHC Interpretation for the tumor:</label>
+<select class="element select medium"  ID="IHC">
+	<option value=""></option>
+	<option value="No loss of nuclear signals of all 4 proteins: Not defective in DNA mismatch repair and low probability of microsatellite instability-high (MSI-H).">No loss of nuclear signals of all 4 proteins: Not defective in DNA mismatch repair and low probability of microsatellite instability-high (MSI-H).</option>
+	<option value="Loss of nuclear signals of 1 or more proteins: Defective DNA mismatch repair within the tumor. Causes could be somatic mutation or DNA methylation (sporadic), or germline alteration (Lynch syndrome).">Loss of nuclear signals of 1 or more proteins: Defective DNA mismatch repair within the tumor. </option>
+	<option value="MMR status cannot be determined by IHC.">MMR status cannot be determined by IHC.</option>
+</select>
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated 19-Feb-2020, modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+html form and cascade style sheet were created basing on <a href="http://www.phpform.org">pForm</a>,<br>
+with codes modified from <a href="https://www.w3schools.com/">W3 School tutorials</a> and <a href="https://stackoverflow.com/">Stack Overflow</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.</div>
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>
+

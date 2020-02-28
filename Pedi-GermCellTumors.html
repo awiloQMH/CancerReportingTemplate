@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Extragonadal germ cell tumors</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor site: " + "\n" + "   - " + frm.A02.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Patient age: " + "\n" + "  - "+ frm.A04.value + "\n";
+}
+
+if (document.getElementById("A05").checked || document.getElementById("A06").checked || 
+	document.getElementById("A07").checked || document.getElementById("A08").checked){
+	Template += "- Serological markers:" + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += "  - " +  frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += "  - " +  frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += "  - " +  frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += "  - " +  frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked || document.getElementById("A10").checked || 
+	document.getElementById("A11").checked || document.getElementById("A12").checked){
+	Template += "- Other clinical findings:" + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += "  - " +  frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += "  - " +  frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += "  - " +  frm.A11.value + "\n";
+}
+
+if (document.getElementById("A12").checked){
+	Template += "  - " +  frm.A12.value + "\n";
+}
+
+if (frm.A13.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A13.value + "\n";
+}
+
+if (frm.A14.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A14.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "Histologic grade (Norris 1976): " + "\n" + "  - " + frm.A16.value + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Microscopic tumor extension (for sacrococcygeal tumor): " + "\n" + "  - " + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A18.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A19.value + "\n";
+}
+
+if (frm.A20.value !== ""){
+	Template += "- Treatment history:  " + "\n" + "  - " + frm.A20.value + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "- Treatment effects:  " + "\n" + "  - " + frm.A21.value + "\n";
+}
+
+
+if (frm.A22.value !== ""){
+	Template += "- Surgical margins: " + "\n" + "  - " + frm.A22.value + "\n";
+}
+
+if (frm.A23.value + frm.A24.value + frm.A25.value + frm.A26.value + frm.A27.value!== ""){
+	Template += "- Regional lymph nodes: " + "\n";
+}	
+
+if (frm.A23.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A23.value + "\n";
+}
+
+if (frm.A24.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A24.value + "\n";
+}
+
+if (frm.A25.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A25.value + "\n";
+}
+
+if (frm.A26.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A26.value + " mm" + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A27.value + " mm" + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "\n" + "- Children’s Oncology Group Staging for any Malignant Extragonadal Germ Cell Tumors: " + "\n" + "  - " + frm.A28.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "\n" + "- Moran and Suster Proposed Clinical Staging for Mediastinal Germ Cell Tumors: " + "\n" + "  - " + frm.A29.value + "\n";
+}
+
+if (frm.A30.value + frm.A31.value + frm.A32.value + frm.A33.value !== ""){
+	Template += "\n" + "- Status of metastases:" + "\n";
+}
+
+if (frm.A30.value !== ""){
+	Template += "  - Sites of distant metastasis: " + frm.A30.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "  - Size of largest metastasis: " + frm.A31.value + "\n";
+}
+
+if (frm.A32.value !== ""){
+	Template += "  - Metastases to other organs: " + frm.A32.value + "\n";
+}
+
+if (frm.A33.value !== ""){
+	Template += "  - Histologic type(s): " + frm.A33.value + "\n";
+}
+
+if (frm.A34.value !== ""){
+	Template += "\n" + "- Additional pathologic findings: " + "\n" + "  - " +  frm.A34.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf" target="_blank">
+		<div class="tooltip">
+		Extragonadal Germ Cell Tumors
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+
+<li>
+<table border="1">
+<col width="30%">
+
+<tr>
+<td>- Procedure:</td>
+<td><select class="element select large" ID="A01">
+	<option value=""></option>
+	<option value="Marginal resection">Marginal resection </option> 
+	<option value="Wide resection">Wide resection</option>
+	<option value="Other (specify): ">Other (specify): </option>
+	<option value="Not specified">Not specified</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>- Tumor site:</td>
+<td><select class="element select large" ID="A02">
+	<option value=""></option>
+	<option value="Intracranial">Intracranial</option>
+	<option value="Head and neck region (including thyroid; excluding intracranial)">Head and neck region (including thyroid; excluding intracranial)</option>
+	<option value="Mediastinum (pericardium, heart, thymus, and lung)">Mediastinum (pericardium, heart, thymus, and lung)</option>
+	<option value="Retroperitoneum/abdomen">Retroperitoneum/abdomen</option>
+	<option value="Sacrococcygeal">Sacrococcygeal</option>	
+	<option value="Specify site(s): ">Specify site(s): </option>
+	<option value="Not specified">Not specified</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Tumor size:</td>
+<td><select class="element select large" ID="A03">
+		<option value=""></option>
+		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select></td>
+</tr>
+
+<tr>
+<td>  </td>
+<td>  </td>
+</tr>
+
+
+<tr>
+<td>- Patient age:</td>
+<td><select class="element select large" ID="A04">
+		<option value=""></option>
+		<option value="Congenital/neonatal (birth - 6 mo)">Congenital/neonatal (birth - 6 mo)</option>
+		<option value="Childhood/prepubertal (7 mo - 11 y)">Childhood/prepubertal (7 mo - 11 y)</option>
+		<option value="Postpubertal/adult (greater than or equal to 12 y)">Postpubertal/adult (greater than or equal to 12 y)</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Serological markers:</td>
+<td><input type="checkbox" class="element checkbox" id="A05" value="Not specified"><label class="element choice">Not specified</label>
+<input type="checkbox" class="element checkbox" id="A06" value="Not performed"><label class="element choice">Not performed</label>
+<input type="checkbox" class="element checkbox" id="A07" value="Serum α-fetoprotein (AFP) (specify level): "><label class="element choice">Serum α-fetoprotein (AFP) (specify level): </label>
+<input type="checkbox" class="element checkbox" id="A08" value="Serum human chorionic gonadotropin (HCG) (specify level): "><label class="element choice">Serum human chorionic gonadotropin (HCG) (specify level): </label>
+</td>
+</tr>
+
+<tr>
+<td>- Other clinical findings:</td>
+<td><input type="checkbox" class="element checkbox" id="A09" value="None identified"><label class="element choice">None identified</label>
+<input type="checkbox" class="element checkbox" id="A10" value="Associated syndromes (Klinefelter, Down, others...), specify:"><label class="element choice">Associated syndromes (Klinefelter, Down, etc.), specify:</label>
+<input type="checkbox" class="element checkbox" id="A11" value="Associated malignancy (leukemia, myelodysplastic syndrome, others...), specify: "><label class="element choice">Associated malignancy (leukemia, MDS, etc.), specify: </label>
+<input type="checkbox" class="element checkbox" id="A12" value="Other findings: "><label class="element choice">Other findings: </label>
+</td>
+</tr>
+</table></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A13" class="element textarea medium"></textarea>
+</p></li>
+
+<li>
+<table border="1"> 
+<col width="60%">
+
+<tr>
+<td rowspan="2">- Histologic type (teratoma): 
+</td>
+<td><select class="element select large" ID="A14">
+	<option value=""></option>
+	<option value="Mature teratoma">Mature teratoma</option>
+	<option value="Immature teratoma (immature element %:  )">Immature teratoma (immature element %:  )</option>
+	<option value="Mature or immature teratoma with additional malignant somatic component, specify: ">Mature or immature teratoma with additional malignant somatic component, specify: </option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Histologic grade (Norris 1976):
+<select class="element select large" ID="A16">
+	<option value=""></option>
+	<option value="Grade 1">Grade 1</option>
+	<option value="Grade 2">Grade 2</option>
+	<option value="Grade 3">Grade 3</option>
+	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Histologic type (other germ cell tumors): 
+</td>
+<td><select class="element select large" ID="A15">
+	<option value=""></option>
+	<option value="Germinoma">Germinoma</option>
+	<option value="Yolk sac tumor">Yolk sac tumor</option>
+	<option value="Choriocarcinoma">Choriocarcinoma</option>
+	<option value="Mixed germ cell tumor, specify components: ">Mixed germ cell tumor, specify components:</option> 
+	<option value="Cannot be determined (explain): ">Cannot be determined (explain): </option>
+</select></td>
+</tr>	
+
+<tr>
+<td>- Microscoic tumor extension (for sacrocoocygeal tumor): </td>
+<td><select class="element select large" ID="A17">
+	<option value=""></option>
+	<option value="Tumor involving coccyx identified">Tumor involving coccyx identified</option>
+	<option value="Coccyx uninvolved">Coccyx uninvolved</option>
+	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Lymphovascular invasion: </td>
+<td><select class="element select large" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Perineural invasion: </td>
+<td><select class="element select large" ID="A19">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Treatment history: </td>
+<td><select class="element select large" ID="A20">
+	<option value=""></option>
+	<option value="No known preoperative therapy">No known preoperative therapy</option>
+	<option value="Preoperative therapy given">Preoperative therapy given</option>
+	<option value="Not specified">Not specified</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Treatment effect: </td>
+<td><select class="element select large" ID="A21">
+	<option value=""></option>
+	<option value="Necrosis not identified">Necrosis not identified</option>
+	<option value="Necrosis present (specify percentage: )">Necrosis present (specify percentage: )</option>
+	<option value="Percentage of tumor necrosis cannot be determined">Percentage of tumor necrosis cannot be determined</option>
+	<option value="Not applicable">Not applicable</option>
+</select></td>
+</tr>
+</table></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins: </label></legend>
+<li><p>
+<select class="element select medium" ID="A22">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, closest bone margin, specify distance (mm):">Uninvolved by tumor, closest bone margin, specify distance (mm):</option>
+	<option value="Uninvolved by tumor, closest soft tissue margin, specify distance (mm):">Uninvolved by tumor, closest soft tissue margin, specify distance (mm):</option>
+	<option value="Uninvolved by tumor, closest margin, specify distance and locations (mm):">Uninvolved by tumor, closest margin, specify distance and locations (mm):</option>
+	<option value="Involved by tummor, specify margins: ">Involved by invasive carcinoma, specify margins: </option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+<li>
+<table border="1">
+<tr>
+<td>
+- Number of regional lymph nodes examined:
+</td>
+<td>
+<input type="text" class="element text large" ID="A23" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Number of lymph nodes involved (specify locations):
+</td>
+<td>
+<input type="text" class="element text large" ID="A24" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Extranodal extension:
+</td>
+<td>
+<select class="element select large" ID="A25">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+- Size of largest metastatic deposit (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A26" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Size of largest lymph node involved (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A27" size="15">
+</td>
+</tr>
+</table>
+</li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification : </label></legend>
+<li>
+<table border="1">
+<col width="62%">
+
+<tr>
+<td>- Children’s Oncology Group Staging (for all GCT):</td>
+<td><select class="element select large" ID="A28">
+	<option value=""></option>
+	<option value="Stage I: Complete resection at any site; coccygectomy for sacrococcygeal site; negative tumor margins">Stage I: Complete resection at any site; coccygectomy for sacrococcygeal site; negative tumor margins</option>
+	<option value="Stage II: Microscopic residual; lymph nodes negative">Stage II: Microscopic residual; lymph nodes negative</option>
+	<option value="Stage III: Lymph nodes involved by metastatic disease. Gross residual or biopsy only, retroperitoneal nodes negative or positive">Stage III: Lymph nodes involved by metastatic disease. Gross residual or biopsy only, retroperitoneal nodes negative or positive</option>
+	<option value="Stage IV: Distant metastases, including liver">Stage IV: Distant metastases, including liver</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Moran and Suster Proposed Clinical Staging (for Mediastinal):</td>
+<td><select class="element select large" ID="A29">
+	<option value=""></option>
+	<option value="Stage I: Well-circumscribed tumor with or without focal adhesions to the pleura or pericardium but without microscopic evidence of invasion into adjacent structures">Stage I: Well-circumscribed tumor with or without focal adhesions to the pleura or pericardium but without microscopic evidence of invasion into adjacent structures</option>
+	<option value="Stage II: Tumor confined to the mediastinum with macroscopic and/or microscopic evidence of infiltration into adjacent structures (ie, pleura, pericardium, and great vessels)">Stage II: Tumor confined to the mediastinum with macroscopic and/or microscopic evidence of infiltration into adjacent structures (ie, pleura, pericardium, and great vessels)</option>
+	<option value="Stage III: Tumor with metastases">Stage III: Tumor with metastases</option>
+	<option value="Stage IIIA: With metastases to intrathoracic organs (lymph nodes, lung, etc)">Stage IIIA: With metastases to intrathoracic organs (lymph nodes, lung, etc)</option>
+	<option value="Stage IIIB: With extrathoracic metastases">Stage IIIB: With extrathoracic metastases</option>
+</select></td>
+</tr>
+</table>
+</li>
+
+<li>
+<table border="1">
+<label class="description">- Status of metastases:</label>
+
+<tr> 
+<td>- Sites of distant metastasis: </td>
+<td><input type="text" class="element text large" ID="A30" size="35"></td>
+</tr>
+
+<tr> 
+<td>- Sizes of distant metastasis (cm): </td>
+<td><input type="text" class="element text large" ID="A31" size="35"></td>
+</tr>
+<tr> 
+<td>- Metastases to other organs (specify): </td>
+<td><input type="text" class="element text large" ID="A32" size="35"></td>
+</tr>
+<tr> 
+<td>- Histologic type(s), specify: </td>
+<td><input type="text" class="element text large" ID="A33" size="35"></td>
+</tr>
+
+</table>
+</li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional pathologic findings:</label>
+ <textarea ID="A34" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 23-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Germ Cell Resection 4.0.0.0 (February 2019), <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

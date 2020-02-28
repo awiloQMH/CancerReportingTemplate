@@ -1,0 +1,585 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DCIS</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Laterality: " + "\n" + frm.A02.value + "\n";
+}
+
+if (document.getElementById("A03").checked || document.getElementById("A04").checked || 
+    document.getElementById("A05").checked || document.getElementById("A06").checked || 
+	document.getElementById("A07").checked || document.getElementById("A08").checked || 
+	document.getElementById("A09").checked || document.getElementById("A10").checked || 
+	document.getElementById("A11").checked){
+	Template += "- Tumor site: " + "\n";
+}
+
+if (document.getElementById("A03").checked){
+	Template += frm.A03.value + "\n";
+}
+
+if (document.getElementById("A04").checked){
+	Template += frm.A04.value + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += frm.A11.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "- Tumor size: " + "\n" + frm.A12.value + "\n";
+}
+
+if (frm.A13.value !== ""){
+	Template += "  - Number of blocks with DCIS out of total: " + frm.A13.value + "\n";
+}
+if (frm.A14.value !== ""){
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " +frm.A14.value + "\n";
+}
+
+if (frm.A14A.value !== ""){
+	Template += "- Histologic type: " + "\n" + frm.A14A.value + "\n";
+}
+
+if (document.getElementById("A15").checked || document.getElementById("A16").checked || 
+    document.getElementById("A17").checked || document.getElementById("A18").checked || 
+	document.getElementById("A19").checked || document.getElementById("A20").checked || 
+	document.getElementById("A21").checked){
+	Template += "  - Architectural patterns of ductal carcinoma in situ: " + "\n";
+}
+
+if (document.getElementById("A15").checked){
+	Template += "  " + frm.A15.value + "\n";
+}
+
+if (document.getElementById("A16").checked){
+	Template += "  " + frm.A16.value + "\n";
+}
+
+if (document.getElementById("A17").checked){
+	Template += "  " + frm.A17.value + "\n";
+}
+
+if (document.getElementById("A18").checked){
+	Template += "  " + frm.A18.value + "\n";
+}
+
+if (document.getElementById("A19").checked){
+	Template += "  " + frm.A19.value + "\n";
+}
+
+if (document.getElementById("A20").checked){
+	Template += "  " + frm.A20.value + "\n";
+}
+
+if (document.getElementById("A21").checked){
+	Template += "  " + frm.A21.value + "\n";
+}
+
+if (frm.A22.value !== ""){
+	Template += "  - Nuclear grade: " + "\n" + "  " + frm.A22.value + "\n";
+}
+
+if (frm.A23.value !== ""){
+	Template += "  - Necrosis: " + "\n" + "  " + frm.A23.value + "\n";
+}
+
+if (frm.A24.value !== ""){
+	Template += "- Surgical margin, anterior: " + "\n"  + frm.A24.value + "\n";
+}
+
+if (frm.A25.value !== ""){
+	Template += "- Surgical margin, posterior: " + "\n"  + frm.A25.value + "\n";
+}
+
+if (frm.A26.value !== ""){
+	Template += "- Surgical margin, superior: " + "\n"  + frm.A26.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "- Surgical margin, inferior: " + "\n"  + frm.A27.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "- Surgical margin, medial: " + "\n"  + frm.A28.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "- Surgical margin, lateral: " + "\n"  + frm.A29.value + "\n";
+}
+
+if (frm.A30.value !== ""){
+	Template += "- Surgical margin, other (specify): " + "\n"  + frm.A30.value + "\n";
+}
+
+if (frm.A31.value + frm.A32.value + frm.A33.value + frm.A34.value + frm.A35.value + 
+    frm.A36.value + frm.A37.value + frm.A38.value !== ""){
+	Template += "- Lymph nodes examination: " + "\n";
+}	
+
+if (frm.A31.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A31.value + "\n";
+}
+
+if (frm.A32.value !== ""){
+	Template += "  - Number of sentinel lymph nodes examined: " + frm.A32.value + "\n";
+}
+
+if (frm.A33.value !== ""){
+	Template += "  - Number of lymph nodes with macrometastasis (> 2 mm): " + frm.A33.value + "\n";
+}
+
+if (frm.A34.value !== ""){
+	Template += "  - Number of lymph nodes with micrometastasis (> 0.2 to 2 mm and/or > 200 cells): " + frm.A34.value + "\n";
+}
+
+if (frm.A35.value !== ""){
+	Template += "  - Number of lymph nodes with micrometastasis (> 0.2 to 2 mm and/or > 200 cells): " + frm.A35.value + "\n";
+}
+
+if (frm.A36.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A36.value + " mm" + "\n";
+}
+
+if (frm.A37.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A37.value + " mm" + "\n";
+}
+
+if (frm.A38.value !== ""){
+	Template += "  - Extranodal extension (ENE) : " + frm.A38.value + "\n";
+}
+
+if (document.getElementById("A39").checked || document.getElementById("A40").checked ||
+    document.getElementById("A42").checked || document.getElementById("A43").checked || 
+	frm.A41.value + frm.A44.value !== ""){
+	Template += "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A39").checked || document.getElementById("A40").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A39").checked){
+	Template += "    " + frm.A39.value + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += "    " + frm.A40.value + "\n";
+}
+
+if (frm.A41.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A41.value + "\n";
+}
+
+if (document.getElementById("A42").checked || document.getElementById("A43").checked){
+	Template += "  - Regional lymph nodes modifier:" + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += "    " + frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += "    " + frm.A43.value + "\n";
+}
+
+if (frm.A44.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "  " + frm.A44.value + "\n";
+}
+
+if (frm.A45.value !== ""){
+	Template += "- Additional notes: " + "\n" + "  - " +  frm.A45.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>
+		<a href=".\cap\cp-breast-dcis-resection-19-4301.pdf" target="_blank">
+		<div class="tooltip">
+		Ductal carcinoma <i>in situ</i> of the breast
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a>
+		</h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+<li><p>
+<label class="description">- Procedure:</label>
+	<select class="element select medium" ID="A01">
+		<option value=""></option>
+		<option value="  - Excision (less than total mastectomy)">Excision (less than total mastectomy)</option> 
+		<option value="  - Total mastectomy (including nipple-sparing and skin-sparing mastectomy)">Total mastectomy (including nipple-sparing and skin-sparing mastectomy)</option>
+		<option value="  - Other (specify):">Other (specify):</option>
+		<option value="  - Not specified">Not specified</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Specimen laterality:</label>
+	<select class="element select medium" ID="A02">
+		<option value=""></option>
+		<option value="  - Right">Right</option> 
+		<option value="  - Left">Left</option>
+		<option value="  - Not specified">Not specified</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor site:</label> 
+<input type="checkbox" class="element checkbox" id="A03" value="  - Upper outer quadrant"><label class="element choice">Upper outer quadrant</label>
+<input type="checkbox" class="element checkbox" id="A04" value="  - Lower outer quadrant"><label class="element choice">Lower outer quadrant</label>
+<input type="checkbox" class="element checkbox" id="A05" value="  - Upper inner quadrant"><label class="element choice">Upper inner quadrant</label>
+<input type="checkbox" class="element checkbox" id="A06" value="  - Lower inner quadrant"><label class="element choice">Lower inner quadrant</label>
+<input type="checkbox" class="element checkbox" id="A07" value="  - Central"><label class="element choice">Central</label>
+<input type="checkbox" class="element checkbox" id="A08" value="  - Nipple"><label class="element choice">Nipple</label>
+<input type="checkbox" class="element checkbox" id="A09" value="  - Position (specify): o’clock"><label class="element choice">Position (specify): o’clock</label>
+<input type="checkbox" class="element checkbox" id="A10" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
+<input type="checkbox" class="element checkbox" id="A11" value="  - Not specified"><label class="element choice">Not specified</label>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor size:</label> 
+	<select class="element select medium" ID="A12">
+		<option value=""></option>
+		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
+	</select>
+</p>
+
+<p>
+- Number of blocks with DCIS out of total:
+<input type="text" class="element text small" ID="A13" size="10">
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<li><p>
+<label class="description">- Tumor histology and immunohistochemical studies: </label>
+	<textarea ID="A14" class="element textarea medium"></textarea>
+</p></li>
+
+<li><p>
+<label class="description">- Histologic type:</label> 
+	<select class="element select medium" ID="A14A">
+		<option value=""></option>
+		<option value="  - Ductal carcinoma in situ">Ductal carcinoma in situ</option>
+		<option value="  - Paget disease ">Paget disease </option>
+		<option value="  - Encapsulated papillary carcinoma without invasive carcinoma">Encapsulated papillary carcinoma without invasive carcinoma</option>
+		<option value="  - Solid papillary carcinoma without invasive carcinoma">Solid papillary carcinoma without invasive carcinoma</option>	
+		<option value="  - Other (specify):">Other (specify):</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Architectural patterns of ductal carcinoma in situ:</label> 
+<input type="checkbox" class="element checkbox" id="A15" value="  - Comedo"><label class="element choice">Comedo</label>
+<input type="checkbox" class="element checkbox" id="A16" value="  - Paget disease (DCIS involving nipple skin)"><label class="element choice">Paget disease (DCIS involving nipple skin)</label>
+<input type="checkbox" class="element checkbox" id="A17" value="  - Cribriform"><label class="element choice">Cribriform</label>
+<input type="checkbox" class="element checkbox" id="A18" value="  - Micropapillary"><label class="element choice">Micropapillary</label>
+<input type="checkbox" class="element checkbox" id="A19" value="  - Papillary"><label class="element choice">Papillary</label>
+<input type="checkbox" class="element checkbox" id="A20" value="  - Solid"><label class="element choice">Solid</label>
+<input type="checkbox" class="element checkbox" id="A21" value="  - Other, specify:"><label class="element choice">Other, specify:</label>
+</p></li>
+
+<li><p>
+<label class="description">- Nuclear grade:</label>
+	<select class="element select medium" ID="A22">
+		<option value=""></option>
+		<option value="  - Grade I (low)">Grade I (low)</option>
+		<option value="  - Grade II (intermediate)">Grade II (intermediate)</option>
+		<option value="  - Grade III (high)">Grade III (high)</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Necrosis: </label>
+	<select class="element select medium" ID="A23">
+		<option value=""></option>
+		<option value="  - Not identified">Not identified</option>
+		<option value="  - Present, focal (small foci or single cell necrosis)">Present, focal (small foci or single cell necrosis)</option>
+		<option value="  - Present, central (expansive “comedo” necrosis)">Present, central (expansive “comedo” necrosis)</option>
+	</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins: </label></legend>
+
+<li><p>
+<label class="description">- Anterior margin:</label>
+	<select class="element select medium" ID="A24">
+		<option value=""></option>
+		<option value="  - Cannot be assessed">Cannot be assessed</option>
+		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="  - Involved by DCIS">Involved by DCIS</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Posterior margin:</label>
+	<select class="element select medium" ID="A25">
+		<option value=""></option>
+		<option value="  - Cannot be assessed">Cannot be assessed</option>
+		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="  - Involved by DCIS">Involved by DCIS</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Superior margin:</label>
+	<select class="element select medium" ID="A26">
+		<option value=""></option>
+		<option value="  - Cannot be assessed">Cannot be assessed</option>
+		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="  - Involved by DCIS">Involved by DCIS</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Inferior margin:</label>
+	<select class="element select medium" ID="A27">
+		<option value=""></option>
+		<option value="  - Cannot be assessed">Cannot be assessed</option>
+		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="  - Involved by DCIS">Involved by DCIS</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Medial margin:</label>
+	<select class="element select medium" ID="A28">
+		<option value=""></option>
+		<option value="  - Cannot be assessed">Cannot be assessed</option>
+		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="  - Involved by DCIS">Involved by DCIS</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Lateral margin:</label>
+	<select class="element select medium" ID="A29">
+		<option value=""></option>
+		<option value="  - Cannot be assessed">Cannot be assessed</option>
+		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="  - Involved by DCIS">Involved by DCIS</option>
+	</select>
+</p></li>
+
+<li><p>
+<label class="description">- Other margins (specify):</label>
+	<select class="element select medium" ID="A30">
+		<option value=""></option>
+		<option value="  - Cannot be assessed">Cannot be assessed</option>
+		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="  - Involved by DCIS">Involved by DCIS</option>
+	</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+
+<li><p>
+- Number of regional lymph nodes examined:<br>
+<input type="text" class="element text small" ID="A31" size="10">
+</p></li>
+
+<li><p>
+- Number of sentinel lymph nodes examined:<br>
+<input type="text" class="element text small" ID="A32" size="10">
+</p></li>
+
+<li><p>
+- Number of lymph nodes with macrometastasis (>2 mm):<br>
+<input type="text" class="element text small" ID="A33" size="10">
+</p></li>
+
+<li><p>
+- Number of lymph nodes with micrometastasis (> 0.2 to 2 mm and/or > 200 cells):<br>
+<input type="text" class="element text small" ID="A34" size="10">
+</p></li>
+
+<li><p>
+- Number of lymph nodes with isolated tumor cells (0.2 mm or less and < or = 200 cells):<br>
+<input type="text" class="element text small" ID="A35" size="10">
+</p></li>
+
+<li><p>
+- Size of largest metastatic deposit (mm), specify site:<br>
+<input type="text" class="element text small" ID="A36" size="20">
+</p></li>
+
+<li><p>
+- Size of largest lymph node involved (mm), specify site:<br>
+<input type="text" class="element text small" ID="A37" size="20">
+</p></li>
+
+<li><p>
+- Extranodal extension:<br>
+	<select class="element select small" ID="A38">
+		<option value=""></option>
+		<option value="  - Not identified">Not identified</option>
+		<option value="  - Present">Present</option>
+		<option value="  - Cannot be determined">Cannot be determined</option>
+	</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	
+<li><p>
+  - TNM Descriptors:<br>
+<input type="checkbox" class="element checkbox" id="A39" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
+<input type="checkbox" class="element checkbox" id="A40" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
+</p></li>
+
+<li><p>
+  - Primary tumor (pT):<br>
+	<select class="element select medium" ID="A41">
+		<option value=""></option>
+		<option value="  - pTis(DCIS): Ductal carcinoma in situ">pTis(DCIS): Ductal carcinoma in situ</option>
+		<option value="  - pTis (Paget): Paget disease of the nipple not associated with invasive carcinoma and/or DCIS in the underlying breast parenchyma">pTis (Paget): Paget disease of the nipple not associated with invasive carcinoma and/or DCIS in the underlying breast parenchyma</option>
+	</select>
+</p></li>
+
+<li><p>
+  - Regional lymph nodes modifier: <br>
+<input type="checkbox" class="element checkbox" id="A42" value=" sn "><label class="element choice">sn Sentinel node(s) evaluated (< 6 lymph nodes)</label>
+<input type="checkbox" class="element checkbox" id="A43" value=" f  "><label class="element choice">f Nodal metastasis confirmed by fine needle aspiration or core needle biopsy</label>
+</p></li>
+
+<li><p>
+  - Regional lymph nodes (pN): <br>
+	<select class="element select medium" ID="A44">
+		<option value=""></option>
+		<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+		<option value="  - pN0: No regional lymph node metastasis or ITCs only">pN0: No regional lymph node metastasis or ITCs only</option>
+		<option value="  - pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm">pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm</option>
+		<option value="  - pN0(mol+): Positive molecular findings (RT-PCR), but no ITCs detected">pN0(mol+): Positive molecular findings (RT-PCR), but no ITCs detected</option>
+		<option value="  - pN1mi: Micrometastases (approximately 200 cells, > 0.2 mm to < or = 2.0 mm)">pN1mi: Micrometastases (approximately 200 cells, > 0.2 mm to < or = 2.0 mm)</option>
+		<option value="  - pN1a: Metastases in 1 to 3 axillary lymph nodes, at least 1 metastasis > 2.0 mm">pN1a: Metastases in 1 to 3 axillary lymph nodes, at least 1 metastasis > 2.0 mm</option>
+		<option value="  - pN1b: Metastases in ipsilateral internal mammary sentinel nodes, excluding ITCs">pN1b: Metastases in ipsilateral internal mammary sentinel nodes, excluding ITCs</option>
+		<option value="  - pN1c: pN1a and pN1b combined">pN1c: pN1a and pN1b combined</option>
+		<option value="  - pN2a: Metastases in 4 to 9 axillary lymph nodes (at least 1 tumor deposit > 2.0 mm)">pN2a: Metastases in 4 to 9 axillary lymph nodes (at least 1 tumor deposit > 2.0 mm)</option>
+		<option value="  - pN2b: Metastases in clinically detected internal mammary lymph nodes with or without microscopic confirmation; with pathologically negative axillary nodes">pN2b: Metastases in clinically detected internal mammary lymph nodes with or without microscopic confirmation; with pathologically negative axillary nodes</option>
+		<option value="  - pN3a: Metastases in 10 or more axillary lymph nodes (at least 1 tumor deposit > 2.0 mm) or metastases to the infraclavicular (Level III axillary lymph) nodes">pN3a:	Metastases in 10 or more axillary lymph nodes (at least 1 tumor deposit < 2.0 mm) or metastases to the infraclavicular (Level III axillary lymph) nodes</option>
+		<option value="  - pN3b: pN1a or pN2a in the presence of cN2b (positive internal mammary nodes by imaging); or pN2a in the presence of pN1b">pN3b: pN1a or pN2a in the presence of cN2b (positive internal mammary nodes by imaging); or pN2a in the presence of pN1b</option>
+		<option value="  - pN3c: Metastases in ipsilateral supraclavicular lymph nodes">pN3c: Metastases in ipsilateral supraclavicular lymph nodes</option>
+	</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A45" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Breast DCIS Resection 4.3.0.1 (September 2019).<br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

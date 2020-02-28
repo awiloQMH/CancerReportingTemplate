@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Breast IHC and DISH</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = ""
+
+
+if (frm.A01.value !== ""){
+	Template += "- Estrogen receptor: " + frm.A01.value + "\n";
+};
+
+if (frm.A02.value !== ""){
+	Template += "  - Intensity: " + frm.A02.value + "\n";
+};
+
+if (frm.A03.value !== ""){
+	Template += "  - Positive nuclei(%) : " + frm.A03.value + "\n";
+};
+
+if (frm.A04.value !== ""){
+	Template += "- Progesterone receptor: " + frm.A04.value + "\n";
+};
+
+if (frm.A05.value !== ""){
+	Template += "  - Intensity: " + frm.A05.value + "\n";
+};
+
+if (frm.A06.value !== ""){
+	Template += "  - Positive nuclei(%) : " + frm.A06.value + "\n";
+};
+
+if (frm.A07.value !== ""){
+	Template += "- HER2/neu oncoprotein IHC: " + frm.A07.value + "\n";
+};
+
+if (frm.A08.value !== ""){
+	Template += "  - Score : " + frm.A08.value + "\n";
+};
+
+if (frm.A09.value !== ""){
+	Template += "- HER2 DISH : " + frm.A09.value + "\n";
+};
+
+if (frm.A10.value !== ""){
+	Template += "  - Number of tumor cell counted : " + frm.A10.value + "\n";
+};
+
+if (frm.A11.value !== ""){
+	Template += "  - Average number of HER2 signals (black) per cell : " + frm.A11.value + "\n";
+};
+
+if (frm.A12.value !== ""){
+	Template += "  - Average number of CEP17 signals (red) per cell : " + frm.A12.value + "\n";
+};
+
+if (frm.A13.value !== ""){
+	Template += "  - HER2/CEP17 ratio : " + frm.A13.value + "\n";
+};
+
+if (document.getElementById("A14").checked || document.getElementById("A15").checked){
+	Template += "  - Other ISH abnormalities: "  + "\n";
+}
+
+if (document.getElementById("A14").checked){
+	Template += frm.A14.value + "\n";
+}
+
+if (document.getElementById("A15").checked){
+	Template += frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "- Proliferation index Ki67 (%) : "+ frm.A16.value + "\n";
+};
+
+if (frm.A17.value !== ""){
+	Template += "- Cold ischemia and fixation times : " + "\n" + frm.A17.value + "\n";
+};
+
+if (frm.A18.value !== ""){
+	Template += "- Fixation time in buffered formalin : " + frm.A18.value + "\n";
+};
+
+if (frm.A19.value !== ""){
+	Template += "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
+};
+
+if (frm.A01.value + frm.A04.value !== ""){
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system.";
+};
+
+if (frm.A07.value !== ""){
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system.";
+};
+
+
+if (frm.A09.value !== ""){
+	Template += "\n" + "Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by pathologist under light microscopy.";
+}; 
+  
+
+frm.holdtext.value = Template;
+}
+
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>
+		<a href=".\cap\cp-breast-18biomarker-1201.pdf" target="_blank">
+		<div class="tooltip">Breast biomarkers testing
+		<span class="tooltiptext">click to access further explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	
+<form>
+
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Hormonal receptors: </label></legend>
+<li>
+<p>
+<label class="description">- Estrogen recepter (ER) IHC:</label>
+	<select class="element select medium"  ID="A01">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative">Negative</option>
+		<option value="Positive (Allred score >2)">Positive (Allred score >2)</option>
+	</select>
+</p>
+
+<p>
+<label>- Intensity:</label><br>
+	<select class="element select small"  ID="A02">
+		<option value=""></option>
+		<option value="Negative (0)">Negative (0)</option>
+		<option value="Weak staining (1)">Weak staining (1)</option>
+		<option value="Moderate staining (2)">Moderate staining (2)</option>
+		<option value="Strong staining (3)">Strong staining (3)</option>
+	</select>
+</p>
+
+<p>
+<label>- Positive nuclei (%) :</label><br>
+	<select class="element select small"  ID="A03">
+		<option value=""></option>
+		<option value="None    (0)">None    (0)</option>
+		<option value="< 1%    (1)">< 1%    (1)</option>
+		<option value="1-10%   (2)">1-10%   (2)</option>
+		<option value="11-33%  (3)">11-33%  (3)</option>
+		<option value="34-65%  (4)">34-65%  (4)</option>
+		<option value="66-100% (5)">66-100% (5)</option>
+</select>
+</p>
+</li>
+<br>
+
+<li>
+<p>
+<label class="description">- Preogesterone recepter (PR) IHC:</label>
+	<select class="element select medium"  ID="A04">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative">Negative</option>
+		<option value="Positive (Allred score >2)">Positive (Allred score >2)</option>
+	</select>
+</p>
+
+<p>
+<label>- Intensity:</label><br>
+	<select class="element select small"  ID="A05">
+		<option value=""></option>
+		<option value="Negative (0)">Negative (0)</option>
+		<option value="Weak staining (1)">Weak staining (1)</option>
+		<option value="Moderate staining (2)">Moderate staining (2)</option>
+		<option value="Strong staining (3)">Strong staining (3)</option>
+	</select>
+</p>
+
+<p>
+<label>- Positive nuclei (%) :</label><br>
+	<select class="element select small"  ID="A06">
+		<option value=""></option>
+		<option value="None    (0)">None    (0)</option>
+		<option value="< 1%    (1)">< 1%    (1)</option>
+		<option value="1-10%   (2)">1-10%   (2)</option>
+		<option value="11-33%  (3)">11-33%  (3)</option>
+		<option value="34-65%  (4)">34-65%  (4)</option>
+		<option value="66-100% (5)">66-100% (5)</option>
+	</select>
+
+</p>
+</li>
+<br>
+</fieldset>
+
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> HER2 gene amplification: </label></legend>
+<li>
+<p>
+<label class="description">- HER2/neu oncoprotein IHC:</label>
+	<select class="element select medium"  ID="A07">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative for over-expression">Negative for over-expression</option>
+		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
+		<option value="Positive for over-expression">Positive for over-expression</option>
+	</select>
+</p>
+
+<p>
+<label>- Score:</label><br>
+	<select class="element select small"  ID="A08">
+		<option value=""></option>
+		<option value="0 (no staining or incomplete faint membrane staining within < or = 10% of invasive tumour cells) (i.e. negative)">0 (no staining or incomplete faint membrane staining within < or = 10% of invasive tumour cells) (i.e. negative)</option>
+		<option value="1 (incomplete, faint membrane staining within >10% of invasive tumour cells) (i.e. negative)">1 (incomplete, faint membrane staining within >10% of invasive tumour cells) (i.e. negative)</option>
+		<option value="2 (incomplete circumferential and/or weak/moderate staining within >10% of invasive tumour cells) (i.e. equivocal)">2 (incomplete circumferential and/or weak/moderate staining within >10% of invasive tumour cells) (i.e. equivocal)</option>
+		<option value="3 (circumferential, complete and intense membrane staining within >10% of invasive tumour cells) (i.e. positive)">3 (circumferential, complete and intense membrane staining within >10% of invasive tumour cells) (i.e. positive)</option>
+	</select>
+</p>
+</li>
+<br>
+<li><p>
+<iframe width="517" height="470" frameborder="1" scrolling="no" src="https://onedrive.live.com/embed?resid=4E150EF5229D3792%2130207&authkey=%21AFkAjAfw58fM5U4&em=2&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='HER2%20DISH'!C7&Item='HER2%20DISH'!A1%3AH22&wdHideGridlines=True&wdInConfigurator=True"></iframe></p>
+
+<br>-you may download the excel file if this embedded calculator does not work properly <a href=".\cap\her2_dish.xlsx" target="_blank">"CLICK HERE"</a>
+<br>
+<p>
+<label class="description">- HER2/neu oncoprotein DISH:</label>
+	<select class="element select medium"  ID="A09">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative for HER2 amplification">Negative for HER2 amplification</option>
+		<option value="Equivocal for HER2 amplification">Equivocal for over-expression</option>
+		<option value="Positive for HER2 amplification">Positive for HER2 amplification</option>
+	</select>
+</p>
+
+<p>
+- Number of tumor cell counted :
+<input type="text" class="element text small" ID="A10" size="10">
+</p>
+
+<p>
+- Average number of HER2 signals (black) per cell :
+<input type="text" class="element text small" ID="A11" size="10">
+</p>
+
+<p>
+- Average number of CEP17 signals (red) per cell :
+<input type="text" class="element text small" ID="A12" size="10">
+</p>
+
+<p>
+- HER2/CEP17 ratio :
+<input type="text" class="element text small" ID="A13" size="10">
+</p>
+
+<p>
+- Other ISH abnormalities:<br> 
+	<input type="checkbox" class="element checkbox" id="A14" value="    - Aneusomy"><label class="element choice">Aneusomy</label>
+	<input type="checkbox" class="element checkbox" id="A15" value="    - Heterogeneous signals"><label class="element choice">Heterogeneous signals</label>
+</p>
+</li>
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> <a href=".\cap\algorithim-evaluation-her2-Fig3.pdf" target="_blank">Dual probe ISH interpretation</a>: </label></legend>
+- Group 1 = HER2/CEP17 ratio > or = 2.0;  > or = 4.0 HER2 signals/cell<br>
+- Group 2 = HER2/CEP17 ratio > or = 2.0;  < 4.0 HER2 signals/cell (<a href=".\cap\algorithim-evaluation-her2-Fig4.pdf" target="_blank">ASCO 2018 guideline</a>)<br>
+- Group 3 = HER2/CEP17 ratio < 2.0;  > or = 6.0 HER2 signals/cell (<a href=".\cap\algorithim-evaluation-her2-Fig5.pdf" target="_blank">ASCO 2018 guideline</a>)<br>
+- Group 4 = HER2/CEP17 ratio < 2.0;  > or = 4.0 and < 6.0 HER2 signals/cell (<a href=".\cap\algorithim-evaluation-her2-Fig6.pdf" target="_blank">ASCO 2018</a>)<br>
+- Group 5 = HER2/CEP17 ratio < 2.0;  < 4.0 HER2 signals/cell<br>
+<br>
+
+<fieldset style="border-color:#e6e6ff;">
+	<legend> Negative:</legend>
+- Group 5;<br>
+- Group 4 and concurrent IHC 0-1+ or 2+;<br>
+- Group 3 and concurrent IHC 0-1+; and <br>
+- Group 2 and concurrent IHC 0-1+ or 2+;<br>
+<br>
+</fieldset>
+<fieldset  style="border-color:#e6e6ff;">
+	<legend> Positive: </legend>
+- Group 1;<br>
+- Group 2 and concurrent IHC 3+;<br>  
+- Group 3 and concurrent IHC 2+ or 3+; and<br>
+- Group 4 and concurrent IHC 3+ <br>	
+<br>
+</fieldset>
+<br>
+</fieldset>
+</fieldset>
+<li>
+<p>
+<label class="description">- Proliferation index Ki67 (MIB-1) (%) :</label>
+<input type="text" ID="A16" class="element text small" size="15">
+</p>
+</li>
+<br>
+<li>
+<p>
+<label>- Cold ischemia and fixation times :</label><br>
+	<select class="element select medium"  ID="A17">
+		<option value=""></option>
+		<option value="  - Meet requirements specified in latest version of the ASCO/CAP guidelines">Meet requirements specified in latest version of the ASCO/CAP guidelines</option>
+		<option value="  - Do not meet requirements specified in latest version of the ASCO/CAP guidelines">Do not meet requirements specified in latest version of the ASCO/CAP guidelines</option>
+		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
+	</select>
+</p>
+
+<p>
+<label>- Fixation time in buffered formalin :</label><br>
+	<select class="element select medium"  ID="A18">
+		<option value=""></option>
+		<option value="Optimal fixation (6-72 hours)">Optimal fixation (6-72 hours)</option>
+		<option value="Prolonged intervals (> 72 hours)">Prolonged intervals (> 72 hours)</option>
+		<option value="Uncertain">Uncertain</option>
+	</select>
+</p>
+</li>
+<li>
+<p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A19" class = "element textarea medium" style="border-color:grey;"></textarea> 
+</p>
+</li>
+
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated 14-Feb-2019, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>
+

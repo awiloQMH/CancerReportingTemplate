@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pancreas endocrine tumor</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor site: " + "\n" + "   - " + frm.A02.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Tumor focality: " + "\n" + "  - "+ frm.A04.value + "\n";
+}
+
+if (frm.A05.value !== ""){
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A05.value + "\n";
+}
+
+if (frm.A06.value !== ""){
+	Template += "- Histologic type and grade: " + "\n" + "  - " + frm.A06.value + "\n";
+}
+
+if (frm.A07.value !== ""){
+	Template += "- Mitotic count: " + "\n" + "  - " + frm.A07.value + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "- Ki-67 labeling index: " + "\n" + "  - "  + frm.A08.value + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "- Functional type: " + "\n" + "  - " + frm.A09.value + "\n" ;
+}
+
+
+if (document.getElementById("A10").checked || document.getElementById("A11").checked || document.getElementById("A12").checked || document.getElementById("A13").checked || document.getElementById("A14").checked || document.getElementById("A15").checked || document.getElementById("A16").checked ){
+	Template += "- Tumor extension: " + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += "  " +  frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += "  " +  frm.A11.value + "\n";
+}
+
+if (document.getElementById("A12").checked){
+	Template += "  " +  frm.A12.value + "\n";
+}
+
+if (document.getElementById("A13").checked){
+	Template += "  " +  frm.A13.value + "\n";
+}
+
+if (document.getElementById("A14").checked){
+	Template += "  " +  frm.A14.value + "\n";
+}
+
+if (document.getElementById("A15").checked){
+	Template += "  " +  frm.A15.value + "\n";
+}
+
+if (document.getElementById("A16").checked){
+	Template += "  " +  frm.A16.value + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Tumor necrosis: " + "\n" + "  - " + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A18.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A19.value + "\n";
+}
+
+if (frm.A20.value + frm.A21.value!== ""){
+	Template += "- Resection margins: " +"\n" + "  ";
+}
+
+if (frm.A20.value !== ""){
+	Template += "- Proximal pancreatic parenchymal margin: " + frm.A20.value + "\n" + "  ";
+}
+
+if (frm.A21.value !== ""){
+	Template += "- Other margin(s) (specify:): " + frm.A21.value + "\n";
+}
+
+if (frm.A22.value + frm.A23.value + frm.A24.value!== ""){
+	Template += "- Resection margins: " +"\n" + "  ";
+}
+
+if (frm.A22.value !== ""){
+	Template += "- Proximal pancreatic parenchymal margin: " + frm.A22.value + "\n" + "  ";
+}
+
+if (frm.A23.value !== ""){
+	Template += "- Distal pancreatic parenchymal margin: " + frm.A23.value + "\n" + "  ";
+}
+
+if (frm.A24.value !== ""){
+	Template += "- Other margin(s) (specify: ): " + frm.A24.value + "\n";
+}
+
+if (frm.A25.value + frm.A26.value !== ""){
+	Template += "- Resection margins: " +"\n" + "  ";
+}
+
+if (frm.A25.value !== ""){
+	Template += "- Distal margin: " + frm.A25.value + "\n" + "  ";
+}
+
+if (frm.A26.value !== ""){
+	Template += "- Other margin(s) (specify:): " + frm.A26.value + "\n";
+}
+
+if (frm.A27.value + frm.A28.value + frm.A29.value + frm.A30.value + frm.A31.value !== ""){
+	Template += "- Resection margins: " +"\n" + "  ";
+}
+
+if (frm.A27.value !== ""){
+	Template += "- Proximal margin (gastric or duodenal): " + frm.A27.value + "\n" + "  ";
+}
+
+if (frm.A28.value !== ""){
+	Template += "- Distal margin (distal duodenal or jejunal): " + frm.A28.value + "\n" + "  ";
+}
+
+if (frm.A29.value !== ""){
+	Template += "- Uncinate (retroperitoneal/superior mesenteric artery) margin: " + frm.A29.value + "\n" + "  ";
+}
+
+if (frm.A30.value !== ""){
+	Template += "- Bile duct margin: " + frm.A30.value + "\n" + "  ";
+}
+
+if (frm.A31.value !== ""){
+	Template += "- Pancreatic neck/parenchymal margin: " + frm.A31.value + "\n";
+}
+
+if (frm.A32.value + frm.A33.value + frm.A34.value !== ""){
+	Template += "- Regional lymph nodes: " + "\n";
+}	
+
+if (frm.A32.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A32.value + "\n";
+}
+
+if (frm.A33.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A33.value + "\n";
+}
+
+if (frm.A34.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A34.value + "\n";
+}
+
+if (frm.A48.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A48.value + " mm" + "\n";
+}
+
+if (frm.A49.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A49.value + " mm" + "\n";
+}
+
+if (document.getElementById("A35").checked || document.getElementById("A36").checked || document.getElementById("A37").checked || frm.A38.value!=="" || frm.A39.value!=="" || frm.A40.value!=="" || frm.A41.value!==""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A35").checked || document.getElementById("A36").checked || document.getElementById("A37").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A35").checked){
+	Template += "    " + frm.A35.value + "\n";
+}
+
+if (document.getElementById("A36").checked){
+	Template += "    " + frm.A36.value + "\n";
+}
+
+if (document.getElementById("A37").checked){
+	Template += "    " +frm.A37.value + "\n";
+}
+
+if (frm.A38.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "    - " + frm.A38.value + "\n";
+}
+
+if (frm.A39.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "    - " + frm.A39.value + "\n";
+}
+
+if (frm.A40.value !== ""){
+	Template += "  - Distant metastasis (required only if confirmed pathologically in this case): " + "\n" + "    - " + frm.A40.value + "\n";
+}
+
+if (frm.A41.value !== ""){
+	Template += "    - Specify site(s): " + frm.A41.value + "\n";
+}
+
+if (document.getElementById("A42").checked || document.getElementById("A43").checked ||  document.getElementById("A44").checked ||  document.getElementById("A45").checked || frm.A46.value !==""){
+	Template += "\n" + "- Additional pathologic findings: " + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += "  - " +  frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += "  - " +  frm.A43.value + "\n";
+}
+
+if (document.getElementById("A44").checked){
+	Template += "  - " +  frm.A44.value + "\n";
+}
+
+if (document.getElementById("A45").checked){
+	Template += "  - " +  frm.A45.value + "\n";
+}
+
+if (frm.A46.value !== ""){
+	Template += "  - " +  frm.A46.value + "\n";
+}
+
+if (frm.A47.value !== ""){
+	Template += "- Additional notes: " + "\n" + "  - " +  frm.A47.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-pancreas-endocrine-17protocol-4001.pdf" target="_blank">
+		<div class="tooltip">
+		Endocrine pancreas tumor
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+<li><p><label class="description">- Procedure:</label>
+<select class="element select medium" ID="A01">
+	<option value=""></option>
+	<option value="Excisional biopsy (enucleation)">Excisional biopsy (enucleation)</option> 
+	<option value="Pancreaticoduodenectomy (Whipple resection), partial pancreatectomy">Pancreaticoduodenectomy (Whipple resection), partial pancreatectomy</option>
+	<option value="Total pancreatectomy">Total pancreatectomy</option>
+	<option value="Distal pancreatectomy (pancreatic body/tail)"> Distal pancreatectomy (pancreatic body/tail)</option>
+	<option value="Segmental pancreatectomy (pancreatic body)">Segmental pancreatectomy (pancreatic body)</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Not specified">Not specified</option>
+	</select>
+</p></li>
+
+<li><p><label class="description">- Tumor site:</label> 
+<select class="element select medium" ID="A02">
+	<option value=""></option>
+	<option value="Pancreatic head">Pancreatic head</option>
+	<option value="Uncinate process">Uncinate process</option>
+	<option value="Pancreatic body">Pancreatic body</option>
+	<option value="Pancreatic tail">Pancreatic tail</option>
+	<option value="Other (specified):">Other (specified):</option>
+	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+	<option value="Not specified">Not specified</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- Tumor size:</label> 
+<select class="element select medium" ID="A03">
+		<option value=""></option>
+		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- Tumor focality:</label> 
+<select class="element select medium" ID="A04">
+	<option value=""></option>
+	<option value="Unifocal">Unifocal</option>
+	<option value="Multifocal (specify number of tumors):">Multifocal (specify number of tumors):</option>
+	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A05" name="A05" class="element textarea medium"></textarea>
+</p></li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">- Histologic type and grade:</label></legend> 
+<li><p>
+<select class="element select medium" ID="A06">
+	<option value=""></option>
+	<option value="G1: Well-differentiated neuroendocrine tumor">G1: Well-differentiated neuroendocrine tumor (mitosis < 2, Ki67 < 3)</option>
+	<option value="G2: Well-differentiated neuroendocrine tumor">G2: Well-differentiated neuroendocrine tumor (mitosis  2-20, Ki67 3-20)</option>
+	<option value="G3: Well-differentiated neuroendocrine tumor">G3: Well-differentiated neuroendocrine tumor (mitosis > 20, Ki67 > 20)</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="GX: Well-differentiated neuroendocrine tumor, grade cannot be assessed">GX: Well-differentiated neuroendocrine tumor, grade cannot be assessed:</option>
+	<option value="Not applicable">Not applicable</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- Mitotic rate:</label>
+Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup><br>
+Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup><br>
+<select class="element select medium" ID="A07">
+	<option value=""></option>
+	<option value="< 2 mitoses/2 mm2"> < 2 mitoses/2 mm2</option>
+	<option value="2 to 20 mitoses/2 mm2 (specify: )"> 2 to 20 mitoses/2 mm2 (specify: )</option>
+	<option value="> 20 mitoses per 2 mm2 (specify: )"> > 20 mitoses per 2 mm2 (specify: )</option> 
+	<option value="Cannot be determined (explain):"> Cannot be determined (explain):</option> 
+	<option value="Not applicable"> Not applicable</option> 
+</select>
+</p></li>
+
+<li><p><label class="description">- Ki-67 labeling index:</label>
+<select class="element select medium" ID="A08">
+	<option value=""></option>
+	<option value="< 3%">< 3%</option>
+	<option value="3% to 20% (specify: )"> 3% to 20% (specify: )</option>
+	<option value="> 20% (specify: )"> > 20% (specify: )</option>
+	<option value="Cannot be determined (explain):"> Cannot be determined (explain):</option> 
+	<option value="Not applicable"> Not applicable</option> 
+</select>
+</p></li>
+<br>
+</fieldset></p>
+
+<li><p><label class="description">- Functional type:</label>
+<select class="element select medium" ID="A09">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Pancreatic neuroendocrine tumor, functional">Pancreatic neuroendocrine tumor, functional</option>
+	<option value="Pancreatic neuroendocrine tumor, functional, insulin-producing (insulinoma)">Pancreatic neuroendocrine tumor, functional, insulin-producing (insulinoma)</option>
+	<option value="Pancreatic neuroendocrine tumor, functional, glucagon-producing (glucagonoma)">Pancreatic neuroendocrine tumor, functional, glucagon-producing (glucagonoma)</option>
+	<option value="Pancreatic neuroendocrine tumor, functional, somatostatin-producing (somatostatinoma)">Pancreatic neuroendocrine tumor, functional, somatostatin-producing (somatostatinoma)</option>
+	<option value="Pancreatic neuroendocrine tumor, functional, gastrin-producing (gastrinoma)">Pancreatic neuroendocrine tumor, functional, gastrin-producing (gastrinoma)</option>
+	<option value="Pancreatic neuroendocrine tumor, functional, vasoactive intestinal polypeptide (VIP)-producing (VIPoma)">Pancreatic neuroendocrine tumor, functional, vasoactive intestinal polypeptide (VIP)-producing (VIPoma)</option>
+	<option value="Pancreatic neuroendocrine tumor, functional, serotonin-producing (carcinoid)">Pancreatic neuroendocrine tumor, functional, serotonin-producing (carcinoid)</option>
+	<option value="Pancreatic neuroendocrine tumor, functional, other (specify):">Pancreatic neuroendocrine tumor, functional, other (specify):</option> 
+	<option value="Pancreatic neuroendocrine tumor, nonfunctional">Pancreatic neuroendocrine tumor, functional </option>
+	<option value="Pancreatic neuroendocrine tumor, functional status unknowna">Pancreatic neuroendocrine tumor, functional status unknown</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor extension:</label> 
+<input type="checkbox" class="element checkbox" id="A10" value="  - No evidence of primary tumor"><label class="choice">No evidence of primary tumor</label>
+<input type="checkbox" class="element checkbox" id="A11" value="  - Tumor is limited to the pancreas"><label class="choice">Tumor is limited to the pancreas</label>
+<input type="checkbox" class="element checkbox" id="A12" value="  - Tumor invades the common bile duct"><label class="choice">Tumor invades the common bile duct</label>
+<input type="checkbox" class="element checkbox" id="A13" value="  - Tumor invades the duodenum"><label class="choice">Tumor invades the duodenum</label>
+<input type="checkbox" class="element checkbox" id="A14" value="  - Tumor invades adjacent organs (specify):"><label class="choice">Tumor invades adjacent organs (specify):</label>
+<input type="checkbox" class="element checkbox" id="A15" value="  - Tumor invades the wall of large vessels (specify):"><label class="choice">Tumor invades the wall of large vessels (specify):</label>
+<input type="checkbox" class="element checkbox" id="A16" value="  - Cannot be assessed"><label class="choice">Cannot be assessed</label>
+</p></li>
+
+
+<li><p><label class="description">- Tumor necrosis: </label>
+<select class="element select medium" ID="A17">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- Lymphovascular invasion: </label>
+<select class="element select medium" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- Perineural invasion: </label>
+<select class="element select medium" ID="A19">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">For distal pancreatectomy specimens: </label></legend>
+
+<li><p>- Proximal pancreatic parenchymal margin:<br>
+<select class="element select medium" ID="A20">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p>- Other margin(s) (specify):<br>
+<select class="element select medium" ID="A21">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">For segmental pancreatectomy specimens: </label></legend>
+<li><p>- Proximal pancreatic parenchymal margin:<br>
+<select class="element select medium" ID="A22">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p>- Distal pancreatic parenchymal margin:<br>
+<select class="element select medium" ID="A23">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p>- Other margin(s) (specify):<br>
+<select class="element select medium" ID="A24">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">For enucleation specimens: </label></legend>
+<li><p>- Pancreatic parenchymal margin:<br>
+<select class="element select medium" ID="A25">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p>- Other margin(s) (specify):<br>
+<select class="element select medium" ID="A26">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">For pancreaticoduodenal resection specimens: </label></legend>
+<li><p>- Proximal margin (gastric or duodenal):<br>
+<select class="element select medium" ID="A27">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p>- Distal margin (distal duodenal or jejunal):<br>
+<select class="element select medium" ID="A28">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p>- Uncinate (retroperitoneal/superior mesenteric artery) margin:<br>
+<select class="element select medium" ID="A29">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p>- Bile duct margin:<br>
+<select class="element select medium" ID="A30">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+
+<li><p>- Pancreatic neck/parenchymal margin:<br>
+<select class="element select medium" ID="A31">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+<li><p>- Number of regional lymph nodes examined:
+<input type="text" name="A32" class="element text small" ID="A32" size="10"></p>
+<p>- Number of lymph nodes involved:
+<input type="text" name="A33" class="element text small" ID="A33" size="10"></p></li>
+<li><p>- Extranodal extension:
+<select class="element select small" ID="A34">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>- Size of largest metastatic deposit (mm), specify site:
+<input type="text" class="element textarea small" ID="A48" size="20"></p>
+
+<p>- Size of largest lymph node involved (mm), specify site:
+<input type="text" class="element textarea small" ID="A49" size="20"></p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e): </label></legend>
+	
+<li><p>  - TNM Descriptors: <br>
+<input type="checkbox" class="element checkbox" id="A35" value="m (multiple primary tumors)"><label class="choice">m (multiple primary tumors)</label>
+<input type="checkbox" class="element checkbox" id="A36" value="r (recurrent)"><label class="choice">r (recurrent)</label>
+<input type="checkbox" class="element checkbox" id="A37" value="y (post treatment)"><label class="choice">y (post treatment)</label>
+</p></li>
+
+<li><p>  - Primary tumor (pT):<br>
+<select class="element select medium" ID="A38">
+	<option value=""></option>
+	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="pT1: Tumor limited to the pancreas, <2 cm">pT1: Tumor limited to the pancreas, <2 cm</option>
+	<option value="pT2: Tumor limited to the pancreas, 2-4 cm">pT2: Tumor limited to the pancreas, 2-4 cm</option>
+	<option value="pT3: Tumor limited to the pancreas, >4 cm; or tumor invading the duodenum or common bile duct">pT3: Tumor limited to the pancreas, >4 cm; or tumor invading the duodenum or common bile duct</option>
+	<option value="pT4: Tumor invading adjacent organs or the wall of large vessels ">pT4: Tumor invading adjacent organs or the wall of large vessels</option>
+</select>
+</p></li>
+
+<li><p>  - Regional lymph nodes (pN): <br>
+<select class="element select medium" ID="A39">
+	<option value=""></option>
+	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
+</select>
+</p></li>
+
+<li><p>  - Distant metastasis (pM): <br>
+<select class="element select medium" ID="A40">
+	<option value=""></option>
+	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
+	<option value="pM1a: Metastasis confined to liver">pM1a: Metastasis confined to liver</option>
+	<option value="pM1b: Metastasis in at least one extrahepatic site">pM1b: Metastasis in at least one extrahepatic site</option>
+	<option value="pM1c: Both hepatic and extrahepatic metastases">pM1c: Both hepatic and extrahepatic metastases</option>
+</select>
+</p>
+<p>
+    - Specify site(s), if known:<br>
+<input type="text" name="A41" class="element text small" ID="A41" size="35">
+</p><li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+<li><p>
+<input type="checkbox" class="element checkbox" id="A42" value="Atrophy"><label class="choice">Atrophy</label>
+<input type="checkbox" class="element checkbox" id="A43" value="Chronic inflammation"><label class="choice">Chronic inflammation</label>
+<input type="checkbox" class="element checkbox" id="A44" value="Acute pancreatitis"><label class="choice">Acute pancreatitis</label>
+<input type="checkbox" class="element checkbox" id="A45" value="Adenomatosis (multiple neuroendocrine tumors, < 5 mm each)"><label class="choice">Adenomatosis (multiple neuroendocrine tumors, < 5 mm each)</label>
+- Other (specify) :
+<input type="text" name="A46" class="element text medium" ID="A46" size="35">
+</p></li>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A47" name="A47" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 18-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+PancreasEndocrine 4.0.0.1 (June 201), <br>
+html was form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

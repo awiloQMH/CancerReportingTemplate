@@ -1,0 +1,750 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Carcinoma of the Perihilar Bile Ducts</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
+}
+
+if (document.getElementById("A02").checked || document.getElementById("A03").checked ||
+	document.getElementById("A04").checked || document.getElementById("A05").checked ||
+	document.getElementById("A06").checked || document.getElementById("A07").checked ||
+	document.getElementById("A08").checked){
+	Template += "- Tumor site: " + "\n";
+}
+
+if (document.getElementById("A02").checked){
+	Template += frm.A02.value + "\n";
+}
+
+if (document.getElementById("A03").checked){
+	Template += frm.A03.value + "\n";
+}
+
+if (document.getElementById("A04").checked){
+	Template += frm.A04.value + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += frm.A08.value + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "- Tumor size: " + "\n" + frm.A09.value + "\n";
+}
+
+if (frm.A10.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A10.value + "\n";
+}
+
+if (frm.A11.value !== ""){
+	Template += "- Histologic type: " + "\n" + frm.A11.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "- Histologic grade: " + "\n" + frm.A12.value + "\n";
+}
+
+if (frm.A13.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + frm.A13.value + "\n";
+}
+
+if (frm.A14.value !== ""){
+	Template += "- Perineural invasion: " + "\n" + frm.A14.value + "\n";
+}
+
+if (document.getElementById("A15").checked || document.getElementById("A16").checked ||
+	document.getElementById("A17").checked || document.getElementById("A18").checked ||
+	document.getElementById("A19").checked || document.getElementById("A20").checked ||
+	document.getElementById("A21").checked || document.getElementById("A22").checked ||
+	document.getElementById("A23").checked || document.getElementById("A24").checked ||
+	document.getElementById("A25").checked || document.getElementById("A26").checked ||
+	document.getElementById("A27").checked || document.getElementById("A28").checked){
+	Template += "- Tumor extension: " + "\n";
+}
+
+if (document.getElementById("A15").checked){
+	Template += frm.A15.value + "\n";
+}
+
+if (document.getElementById("A16").checked){
+	Template += frm.A16.value + "\n";
+}
+
+if (document.getElementById("A17").checked){
+	Template += frm.A17.value + "\n";
+}
+
+if (document.getElementById("A18").checked){
+	Template += frm.A18.value + "\n";
+}
+
+if (document.getElementById("A19").checked){
+	Template += frm.A19.value + "\n";
+}
+
+if (document.getElementById("A20").checked){
+	Template += frm.A20.value + "\n";
+}
+
+if (document.getElementById("A21").checked){
+	Template += frm.A21.value + "\n";
+}
+
+if (document.getElementById("A22").checked){
+	Template += frm.A22.value + "\n";
+}
+
+if (document.getElementById("A23").checked){
+	Template += frm.A23.value + "\n";
+}
+
+if (document.getElementById("A24").checked){
+	Template += frm.A24.value + "\n";
+}
+
+if (document.getElementById("A25").checked){
+	Template += frm.A25.value + "\n";
+}
+
+if (document.getElementById("A26").checked){
+	Template += frm.A26.value + "\n";
+}
+
+if (document.getElementById("A27").checked){
+	Template += frm.A27.value + "\n";
+}
+
+if (document.getElementById("A28").checked){
+	Template += frm.A28.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "- Depth of tumor extension: " + "\n" + frm.A29.value + "\n";
+}
+
+if (frm.A30.value + frm.A31.value +frm.A32.value +frm.A33.value +frm.A34.value +frm.A35.value +frm.A36.value +
+	frm.A37.value +frm.A38.value +frm.A57.value +frm.A58.value !==""){
+	Template += "\n" + "- Surgical margins: " + "\n";
+}
+
+if (frm.A30.value !== ""){
+	Template +=  "  " + "- Proximal margin: "  +"\n" + "    - " + frm.A30.value + "\n" ;
+}
+
+if (frm.A31.value !== ""){
+	Template +=  "  " + "- Distal margin: "  +"\n" + "    - " + frm.A31.value + "\n" ;
+}
+
+if (frm.A32.value !== ""){
+	Template +=  "  " + "- Radial margin: "  +"\n" + "    - " + frm.A32.value + "\n" ;
+}
+
+if (frm.A33.value !== ""){
+	Template +=  "  " + "- Other margin(s), specify : "  +"\n" + "    - " + frm.A33.value + "\n" ;
+}
+
+if (frm.A34.value !== ""){
+	Template +=  "  " + "- Bile duct margin: "  +"\n" + "    - " + frm.A34.value + "\n" ;
+}
+
+if (frm.A35.value !== ""){
+	Template +=  "  " + "- Hepatic parenchymal margin: "  +"\n" + "    - " + frm.A35.value + "\n" ;
+}
+
+if (frm.A36.value !== ""){
+	Template +=  "  " + "- Radial margin: "  +"\n" + "    - " + frm.A36.value + "\n" ;
+}
+
+if (frm.A57.value !== ""){
+	Template +=  "  " + "- Other margin(s), specify : "  +"\n" + "    - " + frm.A57.value + "\n" ;
+}
+
+if (frm.A37.value !== ""){
+	Template +=  "  " + "- Bile duct margin: "  +"\n" + "    - " + frm.A37.value + "\n" ;
+}
+
+if (frm.A58.value !== ""){
+	Template +=  "  " + "- Radial margin: "  +"\n" + "    - " + frm.A58.value + "\n" ;
+}
+
+if (frm.A38.value !== ""){
+	Template +=  "  " + "- Other margin(s), specify : "  +"\n" + "    - " + frm.A38.value + "\n" ;
+}
+
+if (frm.A39.value + frm.A40.value + frm.A41.value + frm.A42.value + frm.A43.value !== ""){
+	Template += "- Lymph nodes examination: " + "\n";
+}	
+
+if (frm.A39.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A39.value + "\n";
+}
+
+if (frm.A40.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A40.value + "\n";
+}
+
+if (frm.A41.value !== ""){
+	Template += "  - Extranodal extension (ENE) : " + frm.A41.value + "\n";
+}
+
+if (frm.A42.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A42.value + " mm" + "\n";
+}
+
+if (frm.A43.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A43.value + " mm" + "\n";
+}
+
+if (document.getElementById("A44").checked || document.getElementById("A45").checked ||
+	document.getElementById("A46").checked || frm.A47.value + frm.A48.value + frm.A49.value
+	+ frm.A50.value !== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A44").checked || document.getElementById("A45").checked ||
+	document.getElementById("A46").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A44").checked){
+	Template += "    " + frm.A44.value + "\n";
+}
+
+if (document.getElementById("A45").checked){
+	Template += "    " + frm.A45.value + "\n";
+}
+
+if (document.getElementById("A46").checked){
+	Template += "    " +frm.A46.value + "\n";
+}
+
+if (frm.A47.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A47.value + "\n";
+}
+
+if (frm.A48.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "  " + frm.A48.value + "\n";
+}
+
+if (frm.A49.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A49.value + "\n";
+}
+
+if (frm.A50.value !== ""){
+	Template += "    - Specify site(s): " + frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked || document.getElementById("A52").checked ||
+	document.getElementById("A53").checked || document.getElementById("A54").checked ||
+	frm.A55.value !==""){
+	Template += "\n" +  "- Additional pathologic findings: " + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
+if (frm.A55.value !== ""){
+	Template += "  - Others (specify): " +  frm.A55.value + "\n";
+}
+
+if (frm.A56.value !== ""){
+	Template += "- Additional notes: " + "\n" + "  - " +  frm.A56.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>
+		<a href=".\cap\cp-perihilar-bileducts-17protocol-4001.pdf" target="_blank">
+		<div class="tooltip">
+		Carcinoma of the Perihilar Bile Ducts
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		<a>
+		</h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+<li><p>
+<label class="description">- Procedure:</label>
+<select class="element select medium" ID="A01">
+	<option value=""></option>
+	<option value="  - Hilar and hepatic resection">Pancreaticoduodenectomy (Whipple resection)</option> 
+	<option value="  - Segmental resection of bile ducts(s)">Segmental resection of bile ducts(s)</option> 
+	<option value="  - Choledochal cyst resection">Choledochal cyst resection</option> 
+	<option value="  - Total hepatectomy">Other (specify):</option>
+	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="  - Not specified">Not specified</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor site:</label>
+<input type="checkbox" class="element checkbox" id="A02" value="  - Right hepatic duct"><label class="element choice">Common bile duct</label>
+<input type="checkbox" class="element checkbox" id="A03" value="  - Left hepatic duct"><label class="element choice">Common bile duct, extrapancreatic</label>
+<input type="checkbox" class="element checkbox" id="A04" value="  - Junction of right and left hepatic ducts"><label class="element choice">Common bile duct, intrapancreatic</label>
+<input type="checkbox" class="element checkbox" id="A05" value="  - Cystic duct"><label class="element choice">Other (specify):</label>
+<input type="checkbox" class="element checkbox" id="A06" value="  - Common hepatic duct"><label class="element choice">Not specified</label>
+<input type="checkbox" class="element checkbox" id="A07" value="  - Other (specify): "><label class="element choice">Other (specify):</label>
+<input type="checkbox" class="element checkbox" id="A08" value="  - Not specified"><label class="element choice">Not specified</label>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor size:</label> 
+<select class="element select medium" ID="A09">
+		<option value=""></option>
+		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+
+<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A10" class="element textarea medium"></textarea>
+</p></li>
+
+<li><p>
+<label class="description">- Histologic type:</label> 
+<select class="element select medium" ID="A11">
+	<option value=""></option>
+	<option value="  - Adenocarcinoma">Adenocarcinoma</option>
+	<option value="  - Adenocarcinoma, intestinal type">Adenocarcinoma, intestinal type</option>
+	<option value="  - Adenocarcinoma, biliary type">Adenocarcinoma, biliary type</option>	
+	<option value="  - Adenocarcinoma, gastric foveolar type">Adenocarcinoma, gastric foveolar type</option>
+	<option value="  - Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>
+	<option value="  - Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
+	<option value="  - Mucinous adenocarcinoma">Mucinous adenocarcinoma</option>
+	<option value="  - Clear cell adenocarcinoma">Clear cell adenocarcinoma</option>
+	<option value="  - Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>
+	<option value="  - Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="  - Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>	
+	<option value="  - Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
+	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
+	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+	<option value="  - Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
+	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="  - Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Histologic grade:</label>
+<select class="element select medium" ID="A12">
+	<option value=""></option>
+	<option value="  - G1: Well-differentiated">G1: Well-differentiated</option>
+	<option value="  - G2: Moderately differentiated">G2: Moderately differentiated</option>
+	<option value="  - G3: Poorly differentiated">G3: Poorly differentiated</option>
+	<option value="  - GX: Cannot be assessed">GX: Cannot be assessed</option>
+	<option value="  - Not applicable">Not applicable</option>	
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Lymphovascular invasion: </label>
+<select class="element select medium" ID="A13">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present">Present</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Perineural invasion: </label>
+<select class="element select medium" ID="A14">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present">Present</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor extension:</label>
+<input type="checkbox" class="element checkbox" id="A15" value="  - No evidence of primary tumor"><label class="element choice">No evidence of primary tumor</label>
+<input type="checkbox" class="element checkbox" id="A16" value="  - No invasion (carcinoma in situ/high-grade dysplasia)"><label class="element choice">No invasion (carcinoma in situ/high-grade dysplasia)</label>
+<input type="checkbox" class="element checkbox" id="A17" value="  - Tumor confined to the bile duct histologically"><label class="element choice">Tumor confined to the bile duct histologically</label>
+<input type="checkbox" class="element checkbox" id="A18" value="  - Tumor invades beyond the wall of the bile duct into surrounding connective tissue"><label class="element choice">Tumor invades beyond the wall of the bile duct into surrounding connective tissue</label>
+<input type="checkbox" class="element checkbox" id="A19" value="  - Tumor invades the adjacent liver parenchyma"><label class="element choice">Tumor invades the adjacent liver parenchyma</label>
+<input type="checkbox" class="element checkbox" id="A20" value="  - Tumor invades the gallbladder"><label class="element choice">Tumor invades gallbladder</label>
+<input type="checkbox" class="element checkbox" id="A21" value="  - Tumor invades the unilateral branches of the portal vein (right or left)"><label class="element choice">Tumor directly invades adjacent organs other than the gallbladder, specify:</label>
+<input type="checkbox" class="element checkbox" id="A22" value="  - Tumor invades the unilateral branches of the hepatic artery (right or left)"><label class="element choice">Tumor invades the pancreas</label>
+<input type="checkbox" class="element checkbox" id="A23" value="  - Tumor invades main portal vein or its branches bilaterally"><label class="element choice">Tumor invades the pancreas, involves posterior surface of pancreas</label>
+<input type="checkbox" class="element checkbox" id="A24" value="  - Tumor invades common hepatic artery"><label class="element choice">Tumor invades the pancreas, involves anterior surface of pancreas</label>
+<input type="checkbox" class="element checkbox" id="A25" value="  - Tumor invades second-order biliary radicals, unilateral"><label class="element choice">Tumor invades the pancreas, involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein)</label>
+<input type="checkbox" class="element checkbox" id="A26" value="  - Tumor invades second-order biliary radicals, bilateral"><label class="element choice">Tumor invades gallbladder</label>
+<input type="checkbox" class="element checkbox" id="A27" value="  - Tumor directly invades adjacent organs other than the gallbladder, specify: "><label class="element choice">Tumor directly invades adjacent organs other than the gallbladder, specify:</label>
+<input type="checkbox" class="element checkbox" id="A28" value="  - Cannot be assessed"><label class="element choice">Cannot be assessed</label>
+</p></li>
+
+<li><p>
+<label class="description">- Depth of tumor extension: </label>
+<select class="element select medium" ID="A29">
+	<option value=""></option>
+	<option value="  - No invasion (carcinoma in situ/high-grade dysplasia)">No invasion (carcinoma in situ/high-grade dysplasia)</option>
+	<option value="  - Tumor invades with a depth < 5 mm">Tumor invades with a depth < 5 mm</option>
+	<option value="  - Tumor invades with a depth of 5 - 12 mm">Tumor invades with a depth of 5 - 12 mm</option>
+	<option value="  - Tumor invades with a depth > 12 mm">Tumor invades with a depth > 12 mm</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of segmental excision:</label></legend>
+
+<li><p>- Proximal margin:<br>
+<select class="element select medium" ID="A30">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
+	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
+</select>
+</p></li>
+
+<li><p>- Distal margin:<br>
+<select class="element select medium" ID="A31">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
+	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
+</select>
+</p></li>
+
+<li><p>- Radial margin:<br>
+<select class="element select medium" ID="A32">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+</select>
+</p></li>
+
+<li><p>- Other margin(s), specify :<br>
+<select class="element select medium" ID="A33">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of hilar resection and partial hepatectomy:</label></legend>
+
+<li><p>- Bile duct margin:<br>
+<select class="element select medium" ID="A34">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
+	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
+</select>
+</p></li>
+
+<li><p>- Hepatic parenchymal margin:<br>
+<select class="element select medium" ID="A35">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+</select>
+</p></li>
+
+<li><p>- Radial margin:<br>
+<select class="element select medium" ID="A36">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+</select>
+</p></li>
+
+<li><p>- Other margin(s), specify :<br>
+<select class="element select medium" ID="A57">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of total hepatectomy:</label></legend>
+
+<li><p>- Bile duct margin:<br>
+<select class="element select medium" ID="A37">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
+	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
+</select>
+</p></li>
+
+<li><p>- Radial margin:<br>
+<select class="element select medium" ID="A58">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+</select>
+</p></li>
+
+<li><p>- Other margin(s), specify :<br>
+<select class="element select medium" ID="A38">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional ymph nodes: </label></legend>
+<table border="1">
+
+<tr>
+<td>
+- Number of regional lymph nodes examined:
+</td>
+<td>
+<input type="text" class="element text large" ID="A39" size="15">
+</tr>
+
+<tr>
+<td>
+- Number of lymph nodes involved (specify locations):
+</td>
+<td>
+<input type="text" class="element text large" ID="A40" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Extranodal extension:
+</td>
+<td>
+<select class="element select large" ID="A41">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+- Size of largest metastatic deposit (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A42" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Size of largest lymph node involved (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A43" size="15">
+</td>
+</tr>
+</table>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	
+<li><p>  - TNM Descriptors:<br>
+<input type="checkbox" class="element checkbox" id="A44" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
+<input type="checkbox" class="element checkbox" id="A45" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
+<input type="checkbox" class="element checkbox" id="A46" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
+</p></li>
+
+<li><p>  - Primary tumor (pT):<br>
+<select class="element select medium" ID="A47">
+	<option value=""></option>
+	<option value="  - pTX: Primary tumor thickness cannot be assessed, explain: ">pTX: Primary tumor thickness cannot be assessed, explain: </option>
+	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="  - pTis: Carcinoma in situ/high-grade dysplasia">pTis: Carcinoma in situ/high-grade dysplasia</option>
+	<option value="  - pT1: Tumor confined to the bile duct, with extension up to the muscle layer or fibrous tissue">pT1: Tumor invades the bile duct wall with a depth < 5 mm</option>
+	<option value="  - pT2: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue, or tumor invades adjacent hepatic parenchyma">pT2: Tumor invades the bile duct wall with a depth of 5 - 12 mm</option>
+	<option value="  - pT2a: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue">pT2a: Tumor invades the bile duct wall with a depth of 5 - 12 mm</option>
+	<option value="  - pT2b: Tumor invades adjacent hepatic parenchyma">pT2b: Tumor invades the bile duct wall with a depth of 5 - 12 mm</option>
+	<option value="  - pT3: Tumor invades unilateral branches of the portal vein or hepatic artery">pT3: Tumor invades the bile duct wall with a depth > 12 mm</option>
+	<option value="  - pT4: Tumor invades the main portal vein or its branches bilaterally, or the common hepatic artery; or unilateral second-order biliary radicals with contralateral portal vein or hepatic artery involvement">pT4: Tumor invades the main portal vein or its branches bilaterally, or the common hepatic artery; or unilateral second-order biliary radicals with contralateral portal vein or hepatic artery involvement</option>
+</select>
+</p></li>
+
+<li><p>  - Regional lymph nodes (pN): <br>
+<select class="element select medium" ID="A48">
+	<option value=""></option>
+	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="  - pN1: Metastasis in 1 - 3 regional lymph nodes, typically involving the hilar, cystic duct, common bile duct, hepatic artery, posterior pancreatoduodenal, and portal vein lymph nodes">pN1: Metastasis in 1 - 3 regional lymph nodes, typically involving the hilar, cystic duct, common bile duct, hepatic artery, posterior pancreatoduodenal, and portal vein lymph nodes</option>
+	<option value="  - pN2: Metastasis in > or = 4 regional lymph nodes, from sites in pN1">pN2: Metastasis in > or = 4 regional lymph nodes, from sites in pN1</option>
+</select>
+</p></li>
+
+<li><p>  - Distant metastasis (pM): <br>
+<select class="element select medium" ID="A49">
+	<option value=""></option>
+	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
+</select>
+</p>
+
+<p>    - Specify site(s), if known:<br>
+<input type="text" class="element text small" ID="A50" size="35">
+</p>
+<br>
+</fieldset>
+</p></li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+
+<li><p>
+<input type="checkbox" class = "element checkbox"  id="A51" value="  - Choledochal cyst"><label class="element choice">Choledochal cyst</label>
+<input type="checkbox" class = "element checkbox"  id="A52" value="  - Dysplasia"><label class="element choice">Dysplasia</label>
+<input type="checkbox" class = "element checkbox"  id="A53" value="  - Primary sclerosing cholangitis"><label class="element choice">Primary sclerosing cholangitis</label>
+<input type="checkbox" class = "element checkbox"  id="A54" value="  - Biliary stones"><label class="element choice">Biliary stones</label>
+</p>
+<p>
+- Other (specify):
+<input type="text" class = "element text medium" ID="A55" size="35">
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A56" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+PerihilarBileDuct 4.0.0.1 (June 2017), <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

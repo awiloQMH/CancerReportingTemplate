@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CNS meningioma</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Histological type (WHO 2016): " + frm.A01.value + "\n"+ "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- WHO Grade: " + frm.A02.value + "\n"+ "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - "+ frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Mitotic count (adjusted for Nikon 22 mm eyepiece): " + "\n" + "  - " + frm.A04.value + "\n";
+}
+
+if (frm.A05.value !== ""){
+	Template += "- Brain invasion: " + "\n" + "  - " + frm.A05.value + "\n";
+}
+
+if (frm.A06.value + frm.A07.value + frm.A08.value + frm.A09.value + frm.A10.value !== ""){
+	Template += "- Atypical features (at least 3 out of 5 required for diagnosis of 'atypical meningioma'): " + "\n";
+}
+
+if (frm.A06.value !== ""){
+	Template += "  - Increased cellularity: " + "\n" + "    - " + frm.A06.value + "\n";
+}
+
+if (frm.A07.value !== ""){
+	Template += "  - Patternless growth: " + "\n" + "    - "  + frm.A07.value + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "  - Increased nuclear to cytoplasmic ratio (small cell change): " + "\n" + "    - " + frm.A08.value + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "  - Prominent nucleoli: " + "\n" + "    - "  + frm.A09.value + "\n";
+}
+
+if (frm.A10.value !== ""){
+	Template += "  - Necrosis: " + "\n" + "    - "  +  frm.A10.value + "\n" ;
+}
+
+if (frm.A11.value !== ""){
+	Template += "- Anaplasia (sarcoma, carcinoma, or melanoma-like histology): " + "\n" + "   - "  + frm.A11.value + "\n" ;
+}
+
+if (frm.A12.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A12.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>Meningioma</h2>
+	</div>
+<form>
+<li>
+<p><label class="description">- Histological type (WHO 2016):</label>
+<select class="element select medium" ID="A01">
+ <option value=""></option>
+ <option value="Meningioma">Meningioma</option> 
+ <option value="Meningothelial meningioma">Meningothelial meningioma</option>
+ <option value="Fibrous meningioma">Fibrous meningioma </option>
+ <option value="Transitional meningioma">Transitional meningioma</option>
+ <option value="Psammomatous meningioma">Psammomatous meningioma</option>
+ <option value="Angiomatous meningioma">Angiomatous meningioma</option>
+ <option value="Microcystic meningioma">Microcystic meningioma</option> 
+ <option value="Secretory meningioma">Secretory meningioma</option>
+ <option value="Lymphoplasmacyte-rich meningioma">Lymphoplasmacyte-rich meningioma</option>
+ <option value="Metaplastic meningioma">Metaplastic meningioma</option>
+ <option value="Chordoid meningioma">Chordoid meningioma</option>
+ <option value="Clear cell meningioma">Clear cell meningioma</option>
+ <option value="Atypical meningioma">Atypical meningioma</option>
+ <option value="Papillary meningioma">Papillary meningioma</option>
+ <option value="Rhabdoid meningioma">Rhabdoid meningioma</option>
+ <option value="Anaplastic (malignant) meningioma">Anaplastic (malignant) meningioma</option>
+</select>
+</p>
+</li>
+<li>
+<p><label class="description">- WHO Grade:</label> 
+<select class="element select medium" ID="A02">
+ <option value=""></option>
+ <option value="I">I</option>
+ <option value="II">II</option>
+ <option value="III">III</option>
+ <option value="Not applicable">Not applicable</option>
+ <option value="Cannot be determined, specify details:">Cannot be determined, specify details:</option>
+</select>
+</p>
+<li>
+
+<li><p>
+<label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A03" name="A03" class="element textarea medium"></textarea>
+</p></li>
+
+<li>
+<p>
+<label class="description">- Mitotic count (adjusted for Nikon 22 mm eyepiece):</label>
+<select class="element select medium" ID="A04">
+	<option value=""></option>
+	<option value="< 6 / 10 HPFs"> < 6 / 10 HPFs</option>
+	<option value="> or = 6 / 10 HPFs (atypical meningioma)"> > or = 6 / 10 HPFs (atypical meningioma)</option>
+	<option value="> or = 30 / 10 HPFs (anaplastic meningioma)"> > or = 30 / 10 HPFs (anaplastic meningioma)</option> 
+</select>
+</p>
+</li>
+<li>
+<p>
+<label class="description">- Brain invasion:</label>
+<select class="element select medium" ID="A05">
+	<option value=""></option>
+	<option value="Present (WHO Grade II)">Present (WHO Grade II)</option>
+	<option value="Absent"> Absent</option>
+	<option value="No brain parenchyma seen">No brain parenchyma seen</option> 
+</select>
+</p>
+</li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">- Atypical features:</label></legend>
+<p>
+- at least 3 out of 5 required for diagnosis of "atypical meningioma"
+</p>
+<br>
+<li>
+<p>	
+- Increased cellularity:<br>
+    <select class="element select small" ID="A06">
+			<option value=""></option>
+			<option value="Present">Present</option>
+			<option value="Absent">Absent</option>
+	</select>
+	</p>
+</li>
+<li><p>
+- Patternless growth:<br>
+    <select class="element select small" ID="A07">
+			<option value=""></option>
+			<option value="Present">Present</option>
+			<option value="Absent">Absent</option>
+	</select>
+ </p></li>
+<li><p>
+- Increased nuclear to cytoplasmic ratio (small cell change):<br>
+    <select class="element select small" ID="A08">
+			<option value=""></option>
+			<option value="Present">Present</option>
+			<option value="Absent">Absent</option>
+	</select></p></li>
+
+<li><p>
+- Prominent nucleoli:<br>
+    <select class="element select small" ID="A09">
+			<option value=""></option>
+			<option value="Present">Present</option>
+			<option value="Absent">Absent</option>
+	</select></p></li>
+
+<li><p>
+- Necrosis:<br> 
+    <select class="element select small" ID="A10">
+			<option value=""></option>
+			<option value="Present">Present</option>
+			<option value="Present, history of prior treatment noted">Present, history of prior treatment noted</option>
+			<option value="Absent">Absent</option>
+	</select></p></li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Anaplasia (sarcoma, carcinoma, or melanoma-like histology):</label>
+<select class="element select medium" ID="A11">
+	<option value=""></option>
+	<option value="Present (WHO Grade II)">Present (WHO Grade II)</option>
+	<option value="Absent"> Absent</option>
+</select>
+</p></li>
+
+<li><p><label class="description">- Additional notes:</label>
+ <textarea ID="A12" name="A12" class="element textarea medium" style="border-color:grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea medium" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<div id="footer">
+Last upated on 23-Jan-2019, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+
+</body>
+</html>

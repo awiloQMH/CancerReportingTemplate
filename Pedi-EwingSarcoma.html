@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ewing Sarcoma</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor site: " + "\n" + "   - " + frm.A03.value + "\n";
+}
+
+if (frm.A05.value !== ""){
+	Template += "- Tumor size: " + "\n" + "  - "+ frm.A05.value + "\n";
+}
+
+if (frm.A06.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A06.value + "\n";
+}
+
+if (frm.A07.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A07.value + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A08.value + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "- Cytogenetic findings:  " + "\n" + "  - " + frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked || document.getElementById("A11").checked || 
+	document.getElementById("A12").checked || document.getElementById("A13").checked || 
+	document.getElementById("A14").checked){
+	Template += "- Preresection treatments:" + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += "  - " +  frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += "  - " +  frm.A11.value + "\n";
+}
+
+if (document.getElementById("A12").checked){
+	Template += "  - " +  frm.A12.value + "\n";
+}
+
+if (document.getElementById("A13").checked){
+	Template += "  - " +  frm.A13.value + "\n";
+}
+
+if (document.getElementById("A14").checked){
+	Template += "  - " +  frm.A14.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "- Treatment effects: " + "\n" + "  - " + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "- Surgical margins: " + "\n" + "  - " + frm.A16.value + "\n";
+}
+
+if (frm.A17.value + frm.A18.value + frm.A19.value + frm.A20.value + frm.A21.value!== ""){
+	Template += "- Regional lymph nodes: " + "\n";
+}	
+
+if (frm.A17.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A18.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A19.value + "\n";
+}
+
+if (frm.A20.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A20.value + " mm" + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + " mm" + "\n";
+}
+
+if (document.getElementById("A22").checked || document.getElementById("A23").checked || 
+	document.getElementById("A24").checked || frm.A25.value + frm.A26.value + frm.A27.value + 
+	frm.A28.value + frm.A29.value + frm.A30.value + frm.A31.value + frm.A32.value!== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A22").checked || document.getElementById("A23").checked ||
+	document.getElementById("A24").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A22").checked){
+	Template += "    " + frm.A22.value + "\n";
+}
+
+if (document.getElementById("A23").checked){
+	Template += "    " + frm.A23.value + "\n";
+}
+
+if (document.getElementById("A24").checked){
+	Template += "    " +frm.A24.value + "\n";
+}
+
+if (frm.A25.value !== ""){
+	Template += "  - Primary tumor (pT) (Head and neck): " + "\n" + frm.A25.value + "\n";
+}
+
+if (frm.A26.value !== ""){
+	Template += "  - Primary tumor (pT) (Trunk and extremities): " + "\n" + frm.A26.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "  - Primary tumor (pT) (Abdomen and thoracic visceral organs): " + "\n" + frm.A27.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "  - Primary tumor (pT) (Retroperitoneum): " + "\n" + frm.A28.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "  - Primary tumor (pT) (Orbit): " + "\n" + frm.A29.value + "\n";
+}
+
+if (frm.A30.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + frm.A30.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + frm.A31.value + "\n";
+}
+
+if (frm.A32.value !== ""){
+	Template += "    - Specify site(s), if known: " + frm.A32.value + "\n";
+}
+
+if (frm.A33.value !== ""){
+	Template += "- Additional pathologic findings: " + "\n" + "  - " +  frm.A33.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-pediatric-ewing-resection-19-4000.pdf" target="_blank">
+		<div class="tooltip">
+		Ewing Sarcoma
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+
+<li>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>- Procedure:</td>
+<td><select class="element select large" ID="A01">
+	<option value=""></option>
+	<option value="Resection">Resection </option> 
+	<option value="Amputation (specify type): ">Amputation (specify type): </option>
+	<option value="Limb salvage procedure (specify type): ">Limb salvage procedure (specify type): </option>
+	<option value="Other (specify): ">Other (specify): </option>
+	<option value="Not specified">Not specified</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>- Tumor site:</td>
+<td><select class="element select large" ID="A03">
+	<option value=""></option>
+	<option value="Specify site(s): ">Specify site(s): </option>
+	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+	<option value="Not specified">Not specified</option>
+</select></td>
+</tr>
+
+</tr>
+<tr>
+<td>- Tumor size:</td>
+<td><select class="element select large" ID="A05">
+		<option value=""></option>
+		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select></td>
+</tr>
+</table></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A06" class="element textarea medium"></textarea>
+</p></li>
+
+<li>
+<table border="1"> 
+<col width="28%">
+
+<tr>
+<td>- Lymphovascular invasion: 
+</td>
+<td><select class="element select large" ID="A07">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Perineural invasion: </td>
+<td><select class="element select large" ID="A08">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Cytogenetic findings: </td>
+<td><select class="element select large" ID="A09">
+	<option value=""></option>
+	<option value="Not performed">Not performed</option>
+	<option value="Pending">Pending</option>
+	<option value="Positive for EWSR1 rearrangement">Positive for EWSR1 rearrangement, specify methods (FISH and/or RT-PCR) and partners</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Preresection treatment: </td>
+<td><input type="checkbox" class="element checkbox" id="A10" value="No known preresection therapy"><label class="choice">No known preresection therapy</label>
+<input type="checkbox" class="element checkbox" id="A11" value="Chemotherapy performed"><label class="choice">Chemotherapy performed</label>
+<input type="checkbox" class="element checkbox" id="A12" value="Radiation therapy performed"><label class="choice">Radiation therapy performed</label>
+<input type="checkbox" class="element checkbox" id="A13" value="Therapy performed, type not specified"><label class="choice">Therapy performed, type not specified</label>
+<input type="checkbox" class="element checkbox" id="A14" value="Not specified"><label class="choice">Not specified</label>
+</td>
+</tr>
+
+<tr>
+<td>- Treatment effect: </td>
+<td><select class="element select large" ID="A15">
+	<option value=""></option>
+	<option value="Necrosis not identified">Necrosis not identified</option>
+	<option value="Necrosis present">Necrosis present (specify percentage: )</option>
+	<option value="Percentage of tumor necrosis cannot be determined">Percentage of tumor necrosis cannot be determined</option>
+	<option value="Not applicable">Not applicable</option>
+</select></td>
+</tr>
+</table></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins: </label></legend>
+<li><p>
+<select class="element select medium" ID="A16">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, closest bone margin, specify distance (mm):">Uninvolved by tumor, closest bone margin, specify distance (mm):</option>
+	<option value="Uninvolved by tumor, closest soft tissue margin, specify distance (mm):">Uninvolved by tumor, closest soft tissue margin, specify distance (mm):</option>
+	<option value="Uninvolved by tumor, closest margin, specify distance and locations (mm):">Uninvolved by tumor, closest margin, specify distance and locations (mm):</option>
+	<option value="Involved by tumor, specify margins: ">Involved by invasive carcinoma, specify margins: </option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+<li>
+<table border="1">
+<tr>
+<td>
+- Number of regional lymph nodes examined:
+</td>
+<td>
+<input type="text" class="element text large" ID="A17" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Number of lymph nodes involved (specify locations):
+</td>
+<td>
+<input type="text" class="element text large" ID="A18" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Extranodal extension:
+</td>
+<td>
+<select class="element select large" ID="A19">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+- Size of largest metastatic deposit (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A20" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Size of largest lymph node involved (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A21" size="15">
+</td>
+</tr>
+</table>
+</li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e): </label></legend>
+<li><p>
+- TNM Descriptors:
+<input type="checkbox" class="element checkbox" id="A22" value="m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
+<input type="checkbox" class="element checkbox" id="A23" value="r (recurrent) "><label class="element choice">r (recurrent)</label>
+<input type="checkbox" class="element checkbox" id="A24" value="y (post treatment) "><label class="element choice">y (post treatment)</label>
+</p></li>
+
+<li><p>
+<table border="1">
+<col width="62%">
+<tr>
+<td>- Primary tumor (pT) (Head and neck):</td>
+<td><select class="element select large" ID="A25">
+	<option value=""></option>
+	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="   - pT1: Tumor < or = 2 cm">pT1: Tumor < or = 2 cm</option>
+	<option value="   - pT2: Tumor > 2 to < or = 4 cm">pT2: Tumor > 2 to < or = 4 cm</option>
+	<option value="   - pT3: Tumor > 4 cm">pT3: Tumor > 4 cm</option>
+	<option value="   - pT4: Tumor with invasion of adjoining structures">pT4: Tumor > 4 cm</option>
+	<option value="   - pT4a: Tumor with orbital invasion, skull base/dural invasion, invasion of central compartment viscera, involvement of facial skeleton, or invasion of pterygoid muscles">pT4: Tumor with orbital invasion, skull base/dural invasion, invasion of central compartment viscera, involvement of facial skeleton, or invasion of pterygoid muscles</option>
+	<option value="   - pT4b:Tumor with brain parenchymal invasion, carotid artery encasement, prevertebral muscle invasion, or central nervous system involvement via perineural spread">pT4: Tumor with brain parenchymal invasion, carotid artery encasement, prevertebral muscle invasion, or central nervous system involvement via perineural spread</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Primary tumor (pT) (Trunk and extremities):</td>
+<td><select class="element select large" ID="A26">
+	<option value=""></option>
+	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="   - pT1: Tumor < or = 5 cm">pT1: Tumor < or = 5 cm</option>
+	<option value="   - pT2: Tumor > 5 to < or = 10 cm">pT2: Tumor > 5 to < or = 10 cm</option>
+	<option value="   - pT3: Tumor > 10 to < or = 15 cm">pT3: Tumor > 10 to < or = 15 cm</option>
+	<option value="   - pT4: Tumor > 15 cm ">pT4: Tumor > 15 cm</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Primary tumor (pT) (Abdomen and thoracic visceral organs):</td>
+<td><select class="element select large" ID="A27">
+	<option value=""></option>
+	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="   - pT1: Organ confined">pT1: Organ confined</option>
+	<option value="   - pT2: Tumor extension into tissue beyond organ">pT2: Tumor extension into tissue beyond organ</option>
+	<option value="   - pT2a: Invades serosa or visceral peritoneum">pT2a: Invades serosa or visceral peritoneum</option>
+	<option value="   - pT2b: Extension beyond serosa (mesentery)">pT2b: Extension beyond serosa (mesentery)</option>
+	<option value="   - pT3: Invades another organ">pT3: Invades another organ</option>
+	<option value="   - pT4: Multifocal involvement">pT4: Multifocal involvement</option>
+	<option value="   - pT4a: Multifocal (2 sites)">pT4a: Multifocal (2 sites)</option>
+	<option value="   - pT4b: Multifocal (3-5 sites)">pT4b: Multifocal (3-5 sites)</option>
+	<option value="   - pT4c: Multifocal (>5 sites)">pT4c: Multifocal (>5 sites)</option>
+</select></td>
+</tr>
+
+<tr>  
+<td>- Primary tumor (pT) (Retroperitoneum):</td>
+<td><select class="element select large" ID="A28">
+	<option value=""></option>
+	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="   - pT1: Tumor < or = 5 cm">pT1: Tumor < or = 5 cm</option>
+	<option value="   - pT2: Tumor > 5 to < or = 10 cm">pT2: Tumor > 5 to < or = 10 cm</option>
+	<option value="   - pT3: Tumor > 10 to < or = 15 cm">pT3: Tumor > 10 to < or = 15 cm</option>
+	<option value="   - pT4: Tumor > 15 cm ">pT4: Tumor > 15 cm</option>
+</select></td>
+</tr>
+
+<tr>  
+<td>- Primary tumor (pT) (Orbit):</td>
+<td><select class="element select large" ID="A29">
+	<option value=""></option>
+	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="   - pT1: Tumor < or = 2 cm">pT1: Tumor < or = 2 cm</option>
+	<option value="   - pT2: Tumor >2 cm in greatest dimension without invasion of bony walls or globe">pT2: Tumor >2 cm in greatest dimension without invasion of bony walls or globe</option>
+	<option value="   - pT3: Tumor of any size with invasion of bony walls">pT3: Tumor of any size with invasion of bony walls</option>
+	<option value="   - pT4: Tumor of any size with invasion of globe or periorbital structures, including eyelid, conjunctiva, temporal fossa, nasal cavity, paranasal sinuses, and/or central nervous system ">pT4: Tumor of any size with invasion of globe or periorbital structures, including eyelid, conjunctiva, temporal fossa, nasal cavity, paranasal sinuses, and/or central nervous system</option>
+</select></td>
+</tr>
+
+<tr>  
+<td>- Regional lymph nodes (pN): </td>
+<td><select class="element select large" ID="A30">
+	<option value=""></option>
+	<option value="   - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="   - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="   - pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
+</select></td>
+</tr>
+
+<tr> 
+<td rowspan="2" valign="top">- Distant metastasis (pM): </td>
+<td><select class="element select large" ID="A31">
+	<option value=""></option>
+	<option value="   - pM1: Distant metastasis">pM1:Distant metastasis</option>
+</select></td>
+</tr>
+
+<tr>    
+<td>- Specify site(s), if known:
+<input type="text" class="element text large" ID="A32" size="35"></td>
+</tr>
+</table>
+</p>
+</li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional pathologic findings:</label>
+ <textarea ID="A33" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 23-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Ewing Sarcoma Resection 4.0.0.0 (February 2019), <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

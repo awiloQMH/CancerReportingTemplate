@@ -1,0 +1,673 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hepatoblastoma</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor site: " + "\n" + "   - " + frm.A02.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor focality: " + "\n" + "  - "+ frm.A03.value + "\n";
+}
+
+if (document.getElementById("A04").checked || document.getElementById("A05").checked || 
+	document.getElementById("A06").checked || document.getElementById("A07").checked || 
+	document.getElementById("A08").checked || document.getElementById("A09").checked || 
+	document.getElementById("A10").checked || document.getElementById("A11").checked){
+	Template += "- Macroscopic Extent of Tumor:" + "\n";
+}
+
+if (document.getElementById("A04").checked){
+	Template += "  - " + frm.A04.value + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += "  - " + frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += "  - " +frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += "  - " + frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += "  - " + frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += "  - " +frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += "  - " + frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += "  - " + frm.A11.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "- Serological alpha fetoprotein level: " + "\n" + "  - "+ frm.A12.value + "\n";
+}
+
+if (frm.A13.value !== ""){
+	Template += "- Tumor size: " + "\n" + "  - "+ frm.A13.value + "\n";
+}
+
+if (frm.A14.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A14.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "- Histologic type: " + "\n" + "  - " + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "- Preoperative treatment: " + "\n" + "  - " + frm.A16.value + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Treatment effects:  " + "\n" + "  - " + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "- Macroscopic lymphovascular invasion: " + "\n" + "  - " + frm.A18.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "- Microscopic lymphovascular invasion: " + "\n" + "  - " + frm.A19.value + "\n";
+}
+
+if (frm.A20.value !== ""){
+	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A20.value + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "- INI1 IHC performed:  " + "\n" + "  - " + frm.A21.value + "\n";
+}
+
+if (frm.A22.value !== ""){
+	Template += "- Glypican IHC performed:  " + "\n" + "  - " + frm.A22.value + "\n";
+}
+
+if (frm.A23.value !== ""){
+	Template += "- Beta-catenin IHC performed:  " + "\n" + "  - " + frm.A23.value + "\n";
+}
+
+if (frm.A24.value !== ""){
+	Template += "\n" + "- Surgical margins: " + "\n" + "  - " + frm.A24.value + "\n";
+}
+
+if (frm.A25.value + frm.A26.value + frm.A27.value + frm.A28.value + frm.A29.value!== ""){
+	Template += "\n" + "- Regional lymph nodes: " + "\n";
+}	
+
+if (frm.A25.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A25.value + "\n";
+}
+
+if (frm.A26.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A26.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A27.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A28.value + " mm" + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A29.value + " mm" + "\n";
+}
+
+if (frm.A30.value + frm.A31.value + frm.A32.value !== ""){
+	Template += "\n" + "- Status of metastases:" + "\n";
+}
+
+if (frm.A30.value !== ""){
+	Template += "  - " + frm.A30.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "  - Sites of distant metastasis: " + frm.A31.value + "\n";
+}
+
+if (frm.A32.value !== ""){
+	Template += "  - Histologic type: " + frm.A32.value + "\n";
+}
+
+if (document.getElementById("A33").checked || document.getElementById("A34").checked || 
+	document.getElementById("A35").checked || document.getElementById("A36").checked || 
+	document.getElementById("A37").checked || document.getElementById("A38").checked || 
+	document.getElementById("A39").checked || document.getElementById("A40").checked){
+	Template += "- Children’s Oncology Group Staging System:" + "\n";
+}
+
+if (document.getElementById("A33").checked){
+	Template += "  - Stage I: " + "\n" + "    - " + frm.A33.value + "\n";
+}
+
+if (document.getElementById("A34").checked || document.getElementById("A35").checked ||
+	document.getElementById("A36").checked){
+	Template += "  - Stage II: " + "\n";
+}
+
+if (document.getElementById("A34").checked){
+	Template += "    - " + frm.A34.value + "\n";
+}
+
+if (document.getElementById("A35").checked){
+	Template += "    - " +frm.A35.value + "\n";
+}
+
+if (document.getElementById("A36").checked){
+	Template += "    - " + frm.A36.value + "\n";
+}
+
+if (document.getElementById("A37").checked || document.getElementById("A38").checked){
+	Template += "  - Stage III: " + "\n";
+}
+
+if (document.getElementById("A37").checked){
+	Template += "    - " + frm.A37.value + "\n";
+}
+
+if (document.getElementById("A38").checked){
+	Template += "    - " + frm.A38.value + "\n";
+}
+
+if (document.getElementById("A39").checked || document.getElementById("A40").checked){
+	Template += "  - Stage IV: " + "\n";
+}
+
+if (document.getElementById("A39").checked){
+	Template += "    - " + frm.A39.value + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += "    - " + frm.A40.value + "\n";
+}
+
+if (document.getElementById("A41").checked || document.getElementById("A42").checked ||
+	document.getElementById("A43").checked || document.getElementById("A44").checked ||
+	document.getElementById("A45").checked || frm.A46.value !==""){
+	Template += "- Additional pathologic findings: " + "\n";
+}
+
+if (document.getElementById("A41").checked){
+	Template += "  - " + frm.A41.value + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += "  - " + frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += "  - " + frm.A43.value + "\n";
+}
+
+if (document.getElementById("A44").checked){
+	Template += "  - " + frm.A44.value + "\n";
+}
+
+if (document.getElementById("A45").checked){
+	Template += "  - " + frm.A45.value + "\n";
+}
+
+if (frm.A46.value !== ""){
+	Template += "  - Others (specify): " +  frm.A46.value + "\n";
+}
+
+if (frm.A47.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A47.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-pediatric-hepatoblast-resection-19-4000.pdf" target="_blank">
+		<div class="tooltip">
+		Hepatoblastoma
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+
+<li>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>- Procedure:</td>
+<td><select class="element select large" ID="A01">
+	<option value=""></option>
+	<option value="Right lobectomy">Right lobectomy</option> 
+	<option value="Extended right lobectomy">Extended right lobectomy</option>
+	<option value="Medial segmentectomy">Medial segmentectomy</option>
+	<option value="Left lateral segmentectomy">Left lateral segmentectomy</option>
+	<option value="Total left lobectomy">Total left lobectomy</option>
+	<option value="Explanted liver">Explanted liver</option>
+	<option value="Other (specify): ">Other (specify): </option>
+	<option value="Not specified">Not specified</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>- Tumor site:</td>
+<td><select class="element select large" ID="A02">
+	<option value=""></option>
+	<option value="Right lobe">Right lobe</option>
+	<option value="Left lobe">Left lobe</option>
+	<option value="Right and left lobes">Right and left lobes</option>
+	<option value="Specify site(s): ">Specify site(s): </option>
+	<option value="Not specified">Not specified</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Tumor focality (within tumor):</td>
+<td><select class="element select large" ID="A03">
+		<option value=""></option>
+		<option value="Unifocal">Unifocal</option>
+		<option value="Multifocal">Multifocal</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Macroscopic Extent of Tumor:</td>
+<td><input type="checkbox" class="element checkbox" id="A04" value="Tumor confined to liver"><label class="element choice">Tumor confined to liver</label>
+<input type="checkbox" class="element checkbox" id="A05" value="Tumor extends into adjacent organ(s) (specify): "><label class="element choice">Tumor extends into adjacent organ(s) (specify): </label>
+<input type="checkbox" class="element checkbox" id="A06" value="Tumor extends into adjacent soft tissue, Diaphragm"><label class="element choice">Tumor extends into adjacent soft tissue, Diaphragm</label>
+<input type="checkbox" class="element checkbox" id="A07" value="Tumor extends into adjacent soft tissue, Abdominal wall"><label class="element choice">Tumor extends into adjacent soft tissue, Abdominal wall</label>
+<input type="checkbox" class="element checkbox" id="A08" value="Tumor extends into adjacent soft tissue, other (specific):"><label class="element choice">Tumor extends into adjacent soft tissue, other (specific):</label>
+<input type="checkbox" class="element checkbox" id="A09" value="Intraoperative tumor spill"><label class="element choice">Intraoperative tumor spill</label>
+<input type="checkbox" class="element checkbox" id="A10" value="Gross tumor rupture, preoperative"><label class="element choice">Gross tumor rupture, preoperative</label>
+<input type="checkbox" class="element checkbox" id="A11" value="Cannot be determined"><label class="element choice">Cannot be determined</label></td>
+</tr>
+
+<tr>
+<td>- Serological alpha fetoprotein level:</td>
+<td><select class="element select large" ID="A12">
+		<option value=""></option>
+		<option value="Not known">Not known</option>
+		<option value="less than 100 ng/mL">less than 100 ng/mL</option>
+		<option value="100 ng/mL – 1.2 million ng/mL">100 ng/mL – 1.2 million ng/mL</option>
+		<option value="greater than 1.2 million ng/ml">greater than 1.2 million ng/ml</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Tumor size:</td>
+<td><select class="element select large" ID="A13">
+		<option value=""></option>
+		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select></td>
+</tr>
+
+</table></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A14" class="element textarea medium"></textarea>
+</p></li>
+
+<li>
+<table border="1"> 
+<col width="60%">
+
+<tr>
+<td>- Histologic type: 
+</td>
+<td><select class="element select large" ID="A15">
+	<option value=""></option>
+	<option value="Hepatoblastoma, epithelial type, fetal pattern (mitotically inactive)">Hepatoblastoma, epithelial type, fetal pattern (mitotically inactive)</option>
+	<option value="Hepatoblastoma, epithelial type, fetal pattern (mitotically active)">Hepatoblastoma, epithelial type, fetal pattern (mitotically active)</option>
+	<option value="Hepatoblastoma, epithelial type, embryonal">Hepatoblastoma, epithelial type, embryonal</option>
+	<option value="Hepatoblastoma, epithelial type, pleomorphic (poorly differentiated) ">Hepatoblastoma, epithelial type, pleomorphic (poorly differentiated) </option>
+	<option value="Hepatoblastoma, epithelial type, macrotrabecular pattern">Hepatoblastoma, epithelial type, macrotrabecular pattern</option>
+	<option value="GHepatoblastoma, epithelial type, small cell undifferentiated pattern (specify %: )">Hepatoblastoma, epithelial type, small cell undifferentiated pattern (specify %: )</option>
+	<option value="Hepatoblastoma, mesenchymal type without teratoid features">Hepatoblastoma, mesenchymal type without teratoid features</option>
+	<option value="Hepatoblastoma, treated">Hepatoblastoma, treated</option>
+	<option value="Hepatoblastoma, other (specify subtypes if not included): ">Hepatoblastoma, other (specify subtypes if not included): </option>
+	<option value="Hepatocellular neoplasm, not otherwise specified">Hepatocellular neoplasm, not otherwise specified</option>
+	<option value="Cannot be determined (explain): ">Cannot be determined (explain): </option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Preoperative treatment history: </td>
+<td><select class="element select large" ID="A16">
+	<option value=""></option>
+	<option value="No known preoperative therapy">No known preoperative therapy</option>
+	<option value="Preoperative therapy given">Preoperative therapy given</option>
+	<option value="Not specified">Not specified</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Treatment effect: </td>
+<td><select class="element select large" ID="A17">
+	<option value=""></option>
+	<option value="Necrosis not identified">Necrosis not identified</option>
+	<option value="Necrosis present (specify tumor necrosis %: )">Necrosis present (specify tumor necrosis %: )</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+	<option value="Not applicable">Not applicable</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Macroscopic lymphovascular invasion: </td>
+<td><select class="element select large" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Portal vein invasion present">Portal vein invasion present</option>
+	<option value="Hepatic vein invasion present">Hepatic vein invasion present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Microscopic lymphovascular invasion: </td>
+<td><select class="element select large" ID="A19">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Perineural invasion: </td>
+<td><select class="element select large" ID="A20">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- INI1 IHC performed: </td>
+<td><select class="element select large" ID="A21">
+	<option value=""></option>
+	<option value="INI1 expression retained">INI1 expression retained</option>
+	<option value="INI1 expression lost">INI1 expression lost</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Glypican-3 IHC performed: </td>
+<td><select class="element select large" ID="A22">
+	<option value=""></option>
+	<option value="Negative">Negative</option>
+	<option value="Positive, specify pattern: ">Positive, specify pattern: </option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr>
+<td>- Beta-catenin IHC performed: </td>
+<td><select class="element select large" ID="A23">
+	<option value=""></option>
+	<option value="Negative">Negative</option>
+	<option value="Positive">Positive</option>	
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+</table></li>
+</fieldset>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins: </label></legend>
+<li><p>
+<select class="element select medium" ID="A24">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, closest bone margin, specify distance (mm):">Uninvolved by tumor, closest bone margin, specify distance (mm):</option>
+	<option value="Uninvolved by tumor, closest soft tissue margin, specify distance (mm):">Uninvolved by tumor, closest soft tissue margin, specify distance (mm):</option>
+	<option value="Uninvolved by tumor, closest margin, specify distance and locations (mm):">Uninvolved by tumor, closest margin, specify distance and locations (mm):</option>
+	<option value="Involved by tumor, specify margins: ">Involved by invasive carcinoma, specify margins: </option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+<li>
+<table border="1">
+<tr>
+<td>
+- Number of regional lymph nodes examined:
+</td>
+<td>
+<input type="text" class="element text large" ID="A25" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Number of lymph nodes involved (specify locations):
+</td>
+<td>
+<input type="text" class="element text large" ID="A26" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Extranodal extension:
+</td>
+<td>
+<select class="element select large" ID="A27">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+- Size of largest metastatic deposit (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A28" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+- Size of largest lymph node involved (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A29" size="15">
+</td>
+</tr>
+</table>
+</li>
+<br>
+</fieldset>
+</p>
+
+<li>
+<table border="1">
+<label class="description">- Status of metastases:</label>
+- include lymph node metastasis at inferior phrenic, distal to hilum, hepatoduodenal ligament, or caval region.
+<p>
+<tr>
+<td rowspan="3" valign="top">- Metastases: </td>
+<td><select class="element select large" ID="A30">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr> 
+<td>- Sites of distant metastasis: 
+<input type="text" class="element text large" ID="A31" size="35"></td>
+</tr>
+
+<tr> 
+<td>- Histologic type present (specify): 
+<input type="text" class="element text large" ID="A32" size="35"></td>
+</tr>
+
+</table>
+</p></li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Children’s Oncology Group Staging System: </label></legend>
+
+<li><p>
+<label class="description">- Stage I</label> 
+<input type="checkbox" class="element checkbox" id="A33" value="Tumors are completely resected, margins grossly and microscopically negative for tumor"><label class="element choice">Tumors are completely resected, margins grossly and microscopically negative for tumor</label>
+</p></li>
+
+<li><p>
+<label class="description">- Stage II</label> 
+<input type="checkbox" class="element checkbox" id="A34" value="Microscopic residual tumor present at hepatic resection margin"><label class="element choice">Microscopic residual tumor present at hepatic resection margin</label>
+<input type="checkbox" class="element checkbox" id="A35" value="Microscopic residual tumor present at extrahepatic resection margin"><label class="element choice">Microscopic residual tumor present at extrahepatic resection margin</label>
+<input type="checkbox" class="element checkbox" id="A36" value="Intraoperative tumor spills"><label class="element choice">Intraoperative tumor spill</label>
+</p></li>
+
+<li><p>
+<label class="description">- Stage III</label> 
+<input type="checkbox" class="element checkbox" id="A37" value="Macroscopic tumor visible at resection margin(s)"><label class="element choice">Macroscopic tumor visible at resection margin(s)</label>
+<input type="checkbox" class="element checkbox" id="A38" value="Lymph node metastasis present"><label class="element choice">Lymph node metastasis present</label>
+</p></li>
+
+<li><p>
+<label class="description">- Stage IV</label> 
+<input type="checkbox" class="element checkbox" id="A39" value="Complete resection of primary tumor"><label class="element choice">Complete resection of primary tumor</label>
+<input type="checkbox" class="element checkbox" id="A40" value="Incomplete resection of primary tumor"><label class="element choice">Incomplete resection of primary tumor</label>
+</p></li>
+<br>
+</fieldset>
+<p></li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+
+<li><p>
+<input type="checkbox" class="element checkbox" id="A41" value="No background liver available for evaluation"><label class="element choice">No background liver available for evaluation</label>
+<input type="checkbox" class="element checkbox" id="A42" value="None identified"><label class="element choice">None identified</label>
+<input type="checkbox" class="element checkbox" id="A43" value="Cirrhosis/fibrosis (specify stage of fibrosis): "><label class="element choice">Cirrhosis/fibrosis (specify stage of fibrosis): </label>
+<input type="checkbox" class="element checkbox" id="A44" value="Iron overload"><label class="element choice">Iron overload</label>
+<input type="checkbox" class="element checkbox" id="A45" value="Hepatitis (specify type): "><label class="element choice">Hepatitis (specify type): </label>
+- Other (specify):
+<input type="text" class = "element text medium" ID="A46" size="35">
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A47" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A49" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 29-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Hepatoblastoma Resection 4.0.0.0 (February 2019), <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Melanoma</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (document.getElementById("A01").checked || document.getElementById("A02").checked || 
+	document.getElementById("A03").checked || document.getElementById("A04").checked || 
+	document.getElementById("A05").checked || document.getElementById("A06").checked){
+	Template += "- Procedure: " + "\n";
+}
+
+if (document.getElementById("A01").checked){
+	Template += frm.A01.value + "\n";
+}
+
+if (document.getElementById("A02").checked){
+	Template += frm.A02.value + "\n";
+}
+
+if (document.getElementById("A03").checked){
+	Template += frm.A03.value + "\n";
+}
+
+if (document.getElementById("A04").checked){
+	Template += frm.A04.value + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (frm.A07.value !== ""){
+	Template += "- Tumor laterality: " + "\n" + frm.A07.value + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "- Tumor site: " + "\n" + "  - " + frm.A08.value + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "- Tumor size: " + "\n" + frm.A09.value + "\n";
+}
+
+if (frm.A10.value !== ""){
+	Template += "- Macroscopic satellite nodule(s): " + "\n" + frm.A10.value + "\n";
+}
+
+if (frm.A11.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A11.value + "\n";
+}
+
+if (frm.A13.value !== ""){
+	Template += "- Histologic type (Invasive melanoma): " + "\n" + frm.A13.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "- Histologic type (Melanoma in situ, anatomic level I): " + "\n" + frm.A12.value + "\n";
+}
+
+if (frm.A14.value !== ""){
+	Template += "- Maximum tumor (Breslow) thickness (to the nearest 0.1 mm): " + "\n" + frm.A14.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "- Anatomic (Clark) level: " + "\n" + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "- Ulceration: " + "\n" + frm.A16.value + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Microsatellite(s): " + "\n" + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "- Mitotic count (per mm2): " + "\n" + frm.A18.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "- Lymphovascular invasion: " + "\n" + frm.A19.value + "\n";
+}
+
+if (frm.A20.value !== ""){
+	Template += "- Neurotropism: " + "\n" + frm.A20.value + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "- Tumor-infiltrating lymphocytes: " + "\n" + frm.A21.value + "\n";
+}
+
+if (frm.A22.value !== ""){
+	Template +=  "- Tumor regression: "  +"\n" + frm.A22.value + "\n" ;
+}
+
+if (frm.A23.value + frm.A24.value !== ""){
+	Template += "\n" + "- Surgical margins: " + "\n";
+}	
+
+if (frm.A23.value !== ""){
+	Template +=  "  - Peripheral margin: "  +"\n" + "  "  + frm.A23.value + "\n" ;
+}
+
+if (frm.A24.value !== ""){
+	Template +=  "  - Deep margin: "  +"\n" + "  "  + frm.A24.value + "\n" ;
+}
+
+if (frm.A25.value + frm.A26.value + frm.A27.value + frm.A28.value + frm.A29.value +
+	frm.A30.value + frm.A31.value + frm.A32.value!== ""){
+	Template += "- Lymph nodes examination: " + "\n";
+}	
+
+if (frm.A25.value !== ""){
+	Template += "  - Number of sentinel lymph nodes examined: " + frm.A25.value + "\n";
+}
+
+if (frm.A26.value !== ""){
+	Template += "  - Number of sentinel lymph nodes involved: " + frm.A26.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A27.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "  - Number of lymph nodes involved (specify location): " + frm.A28.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "  - Extranodal extension (ENE) : " + frm.A29.value + "\n";
+}
+
+if (frm.A30.value !== ""){
+	Template += "  - Matted nodes : " + frm.A30.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A31.value + " mm" + "\n";
+}
+
+if (frm.A32.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A32.value + " mm" + "\n";
+}
+
+if (document.getElementById("A33").checked || document.getElementById("A34").checked ||
+	document.getElementById("A35").checked || frm.A36.value + frm.A37.value + frm.A38.value
+	+ frm.A39.value !== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A33").checked || document.getElementById("A34").checked ||
+	document.getElementById("A35").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A33").checked){
+	Template += "    " + frm.A33.value + "\n";
+}
+
+if (document.getElementById("A34").checked){
+	Template += "    " + frm.A34.value + "\n";
+}
+
+if (document.getElementById("A35").checked){
+	Template += "    " +frm.A35.value + "\n";
+}
+
+if (frm.A36.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A36.value + "\n";
+}
+
+if (frm.A37.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "  " + frm.A37.value + "\n";
+}
+
+if (frm.A38.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A38.value + "\n";
+}
+
+if (frm.A39.value !== ""){
+	Template += "    - Specify site(s): " + frm.A39.value + "\n";
+}
+
+if (document.getElementById("A40").checked || frm.A41.value !== ""){
+	Template += "\n" + "- Additional pathologic findings: " + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += frm.A40.value + "\n";
+}
+
+if (frm.A41.value !== ""){
+	Template += "  - Other (specify): " +  frm.A41.value + "\n";
+}
+
+if (frm.A42.value !== ""){
+	Template += "- Additional notes: " + "\n" + "  - " +  frm.A42.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>
+		<a href=".\cap\cp-skin-melanoma-excision-19-4100.pdf" target="_blank">
+		<div class="tooltip">
+		Malignant melanoma of the skin
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		<a>
+		</h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+<li><p>
+<label class="description">- Procedure:</label>
+<input type="checkbox" class="element checkbox" id="A01" value="  - Excision"><label class="element choice">Excision</label>
+<input type="checkbox" class="element checkbox" id="A02" value="  - Re-excision"><label class="element choice">Re-excision</label>
+<input type="checkbox" class="element checkbox" id="A03" value="  - Sentinel node(s) biopsy"><label class="element choice">Sentinel node(s) biopsy</label>
+<input type="checkbox" class="element checkbox" id="A04" value="  - Lymphadenectomy, regional nodes (specify):"><label class="element choice">Lymphadenectomy, regional nodes (specify):</label>
+<input type="checkbox" class="element checkbox" id="A05" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
+<input type="checkbox" class="element checkbox" id="A06" value="  - Not specified"><label class="element choice">Not specified</label>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor Laterality:</label> 
+<select class="element select medium" ID="A07">
+	<option value=""></option>
+	<option value="  - Right">Right</option> 
+	<option value="  - Left">Left</option> 
+	<option value="  - Midline">Midline</option> 
+	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="  - Not specified">Not specified</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor site:</label>
+<input type="text" class="element text small" ID="A08" size="5"></p></li>
+
+<li><p>
+<label class="description">- Tumor size:</label> 
+<select class="element select medium" ID="A09">
+		<option value=""></option>
+		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Macroscopic satellite nodule(s):</label> 
+<select class="element select medium" ID="A10">
+	<option value=""></option>
+	<option value="  - Not idenfied">Not idenfied</option>
+	<option value="  - Present, extent (%):">Present, extent (%):</option>
+	<option value="  - Cannot be assessed">Cannot be assessed</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+
+<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A11" class="element textarea medium"></textarea>
+</p></li>
+</p></li>
+
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Invasive melanoma:</label></legend>
+<li><p>
+<label class="description">- Histologic type:</label> 
+<select class="element select medium" ID="A13">
+	<option value=""></option>
+	<option value="  - Superficial spreading melanoma (low-cumulative sun damage (CSD) melanoma)">Superficial spreading melanoma (low-cumulative sun damage (CSD) melanoma)</option>
+	<option value="  - Lentigo maligna melanoma">Lentigo maligna melanoma</option>	
+	<option value="  - Desmoplastic melanoma, pure">Desmoplastic melanoma, pure</option>
+	<option value="  - Desmoplastic melanoma, mixed">Desmoplastic melanoma, mixed</option>
+	<option value="  - Acral melanoma">Acral melanoma</option>
+	<option value="  - Melanoma arising from blue nevus (blue nevus-like melanoma)">Melanoma arising from blue nevus (blue nevus-like melanoma)</option>
+	<option value="  - Melanoma arising in a giant congenital nevus">Melanoma arising in a giant congenital nevus</option>	
+	<option value="  - Spitz melanoma (malignant Spitz tumor)">Spitz melanoma (malignant Spitz tumor)</option>
+	<option value="  - Nodular melanoma">Nodular melanoma</option>
+	<option value="  - Nevoid melanoma">Nevoid melanoma</option>
+	<option value="  - Melanoma, not otherwise classified">Melanoma, not otherwise classified</option>
+	<option value="  - Other (specify):">Other histologic type not listed (specify):</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Histologic type (Melanoma in situ, anatomic level I):</label> 
+<select class="element select medium" ID="A12">
+	<option value=""></option>
+	<option value="  - Melanoma in situ, superficial spreading type (low-cumulative sun damage (CSD) melanoma in situ)">Melanoma in situ, superficial spreading type (low-cumulative sun damage (CSD) melanoma in situ)</option>
+	<option value="  - Melanoma in situ, lentigo maligna type">Melanoma in situ, lentigo maligna type</option>
+	<option value="  - Acral-lentiginous melanoma in situ">Acral-lentiginous melanoma in situ</option>	
+	<option value="  - Melanoma in situ arising in a giant congenital nevus">Melanoma in situ arising in a giant congenital nevus</option>
+	<option value="  - Persistent melanoma in situ">Persistent melanoma in situ</option>
+	<option value="  - Melanoma in situ, not otherwise classified">Melanoma in situ, not otherwise classified</option>	
+	<option value="  - Other (specify):">Other histologic type not listed (specify):</option>
+</select>
+
+<li><p>
+<label class="description">- Maximum tumor (Breslow) thickness (to the nearest 0.1 mm):</label>
+<select class="element select medium" ID="A14">
+	<option value=""></option>
+	<option value="  - Specify (mm): ">Specify (mm):</option>
+	<option value="  - At least (mm):">At least (mm):</option>
+	<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>	
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Anatomic (Clark) level: </label>
+<select class="element select medium" ID="A15">
+	<option value=""></option>
+	<option value="  - II: Melanoma present in but does not fill and expand papillary dermis">II: Melanoma present in but does not fill and expand papillary dermis</option>
+	<option value="  - III: Melanoma fills and expands papillary dermis">III: Melanoma fills and expands papillary dermis</option>
+	<option value="  - IV: Melanoma invades reticular dermis">IV: Melanoma invades reticular dermis</option>
+	<option value="  - V: Melanoma invades subcutis">V: Melanoma invades subcutis</option>
+	<option value="  - at least level: ">at least level:</option>
+	<option value="  - Cannot be determined ">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Ulceration: </label>
+<select class="element select medium" ID="A16">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present, extent (mm): ">Present, extent (mm): </option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Microsatellite(s): </label>
+<select class="element select medium" ID="A17">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present">Present</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Mitotic rate:</label>
+<select class="element select medium" ID="A18">
+	<option value=""></option>
+	<option value="  - None identified">None identified</option>
+	<option value="  - Specify (number /mm2):">Specify (number /mm2):</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>	
+</select>
+</p></li>
+- Use 22 mm eyepiece at 40x objective, counting 42 active proliferative fields,
+ approximating 10 mm<sup>2</sup>, and reporting as number of mitosis per mm<sup>2</sup>. <br>
+<!--<a href=".\cap\10 square millimeters high power fields.jpg" target="_blank">See table from CAP template.</a>
+-->
+<li><p>
+<label class="description">- Lymphovascular invasion: </label>
+<select class="element select medium" ID="A19">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present">Present</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Neurotropism: </label>
+<select class="element select medium" ID="A20">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present">Present</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<li><p>
+<label class="description">- Tumor-infiltrating lymphocytes: </label>
+<select class="element select medium" ID="A21">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present, non-brisk">Present, non-brisk</option>
+	<option value="  - Present, brisk">Present, brisk</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Tumor regression: </label>
+<select class="element select medium" ID="A22">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present, involving < 75% of lesion">Present, involving < 75% of lesion</option>
+	<option value="  - Present, involving > or = 75%">Present, involving > or = 75%</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of excision specimen:</label></legend>
+<li><p>
+- Peripheral margins:<br>
+<select class="element select medium" ID="A23">
+	<option value=""></option>
+	<option value="  - Involved by invasive melanoma, specify:">Involved by invasive melanoma, specify:</option>
+	<option value="  - Uninvolved by invasive melanoma, specify location and distance (mm):">Uninvolved by invasive melanoma, specify location and distance (mm):</option>
+	<option value="  - Involved by melanoma in situ, specify:">Involved by melanoma in situ, specify:</option>
+	<option value="  - Uninvolved by melanoma in situ, specify location and distance (mm):">Uninvolved by melanoma in situ, specify location and distance (mm):</option>
+	<option value="  - Cannot be assessed">Cannot be assessed</option>
+</select>
+</p></li>
+
+<li><p>
+- Deep margin:<br>
+<select class="element select medium" ID="A24">
+	<option value=""></option>
+	<option value="  - Involved by invasive melanoma, specify:">Involved by invasive melanoma, specify:</option>
+	<option value="  - Uninvolved by invasive melanoma, specify location and distance (mm):">Uninvolved by invasive melanoma, specify location and distance (mm):</option>
+	<option value="  - Involved by melanoma in situ, specify:">Involved by melanoma in situ, specify:</option>
+	<option value="  - Uninvolved by melanoma in situ, specify location and distance (mm):">Uninvolved by melanoma in situ, specify location and distance (mm):</option>
+	<option value="  - Cannot be assessed">Cannot be assessed</option>
+</select>
+</p></li>
+
+<br>
+</fieldset>
+</p>
+
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional ymph nodes: </label></legend>
+<table border="1">
+
+<tr>
+<td>
+- Number of sentinel lymph nodes examined:
+</td>
+<td>
+	<input type="text" class="element text large" ID="A25" size="5">
+</td>
+</tr>
+<tr>
+<td>
+- Number of sentinel lymph nodes involved:
+</td>
+<td>
+<input type="text" class="element text large" ID="A26" size="5">
+</td>
+</tr>
+<tr>
+<td>
+- Number of regional lymph nodes examined:
+</td>
+<td>
+<input type="text" class="element text large" ID="A27" size="5">
+</td>
+</tr>
+<tr>
+<td>
+- Number of lymph nodes involved (specify locations):
+</td>
+<td>
+<input type="text" class="element text large" ID="A28" size="5">
+</td>
+</tr>
+<tr>
+<td>
+- Extranodal extension:
+</td>
+<td>
+<select class="element select large" ID="A29">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+- Matted nodes:
+</td>
+<td>
+<select class="element select large" ID="A30">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+<tr>
+<td>
+- Size of largest metastatic deposit (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A31" size="5">
+</td>
+</tr>
+<tr>
+<td>
+- Size of largest lymph node involved (mm), specify site:
+</td>
+<td>
+<input type="text" class="element text large" ID="A32" size="5">
+</td>
+</tr>
+</table>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	
+<li><p>  - TNM Descriptors:<br>
+<input type="checkbox" class="element checkbox" id="A33" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
+<input type="checkbox" class="element checkbox" id="A34" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
+<input type="checkbox" class="element checkbox" id="A35" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
+</p></li>
+
+<li><p>  - Primary tumor (pT):<br>
+<select class="element select medium" ID="A36">
+	<option value=""></option>
+	<option value="  - pTX: Primary tumor thickness cannot be assessed, explain: ">pTX: Primary tumor thickness cannot be assessed, explain: </option>
+	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="  - pTis: Melanoma in situ (ie, not an invasive tumor: anatomic level I)">pTis: Melanoma in situ (ie, not an invasive tumor: anatomic level I)</option>
+	<option value="  - pT1: 1.0 mm or less in thickness, ulceration status unknown or unspecified">T1: 1.0 mm or less in thickness, ulceration status unknown or unspecified</option>
+	<option value="  - pT1a: < 0.8 mm in thickness, no ulceration">pT1a: < 0.8 mm in thickness, no ulceration</option>
+	<option value="  - pT1b: < 0.8 mm in thickness with ulceration">pT1b: < 0.8 mm in thickness with ulceration</option>
+	<option value="  - pT1b: 0.8 to 1.0 mm in thickness with or without ulceration">pT1b: 0.8 to 1.0 mm in thickness with or without ulceration</option>
+	<option value="  - pT2: > 1.0 to 2.0 mm in thickness, ulceration status unknown or unspecified">pT2: > 1.0 to 2.0 mm in thickness, ulceration status unknown or unspecified</option>
+	<option value="  - pT2a: > 1.0 to 2.0 mm in thickness, no ulceration">pT2a: > 1.0 to 2.0 mm in thickness, no ulceration</option>
+	<option value="  - pT2b: > 1.0 to 2.0 mm in thickness, with ulceration">pT2b: > 1.0 to 2.0 mm in thickness, with ulceration</option>
+	<option value="  - pT3: > 2.0 to 4.0 mm in thickness, ulceration status unknown or unspecified">pT3: > 2.0 to 4.0 mm in thickness, ulceration status unknown or unspecified</option>
+	<option value="  - pT3a: > 2.0 to 4.0 mm in thickness, no ulceration">pT3a: > 2.0 to 4.0 mm in thickness, no ulceration</option>
+	<option value="  - pT3b: > 2.0 to 4.0 mm in thickness, with ulceration">pT3b: > 2.0 to 4.0 mm in thickness, with ulceration</option>
+	<option value="  - pT4: > 4.0 mm in thickness, ulceration status unknown or unspecified">pT4: > 4.0 mm in thickness, ulceration status unknown or unspecified</option>
+	<option value="  - pT4a: > 4.0 mm in thickness, no ulceration">pT4a: > 4.0 mm in thickness, no ulceration</option>
+	<option value="  - pT4b: > 4.0 mm in thickness, with ulceration">pT4b: > 4.0 mm in thickness, with ulceration</option>
+</select>
+</p></li>
+
+<li><p>  - Regional lymph nodes (pN): <br>
+<select class="element select medium" ID="A37">
+	<option value=""></option>
+	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="  - pN1: One tumor-involved node or in-transit, satellite, and/or microsatellite metastases with no tumor-involved nodes">pN1: One tumor-involved node or in-transit, satellite, and/or microsatellite metastases with no tumor-involved nodes</option>
+	<option value="  - pN1a: One clinically occult tumor-involved node (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases">pN1a: One clinically occult tumor-involved node (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN1b: One clinically detected tumor-involved node with no in-transit, satellite and/or microsatellite metastases">pN1b: One clinically detected tumor-involved node with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN1c: Presence of in-transit, satellite and/or microsatellite metastases with no regional lymph node disease">pN1c: Presence of in-transit, satellite and/or microsatellite metastases with no regional lymph node disease</option>
+	<option value="  - pN2: Metastasis in two to three regional nodes or in-transit, satellite, and/or microsatellite with one tumor-involved node">pN2: Metastasis in two to three regional nodes or in-transit, satellite, and/or microsatellite with one tumor-involved node</option>
+	<option value="  - pN2a: 2-3 clinically occult tumor-involved node (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases">pN2a: 2-3 clinically occult tumor-involved node (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN2b: 2-3 tumor-involved nodes at least one of which was clinically detected with no in-transit, satellite and/or microsatellite metastases">pN2b: 2-3 tumor-involved nodes at least one of which was clinically detected with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN2c: One clinically occult or clinically apparent tumor-involved node with presence of in-transit, satellite and/or microsatellite metastases">pN2c: One clinically occult or clinically apparent tumor-involved node with presence of in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN3: Metastasis in four or more regional lymph nodes, or in-transit, satellite or microsatellite metastases with two or more tumor-involved nodes or any number of matted nodes without or with in-transit, satellite or microsatellite metastases">pN3: Metastasis in four or more regional lymph nodes, or in-transit, satellite or microsatellite metastases with two or more tumor-involved nodes or any number of matted nodes without or with in-transit, satellite or microsatellite metastases</option>
+	<option value="  - pN3a: > or = 4 clinically occult tumor-involved nodes (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases">pN3a: > or = 4 clinically occult tumor-involved nodes (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN3b: > or = 4 tumor-involved nodes, at least 1 of which was clinically detected, with no in-transit, satellite and/or microsatellite metastases">pN3b: > or = 4 tumor-involved nodes, at least 1 of which was clinically detected, with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN3c: > or = 2 clinically occult or clinically detected tumor-involved nodes with in-transit, satellite and/or microsatellite metastases and/or any number of matted nodes with in-transit, satellite and/or microsatellite metastases">pN3c: > or = 2 clinically occult or clinically detected tumor-involved nodes with in-transit, satellite and/or microsatellite metastases and/or any number of matted nodes with in-transit, satellite and/or microsatellite metastases</option>
+</select>
+</p></li>
+
+<li><p>  - Distant metastasis (pM): <br>
+<select class="element select medium" ID="A38">
+	<option value=""></option>
+	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
+	<option value="  - pM1a: Distant metastasis in skin, subcutaneous tissues, soft tissues including muscle and/or nonregional lymph nodes">pM1a: Distant metastasis in skin, subcutaneous tissues, soft tissues including muscle and/or nonregional lymph nodes</option>
+	<option value="  - pM1b: Distant metastasis to lung with or without M1a sites of disease">pM1b: Distant metastasis to lung with or without M1a sites of disease</option>
+	<option value="  - pM1c: Distant metastasis to non-CNS visceral sites with or without M1a or M1b sites of disease">pM1c: Distant metastasis to non-CNS visceral sites with or without M1a or M1b sites of disease</option>
+	<option value="  - pM1d: Distant metastasis to CNS with or without M1a, M1b or M1c sites of disease">pM1d: Distant metastasis to CNS with or without M1a, M1b or M1c sites of disease</option>
+</select>
+</p>
+
+<p>    - Specify site(s), if known:<br>
+<input type="text" class="element text small" ID="A39" size="35">
+</p>
+<br>
+</fieldset>
+</p></li>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+
+<li><p>
+<input type="checkbox" class = "element checkbox"  id="A40" value="  - Associated nevus (specify type):"><label class="element choice">Associated nevus (specify type):</label>
+</p>
+<p>
+- Other (specify):
+<input type="text" class = "element text medium" ID="A41" size="35">
+</p></li>
+<br>
+</fieldset>
+</p>
+
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A42" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 18-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Melanoma 4.1.0.0 (August 2019), <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>
