@@ -41,7 +41,7 @@ if (frm.A07.value !== ""){
 }
 
 if (frm.A08.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A08 .value + "\n";
+	Template += "- Histologic type (WHO 2019): " + "\n" + "  - " + frm.A08 .value + "\n";
 }
 
 if (frm.A09.value !== ""){
@@ -272,7 +272,7 @@ function CopyToClipboard() {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-ampulla-17protocol-4000.pdf" target="_blank">
+		<h2><a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the Ampulla of Vater
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -330,24 +330,21 @@ function CopyToClipboard() {
  <textarea ID="A06" class="element textarea medium"></textarea>
 </p></li>
 
-<li><p><label class="description">- Histologic type:</label> 
+<li><p><label class="description">- Histologic type (WHO 2019):</label> 
 <select class="element select medium" ID="A07">
 	<option value=""></option>
 	<option value="Adenocarcinoma">Adenocarcinoma</option>
 	<option value="Adenocarcinoma, pancreaticobiliary type">Adenocarcinoma, pancreaticobiliary type</option>
 	<option value="Adenocarcinoma, intestinal type">Adenocarcinoma, intestinal type</option>
+	<option value="Tubular adenocarcinoma with mixed features">Tubular adenocarcinoma with mixed features</option>
+	<option value="Mucinous adenocarcinoma">Mucinous adenocarcinomaa</option>
+	<option value="Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>
 	<option value="Medullary carcinoma">Medullary carcinoma</option>
 	<option value="Invasive papillary adenocarcinoma">Invasive papillary adenocarcinoma</option>
-	<option value="Mucinous adenocarcinoma">Mucinous adenocarcinomaa</option>
-	<option value="Clear cell adenocarcinoma">Clear cell adenocarcinomaa</option>
-	<option value="Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>
 	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-	<option value="Hepatoid carcinoma">Hepatoid carcinoma</option>
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
+	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>	
 	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
-	<option value="Undifferentiated carcinoma with osteoclast-like giant cells">Undifferentiated carcinoma with osteoclast-like giant cells</option>
 	<option value="Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
 	<option value="Carcinoma, not otherwise specified">Carcinoma, not otherwise specified</option>
 </select>
@@ -638,8 +635,8 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-AmpullaVater 4.0.0.0 (June 2017), <br>
+Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+AmpullaVater 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

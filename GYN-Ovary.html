@@ -408,7 +408,7 @@ if (frm.A87.value !== ""){
 }
 
 if (frm.A88.value !== ""){
-	Template += "- Implants (for seroous/seromucinous borderline tumors): " + "\n" + frm.A88.value + "\n";
+	Template += "- Implants (for serous/seromucinous borderline tumors): " + "\n" + frm.A88.value + "\n";
 }
 
 if (document.getElementById("A89").checked || document.getElementById("A90").checked ||
@@ -557,7 +557,7 @@ if (frm.A120.value !== ""){
 }
 
 if (frm.A129.value !== ""){
-	Template += "\n" + "- FIGO Stage (2015 FIGO Cancer Report) : " + "\n" + frm.A129.value + "\n";
+	Template += "\n" + "- FIGO Stage (2018 FIGO Cancer Report) : " + "\n" + frm.A129.value + "\n";
 }
 
 if (document.getElementById("A121").checked || document.getElementById("A122").checked ||
@@ -652,7 +652,7 @@ function CopyToClipboard() {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-femalereproductive-ovary-fallopian-18protocol-1100.pdf" target="_blank">
+		<h2><a href=".\cap\cp-femalereproductive-ovaryfallopian-20-1110.pdf" target="_blank">
 		<div class="tooltip">Primary tumors of the ovary, fallopian tube and peritoneum
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -900,7 +900,7 @@ function CopyToClipboard() {
 </p></li>
 
 <li><p>
-<label class="description">- Implants (for seroous/seromucinous borderline tumors):</label>
+<label class="description">- Implants (for serous/seromucinous borderline tumors):</label>
 	<select class="element select medium" ID="A88">
 		<option value=""></option>
 		<option value="  - Not identified">Not identified</option>
@@ -951,6 +951,7 @@ function CopyToClipboard() {
 		<option value="  - Not submitted/ unknown">Not submitted/ unknown</option>
 		<option value="  - Negative for malignancy (normal/benign)">Negative for malignancy (normal/benign)</option>
 		<option value="  - Atypical and/or suspicious (explain):">Atypical and/or suspicious (explain):</option>
+		<option value="  - Neoplastic cells (applicable only to borderline/atypical proliferative tumor)">Neoplastic cells (applicable only to borderline/atypical proliferative tumor)</option>
 		<option value="  - Malignant (positive for malignancy)">Malignant (positive for malignancy)</option>
 		<option value="  - Unsatisfactory/nondiagnostic (explain):">Unsatisfactory/nondiagnostic (explain):</option>
 		<option value="  - Results pending">Results pending</option>
@@ -1052,7 +1053,7 @@ function CopyToClipboard() {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> FIGO stage (2015 Cancer Report):</label></legend>
+	<legend> <label class="description"> FIGO stage (2018 Cancer Report):</label></legend>
 <li><p>
   	<select class="element select medium" ID="A129">
 		<option value=""></option>
@@ -1070,7 +1071,7 @@ function CopyToClipboard() {
 		<option value="  - IIIA: Metastasis to the retroperitoneal lymph nodes with or without microscopic peritoneal involvement beyond the pelvis">IIIA: Metastasis to the retroperitoneal lymph nodes with or without microscopic peritoneal involvement beyond the pelvis</option>
 		<option value="  - IIIA1: Positive retroperitoneal lymph nodes only (cytologically or histologically proven)">IIIA1: Positive retroperitoneal lymph nodes only (cytologically or histologically proven)</option>
 		<option value="  - IIIA1(i): Metastasis < or = 10 mm in greatest dimension">IIIA1(i): Metastasis < or = 10 mm in greatest dimension</option>
-		<option value="  - IIIA1(ii): Metastasis >10 mm in greatest dimension">IIIA1(ii): Metastasis >10 mm in greatest dimension</option>
+		<option value="  - IIIA1(ii): Metastasis > 10 mm in greatest dimension">IIIA1(ii): Metastasis > 10 mm in greatest dimension</option>
 		<option value="  - IIIA2: Microscopic extrapelvic (above the pelvic brim) peritoneal involvement with or without positive retroperitoneal lymph nodes">IIIA2: Microscopic extrapelvic (above the pelvic brim) peritoneal involvement with or without positive retroperitoneal lymph nodes</option>
 		<option value="  - IIIB: Macroscopic peritoneal metastases beyond the pelvic brim < or = 2 cm in greatest dimension, with or without metastasis to the retroperitoneal lymph nodes">IIIB: Macroscopic peritoneal metastases beyond the pelvic brim < or = 2 cm in greatest dimension, with or without metastasis to the retroperitoneal lymph nodes</option>
 		<option value="  - IIIC: Macroscopic peritoneal metastases beyond the pelvic brim > 2 cm in greatest dimension, with or without metastases to the retroperitoneal nodes">IIIC: Macroscopic peritoneal metastases beyond the pelvic brim > 2 cm in greatest dimension, with or without metastases to the retroperitoneal nodes</option>
@@ -1110,7 +1111,7 @@ function CopyToClipboard() {
 		<option value="  - pT2: Tumor involves one or both ovaries or fallopian tubes with pelvic extension below pelvic brim or primary peritoneal cancer">pT2: Tumor involves one or both ovaries or fallopian tubes with pelvic extension below pelvic brim or primary peritoneal cancer</option>
 		<option value="  - pT2a: Extension and/or implants on uterus and/or fallopian tube(s) and/or ovaries">pT2a: Extension and/or implants on uterus and/or fallopian tube(s) and/or ovaries</option>
 		<option value="  - pT2b: Extension to and/or implants on other pelvic tissues">pT2b: Extension to and/or implants on other pelvic tissues</option>
-		<option value="  - pT3: Tumor involves one or both ovaries or fallopian tubes, or primary peritoneal cancer with microscopically confirmed peritoneal metastasis outside the pelvis and/or metastasis to retroperitoneal (pelvic and/or para-aortic) lymph nodes">pT3: Tumor involves one or both ovaries or fallopian tubes, or primary peritoneal cancer with microscopically confirmed peritoneal metastasis outside the pelvis and/or metastasis to retroperitoneal (pelvic and/or para-aortic) lymph nodes</option>
+		<option value="  - pT3: Tumor involves one or both ovaries or fallopian tubes, or primary peritoneal cancer, with microscopically confirmed peritoneal metastasis outside the pelvis and/or metastasis to retroperitoneal (pelvic and/or para-aortic) lymph nodes">pT3: Tumor involves one or both ovaries or fallopian tubes, or primary peritoneal cancer, with microscopically confirmed peritoneal metastasis outside the pelvis and/or metastasis to retroperitoneal (pelvic and/or para-aortic) lymph nodes</option>
 		<option value="  - pT3a: Microscopic extra-pelvic (above the pelvic brim) peritoneal involvement with or without positive retroperitoneal lymph nodes">pT3a: Microscopic extra-pelvic (above the pelvic brim) peritoneal involvement with or without positive retroperitoneal lymph nodes</option>
 		<option value="  - pT3b: Macroscopic peritoneal metastasis beyond pelvis 2 cm or less in greatest dimension with or without metastasis to retroperitoneal lymph nodes">pT3b: Macroscopic peritoneal metastasis beyond pelvis 2 cm or less in greatest dimension with or without metastasis to retroperitoneal lymph nodes</option>
 		<option value="  - pT3c: Macroscopic peritoneal metastasis beyond pelvis more than 2 cm in greatest dimension with or without metastasis to the retroperitoneal lymph nodes (includes extension of tumor to capsule of liver and spleen without parenchymal involvement of either organ)">pT3c: Macroscopic peritoneal metastasis beyond pelvis more than 2 cm in greatest dimension with or without metastasis to the retroperitoneal lymph nodes (includes extension of tumor to capsule of liver and spleen without parenchymal involvement of either organ)</option>
@@ -1190,8 +1191,8 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 19-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-OvaryFallopian 1.1.0.0 (August 2018), <br>
+Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Ovary Fallopian 1.1.1.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

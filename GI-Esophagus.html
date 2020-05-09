@@ -76,7 +76,7 @@ if (frm.A14.value !== ""){
 }
 
 if (frm.A15.value !== ""){
-	Template += "\n" + "- Histologic type " + "\n" + frm.A15.value + "\n";
+	Template += "\n" + "- Histologic type: (WHO 2019) " + "\n" + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
@@ -97,6 +97,10 @@ if (frm.A19.value !== ""){
 
 if (frm.A20.value !== ""){
 	Template += "- Treatment effect: " + "\n" + frm.A20.value + "\n";
+}
+
+if (frm.A49.value !== ""){
+	Template += "- Tumor regression grade (Mandard 1994): " + "\n" + frm.A49.value + "\n";
 }
 
 if (frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value !== ""){
@@ -270,7 +274,7 @@ Coding is not completed. Report cannot be generated.
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-esophagus-17protocol-4000.pdf" target="_blank">
+		<a href=".\cap\cp-giupper-esophagus-20-4100.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the esophagus
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -346,24 +350,25 @@ Coding is not completed. Report cannot be generated.
 </p></li>
 
 <li><p>
-<label class="description">- Histologic types:</label> 
+<label class="description">- Histologic types (2019):</label> 
 <select class="element select medium" ID="A15">
 	<option value=""></option>
 	<option value="  - Adenocarcinoma">Adenocarcinoma</option>
 	<option value="  - Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>
 	<option value="  - Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
-	<option value="  - Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
-	<option value="  - Undifferentiated carcinoma with glandular component">Undifferentiated carcinoma with glandular component</option>	
-	<option value="  - Squamous cell carcinoma">Squamous cell carcinoma</option>
-	<option value="  - Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>
 	<option value="  - Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-	<option value="  - Spindle cell (squamous) carcinoma">Spindle cell (squamous) carcinoma</option>
-	<option value="  - Verrucous (squamous) carcinoma">Verrucous (squamous) carcinoma</option>
-	<option value="  - Undifferentiated carcinoma with squamous component">Undifferentiated carcinoma with squamous component</option>
+	<option value="  - Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="  - Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>	
+	<option value="  - Spindle cell squamous cell carcinoma">Spindle cell squamous cell carcinoma</option>
+	<option value="  - Verrucous squamous cell carcinoma">Verrucous squamous cell carcinoma</option>
 	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="  - Lymphoepithelioma-like carcinoma">Lymphoepithelioma-like carcinoma</option>
 	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
 	<option value="  - Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
+	<option value="  - Mixed squamous cell carcinoma-neuroendocrine carcinoma">Mixed squamous cell carcinoma-neuroendocrine carcinoma</option>
+	<option value="  - Mixed adenocarcinoma-neuroendocrine carcinoma">Mixed adenocarcinoma-neuroendocrine carcinoma</option>
+	<option value="  - Mixed adenocarcinoma-neuroendocrine tumor">Mixed adenocarcinoma-neuroendocrine tumor</option>
 	<option value="  - G1: Well-differentiated neuroendocrine tumor">G1: Well-differentiated neuroendocrine tumor</option>
 	<option value="  - G2: Well-differentiated neuroendocrine tumor">G2: Well-differentiated neuroendocrine tumor</option>
 	<option value="  - G3: Well-differentiated neuroendocrine tumor">G3: Well-differentiated neuroendocrine tumor</option>
@@ -429,6 +434,20 @@ Coding is not completed. Report cannot be generated.
 	<option value="  - Score 1, single cells or rare small groups of cancer cells (near complete response)">Score 1, single cells or rare small groups of cancer cells (near complete response)</option>
 	<option value="  - Score 2, residual cancer with evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response)">Score 2, residual cancer with evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response)</option>
 	<option value="  - Score 3, extensive residual cancer with no evident tumor regression (poor or no response)">Score 3, extensive residual cancer with no evident tumor regression (poor or no response)</option>
+	<option value="  - Cannot be determined">Cannot be determined</option>
+</select>
+</p></li>
+
+
+<li><p>
+<label class="description">- Alternative tumor regression grading (Mandard 1994): </label>
+<select class="element select medium" ID="A49">
+	<option value=""></option>
+	<option value="  - TRG 1 (No residual cancer)">TRG 1 (No residual cancer)</option>
+	<option value="  - TRG 2 (Rare residual cancer cells)">TRG 2 (Rare residual cancer cells)</option>
+	<option value="  - TRG 3 (Fibrosis outgrowing residual cancer)">TRG 3 (Fibrosis outgrowing residual cancer)</option>
+	<option value="  - TRG 4 (Residual cancer outgrowing fibrosis)">TRG 4 (Residual cancer outgrowing fibrosis)</option>
+	<option value="  - TRG 5 (Absence of regressive changes)">TRG 5 (Absence of regressive changes)</option>
 	<option value="  - Cannot be determined">Cannot be determined</option>
 </select>
 </p></li>
@@ -653,8 +672,8 @@ Coding is not completed. Report cannot be generated.
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Esophagus 4.0.0.0 (June 2017), <br>
+Last upated on 09-Apr-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Esophagus 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -60,7 +60,7 @@ if (frm.A10.value !== ""){
 }
 
 if (frm.A11.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A11.value + "\n";
+	Template += "- Histologic type (WHO 2019): " + "\n" + frm.A11.value + "\n";
 }
 
 if (frm.A12.value !== ""){
@@ -139,10 +139,6 @@ if (document.getElementById("A27").checked){
 
 if (document.getElementById("A28").checked){
 	Template += frm.A28.value + "\n";
-}
-
-if (frm.A29.value !== ""){
-	Template += "- Depth of tumor extension: " + "\n" + frm.A29.value + "\n";
 }
 
 if (frm.A30.value + frm.A31.value +frm.A32.value +frm.A33.value +frm.A34.value +frm.A35.value +frm.A36.value +
@@ -312,7 +308,7 @@ function CopyToClipboard() {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-perihilar-bileducts-17protocol-4001.pdf" target="_blank">
+		<a href=".\cap\cp-gihepatobiliary-perihilarbileducts-20-4100.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the Perihilar Bile Ducts
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -373,25 +369,22 @@ function CopyToClipboard() {
 </p></li>
 
 <li><p>
-<label class="description">- Histologic type:</label> 
+<label class="description">- Histologic type (WHO 2019):</label> 
 <select class="element select medium" ID="A11">
 	<option value=""></option>
 	<option value="  - Adenocarcinoma">Adenocarcinoma</option>
-	<option value="  - Adenocarcinoma, intestinal type">Adenocarcinoma, intestinal type</option>
 	<option value="  - Adenocarcinoma, biliary type">Adenocarcinoma, biliary type</option>	
-	<option value="  - Adenocarcinoma, gastric foveolar type">Adenocarcinoma, gastric foveolar type</option>
-	<option value="  - Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>
-	<option value="  - Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
+	<option value="  - Adenocarcinoma, intestinal type">Adenocarcinoma, intestinal type</option>
 	<option value="  - Mucinous adenocarcinoma">Mucinous adenocarcinoma</option>
 	<option value="  - Clear cell adenocarcinoma">Clear cell adenocarcinoma</option>
-	<option value="  - Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>
+	<option value="  - Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
 	<option value="  - Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="  - Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
 	<option value="  - Squamous cell carcinoma">Squamous cell carcinoma</option>
-	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>	
-	<option value="  - Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
+	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>
 	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="  - Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
+	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>	
+	<option value="  - Mixed neuroendocrine-non-neuroendocrine tumor (Mixed adenoneuroendocrine carcinoma)">Mixed neuroendocrine-non-neuroendocrine tumor (Mixed adenoneuroendocrine carcinoma)</option>
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
 </select>
@@ -445,18 +438,6 @@ function CopyToClipboard() {
 <input type="checkbox" class="element checkbox" id="A26" value="  - Tumor invades second-order biliary radicals, bilateral"><label class="element choice">Tumor invades gallbladder</label>
 <input type="checkbox" class="element checkbox" id="A27" value="  - Tumor directly invades adjacent organs other than the gallbladder, specify: "><label class="element choice">Tumor directly invades adjacent organs other than the gallbladder, specify:</label>
 <input type="checkbox" class="element checkbox" id="A28" value="  - Cannot be assessed"><label class="element choice">Cannot be assessed</label>
-</p></li>
-
-<li><p>
-<label class="description">- Depth of tumor extension: </label>
-<select class="element select medium" ID="A29">
-	<option value=""></option>
-	<option value="  - No invasion (carcinoma in situ/high-grade dysplasia)">No invasion (carcinoma in situ/high-grade dysplasia)</option>
-	<option value="  - Tumor invades with a depth < 5 mm">Tumor invades with a depth < 5 mm</option>
-	<option value="  - Tumor invades with a depth of 5 - 12 mm">Tumor invades with a depth of 5 - 12 mm</option>
-	<option value="  - Tumor invades with a depth > 12 mm">Tumor invades with a depth > 12 mm</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
-</select>
 </p></li>
 
 <br>
@@ -667,11 +648,11 @@ function CopyToClipboard() {
 	<option value="  - pTX: Primary tumor thickness cannot be assessed, explain: ">pTX: Primary tumor thickness cannot be assessed, explain: </option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pTis: Carcinoma in situ/high-grade dysplasia">pTis: Carcinoma in situ/high-grade dysplasia</option>
-	<option value="  - pT1: Tumor confined to the bile duct, with extension up to the muscle layer or fibrous tissue">pT1: Tumor invades the bile duct wall with a depth < 5 mm</option>
-	<option value="  - pT2: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue, or tumor invades adjacent hepatic parenchyma">pT2: Tumor invades the bile duct wall with a depth of 5 - 12 mm</option>
-	<option value="  - pT2a: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue">pT2a: Tumor invades the bile duct wall with a depth of 5 - 12 mm</option>
-	<option value="  - pT2b: Tumor invades adjacent hepatic parenchyma">pT2b: Tumor invades the bile duct wall with a depth of 5 - 12 mm</option>
-	<option value="  - pT3: Tumor invades unilateral branches of the portal vein or hepatic artery">pT3: Tumor invades the bile duct wall with a depth > 12 mm</option>
+	<option value="  - pT1: Tumor confined to the bile duct, with extension up to the muscle layer or fibrous tissue">pT1: Tumor confined to the bile duct, with extension up to the muscle layer or fibrous tissue</option>
+	<option value="  - pT2: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue, or tumor invades adjacent hepatic parenchyma">pT2: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue, or tumor invades adjacent hepatic parenchyma</option>
+	<option value="  - pT2a: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue">pT2a: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue</option>
+	<option value="  - pT2b: Tumor invades adjacent hepatic parenchyma">pT2b: Tumor invades adjacent hepatic parenchyma</option>
+	<option value="  - pT3: Tumor invades unilateral branches of the portal vein or hepatic artery">pT3: Tumor invades unilateral branches of the portal vein or hepatic artery</option>
 	<option value="  - pT4: Tumor invades the main portal vein or its branches bilaterally, or the common hepatic artery; or unilateral second-order biliary radicals with contralateral portal vein or hepatic artery involvement">pT4: Tumor invades the main portal vein or its branches bilaterally, or the common hepatic artery; or unilateral second-order biliary radicals with contralateral portal vein or hepatic artery involvement</option>
 </select>
 </p></li>
@@ -738,8 +719,8 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-PerihilarBileDuct 4.0.0.1 (June 2017), <br>
+Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+PerihilarBileDuct 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

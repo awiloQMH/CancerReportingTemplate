@@ -51,7 +51,7 @@ if (frm.A08.value !== ""){
 }
 
 if (frm.A09.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A09.value + "\n";
+	Template += "- Histologic type (WHO 2019): " + "\n" + frm.A09.value + "\n";
 }
 
 if (frm.A10.value !== ""){
@@ -290,7 +290,7 @@ function CopyToClipboard() {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-17protocol-4001.pdf" target="_blank">
+		<a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-20-4100.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the distal extrahepatic bile ducts
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -348,25 +348,22 @@ function CopyToClipboard() {
 </p></li>
 
 <li><p>
-<label class="description">- Histologic type:</label> 
+<label class="description">- Histologic type (WHO 2019):</label> 
 <select class="element select medium" ID="A09">
 	<option value=""></option>
 	<option value="  - Adenocarcinoma">Adenocarcinoma</option>
+	<option value="  - Adenocarcinoma, biliary type (extrahepatic cholangiocarcinoma)">Adenocarcinoma, biliary type (extrahepatic cholangiocarcinoma)</option>	
 	<option value="  - Adenocarcinoma, intestinal type">Adenocarcinoma, intestinal type</option>
-	<option value="  - Adenocarcinoma, biliary type">Adenocarcinoma, biliary type</option>	
-	<option value="  - Adenocarcinoma, gastric foveolar type">Adenocarcinoma, gastric foveolar type</option>
-	<option value="  - Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>
-	<option value="  - Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
 	<option value="  - Mucinous adenocarcinoma">Mucinous adenocarcinoma</option>
 	<option value="  - Clear cell adenocarcinoma">Clear cell adenocarcinoma</option>
-	<option value="  - Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>
+	<option value="  - Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
 	<option value="  - Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="  - Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
 	<option value="  - Squamous cell carcinoma">Squamous cell carcinoma</option>
 	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>	
-	<option value="  - Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
 	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="  - Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
+	<option value="  - Mixed neuroendocrine-non-neuroendocrine tumor (Mixed adenoneuroendocrine carcinoma)">Mixed neuroendocrine-non-neuroendocrine tumor (Mixed adenoneuroendocrine carcinoma)</option>
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
 </select>
@@ -695,8 +692,8 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-DistalExtrahepaticBileDucts 4.0.0.1	(June 2017), <br>
+Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+DistalExtrahepaticBileDucts 4.1.0.0	(Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

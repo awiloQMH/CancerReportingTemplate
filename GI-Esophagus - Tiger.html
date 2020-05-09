@@ -1,0 +1,1461 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Esophagus CA Tiger study</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+
+
+if (frm.A53.value !== ""){
+	Template += "- HKID: " + frm.A53.value + "\n";
+}
+
+if (frm.A54.value !== ""){
+	Template += "- Operation date: " + frm.A54.value + "\n";
+}
+
+if (frm.A57.value !== ""){
+	Template += "- Pathology No.: " + frm.A57.value + "\n";
+}
+if (document.getElementById("A02").checked || document.getElementById("A03").checked || 
+	document.getElementById("A04").checked || document.getElementById("A05").checked ||
+	document.getElementById("A06").checked || document.getElementById("A07").checked || 
+	document.getElementById("A08").checked || document.getElementById("A09").checked ||
+	document.getElementById("A10").checked){
+	Template += "- Tumor site: " ;
+}
+
+if (document.getElementById("A02").checked){
+	Template += frm.A02.value + "\n";
+}
+
+if (document.getElementById("A03").checked){
+	Template += frm.A03.value + "\n";
+}
+
+if (document.getElementById("A04").checked){
+	Template += frm.A04.value + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += frm.A10.value + "\n";
+}
+
+if (frm.A11.value !== ""){
+	Template += "- Relationship of tumor to esophagogastric junction: " + frm.A11.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "  - Distance of tumor center from esophagogastric junction (mm): " + frm.A12.value + "\n";
+}
+
+if (frm.A13.value !== ""){
+	Template += "- Tumor size: " + frm.A13.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "\n" + "- Histologic type " + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "- Histologic grade: " + frm.A16.value + "\n";
+}
+
+if (frm.A52.value !== ""){
+	Template += "- Lauren Classification: "  + frm.A52.value + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Tumor extension: " + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "- Vasovascular growth: " + frm.A18.value + "\n";
+}
+
+if (frm.A50.value !== ""){
+	Template += "- Lymphangioinvasive growth: " + frm.A50.value + "\n";
+}
+
+if (frm.A19.value !== ""){
+	Template += "- Perineural extension: " + frm.A19.value + "\n";
+}
+
+if (frm.A56.value !== ""){
+	Template += "- HER2 status: " + frm.A56.value + "\n";
+}
+
+if (frm.A49.value !== ""){
+	Template += "-  Response to neoadjuvant therapy (Mandard score): " + frm.A49.value + "\n";
+}
+
+if (frm.A21.value + frm.A22.value + frm.A23.value + frm.A51.value !== ""){
+	Template += "\n" + "- Surgical margins: " + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template +=  "  - Proximal margins: "  + frm.A21.value + "\n" ;
+}
+
+if (frm.A22.value !== ""){
+	Template +=  "  - Distal margins: "  +  frm.A22.value + "\n" ;
+}
+
+if (frm.A23.value !== ""){
+	Template +=  "  - Radial margins: "  + frm.A23.value + "\n" ;
+}
+
+if (frm.A51.value !== ""){
+	Template +=  "  - Radicality: "  +  frm.A51.value + "\n" ;
+}
+
+if (frm.B01.value !== ""){
+	Template += "- Total number of lymph nodes: " + frm.B01.value + "\n";
+}
+if (frm.B02.value !== ""){
+	Template += "- Total number of positive lymph nodes: " + frm.B02.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Superficial cervical lymph nodes R (1R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B03.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B04.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B05.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B06.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B07.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Superficial cervical lymph nodes L (1L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B08.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B09.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B10.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B11.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B12.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Cervical paraesophageal lymph nodes R (2R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B13.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B14.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B15.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B16.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B17.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Cervical paraesophageal lymph nodes L (2L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B18.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B19.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B20.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B21.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B22.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Deep cervical lymph nodes R (3R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B23.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B24.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B25.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B26.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B27.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Deep cervical lymph nodes L (3L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B28.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B29.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B30.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B31.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B32.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Peripharyngeal lymph nodes (4): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B33.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B34.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B35.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B36.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B37.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Upper paratracheal lymph nodes R (6R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B38.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B39.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B40.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B41.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B42.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Upper paratracheal lymph nodes L (6L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B43.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B44.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B45.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B46.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B47.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Lower paratracheal lymph nodes R (7R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B48.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B49.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B50.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B51.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B52.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Lower paratracheal lymph nodes L (7L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B53.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B54.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B55.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B56.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B57.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Aortapulmonary window lymph nodes (8): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B58.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B59.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B60.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B61.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B62.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Subcarinal lymph nodes (9): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B63.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B64.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B65.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B66.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B67.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Upper mediastinal paraesophageal lymph nodes R (10R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B68.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B69.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B70.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B71.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B72.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "- Upper mediastinal paraesophageal lymph nodes L (10L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "  - Total number of lymph nodes: " + frm.B73.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B74.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B75.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B76.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B77.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Middle mediastinal paraesophageal lymph nodes R (11R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B78.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B79.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B80.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B81.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B82.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Middle mediastinal paraesophageal lymph nodes L (11L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B83.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B84.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B85.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B86.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B87.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Lower mediastinal paraesophageal lymph nodes R (12R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B88.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B89.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B90.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B91.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B92.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Lower mediastinal paraesophageal lymph nodes L (12L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B93.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B94.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B95.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B96.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B97.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Pulmonary ligament lymph nodes R (13R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B98.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B99.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B100.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B101.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B102.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Pulmonary ligament lymph nodes L (13L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B103.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B104.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B105.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B106.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B107.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Paracardial lymph nodes R (14R): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B108.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B109.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B110.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B111.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B112.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Paracardial lymph nodes L (14L): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B113.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B114.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B115.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B116.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B117.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Left gastric artery lymph nodes (15): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B118.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B119.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B120.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B121.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B122.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Celiac trunk lymph nodes (16): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B123.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B124.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B125.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B126.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B127.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Splenic artery lymph nodes (17): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B128.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B129.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B130.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B131.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B132.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Common hepatic artery lymph nodes (18): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B133.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B134.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B135.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B136.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B137.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "\n" + "- Hepatoduodenal ligament lymph nodes (19): " + "\n"
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes: " + frm.B138.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes: " + frm.B139.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of positive lymph nodes with extracapsular spread: " + frm.B140.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with fibrosis and treatment effects: " + frm.B141.value + "\n";
+}
+
+if (frm.B01.value !== ""){
+	Template += "  - Total number of lymph nodes with micrometasis: " + frm.B142.value + "\n";
+}
+
+if (document.getElementById("A33").checked || document.getElementById("A34").checked ||
+	document.getElementById("A35").checked || frm.A36.value + frm.A37.value + 
+	frm.A38.value + frm.A39.value !== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 7th edition):" + "\n";
+}
+
+if (document.getElementById("A33").checked || document.getElementById("A34").checked ||
+	document.getElementById("A35").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A33").checked){
+	Template += "    " + frm.A33.value + "\n";
+}
+
+if (document.getElementById("A34").checked){
+	Template += "    " + frm.A34.value + "\n";
+}
+
+if (document.getElementById("A35").checked){
+	Template += "    " +frm.A35.value + "\n";
+}
+
+if (frm.A36.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A36.value + "\n";
+}
+
+if (frm.A37.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "  " + frm.A37.value + "\n";
+}
+
+if (frm.A38.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A38.value + "\n";
+}
+
+if (frm.A39.value !== ""){
+	Template += "    - Specify site(s): " + frm.A39.value + "\n";
+}
+
+if (frm.A48.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A48.value + "\n";
+}
+
+if (frm.A55.value !== ""){
+	Template += "\n" + "\n" + "Signed by Dr. Anthony W.I. Lo   Date: " + frm.A55.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
+</head>
+
+<body>
+
+
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+		<div class="form_description">
+		<h2 align="center"> 
+			<img src="Tiger_study.png" alt="Tiger Study" style="width:30px;height:30px;">
+    TIGER Study
+			<img src="Tiger_study.png" alt="Tiger Study" style="width:30px;height:30px;">
+
+	</h2>
+	</div>
+	
+<form>
+This form is for testing data entrance for TIGER study for assessing lymph node status in surgical management of esophagus cancers. Please use the corresponding excel form for data entrance.<br>
+<br><b>Please do not use this form for routine diagnostic pathology services.</b><br>
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+<table>
+<col width="40%">
+<tr>
+<td>- HKID:</td>
+<td><input type="text" class="element text large" ID="A53" size="60"  ></td></tr>
+<tr>
+<td>- Operation Date:</td>
+<td><input type="text" class="element text large" ID="A54" size="60" placeholder="dd-mm-yyyy"></td></tr>
+<tr>
+<td>- Pathology No.:</td>
+<td><input type="text" class="element text large" ID="A57" size="60"></td></tr>
+<tr>
+<td>- Tumor localization:</td> 
+<td><input type="checkbox" class="element checkbox" id="A02" value="Cervical (proximal) esophagus"><label class="choice">Cervical (proximal) esophagus</label>
+<input type="checkbox" class="element checkbox" id="A03" value="Mid esophagus, upper thoracic esophagus"><label class="choice">Mid esophagus, upper thoracic esophagus</label>
+<input type="checkbox" class="element checkbox" id="A04" value="Mid esophagus, middle thoracic esophagus"><label class="choice">Mid esophagus, middle thoracic esophagus</label>
+<input type="checkbox" class="element checkbox" id="A05" value="Mid esophagus, not otherwise specified"><label class="choice">Mid esophagus, not otherwise specified</label>
+<input type="checkbox" class="element checkbox" id="A06" value="Distal esophagus (low thoracic esophagus)"><label class="choice">Distal esophagus (low thoracic esophagus)</label>
+<input type="checkbox" class="element checkbox" id="A07" value="Esophagogastric junction (EGJ)"><label class="choice">Esophagogastric junction (EGJ)</label>
+<input type="checkbox" class="element checkbox" id="A08" value="Proximal stomach/cardia"><label class="choice">Proximal stomach/cardia</label>
+<input type="checkbox" class="element checkbox" id="A09" value="Other (specify):"><label class="choice">Other (specify):</label>
+<input type="checkbox" class="element checkbox" id="A10" value="Esophagus, not otherwise specified"><label class="choice">Esophagus, not otherwise specified</label>
+</td></tr>
+
+<tr>
+<td rowspan="2" valign="top">- Relationship of tumor to OGJ: </td>
+<td><select class="element select large" ID="A11">
+	<option value=""></option>
+	<option value="Tumor is entirely located within the tubular esophagus and does not involve OGJ">Does not involve OGJ</option>
+	<option value="Tumor midpoint lies in the distal esophagus and tumor involves OGJ">Midpoint lies in distal esophagus and tumor involves OGJ</option>
+	<option value="Tumor midpoint is located at OGJ">Midpoint is located at the esophagogastric junction</option>
+	<option value="Tumor midpoint is 2 cm or less into the proximal stomach or cardia and tumor involves OGJ">Midpoint is =< 2 cm into cardia and tumor involves OGJ</option>
+	<option value="Not specified">Not specified</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+</select></td></tr>
+
+<tr>
+<td>- Distance of tumor center from OGJ (mm):
+<input type="text" class="element text small" ID="A12" size="10"></td></tr>
+<tr>
+
+<td>- Tumor size (mm):</td> 
+<td><input type="text" class="element text large" ID="A13" size="10"></td></tr>
+
+</table>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<table>
+<col width="40%">
+<tr>
+<td>- Histologic types:</td> 
+<td><select class="element select large" ID="A15">
+	<option value=""></option>
+	<option value="Adenocarcinoma">Adenocarcinoma</option>
+	<option value="Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>
+	<option value="Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
+	<option value="Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
+	<option value="Undifferentiated carcinoma with glandular component">Undifferentiated carcinoma with glandular component</option>	
+	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>
+	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="Spindle cell (squamous) carcinoma">Spindle cell (squamous) carcinoma</option>
+	<option value="Verrucous (squamous) carcinoma">Verrucous (squamous) carcinoma</option>
+	<option value="Undifferentiated carcinoma with squamous component">Undifferentiated carcinoma with squamous component</option>
+	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
+	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+	<option value="Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
+	<option value="G1: Well-differentiated neuroendocrine tumor">G1: Well-differentiated neuroendocrine tumor</option>
+	<option value="G2: Well-differentiated neuroendocrine tumor">G2: Well-differentiated neuroendocrine tumor</option>
+	<option value="G3: Well-differentiated neuroendocrine tumor">G3: Well-differentiated neuroendocrine tumor</option>
+	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+</select></tr>
+<tr>
+<td>- Histologic grade:</td>
+<td><select class="element select large" ID="A16">
+	<option value=""></option>
+	<option value="G1: Well differentiated">G1: Well differentiated</option>
+	<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
+	<option value="G3: Poorly differentiated, undifferentiated">G3: Poorly differentiated, undifferentiated</option>
+	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
+	<option value="Other (specify):">Other (specify):</option>
+</select></td></tr>
+<tr>
+<td>- Lauren classification:</td>
+<td><select class="element select large" ID="A52">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Intestinal">Intestinal</option>
+	<option value="Diffuse">Diffuse</option>
+	<option value="Mixed">Mixed</option>
+	<option value="Other (specify):">Other (specify):</option>
+</select></td></tr>
+<tr>
+<td>- Tumor extension:</td>
+<td><select class="element select large" ID="A17">
+	<option value=""></option>
+	<option value="No evidence of primary tumor">No evidence of primary tumor</option>
+	<option value="High-grade dysplasia/carcinoma in situ">High-grade dysplasia/carcinoma in situ</option>
+	<option value="Tumor invades lamina propria">Tumor invades lamina propria</option>
+	<option value="Tumor invades muscularis mucosae">Tumor invades muscularis mucosae</option>
+	<option value="Tumor invades submucosa">Tumor invades submucosa</option>	
+	<option value="Tumor invades muscularis propria">Tumor invades muscularis propria</option>	
+	<option value="Tumor invades adventitia">Tumor invades adventitia</option>
+	<option value="Tumor invades the serosa (visceral peritoneum)">Tumor invades the serosa (visceral peritoneum)</option>	
+	<option value="Tumor directly invades adjacent structures/organs (specify:)">Tumor directly invades adjacent structures/organs (specify:)</option>	
+	<option value="Cannot be assessed">Cannot be assessed</option>	
+</select></td></tr>
+<tr>
+<td>- Vasovascular growth: </td>
+<td><select class="element select large" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td></tr>
+<tr>
+<td>- Lymphangioinvasive growth: </td>
+<td><select class="element select large" ID="A50">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td></tr>
+<tr>
+<td>- Perineural extension: </td>
+<td><select class="element select large" ID="A19">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td></tr>
+<tr>
+<td>- HER2 status: </td>
+<td><select class="element select large" ID="A56">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Negative for HER2 amplification">Negative for HER2 amplification</option>
+	<option value="Positive for HER2 amplification">Positive for HER2 amplification</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td></tr>
+<tr>
+<td>-  Mandard score: </td>
+<td><select class="element select large" ID="A49">
+	<option value=""></option>
+	<option value="TRG 1 (No residual cancer)">TRG 1 (No residual cancer)</option>
+	<option value="TRG 2 (Rare residual cancer cells)">TRG 2 (Rare residual cancer cells)</option>
+	<option value="TRG 3 (Fibrosis outgrowing residual cancer)">TRG 3 (Fibrosis outgrowing residual cancer)</option>
+	<option value="TRG 4 (Residual cancer outgrowing fibrosis)">TRG 4 (Residual cancer outgrowing fibrosis)</option>
+	<option value="TRG 5 (Absence of regressive changes)">TRG 5 (Absence of regressive changes)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td></tr>
+
+</table>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins for esophagus resection specimens:</label></legend>
+<table>
+<col width="40%">
+<tr>
+<td>- Proximal margin (cm):</td>
+<td><input type="text" class="element text large" ID="A21" size="60"></td></tr>
+<tr>
+<td>- Distal margin (cm):</td>
+<td><input type="text" class="element text large" ID="A22" size="60"></td></tr>
+<tr>
+<td>- Circumferential margin (mm):</td>
+<td><input type="text" class="element text large" ID="A23" size="60"></td></tr>
+<tr>
+<td>- Radicality:</td>
+<td><select class="element select large" ID="A51">
+	<option value=""></option>
+	<option value="Rx: Presence of residual tumor but cannot be assessed">Rx: Presence of residual tumor but cannot be assessed</option>
+	<option value="R0: No residual tumor">R0: No residual tumor</option>
+	<option value="R1: Microscopic residual tumor">R1: Microscopic residual tumor</option>
+	<option value="R2: Macroscopic residual tumor">R2: Macroscopic residual tumor</option>
+</select></td></tr>
+</table>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Lymph node status:</label></legend>
+<p>
+<table>
+<col width="40%">
+<tr>
+<td>
+Total number of lymph nodes examined:
+</td>
+<td>
+<input type="text" class="element text large" ID="B01" size="60">
+</td>
+</tr>
+<tr>
+<td>
+Total number of lymph nodes involved:
+</td>
+<td>
+<input type="text" class="element text large" ID="B02" size="60">
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<table>
+<col width="40%">
+<tr>
+<th>Stations </th>
+<th>Total LN</th>
+<th>LN+</th>
+<th>ENE+</th>
+<th>fibrosis+</th>
+<th>micromet+</th>
+</tr>
+<tr>
+<td>Superficial cervical lymph nodes R (1R)</td>
+<td><input type="text" class="element text large" ID="B03" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B04" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B05" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B06" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B07" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Superficial cervical lymph nodes L (1L)</td>
+<td><input type="text" class="element text large" ID="B08" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B09" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B10" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B11" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B12" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Cervical paraesophageal LN R (2R)</td>
+<td><input type="text" class="element text large" ID="B13" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B14" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B15" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B16" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B17" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Cervical paraesophageal LN L (2L)</td>
+<td><input type="text" class="element text large" ID="B18" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B19" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B20" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B21" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B22" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Deep cervical lymph nodes R (3R)</td>
+<td><input type="text" class="element text large" ID="B23" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B24" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B25" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B26" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B27" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Deep cervical lymph nodes L (3L)</td>
+<td><input type="text" class="element text large" ID="B28" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B29" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B30" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B31" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B32" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Peripharyngeal lymph nodes (4)</td>
+<td><input type="text" class="element text large" ID="B33" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B34" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B35" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B36" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B37" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Upper paratracheal lymph nodes R (6R)</td>
+<td><input type="text" class="element text large" ID="B38" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B39" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B40" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B41" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B42" size="10" value="0"></td>
+</tr
+><tr>
+<td>Upper paratracheal lymph nodes L (6L)</td>
+<td><input type="text" class="element text large" ID="B43" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B44" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B45" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B46" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B47" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Lower paratracheal lymph nodes R (7R)</td>
+<td><input type="text" class="element text large" ID="B48" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B49" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B50" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B51" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B52" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Lower paratracheal lymph nodes L (7L)</td>
+<td><input type="text" class="element text large" ID="B53" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B54" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B55" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B56" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B57" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Aortapulmonary window LN(8)</td>
+<td><input type="text" class="element text large" ID="B58" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B59" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B60" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B61" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B62" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Subcarinal lymph nodes (9)</td>
+<td><input type="text" class="element text large" ID="B63" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B64" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B65" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B66" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B67" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Upper mediastinal paraeso LN R (10R)</td>
+<td><input type="text" class="element text large" ID="B68" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B69" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B70" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B71" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B72" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Upper mediastinal paraeso LN L (10L)</td>
+<td><input type="text" class="element text large" ID="B73" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B74" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B75" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B76" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B77" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Mid mediastin paraeso LN R (11R)</td>
+<td><input type="text" class="element text large" ID="B78" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B79" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B80" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B81" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B82" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Mid mediastin paraeso LN L (11L)</td>
+<td><input type="text" class="element text large" ID="B83" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B84" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B85" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B86" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B87" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Low mediastin paraeso LN R (12R)</td>
+<td><input type="text" class="element text large" ID="B88" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B89" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B90" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B91" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B92" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Low mediastin paraeso LN L (12L)</td>
+<td><input type="text" class="element text large" ID="B93" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B94" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B95" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B96" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B97" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Pulmonary ligament LN R (13R)</td>
+<td><input type="text" class="element text large" ID="B98" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B99" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B100" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B101" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B102" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Pulmonary ligament LN L (13L)</td>
+<td><input type="text" class="element text large" ID="B103" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B104" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B105" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B106" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B107" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Paracardial lymph nodes R (14R)</td>
+<td><input type="text" class="element text large" ID="B108" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B109" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B110" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B111" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B112" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Paracardial lymph nodes L (14L)</td>
+<td><input type="text" class="element text large" ID="B113" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B114" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B115" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B116" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B117" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Left gastric artery lymph nodes (15)</td>
+<td><input type="text" class="element text large" ID="B118" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B119" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B120" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B121" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B122" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Celiac trunk lymph nodes (16)</td>
+<td><input type="text" class="element text large" ID="B123" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B124" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B125" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B126" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B127" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Splenic artery lymph nodes (17)</td>
+<td><input type="text" class="element text large" ID="B128" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B129" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B130" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B131" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B132" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Common hepatic artery LN (18)</td>
+<td><input type="text" class="element text large" ID="B133" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B134" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B135" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B136" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B137" size="10" value="0"></td>
+</tr>
+<tr>
+<td>Hepatoduodenal ligament LN (19)</td>
+<td><input type="text" class="element text large" ID="B138" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B139" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B140" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B141" size="10" value="0"></td>
+<td><input type="text" class="element text large" ID="B142" size="10" value="0"></td>
+</tr>
+</table></p>
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Pathologic Stage Classification (AJCC 7e):</label></legend>
+	
+<li><p>
+  - TNM Descriptors:<br>
+<input type="checkbox" class="element checkbox" id="A33" value=" m (multiple primary tumors) "><label class="choice">m (multiple primary tumors)</label>
+<input type="checkbox" class="element checkbox" id="A34" value=" r (recurrent) "><label class="choice">r (recurrent)</label>
+<input type="checkbox" class="element checkbox" id="A35" value=" y (post treatment) "><label class="choice">y (post treatment)</label>
+</p></li>
+<table>
+<col width="40%">
+<tr>
+<td>- Primary tumor (pT):</td>
+<td><select class="element select large" ID="A36">
+	<option value=""></option>
+	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="  - pTis: High-grade dysplasia">pTis: High-grade dysplasia</option>
+	<option value="  - pT1: Tumor invades the lamina propria, muscularis mucosae or submucosa">pT1: Tumor invades the lamina propria, muscularis mucosae or submucosa</option>
+	<option value="  - pT1a: Tumor invades the lamina propria or muscularis mucosae">pT1a: Tumor invades the lamina propria or muscularis mucosae</option>
+	<option value="  - pT1b: Tumor invades the submucosa">pT1b: Tumor invades the submucosa</option>
+	<option value="  - pT2: Tumor invades the muscularis propria">pT2: Tumor invades the muscularis propria</option>
+	<option value="  - pT3: Tumor invades adventitia">pT3: Tumor invades adventitia</option>
+	<option value="  - pT4: Tumor invades adjacent structures ">pT4: Tumor invades adjacent structures</option>
+	<option value="  - pT4a: Resectable tumor invades the pleura, pericardium or diaphragm">pT4a: Resectable tumor invades the pleura, pericardium or diaphragm</option>
+	<option value="  - pT4b: Unresectable tumor invades other adjacent structures, such as aorta, vertebral body, or trachea">pT4b: Unresectable tumor invades other adjacent structures, such as aorta, vertebral body, or trachea</option>
+</select></td></tr>
+<tr>
+<td>- Regional lymph nodes (pN): </td>
+<td><select class="element select large" ID="A37">
+	<option value=""></option>
+	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="  - pN1: Metastasis in one or two regional lymph nodes">pN1: Metastasis in one or two regional lymph nodes</option>
+	<option value="  - pN2: Metastasis in three to six regional lymph nodes">pN2: Metastasis in three to six regional lymph nodes</option>
+	<option value="  - pN3: Metastasis in seven or more regional lymph nodes">pN3: Metastasis in seven or more regional lymph nodes</option>
+</select></td></tr>
+<tr>
+<td rowspan="2" valign="top">- Distant metastasis (pM): </td>
+<td><select class="element select large" ID="A38">
+	<option value=""></option>
+	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
+</select></td></tr>
+<tr>
+<td>- Specify site(s), if known:
+<input type="text" class="element text medium" ID="A39" size="35">
+</td></tr>
+</table>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<li><p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A48" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p></li>
+
+<table>
+<col width="40%">
+<tr>
+<td>Signed by Anthony W.I. Lo</td>
+<td><input type="text" class="element text large" ID="A55" placeholder="dd-mm-yyyy" size="60"> </td>
+</tr>
+</table>
+</fieldset>
+</p>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 21-Apr-2020, following TIGER protocol and local reporting conventions.
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</div>
+
+</div>
+
+</body>
+</html>

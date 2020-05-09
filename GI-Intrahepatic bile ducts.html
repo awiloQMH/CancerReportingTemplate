@@ -29,7 +29,7 @@ if (frm.A04.value !== ""){
 }
 
 if (frm.A05.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A05.value + "\n";
+	Template += "- Histologic type (WHO 2019): " + "\n" + frm.A05.value + "\n";
 }
 
 if (frm.A06.value !== ""){
@@ -221,7 +221,7 @@ function CopyToClipboard() {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-intrahepatic-bileducts-17protocol-4000.pdf" target="_blank">
+		<a href=".\cap\cp-gihepatobiliary-intrahepaticbileducts-20-4100.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the intrahepatic bile ducts
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -279,16 +279,18 @@ function CopyToClipboard() {
 </p></li>
 
 <li><p>
-<label class="description">- Histologic type:</label> 
+<label class="description">- Histologic type (WHO 2019):</label> 
 <select class="element select medium" ID="A05">
 	<option value=""></option>
-	<option value="  - Intrahepatic cholangiocarcinoma">Intrahepatic cholangiocarcinoma</option>
+	<option value="  - Large duct intrahepatic cholangiocarcinoma">Large duct intrahepatic cholangiocarcinoma</option>
+	<option value="  - Small duct intrahepatic cholangiocarcinoma">Small duct intrahepatic cholangiocarcinoma</option>
 	<option value="  - Combined hepatocellular-cholangiocarcinoma">Combined hepatocellular-cholangiocarcinoma</option>
 	<option value="  - Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>	
 	<option value="  - Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
+	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>
 	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="  - Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
+	<option value="  - Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)">Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)</option>
 	<option value="  - Other (specify):">Other (specify):</option>
 </select>
 </p></li>
@@ -533,8 +535,8 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-IntrahepaticBileDuct 4.0.0.0 (June 2017), <br>
+Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+IntrahepaticBileDuct 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

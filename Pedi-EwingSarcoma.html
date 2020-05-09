@@ -200,9 +200,9 @@ table, th, td {
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
 
-<li>
+
 <table border="1">
-<col width="40%">
+<col width="20%">
 
 <tr>
 <td>- Procedure:</td>
@@ -237,7 +237,7 @@ table, th, td {
 		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select></td>
 </tr>
-</table></li>
+</table>
 <br>
 </fieldset>
 </p>
@@ -245,11 +245,11 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A06" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li>
+
 <table border="1"> 
 <col width="28%">
 
@@ -304,7 +304,7 @@ table, th, td {
 	<option value="Not applicable">Not applicable</option>
 </select></td>
 </tr>
-</table></li>
+</table>
 <br>
 </fieldset>
 </p>
@@ -312,7 +312,7 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins: </label></legend>
-<li><p>
+<p>
 <select class="element select medium" ID="A16">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
@@ -321,7 +321,7 @@ table, th, td {
 	<option value="Uninvolved by tumor, closest margin, specify distance and locations (mm):">Uninvolved by tumor, closest margin, specify distance and locations (mm):</option>
 	<option value="Involved by tumor, specify margins: ">Involved by invasive carcinoma, specify margins: </option>
 </select>
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
@@ -329,8 +329,9 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
-<li>
+
 <table border="1">
+<col width="60%">
 <tr>
 <td>
 - Number of regional lymph nodes examined:
@@ -380,7 +381,7 @@ table, th, td {
 </td>
 </tr>
 </table>
-</li>
+
 <br>
 </fieldset>
 </p>
@@ -388,14 +389,14 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e): </label></legend>
-<li><p>
-- TNM Descriptors:
-<input type="checkbox" class="element checkbox" id="A22" value="m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A23" value="r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A24" value="y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+<p>
+- TNM Descriptors:<br>
+<input type="checkbox" id="A22" value="m (multiple primary tumors) ">m (multiple primary tumors)<br>
+<input type="checkbox" id="A23" value="r (recurrent) ">r (recurrent)<br>
+<input type="checkbox" id="A24" value="y (post treatment) ">y (post treatment)<br>
+</p>
 
-<li><p>
+<p>
 <table border="1">
 <col width="62%">
 <tr>
@@ -492,15 +493,15 @@ table, th, td {
 </tr>
 </table>
 </p>
-</li>
+
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional pathologic findings:</label>
  <textarea ID="A33" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>

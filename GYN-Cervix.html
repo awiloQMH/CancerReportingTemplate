@@ -156,7 +156,7 @@ if (frm.A31.value !== ""){
 }
 
 if (frm.A32.value !== ""){
-	Template += "- Depth of stromal invasion (mm): " + frm.A32.value + "\n";
+	Template += "- Depth of stromal invasion (mm): " + "\n" + frm.A32.value + "\n";
 }
 
 if (frm.A32A.value !== ""){
@@ -164,11 +164,11 @@ if (frm.A32A.value !== ""){
 }
 
 if (frm.A33.value !== ""){
-	Template += "- Horizontal extent longitudinal/length (mm): " + frm.A33.value + "\n";
+	Template += "- Horizontal extent of Stromal Invasion: " + "\n" + frm.A33.value + "\n";
 }
 
 if (frm.A34.value !== ""){
-	Template += "- Horizontal extent circumferential/width (mm): " + frm.A34.value + "\n";
+	Template += "- Pattern of invasion for endocervical adenocarcinoma: " + "\n" + frm.A34.value + "\n";
 }
 
 if (document.getElementById("A35").checked || document.getElementById("A36").checked ||
@@ -523,13 +523,13 @@ function CopyToClipboard() {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-femalereproductive-uterinecervix-resection-19-4200.pdf" target="_blank">
+		<h2><a href=".\cap\cp-femalereproductive-uterinecervix-resection-20-4300.pdf" target="_blank">
 		<div class="tooltip">Carcinoma of the cervix
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
 		</a></h2>
 	</div>
-<p> This is additional protocol for <a href=".\cap\cp-femalereproductive-uterinecervix-excision-19-4200.pdf" target="_blank">excision specimen of cervix</a>.</p>
+<p> This is additional protocol for <a href=".\cap\cp-femalereproductive-uterinecervix-excision-20-4300.pdf" target="_blank">excision specimen of cervix</a>.</p>
 <form>
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -661,7 +661,12 @@ function CopyToClipboard() {
 
 <li><p>
 <label class="description">- Depth of stromal invasion (mm):</label>
-<input type="text" ID="A32" class="element text small" ></p>
+	<select class="element select medium" ID="A32">
+		<option value=""></option>
+		<option value="  - Specify (mm):">Specify (mm):</option>
+		<option value="  - At least (mm):">At least (mm):</optiNegativeon>
+		<option value="  - Cannot be determined (explain)">Cannot be determined (explain)</option>
+	</select>
 
 <p>
 <label class="description">- Depth of stromal invasion (proportion): </label>
@@ -673,11 +678,24 @@ function CopyToClipboard() {
 	</select>
 </p>
 
-<label class="description">- Horizontal extent longitudinal/length (mm):</label>
-<input type="text" ID="A33" class="element text small" ></p>
+<label class="description">- Horizontal extent of Stromal Invasion:</label>
+	<select class="element select medium" ID="A33">
+		<option value=""></option>
+		<option value="  - Not applicable">Not applicable</option>
+		<option value="  - Specify (mm):">Specify (mm):</option>
+		<option value="  - Estimated as less than or equal to 7 mm">Estimated as less than or equal to 7 mm</option>
+		<option value="  - Estimated as greater than 7 mm">Estimated as greater than 7 mm</option>
+		<option value="  - Cannot be determined (explain)">Cannot be determined (explain)</option>
+	</select></p>
 
-<label class="description">- Horizontal extent circumferential/width (mm):</label>
-<input type="text" ID="A34" class="element text small" ></p></li>
+<label class="description">- Pattern of invasion for endocervical adenocarcinoma:</label>
+	<select class="element select medium" ID="A34">
+		<option value=""></option>
+		<option value="  - Pattern A">Pattern A (well-demarcated glands with rounded contours)</option>
+		<option value="  - Pattern B">Pattern B (localized, limited, early destructive stromal invasion)</option>
+		<option value="  - Pattern C">Pattern C (diffuse destructive stromal invasion)</option>
+	</select>
+</li>
 
 <li><p>
 <label class="description">- Other tissue/ organ involvement:</label>
@@ -959,8 +977,8 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 18-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Uterine Cervix Resection 4.2.0.0 (August 2019), <br>
+Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Uterine Cervix Resection 4.3.0.0 (Feb 2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

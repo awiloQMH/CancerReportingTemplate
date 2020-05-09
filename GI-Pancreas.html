@@ -64,7 +64,7 @@ if (frm.A11.value !== ""){
 }
 
 if (frm.A12.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A12.value + "\n";
+	Template += "- Histologic type (WHO 2019): " + "\n" + "  - " + frm.A12.value + "\n";
 }
 
 if (frm.A13.value !== ""){
@@ -318,7 +318,7 @@ function CopyToClipboard() {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf" target="_blank">
+		<h2><a href=".\cap\cp-gihepatobiliary-pancreasexocrine-20-4100.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of pancreas
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -375,30 +375,34 @@ function CopyToClipboard() {
  <textarea ID="A11" class="element textarea medium"></textarea>
 </p></li>
 
-<li><p><label class="description">- Histologic type:</label> 
+<li><p><label class="description">- Histologic type (WHO 2019):</label> 
 <select class="element select medium" ID="A12">
 	<option value=""></option>
-	<option value="Ductal adenocarcinoma">Ductal adenocarcinoma</option>
+	<option value="Ductal adenocarcinoma (NOS)">Ductal adenocarcinoma (NOS)</option>
 	<option value="Colloid carcinoma (mucinous noncystic carcinoma)">Colloid carcinoma (mucinous noncystic carcinoma)</option>
-	<option value="Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>
-	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
 	<option value="Intraductal papillary-mucinous neoplasm with an associated invasive carcinoma">Intraductal papillary-mucinous neoplasm with an associated invasive carcinoma</option>
-	<option value="Intraductal tubulopapillary neoplasm with an associated invasive carcinoma">Intraductal tubulopapillary neoplasm with an associated invasive carcinoma</option>
+	<option value="Intraductal oncocytic papillary neoplasm with associated invasive carcinoma">Intraductal oncocytic papillary neoplasm with associated invasive carcinoma</option>
+	<option value="Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>
 	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
+	<option value="Medullary carcinoma">Medullary carcinoma</option>
+	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="Hepatoid carcinoma">Hepatoid carcinoma</option>
+	<option value="Large cell carcinoma with rhabdoid phenotype">Large cell carcinoma with rhabdoid phenotype</option>
+	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Undifferentiated carcinoma with osteoclast-like giant cells">Undifferentiated carcinoma with osteoclast-like giant cells</option>
+	<option value="Acinar cell carcinoma (NOS)">Acinar cell carcinoma (NOS)</option>
+	<option value="Acinar cell cystadenocarcinoma">Acinar cell cystadenocarcinoma0</option>
+	<option value="Mixed acinar-neuroendocrine carcinoma">Mixed acinar-neuroendocrine carcinoma</option>
+	<option value="Mixed ductal-neuroendocrine carcinoma">Mixed ductal-neuroendocrine carcinoma</option>
+	<option value="Mixed acinar-endocrine-ductal carcinoma">Mixed acinar-endocrine-ductal carcinoma</option>
+	<option value="Mixed acinar-ductal carcinoma">Mixed acinar-ductal carcinoma</option>
+	<option value="Pancreatoblastoma">Pancreatoblastoma</option>
+	<option value="Solid-pseudopapillary neoplasm">Solid-pseudopapillary neoplasm</option>
+	<option value="Solid-pseudopapillary neoplasm with high grade carcinoma">Solid-pseudopapillary neoplasm with high grade carcinoma</option>
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
-	<option value="Undifferentiated (anaplastic) carcinoma">Undifferentiated (anaplastic) carcinoma</option>
-	<option value="Undifferentiated carcinoma with osteoclast-like giant cells">Undifferentiated carcinoma with osteoclast-like giant cells</option>
-	<option value="Acinar cell carcinoma">Acinar cell carcinoma</option>
-	<option value="Acinar cell cystadenocarcinoma">Acinar cell cystadenocarcinoma</option>
-	<option value="Serous cystadenocarcinoma">Serous cystadenocarcinoma</option>
-	<option value="Mixed acinar-ductal carcinoma">Mixed acinar-ductal carcinoma</option>
-	<option value="Mixed ductal-neuroendocrine carcinoma">Mixed ductal-neuroendocrine carcinoma</option>
-	<option value="Mixed acinar-neuroendocrine carcinoma">Mixed acinar-neuroendocrine carcinoma</option>
-	<option value="Solid-pseudopapillary neoplasm">Solid-pseudopapillary neoplasm</option>
-	<option value="Hepatoid carcinoma">Hepatoid carcinoma</option>
-	<option value="Medullary carcinoma">Medullary carcinoma</option>
+	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm">Mixed neuroendocrine-non-neuroendocrine neoplasm</option>
 </select>
 </p>
 <p>- Others :<input type="text" class="element text small" ID="A13" size="10"></p></li>
@@ -718,8 +722,8 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-PancreasExocrine 4.0.0.1 (June 2017), <br>
+Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+PancreasExocrine 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

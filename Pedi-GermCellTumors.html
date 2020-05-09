@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -210,7 +210,7 @@ table, th, td {
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
 
-<li>
+
 <table border="1">
 <col width="30%">
 
@@ -283,7 +283,7 @@ table, th, td {
 <input type="checkbox" class="element checkbox" id="A12" value="Other findings: "><label class="element choice">Other findings: </label>
 </td>
 </tr>
-</table></li>
+</table>
 <br>
 </fieldset>
 </p>
@@ -291,11 +291,11 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A13" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li>
+
 <table border="1"> 
 <col width="60%">
 
@@ -384,7 +384,7 @@ table, th, td {
 	<option value="Not applicable">Not applicable</option>
 </select></td>
 </tr>
-</table></li>
+</table>
 <br>
 </fieldset>
 </p>
@@ -392,7 +392,7 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins: </label></legend>
-<li><p>
+<p>
 <select class="element select medium" ID="A22">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
@@ -401,7 +401,7 @@ table, th, td {
 	<option value="Uninvolved by tumor, closest margin, specify distance and locations (mm):">Uninvolved by tumor, closest margin, specify distance and locations (mm):</option>
 	<option value="Involved by tummor, specify margins: ">Involved by invasive carcinoma, specify margins: </option>
 </select>
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
@@ -409,8 +409,9 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
-<li>
+
 <table border="1">
+<col width="60%">
 <tr>
 <td>
 - Number of regional lymph nodes examined:
@@ -460,7 +461,7 @@ table, th, td {
 </td>
 </tr>
 </table>
-</li>
+
 <br>
 </fieldset>
 </p>
@@ -468,7 +469,7 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification : </label></legend>
-<li>
+
 <table border="1">
 <col width="62%">
 
@@ -495,10 +496,11 @@ table, th, td {
 </select></td>
 </tr>
 </table>
-</li>
 
-<li>
+
+
 <table border="1">
+<col width="60%">
 <label class="description">- Status of metastases:</label>
 
 <tr> 
@@ -520,15 +522,15 @@ table, th, td {
 </tr>
 
 </table>
-</li>
+
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional pathologic findings:</label>
  <textarea ID="A34" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>

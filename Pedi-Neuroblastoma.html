@@ -80,12 +80,12 @@ if (frm.A16.value !== ""){
 	Template += "\n" + "- Surgical margins: " + "\n" + "  - " + frm.A16.value + "\n";
 }
 
-if (frm.A17.value + frm.A18.value + frm.A19.value + frm.A20.value + frm.A21.value!== ""){
+if (frm.A17.value + frm.A18.value + frm.A19.value + frm.A20.value + frm.A21.value !== ""){
 	Template += "\n" + "- Regional lymph nodes: " + "\n";
 }	
 
 if (frm.A17.value !== ""){
-	Template += "  - Number of regional lymph nodes examined: " + frm.A17.value + "\n";
+	Template += "  - Number of lymph nodes examined: " + frm.A17.value + "\n";
 }
 
 if (frm.A18.value !== ""){
@@ -155,9 +155,9 @@ table, th, td {
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
 
-<li>
+
 <table border="1">
-<col width="30%">
+<col width="20%">
 
 <tr>
 <td>- Procedure:</td>
@@ -209,7 +209,7 @@ table, th, td {
 </select></td>
 </tr>
 
-</table></li>
+</table>
 <br>
 </fieldset>
 </p>
@@ -217,11 +217,11 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A05" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li>
+
 <table border="1"> 
 <col width="60%">
 
@@ -307,10 +307,11 @@ table, th, td {
 	<option value="Cannot be determined">Cannot be determined</option>
 </select></td>
 </tr>
-</table></li>
+</table>
 
-<li>
+
 <table border="1">
+<col width="50%">
 <label class="description">- Status of metastases:</label>
 
 <tr>
@@ -329,9 +330,9 @@ table, th, td {
 </tr>
 
 </table>
-</li>
 
-<li><p>
+
+<p>
 <label class="description">- International Neuroblastoma Pathology Classification (INPC): </label>
 <select class="element select medium" ID="A15">
 	<option value=""></option>
@@ -341,7 +342,7 @@ table, th, td {
 </select>
 </p>
 
-<img src=".\cap\NeuroblastimaINPC1999.png" alt="INPC1999" width="512"><br></li>
+<img src=".\cap\NeuroblastimaINPC1999.png" alt="INPC1999" width="512"><br>
 <br>
 </fieldset>
 </p>
@@ -349,7 +350,7 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins: </label></legend>
-<li><p>
+<p>
 <select class="element select medium" ID="A16">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
@@ -358,7 +359,7 @@ table, th, td {
 	<option value="Uninvolved by tumor, closest margin, specify distance and locations (mm):">Uninvolved by tumor, closest margin, specify distance and locations (mm):</option>
 	<option value="Involved by tumor, specify margins: ">Involved by invasive carcinoma, specify margins: </option>
 </select>
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
@@ -366,11 +367,13 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
-<li>
+
 <table border="1">
+<col width="60%">
+
 <tr>
 <td>
-- Number of regional lymph nodes examined:
+- Number of lymph nodes involved (specify locations):
 </td>
 <td>
 <input type="text" class="element text large" ID="A17" size="15">
@@ -417,12 +420,12 @@ table, th, td {
 </td>
 </tr>
 </table>
-</li>
+
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- N-myc amplification status: </label>
 <select class="element select medium" ID="A22">
 	<option value=""></option>
@@ -433,12 +436,12 @@ table, th, td {
 	<option value="Not applicable">Not applicable</option>
 	<option value="Pending">Pending</option>
 </select>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Additional pathologic findings:</label>
  <textarea ID="A23" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>

@@ -73,7 +73,7 @@ if (frm.A13.value !== ""){
 }
 
 if (frm.A14.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A14.value + "\n";
+	Template += "- Histologic type (WHO 2019): " + "\n" + frm.A14.value + "\n";
 }
 
 if (frm.A15.value !== ""){
@@ -241,7 +241,7 @@ if (frm.A52.value !== ""){
 }
 
 if (frm.A53.value !== ""){
-	Template += "  - Number of lymph nodes with micrometastasis (> 0.2 to 2 mm and/or > 200 cells): " + frm.A53.value + "\n";
+	Template += "  - Number of lymph nodes with isolated tumor cells (0.2 mm or less and < or = 200 cells): " + frm.A53.value + "\n";
 }
 
 if (frm.A54.value !== ""){
@@ -336,7 +336,7 @@ function CopyToClipboard() {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-breast-invasive-resection-19-4301.pdf" target="_blank">
+		<h2><a href=".\cap\cp-breast-invasive-resection-20-4400.pdf" target="_blank">
 		<div class="tooltip">Invasive carcinoma of the breast
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -407,34 +407,29 @@ function CopyToClipboard() {
 </p></li>
 
 <li><p>
-<label class="description">- Histologic type:</label> 
+<label class="description">- Histologic type (2019):</label> 
 	<select class="element select medium" ID="A14">
 		<option value=""></option>
-		<option value="  - Invasive carcinoma of no special type (ductal, not otherwise specified)">Invasive carcinoma of no special type (ductal, not otherwise specified)</option>
+		<option value="  - No residual invasive carcinoma">No residual invasive carcinoma</option>
+		<option value="  - Invasive carcinoma of no special type (ductal)">Invasive carcinoma of no special type (ductal)</option>
 		<option value="  - Micro-invasive carcinoma">Micro-invasive carcinoma</option>
 		<option value="  - Invasive lobular carcinoma">Invasive lobular carcinoma</option>
-		<option value="  - Invasive carcinoma with lobular features">Invasive carcinoma with lobular features</option>	
 		<option value="  - Invasive carcinoma with ductal and lobular features (mixed type carcinoma)">Invasive carcinoma with ductal and lobular features (mixed type carcinoma)</option>
-		<option value="  - Mucinous carcinoma">Mucinous carcinoma</option>
+		<option value="  - Invasive breast carcinoma with medullary pattern">Invasive breast carcinoma with medullary pattern</option>
+		<option value="  - Invasive carcinoma with features of (specify): ">Invasive carcinoma with features of (specify): </option>
 		<option value="  - Tubular carcinoma">Tubular carcinoma</option>
-		<option value="  - Invasive carcinoma, tubulo-lobular variant">Invasive carcinoma, tubulo-lobular variant</option>
 		<option value="  - Invasive cribriform carcinoma">Invasive cribriform carcinoma</option>
+		<option value="  - Mucinous carcinoma">Mucinous carcinoma</option>
 		<option value="  - Invasive micropapillary carcinoma">Invasive micropapillary carcinoma</option>
-		<option value="  - Invasive papillary carcinoma">Invasive papillary carcinoma</option>
-		<option value="  - Medullary carcinoma">Medullary carcinoma</option>
-		<option value="  - Invasive carcinoma with medullary features">Invasive carcinoma with medullary features</option>
+		<option value="  - Apocrine adenocarcinoma">Apocrine adenocarcinoma</option>
 		<option value="  - Metaplastic carcinoma">Metaplastic carcinoma</option>
-		<option value="  - Low-grade adenosquamous carcinoma">Low-grade adenosquamous carcinoma</option>	
-		<option value="  - Fibromatosis-like metaplastic carcinoma">Fibromatosis-like metaplastic carcinoma</option>	
-		<option value="  - Metaplastic carcinoma, spindle cell type">Metaplastic carcinoma, spindle cell type</option>
-		<option value="  - Metaplastic carcinoma, mixed epithelial and mesenchymal type">Metaplastic carcinoma, mixed epithelial and mesenchymal type</option>
-		<option value="  - Invasive carcinoma with metaplastic features">Invasive carcinoma with metaplastic features</option>
-		<option value="  - Squamous cell carcinoma">Squamous cell carcinoma</option>
+		<option value="  - Encapsulated papillary carcinoma with invasion">Encapsulated papillary carcinoma with invasion</option>	
+		<option value="  - Solid papillary carcinoma with invasiona">Solid papillary carcinoma with invasion</option>	
+		<option value="  - Intraductal papillary adenocarcinoma with invasion">Intraductal papillary adenocarcinoma with invasion</option>
 		<option value="  - Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>
-		<option value="  - Invasive carcinoma with apocrine features">Invasive carcinoma with apocrine features</option>
-		<option value="  - Invasive carcinoma with clear cell (glycogen rich) feature">Invasive carcinoma with clear cell (glycogen rich) feature</option>
-		<option value="  - Invasive carcinoma with neuroendocrine features">Invasive carcinoma with neuroendocrine features</option>
-		<option value="  - No residual invasive carcinoma">No residual invasive carcinoma</option>
+		<option value="  - Neuroendocrine tumor">Neuroendocrine tumor</option>
+		<option value="  - Neuroendocrine carcinoma">Neuroendocrine carcinoma</option>
+		<option value="  - Invasive carcinoma, type cannot be determined">Invasive carcinoma, type cannot be determined</option>
 		<option value="  - Other (specify):">Other (specify):</option>
 	</select>
 </p></li>
@@ -653,6 +648,7 @@ function CopyToClipboard() {
 <label>- Treatment effect in the breast: </label><br>
 	<select class="element select medium" ID="A40">
 		<option value=""></option>
+		<option value="  - No known presurgical therapy">No known presurgical therapy</option>
 		<option value="  - No definite response to presurgical therapy in the invasive carcinoma">No definite response to presurgical therapy in the invasive carcinoma</option>
 		<option value="  - Probable or definite response to presurgical therapy in the invasive carcinoma">Probable or definite response to presurgical therapy in the invasive carcinoma</option>
 		<option value="  - No residual invasive carcinoma is present in the breast after presurgical therapy">No residual invasive carcinoma is present in the breast after presurgical therapy</option>
@@ -663,10 +659,11 @@ function CopyToClipboard() {
 <label>- Treatment effect in the lymph nodes: </label><br>
 	<select class="element select medium" ID="A41">
 		<option value=""></option>
-		<option value="  - No definite response to presurgical therapy in metastatic carcinoma">Not identified</option>
-		<option value="  - Probable or definite response to presurgical therapy in metastatic carcinoma">Present</option>
-		<option value="  - No lymph node metastases. Fibrous scarring, possibly related to prior lymph node metastases with pathologic complete response">No lymph node metastases. Fibrous scarring, possibly related to prior lymph node metastases with pathologic complete response</option>
-		<option value="  - No lymph node metastases and no prominent fibrous scarring in the nodes">No lymph node metastases and no prominent fibrous scarring in the nodes</option>
+		<option value="  - No known presurgical therapy">No known presurgical therapy</option>
+		<option value="  - No definite response to presurgical therapy in metastatic carcinoma">No definite response to presurgical therapy in metastatic carcinoma</option>
+		<option value="  - Probable or definite response to presurgical therapy in metastatic carcinoma">Probable or definite response to presurgical therapy in metastatic carcinoma</option>
+		<option value="  - No lymph node metastases. Fibrous scarring or histiocytic aggregates, possibly related to prior lymph node metastases with pathologic complete response">No lymph node metastases. FFibrous scarring or histiocytic aggregates, possibly related to prior lymph node metastases with pathologic complete response</option>
+		<option value="  - No lymph node metastases and no fibrous scarring or histiocytic aggregates in the nodes">No lymph node metastases and no fibrous scarring or histiocytic aggregates in the nodes</option>
 	</select>
 </p></li>
 <br>
@@ -916,8 +913,8 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Breast Invasive Resection 4.3.0.1 (September 2019).<br>
+Last upated on 7-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Breast Invasive Resection 4.4.0.0 (Feb 2020).<br>
 html form was created on 
 <a href="https://www.phpform.org">pForm</a>, 
 <a href="https://www.w3schools.com/">W3 School</a>, 
