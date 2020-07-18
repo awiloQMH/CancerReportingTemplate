@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "Orchidectomy" + "\n" +  "- Specimen laterality: " + "\n" + "   - " + frm.A01.value + "\n";
 }
@@ -31,7 +31,7 @@ if (frm.A04.value !== ""){
 if (frm.A56.value !== ""){
 	Template += "- Predurgical treatment: " + "\n" + "  - " + frm.A56.value + "\n";
 }
-
+*/
 if (document.getElementById("A06").checked || document.getElementById("A07").checked ||
 	document.getElementById("A08").checked || document.getElementById("A09").checked ||
 	document.getElementById("A05").checked){
@@ -85,7 +85,7 @@ if (document.getElementById("A14").checked){
 }
 
 if (frm.A15.value !== ""){
-	Template += "- Serum tumor markers: " + "\n" + "  " + frm.A15.value + "\n";
+	Template += "- Serum tumor markers: " + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
@@ -93,31 +93,31 @@ if (frm.A16.value !== ""){
 }
 
 if (frm.A17.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A17.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A17.value + "\n";
 }
 
 if (frm.A18.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A18.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A18.value + "\n";
 }
 
 if (frm.A19.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A19.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A20.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A21.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A21.value + "\n";
 }
 
 if (frm.A22.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A22.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A22.value + "\n";
 }
 
 if (frm.A23.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + "  - " + frm.A23.value + "\n";
+	Template += "- Perineural invasion: " + frm.A23.value + "\n";
 }
 
 if (document.getElementById("A24").checked ||
@@ -183,17 +183,17 @@ if (frm.A36.value !== "" || frm.A37.value !== ""){
 }
 
 if (frm.A36.value !== ""){
-	Template +=  "  - Spermatic cord margin: "  +"\n" + "    - " +  frm.A36.value + "\n" ;
+	Template +=  "  - Spermatic cord margin: "  +  frm.A36.value + "\n" ;
 }
 
 if (frm.A37.value !== ""){
-	Template +=  "  - Other margin(s) (specify): "  +"\n" + "    - " +  frm.A37.value + "\n" ;
+	Template +=  "  - Other margin(s) (specify): " +  frm.A37.value + "\n" ;
 }
 
 if (document.getElementById("A57").checked || document.getElementById("A58").checked ||
 	document.getElementById("A59").checked || 
 	frm.A38.value + frm.A39.value + frm.A40.value + frm.A41.value + frm.A42.value !== ""){
-	Template += "- Regional lymph nodes: " + "\n";
+	Template += "\n" + "- Regional lymph nodes: " + "\n";
 }	
 
 if (document.getElementById("A57").checked || document.getElementById("A58").checked ||
@@ -226,11 +226,11 @@ if (frm.A40.value !== ""){
 }
 
 if (frm.A41.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A41.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A41.value + "\n";
 }
 
 if (frm.A42.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A42.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A42.value  + "\n";
 }
 
 if (document.getElementById("A57A").checked || document.getElementById("A58A").checked ||
@@ -269,11 +269,11 @@ if (frm.A40A.value !== ""){
 }
 
 if (frm.A41A.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A41A.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A41A.value + "\n";
 }
 
 if (frm.A42A.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A42A.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A42A.value + "\n";
 }
 
 if (document.getElementById("A43").checked || document.getElementById("A44").checked ||
@@ -341,7 +341,7 @@ if (frm.A54.value !== ""){
 }
 
 if (frm.A55.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A55.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A55.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -361,7 +361,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -378,70 +383,99 @@ function CopyToClipboard() {
 	</div>
 <p>There is separated <a href=".\cap\cp-malegenital-testis-lymphadenectomy-19-4011.pdf" target="_blank">protocol for lymphadenectomy</a>.</p>	
 <form>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
 
-<li><p><label class="description">- Specimen laterality:</label>
-<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Specimen laterality:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="Right">Right</option> 
 	<option value="Left">Left</option>
 	<option value="Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Specimen focality:</label>
-<select class="element select medium" ID="A02">
+<tr>
+<td>
+<label class="description">- Specimen focality:</label>
+</td>
+<td>
+<select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="Unifocal">Unfocal</option> 
 	<option value="Multifocal">Multifocal</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor size of main tumor nodule:</label> 
-<select class="element select medium" ID="A03">
+<tr>
+<td valign="top" rowspan="2">
+<label class="description">- Tumor size of main tumor nodule:</label> 
+</td>
+<td>
+<select class="element select large" ID="A03">
 		<option value=""></option>
 		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p>- Greatest dimensions of additional tumor nodules:
-<input type="text" class="element text small" ID="A04" size="10"></p></li>
+<tr>
+<td>
+- Greatest dimensions of additional tumor nodules:
+<input type="text" class="element text large" ID="A04" size="10">
+</td>
+</tr>
 
-<li><p><label class="description">- Presurgical Treatment : </label>
-<select class="element select medium" ID="A56">
+<tr>
+<td>
+<label class="description">- Presurgical Treatment : </label>
+</td>
+<td>
+<select class="element select large" ID="A56">
 	<option value=""></option>
 	<option value="Chemo/radiation therapy">Chemo/radiation therapy</option>
 	<option value="No chemo/radiation therapy">No chemo/radiation therapy </option>
 	<option value="Unknown">Unknown</option>
 </select>
-</p></li>
-
+</td>
+</tr>
+</table>
+</p>
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Serum tumor markers:</label></legend>
-<li><p><label class="description">- Pre-orchiectomy serum tumor markers:</label> 
-<input type="checkbox" class="element checkbox" id="A05" value="  - Unknown"><label class="choice">Unknown</label>
-<input type="checkbox" class="element checkbox" id="A06" value="  - Serum marker studies within normal limits"><label class="choice">Serum marker studies within normal limits</label>
-<input type="checkbox" class="element checkbox" id="A07" value="  - Alpha-fetoprotein (AFP) elevation"><label class="choice">Alpha-fetoprotein (AFP) elevation</label>
-<input type="checkbox" class="element checkbox" id="A08" value="  - Beta subunit of human chorionic gonadotropin (b-hCG) elevation"><label class="choice">Beta subunit of human chorionic gonadotropin (b-hCG) elevation</label>
-<input type="checkbox" class="element checkbox" id="A09" value="  - Lactate dehydrogenase (LDH) elevation"><label class="choice">Lactate dehydrogenase (LDH) elevation</label>
-</p></li>
+<p><label class="description">- Pre-orchiectomy serum tumor markers:</label> 
+<input type="checkbox" id="A05" value="  - Unknown"><label >Unknown</label><br>
+<input type="checkbox" id="A06" value="  - Serum marker studies within normal limits"><label >Serum marker studies within normal limits</label><br>
+<input type="checkbox" id="A07" value="  - Alpha-fetoprotein (AFP) elevation"><label >Alpha-fetoprotein (AFP) elevation</label><br>
+<input type="checkbox" id="A08" value="  - Beta subunit of human chorionic gonadotropin (b-hCG) elevation"><label >Beta subunit of human chorionic gonadotropin (b-hCG) elevation</label><br>
+<input type="checkbox" id="A09" value="  - Lactate dehydrogenase (LDH) elevation"><label >Lactate dehydrogenase (LDH) elevation</label><br>
+</p>
 
-<li><p><label class="description">- Post-orchiectomy serum tumor markers:</label> 
-<input type="checkbox" class="element checkbox" id="A10" value="  - Unknown"><label class="choice">Unknown</label>
-<input type="checkbox" class="element checkbox" id="A11" value="  - Serum marker studies within normal limits"><label class="choice">Serum marker studies within normal limits</label>
-<input type="checkbox" class="element checkbox" id="A12" value="  - Alpha-fetoprotein (AFP) elevation"><label class="choice">Alpha-fetoprotein (AFP) elevation</label>
-<input type="checkbox" class="element checkbox" id="A13" value="  - Beta subunit of human chorionic gonadotropin (b-hCG) elevation"><label class="choice">Beta subunit of human chorionic gonadotropin (b-hCG) elevation</label>
-<input type="checkbox" class="element checkbox" id="A14" value="  - Lactate dehydrogenase (LDH) elevation"><label class="choice">Lactate dehydrogenase (LDH) elevation</label>
-</p></li>
+<p><label class="description">- Post-orchiectomy serum tumor markers:</label> 
+<input type="checkbox" id="A10" value="  - Unknown"><label >Unknown</label><br>
+<input type="checkbox" id="A11" value="  - Serum marker studies within normal limits"><label >Serum marker studies within normal limits</label><br>
+<input type="checkbox" id="A12" value="  - Alpha-fetoprotein (AFP) elevation"><label >Alpha-fetoprotein (AFP) elevation</label><br>
+<input type="checkbox" id="A13" value="  - Beta subunit of human chorionic gonadotropin (b-hCG) elevation"><label >Beta subunit of human chorionic gonadotropin (b-hCG) elevation</label><br>
+<input type="checkbox" id="A14" value="  - Lactate dehydrogenase (LDH) elevation"><label >Lactate dehydrogenase (LDH) elevation</label><br>
+</p>
 
-<li><p><label class="description">- Serum tumor markers:</label>
+<p><label class="description">- Serum tumor markers:</label>
 <select class="element select medium" ID="A15">
 	<option value=""></option>
 	<option value="SX: Serum marker studies not available or performed">SX: Serum marker studies not available or performed</option> 
@@ -450,8 +484,7 @@ function CopyToClipboard() {
 	<option value="S2: LDH 1.5-10x and hCG 5,000-50,000 (mIU/ml) and AFP 1,000-10,000 (ng/ml)">S2: LDH 1.5-10x and hCG 5,000-50,000 (mIU/ml) and AFP 1,000-10,000 (ng/ml)</option>
 	<option value="S3: LDH > 10x and hCG > 50,000 (mIU/ml) and AFP > 10,000 (ng/ml)">S3: LDH > 10x and hCG > 50,000 (mIU/ml) and AFP > 10,000 (ng/ml)</option>
 	</select>
-</p></li>
-<br>
+</p>
 </fieldset>
 
 <br>
@@ -461,14 +494,14 @@ function CopyToClipboard() {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A16" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 
-<li><p><label class="description">- Histologic type (intratubular germ cell neoplasia):</label> 
+<p><label class="description">- Histologic type (intratubular germ cell neoplasia):</label> 
 <select class="element select medium" ID="A17">
 	<option value=""></option>
 	<option value="Germ cell neoplasia in situ (GCNIS)">Germ cell neoplasia in situ (GCNIS)</option>
@@ -543,43 +576,43 @@ function CopyToClipboard() {
 	<option value="Sex cord-stromal tumor type, unclassified">Sex cord-stromal tumor type, unclassified</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p><label class="description">- Lymphovascular invasion: </label>
+<p><label class="description">- Lymphovascular invasion: </label>
 <select class="element select medium" ID="A22">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</p>
 
-<li><p><label class="description">- Perineural invasion: </label>
+<p><label class="description">- Perineural invasion: </label>
 <select class="element select medium" ID="A23">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</p>
 
-<li><p><label class="description">- Tumor extension :</label> 
-<input type="checkbox" class="element checkbox" id="A24" value="  - No evidence of primary tumor"><label class="choice">No evidence of primary tumor</label>
-<input type="checkbox" class="element checkbox" id="A25" value="  - Germ cell neoplasia in situ only"><label class="choice">Germ cell neoplasia in situ only</label>
-<input type="checkbox" class="element checkbox" id="A26" value="  - Tumor limited to testis"><label class="choice">Tumor limited to testis</label>
-<input type="checkbox" class="element checkbox" id="A27" value="  - Tumor invades rete testis"><label class="choice">Tumor invades rete testis</label>
-<input type="checkbox" class="element checkbox" id="A28" value="  - Tumor invades hilar soft tissue"><label class="choice">Tumor invades hilar soft tissue</label>
-<input type="checkbox" class="element checkbox" id="A29" value="  - Tumor invades epididymis"><label class="choice">Tumor invades epididymis</label>
-<input type="checkbox" class="element checkbox" id="A30" value="  - Tumor invades through tunica albuginea and perforates tunica vaginalis (mesothelium)"><label class="choice">Tumor invades through tunica albuginea and perforates tunica vaginalis (mesothelium)</label>
-<input type="checkbox" class="element checkbox" id="A31" value="  - Tumor invades spermatic cord"><label class="choice">Tumor invades spermatic cord</label>
-<input type="checkbox" class="element checkbox" id="A32" value="  - Tumor invades scrotum"><label class="choice">Tumor invades scrotum</label>
-<input type="checkbox" class="element checkbox" id="A33" value="  - Tumor invades adjacent structures, rectum"><label class="choice">Tumor invades adjacent structures, rectum</label>
-<input type="checkbox" class="element checkbox" id="A34" value="  - Tumor invades adjacent structures, other (specify):"><label class="choice">Tumor invades adjacent structures, other (specify):</label>
-<input type="checkbox" class="element checkbox" id="A35" value="  - Cannot be assessed"><label class="choice">Cannot be assessed</label>
-</p></li>
+<p><label class="description">- Tumor extension :</label> 
+<input type="checkbox" id="A24" value="  - No evidence of primary tumor"><label >No evidence of primary tumor</label><br>
+<input type="checkbox" id="A25" value="  - Germ cell neoplasia in situ only"><label >Germ cell neoplasia in situ only</label><br>
+<input type="checkbox" id="A26" value="  - Tumor limited to testis"><label >Tumor limited to testis</label><br>
+<input type="checkbox" id="A27" value="  - Tumor invades rete testis"><label >Tumor invades rete testis</label><br>
+<input type="checkbox" id="A28" value="  - Tumor invades hilar soft tissue"><label >Tumor invades hilar soft tissue</label><br>
+<input type="checkbox" id="A29" value="  - Tumor invades epididymis"><label >Tumor invades epididymis</label><br>
+<input type="checkbox" id="A30" value="  - Tumor invades through tunica albuginea and perforates tunica vaginalis (mesothelium)"><label >Tumor invades through tunica albuginea and perforates tunica vaginalis (mesothelium)</label><br>
+<input type="checkbox" id="A31" value="  - Tumor invades spermatic cord"><label >Tumor invades spermatic cord</label><br>
+<input type="checkbox" id="A32" value="  - Tumor invades scrotum"><label >Tumor invades scrotum</label><br>
+<input type="checkbox" id="A33" value="  - Tumor invades adjacent structures, rectum"><label >Tumor invades adjacent structures, rectum</label><br>
+<input type="checkbox" id="A34" value="  - Tumor invades adjacent structures, other (specify):"><label >Tumor invades adjacent structures, other (specify):</label><br>
+<input type="checkbox" id="A35" value="  - Cannot be assessed"><label >Cannot be assessed</label><br>
+</p>
 
 <br>
 </fieldset>
@@ -589,24 +622,38 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins of excision specimen: </label></legend>
 
-<li><p><label class="description">- Spermatic cord margin:</label>
-<select class="element select medium" ID="A36">
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- Spermatic cord margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A36">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
 	<option value="Involved by tumor">Involved by tumor</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">-  Other margin(s) (specify):</label>
-<select class="element select medium" ID="A37">
+<tr>
+<td>
+<label class="description">-  Other margin(s) (specify):</label>
+</td>
+<td>
+<select class="element select large" ID="A37">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
 	<option value="Involved by tumor">Involved by tumor</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -614,33 +661,67 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
-<li><p>- Histologic viability of tumor:<br>
-<input type="checkbox" class="element checkbox" id="A57" value="- Viable teratoma present"><label class="choice">Viable teratoma present</label>
-<input type="checkbox" class="element checkbox" id="A58" value="- Viable nonteratomatous tumor present"><label class="choice">Viable nonteratomatous tumor present</label>
-<input type="checkbox" class="element checkbox" id="A59" value="- No viable tumor present"><label class="choice">No viable tumor present</label>
-</p></li>
+<p>
+<label class="description">- Histologic viability of tumor:</label>
+<input type="checkbox" id="A57" value="- Viable teratoma present"><label >Viable teratoma present</label><br>
+<input type="checkbox" id="A58" value="- Viable nonteratomatous tumor present"><label >Viable nonteratomatous tumor present</label><br>
+<input type="checkbox" id="A59" value="- No viable tumor present"><label >No viable tumor present</label><br>
+</p>
 
-<li><p>- Number of regional lymph nodes examined and sites:
-<input type="text" class="element text small" ID="A38" size="10"></p>
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined and sites:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A38" size="10">
+</td>
+</tr>
 
-<p>- Number of lymph nodes involved:
-<input type="text" class="element text small" ID="A39" size="10"></p></li>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A39" size="10">
+</td>
+</tr>
 
-<li><p>- Extranodal extension:
-<select class="element select small" ID="A40">
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A40">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" class="element text small" ID="A41" size="20"></p>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A41" size="20">
+</td>
+</tr>
 
-<p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" class="element text small" ID="A42" size="20"></p></li>
-<br>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A42" size="20">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -648,33 +729,67 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Non-regional lymph nodes AJCC 8e pM1a: </label></legend>
 
-<li><p>- Histologic viability of tumor:<br>
-<input type="checkbox" class="element checkbox" id="A57A" value="- Viable teratoma present"><label class="choice">Viable teratoma present</label>
-<input type="checkbox" class="element checkbox" id="A58A" value="- Viable nonteratomatous tumor present"><label class="choice">Viable nonteratomatous tumor present</label>
-<input type="checkbox" class="element checkbox" id="A59A" value="- No viable tumor present"><label class="choice">No viable tumor present</label>
-</p></li>
+<p>
+<label class="description">- Histologic viability of tumor:</label>
+<input type="checkbox" id="A57A" value="- Viable teratoma present"><label >Viable teratoma present</label><br>
+<input type="checkbox" id="A58A" value="- Viable nonteratomatous tumor present"><label >Viable nonteratomatous tumor present</label><br>
+<input type="checkbox" id="A59A" value="- No viable tumor present"><label >No viable tumor present</label><br>
+</p>
 
-<li><p>- Number of non-regional lymph nodes examined and sites:
-<input type="text" class="element text small" ID="A38A" size="10"></p>
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- Number of non-regional lymph nodes examined and sites:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A38A" size="10">
+</td>
+</tr>
 
-<p>- Number of lymph nodes involved:
-<input type="text" class="element text small" ID="A39A" size="10"></p></li>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A39A" size="10">
+</td>
+<tr>
 
-<li><p>- Extranodal extension:
-<select class="element select small" ID="A40A">
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A40A">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" class="element text small" ID="A41A" size="20"></p>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A41A" size="20">
+</td>
+</tr>
 
-<p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" class="element text small" ID="A42A" size="20"></p></li>
-<br>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A42A" size="20">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -682,14 +797,26 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A43" value="m (multiple primary tumors) "><label class="choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A44" value="r (recurrent) "><label class="choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A45" value="y (post treatment) "><label class="choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="description">  - TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox" id="A43" value="m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox" id="A44" value="r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox" id="A45" value="y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT) :<br>
-<select class="element select medium" ID="A46">
+<tr>
+<td>
+<label class="description">  - Primary tumor (pT) :</label>
+</td>
+<td>
+<select class="element select large" ID="A46">
 	<option value=""></option>
 	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -702,11 +829,15 @@ function CopyToClipboard() {
 	<option value="pT3: Tumor directly invades spermatic cord soft tissue with or without lymphovascular invasion">pT3: Tumor directly invades spermatic cord soft tissue with or without lymphovascular invasion</option>
 	<option value="pT4: Tumor invades scrotum with or without lymphovascular invasion">pT4: Tumor invades scrotum with or without lymphovascular invasion</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A47">
+<tr>
+<td>
+<label class="description">  - Regional lymph nodes (pN): </label>
+</td>
+<td>
+<select class="element select large" ID="A47">
 	<option value=""></option>
 	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
@@ -716,20 +847,31 @@ function CopyToClipboard() {
 	<option value="pN2: Extranodal extension of tumor">pN2:  Extranodal extension of tumor</option>
 	<option value="pN3: Metastasis with a lymph node mass > 5 cm">pN3: Metastasis with a lymph node mass > 5 cm</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A48">
+<tr>
+<td valign="top" rowspan="2">
+<label class="description">  - Distant metastasis (pM): </label>
+</td>
+<td>
+<select class="element select large" ID="A48">
 	<option value=""></option>
 	<option value="pM1: Distant metastasis">pM1: Distant metastasis</option>
 	<option value="pM1a: Nonretroperitoneal nodal or pulmonary metastases">pM1a: Nonretroperitoneal nodal or pulmonary metastases</option>
 	<option value="pM1b: Nonpulmonary visceral metastases">pM1b: Nonpulmonary visceral metastases</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p>    - Specify site(s), if known:<br>
-<input type="text" class="element text medium" ID="A49" size="35">
-</p></li>
+<tr>
+<td>
+    - Specify site(s), if known:
+<input type="text" class="element text small" ID="A49" size="35">
+</td>
+</tr>
+</table>
+</p>
 <br>
 </fieldset>
 </p>
@@ -738,23 +880,23 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class="element checkbox" id="A50" value="  - Germ cell neoplasia in situ (GCNIS)"><label class="choice">Germ cell neoplasia in situ (GCNIS)</label>
-<input type="checkbox" class="element checkbox" id="A51" value="  - Microlith"><label class="choice">Microlith</label>
-<input type="checkbox" class="element checkbox" id="A52" value="  - Sertoli cell nodule (Pick’s adenoma)"><label class="choice">Sertoli cell nodule (Pick’s adenoma)</label>
-<input type="checkbox" class="element checkbox" id="A53" value="  - Atrophy"><label class="choice">Atrophy</label>
+<p>
+<input type="checkbox" id="A50" value="  - Germ cell neoplasia in situ (GCNIS)"><label >Germ cell neoplasia in situ (GCNIS)</label><br>
+<input type="checkbox" id="A51" value="  - Microlith"><label >Microlith</label><br>
+<input type="checkbox" id="A52" value="  - Sertoli cell nodule (Pick’s adenoma)"><label >Sertoli cell nodule (Pick’s adenoma)</label><br>
+<input type="checkbox" id="A53" value="  - Atrophy"><label >Atrophy</label><br>
 </p>
 <p>- Other (specify):
 <input type="text" class="element text medium" ID="A54" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A55" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -771,7 +913,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 19-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 10-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Testis Radical Orchiectomy 4.0.1.2 (August 2019) and Testis Lymphadenectomy 4.0.1.1 (February 2019), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

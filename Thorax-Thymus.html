@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -19,25 +19,25 @@ if (frm.A01.value !== ""){
 if (frm.A02.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A02.value + "\n";
 }
-
+*/
 if (frm.A03.value !== ""){
-	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A03.value + "\n";
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A03.value + "\n";
 }
 
 if (frm.A04.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A04.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A05.value + "\n";
+	Template += "- Histologic type: " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A06.value + "\n";
+	Template += "- Histologic type: " + frm.A06.value + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "- Transcapsular invasion (applies only to thymomas): " + "\n" + frm.A07.value + "\n";
+	Template += "- Transcapsular invasion (applies only to thymomas): " + frm.A07.value + "\n";
 }
 
 if (
@@ -95,23 +95,23 @@ if (document.getElementById("A18").checked){
 }
 
 if (frm.A19.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A19.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A20.value + "\n";
+	Template += "- Perineural invasion: " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
-	Template += "- Treatment effect: "+ "\n" + frm.A21.value + "\n";
+	Template += "- Treatment effect: " + frm.A21.value + "\n";
 }
 
 if (frm.A22.value !== ""){
-	Template +=  "- Surgical margins: "  +"\n" + frm.A22.value + "\n" ;
+	Template +=  "\n" + "- Surgical margins: "  + "\n" + frm.A22.value + "\n" ;
 }
 
 if (frm.A23.value + frm.A24.value + frm.A25.value + frm.A26.value + frm.A27.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
 if (frm.A23.value !== ""){
@@ -216,7 +216,7 @@ if (frm.A43.value !== ""){
 }
 
 if (frm.A44.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A44.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A44.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -236,7 +236,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -251,153 +256,205 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="  - Thymectomy">Thymectomy</option> 
 	<option value="  - Partial thymectomy">Partial thymectomy</option>
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A02">
+</td>
+<td>
+<select class="element select large" ID="A02">
 	<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
-</p></li>
-
-<br>
-</fieldset>
+</td>
+</tr>
+</table>
 </p>
 
+</fieldset>
+</p>
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A03" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<p><fieldset style="border-color:#e6e6ff;">
-<li><p>
+<p>
+<table border="1">
+<col width="60%">
+
+<tr>
+<td>
 <label class="description">- Histologic type (thymoma):</label> 
-<select class="element select medium" ID="A04">
+</td>
+<td>
+<select class="element select large" ID="A04">
 	<option value=""></option>
-	<option value="  - Type A thymoma">Type A thymoma</option>
-	<option value="  - Type AB thymoma">Type AB thymoma</option>
-	<option value="  - Type B1 thymoma">Type B1 thymoma</option>
-	<option value="  - Type B2 thymoma">Type B2 thymoma</option>
-	<option value="  - Type B3 thymoma">Type B3 thymoma</option>
+	<option value="Type A thymoma">Type A thymoma</option>
+	<option value="Type AB thymoma">Type AB thymoma</option>
+	<option value="Type B1 thymoma">Type B1 thymoma</option>
+	<option value="Type B2 thymoma">Type B2 thymoma</option>
+	<option value="Type B3 thymoma">Type B3 thymoma</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Histologic type (thymomic carcinoma):</label> 
-<select class="element select medium" ID="A05">
+</td>
+<td>
+<select class="element select large" ID="A05">
 	<option value=""></option>
-	<option value="  - Squamous cell carcinoma">Squamous cell carcinoma</option>
-	<option value="  - Basaloid carcinoma">Basaloid carcinoma</option>
-	<option value="  - Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
-	<option value="  - Lymphoepithelioma-like carcinoma">Lymphoepithelioma-like carcinoma</option>
-	<option value="  - Clear cell carcinoma">Clear cell carcinoma</option>
-	<option value="  - Sarcomatoid carcinoma">Sarcomatoid carcinoma</option>
-	<option value="  - Adenocarcinoma">Adenocarcinoma</option>
-	<option value="  - NUT carcinoma">NUT carcinoma</option>
-	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>
-	<option value="  - Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="Basaloid carcinoma">Basaloid carcinoma</option>
+	<option value="Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
+	<option value="Lymphoepithelioma-like carcinoma">Lymphoepithelioma-like carcinoma</option>
+	<option value="Clear cell carcinoma">Clear cell carcinoma</option>
+	<option value="Sarcomatoid carcinoma">Sarcomatoid carcinoma</option>
+	<option value="Adenocarcinoma">Adenocarcinoma</option>
+	<option value="NUT carcinoma">NUT carcinoma</option>
+	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Histologic type (thymic neuroendocrine tumors):</label> 
-<select class="element select medium" ID="A06">
+</td>
+<td>
+<select class="element select large" ID="A06">
 	<option value=""></option>
-	<option value="  - Typical carcinoid">Typical carcinoid</option>
-	<option value="  - Atypical carcinoid">Atypical carcinoid</option>
-	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-	<option value="  - Small cell carcinoma">Small cell carcinoma</option>
+	<option value="Typical carcinoid">Typical carcinoid</option>
+	<option value="Atypical carcinoid">Atypical carcinoid</option>
+	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
+	<option value="Small cell carcinoma">Small cell carcinoma</option>
 </select>
-</p></li>
-</fieldset></p>
+</td>
+</tr>
+</table>
+</p>
 
-<li><p>
-<label class="description">- Transcapsular invasion (applies only to thymomas):</label>
-<select class="element select medium" ID="A07">
+<p>
+<table border="1">
+<col width="60%">
+
+<tr>
+<td>
+<label class="description">- Transcapsular invasion :</label>
+(applies only to thymomas)
+</td>
+<td>
+<select class="element select large" ID="A07">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Tumor extension:</label>
-<input type="checkbox" class = "element checkbox"  id="A08" value="  - No evidence of primary tumor"><label class="element choice">No evidence of primary tumor</label>
-<input type="checkbox" class = "element checkbox"  id="A09" value="  - Tumor confined to thymus"><label class="element choice">Tumor confined to thymus</label>
-<input type="checkbox" class = "element checkbox"  id="A10" value="  - Tumor extends to the mediastinal fat"><label class="element choice">Tumor extends to the mediastinal fat</label>
-<input type="checkbox" class = "element checkbox"  id="A11" value="  - Tumor involves pulmonary parenchyma, specify lobe:"><label class="element choice">Tumor involves pulmonary parenchyma, specify lobe:</label>
-<input type="checkbox" class = "element checkbox"  id="A12" value="  - Tumor involves mediastinal pleura"><label class="element choice">Tumor involves mediastinal pleura</label>
-<input type="checkbox" class = "element checkbox"  id="A13" value="  - Tumor invades pericardium"><label class="element choice">Tumor invades pericardium</label>
-<input type="checkbox" class = "element checkbox"  id="A14" value="  - Tumor invades diaphragm"><label class="element choice">Tumor invades diaphragm</label>
-<input type="checkbox" class = "element checkbox"  id="A15" value="  - Tumor directly invades adjacent organs or structures (specify):"><label class="element choice">Tumor directly invades adjacent organs or structures (specify):</label>
-<input type="checkbox" class = "element checkbox"  id="A16" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
-<input type="checkbox" class = "element checkbox"  id="A17" value="  - Cannot be assessed"><label class="element choice">Cannot be assessed</label>
-<input type="checkbox" class = "element checkbox"  id="A18" value="  - No applicable"><label class="element choice">No applicable</label>
-</p></li>
-
-<li><p>
+<tr>
+<td>
 <label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A19">
+</td>
+<td>
+<select class="element select large" ID="A19">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A20">
+</td>
+<td>
+<select class="element select large" ID="A20">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Treatment effect: </label>
-<select class="element select medium" ID="A21">
+</td>
+<td>
+<select class="element select large" ID="A21">
 	<option value=""></option>
-	<option value="    - No known presurgical therapy">No known presurgical therapy</option>
-	<option value="    - Not identified">Not identified</option>
-	<option value="    - Present, specify percentage of viable tumor:">Present, specify percentage of viable tumor:</option>
-	<option value="    - Cannot be determined">Cannot be determined</option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, specify percentage of viable tumor:">Present, specify percentage of viable tumor:</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<label class="description">- Tumor extension:</label>
+<input type="checkbox"   id="A08" value="  - No evidence of primary tumor"><label >No evidence of primary tumor</label><br>
+<input type="checkbox"   id="A09" value="  - Tumor confined to thymus"><label >Tumor confined to thymus</label><br>
+<input type="checkbox"   id="A10" value="  - Tumor extends to the mediastinal fat"><label >Tumor extends to the mediastinal fat</label><br>
+<input type="checkbox"   id="A11" value="  - Tumor involves pulmonary parenchyma, specify lobe:"><label >Tumor involves pulmonary parenchyma, specify lobe:</label><br>
+<input type="checkbox"   id="A12" value="  - Tumor involves mediastinal pleura"><label >Tumor involves mediastinal pleura</label><br>
+<input type="checkbox"   id="A13" value="  - Tumor invades pericardium"><label >Tumor invades pericardium</label><br>
+<input type="checkbox"   id="A14" value="  - Tumor invades diaphragm"><label >Tumor invades diaphragm</label><br>
+<input type="checkbox"   id="A15" value="  - Tumor directly invades adjacent organs or structures (specify):"><label >Tumor directly invades adjacent organs or structures (specify):</label><br>
+<input type="checkbox"   id="A16" value="  - Other (specify):"><label >Other (specify):</label><br>
+<input type="checkbox"   id="A17" value="  - Cannot be assessed"><label >Cannot be assessed</label><br>
+<input type="checkbox"   id="A18" value="  - No applicable"><label >No applicable</label><br>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins of excision specimens: </label></legend>
-<li><p><label class="description">- Surgical margins:</label>
+<p><label class="description">- Surgical margins:</label>
 <select class="element select medium" ID="A22">
 	<option value=""></option>
-	<option value="  - Cannot be assessed">Cannot be assessed</option>
-	<option value="  - Uninvolved by tumor, specify: , closest distance:  and those margins <2 cm:">Uninvolved by tumor, specify: , closest distance:  ,and those margins <2 cm:</option>
-	<option value="  - Involved by tumor, specify:">Involved by tumor, specify:</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify: , closest distance:  and those margins <2 cm:">Uninvolved by tumor, specify: , closest distance:  ,and those margins <2 cm:</option>
+	<option value="Involved by tumor, specify:">Involved by tumor, specify:</option>
 </select>
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
@@ -406,34 +463,67 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Lymph nodes examination: </label></legend>
 
-<li><p>- Number of regional lymph nodes examined:
-<input type="text" ID="A23" class = "element text small" size="10"></p>
+<p>
+<table border="1">
+<col width="75%">
 
-<p>- Number of regional lymph nodes involved:
-<input type="text" ID="A24" class = "element text small" size="10"></p></li>
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" ID="A23" class = "element text large" size="10">
+</td>
+</tr>
 
-<li><p>- Extranodal extension:
-<select class="element select small" ID="A25">
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" ID="A24" class = "element text large" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A25">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" ID="A26" class = "element text small" size="20"></p>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" ID="A26" class = "element text large" size="20"><tr>
+</td>
+</tr>
 
-<p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" ID="A27" class = "element text small" size="20"></p></li>
-
-<br>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" ID="A27" class = "element text large" size="20">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description">Modified Masaoka Stage (applies only to thymomas):</label></legend>
-<li><p> 
+<p> 
 <p><select class="element select medium" ID="A28">
 	<option value=""></option>
 	<option value="  - Stage I: Grossly and microscopically encapsulated (includes microscopic invasion into, but not through, the capsule)">Stage I: Grossly and microscopically encapsulated (includes microscopic invasion into, but not through, the capsule)</option>
@@ -444,7 +534,7 @@ function CopyToClipboard() {
 	<option value="  - Stage IVb: Hematogenous or lymphatic dissemination">Stage IVb: Hematogenous or lymphatic dissemination</option>
 	<option value="  - Cannot be determined">Cannot be determined</option>
 </select>
-</p><li>
+</p>
 <br>
 </fieldset>
 </p>
@@ -453,14 +543,27 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" id="A29" class = "element checkbox" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
-<input type="checkbox" id="A30" class = "element checkbox"  value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" id="A31" class = "element checkbox"  value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
 
-<li><p>  - Primary tumor (pT):<br>
-<select class="element select medium" ID="A32">
+<tr>
+<td valign="top">
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox" id="A29"  value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox" id="A30"   value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox" id="A31"   value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A32">
 	<option value=""></option>
 	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -471,60 +574,74 @@ function CopyToClipboard() {
 	<option value="  - pT3: Tumor with direct invasion into any of the following: lung, brachiocephalic vein, superior vena cava, phrenic nerve, chest wall, or extrapericardial pulmonary artery or veins">pT3: Tumor with direct invasion into any of the following: lung, brachiocephalic vein, superior vena cava, phrenic nerve, chest wall, or extrapericardial pulmonary artery or veins</option>
 	<option value="  - pT4: Tumor with invasion into any of the following: aorta (ascending, arch, or descending), arch vessels, intrapericardial pulmonary artery, myocardium, trachea, esophagus">pT4a: Tumor with invasion into any of the following: aorta (ascending, arch, or descending), arch vessels, intrapericardial pulmonary artery, myocardium, trachea, esophagus</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A33">
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN): </label>
+</td>
+<td>
+<select class="element select large" ID="A33">
 	<option value=""></option>
 	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="  - pN1: Metastasis in anterior (perithymic) lymph nodes">pN1: Metastasis in anterior (perithymic) lymph nodes</option>
 	<option value="  - pN2: Metastasis in deep intrathoracic or cervical lymph nodes">pN2: Metastasis in deep intrathoracic or cervical lymph nodes</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A34">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Distant metastasis (pM): </label>
+</td>
+<td>
+<select class="element select large" ID="A34">
 	<option value=""></option>
 	<option value="  - pM1: Pleural, pericardial, or distant metastasis">pM1: Pleural, pericardial, or distant metastasis</option>
 	<option value="  - pM1a: Separate pleural or pericardial nodule(s)">pM1a: Separate pleural or pericardial nodule(s)</option>
 	<option value="  - pM1b: Pulmonary intraparenchymal nodule or distant organ metastasis">pM1b: Pulmonary intraparenchymal nodule or distant organ metastasis</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p>    - Specify site(s), if known:<br>
-<input type="text" ID="A35" class = "element text small" size="35">
+<tr>
+<td>
+- Specify site(s), if known:
+<input type="text" ID="A35" class = "element text medium" size="35">
+</td>
+</tr>
+</table>
 </p>
-
-<br>
 </fieldset>
-</p></li>
+</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class = "element checkbox"  id="A36" value="  - Age-appropriate involution changes"><label class="element choice">Age-appropriate involution changes</label>
-<input type="checkbox" class = "element checkbox"  id="A37" value="  - Fibrosis"><label class="element choice">Fibrosis</label>
-<input type="checkbox" class = "element checkbox"  id="A38" value="  - Follicular thymic hyperplasia"><label class="element choice">Follicular thymic hyperplasia</label>
-<input type="checkbox" class = "element checkbox"  id="A39" value="  - Epithelial thymic hyperplasia"><label class="element choice">Epithelial thymic hyperplasia</label>
-<input type="checkbox" class = "element checkbox"  id="A40" value="  - True thymic hyperplasia"><label class="element choice">True thymic hyperplasia</label>
-<input type="checkbox" class = "element checkbox"  id="A41" value="  - Cystic changes in tumor"><label class="element choice">Cystic changes in tumor</label>
-<input type="checkbox" class = "element checkbox"  id="A42" value="  - Cystic changes in adjacent thymus"><label class="element choice">Cystic changes in adjacent thymus</label>
+<p>
+<input type="checkbox"   id="A36" value="  - Age-appropriate involution changes"><label >Age-appropriate involution changes</label><br>
+<input type="checkbox"   id="A37" value="  - Fibrosis"><label >Fibrosis</label><br>
+<input type="checkbox"   id="A38" value="  - Follicular thymic hyperplasia"><label >Follicular thymic hyperplasia</label><br>
+<input type="checkbox"   id="A39" value="  - Epithelial thymic hyperplasia"><label >Epithelial thymic hyperplasia</label><br>
+<input type="checkbox"   id="A40" value="  - True thymic hyperplasia"><label >True thymic hyperplasia</label><br>
+<input type="checkbox"   id="A41" value="  - Cystic changes in tumor"><label >Cystic changes in tumor</label><br>
+<input type="checkbox"   id="A42" value="  - Cystic changes in adjacent thymus"><label >Cystic changes in adjacent thymus</label><br>
 </p>
 <p>
 - Other (specify):
 <input type="text" class = "element text medium" ID="A43" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A44" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -541,7 +658,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 06-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Thymus 4.0.0.1 (June 2017).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

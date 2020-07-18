@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -39,17 +39,17 @@ if (document.getElementById("A05").checked){
 if (frm.A06.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A06.value + "\n";
 }
-
+*/
 if (frm.A07.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A07.value + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A08.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A08.value + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "- Histologic grade: " + "\n" + frm.A09.value + "\n";
+	Template += "- Histologic grade: " + frm.A09.value + "\n";
 }
 
 if (document.getElementById("A10").checked || document.getElementById("A11").checked ||
@@ -97,25 +97,25 @@ if (document.getElementById("A18").checked){
 }
 
 if (frm.A19.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A19.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A20.value + "\n";
+	Template += "- Perineural invasion: " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
-	Template +=  "- Surgical margins, peripheral: "  +"\n" + frm.A21.value + "\n" ;
+	Template +=  "\n" + "- Surgical margins, peripheral: " + frm.A21.value + "\n" ;
 }
 
 if (frm.A22.value !== ""){
-	Template +=  "- Surgical margins, deep: "  +"\n" + frm.A22.value + "\n" ;
+	Template +=  "- Surgical margins, deep: " + frm.A22.value + "\n" ;
 }
 
 if (document.getElementById("A28").checked || document.getElementById("A29").checked ||
 	document.getElementById("A30").checked || document.getElementById("A31").checked ||
 	frm.A23.value + frm.A24.value + frm.A25.value + frm.A26.value + frm.A27.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
 if (frm.A23.value !== ""){
@@ -131,16 +131,16 @@ if (frm.A25.value !== ""){
 }
 
 if (frm.A26.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A26.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A26.value + "\n";
 }
 
 if (frm.A27.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A27.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A27.value + "\n";
 }
 
 if (document.getElementById("A28").checked || document.getElementById("A29").checked || 
 	document.getElementById("A30").checked || document.getElementById("A31").checked){
-	Template += "- Additional lymph node findings:" + "\n";
+	Template += "  - Additional lymph node findings:" + "\n";
 }
 
 if (document.getElementById("A28").checked){
@@ -158,7 +158,7 @@ if (document.getElementById("A30").checked){
 if (document.getElementById("A31").checked){
 	Template += frm.A31.value + "\n";
 }
-
+/*
 if (frm.A39.value !== ""){
 	Template += "\n" + "- FIGO Stage (2015 FIGO Cancer Report): " + "\n" + frm.A39.value + "\n";
 }
@@ -200,11 +200,11 @@ if (frm.A37.value !== ""){
 if (frm.A38.value !== ""){
 	Template += "    - Specify site(s): " + frm.A38.value + "\n";
 }
-
+*/
 if (document.getElementById("A40").checked || document.getElementById("A41").checked ||
 	document.getElementById("A42").checked || document.getElementById("A43").checked ||
 	document.getElementById("A44").checked || frm.A45.value !==""){
-	Template += "- Additional pathologic findings: " + "\n";
+	Template += "\n" + "- Additional pathologic findings: " + "\n";
 }
 
 if (document.getElementById("A40").checked){
@@ -232,7 +232,7 @@ if (frm.A45.value !== ""){
 }
 
 if (frm.A46.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A46.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A46.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -252,7 +252,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -267,12 +272,20 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<p> This is additional protocol for <a href=".\cap\cp-femalereproductive-vagina-biopsy-19-42000.pdf" target="_blank">biopsy specimen of vagina</a>.</p>
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-	<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+	<select class="element select large" ID="A01">
 		<option value=""></option>
 		<option value="  - Excision">Excision</option> 
 		<option value="  - Partial vaginectomy">Partial vaginectomy</option>
@@ -280,140 +293,187 @@ function CopyToClipboard() {
 		<option value="  - Other (specify):">Other (specify):</option>
 		<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td valign="top">
 <label class="description">- Tumor site:</label> 
-	<input type="checkbox" class="element checkbox" id="A02" value="  - Vagina, upper third"><label class="element choice">Vagina, upper third</label>
-	<input type="checkbox" class="element checkbox" id="A03" value="  - Vagina, middle third"><label class="element choice">Vagina, middle third</label>
-	<input type="checkbox" class="element checkbox" id="A04" value="  - Vagina, lower third"><label class="element choice">Vagina, lower third</label>
-	<input type="checkbox" class="element checkbox" id="A05" value="  - Vagina, further delineation not specified"><label class="element choice">Vagina, further delineation not specified</label>
-</p></li>
+</td>
+<td>
+	<input type="checkbox"  id="A02" value="  - Vagina, upper third"><label >Vagina, upper third</label><br>
+	<input type="checkbox"  id="A03" value="  - Vagina, middle third"><label >Vagina, middle third</label><br>
+	<input type="checkbox"  id="A04" value="  - Vagina, lower third"><label >Vagina, lower third</label><br>
+	<input type="checkbox"  id="A05" value="  - Vagina, further delineation not specified"><label >Vagina, further delineation not specified</label><br>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor size:</label> 
-	<select class="element select medium" ID="A06">
+</td>
+<td>
+	<select class="element select large" ID="A06">
 		<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
 	</select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p>
+<p>
 <label class="description">- Tumor histology and immunohistochemical studies: </label>
 	<textarea ID="A07" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li><p>
+<p>
+<table border="1">
+<col width="60%">
+<tr>
+<td>
 <label class="description">- Histologic type:</label> 
-	<select class="element select medium" ID="A08">
+</td>
+<td>
+	<select class="element select large" ID="A08">
 		<option value=""></option>
-		<option value="  - Squamous cell carcinoma, NOS">Squamous cell carcinoma, NOS</option>
-		<option value="  - Squamous cell carcinoma, keratinizing">Squamous cell carcinoma, keratinizing</option>
-		<option value="  - Squamous cell carcinoma, nonkeratinizing">Squamous cell carcinoma, nonkeratinizing</option>
-		<option value="  - Squamous cell carcinoma, basaloid">Squamous cell carcinoma, basaloid</option>	
-		<option value="  - Squamous cell carcinoma, verrucous">Squamous cell carcinoma, verrucous</option>
-		<option value="  - Squamous cell carcinoma, warty">Squamous cell carcinoma, warty</option>
-		<option value="  - Squamous cell carcinoma, papillary">Squamous cell carcinoma, papillary</option>
-		<option value="  - Adenocarcinoma, NOS">Adenocarcinoma, NOS</option>
-		<option value="  - Mucinous carcinoma, NOS">Mucinous carcinoma, NOS</option>	
-		<option value="  - Endometrioid carcinoma">Endometrioid carcinoma</option>
-		<option value="  - Clear cell carcinoma">Clear cell carcinoma</option>
-		<option value="  - Mesonephric carcinoma">Mesonephric carcinoma</option>
-		<option value="  - Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-		<option value="  - Adenoid basal carcinoma">Adenoid basal carcinoma</option>	
-		<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-		<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-		<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>
-		<option value="  - Carcinosarcoma">Carcinosarcoma</option>
-		<option value="  - Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
-		<option value="  - Other (specify):">Other (specify):</option>
+		<option value="Squamous cell carcinoma, NOS">Squamous cell carcinoma, NOS</option>
+		<option value="Squamous cell carcinoma, keratinizing">Squamous cell carcinoma, keratinizing</option>
+		<option value="Squamous cell carcinoma, nonkeratinizing">Squamous cell carcinoma, nonkeratinizing</option>
+		<option value="Squamous cell carcinoma, basaloid">Squamous cell carcinoma, basaloid</option>	
+		<option value="Squamous cell carcinoma, verrucous">Squamous cell carcinoma, verrucous</option>
+		<option value="Squamous cell carcinoma, warty">Squamous cell carcinoma, warty</option>
+		<option value="Squamous cell carcinoma, papillary">Squamous cell carcinoma, papillary</option>
+		<option value="Adenocarcinoma, NOS">Adenocarcinoma, NOS</option>
+		<option value="Mucinous carcinoma, NOS">Mucinous carcinoma, NOS</option>	
+		<option value="Endometrioid carcinoma">Endometrioid carcinoma</option>
+		<option value="Clear cell carcinoma">Clear cell carcinoma</option>
+		<option value="Mesonephric carcinoma">Mesonephric carcinoma</option>
+		<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+		<option value="Adenoid basal carcinoma">Adenoid basal carcinoma</option>	
+		<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+		<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
+		<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+		<option value="Carcinosarcoma">Carcinosarcoma</option>
+		<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
+		<option value="Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Histologic grade:</label>
-	<select class="element select medium" ID="A09">
+</td>
+<td>
+	<select class="element select large" ID="A09">
 		<option value=""></option>
-		<option value="  - G1: Well differentiated">G1: Well differentiated</option>
-		<option value="  - G2: Moderately differentiated">G2: Moderately differentiated</option>
-		<option value="  - G3: Poorly differentiated">G3: Poorly differentiated</option>
-		<option value="  - G4: Undifferentiated">G4: Undifferentiated</option>	
-		<option value="  - GX: Undifferentiated">GX: Cannot be assessed</option>	
-		<option value="  - Other (specify):">Other (specify):</option>
-		<option value="  - Not applicable">Not applicable</option>	
+		<option value="G1: Well differentiated">G1: Well differentiated</option>
+		<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
+		<option value="G3: Poorly differentiated">G3: Poorly differentiated</option>
+		<option value="G4: Undifferentiated">G4: Undifferentiated</option>	
+		<option value="GX: Undifferentiated">GX: Cannot be assessed</option>	
+		<option value="Other (specify):">Other (specify):</option>
+		<option value="Not applicable">Not applicable</option>	
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td valign="top">
 <label class="description">- Other tissue/ organ involvement:</label>
-		<input type="checkbox" class="element checkbox" id="A10" value="  - Not applicable"><label class="element choice">Not applicable</label>
-		<input type="checkbox" class="element checkbox" id="A11" value="  - Not identified"><label class="element choice">Not identified</label>
-		<input type="checkbox" class="element checkbox" id="A12" value="  - Paravaginal tissues"><label class="element choice">Paravaginal tissues</label>
-		<input type="checkbox" class="element checkbox" id="A13" value="  - Pelvic sidewall"><label class="element choice">Pelvic sidewall</label>
-		<input type="checkbox" class="element checkbox" id="A14" value="  - Vagina, lower third"><label class="element choice">Vagina, lower third</label>
-		<input type="checkbox" class="element checkbox" id="A15" value="  - Bladder mucosa"><label class="element choice">Bladder mucosa</label>
-		<input type="checkbox" class="element checkbox" id="A16" value="  - Rectal mucosa"><label class="element choice">Rectal mucosa</label>
-		<input type="checkbox" class="element checkbox" id="A17" value="  - Other organs/tissue (specify):"><label class="element choice">Other organs/tissue (specify):</label>
-		<input type="checkbox" class="element checkbox" id="A18" value="  - Cannot be determined (explain):"><label class="element choice">Cannot be determined (explain):</label>
-</p></li>
+</td>
+<td>
+		<input type="checkbox"  id="A10" value="  - Not applicable"><label >Not applicable</label><br>
+		<input type="checkbox"  id="A11" value="  - Not identified"><label >Not identified</label><br>
+		<input type="checkbox"  id="A12" value="  - Paravaginal tissues"><label >Paravaginal tissues</label><br>
+		<input type="checkbox"  id="A13" value="  - Pelvic sidewall"><label >Pelvic sidewall</label><br>
+		<input type="checkbox"  id="A14" value="  - Vagina, lower third"><label >Vagina, lower third</label><br>
+		<input type="checkbox"  id="A15" value="  - Bladder mucosa"><label >Bladder mucosa</label><br>
+		<input type="checkbox"  id="A16" value="  - Rectal mucosa"><label >Rectal mucosa</label><br>
+		<input type="checkbox"  id="A17" value="  - Other organs/tissue (specify):"><label >Other organs/tissue (specify):</label><br>
+		<input type="checkbox"  id="A18" value="  - Cannot be determined (explain):"><label >Cannot be determined (explain):</label><br>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Lymphovascular invasion: </label>
-	<select class="element select medium" ID="A19">
+</td>
+<td>
+	<select class="element select large" ID="A19">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present">Present</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Perineural invasion: </label>
-	<select class="element select medium" ID="A20">
+</td>
+<td>
+	<select class="element select large" ID="A20">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present">Present</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins: </label></legend>
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
 <label class="description">- Peripheral margins:</label>
-	<select class="element select medium" ID="A21">
+</td>
+<td>
+	<select class="element select large" ID="A21">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
-		<option value="  - Uninvolved by intraepithelial neoplasia, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
-		<option value="  - Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
-		<option value="  - Involved by high grade intraepithelial lesion (VAIN 2-3), specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+		<option value="Uninvolved by intraepithelial neoplasia, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
+		<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
+		<option value="Involved by high grade intraepithelial lesion (VAIN 2-3), specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Deep margins:</label>
-	<select class="element select medium" ID="A22">
+</td>
+<td>
+	<select class="element select large" ID="A22">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
-		<option value="  - Uninvolved by intraepithelial neoplasia, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
-		<option value="  - Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
-		<option value="  - Involved by high grade intraepithelial lesion (VAIN 2-3), specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+		<option value="Uninvolved by intraepithelial neoplasia, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
+		<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
+		<option value="Involved by high grade intraepithelial lesion (VAIN 2-3), specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
 	</select>
-</p></li>
+</td>
+</tr>
+</table>
+</p>
 
 </fieldset>
 </p>
@@ -422,46 +482,97 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
-<li><p>
-- Number of regional lymph nodes examined:
-<input type="text" class ="element text small" ID="A23" size="10">
-</p></li>
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class ="element text large" ID="A23" size="10">
+</td>
+</tr>
 
-<li><p>
-- Number of lymph nodes with frank metastasis:
-<input type="text" class ="element text small" ID="A24" size="10">
-</p></li>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with frank metastasis:</label>
+</td>
+<td>
+<input type="text" class ="element text large" ID="A24" size="10">
+</td>
+</tr>
 
-<li><p>
-- Number of lymph nodes with isolated tumor cells (0.2 mm or less):
-<input type="text" class ="element text small" ID="A25" size="10">
-</p></li>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with isolated tumor cells (0.2 mm or less):</label>
+</td>
+<td>
+<input type="text" class ="element text large" ID="A25" size="10">
+</td>
+</tr>
 
-<li><p>
-- Size of largest metastatic deposit (mm), specify site:
-<input type="text" class ="element text small" ID="A26" size="20">
-</p></li>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class ="element text large" ID="A26" size="20">
+</td>
+</tr>
 
-<li><p>
-- Size of largest lymph node involved (mm), specify site:
-<input type="text" class ="element text small" ID="A27" size="20">
-</p></li>
+</tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class ="element text large" ID="A27" size="20">
+</td>
+</tr>
 
-<li><p>
-- Additional lymph node findings:<br>
-		<p><input type="checkbox" class="element checkbox" id="A28" value="  - Extranodal extension"><label class="element choice">Extranodal extension</label></p>
-		<p><input type="checkbox" class="element checkbox" id="A29" value="  - Fixed/ulcerated nodes"><label class="element choice">Fixed/ulcerated nodes</label></p>
-		<p><input type="checkbox" class="element checkbox" id="A30" value="  - Other (specify):"><label class="element choice">Other (specify):</label></p>
-		<p><input type="checkbox" class="element checkbox" id="A31" value="  - Cannot be determined"><label class="element choice">Cannot be determined</label></p>
-</p></li>
+<tr>
+<td valign="top">
+<label class="description">- Additional lymph node findings:</label>
+</td>
+<td>
+		<input type="checkbox"  id="A28" value="    - Extranodal extension"><label >Extranodal extension</label><br>
+		<input type="checkbox"  id="A29" value="    - Fixed/ulcerated nodes"><label >Fixed/ulcerated nodes</label><br>
+		<input type="checkbox"  id="A30" value="    - Other (specify):"><label >Other (specify):</label><br>
+		<input type="checkbox"  id="A31" value="    - Cannot be determined"><label >Cannot be determined</label><br>
 
+<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> FIGO stage (2018 Cancer Report):</label></legend>
+	<legend> <label class="description"><a href=".\cap\GYN_VaginaCA.pdf" target="_blank"> FIGO stage (2018 Cancer Report):</a></label></legend>
+<!--
+<a href=".\cap\GYN_VaginaCA.pdf" target="_blank">
+<img src=".\cap\GYN_VaginaCA.JPG" alt="FIGO2018" width="600">
+</a>
+<br>
+Click the table for the original reference.
+-->
+<p>
+I: Carcinoma is limited to the vaginal wall. It has not spread to nearby lymph nodes (N0) or to distant<br> sites (M0)<br><br>
+II:	Carcinoma has involved the para-vaginal tissue but has not extended to the pelvic wall. It has not<br> spread to nearby lymph nodes (N0) or to distant sites (M0)<br><br>
+III: Carcinoma has extended to the pelvic wall and/or involving the lower third of the vagina and/or<br> causing hydronephrosis or nonfunctioning kidney or T1-T3 tumor that has also spread to nearby lymph nodes in the pelvis or groin (inguinal) area (N1) but not distant sites <br><br>
+IV:	Carcinoma has extended beyond the true pelvis or has involved the mucosa of the bladder or<br> 
+rectum (bullous edema as such does not permit a case to be allotted to stage IV)<br><br>
+- IVA: Tumor invades bladder and/or rectal mucosa and/or direct extension beyond the true pelvis.<br>
+It might or might not have spread to lymph nodes in the pelvis or groin (inguinal area) (Any N). <br>
+It has not spread to distant sites (M0)<br>
+- IVB: Spread to distant organs (M1). It can be any size and might or might not have grown into <br>
+nearby structures or organs (Any T) It might or might not have spread to nearby lymph nodes (Any N)<br><br>
 
-<li><p>
+</p>
+<!--
+<p>
 	<select class="element select medium" ID="A39">
 		<option value=""></option>
 		<option value="  - I: Carcinoma is limited to the vaginal wall. It has not spread to nearby lymph nodes (N0) or to distant sites (M0)">I: Carcinoma is limited to the vaginal wall. It has not spread to nearby lymph nodes (N0) or to distant sites (M0)</option>
@@ -471,23 +582,35 @@ function CopyToClipboard() {
 		<option value="  - IVA: Tumor invades bladder and/or rectal mucosa and/or direct extension beyond the true pelvis. It might or might not have spread to lymph nodes in the pelvis or groin (inguinal area) (Any N). It has not spread to distant sites (M0)">IVA: Tumor invades bladder and/or rectal mucosa and/or direct extension beyond the true pelvis. It might or might not have spread to lymph nodes in the pelvis or groin (inguinal area) (Any N). It has not spread to distant sites (M0)</option>
 		<option value="  - IVB: Spread to distant organs (M1). It can be any size and might or might not have grown into nearby structures or organs (Any T) It might or might not have spread to nearby lymph nodes (Any N)">IVB: Spread to distant organs (M1). It can be any size and might or might not have grown into nearby structures or organs (Any T) It might or might not have spread to nearby lymph nodes (Any N)</option>
 	</select>
-</p></li>
+</p>-->
 </fieldset>
 </p>
+
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	<legend> <label> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
   - TNM Descriptors:
-<input type="checkbox" class="element checkbox" id="A32" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A33" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A34" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox"  id="A32" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox"  id="A33" value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox"  id="A34" value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
 
-<li><p>
-  - Primary tumor (pT):<br>
-	<select class="element select medium" ID="A35">
+<tr>
+<td>
+  - Primary tumor (pT):
+</td>
+<td>
+	<select class="element select large" ID="A35">
 		<option value=""></option>
 		<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 		<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -500,58 +623,71 @@ function CopyToClipboard() {
 		<option value="  - pT3: Tumor extending to the pelvic sidewall and/or causing hydronephrosis or nonfunctioning kidney">pT3: Tumor extending to the pelvic sidewall and/or causing hydronephrosis or nonfunctioning kidney< or = 10 mm</option>
 		<option value="  - pT4: Tumor invading the mucosa of the bladder or rectum and/or extending beyond the true pelvis">pT4: Tumor invading the mucosa of the bladder or rectum and/or extending beyond the true pelvis</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-  - Regional lymph nodes (pN): <br>
-	<select class="element select medium" ID="A36">
+<tr>
+<td>
+  - Regional lymph nodes (pN): 
+</td>
+<td>
+	<select class="element select large" ID="A36">
 		<option value=""></option>
 		<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 		<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 		<option value="  - pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm">pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm</option>
 		<option value="  - pN1: Pelvic or inguinal lymph node metastasis">pN1: Pelvic or inguinal lymph node metastasis</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-  - Distant metastasis (pM): <br>
-	<select class="element select medium" ID="A37">
+<tr>
+<td valign="top" rowspan="2">
+  - Distant metastasis (pM):
+</td>
+<td>
+	<select class="element select large" ID="A37">
 		<option value=""></option>
 		<option value="  - pM1: Distant metastasis">pM1:Distant metastasis</option>
 	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+    - Specify site(s), if known:
+<input type="text" class ="element text small" ID="A38" size="35">
+</td>
+</tr>
+</table>
 </p>
-
-<p>    - Specify site(s), if known:<br>
-<input type="text" class ="element text medium" ID="A38" size="35">
-</p></li>
-
-<br>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class="element checkbox" id="A40" value="  - Low-grade squamous intraepithelial lesion (VAIN 1)"><label class="element choice">Low-grade squamous intraepithelial lesion (VAIN 1)</label>
-<input type="checkbox" class="element checkbox" id="A41" value="  - High-grade squamous intraepithelial lesion (VAIN 2-3)"><label class="element choice">High-grade squamous intraepithelial lesion (VAIN 2-3)</label>
-<input type="checkbox" class="element checkbox" id="A42" value="  - Condyloma acuminatum"><label class="element choice">Condyloma acuminatum</label>
-<input type="checkbox" class="element checkbox" id="A43" value="  - Adenocarcinoma in situ (AIS)"><label class="element choice">Adenocarcinoma in situ (AIS)</label>
-<input type="checkbox" class="element checkbox" id="A44" value="  - Atypical adenosis"><label class="element choice">Atypical adenosis</label>
+<p>
+<input type="checkbox"  id="A40" value="  - Low-grade squamous intraepithelial lesion (VAIN 1)"><label >Low-grade squamous intraepithelial lesion (VAIN 1)</label><br>
+<input type="checkbox"  id="A41" value="  - High-grade squamous intraepithelial lesion (VAIN 2-3)"><label >High-grade squamous intraepithelial lesion (VAIN 2-3)</label><br>
+<input type="checkbox"  id="A42" value="  - Condyloma acuminatum"><label >Condyloma acuminatum</label><br>
+<input type="checkbox"  id="A43" value="  - Adenocarcinoma in situ (AIS)"><label >Adenocarcinoma in situ (AIS)</label><br>
+<input type="checkbox"  id="A44" value="  - Atypical adenosis"><label >Atypical adenosis</label><br>
+</p>
 
 <p>
 - Other (specify):
 	<input type="text" class="element text medium" ID="A45" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A46" class = "element textarea medium" style="border-color:grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -569,7 +705,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated 08-May-2020, modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated 09-June-2020, modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Vagina Resection 4.2.0.1 (Feb-2020), <br>
 html form and cascade style sheet were created basing on <a href="http://www.phpform.org">pForm</a>,<br>
 with codes modified from <a href="https://www.w3schools.com/">W3 School tutorials</a> and <a href="https://stackoverflow.com/">Stack Overflow</a>.<br><br>

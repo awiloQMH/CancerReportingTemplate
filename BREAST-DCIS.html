@@ -12,7 +12,7 @@ function updateDescription (frm)
     var Template = "";
 	
 
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -72,12 +72,14 @@ if (frm.A12.value !== ""){
 if (frm.A13.value !== ""){
 	Template += "  - Number of blocks with DCIS out of total: " + frm.A13.value + "\n";
 }
+*/
+
 if (frm.A14.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " +frm.A14.value + "\n";
 }
 
 if (frm.A14A.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A14A.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A14A.value + "\n";
 }
 
 if (document.getElementById("A15").checked || document.getElementById("A16").checked || 
@@ -116,44 +118,44 @@ if (document.getElementById("A21").checked){
 }
 
 if (frm.A22.value !== ""){
-	Template += "  - Nuclear grade: " + "\n" + "  " + frm.A22.value + "\n";
+	Template += "  - Nuclear grade: " + frm.A22.value + "\n";
 }
 
 if (frm.A23.value !== ""){
-	Template += "  - Necrosis: " + "\n" + "  " + frm.A23.value + "\n";
+	Template += "  - Necrosis: " + frm.A23.value + "\n";
 }
 
 if (frm.A24.value !== ""){
-	Template += "- Surgical margin, anterior: " + "\n"  + frm.A24.value + "\n";
+	Template +=  "\n"  + "- Surgical margins :" + "\n" + "  - Anterior: " + frm.A24.value + "\n";
 }
 
 if (frm.A25.value !== ""){
-	Template += "- Surgical margin, posterior: " + "\n"  + frm.A25.value + "\n";
+	Template += "  - Posterior: " + frm.A25.value + "\n";
 }
 
 if (frm.A26.value !== ""){
-	Template += "- Surgical margin, superior: " + "\n"  + frm.A26.value + "\n";
+	Template += "  - Superior: " + frm.A26.value + "\n";
 }
 
 if (frm.A27.value !== ""){
-	Template += "- Surgical margin, inferior: " + "\n"  + frm.A27.value + "\n";
+	Template += "  - Inferior: " + frm.A27.value + "\n";
 }
 
 if (frm.A28.value !== ""){
-	Template += "- Surgical margin, medial: " + "\n"  + frm.A28.value + "\n";
+	Template += "  - Medial: " + frm.A28.value + "\n";
 }
 
 if (frm.A29.value !== ""){
-	Template += "- Surgical margin, lateral: " + "\n"  + frm.A29.value + "\n";
+	Template += "  - Lateral: " + frm.A29.value + "\n";
 }
 
 if (frm.A30.value !== ""){
-	Template += "- Surgical margin, other (specify): " + "\n"  + frm.A30.value + "\n";
+	Template += "  - Other (specify): " + frm.A30.value + "\n";
 }
 
 if (frm.A31.value + frm.A32.value + frm.A33.value + frm.A34.value + frm.A35.value + 
     frm.A36.value + frm.A37.value + frm.A38.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
 if (frm.A31.value !== ""){
@@ -177,11 +179,11 @@ if (frm.A35.value !== ""){
 }
 
 if (frm.A36.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A36.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A36.value + "\n";
 }
 
 if (frm.A37.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A37.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A37.value + "\n";
 }
 
 if (frm.A38.value !== ""){
@@ -191,7 +193,7 @@ if (frm.A38.value !== ""){
 if (document.getElementById("A39").checked || document.getElementById("A40").checked ||
     document.getElementById("A42").checked || document.getElementById("A43").checked || 
 	frm.A41.value + frm.A44.value !== ""){
-	Template += "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
 if (document.getElementById("A39").checked || document.getElementById("A40").checked){
@@ -227,7 +229,7 @@ if (frm.A44.value !== ""){
 }
 
 if (frm.A45.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A45.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A45.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -247,7 +249,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -265,113 +272,160 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<p>
+There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf" target="_blank">biopsy specimen</a>
+</p>
+<!-- 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p>
+
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
 <label class="description">- Procedure:</label>
-	<select class="element select medium" ID="A01">
+</td>
+<td>
+	<select class="element select large" ID="A01">
 		<option value=""></option>
 		<option value="  - Excision (less than total mastectomy)">Excision (less than total mastectomy)</option> 
 		<option value="  - Total mastectomy (including nipple-sparing and skin-sparing mastectomy)">Total mastectomy (including nipple-sparing and skin-sparing mastectomy)</option>
 		<option value="  - Other (specify):">Other (specify):</option>
 		<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Specimen laterality:</label>
-	<select class="element select medium" ID="A02">
+</td>
+<td>
+	<select class="element select large" ID="A02">
 		<option value=""></option>
 		<option value="  - Right">Right</option> 
 		<option value="  - Left">Left</option>
 		<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td valign="top">
 <label class="description">- Tumor site:</label> 
-<input type="checkbox" class="element checkbox" id="A03" value="  - Upper outer quadrant"><label class="element choice">Upper outer quadrant</label>
-<input type="checkbox" class="element checkbox" id="A04" value="  - Lower outer quadrant"><label class="element choice">Lower outer quadrant</label>
-<input type="checkbox" class="element checkbox" id="A05" value="  - Upper inner quadrant"><label class="element choice">Upper inner quadrant</label>
-<input type="checkbox" class="element checkbox" id="A06" value="  - Lower inner quadrant"><label class="element choice">Lower inner quadrant</label>
-<input type="checkbox" class="element checkbox" id="A07" value="  - Central"><label class="element choice">Central</label>
-<input type="checkbox" class="element checkbox" id="A08" value="  - Nipple"><label class="element choice">Nipple</label>
-<input type="checkbox" class="element checkbox" id="A09" value="  - Position (specify): o’clock"><label class="element choice">Position (specify): o’clock</label>
-<input type="checkbox" class="element checkbox" id="A10" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
-<input type="checkbox" class="element checkbox" id="A11" value="  - Not specified"><label class="element choice">Not specified</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox" id="A03" value="  - Upper outer quadrant"><label >Upper outer quadrant</label><br>
+<input type="checkbox" id="A04" value="  - Lower outer quadrant"><label >Lower outer quadrant</label><br>
+<input type="checkbox" id="A05" value="  - Upper inner quadrant"><label >Upper inner quadrant</label><br>
+<input type="checkbox" id="A06" value="  - Lower inner quadrant"><label >Lower inner quadrant</label><br>
+<input type="checkbox" id="A07" value="  - Central"><label >Central</label><br>
+<input type="checkbox" id="A08" value="  - Nipple"><label >Nipple</label><br>
+<input type="checkbox" id="A09" value="  - Position (specify): o’clock"><label >Position (specify): o’clock</label><br>
+<input type="checkbox" id="A10" value="  - Other (specify):"><label >Other (specify):</label><br>
+<input type="checkbox" id="A11" value="  - Not specified"><label >Not specified</label><br>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td rowspan="2" valign="top">
 <label class="description">- Tumor size:</label> 
-	<select class="element select medium" ID="A12">
+</td>
+<td>
+	<select class="element select large" ID="A12">
 		<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
 	</select>
-</p>
+</td>
+</tr>
 
-<p>
-- Number of blocks with DCIS out of total:
+<tr>
+<td>- Number of blocks with DCIS out of total:
 <input type="text" class="element text small" ID="A13" size="10">
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p>
+<p>
 <label class="description">- Tumor histology and immunohistochemical studies: </label>
 	<textarea ID="A14" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
 <label class="description">- Histologic type:</label> 
-	<select class="element select medium" ID="A14A">
+</td>
+<td>
+	<select class="element select large" ID="A14A">
 		<option value=""></option>
-		<option value="  - Ductal carcinoma in situ">Ductal carcinoma in situ</option>
-		<option value="  - Paget disease ">Paget disease </option>
-		<option value="  - Encapsulated papillary carcinoma without invasive carcinoma">Encapsulated papillary carcinoma without invasive carcinoma</option>
-		<option value="  - Solid papillary carcinoma without invasive carcinoma">Solid papillary carcinoma without invasive carcinoma</option>	
-		<option value="  - Other (specify):">Other (specify):</option>
+		<option value="Ductal carcinoma in situ">Ductal carcinoma in situ</option>
+		<option value="Paget disease ">Paget disease </option>
+		<option value="Encapsulated papillary carcinoma without invasive carcinoma">Encapsulated papillary carcinoma without invasive carcinoma</option>
+		<option value="Solid papillary carcinoma without invasive carcinoma">Solid papillary carcinoma without invasive carcinoma</option>	
+		<option value="Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Architectural patterns of ductal carcinoma in situ:</label> 
-<input type="checkbox" class="element checkbox" id="A15" value="  - Comedo"><label class="element choice">Comedo</label>
-<input type="checkbox" class="element checkbox" id="A16" value="  - Paget disease (DCIS involving nipple skin)"><label class="element choice">Paget disease (DCIS involving nipple skin)</label>
-<input type="checkbox" class="element checkbox" id="A17" value="  - Cribriform"><label class="element choice">Cribriform</label>
-<input type="checkbox" class="element checkbox" id="A18" value="  - Micropapillary"><label class="element choice">Micropapillary</label>
-<input type="checkbox" class="element checkbox" id="A19" value="  - Papillary"><label class="element choice">Papillary</label>
-<input type="checkbox" class="element checkbox" id="A20" value="  - Solid"><label class="element choice">Solid</label>
-<input type="checkbox" class="element checkbox" id="A21" value="  - Other, specify:"><label class="element choice">Other, specify:</label>
-</p></li>
+<tr>
+<td valign="top">
+<label class="description">- Architectural patterns:</label> 
+</td>
+<td>
+<input type="checkbox" id="A15" value="  - Comedo"><label >Comedo</label><br>
+<input type="checkbox" id="A16" value="  - Paget disease (DCIS involving nipple skin)"><label >Paget disease (DCIS involving nipple skin)</label><br>
+<input type="checkbox" id="A17" value="  - Cribriform"><label >Cribriform</label><br>
+<input type="checkbox" id="A18" value="  - Micropapillary"><label >Micropapillary</label><br>
+<input type="checkbox" id="A19" value="  - Papillary"><label >Papillary</label><br>
+<input type="checkbox" id="A20" value="  - Solid"><label >Solid</label><br>
+<input type="checkbox" id="A21" value="  - Other, specify:"><label >Other, specify:</label><br>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Nuclear grade:</label>
-	<select class="element select medium" ID="A22">
+</td>
+<td>
+	<select class="element select large" ID="A22">
 		<option value=""></option>
-		<option value="  - Grade I (low)">Grade I (low)</option>
-		<option value="  - Grade II (intermediate)">Grade II (intermediate)</option>
-		<option value="  - Grade III (high)">Grade III (high)</option>
+		<option value="Grade I (low)">Grade I (low)</option>
+		<option value="Grade II (intermediate)">Grade II (intermediate)</option>
+		<option value="Grade III (high)">Grade III (high)</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Necrosis: </label>
-	<select class="element select medium" ID="A23">
+</td>
+<td>
+	<select class="element select large" ID="A23">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present, focal (small foci or single cell necrosis)">Present, focal (small foci or single cell necrosis)</option>
-		<option value="  - Present, central (expansive “comedo” necrosis)">Present, central (expansive “comedo” necrosis)</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present, focal (small foci or single cell necrosis)">Present, focal (small foci or single cell necrosis)</option>
+		<option value="Present, central (expansive “comedo” necrosis)">Present, central (expansive “comedo” necrosis)</option>
 	</select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -379,76 +433,109 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins: </label></legend>
 
-<li><p>
+<p>
+<table border="1">
+<col width="60%">
+
+<tr>
+<td>
 <label class="description">- Anterior margin:</label>
-	<select class="element select medium" ID="A24">
+</td>
+<td>
+	<select class="element select large" ID="A24">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
-		<option value="  - Involved by DCIS">Involved by DCIS</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="Involved by DCIS">Involved by DCIS</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Posterior margin:</label>
-	<select class="element select medium" ID="A25">
+</td>
+<td>
+	<select class="element select large" ID="A25">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
-		<option value="  - Involved by DCIS">Involved by DCIS</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="Involved by DCIS">Involved by DCIS</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Superior margin:</label>
-	<select class="element select medium" ID="A26">
+</td>
+<td>
+	<select class="element select large" ID="A26">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
-		<option value="  - Involved by DCIS">Involved by DCIS</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="Involved by DCIS">Involved by DCIS</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Inferior margin:</label>
-	<select class="element select medium" ID="A27">
+</td>
+<td>
+	<select class="element select large" ID="A27">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
-		<option value="  - Involved by DCIS">Involved by DCIS</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="Involved by DCIS">Involved by DCIS</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Medial margin:</label>
-	<select class="element select medium" ID="A28">
+</td>
+<td>
+	<select class="element select large" ID="A28">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
-		<option value="  - Involved by DCIS">Involved by DCIS</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="Involved by DCIS">Involved by DCIS</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Lateral margin:</label>
-	<select class="element select medium" ID="A29">
+</td>
+<td>
+	<select class="element select large" ID="A29">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
-		<option value="  - Involved by DCIS">Involved by DCIS</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="Involved by DCIS">Involved by DCIS</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Other margins (specify):</label>
-	<select class="element select medium" ID="A30">
+<tr>
+<td>
+<label>- Other margins (specify):</label>
+</td>
+<td>
+	<select class="element select large" ID="A30">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
-		<option value="  - Involved by DCIS">Involved by DCIS</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS, closest distance:">Uninvolved by DCIS, closest distance:</option>
+		<option value="Involved by DCIS">Involved by DCIS</option>
 	</select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -456,51 +543,88 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
-<li><p>
-- Number of regional lymph nodes examined:<br>
-<input type="text" class="element text small" ID="A31" size="10">
-</p></li>
+<p>
+<table border="1">
+<col width="80%">
 
-<li><p>
-- Number of sentinel lymph nodes examined:<br>
-<input type="text" class="element text small" ID="A32" size="10">
-</p></li>
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A31" size="10">
+</td>
+</tr>
 
-<li><p>
-- Number of lymph nodes with macrometastasis (>2 mm):<br>
-<input type="text" class="element text small" ID="A33" size="10">
-</p></li>
+<tr>
+<td>
+<label class="description">- Number of sentinel lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A32" size="10">
+</td>
+</tr>
 
-<li><p>
-- Number of lymph nodes with micrometastasis (> 0.2 to 2 mm and/or > 200 cells):<br>
-<input type="text" class="element text small" ID="A34" size="10">
-</p></li>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with macrometastasis (>2 mm):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A33" size="10">
+</td>
+</tr>
 
-<li><p>
-- Number of lymph nodes with isolated tumor cells (0.2 mm or less and < or = 200 cells):<br>
-<input type="text" class="element text small" ID="A35" size="10">
-</p></li>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with micrometastasis <br>(> 0.2 to 2 mm and/or > 200 cells):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A34" size="10">
+</td>
+</tr>
 
-<li><p>
-- Size of largest metastatic deposit (mm), specify site:<br>
-<input type="text" class="element text small" ID="A36" size="20">
-</p></li>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with isolated tumor cells <br>(0.2 mm or less and < or = 200 cells):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A35" size="10">
+</td>
+</tr>
 
-<li><p>
-- Size of largest lymph node involved (mm), specify site:<br>
-<input type="text" class="element text small" ID="A37" size="20">
-</p></li>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A36" size="20">
+</td>
+</tr>
 
-<li><p>
-- Extranodal extension:<br>
-	<select class="element select small" ID="A38">
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A37" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+	<select class="element select large" ID="A38">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present">Present</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -508,30 +632,49 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>
-  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A39" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A40" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
 
-<li><p>
-  - Primary tumor (pT):<br>
-	<select class="element select medium" ID="A41">
+<tr>
+<td valign="top">
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox" id="A39" value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox" id="A40" value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+<tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+	<select class="element select large" ID="A41">
 		<option value=""></option>
 		<option value="  - pTis(DCIS): Ductal carcinoma in situ">pTis(DCIS): Ductal carcinoma in situ</option>
 		<option value="  - pTis (Paget): Paget disease of the nipple not associated with invasive carcinoma and/or DCIS in the underlying breast parenchyma">pTis (Paget): Paget disease of the nipple not associated with invasive carcinoma and/or DCIS in the underlying breast parenchyma</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-  - Regional lymph nodes modifier: <br>
-<input type="checkbox" class="element checkbox" id="A42" value=" sn "><label class="element choice">sn Sentinel node(s) evaluated (< 6 lymph nodes)</label>
-<input type="checkbox" class="element checkbox" id="A43" value=" f  "><label class="element choice">f Nodal metastasis confirmed by fine needle aspiration or core needle biopsy</label>
-</p></li>
+<tr>
+<td valign="top">
+<label class="description">- Regional lymph nodes modifier: </label>
+</td>
+<td>
+<input type="checkbox" id="A42" value=" sn "><label >sn Sentinel node(s) evaluated (< 6 lymph nodes)</label><br>
+<input type="checkbox" id="A43" value=" f  "><label >f Nodal metastasis confirmed by FNA or biopsy</label><br>
+</td>
+</tr>
 
-<li><p>
-  - Regional lymph nodes (pN): <br>
-	<select class="element select medium" ID="A44">
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN): </label>
+</td>
+<td>
+	<select class="element select large" ID="A44">
 		<option value=""></option>
 		<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 		<option value="  - pN0: No regional lymph node metastasis or ITCs only">pN0: No regional lymph node metastasis or ITCs only</option>
@@ -547,15 +690,17 @@ function CopyToClipboard() {
 		<option value="  - pN3b: pN1a or pN2a in the presence of cN2b (positive internal mammary nodes by imaging); or pN2a in the presence of pN1b">pN3b: pN1a or pN2a in the presence of cN2b (positive internal mammary nodes by imaging); or pN2a in the presence of pN1b</option>
 		<option value="  - pN3c: Metastases in ipsilateral supraclavicular lymph nodes">pN3c: Metastases in ipsilateral supraclavicular lymph nodes</option>
 	</select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A45" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -572,7 +717,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 25-Mar-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 06-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Breast DCIS Resection 4.3.0.2 (Feb 2020).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,15 +13,15 @@ function updateDescription (frm)
 	
 
 if (frm.A01.value !== ""){
-	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+	Template += "- Procedure: " + frm.A01.value + "\n";
 }
 
 if (frm.A02.value !== ""){
-	Template += "- Tumor site: " + "\n" + "   - " + frm.A02.value + "\n";
+	Template += "- Tumor site: " + frm.A02.value + "\n";
 }
 
 if (frm.A03.value !== ""){
-	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
+	Template += "- Tumor size: " + frm.A03.value + "\n";
 }
 
 if (frm.A04.value !== ""){
@@ -29,35 +29,35 @@ if (frm.A04.value !== ""){
 }
 
 if (frm.A05.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A05.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value !== ""){
-	Template += "- Preoperative treatment: " + "\n" + "  - " + frm.A06.value + "\n";
+	Template += "- Preoperative treatment: " + frm.A06.value + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "- Treatment effects:  " + "\n" + "  - " + frm.A07.value + "\n";
+	Template += "- Treatment effects:  " + frm.A07.value + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "- Anaplasia: " + "\n" + "  - " + frm.A08.value + "\n";
+	Template += "- Anaplasia: " + frm.A08.value + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "- Fusion status: " + "\n" + "  - " + frm.A09.value + "\n";
+	Template += "- Fusion status: " + frm.A09.value + "\n";
 }
 
 if (frm.A10.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A10.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A10.value + "\n";
 }
 
 if (frm.A11.value !== ""){
-	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A11.value + "\n";
+	Template += "- Perineural invasion:  " + frm.A11.value + "\n";
 }
 
 if (frm.A12.value !== ""){
-	Template += "\n" + "- Surgical margins: " + "\n" + "  - " + frm.A12.value + "\n";
+	Template += "\n" + "- Surgical margins: " + frm.A12.value + "\n";
 }
 
 if (frm.A13.value + frm.A14.value + frm.A15.value + frm.A16.value + frm.A17.value!== ""){
@@ -77,11 +77,11 @@ if (frm.A15.value !== ""){
 }
 
 if (frm.A16.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A16.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A16.value + "\n";
 }
 
 if (frm.A17.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A17.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A17.value + "\n";
 }
 
 if (frm.A18.value + frm.A19.value !== ""){
@@ -153,10 +153,10 @@ table, th, td {
 
 
 <table border="1">
-<col width="20%">
+<col width="60%">
 
 <tr>
-<td>- Procedure:</td>
+<td><label class="description">- Procedure:</label></td>
 <td><select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="Marginal resection">Marginal resection</option>
@@ -171,7 +171,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor site:</td>
+<td><label class="description">- Tumor site:</label></td>
 <td><select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="Bile duct">Bile duct</option>
@@ -187,7 +187,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor size:</td>
+<td><label class="description">- Tumor size:</label></td>
 <td><select class="element select large" ID="A03">
 		<option value=""></option>
 		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
@@ -195,12 +195,6 @@ table, th, td {
 		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select></td>
 </tr>
-
-<tr>
-<td>  </td>
-<td>  </td>
-</tr>
-
 </table>
 <br>
 </fieldset>
@@ -218,7 +212,7 @@ table, th, td {
 <col width="40%">
 
 <tr>
-<td>- Histologic type: 
+<td><label class="description">- Histologic type: </label>
 </td>
 <td><select class="element select large" ID="A05">
 	<option value=""></option>
@@ -232,7 +226,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Preoperative treatment: </td>
+<td><label class="description">- Preoperative treatment: </label></td>
 <td><select class="element select large" ID="A06">
 	<option value=""></option>
 	<option value="No known preoperative therapy">No known preoperative therapy</option>
@@ -244,7 +238,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Treatment effect: </td>
+<td><label class="description">- Treatment effect: </label></td>
 <td><select class="element select large" ID="A07">
 	<option value=""></option>
 	<option value="Necrosis not identified">Necrosis not identified</option>
@@ -255,7 +249,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Anaplasia: 
+<td><label class="description">- Anaplasia:</label> 
 </td>
 <td><select class="element select large" ID="A08">
 	<option value=""></option>
@@ -267,7 +261,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Fusion Status: </td>
+<td><label class="description">- Fusion Status: </label></td>
 <td><select class="element select large" ID="A09">
 	<option value=""></option>
 	<option value="Not performed">Not performed</option>
@@ -281,7 +275,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Lymphovascular invasion: </td>
+<td><label class="description">- Lymphovascular invasion:</label> </td>
 <td><select class="element select large" ID="A10">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -291,13 +285,29 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Perineural invasion: </td>
+<td><label class="description">- Perineural invasion:</label> </td>
 <td><select class="element select large" ID="A11">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select></td>
+</tr>
+
+
+<tr>
+<td rowspan="2" valign="top"><label class="description">- Status of metastases:</label></td>
+<td><select class="element select large" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr> 
+<td>- Sites of distant metastasis: 
+<input type="text" class="element text small" ID="A19" size="35"></td>
 </tr>
 </table>
 </fieldset>
@@ -324,10 +334,10 @@ table, th, td {
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
 <table border="1">
-<col width="60%">
+<col width="75%">
 <tr>
 <td>
-- Number of regional lymph nodes examined:
+<label class="description">- Number of regional lymph nodes examined:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A13" size="15">
@@ -336,7 +346,7 @@ table, th, td {
 
 <tr>
 <td>
-- Number of lymph nodes involved (specify locations):
+<label class="description">- Number of lymph nodes involved (specify locations):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A14" size="15">
@@ -345,7 +355,7 @@ table, th, td {
 
 <tr>
 <td>
-- Extranodal extension:
+<label class="description">- Extranodal extension:</label>
 </td>
 <td>
 <select class="element select large" ID="A15">
@@ -358,7 +368,7 @@ table, th, td {
 </tr>
 <tr>
 <td>
-- Size of largest metastatic deposit (mm), specify site:
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A16" size="15">
@@ -367,7 +377,7 @@ table, th, td {
 
 <tr>
 <td>
-- Size of largest lymph node involved (mm), specify site:
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A17" size="15">
@@ -377,30 +387,10 @@ table, th, td {
 
 <br>
 </fieldset>
-
 </p>
+
 <p>
-<table border="1">
-<col width="40%">
-<label class="description">- Status of metastases:</label>
-
-<tr>
-<td rowspan="2" valign="top">- Metastases: </td>
-<td><select class="element select large" ID="A18">
-	<option value=""></option>
-	<option value="Not identified">Not identified</option>
-	<option value="Present">Present</option>
-	<option value="Cannot be determined">Cannot be determined</option>
-</select></td>
-</tr>
-
-<tr> 
-<td>- Sites of distant metastasis: 
-<input type="text" class="element text large" ID="A19" size="35"></td>
-</tr>
-</table>
-</p>
-
+<fieldset style="border-color:#e6e6ff;">
 <p>
 <label class="description">- The Intergroup Rhabdomyosarcoma Study Postsurgical Clinical Grouping System (Raney 2001): </label>
 <select class="element select medium" ID="A20">
@@ -431,6 +421,8 @@ table, th, td {
 	<option value="Stage IV: Distant metastases present">Stage IV: Distant metastases present</option>
 </select>
 </p>
+</fieldset>
+</p>
 
 <p>
 <label class="description">- Additional pathologic findings:</label>
@@ -452,7 +444,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 29-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 09-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Rhabdomyosarcoma Resection 4.0.0.0 (February 2019, <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

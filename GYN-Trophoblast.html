@@ -10,7 +10,7 @@
 function updateDescription (frm) 
 {
     var Template = "";
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n"  + frm.A01.value + "\n";
 }
@@ -47,13 +47,13 @@ if (document.getElementById("A07").checked){
 if (frm.A08.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A08.value + "\n";
 }
-
+*/
 if (frm.A09.value !== ""){
-	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A09.value + "\n";
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A09.value + "\n";
 }
 
 if (frm.A10.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A10.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A10.value + "\n";
 }
 
 if (document.getElementById("A11").checked || document.getElementById("A12").checked ||
@@ -123,29 +123,29 @@ if (document.getElementById("A24").checked){
 }
 
 if (frm.A25.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A25.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A25.value + "\n";
 }
 
 if (frm.A26.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A26.value + "\n";
+	Template += "- Perineural invasion: " + frm.A26.value + "\n";
 }
 
 if (frm.A27.value + frm.A28.value + frm.A29.value !== ""){
-	Template += "- Surgical margins of excision specimen: " + "\n";
+	Template += "\n" + "- Surgical margins of excision specimen: " + "\n";
 }	
 
 if (frm.A27.value !== ""){
-	Template +=  "  - Ectocervical/vaginal cuff margin: "  + "\n" + "  " + frm.A27.value + "\n" ;
+	Template +=  "  - Ectocervical/vaginal cuff margin: "  + frm.A27.value + "\n" ;
 }
 
 if (frm.A28.value !== ""){
-	Template +=  "  - Parametrial/paracervical margin: "  +"\n" + "  " + frm.A28.value + "\n" ;
+	Template +=  "  - Parametrial/paracervical margin: "  + frm.A28.value + "\n" ;
 }
 
 if (frm.A29.value !== ""){
-	Template +=  "  - Other margins (specify): "  + "\n" + "  " + frm.A29.value + "\n" ;
+	Template +=  "  - Other margins (specify): "  + frm.A29.value + "\n" ;
 }
-
+/*
 if (frm.A36.value !== ""){
 	Template += "\n" + "- FIGO Stage (2015 FIGO Cancer Report): " + "\n" + frm.A36.value + "\n";
 }
@@ -182,7 +182,7 @@ if (frm.A34.value !== ""){
 if (frm.A35.value !== ""){
 	Template += "    - Number of metastasis: " + frm.A35.value + "\n";
 }
-
+*/
 if (document.getElementById("A37").checked || frm.A38.value !==""){
 	Template += "\n" + "- Additional pathologic findings:" + "\n";
 }
@@ -216,7 +216,13 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
 
+</style>
 </head>
 
 <body>
@@ -231,11 +237,19 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-	<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+	<select class="element select large" ID="A01">
 		<option value=""></option>
 		<option value="  - Dilation and curettage">Dilation and curettage</option>
 		<option value="  - Simple hysterectomy">Simple hysterectomy</option>
@@ -244,11 +258,15 @@ function CopyToClipboard() {
 		<option value="  - Pelvic exenteration">Pelvic exenteration</option>
 		<option value="  - Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Hysterectomy type:</label> 
-	<select class="element select medium" ID="A02">
+</td>
+<td>
+	<select class="element select large" ID="A02">
 		<option value=""></option>
 		<option value="  - Abdominal">Abdominal</option>
 		<option value="  - Vaginal">Vaginal</option>
@@ -258,142 +276,208 @@ function CopyToClipboard() {
 		<option value="  - Other (specify):">Other (specify):</option>
 		<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Specimen integrity:</label> 
-	<select class="element select medium" ID="A03">
+</td>
+<td>
+	<select class="element select large" ID="A03">
 		<option value=""></option>
 		<option value="  - Intact">Intact</option>
 		<option value="  - Opened">Opened</option>
 		<option value="  - Morcellated">Morcellated</option>
 		<option value="  - Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor site:</label>
-<input type="checkbox" class="element checkbox" id="A04" value="  - Uterine corpus"><label class="element choice">Uterine corpus</label>
-<input type="checkbox" class="element checkbox" id="A05" value="  - Uterine cervix"><label class="element choice">Uterine cervix</label>
-<input type="checkbox" class="element checkbox" id="A06" value="  - Cannot be determined"><label class="element choice">Cannot be determined</label>
-<input type="checkbox" class="element checkbox" id="A07" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
-</p></li>
+<tr>
+<td valign="top">
+<label class="description">- Tumor site:</label>
+</td>
+<td>
+<input type="checkbox"  id="A04" value="  - Uterine corpus"><label >Uterine corpus</label><br>
+<input type="checkbox"  id="A05" value="  - Uterine cervix"><label >Uterine cervix</label><br>
+<input type="checkbox"  id="A06" value="  - Cannot be determined"><label >Cannot be determined</label><br>
+<input type="checkbox"  id="A07" value="  - Other (specify):"><label >Other (specify):</label><br>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor size:</label> 
-	<select class="element select medium" ID="A08">
+</td>
+<td>
+	<select class="element select large" ID="A08">
 		<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
 	</select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p>
+<p>
 <label class="description">- Tumor histology and immunohistochemical studies: </label>
 	<textarea ID="A09" class="element textarea medium"></textarea>
-</p></li>
-
-<li><p>
+</p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
 <label class="description">- Histologic type:</label> 
-	<select class="element select medium" ID="A10">
+</td>
+<td>
+	<select class="element select large" ID="A10">
 		<option value=""></option>
-		<option value="  - Hydatidiform mole, invasive">Hydatidiform mole, invasive</option>
-		<option value="  - Choriocarcinoma">Choriocarcinoma</option>
-		<option value="  - Placental site trophoblastic tumor">Placental site trophoblastic tumor</option>
-		<option value="  - Epithelioid trophoblastic tumor">Epithelioid trophoblastic tumor</option>	
-		<option value="  - Malignant trophoblastic tumor, type cannot be determined">Malignant trophoblastic tumor, type cannot be determined</option>
-		<option value="  - Other (specify):">Other (specify):</option>
+		<option value="Hydatidiform mole, invasive">Hydatidiform mole, invasive</option>
+		<option value="Choriocarcinoma">Choriocarcinoma</option>
+		<option value="Placental site trophoblastic tumor">Placental site trophoblastic tumor</option>
+		<option value="Epithelioid trophoblastic tumor">Epithelioid trophoblastic tumor</option>	
+		<option value="Malignant trophoblastic tumor, type cannot be determined">Malignant trophoblastic tumor, type cannot be determined</option>
+		<option value="Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td valign="top">
 <label class="description">- Other tissue/ organ involvement:</label>
-<input type="checkbox" class="element checkbox" id="A11" value="  - Not applicable"><label class="element choice">Not applicable</label>
-<input type="checkbox" class="element checkbox" id="A12" value="  - Not identified"><label class="element choice">Not identified</label>
-<input type="checkbox" class="element checkbox" id="A13" value="  - Right ovary"><label class="element choice">Right ovary</label>
-<input type="checkbox" class="element checkbox" id="A14" value="  - Left ovary"><label class="element choice">Left ovary</label>
-<input type="checkbox" class="element checkbox" id="A15" value="  - Ovary (side not specified)"><label class="element choice">Ovary (side not specified)</label>
-<input type="checkbox" class="element checkbox" id="A16" value="  - Right fallopian tube"><label class="element choice">Right fallopian tube</label>
-<input type="checkbox" class="element checkbox" id="A17" value="  - Left fallopian tube"><label class="element choice">Left fallopian tube</label>
-<input type="checkbox" class="element checkbox" id="A18" value="  - Fallopian tube (side not specified)"><label class="element choice">Fallopian tube (side not specified)</label>
-<input type="checkbox" class="element checkbox" id="A19" value="  - Vagina"><label class="element choice">Vagina</label>
-<input type="checkbox" class="element checkbox" id="A20" value="  - Right broad ligament"><label class="element choice">Right broad ligament</label>
-<input type="checkbox" class="element checkbox" id="A21" value="  - Left broad ligament"><label class="element choice">Left broad ligamentm</label>
-<input type="checkbox" class="element checkbox" id="A22" value="  - Broad ligament (side not specified)"><label class="element choice">Broad ligament (side not specified)</label>
-<input type="checkbox" class="element checkbox" id="A23" value="  - Other organs/tissue (specify):"><label class="element choice">Other organs/tissue (specify):</label>
-<input type="checkbox" class="element checkbox" id="A24" value="  - Cannot be determined (explain):"><label class="element choice">Cannot be determined (explain):</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox"  id="A11" value="  - Not applicable"><label >Not applicable</label><br>
+<input type="checkbox"  id="A12" value="  - Not identified"><label >Not identified</label><br>
+<input type="checkbox"  id="A13" value="  - Right ovary"><label >Right ovary</label><br>
+<input type="checkbox"  id="A14" value="  - Left ovary"><label >Left ovary</label><br>
+<input type="checkbox"  id="A15" value="  - Ovary (side not specified)"><label >Ovary (side not specified)</label><br>
+<input type="checkbox"  id="A16" value="  - Right fallopian tube"><label >Right fallopian tube</label><br>
+<input type="checkbox"  id="A17" value="  - Left fallopian tube"><label >Left fallopian tube</label><br>
+<input type="checkbox"  id="A18" value="  - Fallopian tube (side not specified)"><label >Fallopian tube (side not specified)</label><br>
+<input type="checkbox"  id="A19" value="  - Vagina"><label >Vagina</label><br>
+<input type="checkbox"  id="A20" value="  - Right broad ligament"><label >Right broad ligament</label><br>
+<input type="checkbox"  id="A21" value="  - Left broad ligament"><label >Left broad ligamentm</label><br>
+<input type="checkbox"  id="A22" value="  - Broad ligament (side not specified)"><label >Broad ligament (side not specified)</label><br>
+<input type="checkbox"  id="A23" value="  - Other organs/tissue (specify):"><label >Other organs/tissue (specify):</label><br>
+<input type="checkbox"  id="A24" value="  - Cannot be determined (explain):"><label >Cannot be determined (explain):</label><br>
+</td>
+</tr>
 
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Lymphovascular invasion: </label>
-	<select class="element select medium" ID="A25">
+</td>
+<td>
+	<select class="element select large" ID="A25">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present">Present</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Perineural invasion: </label>
-	<select class="element select medium" ID="A26">
+</td>
+<td>
+	<select class="element select large" ID="A26">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present">Present</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins of excision specimen: </label></legend>
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
 <label class="description">- Ectocervical/vaginal cuff margin:</label>
-	<select class="element select medium" ID="A27">
+</td>
+<td>
+	<select class="element select large" ID="A27">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by tumor, specify location and closest distance:">Uninvolved by tumor, specify location and closest distance:</option>
-		<option value="  - Involved by tumor">Involved by tumor</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by tumor, specify location and closest distance:">Uninvolved by tumor, specify location and closest distance:</option>
+		<option value="Involved by tumor">Involved by tumor</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Parametrial/paracervical margin:</label>
-	<select class="element select medium" ID="A28">
+</td>
+<td>
+	<select class="element select large" ID="A28">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by tumor, specify location and closest distance:">Uninvolved by tumor, specify location and closest distance:</option>
-		<option value="  - Involved by tumor">Involved by tumor</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by tumor, specify location and closest distance:">Uninvolved by tumor, specify location and closest distance:</option>
+		<option value="Involved by tumor">Involved by tumor</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Other margins (specify):</label>
-	<select class="element select medium" ID="A29">
+<tr>
+<td>
+<label>- Other margins (specify):</label>
+</td>
+<td>
+	<select class="element select large" ID="A29">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by tumor, specify location and closest distance:">Uninvolved by tumor, specify location and closest distance:</option>
-		<option value="  - Involved by tumor">Involved by tumor</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by tumor, specify location and closest distance:">Uninvolved by tumor, specify location and closest distance:</option>
+		<option value="Involved by tumor">Involved by tumor</option>
 	</select>
-</p></li>
-
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> FIGO stage (2015 Cancer Report):</label></legend>
-<li><p>
+	<legend> <label class="description"><a href=".\cap\GYN_Trophoblastic.pdf" target="_blank"> FIGO stage (2015 Cancer Report):</a></label></legend>
+<!--
+<a href=".\cap\GYN_Trophoblastic.pdf" target="_blank">
+<img src=".\cap\GYN_Trophoblastic.JPG" alt="FIGO2018" width="600">
+</a>
+<br>
+Click the table for the original reference.
+-->
+<p>
+I: Disease confined to the uterus<br><br>
+II: Gestational trophoblastic tumor extends outside of the uterus, but limited to the genital <br>
+structures (adenexa, vagina, broad ligament)<br><br>
+III: Gestational trophoblastic tumor extends to the lungs, with or without known genital tract<br>
+ involvement<br><br>
+IV: All other metastatic sites<br><br>
+</p>
+<!--
+<p>
 	<select class="element select medium" ID="A36">
 		<option value=""></option>
 		<option value="  - I: Tumor confined to the uterus">I: Tumor confined to the uterus</option>
@@ -401,80 +485,101 @@ function CopyToClipboard() {
 		<option value="  - III: Gestational trophoblastic tumor extends to the lungs, with or without known genital tract involvement">III: Gestational trophoblastic tumor extends to the lungs, with or without known genital tract involvement</option>
 		<option value="  - IV: All other metastatic sites">IV: All other metastatic sites</option>
 	</select>
-</p></li>
-<br>
+</p>
+-->
 </fieldset>
 </p>
 
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	<legend> <label> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
   - TNM Descriptors:
-<input type="checkbox" class="element checkbox" id="A30" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A31" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox"  id="A30" value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox"  id="A31" value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
 
-<li><p>
-  - Primary tumor:<br>
-	<select class="element select medium" ID="A32">
+<tr>
+<td>
+  - Primary tumor:
+</td>
+<td>
+	<select class="element select large" ID="A32">
 		<option value=""></option>
 		<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 		<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 		<option value="  - pT1: Tumor is limited to the uterus">pT1:Tumor is limited to the uterus</option>
 		<option value="  - pT2: Tumor extends to other genital structures (ovary, tube, vagina, broad ligaments) by metastasis or direct extension">pT2: Tumor extends to other genital structures (ovary, tube, vagina, broad ligaments) by metastasis or direct extension</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-  - Distant metastasis (pM): <br>
-	<select class="element select medium" ID="A33">
+<tr>
+<td rowspan="3" valign="top">
+  - Distant metastasis (pM):
+</td>
+<td>
+	<select class="element select large" ID="A33">
 		<option value=""></option>
 		<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 		<option value="  - pM1a: Lung metastasis">pM1a: Lung metastasis</option>
 		<option value="  - pM1b: All other distant metastasis">pM1b: All other distant metastasis</option>
 	</select>
-</p>
+</td>
+</tr>
 
-<p>
-  - Specify site(s), if known:<br>
+<tr>
+<td>
+  - Specify site(s), if known:
 <input type="text" class="element text small" ID="A34" size="35">
-</p>
+</td>
+</tr>
 
-<p>
-  - Number of metastasis: <br>
+<tr>
+<td>
+  - Number of metastasis:
 	<select class="element select medium" ID="A35">
 		<option value=""></option>
 		<option value="1-4">1-4</option>
 		<option value="5-8">5-8</option>
 		<option value="> 8">> 8</option>
 	</select>
-</p></li>
-
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
+-->
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class="element checkbox" id="A37" value="  - Implantation site"><label class="element choice">Implantation site</label>
+<p>
+<input type="checkbox"  id="A37" value="  - Implantation site"><label >Implantation site</label><br>
 </p>
 <p>
 - Other (specify):
 	<input type="text" class="element text medium" ID="A38" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A39" class = "element textarea medium" style="border-color:grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -491,7 +596,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 18-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 16-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Trophoblast 4.0.0.0 (June 2017), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

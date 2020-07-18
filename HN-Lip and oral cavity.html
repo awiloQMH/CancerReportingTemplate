@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -48,9 +48,9 @@ if (frm.A07.value !== ""){
 if (frm.A08.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A08.value + "\n";
 }
-
+*/
 if (frm.A09.value !== ""){
-	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A09.value + "\n";
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A09.value + "\n";
 }
 
 if (document.getElementById("A10").checked || document.getElementById("A11").checked || 
@@ -58,7 +58,7 @@ if (document.getElementById("A10").checked || document.getElementById("A11").che
 	document.getElementById("A14").checked || document.getElementById("A15").checked || 
 	document.getElementById("A16").checked || document.getElementById("A17").checked || 
 	document.getElementById("A18").checked){
-	Template += "- Histologic type: " + "\n";
+	Template += "\n" + "- Histologic type: " + "\n";
 }
 
 if (document.getElementById("A10").checked){
@@ -98,56 +98,56 @@ if (document.getElementById("A18").checked){
 }
 
 if (frm.A19.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A19.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A20.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A21.value + "\n";
+	Template += "- Histologic type: " + frm.A21.value + "\n";
 }
 
 if (frm.A22.value !== ""){
-	Template += "- Histologic grade (for SCC only): " + "\n" + frm.A22.value + "\n";
+	Template += "\n" + "- Histologic grade (for SCC only): " + frm.A22.value + "\n";
 }
 
 if (frm.A23.value !== ""){
-	Template += "- Tumor extension: " + "\n" + "  - " + frm.A23.value + "\n";
+	Template += "- Tumor extension: " + frm.A23.value + "\n";
 }
 
 if (frm.A24.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A24.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A24.value + "\n";
 }
 
 if (frm.A25.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A25.value + "\n";
+	Template += "- Perineural invasion: " + frm.A25.value + "\n";
 }
 
 if (frm.A26.value !== ""){
-	Template += "- Worst pattern of invasion (WPOI): " + "\n" + frm.A26.value + "\n";
+	Template += "- Worst pattern of invasion (WPOI): " + frm.A26.value + "\n";
 }
 
 if (frm.A27.value !== ""){
-	Template +=  "\n" + "- Surgical margins: "  + "\n" +  frm.A27.value + "\n" ;
+	Template +=  "\n" + "- Surgical margins: " +  frm.A27.value + "\n" ;
 }
 
 if (frm.A28.value !== ""){
-	Template +=  "- Tumor bed margins: "  +"\n" + frm.A28.value + "\n" ;
+	Template +=  "- Tumor bed margins: " + frm.A28.value + "\n" ;
 }
 
 if (frm.A29.value + frm.A30.value + frm.A31.value + frm.A32.value + 
 frm.A33.value + frm.A34.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Lymph nodes examination : " + "\n";
 }	
 
 if (frm.A29.value !== ""){
-	Template += "  - Number of regional lymph nodes examined: " + frm.A29.value + "\n";
+	Template += "  - Number of regional lymph nodes examined : " + frm.A29.value + "\n";
 }
 
 if (frm.A30.value !== ""){
-	Template += "  - Number of lymph nodes involved: " + frm.A30.value + "\n";
+	Template += "  - Number of lymph nodes involved : " + frm.A30.value + "\n";
 }
 
 if (frm.A31.value !== ""){
@@ -155,21 +155,21 @@ if (frm.A31.value !== ""){
 }
 
 if (frm.A32.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A32.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site : " + frm.A32.value + "\n";
 }
 
 if (frm.A33.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A33.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site : " + frm.A33.value + "\n";
 }
 
 if (frm.A34.value !== ""){
-	Template += "  - Laterality: "  + frm.A34.value + "\n";
+	Template += "  - Laterality : "  + frm.A34.value + "\n";
 }
 
 if (document.getElementById("A35").checked || document.getElementById("A36").checked || 
     document.getElementById("A37").checked || frm.A38.value + frm.A39.value + 
 	frm.A40.value + frm.A41.value !== ""){
-	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition) :" + "\n";
 }
 
 if (document.getElementById("A35").checked || document.getElementById("A36").checked || 
@@ -289,7 +289,7 @@ if (frm.A57.value !== ""){
 }
 
 if (frm.A58.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A58.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A58.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -309,7 +309,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -329,12 +334,19 @@ function CopyToClipboard() {
 <p>Please also refer to <a href=".\cap\cp-headandneck-17biomarker-1000.pdf" target="_blank">H&N biomarker protocol (HeadNeckBiomarkers 1.0.0.0, Feb-2017)</a> for possible ancillary testings.</p>
 	
 <form>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="  - Excision">Excision</option> 
 	<option value="  - Glossectomy (specify):">Glossectomy (specify):</option>
@@ -346,10 +358,15 @@ function CopyToClipboard() {
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor site:</label> 
-<select class="element select medium" ID="A02">
+<tr>
+<td>
+<label class="description">- Tumor site:</label> 
+</td>
+<td>
+<select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="  - Lip">Lip</option>
 	<option value="  - Lip, mucosa of upper lip">Lip, mucosa of upper lip</option>
@@ -373,197 +390,262 @@ function CopyToClipboard() {
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Not specified">Not specified</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td valign="top">
 <label class="description">- Tumor laterality:</label> 
-<input type="checkbox" class="element checkbox" id="A03" value="  - Right"><label class="choice">Right</label>
-<input type="checkbox" class="element checkbox" id="A04" value="  - Left"><label class="choice">Left</label>
-<input type="checkbox" class="element checkbox" id="A05" value="  - Midline"><label class="choice">Midline</label>
-<input type="checkbox" class="element checkbox" id="A06" value="  - Not specified"><label class="choice">Cannot be determined (explain):</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox"  id="A03" value="  - Right"><label >Right</label><br>
+<input type="checkbox"  id="A04" value="  - Left"><label >Left</label><br>
+<input type="checkbox"  id="A05" value="  - Midline"><label >Midline</label><br>
+<input type="checkbox"  id="A06" value="  - Not specified"><label >Cannot be determined (explain):</label><br>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor focality:</label> 
-<select class="element select medium" ID="A07">
+</td>
+<td>
+<select class="element select large" ID="A07">
 	<option value=""></option>
 	<option value="  - Unifocal">Unifocal</option>
 	<option value="  - Multifocal">Multifocal</option>
 	<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A08">
+</td>
+<td>
+<select class="element select large" ID="A08">
 		<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p>
+<p>
 <label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A09" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<p><fieldset style="border-color:#e6e6ff;">
-<li><p>
-<label class="description">- Histologic type (Squamous cell carcinoma and variants):</label> 
-<input type="checkbox" class="element checkbox" id="A10" value="  - Squamous cell carcinoma, conventional"><label class="choice">Squamous cell carcinoma, conventional</label>
-<input type="checkbox" class="element checkbox" id="A11" value="  - Acantholytic squamous cell carcinoma"><label class="choice">Acantholytic squamous cell carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A12" value="  - Adenosquamous carcinoma"><label class="choice">Adenosquamous carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A13" value="  - Basaloid squamous cell carcinoma"><label class="choice">Basaloid squamous cell carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A14" value="  - Carcinoma cuniculatum"><label class="choice">Carcinoma cuniculatum</label>
-<input type="checkbox" class="element checkbox" id="A15" value="  - Papillary squamous cell carcinoma"><label class="choice">Papillary squamous cell carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A16" value="  - Spindle cell squamous cell carcinoma"><label class="choice">Spindle cell squamous cell carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A17" value="  - Verrucous squamous cell carcinoma"><label class="choice">Verrucous squamous cell carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A18" value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label class="choice">Lymphoepithelial carcinoma (non-nasopharyngeal)</label>
-</p></li>
-
-<li><p>
-<label class="description">- Histologic type (Carcinomas of minor salivary glands):</label> 
-	<select class="element select medium" ID="A19">
-		<option value=""></option>
-		<option value="  - Mucoepidermoid carcinoma, low grade"><label class="choice">Mucoepidermoid carcinoma, low grade</label></option></option>
-		<option value="  - Mucoepidermoid carcinoma, intermediate grade"><label class="choice">Mucoepidermoid carcinoma, intermediate grade</label></option></option>
-		<option value="  - Mucoepidermoid carcinoma, high grade"><label class="choice">Mucoepidermoid carcinoma, high grade</label></option></option>
-		<option value="  - Adenoid cystic carcinoma, tubular pattern, specify percentage of solid component:"><label class="choice">Adenoid cystic carcinoma, tubular pattern, specify percentage of solid component:</label></option>
-		<option value="  - Adenoid cystic carcinoma, cribriform pattern, specify percentage of solid component:"><label class="choice">Adenoid cystic carcinoma, cribriform pattern, specify percentage of solid component:</label></option>
-		<option value="  - Adenoid cystic carcinoma, solid pattern, specify percentage of solid component:"><label class="choice">Adenoid cystic carcinoma, solid pattern, specify percentage of solid component:</label></option>
-		<option value="  - Acinic cell carcinoma"><label class="choice">Acinic cell carcinoma</label></option>
-		<option value="  - Polymorphous adenocarcinoma, classic, low grade"><label class="choice">Polymorphous adenocarcinoma, classic, low grade</label></option>
-		<option value="  - Polymorphous adenocarcinoma, classic, intermediate grade"><label class="choice">Polymorphous adenocarcinoma, classic, intermediate grade</label></option>
-		<option value="  - Polymorphous adenocarcinoma, classic, high grade"><label class="choice">Polymorphous adenocarcinoma, classic, high grade</label></option>
-		<option value="  - Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), low grade"><label class="choice">Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), low grade</label></option>
-		<option value="  - Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), intermediate grade"><label class="choice">Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), intermediate grade</label></option>
-		<option value="  - Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), high grade"><label class="choice">Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), high grade</label></option>
-		<option value="  - (Mammary analogue) Secretory carcinoma"><label class="choice">(Mammary analogue) Secretory carcinoma</label></option>
-		<option value="  - Salivary duct carcinoma"><label class="choice">Salivary duct carcinoma</label></option>
-		<option value="  - Epithelial-myoepithelial carcinoma"><label class="choice">Epithelial-myoepithelial carcinoma</label></option>
-		<option value="  - (Hyalinizing) clear cell carcinoma"><label class="choice">(Hyalinizing) clear cell carcinoma</label></option>
-		<option value="  - Adenocarcinoma, not otherwise specified, low grade"><label class="choice">Adenocarcinoma, not otherwise specified, low grade</label></option>
-		<option value="  - Adenocarcinoma, not otherwise specified, intermediate grade"><label class="choice">Adenocarcinoma, not otherwise specified, intermediate grade</label></option>
-		<option value="  - Adenocarcinoma, not otherwise specified, high grade"><label class="choice">Adenocarcinoma, not otherwise specified, high grade</label></option>
-		<option value="  - Basal cell adenocarcinoma"><label class="choice">Basal cell adenocarcinoma</label></option>
-		<option value="  - Carcinosarcoma (true malignant mixed tumor)"><label class="choice">Carcinosarcoma (true malignant mixed tumor)</label></option>
-		<option value="  - Intraductal carcinoma, low grade"><label class="choice">Intraductal carcinoma, low grade</label></option>
-		<option value="  - Intraductal carcinoma, high grade"><label class="choice">Intraductal carcinoma, high grade</label></option>
-		<option value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label class="choice">Lymphoepithelial carcinoma (non-nasopharyngeal)</label></option>
-		<option value="  - Myoepithelial carcinoma"><label class="choice">Myoepithelial carcinoma</label></option>
-		<option value="  - Oncocytic carcinoma"><label class="choice">Oncocytic carcinoma</label></option>
-		<option value="  - Carcinoma ex pleomorphic adenoma, minimally invasive"><label class="choice">Carcinoma ex pleomorphic adenoma, minimally invasive</label></option>
-		<option value="  - Carcinoma ex pleomorphic adenoma, invasive"><label class="choice">Carcinoma ex pleomorphic adenoma, invasive</label></option>
-		<option value="  - Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive)"><label class="choice">Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive)</label></option>
-	</select>
-</p></li>
-
-<li><p>
-<label class="description">- Histologic type (Neuroendocrine carcinoma):</label> 
-	<select class="element select medium" ID="A20">
-		<option value=""></option>
-		<option value="  - Well-differentiated neuroendocrine carcinoma (typical carcinoid tumor)"><label class="choice">Well-differentiated neuroendocrine carcinoma (typical carcinoid tumor)</label></option>
-		<option value="  - Moderately differentiated neuroendocrine carcinoma (atypical carcinoid tumor)"><label class="choice">Moderately differentiated neuroendocrine carcinoma (atypical carcinoid tumor)</label></option>
-		<option value="  - Poorly differentiated neuroendocrine carcinoma, small cell type"><label class="choice">Poorly differentiated neuroendocrine carcinoma, small cell type</label></option>
-		<option value="  - Poorly differentiated neuroendocrine carcinoma, large cell type"><label class="choice">Poorly differentiated neuroendocrine carcinoma, large cell type</label></option>
-		<option value="  - Combined (or composite) neuroendocrine carcinoma with (specify types):"><label class="choice">Combined (or composite) neuroendocrine carcinoma with (specify types):</label></option>
-	</select>
-</p></li>
-
-<li><p>
-<label class="description">- Histologic type (Others):</label> 
-	<select class="element select medium" ID="A21">
-		<option value=""></option>
-		<option value="  - Mucosal melanoma"><label class="choice">Mucosal melanoma</label></option>
-		<option value="  - Carcinoma, type cannot be determined"><label class="choice">Carcinoma, type cannot be determined</label></option>
-		<option value="  - Other histologic type not listed (specify):"><label class="choice">Other histologic type not listed (specify):</label></option>
-	</select>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="description">- SCC and variants :</label> 
+</td>
+<td>
+<input type="checkbox"  id="A10" value="  - Squamous cell carcinoma, conventional"><label >Squamous cell carcinoma, conventional</label><br>
+<input type="checkbox"  id="A11" value="  - Acantholytic squamous cell carcinoma"><label >Acantholytic squamous cell carcinoma</label><br>
+<input type="checkbox"  id="A12" value="  - Adenosquamous carcinoma"><label >Adenosquamous carcinoma</label><br>
+<input type="checkbox"  id="A13" value="  - Basaloid squamous cell carcinoma"><label >Basaloid squamous cell carcinoma</label><br>
+<input type="checkbox"  id="A14" value="  - Carcinoma cuniculatum"><label >Carcinoma cuniculatum</label><br>
+<input type="checkbox"  id="A15" value="  - Papillary squamous cell carcinoma"><label >Papillary squamous cell carcinoma</label><br>
+<input type="checkbox"  id="A16" value="  - Spindle cell squamous cell carcinoma"><label >Spindle cell squamous cell carcinoma</label><br>
+<input type="checkbox"  id="A17" value="  - Verrucous squamous cell carcinoma"><label >Verrucous squamous cell carcinoma</label><br>
+<input type="checkbox"  id="A18" value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label >Lymphoepithelial carcinoma (non-nasopharyngeal)</label><br>
 <br>
-</fieldset></p>
+</td>
+<tr>
 
-<li><p>
-<label class="description">- Histologic grade (for SCC only):</label>
-<select class="element select medium" ID="A22">
+<tr>
+<td>
+<label class="description">- Minor salivary glands CA :</label> 
+</td>
+<td>
+	<select class="element select large" ID="A19">
+		<option value=""></option>
+		<option value="Mucoepidermoid carcinoma, low grade"><label >Mucoepidermoid carcinoma, low grade</label></option></option>
+		<option value="Mucoepidermoid carcinoma, intermediate grade"><label >Mucoepidermoid carcinoma, intermediate grade</label></option></option>
+		<option value="Mucoepidermoid carcinoma, high grade"><label >Mucoepidermoid carcinoma, high grade</label></option></option>
+		<option value="Adenoid cystic carcinoma, tubular pattern, specify percentage of solid component:"><label >Adenoid cystic carcinoma, tubular pattern, specify percentage of solid component:</label></option>
+		<option value="Adenoid cystic carcinoma, cribriform pattern, specify percentage of solid component:"><label >Adenoid cystic carcinoma, cribriform pattern, specify percentage of solid component:</label></option>
+		<option value="Adenoid cystic carcinoma, solid pattern, specify percentage of solid component:"><label >Adenoid cystic carcinoma, solid pattern, specify percentage of solid component:</label></option>
+		<option value="Acinic cell carcinoma"><label >Acinic cell carcinoma</label></option>
+		<option value="Polymorphous adenocarcinoma, classic, low grade"><label >Polymorphous adenocarcinoma, classic, low grade</label></option>
+		<option value="Polymorphous adenocarcinoma, classic, intermediate grade"><label >Polymorphous adenocarcinoma, classic, intermediate grade</label></option>
+		<option value="Polymorphous adenocarcinoma, classic, high grade"><label >Polymorphous adenocarcinoma, classic, high grade</label></option>
+		<option value="Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), low grade"><label >Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), low grade</label></option>
+		<option value="Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), intermediate grade"><label >Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), intermediate grade</label></option>
+		<option value="Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), high grade"><label >Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), high grade</label></option>
+		<option value="(Mammary analogue) Secretory carcinoma"><label >(Mammary analogue) Secretory carcinoma</label></option>
+		<option value="Salivary duct carcinoma"><label >Salivary duct carcinoma</label></option>
+		<option value="Epithelial-myoepithelial carcinoma"><label >Epithelial-myoepithelial carcinoma</label></option>
+		<option value="(Hyalinizing) clear cell carcinoma"><label >(Hyalinizing) clear cell carcinoma</label></option>
+		<option value="Adenocarcinoma, not otherwise specified, low grade"><label >Adenocarcinoma, not otherwise specified, low grade</label></option>
+		<option value="Adenocarcinoma, not otherwise specified, intermediate grade"><label >Adenocarcinoma, not otherwise specified, intermediate grade</label></option>
+		<option value="Adenocarcinoma, not otherwise specified, high grade"><label >Adenocarcinoma, not otherwise specified, high grade</label></option>
+		<option value="Basal cell adenocarcinoma"><label >Basal cell adenocarcinoma</label></option>
+		<option value="Carcinosarcoma (true malignant mixed tumor)"><label >Carcinosarcoma (true malignant mixed tumor)</label></option>
+		<option value="Intraductal carcinoma, low grade"><label >Intraductal carcinoma, low grade</label></option>
+		<option value="Intraductal carcinoma, high grade"><label >Intraductal carcinoma, high grade</label></option>
+		<option value="Lymphoepithelial carcinoma (non-nasopharyngeal)"><label >Lymphoepithelial carcinoma (non-nasopharyngeal)</label></option>
+		<option value="Myoepithelial carcinoma"><label >Myoepithelial carcinoma</label></option>
+		<option value="Oncocytic carcinoma"><label >Oncocytic carcinoma</label></option>
+		<option value="Carcinoma ex pleomorphic adenoma, minimally invasive"><label >Carcinoma ex pleomorphic adenoma, minimally invasive</label></option>
+		<option value="Carcinoma ex pleomorphic adenoma, invasive"><label >Carcinoma ex pleomorphic adenoma, invasive</label></option>
+		<option value="Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive)"><label >Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive)</label></option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Neuroendocrine carcinoma :</label> 
+</td>
+<td>
+	<select class="element select large" ID="A20">
+		<option value=""></option>
+		<option value="Well-differentiated neuroendocrine carcinoma (typical carcinoid tumor)"><label >Well-differentiated neuroendocrine carcinoma (typical carcinoid tumor)</label></option>
+		<option value="Moderately differentiated neuroendocrine carcinoma (atypical carcinoid tumor)"><label >Moderately differentiated neuroendocrine carcinoma (atypical carcinoid tumor)</label></option>
+		<option value="Poorly differentiated neuroendocrine carcinoma, small cell type"><label >Poorly differentiated neuroendocrine carcinoma, small cell type</label></option>
+		<option value="Poorly differentiated neuroendocrine carcinoma, large cell type"><label >Poorly differentiated neuroendocrine carcinoma, large cell type</label></option>
+		<option value="Combined (or composite) neuroendocrine carcinoma with (specify types):"><label >Combined (or composite) neuroendocrine carcinoma with (specify types):</label></option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Other histologic type :</label> 
+</td>
+<td>
+	<select class="element select large" ID="A21">
+		<option value=""></option>
+		<option value="Mucosal melanoma"><label >Mucosal melanoma</label></option>
+		<option value="Carcinoma, type cannot be determined"><label >Carcinoma, type cannot be determined</label></option>
+		<option value="Other histologic type not listed (specify):"><label >Other histologic type not listed (specify):</label></option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Histologic grade (for SCC only) :</label>
+</td>
+<td>
+<select class="element select large" ID="A22">
 	<option value=""></option>
-	<option value="  - G1: Well differentiated">G1: Well differentiated</option>
-	<option value="  - G2: Moderately differentiated">G2: Moderately differentiated</option>
-	<option value="  - G3: Poorly differentiated">G3: Poorly differentiated</option>
-	<option value="  - GX: Cannot be assessed">GX: Cannot be assessed</option>	
-	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="G1: Well differentiated">G1: Well differentiated</option>
+	<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
+	<option value="G3: Poorly differentiated">G3: Poorly differentiated</option>
+	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
+	<option value="Other (specify):">Other (specify):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Tumor extension:</label>
-<input type="text" class="element text medium" ID="A23" size="45"></p></li>
+<tr>
+<td>
+<label class="description">- Tumor extension :</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A23" size="45">
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A24">
+<tr>
+<td>
+<label class="description">- Lymphovascular invasion : </label>
+</td>
+<td>
+<select class="element select large" ID="A24">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A25">
+<tr>
+<td>
+<label class="description">- Perineural invasion : </label>
+</td>
+<td>
+<select class="element select large" ID="A25">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Worst pattern of invasion (WPOI): </label>
-<select class="element select medium" ID="A26">
+<tr>
+<td>
+<label class="description">- Worst pattern of invasion (WPOI) : </label>
+</td>
+<td>
+<select class="element select large" ID="A26">
 	<option value=""></option>
-	<option value="  - WPOI 5  (tumor dispersion > or = 1 mm between tumor satellites, angiolymphatic invasion and extratumoral perineural invasion)">WPOI 5 (tumor dispersion > or = 1 mm between tumor satellites, angiolymphatic invasion and extratumoral perineural invasion)</option>
-	<option value="  - WPOI 1-4">WPOI 1-4</option>
+	<option value="WPOI 5  (tumor dispersion > or = 1 mm between tumor satellites, angiolymphatic invasion and extratumoral perineural invasion)">WPOI 5 (tumor dispersion > or = 1 mm between tumor satellites, angiolymphatic invasion and extratumoral perineural invasion)</option>
+	<option value="WPOI 1-4">WPOI 1-4</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins: </label></legend>
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
 <label class="description">- Surgical margins:</label>
-<select class="element select medium" ID="A27">
+</td>
+<td>
+<select class="element select large" ID="A27">
 	<option value=""></option>
-	<option value="  - Cannot be assessed">Cannot be assessed</option>
-	<option value="  - Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
-	<option value="  - Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
-	<option value="  - Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
-	<option value="  - Involved by high grade dysplasia/ in situ disease, specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+	<option value="Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
+	<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
+	<option value="Involved by high grade dysplasia/ in situ disease, specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor bed margins:</label>
-<select class="element select medium" ID="A28">
+</td>
+<td>
+<select class="element select large" ID="A28">
 	<option value=""></option>
-	<option value="  - Cannot be assessed">Cannot be assessed</option>
-	<option value="  - Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
-	<option value="  - Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
-	<option value="  - Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
-	<option value="  - Involved by high grade dysplasia/ in situ disease, specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+	<option value="Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
+	<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
+	<option value="Involved by high grade dysplasia/ in situ disease, specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -571,38 +653,76 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Lymph nodes examination: </label></legend>
 
-<li><p>- Number of regional lymph nodes examined:
-<input type="text" class="element text small" ID="A29" size="10"></p>
+<p>
+<table border="1">
+<col width="60%">
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A29" size="10">
+</td>
+</tr>
 
-<p>- Number of lymph nodes involved:
-<input type="text" class="element text small" ID="A30" size="10"></p></li>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A30" size="10">
+</td>
+</tr>
 
-<li><p>- Extranodal extension (ENE) :
-<select class="element select small" ID="A31">
+<tr>
+<td>
+<label class="description">- Extranodal extension (ENE) :</label>
+</td>
+<td>
+<select class="element select large" ID="A31">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present, distance from capsule (mm):   (> 2 mm, ENEma)">Present, distance from capsule (mm):   (> 2 mm, ENEma)</option>
-	<option value="  - Present, distance from capsule (mm):   (< or = 2 mm, ENEmi)">Present, distance from capsule (mm):   (< or = 2 mm, ENEmi)</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, distance from capsule (mm):   (> 2 mm, ENEma)">Present, distance from capsule (mm):   (> 2 mm, ENEma)</option>
+	<option value="Present, distance from capsule (mm):   (< or = 2 mm, ENEmi)">Present, distance from capsule (mm):   (< or = 2 mm, ENEmi)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" class="element text small" ID="A32" size="20"></p>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A32" size="20">
+</td>
+</tr>
 
-<p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" class="element text small" ID="A33" size="20"></p></li>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A33" size="20">
+</td>
+</tr>
 
-<li><p><label>- Laterality:</label> 
-<select class="element select small" ID="A34">
+<tr>
+<td>
+<label class="description">- Laterality:</label> 
+</td>
+<td>
+<select class="element select large" ID="A34">
 	<option value=""></option>
-	<option value="  - Ipsilateral (including midline)">Ipsilateral (including midline)</option>
-	<option value="  - Contralateral">Contralateral</option>
-	<option value="  - Bilateral">Bilateral</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Ipsilateral (including midline)">Ipsilateral (including midline)</option>
+	<option value="Contralateral">Contralateral</option>
+	<option value="Bilateral">Bilateral</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -610,14 +730,26 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e) for carcinoma:</label></legend>
 	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A35" value=" m (multiple primary tumors) "><label class="choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A36" value=" r (recurrent) "><label class="choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A37" value=" y (post treatment) "><label class="choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="description">  - TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox"  id="A35" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox"  id="A36" value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox"  id="A37" value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT):<br>
-<select class="element select medium" ID="A38">
+<tr>
+<td>
+<label class="description">  - Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A38">
 	<option value=""></option>
 	<option value="    - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="    - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -629,10 +761,15 @@ function CopyToClipboard() {
 	<option value="    - pT4a: Moderately advanced local disease: Tumor > 4 cm with DOI > 10 mm; OR tumor invades adjacent structures only (eg, through cortical bone of the mandible or maxilla or involves the maxillary sinus or skin of the face)">pT4a: Moderately advanced local disease: Tumor > 4 cm with DOI > 10 mm; OR tumor invades adjacent structures only (eg, through cortical bone of the mandible or maxilla or involves the maxillary sinus or skin of the face)</option>
 	<option value="    - pT4b: Very advanced local disease: Tumor invades masticator space, pterygoid plates, or skull base, and/or encases the internal carotid artery">pT4b: Very advanced local disease: Tumor invades masticator space, pterygoid plates, or skull base, and/or encases the internal carotid artery</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A39">
+<tr>
+<td>
+<label class="description">  - Regional lymph nodes (pN):</label>
+</td>
+<td>
+<select class="element select large" ID="A39">
 	<option value=""></option>
 	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
@@ -646,19 +783,29 @@ function CopyToClipboard() {
 	<option value="    - pN3b: Metastasis in multiple ipsilateral, contralateral or bilateral nodes, any with ENE(+)">pN3b: Metastasis in multiple ipsilateral, contralateral or bilateral nodes, any with ENE(+)</option>
 	<option value="    - pN3b: Metastasis in a single contralateral node of any size and ENE(+)">pN3b: Metastasis in a single contralateral node of any size and ENE(+)</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A40">
+<tr>
+<td valign="top" rowspan="2">
+<label class="description">  - Distant metastasis (pM):</label>
+</td>
+<td>
+<select class="element select large" ID="A40">
 	<option value=""></option>
 	<option value="    - pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p>    - Specify site(s), if known:<br>
+<tr>
+<td>
+    - Specify site(s), if known:
 <input type="text" class="element text small" ID="A41" size="35">
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -666,69 +813,99 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e) for mucosal melanoma:</label></legend>
 	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A42" value=" m (multiple primary tumors) "><label class="choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A43" value=" r (recurrent) "><label class="choice">r (recurrent</label>
-<input type="checkbox" class="element checkbox" id="A44" value=" y (post treatment) "><label class="choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="description">  - TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox"  id="A42" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox"  id="A43" value=" r (recurrent) "><label >r (recurrent</label><br>
+<input type="checkbox"  id="A44" value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT):<br>
-<select class="element select medium" ID="A45">
+<tr>
+<td>
+<label class="description">  - Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A45">
 	<option value=""></option>
 	<option value="    - pT3: Tumors limited to the mucosa and immediately underlying soft tissue, regardless of thickness or greatest dimension; for example, polypoid nasal disease, pigmented or nonpigmented lesions of the oral cavity, pharynx, or larynx">pT3: Tumors limited to the mucosa and immediately underlying soft tissue, regardless of thickness or greatest dimension; for example, polypoid nasal disease, pigmented or nonpigmented lesions of the oral cavity, pharynx, or larynx</option>
 	<option value="    - pT4: Moderately advanced or very advanced disease">pT4: Moderately advanced or very advanced disease</option>
 	<option value="    - pT4a: Moderately advanced disease: Tumor involving deep soft tissue, cartilage, bone, or overlying skin">pT4a: Moderately advanced disease: Tumor involving deep soft tissue, cartilage, bone, or overlying skin</option>
 	<option value="    - pT4b: Very advanced disease: Tumor involving brain, dura, skull base, lower cranial nerves (IX, X, XI, XII), masticator space, carotid artery, prevertebral space, or mediastinal structures">pT4b: Very advanced disease. Tumor involving brain, dura, skull base, lower cranial nerves (IX, X, XI, XII), masticator space, carotid artery, prevertebral space, or mediastinal structures</option>
 </select>
-</p></li>
+</td>
+</tr>
+</p>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A46">
+<tr>
+<td>
+<label class="description">  - Regional lymph nodes (pN):</label>
+</td>
+<td>
+<select class="element select large" ID="A46">
 	<option value=""></option>
 	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Regional lymph node metastases present">pN1: Regional lymph node metastases present</option>
 </select>
-</p></li>
+</td>
+</tr>
+</p>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A47">
+<tr>
+<td valign="top" rowspan="2">
+<label class="description">  - Distant metastasis (pM): </label>
+</td>
+<td>
+<select class="element select large" ID="A47">
 	<option value=""></option>
 	<option value="    - pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select>
+</td>
+</tr>
 </p>
 
-<p>    - Specify site(s), if known:<br>
+<tr>
+<td>
+    - Specify site(s), if known:
 <input type="text" class="element text small" ID="A48" size="35">
-</p></li>
-<br></li>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class="element checkbox" id="A49" value="  - Carcinoma in situ"><label class="choice">Carcinoma in situ</label>
-<input type="checkbox" class="element checkbox" id="A50" value="  - Epithelial dysplasia (specify type): "><label class="choice">Epithelial dysplasia (specify type): </label>
-<input type="checkbox" class="element checkbox" id="A51" value="  - Sinonasal papilloma (specify type): "><label class="choice">Sinonasal papilloma (specify type): </label>
-<input type="checkbox" class="element checkbox" id="A52" value="  - Inflammation (specify type):"><label class="choice">Inflammation (specify type):</label>
-<input type="checkbox" class="element checkbox" id="A53" value="  - Squamous metaplasia"><label class="choice">Squamous metaplasia</label>
-<input type="checkbox" class="element checkbox" id="A54" value="  - Epithelial hyperplasia"><label class="choice">Epithelial hyperplasia</label>
-<input type="checkbox" class="element checkbox" id="A55" value="  - Colonization, fungal"><label class="choice">Colonization, fungal</label>
-<input type="checkbox" class="element checkbox" id="A56" value="  - Colonization, bacterial"><label class="choice">Colonization, bacterial</label>
+<p>
+<input type="checkbox"  id="A49" value="  - Carcinoma in situ"><label >Carcinoma in situ</label><br>
+<input type="checkbox"  id="A50" value="  - Epithelial dysplasia (specify type): "><label >Epithelial dysplasia (specify type): </label><br>
+<input type="checkbox"  id="A51" value="  - Sinonasal papilloma (specify type): "><label >Sinonasal papilloma (specify type): </label><br>
+<input type="checkbox"  id="A52" value="  - Inflammation (specify type):"><label >Inflammation (specify type):</label><br>
+<input type="checkbox"  id="A53" value="  - Squamous metaplasia"><label >Squamous metaplasia</label><br>
+<input type="checkbox"  id="A54" value="  - Epithelial hyperplasia"><label >Epithelial hyperplasia</label><br>
+<input type="checkbox"  id="A55" value="  - Colonization, fungal"><label >Colonization, fungal</label><br>
+<input type="checkbox"  id="A56" value="  - Colonization, bacterial"><label >Colonization, bacterial</label><br>
 
 <p>- Other (specify):
 <input type="text" class="element text small" ID="A57" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A58" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -745,7 +922,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 19-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 10-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 LipOralCavity 4.0.0.1 (June 2017), <br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

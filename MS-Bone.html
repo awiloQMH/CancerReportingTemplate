@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -67,13 +67,13 @@ if (document.getElementById("A11").checked){
 if (frm.A12.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A12.value + "\n";
 }
-
+*/
 if (frm.A12a.value !== ""){
-	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A12a.value + "\n";
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A12a.value + "\n";
 }
 
 if (frm.A13.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A13.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A13.value + "\n";
 }
 
 if (frm.A14.value !== ""){
@@ -81,27 +81,27 @@ if (frm.A14.value !== ""){
 }
 
 if (frm.A15.value !== ""){
-	Template += "- Tumor necrosis: " + "\n" + frm.A15.value + "\n";
+	Template += "- Tumor necrosis: " + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
-	Template += "- Histologic grade:" + "\n" + frm.A16.value + "\n";
+	Template += "- Histologic grade:" + frm.A16.value + "\n";
 }
 
 if (frm.A17.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A17.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A17.value + "\n";
 }
 
 if (frm.A18.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A18.value + "\n";
+	Template += "- Perineural invasion: " + frm.A18.value + "\n";
 }
 
 if (frm.A19.value !== ""){
-	Template += "\n" + "- Surgical margins: " +"\n" + frm.A19.value + "\n";
+	Template += "\n" + "- Surgical margins: " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value + frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value !== ""){
-	Template += "- Regional lymph nodes: " + "\n";
+	Template += "\n" + "- Regional lymph nodes: " + "\n";
 }	
 
 if (frm.A20.value !== ""){
@@ -113,15 +113,15 @@ if (frm.A21.value !== ""){
 }
 
 if (frm.A22.value !== ""){
-	Template += "  - Extracapsular spread: " + frm.A22.value + "\n";
+	Template += "  - Extranodal extension: " + frm.A22.value + "\n";
 }
 
 if (frm.A23.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A23.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A23.value + "\n";
 }
 
 if (frm.A24.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A24.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A24.value + "\n";
 }
 
 if (document.getElementById("A25").checked || document.getElementById("A26").checked ||
@@ -205,7 +205,7 @@ if (document.getElementById("A38").checked){
 }
 
 if (frm.A39.value !== ""){
-	Template += "  - Treatment effect:" +  "\n" + frm.A39.value + "\n";
+	Template += "  - Treatment effect:" +  frm.A39.value + "\n";
 }
 
 if (frm.A40.value !== ""){
@@ -213,7 +213,7 @@ if (frm.A40.value !== ""){
 }
 
 if (frm.A41.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A41.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A41.value + "\n";
 }
 
 
@@ -234,7 +234,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -250,12 +255,21 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<p> This is additional protocol for <a href=".\cap\cp-other-bone-biopsy-20-4010.pdf" target="_blank">biopsy specimen of bone tumours</a>.</p>
 <p>
+<!--
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="  - Intralesional resection">Intralesional resection</option> 
 	<option value="  - Marginal resection">Marginal resectiony</option>
@@ -264,122 +278,177 @@ function CopyToClipboard() {
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor site:</label> 
-<select class="element select medium" ID="A02">
+<tr>
+<td>
+<label class="description">- Tumor site:</label> 
+</td>
+<td>
+<select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="  - Appendicular skeleton (specify bone, if known):">Appendicular skeleton (specify bone, if known):</option>
 	<option value="  - Spine (specify bone, if known):">Spine (specify bone, if known):</option>
 	<option value="  - Pelvis (specify bone, if known):">Pelvis (specify bone, if known):</option>
 	<option value="  - Not specified">Not specified</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor location and extent:</label> 
-<input type="checkbox" class="element checkbox" id="A03" value="  - Epiphysis or apophysis"><label class="element choice">Epiphysis or apophysis</label>
-<input type="checkbox" class="element checkbox" id="A04" value="  - Metaphysis"><label class="element choice">Metaphysis</label>
-<input type="checkbox" class="element checkbox" id="A05" value="  - Diaphysis"><label class="element choice">Diaphysis</label>
-<input type="checkbox" class="element checkbox" id="A06" value="  - Cortical"><label class="element choice">Cortical</label>
-<input type="checkbox" class="element checkbox" id="A07" value="  - Medullary cavity"><label class="element choice">Medullary cavity</label>
-<input type="checkbox" class="element checkbox" id="A08" value="  - Surface"><label class="element choice">Surface</label>
-<input type="checkbox" class="element checkbox" id="A09" value="  - Tumor involves joint"><label class="element choice">Tumor involves joint</label>
-<input type="checkbox" class="element checkbox" id="A10" value="  - Tumor extension into soft tissue"><label class="element choice">Tumor extension into soft tissue</label>
-<input type="checkbox" class="element checkbox" id="A11" value="  - Cannot be determined"><label class="element choice">Cannot be determined</label>
-</p></li>
+<tr>
+<td valign="top">
+<label class="description">- Tumor location and extent:</label> 
+</td>
+<td>
+<input type="checkbox"  id="A03" value="  - Epiphysis or apophysis"><label >Epiphysis or apophysis</label><br>
+<input type="checkbox"  id="A04" value="  - Metaphysis"><label >Metaphysis</label><br>
+<input type="checkbox"  id="A05" value="  - Diaphysis"><label >Diaphysis</label><br>
+<input type="checkbox"  id="A06" value="  - Cortical"><label >Cortical</label><br>
+<input type="checkbox"  id="A07" value="  - Medullary cavity"><label >Medullary cavity</label><br>
+<input type="checkbox"  id="A08" value="  - Surface"><label >Surface</label><br>
+<input type="checkbox"  id="A09" value="  - Tumor involves joint"><label >Tumor involves joint</label><br>
+<input type="checkbox"  id="A10" value="  - Tumor extension into soft tissue"><label >Tumor extension into soft tissue</label><br>
+<input type="checkbox"  id="A11" value="  - Cannot be determined"><label >Cannot be determined</label><br>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A12">
+<tr>
+<td>
+<label class="description">- Tumor size:</label> 
+</td>
+<td>
+<select class="element select large" ID="A12">
 		<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A12a" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li><p><label class="description">- Histologic type:</label> 
-<select class="element select medium" ID="A13">
+<p>
+<table border="1">
+<col width="50%">
+
+<tr>
+<td>
+<label class="description">- Histologic type:</label> 
+</td>
+<td>
+<select class="element select large" ID="A13">
 	<option value=""></option>
-	<option value="  - Chondrogenic tumors, specify:">Chondrogenic tumors, specify:</option>
-	<option value="  - Osteogenic tumors, specify:">Osteogenic tumors, specify:</option>
-	<option value="  - Fibrogenic tumors, specify:">Fibrogenic tumors, specify:)</option>
-	<option value="  - Hematopoietic tumors, specify:">Hematopoietic tumors, specify:</option>
-	<option value="  - Osteoclastic giant cell rich tumors, specify:">Osteoclastic giant cell rich tumors, specify:</option>
-	<option value="  - Notochordal tumors, specify:">Notochordal tumors, specify:)</option>	
-	<option value="  - Vascular tumors, specify:">Vascular tumors, specify:</option>
-	<option value="  - Myogenic tumor, specify:">Myogenic tumor, specify:</option>
-	<option value="  - Lipogenic tumors, specify:">Lipogenic tumors, specify:)</option>
-	<option value="  - Tumors of undefined neoplastic nature, specify:">Tumors of undefined neoplastic nature, specify:</option>
-	<option value="  - Miscellaneous tumors, specify:">Miscellaneous tumors, specify:</option>
+	<option value="Chondrogenic tumors, specify:">Chondrogenic tumors, specify:</option>
+	<option value="Osteogenic tumors, specify:">Osteogenic tumors, specify:</option>
+	<option value="Fibrogenic tumors, specify:">Fibrogenic tumors, specify:)</option>
+	<option value="Hematopoietic tumors, specify:">Hematopoietic tumors, specify:</option>
+	<option value="Osteoclastic giant cell rich tumors, specify:">Osteoclastic giant cell rich tumors, specify:</option>
+	<option value="Notochordal tumors, specify:">Notochordal tumors, specify:)</option>	
+	<option value="Vascular tumors, specify:">Vascular tumors, specify:</option>
+	<option value="Myogenic tumor, specify:">Myogenic tumor, specify:</option>
+	<option value="Lipogenic tumors, specify:">Lipogenic tumors, specify:)</option>
+	<option value="Tumors of undefined neoplastic nature, specify:">Tumors of undefined neoplastic nature, specify:</option>
+	<option value="Miscellaneous tumors, specify:">Miscellaneous tumors, specify:</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Mitotic rate (per 10 high power fields):</label>
-<input type="text" class="element text small" ID="A14" size="10"></p>
-- Using 22 mm eyepiece, 40x objective, count 10 most active fields and divided by 1.373, to approximate 10 traditional high power fields of 10 x 0.1734 mm<sup>2</sup>.
+<tr>
+<td>
+<label class="description">- Mitotic rate (per 10 HPF):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A14" size="10">
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor necrosis:</label> 
-<select class="element select medium" ID="A15">
+
+<tr>
+<td>
+<label class="description">- Tumor necrosis:</label> 
+</td>
+<td>
+<select class="element select large" ID="A15">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present, extent %:">Present, extent %:</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, extent %:">Present, extent %:</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Histologic grade:</label>
-<select class="element select medium" ID="A16">
-	<option value=""></option>
-	<option value="  - G1: Well differentiated, low grade">G1: Well differentiated, low grade)</option>
-	<option value="  - G2: Moderately differentiated, high grade">G2: Moderately differentiated, high grade</option>
-	<option value="  - G3: Poorly differentiated, high grade">G3: Poorly differentiated, high grade</option>
-	<option value="  - GX: Cannot be assessed">GX: Cannot be assessed</option>
-	<option value="  - Not applicable">Not applicable</option>
-</select>
-</p></li>
 
-<li><p><label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A17">
+<tr>
+<td>
+<label class="description">- Histologic grade:</label>
+</td>
+<td>
+<select class="element select large" ID="A16">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="G1: Well differentiated, low grade">G1: Well differentiated, low grade)</option>
+	<option value="G2: Moderately differentiated, high grade">G2: Moderately differentiated, high grade</option>
+	<option value="G3: Poorly differentiated, high grade">G3: Poorly differentiated, high grade</option>
+	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A18">
+<tr>
+<td>
+<label class="description">- Lymphovascular invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A17">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Perineural invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
+- Using 22 mm eyepiece & 40x objective, count 10 most active fields and divide by 1.373, approximating 10 traditional high power fields of 10 x 0.1734 mm<sup>2</sup>.
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins of excision specimen: </label></legend>
-<li><p><label class="description">- Surgical margin:</label>
+<p><label class="description">- Surgical margin:</label>
 <select class="element select medium" ID="A19">
 	<option value=""></option>
-	<option value="  - Cannot be assessed">Cannot be assessed</option>
-	<option value="  - Uninvolved by tumor, specify: , closest distance:  and those margins <2 cm:">Uninvolved by tumor, specify: , closest distance:  ,and those margins <2 cm:</option>
-	<option value="  - Involved by tumor, specify:">Involved by tumor, specify:</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor, specify: , closest distance:  and those margins <2 cm:">Uninvolved by tumor, specify: , closest distance:  ,and those margins <2 cm:</option>
+	<option value="Involved by tumor, specify:">Involved by tumor, specify:</option>
 </select>
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
@@ -387,26 +456,62 @@ function CopyToClipboard() {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
-<li><p>- Number of regional lymph nodes examined:
-<input type="text" class="element text small" ID="A20" size="10"></p>
+<p>
+<table border="1">
+<col width="75%">
 
-<p>- Number of lymph nodes involved:
-<input type="text" class="element text small" ID="A21" size="10"></p>
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A20" size="10">
+</td>
+</tr>
 
-<p>- Extranodal extension:
-<select class="element select small" ID="A22">
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A21" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A22">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value=" Not identified">Not identified</option>
+	<option value=" Present">Present</option>
+	<option value=" Cannot be determined">Cannot be determined</option>
 </select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A23" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A24" size="20">
+</td>
+</tr>
+</table>
 </p>
 
-<p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" class="element text small" ID="A23" size="20"></p>
-<p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" class="element text small" ID="A24" size="20"></p></li>
-<br>
 </fieldset>
 </p>
 
@@ -414,14 +519,27 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic stage classification (AJCC 8e):</label></legend>
 	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A25" value="m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A26" value="r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A27" value="y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="60%">
 
-<li><p>  - Primary tumor (pT) (Appendicular skeleton, trunk, skull, and facial bones):<br>
-<select class="element select medium" ID="A28">
+<tr>
+<td valign="top">
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox"  id="A25" value="m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox"  id="A26" value="r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox"  id="A27" value="y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT) (Limbs, trunk, skull and face):</label>
+</td>
+<td>
+<select class="element select large" ID="A28">
 	<option value=""></option>
 	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -429,10 +547,15 @@ function CopyToClipboard() {
 	<option value="   - pT2: Tumor > 8 cm in greatest dimension">pT2: Tumor > 8 cm in greatest dimension</option>
 	<option value="   - pT3: Discontinuous tumors in the primary bone site">pT3: Discontinuous tumors in the primary bone site</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT) (Spine):<br>
-<select class="element select medium" ID="A29">
+<tr>
+<td>
+<label class="description">- Primary tumor (pT) (Spine):</label>
+</td>
+<td>
+<select class="element select large" ID="A29">
 	<option value=""></option>
 	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -443,10 +566,15 @@ function CopyToClipboard() {
 	<option value="   - pT4a: Extension into the spinal canal">pT4a: Extension into the spinal canal</option>
 	<option value="   - pT4b: Evidence of gross vascular invasion or tumor thrombus in the great vessels">pT4b: Evidence of gross vascular invasion or tumor thrombus in the great vessels</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT) (Pelvis):<br>
-<select class="element select medium" ID="A30">
+<tr>
+<td>
+<label class="description">- Primary tumor (pT) (Pelvis):</label>
+</td>
+<td>
+<select class="element select large" ID="A30">
 	<option value=""></option>
 	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -463,31 +591,45 @@ function CopyToClipboard() {
 	<option value="   - pT4a: Tumor involves sacroiliac joint and extends medial to the sacral neuroforamen">pT4a: Tumor involves sacroiliac joint and extends medial to the sacral neuroforamen</option>
 	<option value="   - pT4b: Tumor encasement of external iliac vessels or presence of gross tumor thrombus in major pelvic vessels">pT4b: Tumor encasement of external iliac vessels or presence of gross tumor thrombus in major pelvic vessels</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<br>
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A31">
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN): </label>
+</td>
+<td>
+<select class="element select large" ID="A31">
 	<option value=""></option>
 	<option value="   - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="   - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="   - pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A32">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Distant metastasis (pM): </label>
+</td>
+<td>
+<select class="element select large" ID="A32">
 	<option value=""></option>
 	<option value="   - pM1: Distant metastasis">pM1: Distant metastasis</option>
 	<option value="   - pM1a: Lung">pM1a: Lung</option>
 	<option value="   - pM1b: Metastasis involving distant sites other than lung">pM1b: Metastasis involving distant sites other than lung</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p>    - Specify site(s), if known:<br>
-<input type="text" class="element text small" ID="A33" size="35">
-</p></li>
-<br>
+<tr>
+<td>
+    - Specify site(s), if known:
+	<input type="text" class="element text small" ID="A33" size="35">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -495,37 +637,57 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p> - Preresection treatment:<br> 
-		<input type="checkbox" class="element checkbox" id="A34" value="    - No known preresection therapy"><label class="element choice">No known preresection therapy</label>
-		<input type="checkbox" class="element checkbox" id="A35" value="    - Chemotherapy performed"><label class="element choice">Chemotherapy performed</label>
-		<input type="checkbox" class="element checkbox" id="A36" value="    - Radiation therapy performed"><label class="element choice">Radiation therapy performed</label>
-		<input type="checkbox" class="element checkbox" id="A37" value="    - Therapy performed, type not specified"><label class="element choice">Therapy performed, type not specified</label>
-		<input type="checkbox" class="element checkbox" id="A38" value="    - Not specified"><label class="element choice">Not specified</label>
-</p></li>
+<p>
+<table border="1">
+<col width="55%">
 
-<li>
-<p>  - Treatment effect: <br>
-<select class="element select medium" ID="A39">
+<tr>
+<td valign="top">
+<label class="description"> - Preresection treatment:</label> 
+</td>
+<td>
+		<input type="checkbox"  id="A34" value="    - No known preresection therapy"><label >No known preresection therapy</label><br>
+		<input type="checkbox"  id="A35" value="    - Chemotherapy performed"><label >Chemotherapy performed</label><br>
+		<input type="checkbox"  id="A36" value="    - Radiation therapy performed"><label >Radiation therapy performed</label><br>
+		<input type="checkbox"  id="A37" value="    - Therapy performed, type not specified"><label >Therapy performed, type not specified</label><br>
+		<input type="checkbox"  id="A38" value="    - Not specified"><label >Not specified</label><br>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label class="description">- Treatment effect: </label> 
+</td>
+<td>
+<select class="element select large" ID="A39">
 	<option value=""></option>
-	<option value="    - No known presurgical therapy">No known presurgical therapy</option>
-	<option value="    - Not identified">Not identified</option>
-	<option value="    - Present, specify percentage of viable tumor:">Present, specify percentage of viable tumor:</option>
-	<option value="    - Cannot be determined">Cannot be determined</option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, specify percentage of viable tumor:">Present, specify percentage of viable tumor:</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li>
-<p>- Other (specify): <br>
-<input type="text" class="element text medium" ID="A40" size="35">
-</p></li>
-<br>
+
+<tr>
+<td>
+<label class="description">- Other (specify): </label> 
+</td>
+<td>
+<input type="text" class="element text large" ID="A40" size="35">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A41" class = "element textarea medium" style="border-color:grey;"></textarea> 
-</p><li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -542,7 +704,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 06-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Bone Resection 4.0.1.0 (Feb 2020).<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

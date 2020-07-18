@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -58,17 +58,17 @@ if (document.getElementById("A09").checked){
 if (frm.A10.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A10.value + "\n";
 }
-
+*/
 if (frm.A11.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A11.value + "\n";
 }
 
 if (frm.A12.value !== ""){
-	Template += "- Histologic type (WHO 2019): " + "\n" + frm.A12.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 2019): " + frm.A12.value + "\n";
 }
 
 if (frm.A13.value !== ""){
-	Template += "- Histologic grade: " + "\n" + frm.A13.value + "\n";
+	Template += "- Histologic grade: " + frm.A13.value + "\n";
 }
 
 if (document.getElementById("A14").checked || document.getElementById("A15").checked ||
@@ -120,22 +120,22 @@ if (document.getElementById("A23").checked){
 }
 
 if (frm.A24.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A24.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A24.value + "\n";
 }
 
 if (frm.A25.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A25.value + "\n";
+	Template += "- Perineural invasion: " + frm.A25.value + "\n";
 }
 
 if (frm.A26.value !== ""){
-	Template += "- Tumor deposits: "+ "\n" + frm.A26.value + "\n";
+	Template += "- Tumor deposits: " + frm.A26.value + "\n";
 }
 
 if (document.getElementById("A27").checked || document.getElementById("A28").checked ||
 	document.getElementById("A29").checked || document.getElementById("A30").checked ||
 	document.getElementById("A31").checked || document.getElementById("A32").checked ||
     document.getElementById("A33").checked || document.getElementById("A34").checked){
-	Template += "- Proximal margin: " + "\n";
+	Template += "\n" + "- Proximal margin: " + "\n";
 }
 
 if (document.getElementById("A27").checked){
@@ -249,7 +249,7 @@ if (document.getElementById("A50").checked){
 }
 
 if (frm.A51.value + frm.A52.value + frm.A53.value + frm.A54.value + frm.A55.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
 if (frm.A51.value !== ""){
@@ -265,11 +265,11 @@ if (frm.A53.value !== ""){
 }
 
 if (frm.A54.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A54.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A54.value + "\n";
 }
 
 if (frm.A55.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A55.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A55.value + "\n";
 }
 
 if (document.getElementById("A56").checked || document.getElementById("A57").checked || 
@@ -346,7 +346,7 @@ if (frm.A68.value !== ""){
 }
 
 if (frm.A69.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A69.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A69.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -366,7 +366,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -381,174 +386,214 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="  - Appendectomy">Appendectomy</option> 
 	<option value="  - Appendectomy and right colectomy">Appendectomy and right colectomy</option>
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor site:</label>
-<input type="checkbox" class = "element checkbox"  id="A02" value="  - Proximal half of appendix"><label class="element choice">Proximal half of appendix</label>
-<input type="checkbox" class = "element checkbox"  id="A03" value="  - Proximal half of appendix + base of appendix involved by tumor"><label class="element choice">Proximal half of appendix + base of appendix involved by tumor</label>
-<input type="checkbox" class = "element checkbox"  id="A04" value="  - Proximal half of appendix + base of appendix uninvolved by tumor"><label class="element choice">Proximal half of appendix + base of appendix uninvolved by tumor</label>
-<input type="checkbox" class = "element checkbox"  id="A05" value="  - Proximal half of appendix + involvement of base of appendix cannot be assessed"><label class="element choice">Proximal half of appendix + involvement of base of appendix cannot be assessed</label>
-<input type="checkbox" class = "element checkbox"  id="A06" value="  - Distal half of appendix"><label class="element choice">Distal half of appendix</label>
-<input type="checkbox" class = "element checkbox"  id="A07" value="  - Diffusely involving appendix"><label class="element choice">Diffusely involving appendix</label>
-<input type="checkbox" class = "element checkbox"  id="A08" value="  - Appendix, not otherwise specified"><label class="element choice">Appendix, not otherwise specified</label>
-<input type="checkbox" class = "element checkbox"  id="A09" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox"   id="A02" value="  - Proximal half of appendix"><label >Proximal half of appendix</label><br>
+<input type="checkbox"   id="A03" value="  - Proximal half of appendix + base of appendix involved by tumor"><label >Proximal half of appendix<br> + base of appendix involved by tumor</label><br>
+<input type="checkbox"   id="A04" value="  - Proximal half of appendix + base of appendix uninvolved by tumor"><label >Proximal half of appendix<br> + base of appendix uninvolved by tumor</label><br>
+<input type="checkbox"   id="A05" value="  - Proximal half of appendix + involvement of base of appendix cannot be assessed"><label >Proximal half of appendix<br> + involvement of base of appendix cannot be assessed</label><br>
+<input type="checkbox"   id="A06" value="  - Distal half of appendix"><label >Distal half of appendix</label><br>
+<input type="checkbox"   id="A07" value="  - Diffusely involving appendix"><label >Diffusely involving appendix</label><br>
+<input type="checkbox"   id="A08" value="  - Appendix, not otherwise specified"><label >Appendix, not otherwise specified</label><br>
+<input type="checkbox"   id="A09" value="  - Other (specify):"><label >Other (specify):</label><br>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A10">
+</td>
+<td>
+<select class="element select large" ID="A10">
 		<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
 </select>
-</p></li>
-
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A11" class="element textarea medium"></textarea>
-</p></li>
+</p>
+<p>
+<table border="1">
+<col width="40%">
 
-
-<li><p>
+<tr>
+<td>
 <label class="description">- Histologic type (WHO 2019):</label> 
-<select class="element select medium" ID="A12">
+</td>
+<td>
+<select class="element select large" ID="A12">
 	<option value=""></option>
-	<option value="  - Adenocarcinoma">Adenocarcinoma</option>
-	<option value="  - Mucinous adenocarcinoma">Mucinous adenocarcinoma</option>
-	<option value="  - Low-grade appendiceal mucinous neoplasm">Low-grade appendiceal mucinous neoplasm</option>
-	<option value="  - High-grade appendiceal mucinous neoplasm">High-grade appendiceal mucinous neoplasm</option>
-	<option value="  - Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
-	<option value="  - Goblet cell carcinoid">Goblet cell carcinoid</option>
-	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="  - Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>	
-	<option value="  - Mixed neuroendocrine-non-neuroendocrine neoplasm (Mixed adenoneuroendocrine carcinoma)">Mixed neuroendocrine-non-neuroendocrine neoplasm (Mixed adenoneuroendocrine carcinoma)</option>	
-	<option value="  - Medullary carcinoma">Medullary carcinoma</option>	
-	<option value="  - Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>
-	<option value="  - Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
-	<option value="  - Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
+	<option value="Adenocarcinoma">Adenocarcinoma</option>
+	<option value="Mucinous adenocarcinoma">Mucinous adenocarcinoma</option>
+	<option value="Low-grade appendiceal mucinous neoplasm">Low-grade appendiceal mucinous neoplasm</option>
+	<option value="High-grade appendiceal mucinous neoplasm">High-grade appendiceal mucinous neoplasm</option>
+	<option value="Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
+	<option value="Goblet cell carcinoid">Goblet cell carcinoid</option>
+	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
+	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+	<option value="Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>	
+	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm (Mixed adenoneuroendocrine carcinoma)">Mixed neuroendocrine-non-neuroendocrine neoplasm (Mixed adenoneuroendocrine carcinoma)</option>	
+	<option value="Medullary carcinoma">Medullary carcinoma</option>	
+	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Histologic grade:</label>
-<select class="element select medium" ID="A13">
+</td>
+<td>
+<select class="element select large" ID="A13">
 	<option value=""></option>
-	<option value="  - G1: Well differentiated">G1: Well differentiated</option>
-	<option value="  - G2: Moderately differentiated">G2: Moderately differentiated</option>
-	<option value="  - G3: Poorly differentiated">G3: Poorly differentiated</option>
-	<option value="  - G4: Undifferentiated">G4: Undifferentiated</option>	
-	<option value="  - GX: Cannot be assessed">GX: Cannot be assessed</option>	
-	<option value="  - Other (specify):">Other (specify):</option>
-	<option value="  - Not applicable">Not applicable</option>
+	<option value="G1: Well differentiated">G1: Well differentiated</option>
+	<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
+	<option value="G3: Poorly differentiated">G3: Poorly differentiated</option>
+	<option value="G4: Undifferentiated">G4: Undifferentiated</option>	
+	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Not applicable">Not applicable</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Tumor extension:</label>
-<input type="checkbox" class = "element checkbox"  id="A14" value="  - No evidence of primary tumor"><label class="element choice">No evidence of primary tumor</label>
-<input type="checkbox" class = "element checkbox"  id="A15" value="  - Tumor invades lamina propria or muscularis mucosa"><label class="element choice">Tumor invades lamina propria or muscularis mucosa</label>
-<input type="checkbox" class = "element checkbox"  id="A16" value="  - Tumor invades submucosa"><label class="element choice">Tumor invades submucosa</label>
-<input type="checkbox" class = "element checkbox"  id="A17" value="  - Tumor invades muscularis propria"><label class="element choice">Tumor invades muscularis propria</label>
-<input type="checkbox" class = "element checkbox"  id="A18" value="  - Acellular mucin invades subserosa or mesoappendix but does not extend to the serosal surface"><label class="element choice">Acellular mucin invades subserosa or mesoappendix but does not extend to the serosal surface</label>
-<input type="checkbox" class = "element checkbox"  id="A19" value="  - Tumor invades through the muscularis propria into the subserosa or mesoappendix but does not extend to the serosal surface"><label class="element choice">Tumor invades through the muscularis propria into the subserosa or mesoappendix but does not extend to the serosal surface</label>
-<input type="checkbox" class = "element checkbox"  id="A20" value="  - Acellular mucin invades the visceral peritoneum (serosa)"><label class="element choice">Acellular mucin invades the visceral peritoneum (serosa)</label>
-<input type="checkbox" class = "element checkbox"  id="A21" value="  - Tumor invades the visceral peritoneum (serosa)"><label class="element choice">Tumor invades the visceral peritoneum (serosa)</label>
-<input type="checkbox" class = "element checkbox"  id="A22" value="  - Tumor directly invades adjacent organs or structures (specify):"><label class="element choice">Tumor directly invades adjacent organs or structures (specify):</label>
-<input type="checkbox" class = "element checkbox"  id="A23" value="  - Cannot be assessed"><label class="element choice">Cannot be assessed</label>
-</p></li>
-
-<li><p>
+<tr>
+<td>
 <label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A24">
+</td>
+<td>
+<select class="element select large" ID="A24">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A25">
+</td>
+<td>
+<select class="element select large" ID="A25">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor deposits: </label>
-<select class="element select medium" ID="A26">
+</td>
+<td>
+<select class="element select large" ID="A26">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present, specify number:">Present, specify number:</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, specify number:">Present, specify number:</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<label class="description">- Tumor extension:</label>
+<input type="checkbox"   id="A14" value="  - No evidence of primary tumor"><label >No evidence of primary tumor</label><br>
+<input type="checkbox"   id="A15" value="  - Tumor invades lamina propria or muscularis mucosa"><label >Tumor invades lamina propria or muscularis mucosa</label><br>
+<input type="checkbox"   id="A16" value="  - Tumor invades submucosa"><label >Tumor invades submucosa</label><br>
+<input type="checkbox"   id="A17" value="  - Tumor invades muscularis propria"><label >Tumor invades muscularis propria</label><br>
+<input type="checkbox"   id="A18" value="  - Acellular mucin invades subserosa or mesoappendix but does not extend to the serosal surface"><label >Acellular mucin invades subserosa or mesoappendix but does not extend to the serosal surface</label><br>
+<input type="checkbox"   id="A19" value="  - Tumor invades through the muscularis propria into the subserosa or mesoappendix but does not extend to the serosal surface"><label >Tumor invades through the muscularis propria into the subserosa or mesoappendix but does not extend to the serosal surface</label><br>
+<input type="checkbox"   id="A20" value="  - Acellular mucin invades the visceral peritoneum (serosa)"><label >Acellular mucin invades the visceral peritoneum (serosa)</label><br>
+<input type="checkbox"   id="A21" value="  - Tumor invades the visceral peritoneum (serosa)"><label >Tumor invades the visceral peritoneum (serosa)</label><br>
+<input type="checkbox"   id="A22" value="  - Tumor directly invades adjacent organs or structures (specify):"><label >Tumor directly invades adjacent organs or structures (specify):</label><br>
+<input type="checkbox"   id="A23" value="  - Cannot be assessed"><label >Cannot be assessed</label><br>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<label class="description"><legend>Surgical margins for surgical specimens:</label></legend>
-<li><p><label class="description">- Proximal margin:</label>
-<input type="checkbox" class = "element checkbox"  id="A27" value="  - Cannot be assessed"><label class="element choice">Cannot be assessed</label>
-<input type="checkbox" class = "element checkbox"  id="A28" value="  - Uninvolved by invasive carcinoma, specifiy distance (mm):"><label class="element choice">Uninvolved by invasive carcinoma, specifiy distance (mm):</label>
-<input type="checkbox" class = "element checkbox"  id="A29" value="  - Involved by invasive carcinoma"><label class="element choice">Involved by invasive carcinoma</label>
-<input type="checkbox" class = "element checkbox"  id="A30" value="  - Involved by high-grade dysplasia"><label class="element choice">Involved by high-grade dysplasia</label>
-<input type="checkbox" class = "element checkbox"  id="A31" value="  - Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):"><label class="element choice">Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):</label>
-<input type="checkbox" class = "element checkbox"  id="A32" value="  - Involved by low-grade appendiceal mucinous neoplasm"><label class="element choice">Involved by low-grade appendiceal mucinous neoplasm</label>
-<input type="checkbox" class = "element checkbox"  id="A33" value="  - Involved by high-grade appendiceal mucinous neoplasm"><label class="element choice">Involved by high-grade appendiceal mucinous neoplasm</label>
-<input type="checkbox" class = "element checkbox"  id="A34" value="  - Involved by acellular mucin"><label class="element choice">Involved by acellular mucin</label>
-</p></li>
+<p><label class="description">- Proximal margin:</label>
+<input type="checkbox"   id="A27" value="  - Cannot be assessed"><label >Cannot be assessed</label><br>
+<input type="checkbox"   id="A28" value="  - Uninvolved by invasive carcinoma, specifiy distance (mm):"><label >Uninvolved by invasive carcinoma, specifiy distance (mm):</label><br>
+<input type="checkbox"   id="A29" value="  - Involved by invasive carcinoma"><label >Involved by invasive carcinoma</label><br>
+<input type="checkbox"   id="A30" value="  - Involved by high-grade dysplasia"><label >Involved by high-grade dysplasia</label><br>
+<input type="checkbox"   id="A31" value="  - Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):"><label >Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):</label><br>
+<input type="checkbox"   id="A32" value="  - Involved by low-grade appendiceal mucinous neoplasm"><label >Involved by low-grade appendiceal mucinous neoplasm</label><br>
+<input type="checkbox"   id="A33" value="  - Involved by high-grade appendiceal mucinous neoplasm"><label >Involved by high-grade appendiceal mucinous neoplasm</label><br>
+<input type="checkbox"   id="A34" value="  - Involved by acellular mucin"><label >Involved by acellular mucin</label><br>
+</p>
 
-<li><p><label class="description">- Mesenteric margin:</label>
-<input type="checkbox" class = "element checkbox"  id="A35" value="  - Cannot be assessed"><label class="element choice">Cannot be assessed</label>
-<input type="checkbox" class = "element checkbox"  id="A36" value="  - Uninvolved by invasive carcinoma, specifiy distance (mm):"><label class="element choice">Uninvolved by invasive carcinoma, specifiy distance (mm):</label>
-<input type="checkbox" class = "element checkbox"  id="A37" value="  - Involved by invasive carcinoma"><label class="element choice">Involved by invasive carcinoma</label>
-<input type="checkbox" class = "element checkbox"  id="A38" value="  - Involved by high-grade dysplasia"><label class="element choice">Involved by high-grade dysplasia</label>
-<input type="checkbox" class = "element checkbox"  id="A39" value="  - Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):"><label class="element choice">Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):</label>
-<input type="checkbox" class = "element checkbox"  id="A40" value="  - Involved by low-grade appendiceal mucinous neoplasm"><label class="element choice">Involved by low-grade appendiceal mucinous neoplasm</label>
-<input type="checkbox" class = "element checkbox"  id="A41" value="  - Involved by high-grade appendiceal mucinous neoplasm"><label class="element choice">Involved by high-grade appendiceal mucinous neoplasm</label>
-<input type="checkbox" class = "element checkbox"  id="A42" value="  - Involved by acellular mucin"><label class="element choice">Involved by acellular mucin</label>
-</p></li>
+<p><label class="description">- Mesenteric margin:</label>
+<input type="checkbox"   id="A35" value="  - Cannot be assessed"><label >Cannot be assessed</label><br>
+<input type="checkbox"   id="A36" value="  - Uninvolved by invasive carcinoma, specifiy distance (mm):"><label >Uninvolved by invasive carcinoma, specifiy distance (mm):</label><br>
+<input type="checkbox"   id="A37" value="  - Involved by invasive carcinoma"><label >Involved by invasive carcinoma</label><br>
+<input type="checkbox"   id="A38" value="  - Involved by high-grade dysplasia"><label >Involved by high-grade dysplasia</label><br>
+<input type="checkbox"   id="A39" value="  - Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):"><label >Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):</label><br>
+<input type="checkbox"   id="A40" value="  - Involved by low-grade appendiceal mucinous neoplasm"><label >Involved by low-grade appendiceal mucinous neoplasm</label><br>
+<input type="checkbox"   id="A41" value="  - Involved by high-grade appendiceal mucinous neoplasm"><label >Involved by high-grade appendiceal mucinous neoplasm</label><br>
+<input type="checkbox"   id="A42" value="  - Involved by acellular mucin"><label >Involved by acellular mucin</label><br>
+</p>
 
-<li><p><label class="description">- Other margin(s) (specify: ):</label>
-<input type="checkbox" class = "element checkbox"  id="A43" value="  - Cannot be assessed"><label class="element choice">Cannot be assessed</label>
-<input type="checkbox" class = "element checkbox"  id="A44" value="  - Uninvolved by invasive carcinoma, specifiy distance (mm):"><label class="element choice">Uninvolved by invasive carcinoma, specifiy distance (mm):</label>
-<input type="checkbox" class = "element checkbox"  id="A45" value="  - Involved by invasive carcinoma"><label class="element choice">Involved by invasive carcinoma</label>
-<input type="checkbox" class = "element checkbox"  id="A46" value="  - Involved by high-grade dysplasia"><label class="element choice">Involved by high-grade dysplasia</label>
-<input type="checkbox" class = "element checkbox"  id="A47" value="  - Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):"><label class="element choice">Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):</label>
-<input type="checkbox" class = "element checkbox"  id="A48" value="  - Involved by low-grade appendiceal mucinous neoplasm"><label class="element choice">Involved by low-grade appendiceal mucinous neoplasm</label>
-<input type="checkbox" class = "element checkbox"  id="A49" value="  - Involved by high-grade appendiceal mucinous neoplasm"><label class="element choice">Involved by high-grade appendiceal mucinous neoplasm</label>
-<input type="checkbox" class = "element checkbox"  id="A50" value="  - Involved by acellular mucin"><label class="element choice">Involved by acellular mucin</label>
-</p></li>
+<p><label class="description">- Other margin(s) (specify: ):</label>
+<input type="checkbox"   id="A43" value="  - Cannot be assessed"><label >Cannot be assessed</label><br>
+<input type="checkbox"   id="A44" value="  - Uninvolved by invasive carcinoma, specifiy distance (mm):"><label >Uninvolved by invasive carcinoma, specifiy distance (mm):</label><br>
+<input type="checkbox"   id="A45" value="  - Involved by invasive carcinoma"><label >Involved by invasive carcinoma</label><br>
+<input type="checkbox"   id="A46" value="  - Involved by high-grade dysplasia"><label >Involved by high-grade dysplasia</label><br>
+<input type="checkbox"   id="A47" value="  - Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):"><label >Uninvolved by appendiceal mucinous neoplasm, specifiy distance (mm):</label><br>
+<input type="checkbox"   id="A48" value="  - Involved by low-grade appendiceal mucinous neoplasm"><label >Involved by low-grade appendiceal mucinous neoplasm</label><br>
+<input type="checkbox"   id="A49" value="  - Involved by high-grade appendiceal mucinous neoplasm"><label >Involved by high-grade appendiceal mucinous neoplasm</label><br>
+<input type="checkbox"   id="A50" value="  - Involved by acellular mucin"><label >Involved by acellular mucin</label><br>
+</p>
 
-<br>
 </fieldset>
 </p>
 
@@ -556,28 +601,61 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Lymph nodes examination: </label></legend>
 
-<li><p>- Number of regional lymph nodes examined:
-<input type="text" ID="A51" class = "element text small" size="10"></p>
+<p>
+<table border="1">
+<col width="75%">
 
-<p>- Number of regional lymph nodes involved:
-<input type="text" ID="A52" class = "element text small" size="10"></p></li>
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" ID="A51" class = "element text large" size="10">
+</td>
+</tr>
 
-<li><p>- Extranodal extension:
-<select class="element select small" ID="A53">
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" ID="A52" class = "element text large" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A53">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" ID="A54" class = "element text small" size="20"></p>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" ID="A54" class = "element text large" size="20">
+</td>
+</tr>
 
-<p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" ID="A55" class = "element text small" size="20"></p></li>
-
-<br>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" ID="A55" class = "element text large" size="20">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -585,14 +663,27 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" id="A56" class = "element checkbox" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
-<input type="checkbox" id="A57" class = "element checkbox" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" id="A58" class = "element checkbox" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
 
-<li><p>  - Primary tumor (pT):<br>
-<select class="element select medium" ID="A59">
+<tr>
+<td valign="top">
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox" id="A56"  value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox" id="A57"  value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox" id="A58"  value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A59">
 	<option value=""></option>
 	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -604,10 +695,15 @@ function CopyToClipboard() {
 	<option value="  - pT4a: Tumor invades through the visceral peritoneum, including the acellular mucin or mucinous epithelium involving the serosa of the appendix or serosa of the mesoappendix">pT4a: Tumor invades through the visceral peritoneum, including the acellular mucin or mucinous epithelium involving the serosa of the appendix or serosa of the mesoappendix</option>
 	<option value="  - pT4b: Tumor directly invades (or adheres to) adjacent organs or structures">pT4b: Tumor directly invades (or adheres to) adjacent organs or structures</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A60">
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN):</label>
+</td>
+<td>
+<select class="element select large" ID="A60">
 	<option value=""></option>
 	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
@@ -617,48 +713,58 @@ function CopyToClipboard() {
 	<option value="  - pN1c: No regional lymph nodes are positive, but there are tumor deposits in the subserosa, mesentery, or nonperitonealized pericolic, or perirectal/mesorectal tissues.">pN1c: No regional lymph nodes are positive, but there are tumor deposits in the subserosa, mesentery, or nonperitonealized pericolic, or perirectal/mesorectal tissues.</option>
 	<option value="  - pN2: > or = 4 regional lymph nodes are positive">pN2: > or = 4 regional lymph nodes are positive</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<p><select class="element select medium" ID="A61">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Distant metastasis (pM):</label>
+</td>
+<td>
+<select class="element select large" ID="A61">
 	<option value=""></option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 	<option value="  - pM1a: Intraperitoneal acellular mucin, without identifiable tumor cells in the disseminated peritoneal mucinous deposits">pM1a: Intraperitoneal acellular mucin, without identifiable tumor cells in the disseminated peritoneal mucinous deposits</option>
 	<option value="  - pM1b: Intraperitoneal metastasis only, including peritoneal mucinous deposits containing tumor cells">pM1b: Intraperitoneal metastasis only, including peritoneal mucinous deposits containing tumor cells</option>
 	<option value="  - pM1c: Metastasis to sites other than peritoneum">pM1c: Metastasis to sites other than peritoneum</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p>    - Specify site(s), if known:<br>
+<tr>
+<td>
+<label>- Specify site(s), if known:</label>
 <input type="text" ID="A62" class = "element text small" size="35">
+</td>
+</tr>
+</table>
 </p>
-<br>
 </fieldset>
-</p></li>
+</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class = "element checkbox"  id="A63" value="  - Appendicitis"><label class="element choice">Appendicitis</label>
-<input type="checkbox" class = "element checkbox"  id="A64" value="  - Perforation, not at tumor"><label class="element choice">Perforation, not at tumor</label>
-<input type="checkbox" class = "element checkbox"  id="A65" value="  - Ulcerative colitis"><label class="element choice">Ulcerative colitis</label>
-<input type="checkbox" class = "element checkbox"  id="A66" value="  - Crohn disease"><label class="element choice">Crohn disease</label>
-<input type="checkbox" class = "element checkbox"  id="A67" value="  - Diverticulosis"><label class="element choice">Diverticulosis</label>
+<p>
+<input type="checkbox"   id="A63" value="  - Appendicitis"><label >Appendicitis</label><br>
+<input type="checkbox"   id="A64" value="  - Perforation, not at tumor"><label >Perforation, not at tumor</label><br>
+<input type="checkbox"   id="A65" value="  - Ulcerative colitis"><label >Ulcerative colitis</label><br>
+<input type="checkbox"   id="A66" value="  - Crohn disease"><label >Crohn disease</label><br>
+<input type="checkbox"   id="A67" value="  - Diverticulosis"><label >Diverticulosis</label><br>
 </p>
 <p>
 - Other (specify):
 <input type="text" class = "element text medium" ID="A68" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A69" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -675,7 +781,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 07-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Appendix 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

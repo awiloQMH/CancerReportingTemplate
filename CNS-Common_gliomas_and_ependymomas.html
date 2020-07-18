@@ -12,7 +12,7 @@ function updateDescription (frm)
     var Template = "";
 	
 if (frm.A01.value !== ""){
-	Template += "- Histological type (WHO 2016): " + "\n" + "  - " + frm.A01.value + "\n";
+	Template += "- Histological type (WHO 2016): " + frm.A01.value + "\n";
 }
 
 if (frm.A02.value !== ""){
@@ -28,35 +28,35 @@ if (frm.A04.value + frm.A05.value + frm.A06.value + frm.A07.value + frm.A08.valu
 }
 
 if (frm.A04.value !== ""){
-	Template += "  - IDH1 R132H expression (immunohistochemistry): "+ "\n" + "    - "  + frm.A04.value + "\n";
+	Template += "  - IDH1 R132H expression (immunohistochemistry): " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
-	Template += "  - IDH1/IDH2 mutation (by Sanger sequencing; " + "\n" + "    - " + frm.A05.value + "\n" + "    - see also report: MB#" + "\n";
+	Template += "  - IDH1/IDH2 mutation (by Sanger sequencing): " + frm.A05.value + "\n" + "    - see also report: MB#" + "\n";
 }
 
 if (frm.A06.value !== ""){
-	Template += "  - ATRX expression (immunohistochemistry): "+ "\n" + "    - "  + frm.A06.value + "\n";
+	Template += "  - ATRX expression (immunohistochemistry): " + frm.A06.value + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "  - Histone H3 K27M expression (immunohistochemistry): "+ "\n" + "    - "  + frm.A07.value + "\n" + "    - Send out test to Queen Elizabeth Hospital" + "\n";
+	Template += "  - Histone H3 K27M expression (immunohistochemistry): " + frm.A07.value + "\n" + "    - Send out test to Queen Elizabeth Hospital" + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "  - Chromosomal arm 1p / 19q codeletion (by FISH): "+ "\n" + "    - "  + frm.A08.value + "\n" + "    - see also report: MB#" + "\n";
+	Template += "  - Chromosomal arm 1p / 19q codeletion (by FISH): " + frm.A08.value + "\n" + "    - see also report: MB#" + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "  - BRAF V600E mutation (by Sanger sequencing): "+ "\n" + "    - "  + frm.A09.value  + "\n" + "    - see also report: MB#" + "\n";
+	Template += "  - BRAF V600E mutation (by Sanger sequencing): " + frm.A09.value  + "\n" + "    - see also report: MB#" + "\n";
 }
 
 if (frm.A10.value !== ""){
-	Template += "  - Others, specify: "+ "\n" + "    - "  + frm.A10.value + "\n" ;
+	Template += "  - Others, specify: " + frm.A10.value + "\n" ;
 }
 
 if (frm.A11.value !== ""){
-	Template += "\n" + "- Integrated final diagnosis (WHO 2016): " + "\n" + "  - " + frm.A11.value + "\n" ;
+	Template += "\n" + "- Integrated final diagnosis (WHO 2016): " + frm.A11.value + "\n" ;
 }
 
 if (frm.A12.value !== ""){
@@ -80,7 +80,12 @@ function CopyToClipboard() {
   alert("Report has been copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -95,9 +100,25 @@ function CopyToClipboard() {
 	</div>
 
 <form>
-<li>
-<p><label class="description">- Histological type (WHO 2016):</label>
-<select class="element select medium" ID="A01">
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Microscopic descriptions :</label></legend>
+ 
+<p>
+<label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A02" name="A02" class="element textarea medium"></textarea>
+</p>
+
+<p>
+<table border="1">
+<col width="50%">
+<tr>
+<td>
+<label class="description">- Histological type (WHO 2016):</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
  <option value=""></option>
  <option value="Diffuse astrocytoma">Diffuse astrocytoma</option> 
  <option value="Gemistocytic astrocytoma">Gemistocytic astrocytoma </option>
@@ -120,17 +141,15 @@ function CopyToClipboard() {
  <option value="Ependymoma, tanycytic ependymoma">Ependymoma, tanycytic ependymoma</option>
  <option value="Anaplastic ependymoma">Anaplastic ependymoma</option>
 </select>
-</p>
-</li>
-<li><p>
-<label class="description">- Tumor histology and immunohistochemical studies: </label>
- <textarea ID="A02" name="A02" class="element textarea medium"></textarea>
-</p></li>
+</td>
+</tr>
 
-<li>
-<p>
+<tr>
+<td>
 <label class="description">- WHO Grade:</label> 
-<select class="element select medium" ID="A03">
+</td>
+<td>
+<select class="element select large" ID="A03">
  <option value=""></option>
  <option value="I">I</option>
  <option value="II">II</option>
@@ -139,91 +158,15 @@ function CopyToClipboard() {
  <option value="Not applicable">Not applicable</option>
  <option value="Cannot be determined, specify details:">Cannot be determined, specify details:</option>
 </select>
-</p>
-<li>
-<br>
+</td>
+</tr>
 
-<fieldset style="border-color:#e6e6ff;">
-<legend><label class="description">Biomarker studies for gliomas (where applicable):</label></legend>
-
-<TABLE border= "1">
-  <TR>
-    <TD>IDH1 R132H expression (immunohistochemistry):</TD>
-    <TD>
-      <select class="element select large" ID="A04">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative">Negative</option>
-		<option value="Positive">Positive</option> 
-		</select>
-    </TD>
-  </TR>
-  <TR>
-    <TD>IDH1/IDH2 mutation (by Sanger sequencing):</TD>
-    <TD><select class="element select large" ID="A05">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Absent">Absent</option>
-			<option value="Present, specify:">Present, specify:</option> 
-		</select></TD>
-  </TR>
-  <TR>
-    <TD>ATRX expression (immunohistochemistry):</TD>
-    <TD><select class="element select large" ID="A06">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Intact nuclear expression">Intact nuclear expression</option>
-			<option value="Loss of nuclear expression">Loss of nuclear expression</option> 
-		</select>
-	</TD>
-  </TR>
-  <TR>
-    <TD>Histone H3 K27M expression (immunohistochemistry):</TD>
-    <TD><select class="element select large" ID="A07">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Negative">Negative</option>
-			<option value="Positive">Positive</option> 
-		</select>
-	</TD>
-  </TR>
-  <TR>
-    <TD>Chromosomal arm 1p / 19q codeletion (by FISH):</TD>
-    <TD><select class="element select large" ID="A08">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="None detected">None detected</option>
-			<option value="1p/19q codeletion">1p/19q codeletion</option>
-			<option value="1p only deletion">1p only deletion</option>
-			<option value="19q only deletion">19q only deletion</option>
-			<option value="Polysomy, specify:">Polysomy, specify:</option> 
-		</select>
-	</TD>
-  </TR>
-  <TR>
-    <TD>BRAF V600E mutation (by Sanger sequencing):</TD>
-    <TD><select class="element select large" ID="A09">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Absent">Absent</option>
-			<option value="Present, specify:">Present, specify:</option> 
-		</select>
-	</TD>
-  </TR>
-  <TR>
-    <TD>Others, specify:</TD>
-    <TD><textarea ID="A10" name="A10" col="10" rows="1"></textarea>
-	</TD>
-  </TR>
-  </TABLE>
-<br>
-</fieldset>
-
-<br>
-<li>
-<p>
+<tr>
+<td>
 <label class="description">- Integrated final diagnosis (WHO 2016):</label>
-<select class="element select medium" ID="A11">
+</td>
+<td>
+<select class="element select large" ID="A11">
  <option value=""></option>
  <option value="Diffuse astrocytoma, IDH-mutant">Diffuse astrocytoma, IDH-mutant</option> 
  <option value="Gemistocytic astrocytoma, IDH-mutant">Gemistocytic astrocytoma, IDH-mutant</option> 
@@ -260,12 +203,93 @@ function CopyToClipboard() {
  <option value="Tanycytic ependymoma">Tanycytic ependymoma</option> 
  <option value="Anaplastic ependymoma">Anaplastic ependymoma</option>
 </select>
+</td>
+</tr>
+</table>
 </p>
-</li>
-<li><p>
+
+<p>
+<TABLE border= "1">
+<col width="70%">
+<legend><label class="description">- Biomarker studies for gliomas (where applicable):</label></legend>
+  <TR>
+    <TD>- IDH1 R132H expression (immunohistochemistry):</TD>
+    <TD>
+      <select class="element select large" ID="A04">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative">Negative</option>
+		<option value="Positive">Positive</option> 
+		</select>
+    </TD>
+  </TR>
+  <TR>
+    <TD>- IDH1/IDH2 mutation (by Sanger sequencing):</TD>
+    <TD><select class="element select large" ID="A05">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Absent">Absent</option>
+			<option value="Present, specify:">Present, specify:</option> 
+		</select></TD>
+  </TR>
+  <TR>
+    <TD>- ATRX expression (immunohistochemistry):</TD>
+    <TD><select class="element select large" ID="A06">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Intact nuclear expression">Intact nuclear expression</option>
+			<option value="Loss of nuclear expression">Loss of nuclear expression</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Histone H3 K27M expression (immunohistochemistry):</TD>
+    <TD><select class="element select large" ID="A07">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive">Positive</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Chromosomal arm 1p / 19q codeletion (by FISH):</TD>
+    <TD><select class="element select large" ID="A08">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="None detected">None detected</option>
+			<option value="1p/19q codeletion">1p/19q codeletion</option>
+			<option value="1p only deletion">1p only deletion</option>
+			<option value="19q only deletion">19q only deletion</option>
+			<option value="Polysomy, specify:">Polysomy, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- BRAF V600E mutation (by Sanger sequencing):</TD>
+    <TD><select class="element select large" ID="A09">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Absent">Absent</option>
+			<option value="Present, specify:">Present, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Others, specify:</TD>
+    <TD><input type="text" class="element text large" ID="A10" size="10"></textarea>
+	</TD>
+  </TR>
+  </TABLE>
+</p>
+
+</fieldset>
+</p>
+
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A12" name="A12" class="element textarea medium" style="border-color:grey;"></textarea> 
-</p></li>
+</p>
 
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
 <br>
@@ -280,7 +304,7 @@ function CopyToClipboard() {
 <br>
 <br>
 <div id="footer">
-Last upated on 15-Dec-2018, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 06-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

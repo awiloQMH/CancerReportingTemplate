@@ -10,7 +10,7 @@
 function updateDescription (frm) 
 {
     var Template = "";
-	
+/*	
 
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
@@ -23,13 +23,13 @@ if (frm.A02.value !== ""){
 if (frm.A03.value !== ""){
 	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
 }
-
+*/
 if (frm.A04.value !== ""){
-	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A04.value + "\n";
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A05.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A05.value + "\n";
 }
 
 if (document.getElementById("A06").checked || document.getElementById("A07").checked || document.getElementById("A08").checked || document.getElementById("A09").checked || document.getElementById("A10").checked || document.getElementById("A11").checked || document.getElementById("A12").checked || document.getElementById("A13").checked || document.getElementById("A14").checked){
@@ -73,11 +73,11 @@ if (document.getElementById("A14").checked){
 }
 
 if (frm.A15.value !== ""){
-	Template += "- Histologic grade for urothelial carcinoma: " + "\n" + "  - " + frm.A15.value + "\n";
+	Template += "- Histologic grade for urothelial carcinoma: " + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
-	Template += "- Histologic grade for SCC or adenoCA: " + "\n" + "  - " + frm.A16.value + "\n";
+	Template += "- Histologic grade for SCC or adenoCA: " + frm.A16.value + "\n";
 }
 
 if (document.getElementById("A17").checked || document.getElementById("A18").checked || document.getElementById("A19").checked || document.getElementById("A20").checked || document.getElementById("A21").checked || document.getElementById("A22").checked){
@@ -109,11 +109,11 @@ if (document.getElementById("A22").checked){
 }
 
 if (frm.A23.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A23.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A23.value + "\n";
 }
 
 if (frm.A24.value !== ""){
-	Template += "- Perinerual invasion: " + "\n" + "  - " + frm.A24.value + "\n";
+	Template += "- Perinerual invasion: " + frm.A24.value + "\n";
 }
 
 if (document.getElementById("A26").checked || document.getElementById("A27").checked || document.getElementById("A28").checked || document.getElementById("A29").checked || document.getElementById("A30").checked || document.getElementById("A31").checked || document.getElementById("A32").checked || document.getElementById("A33").checked || document.getElementById("A34").checked || document.getElementById("A35").checked){
@@ -245,26 +245,26 @@ if (frm.A56.value !== "" || frm.A57.value !== "" || frm.A58.value !== "" || frm.
 }
 
 if (frm.A56.value !== ""){
-	Template +=  "  - Proximal mucosal margin: "  +"\n" + "    - " +  frm.A56.value + "\n" ;
+	Template +=  "  - Proximal mucosal margin: "  +  frm.A56.value + "\n" ;
 }
 
 
 if (frm.A57.value !== ""){
-	Template +=  "  - Distal mucosal margin: "  +"\n" + "    - " +  frm.A57.value + "\n" ;
+	Template +=  "  - Distal mucosal margin: "  +  frm.A57.value + "\n" ;
 }
 
 
 if (frm.A58.value !== ""){
-	Template +=  "  - Deep soft tissue margin: "  +"\n" + "    - " +  frm.A58.value + "\n" ;
+	Template +=  "  - Deep soft tissue margin: "   +  frm.A58.value + "\n" ;
 }
 
 
 if (frm.A59.value !== ""){
-	Template +=  "  - Other margin(s) (specify): "  +"\n" + "    - " +  frm.A59.value + "\n" ;
+	Template +=  "  - Other margin(s) (specify): "  +  frm.A59.value + "\n" ;
 }
 
 if (frm.A60.value + frm.A61.value + frm.A62.value + frm.A63.value + frm.A64.value !== ""){
-	Template += "- Regional lymph nodes: " + "\n";
+	Template += "\n" + "- Regional lymph nodes: " + "\n";
 }	
 
 if (frm.A60.value !== ""){
@@ -358,7 +358,7 @@ if (frm.A78.value !== ""){
 }
 
 if (frm.A79.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A79.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A79.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -378,7 +378,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -395,12 +400,20 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<p> This is additional protocol for <a href=".\cap\cp-urinary-urethra-biopsy-19-4020.pdf" target="_blank">biopsy specimen</a>.</p>
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="Partial urethrectomy">Partial urethrectomy</option> 
 	<option value="Total urethrectomy">Total urethrectomy</option>
@@ -410,11 +423,16 @@ function CopyToClipboard() {
 	<option value="Anterior exenteration">Anterior exenteration</option>
 	<option value="Other (specify):">Other (specify):</option>
 	<option value="Not specified">Not specified</option>
-	</select>
-</p></li>
+</select>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor site:</label> 
-<select class="element select medium" ID="A02">
+<tr>
+<td>
+<label class="description">- Tumor site:</label> 
+</td>
+<td>
+<select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="Male, penile urethra">Male, penile urethra</option>
 	<option value="Male, bulbomembranous urethra">Male, bulbomembranous urethra</option>
@@ -423,29 +441,42 @@ function CopyToClipboard() {
 	<option value="Female, posterior urethra">Female, posterior urethra</option>
 	<option value="Urethra, not otherwise specified">Urethra, not otherwise specified</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A03">
-		<option value=""></option>
-		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
-		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
-		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+<tr>
+<td>
+<label class="description">- Tumor size:</label> 
+</td>
+<td>
+<select class="element select large" ID="A03">
+	<option value=""></option>
+	<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+	<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table></p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A04" name="A04" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li><p><label class="description">- Histologic type:</label> 
-<select class="element select medium" ID="A05">
+<p>
+<table border="1">
+<col width="50%">
+<tr>
+<td>
+<label class="description">- Histologic type:</label> 
+</td>
+<td>
+<select class="element select large" ID="A05">
 	<option value=""></option>
 	<option value="Papillary urothelial carcinoma, noninvasive">Papillary urothelial carcinoma, noninvasive</option>
 	<option value="Papillary urothelial carcinoma, invasive">Papillary urothelial carcinoma, invasive</option>
@@ -480,31 +511,46 @@ function CopyToClipboard() {
 	<option value="Well differentiated neuroendocrine carcinoma (with %)">Well differentiated neuroendocrine carcinoma (with %)</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Associated epithelial lesions:</label> 
-<input type="checkbox" class="element checkbox" id="A06" value="  - None identified"><label class="choice">None identified</label>
-<input type="checkbox" class="element checkbox" id="A07" value="  - Condyloma"><label class="choice">Condyloma</label>
-<input type="checkbox" class="element checkbox" id="A08" value="  - Squamous dysplasia (low, intermediate, high grade)"><label class="choice">Squamous dysplasia (low, intermediate, high grade)</label>
-<input type="checkbox" class="element checkbox" id="A09" value="  - Urothelial papilloma"><label class="choice">Urothelial papilloma</label>
-<input type="checkbox" class="element checkbox" id="A10" value="  - Urothelial papilloma, inverted type"><label class="choice">Urothelial papilloma, inverted type</label>
-<input type="checkbox" class="element checkbox" id="A11" value="  - Papillary urothelial neoplasm, low malignant potential (PUNLMP)"><label class="choice">Papillary urothelial neoplasm, low malignant potential (PUNLMP)</label>
-<input type="checkbox" class="element checkbox" id="A12" value="  - Urothelial proliferation of uncertain malignant potential"><label class="choice">Urothelial proliferation of uncertain malignant potential</label>
-<input type="checkbox" class="element checkbox" id="A13" value="  - Urothelial dysplasia"><label class="choice">Urothelial dysplasia</label>
-<input type="checkbox" class="element checkbox" id="A14" value="  - Cannot be assessed (explain):"><label class="choice">Cannot be assessed (explain):</label>
-</p></li>
+<tr>
+<td valign="top">
+<label class="description">- Associated epithelial lesions:</label> 
+</td>
+<td>
+<input type="checkbox"  id="A06" value="  - None identified"><label >None identified</label><br>
+<input type="checkbox"  id="A07" value="  - Condyloma"><label >Condyloma</label><br>
+<input type="checkbox"  id="A08" value="  - Squamous dysplasia (low, intermediate, high grade)"><label >Squamous dysplasia <br>(low, intermediate, high grade)</label><br>
+<input type="checkbox"  id="A09" value="  - Urothelial papilloma"><label >Urothelial papilloma</label><br>
+<input type="checkbox"  id="A10" value="  - Urothelial papilloma, inverted type"><label >Urothelial papilloma, inverted type</label><br>
+<input type="checkbox"  id="A11" value="  - Papillary urothelial neoplasm, low malignant potential (PUNLMP)"><label >Papillary urothelial neoplasm, <br>low malignant potential (PUNLMP)</label><br>
+<input type="checkbox"  id="A12" value="  - Urothelial proliferation of uncertain malignant potential"><label >Urothelial proliferation of <br>uncertain malignant potential</label><br>
+<input type="checkbox"  id="A13" value="  - Urothelial dysplasia"><label >Urothelial dysplasia</label><br>
+<input type="checkbox"  id="A14" value="  - Cannot be assessed (explain):"><label >Cannot be assessed (explain):</label><br>
+</td>
+</tr>
 
-<li><p><label class="description">- Histologic grade for urothelial carcinoima:</label>
-<select class="element select medium" ID="A15">
+<tr>
+<td>
+<label class="description">- Histologic grade for urothelial carcinoima:</label>
+</td>
+<td>
+<select class="element select large" ID="A15">
 	<option value=""></option>
 	<option value="Low grade">Low grade</option>
 	<option value="High grade">High grade</option>
 	<option value="Other (specify):">Other (specify):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Histologic grade for SCC or adenoCA:</label>
-<select class="element select medium" ID="A16">
+<tr>
+<td>
+<label class="description">- Histologic grade for SCC or adenoCA:</label>
+</td>
+<td>
+<select class="element select large" ID="A16">
 	<option value=""></option>
 	<option value="G1: Well differentiated">G1: Well differentiated</option>
 	<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
@@ -514,71 +560,89 @@ function CopyToClipboard() {
 	<option value="Cannot be determined (explain):"> Cannot be determined (explain):</option> 
 	<option value="Not applicable"> Not applicable</option> 
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor configuration:</label> 
-<input type="checkbox" class="element checkbox" id="A17" value="  - Papillary"><label class="choice">Papillary</label>
-<input type="checkbox" class="element checkbox" id="A18" value="  - Solid/nodule"><label class="choice">Solid/nodule</label>
-<input type="checkbox" class="element checkbox" id="A19" value="  - Flat"><label class="choice">Flat</label>
-<input type="checkbox" class="element checkbox" id="A20" value="  - Ulcerated"><label class="choice">Ulcerated</label>
-<input type="checkbox" class="element checkbox" id="A21" value="  - Cannot be determined"><label class="choice">Cannot be determined</label>
-<input type="checkbox" class="element checkbox" id="A22" value="  - Other (specify):"><label class="choice">Other (specify):</label>
-</p></li>
+<tr>
+<td valign="top">
+<label class="description">- Tumor configuration:</label> 
+</td>
+<td>
+<input type="checkbox"  id="A17" value="  - Papillary"><label >Papillary</label><br>
+<input type="checkbox"  id="A18" value="  - Solid/nodule"><label >Solid/nodule</label><br>
+<input type="checkbox"  id="A19" value="  - Flat"><label >Flat</label><br>
+<input type="checkbox"  id="A20" value="  - Ulcerated"><label >Ulcerated</label><br>
+<input type="checkbox"  id="A21" value="  - Cannot be determined"><label >Cannot be determined</label><br>
+<input type="checkbox"  id="A22" value="  - Other (specify):"><label >Other (specify):</label><br>
+</td>
+</tr>
 
-<li><p><label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A23">
+<tr>
+<td>
+<label class="description">- Lymphovascular invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A23">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A24">
+<tr>
+<td>
+<label class="description">- Perineural invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A24">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
+</table>
+</p>
 
-<li><p><label class="description">- Tumor extension (Male, Urothelial carcinoma of penile and bulbomembranous urethra):</label> 
-<input type="checkbox" class="element checkbox" id="A26" value="  - Noninvasive papillary carcinoma"><label class="choice">Noninvasive papillary carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A27" value="  - Carcinoma in situ"><label class="choice">Carcinoma in situ</label>
-<input type="checkbox" class="element checkbox" id="A28" value="  - Tumor invades subepithelial connective tissue"><label class="choice">Tumor invades subepithelial connective tissue</label>
-<input type="checkbox" class="element checkbox" id="A29" value="  - Tumor invades adjacent structures"><label class="choice">Tumor invades adjacent structures</label>
-<input type="checkbox" class="element checkbox" id="A30" value="  - Tumor invades adjacent structures, corpus spongiosum"><label class="choice">Tumor invades adjacent structures, corpus spongiosum</label>
-<input type="checkbox" class="element checkbox" id="A31" value="  - Tumor invades adjacent structures, periurethral muscle"><label class="choice">Tumor invades adjacent structures, periurethral muscle</label>
-<input type="checkbox" class="element checkbox" id="A32" value="  - Tumor invades adjacent structures, corpus cavernosum"><label class="choice">Tumor invades adjacent structures, corpus cavernosum</label>
-<input type="checkbox" class="element checkbox" id="A33" value="  - Tumor invades adjacent structures, bladder wall"><label class="choice">Tumor invades adjacent structures, bladder wall</label>
-<input type="checkbox" class="element checkbox" id="A34" value="  - Tumor invades adjacent structures, rectum"><label class="choice">Tumor invades adjacent structures, rectum</label>
-<input type="checkbox" class="element checkbox" id="A35" value="  - Tumor invades adjacent structures, other (specify):"><label class="choice">Tumor invades adjacent structures, other (specify):</label>
-</p></li>
+<p><label class="description">- Tumor extension (Male, Urothelial carcinoma of penile and bulbomembranous urethra):</label> 
+<input type="checkbox"  id="A26" value="  - Noninvasive papillary carcinoma"><label >Noninvasive papillary carcinoma</label><br>
+<input type="checkbox"  id="A27" value="  - Carcinoma in situ"><label >Carcinoma in situ</label><br>
+<input type="checkbox"  id="A28" value="  - Tumor invades subepithelial connective tissue"><label >Tumor invades subepithelial connective tissue</label><br>
+<input type="checkbox"  id="A29" value="  - Tumor invades adjacent structures"><label >Tumor invades adjacent structures</label><br>
+<input type="checkbox"  id="A30" value="  - Tumor invades adjacent structures, corpus spongiosum"><label >Tumor invades adjacent structures, corpus spongiosum</label><br>
+<input type="checkbox"  id="A31" value="  - Tumor invades adjacent structures, periurethral muscle"><label >Tumor invades adjacent structures, periurethral muscle</label><br>
+<input type="checkbox"  id="A32" value="  - Tumor invades adjacent structures, corpus cavernosum"><label >Tumor invades adjacent structures, corpus cavernosum</label><br>
+<input type="checkbox"  id="A33" value="  - Tumor invades adjacent structures, bladder wall"><label >Tumor invades adjacent structures, bladder wall</label><br>
+<input type="checkbox"  id="A34" value="  - Tumor invades adjacent structures, rectum"><label >Tumor invades adjacent structures, rectum</label><br>
+<input type="checkbox"  id="A35" value="  - Tumor invades adjacent structures, other (specify):"><label >Tumor invades adjacent structures, other (specify):</label><br>
+</p>
 
-<li><p><label class="description">- Tumor extension (Male, Urothelial carcinoma of the prostatic urethra):</label> 
-<input type="checkbox" class="element checkbox" id="A37" value="  - Carcinoma in situ, involvement of the prostatic urethra"><label class="choice">Carcinoma in situ, involvement of the prostatic urethra</label>
-<input type="checkbox" class="element checkbox" id="A38" value="  - Carcinoma in situ, involvement of the prostatic ducts"><label class="choice">Carcinoma in situ, involvement of the prostatic ducts</label>
-<input type="checkbox" class="element checkbox" id="A39" value="  - Tumor invades urethral subepithelial connective tissue immediately underlying the urothelium"><label class="choice">Tumor invades urethral subepithelial connective tissue immediately underlying the urothelium</label>
-<input type="checkbox" class="element checkbox" id="A40" value="  - Tumor invades the prostatic stroma surrounding ducts either by direct extension from the urothelial surface or by invasion from prostatic ducts"><label class="choice">Tumor invades the prostatic stroma surrounding ducts either by direct extension from the urothelial surface or by invasion from prostatic ducts</label>
-<input type="checkbox" class="element checkbox" id="A41" value="  - Tumor invades the periprostatic fat"><label class="choice">Tumor invades the periprostatic fat</label>
-<input type="checkbox" class="element checkbox" id="A42" value="  - Tumor invades adjacent structures"><label class="choice">Tumor invades adjacent structures</label>
-<input type="checkbox" class="element checkbox" id="A43" value="  - Tumor invades adjacent structures, extraprostatic invasion of the bladder wall"><label class="choice">Tumor invades adjacent structures, extraprostatic invasion of the bladder wall</label>
-<input type="checkbox" class="element checkbox" id="A44" value="  - Tumor invades adjacent structures, rectum"><label class="choice">Tumor invades adjacent structures, rectum</label>
-<input type="checkbox" class="element checkbox" id="A45" value="  - Tumor invades adjacent structures, Other (specify):"><label class="choice">Tumor invades adjacent structures, Other (specify):</label>
-</p></li>
+<p><label class="description">- Tumor extension (Male, Urothelial carcinoma of the prostatic urethra):</label> 
+<input type="checkbox"  id="A37" value="  - Carcinoma in situ, involvement of the prostatic urethra"><label >Carcinoma in situ, involvement of the prostatic urethra</label><br>
+<input type="checkbox"  id="A38" value="  - Carcinoma in situ, involvement of the prostatic ducts"><label >Carcinoma in situ, involvement of the prostatic ducts</label><br>
+<input type="checkbox"  id="A39" value="  - Tumor invades urethral subepithelial connective tissue immediately underlying the urothelium"><label >Tumor invades urethral subepithelial connective tissue immediately underlying the urothelium</label><br>
+<input type="checkbox"  id="A40" value="  - Tumor invades the prostatic stroma surrounding ducts either by direct extension from the urothelial surface or by invasion from prostatic ducts"><label >Tumor invades the prostatic stroma surrounding ducts either by direct extension from the urothelial surface or by invasion from prostatic ducts</label><br>
+<input type="checkbox"  id="A41" value="  - Tumor invades the periprostatic fat"><label >Tumor invades the periprostatic fat</label><br>
+<input type="checkbox"  id="A42" value="  - Tumor invades adjacent structures"><label >Tumor invades adjacent structures</label><br>
+<input type="checkbox"  id="A43" value="  - Tumor invades adjacent structures, extraprostatic invasion of the bladder wall"><label >Tumor invades adjacent structures, extraprostatic invasion of the bladder wall</label><br>
+<input type="checkbox"  id="A44" value="  - Tumor invades adjacent structures, rectum"><label >Tumor invades adjacent structures, rectum</label><br>
+<input type="checkbox"  id="A45" value="  - Tumor invades adjacent structures, Other (specify):"><label >Tumor invades adjacent structures, Other (specify):</label><br>
+</p>
 
-<li><p><label class="description">- Tumor extension (female):</label> 
-<input type="checkbox" class="element checkbox" id="A47" value="  - Noninvasive papillary carcinoma"><label class="choice">Noninvasive papillary carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A48" value="  - Carcinoma in situ"><label class="choice">Carcinoma in situ</label>
-<input type="checkbox" class="element checkbox" id="A49" value="  - Tumor invades subepithelial connective tissue"><label class="choice">Tumor invades subepithelial connective tissue</label>
-<input type="checkbox" class="element checkbox" id="A50" value="  - Tumor invades adjacent structures"><label class="choice">Tumor invades adjacent structure</label>
-<input type="checkbox" class="element checkbox" id="A51" value="  - Tumor invades adjacent structures, periurethral muscle (fibromuscular and adipose tissue)"><label class="choice">Tumor invades adjacent structures, periurethral muscle (fibromuscular and adipose tissue)</label>
-<input type="checkbox" class="element checkbox" id="A52" value="  - Tumor invades adjacent structures, anterior vagina"><label class="choice">Tumor invades adjacent structures, anterior vagina</label>
-<input type="checkbox" class="element checkbox" id="A53" value="  - Tumor invades adjacent structures, bladder wall"><label class="choice">Tumor invades adjacent structures, bladder wall</label>
-<input type="checkbox" class="element checkbox" id="A54" value="  - Tumor invades adjacent structures, rectum"><label class="choice">Tumor invades adjacent structures, rectum</label>
-<input type="checkbox" class="element checkbox" id="A55" value="  - Tumor invades adjacent structures, other (specify):"><label class="choice">Tumor invades adjacent structures, other (specify):</label>
-</p></li>
+<p><label class="description">- Tumor extension (female):</label> 
+<input type="checkbox"  id="A47" value="  - Noninvasive papillary carcinoma"><label >Noninvasive papillary carcinoma</label><br>
+<input type="checkbox"  id="A48" value="  - Carcinoma in situ"><label >Carcinoma in situ</label><br>
+<input type="checkbox"  id="A49" value="  - Tumor invades subepithelial connective tissue"><label >Tumor invades subepithelial connective tissue</label><br>
+<input type="checkbox"  id="A50" value="  - Tumor invades adjacent structures"><label >Tumor invades adjacent structure</label><br>
+<input type="checkbox"  id="A51" value="  - Tumor invades adjacent structures, periurethral muscle (fibromuscular and adipose tissue)"><label >Tumor invades adjacent structures, periurethral muscle (fibromuscular and adipose tissue)</label><br>
+<input type="checkbox"  id="A52" value="  - Tumor invades adjacent structures, anterior vagina"><label >Tumor invades adjacent structures, anterior vagina</label><br>
+<input type="checkbox"  id="A53" value="  - Tumor invades adjacent structures, bladder wall"><label >Tumor invades adjacent structures, bladder wall</label><br>
+<input type="checkbox"  id="A54" value="  - Tumor invades adjacent structures, rectum"><label >Tumor invades adjacent structures, rectum</label><br>
+<input type="checkbox"  id="A55" value="  - Tumor invades adjacent structures, other (specify):"><label >Tumor invades adjacent structures, other (specify):</label><br>
+</p>
 <br>
 </fieldset>
 </p>
@@ -586,8 +650,15 @@ function CopyToClipboard() {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins: </label></legend>
-<li><p><label class="description">- Proximal mucosal margin:</label>
-<select class="element select medium" ID="A56">
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Proximal mucosal margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A56">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
@@ -596,10 +667,15 @@ function CopyToClipboard() {
 	<option value="Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma">Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma</option>
 	<option value="Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia">Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Distal mucosal margin:</label>
-<select class="element select medium" ID="A57">
+<tr>
+<td>
+<label class="description">- Distal mucosal margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A57">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
@@ -608,10 +684,15 @@ function CopyToClipboard() {
 	<option value="Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma">Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma</option>
 	<option value="Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia">Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Deep soft tissue margin:</label>
-<select class="element select medium" ID="A58">
+<tr>
+<td>
+<label class="description">- Deep soft tissue margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A58">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
@@ -620,10 +701,15 @@ function CopyToClipboard() {
 	<option value="Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma">Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma</option>
 	<option value="Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia">Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">-  Other margin(s) (specify):</label>
-<select class="element select medium" ID="A59">
+<tr>
+<td>
+<label>-  Other margin(s) (specify):</label>
+</td>
+<td>
+<select class="element select large" ID="A59">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
@@ -632,34 +718,70 @@ function CopyToClipboard() {
 	<option value="Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma">Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma</option>
 	<option value="Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia">Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
-<li><p>- Number of regional lymph nodes examined:
-<input type="text" name="A60" class="element text small" ID="A60" size="10"></p>
-<p>- Number of lymph nodes involved:
-<input type="text" name="A61" class="element text small" ID="A61" size="10"></p></li>
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" name="A60" class="element text large" ID="A60" size="10">
+</td>
+</tr>
 
-<li><p>- Extracapsular spread:
-<select class="element select small" ID="A62">
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" name="A61" class="element text large" ID="A61" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extracapsular spread:</label>
+</td>
+<td>
+<select class="element select large" ID="A62">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" name="A63" class="element text small" ID="A63" size="20"></p>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" name="A63" class="element text large" ID="A63" size="20">
+</td>
+</tr>
 
-<p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" name="A64" class="element text small" ID="A64" size="20"></p></li>
-<br>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" name="A64" class="element text large" ID="A64" size="20">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -667,14 +789,26 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A65" value="m (multiple primary tumors) "><label class="choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A66" value="r (recurrent) "><label class="choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A67" value="y (post treatment) "><label class="choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td valign="top">
+<label class="description">  - TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox"  id="A65" value="m (multiple primary tumors) "><label >m (multiple primary)</label><br>
+<input type="checkbox"  id="A66" value="r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox"  id="A67" value="y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT) (for the male penile urethra and female urethra):<br>
-<select class="element select medium" ID="A68">
+<tr>
+<td>
+<label class="description">  - Primary tumor (pT) (for the male penile urethra and female urethra):</label>
+</td>
+<td>
+<select class="element select large" ID="A68">
 	<option value=""></option>
 	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -685,10 +819,15 @@ function CopyToClipboard() {
 	<option value="pT3: Tumor invades any of the following: corpus cavernosum, anterior vagina">pT3: Tumor invades any of the following: corpus cavernosum, anterior vagina</option>
 	<option value="pT4: Tumor invades other adjacent organs (eg, invasion of the bladder wall)">pT4: Tumor invades other adjacent organs (eg, invasion of the bladder wall)</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT) (for prostatic urethra):<br>
-<select class="element select medium" ID="A69">
+<tr>
+<td>
+<label class="description">  - Primary tumor (pT) (for prostatic urethra):</label>
+</td>
+<td>
+<select class="element select large" ID="A69">
 	<option value=""></option>
 	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -699,29 +838,44 @@ function CopyToClipboard() {
 	<option value="pT3: Tumor invades the periprostatic fat">pT3: Tumor invades the periprostatic fat</option>
 	<option value="pT4: Tumor invades other adjacent organs (eg, extraprostatic invasion of the bladder wall, rectal wall)">pT4: Tumor invades other adjacent organs (eg, extraprostatic invasion of the bladder wall, rectal wall)</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A70">
+<tr>
+<td>
+<label class="description">  - Regional lymph nodes (pN):</label>
+</td>
+<td>
+<select class="element select large" ID="A70">
 	<option value=""></option>
 	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="pN1: Single regional lymph node metastasis in the inguinal region or true pelvis (perivesical, obturator, internal [hypogastric] and external iliac), or presacral lymph node">pN1: Single regional lymph node metastasis in the inguinal region or true pelvis (perivesical, obturator, internal [hypogastric] and external iliac), or presacral lymph node</option>
 	<option value="pN2: Multiple regional lymph node metastasis in the inguinal region or true pelvis (perivesical, hypogastric, obturator, internal and external iliac, or presacral lymph node)">pN2: Multiple regional lymph node metastasis in the inguinal region or true pelvis (perivesical, hypogastric, obturator, internal and external iliac, or presacral lymph node)</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A71">
+<tr>
+<td valign="top" rowspan="2">
+<label class="description">  - Distant metastasis (pM): </label>
+</td>
+<td>
+<select class="element select large" ID="A71">
 	<option value=""></option>
 	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p>    - Specify site(s), if known:<br>
-<input type="text" name="A72" class="element text medium" ID="A72" size="35">
-</p></li>
-<br>
+<tr>
+<td>
+    - Specify site(s):
+<input type="text" name="A72" class="element text large" ID="A72" size="35">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -729,24 +883,24 @@ function CopyToClipboard() {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class="element checkbox" id="A73" value="  - Keratinizing squamous metaplasia"><label class="choice">Keratinizing squamous metaplasia</label>
-<input type="checkbox" class="element checkbox" id="A74" value="  - Inflammation/regenerative changes"><label class="choice">Inflammation/regenerative changes</label>
-<input type="checkbox" class="element checkbox" id="A75" value="  - Metaplasia (specify type):"><label class="choice">Metaplasia (specify type):</label>
-<input type="checkbox" class="element checkbox" id="A76" value="  - Urethritis cystica et glandularis"><label class="choice">Urethritis cystica et glandularis</label>
-<input type="checkbox" class="element checkbox" id="A77" value="  - Intestinal metaplasia"><label class="choice">Intestinal metaplasia</label>
+<p>
+<input type="checkbox"  id="A73" value="  - Keratinizing squamous metaplasia"><label >Keratinizing squamous metaplasia</label><br>
+<input type="checkbox"  id="A74" value="  - Inflammation/regenerative changes"><label >Inflammation/regenerative changes</label><br>
+<input type="checkbox"  id="A75" value="  - Metaplasia (specify type):"><label >Metaplasia (specify type):</label><br>
+<input type="checkbox"  id="A76" value="  - Urethritis cystica et glandularis"><label >Urethritis cystica et glandularis</label><br>
+<input type="checkbox"  id="A77" value="  - Intestinal metaplasia"><label >Intestinal metaplasia</label><br>
 
 <p>- Other (specify):
 <input type="text" name="A78" class="element text medium" ID="A78" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A79" name="A79" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -763,7 +917,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 09-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 10-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Urethra Resection 4.0.3.0 (Feb-2020), <br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

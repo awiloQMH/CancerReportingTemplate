@@ -10,7 +10,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -70,37 +70,37 @@ if (frm.A12.value !== ""){
 if (frm.A13.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A13.value + "\n";
 }
-
+*/
 if (frm.A14.value !== ""){
-	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A14.value + "\n";
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A14.value + "\n";
 }
 
 if (frm.A15.value !== ""){
-	Template += "\n" + "- Histologic type: (WHO 2019) " + "\n" + frm.A15.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 2019) : " + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
-	Template += "- Histologic grade: " + "\n" + frm.A16.value + "\n";
+	Template += "\n" + "- Histologic grade : " + frm.A16.value + "\n";
 }
 
 if (frm.A17.value !== ""){
-	Template += "- Tumor extension: " + "\n" + frm.A17.value + "\n";
+	Template += "- Tumor extension : " + frm.A17.value + "\n";
 }
 
 if (frm.A18.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A18.value + "\n";
+	Template += "- Lymphovascular invasion : " + frm.A18.value + "\n";
 }
 
 if (frm.A19.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A19.value + "\n";
+	Template += "- Perineural invasion : " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
-	Template += "- Treatment effect: " + "\n" + frm.A20.value + "\n";
+	Template += "- Treatment effect : " + frm.A20.value + "\n";
 }
 
 if (frm.A49.value !== ""){
-	Template += "- Tumor regression grade (Mandard 1994): " + "\n" + frm.A49.value + "\n";
+	Template += "- Tumor regression grade (Mandard 1994) : " + frm.A49.value + "\n";
 }
 
 if (frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value !== ""){
@@ -108,39 +108,39 @@ if (frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value !== ""){
 }
 
 if (frm.A21.value !== ""){
-	Template +=  "  - Proximal margins: "  +"\n" + "    - " + frm.A21.value + "\n" ;
+	Template +=  "  - Proximal margins: "  + frm.A21.value + "\n" ;
 }
 
 if (frm.A22.value !== ""){
-	Template +=  "  - Distal margins: "  +"\n" + "    - " +  frm.A22.value + "\n" ;
+	Template +=  "  - Distal margins: "  +  frm.A22.value + "\n" ;
 }
 
 if (frm.A23.value !== ""){
-	Template +=  "  - Radial margins: "  +"\n" + "    - " +  frm.A23.value + "\n" ;
+	Template +=  "  - Radial margins: "  +  frm.A23.value + "\n" ;
 }
 
 if (frm.A24.value !== ""){
-	Template +=  "  - Other margins (specify): "  +"\n" + "    - " +  frm.A24.value + "\n" ;
+	Template +=  "  - Other margins (specify): "  +  frm.A24.value + "\n" ;
 }
 
 if (frm.A25.value + frm.A26.value + frm.A27.value !== ""){
-	Template += "- Surgical margins: " + "\n";
+	Template += "\n" + "- Surgical margins: " + "\n";
 }
 
 if (frm.A25.value !== ""){
-	Template +=  "  - Mucosal margins: "  +"\n" + "    - " + frm.A25.value + "\n" ;
+	Template +=  "  - Mucosal margins: "  + frm.A25.value + "\n" ;
 }
 
 if (frm.A26.value !== ""){
-	Template +=  "  - Deep margins: "  +"\n" + "    - " +  frm.A26.value + "\n" ;
+	Template +=  "  - Deep margins: "  +  frm.A26.value + "\n" ;
 }
 
 if (frm.A27.value !== ""){
-	Template +=  "  - Other margins (specify): "  +"\n" + "    - " +  frm.A27.value + "\n" ;
+	Template +=  "  - Other margins (specify): "  +  frm.A27.value + "\n" ;
 }
 
 if (frm.A28.value + frm.A29.value + frm.A30.value + frm.A31.value + frm.A32.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
 if (frm.A28.value !== ""){
@@ -156,11 +156,11 @@ if (frm.A30.value !== ""){
 }
 
 if (frm.A31.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A31.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A31.value + "\n";
 }
 
 if (frm.A32.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A32.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A32.value + "\n";
 }
 
 if (document.getElementById("A33").checked || document.getElementById("A34").checked ||
@@ -262,13 +262,15 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
-<!--<img align = "center" src="under_construction.jpg" alt="UNDER CONSTRUCTION" width="48" height="58">
-Coding is not completed. Report cannot be generated.
- <hr>-->
 
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
@@ -283,38 +285,54 @@ Coding is not completed. Report cannot be generated.
 	</div>
 	
 <form>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="  - Endoscopic resection">Endoscopic resection</option> 
 	<option value="  - Esophagectomy">Esophagectomy</option>
 	<option value="  - Esophagogastrectomy">Esophagogastrectomy</option>
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Not specified">Not specified</option>
-	</select>
-</p></li>
+</select>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td valign="top">
 <label class="description">- Tumor site:</label> 
-<input type="checkbox" class="element checkbox" id="A02" value="  - Cervical (proximal) esophagus"><label class="choice">Cervical (proximal) esophagus</label>
-<input type="checkbox" class="element checkbox" id="A03" value="  - Mid esophagus, upper thoracic esophagus"><label class="choice">Mid esophagus, upper thoracic esophagus</label>
-<input type="checkbox" class="element checkbox" id="A04" value="  - Mid esophagus, middle thoracic esophagus"><label class="choice">Mid esophagus, middle thoracic esophagus</label>
-<input type="checkbox" class="element checkbox" id="A05" value="  - Mid esophagus, not otherwise specified"><label class="choice">Mid esophagus, not otherwise specified</label>
-<input type="checkbox" class="element checkbox" id="A06" value="  - Distal esophagus (low thoracic esophagus)"><label class="choice">Distal esophagus (low thoracic esophagus)</label>
-<input type="checkbox" class="element checkbox" id="A07" value="  - Esophagogastric junction (EGJ)"><label class="choice">Esophagogastric junction (EGJ)</label>
-<input type="checkbox" class="element checkbox" id="A08" value="  - Proximal stomach/cardia"><label class="choice">Proximal stomach/cardia</label>
-<input type="checkbox" class="element checkbox" id="A09" value="  - Other (specify):"><label class="choice">Other (specify):</label>
-<input type="checkbox" class="element checkbox" id="A10" value="  - Esophagus, not otherwise specified"><label class="choice">Esophagus, not otherwise specified</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox"  id="A02" value="  - Cervical (proximal) esophagus"><label >Cervical (proximal) esophagus</label><br>
+<input type="checkbox"  id="A03" value="  - Mid esophagus, upper thoracic esophagus"><label >Mid esophagus, upper thoracic esophagus</label><br>
+<input type="checkbox"  id="A04" value="  - Mid esophagus, middle thoracic esophagus"><label >Mid esophagus, middle thoracic esophagus</label><br>
+<input type="checkbox"  id="A05" value="  - Mid esophagus, not otherwise specified"><label >Mid esophagus, not otherwise specified</label><br>
+<input type="checkbox"  id="A06" value="  - Distal esophagus (low thoracic esophagus)"><label >Distal esophagus (low thoracic esophagus)</label><br>
+<input type="checkbox"  id="A07" value="  - Esophagogastric junction (EGJ)"><label >Esophagogastric junction (EGJ)</label><br>
+<input type="checkbox"  id="A08" value="  - Proximal stomach/cardia"><label >Proximal stomach/cardia</label><br>
+<input type="checkbox"  id="A09" value="  - Other (specify):"><label >Other (specify):</label><br>
+<input type="checkbox"  id="A10" value="  - Esophagus, not otherwise specified"><label >Esophagus, not otherwise specified</label><br>
+</td>
+</tr>
 
 
-<li><p>
-<label class="description">- Relationship of tumor to esophagogastric junction:</label> 
-<select class="element select medium" ID="A11">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Relationship of tumor to EGJ:</label> 
+</td>
+<td>
+<select class="element select large" ID="A11">
 	<option value=""></option>
 	<option value="  - Tumor is entirely located within the tubular esophagus and does not involve the esophagogastric junction">Tumor is entirely located within the tubular esophagus and does not involve the esophagogastric junction</option>
 	<option value="  - Tumor midpoint lies in the distal esophagus and tumor involves the esophagogastric junction">Tumor midpoint lies in the distal esophagus and tumor involves the esophagogastric junction</option>
@@ -323,144 +341,193 @@ Coding is not completed. Report cannot be generated.
 	<option value="  - Not specified">Not specified</option>
 	<option value="  - Cannot be assessed">Cannot be assessed</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<p>- Distance of tumor center from esophagogastric junction (mm):
-<input type="text" class="element text small" ID="A12" size="10"></p><li>
+<tr>
+<td>
+- Distance of tumor center from EGJ (mm):
+<input type="text" class="element text small" ID="A12" size="10">
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A13">
+</td>
+<td>
+<select class="element select large" ID="A13">
 		<option value=""></option>
 		<option value=" Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value=" All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value=" Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
-</p></li>
-
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A14" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
 <label class="description">- Histologic types (2019):</label> 
-<select class="element select medium" ID="A15">
+</td>
+<td>
+<select class="element select large" ID="A15">
 	<option value=""></option>
-	<option value="  - Adenocarcinoma">Adenocarcinoma</option>
-	<option value="  - Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>
-	<option value="  - Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
-	<option value="  - Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-	<option value="  - Squamous cell carcinoma">Squamous cell carcinoma</option>
-	<option value="  - Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>	
-	<option value="  - Spindle cell squamous cell carcinoma">Spindle cell squamous cell carcinoma</option>
-	<option value="  - Verrucous squamous cell carcinoma">Verrucous squamous cell carcinoma</option>
-	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>
-	<option value="  - Lymphoepithelioma-like carcinoma">Lymphoepithelioma-like carcinoma</option>
-	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="  - Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
-	<option value="  - Mixed squamous cell carcinoma-neuroendocrine carcinoma">Mixed squamous cell carcinoma-neuroendocrine carcinoma</option>
-	<option value="  - Mixed adenocarcinoma-neuroendocrine carcinoma">Mixed adenocarcinoma-neuroendocrine carcinoma</option>
-	<option value="  - Mixed adenocarcinoma-neuroendocrine tumor">Mixed adenocarcinoma-neuroendocrine tumor</option>
-	<option value="  - G1: Well-differentiated neuroendocrine tumor">G1: Well-differentiated neuroendocrine tumor</option>
-	<option value="  - G2: Well-differentiated neuroendocrine tumor">G2: Well-differentiated neuroendocrine tumor</option>
-	<option value="  - G3: Well-differentiated neuroendocrine tumor">G3: Well-differentiated neuroendocrine tumor</option>
-	<option value="  - Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
-	<option value="  - Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+	<option value="Adenocarcinoma">Adenocarcinoma</option>
+	<option value="Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>
+	<option value="Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
+	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>	
+	<option value="Spindle cell squamous cell carcinoma">Spindle cell squamous cell carcinoma</option>
+	<option value="Verrucous squamous cell carcinoma">Verrucous squamous cell carcinoma</option>
+	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Lymphoepithelioma-like carcinoma">Lymphoepithelioma-like carcinoma</option>
+	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
+	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+	<option value="Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
+	<option value="Mixed squamous cell carcinoma-neuroendocrine carcinoma">Mixed squamous cell carcinoma-neuroendocrine carcinoma</option>
+	<option value="Mixed adenocarcinoma-neuroendocrine carcinoma">Mixed adenocarcinoma-neuroendocrine carcinoma</option>
+	<option value="Mixed adenocarcinoma-neuroendocrine tumor">Mixed adenocarcinoma-neuroendocrine tumor</option>
+	<option value="G1: Well-differentiated neuroendocrine tumor">G1: Well-differentiated neuroendocrine tumor</option>
+	<option value="G2: Well-differentiated neuroendocrine tumor">G2: Well-differentiated neuroendocrine tumor</option>
+	<option value="G3: Well-differentiated neuroendocrine tumor">G3: Well-differentiated neuroendocrine tumor</option>
+	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Histologic grade:</label>
-<select class="element select medium" ID="A16">
+</td>
+<td>
+<select class="element select large" ID="A16">
 	<option value=""></option>
-	<option value="  - G1: Well differentiated">G1: Well differentiated</option>
-	<option value="  - G2: Moderately differentiated">G2: Moderately differentiated</option>
-	<option value="  - G3: Poorly differentiated, undifferentiated">G3: Poorly differentiated, undifferentiated</option>
-	<option value="  - GX: Cannot be assessed">GX: Cannot be assessed</option>	
-	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="G1: Well differentiated">G1: Well differentiated</option>
+	<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
+	<option value="G3: Poorly differentiated, undifferentiated">G3: Poorly differentiated, undifferentiated</option>
+	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
+	<option value="Other (specify):">Other (specify):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor extension:</label>
-<select class="element select medium" ID="A17">
+</td>
+<td>
+<select class="element select large" ID="A17">
 	<option value=""></option>
-	<option value="  - No evidence of primary tumor">No evidence of primary tumor</option>
-	<option value="  - High-grade dysplasia/carcinoma in situ, defined as malignant cells confined to the epithelium by the basement membrane">High-grade dysplasia/carcinoma in situ, defined as malignant cells confined to the epithelium by the basement membrane</option>
-	<option value="  - Tumor invades lamina propria">Tumor invades lamina propria</option>
-	<option value="  - Tumor invades muscularis mucosae">Tumor invades muscularis mucosae</option>
-	<option value="  - Tumor invades submucosa">Tumor invades submucosa</option>	
-	<option value="  - Tumor invades muscularis propria">Tumor invades muscularis propria</option>	
-	<option value="  - Tumor invades adventitia">Tumor invades adventitia</option>
-	<option value="  - Tumor invades the serosa (visceral peritoneum)">Tumor invades the serosa (visceral peritoneum)</option>	
-	<option value="  - Tumor directly invades adjacent structures/organs (specify:)">Tumor directly invades adjacent structures/organs (specify:)</option>	
+	<option value="No evidence of primary tumor">No evidence of primary tumor</option>
+	<option value="High-grade dysplasia/carcinoma in situ, defined as malignant cells confined to the epithelium by the basement membrane">High-grade dysplasia/carcinoma in situ, defined as malignant cells confined to the epithelium by the basement membrane</option>
+	<option value="Tumor invades lamina propria">Tumor invades lamina propria</option>
+	<option value="Tumor invades muscularis mucosae">Tumor invades muscularis mucosae</option>
+	<option value="Tumor invades submucosa">Tumor invades submucosa</option>	
+	<option value="Tumor invades muscularis propria">Tumor invades muscularis propria</option>	
+	<option value="Tumor invades adventitia">Tumor invades adventitia</option>
+	<option value="Tumor invades the serosa (visceral peritoneum)">Tumor invades the serosa (visceral peritoneum)</option>	
+	<option value="Tumor directly invades adjacent structures/organs (specify:)">Tumor directly invades adjacent structures/organs (specify:)</option>	
 	<option value="  - Cannot be assessed">Cannot be assessed</option>	
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p><label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A18">
+<tr>
+<td>
+<label class="description">- Lymphovascular invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A18">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A19">
+</td>
+<td>
+<select class="element select large" ID="A19">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td rowspan="2" valign="top">
 <label class="description">- Treatment effect: </label>
-<select class="element select medium" ID="A20">
+</td>
+<td>
+<select class="element select large" ID="A20">
 	<option value=""></option>
-	<option value="  - No known presurgical therapy">No known presurgical therapy</option>
-	<option value="  - Score 0, no viable cancer cells (complete response)">Score 0, no viable cancer cells (complete response)</option>
-	<option value="  - Score 1, single cells or rare small groups of cancer cells (near complete response)">Score 1, single cells or rare small groups of cancer cells (near complete response)</option>
-	<option value="  - Score 2, residual cancer with evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response)">Score 2, residual cancer with evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response)</option>
-	<option value="  - Score 3, extensive residual cancer with no evident tumor regression (poor or no response)">Score 3, extensive residual cancer with no evident tumor regression (poor or no response)</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Score 0, no viable cancer cells (complete response)">Score 0, no viable cancer cells (complete response)</option>
+	<option value="Score 1, single cells or rare small groups of cancer cells (near complete response)">Score 1, single cells or rare small groups of cancer cells (near complete response)</option>
+	<option value="Score 2, residual cancer with evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response)">Score 2, residual cancer with evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response)</option>
+	<option value="Score 3, extensive residual cancer with no evident tumor regression (poor or no response)">Score 3, extensive residual cancer with no evident tumor regression (poor or no response)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
 
-<li><p>
-<label class="description">- Alternative tumor regression grading (Mandard 1994): </label>
-<select class="element select medium" ID="A49">
+<tr>
+<td>
+<label>- Tumor regression grading (Mandard 1994):</label> 
+<select class="element select small" ID="A49">
 	<option value=""></option>
-	<option value="  - TRG 1 (No residual cancer)">TRG 1 (No residual cancer)</option>
-	<option value="  - TRG 2 (Rare residual cancer cells)">TRG 2 (Rare residual cancer cells)</option>
-	<option value="  - TRG 3 (Fibrosis outgrowing residual cancer)">TRG 3 (Fibrosis outgrowing residual cancer)</option>
-	<option value="  - TRG 4 (Residual cancer outgrowing fibrosis)">TRG 4 (Residual cancer outgrowing fibrosis)</option>
-	<option value="  - TRG 5 (Absence of regressive changes)">TRG 5 (Absence of regressive changes)</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="TRG 1 (No residual cancer)">TRG 1 (No residual cancer)</option>
+	<option value="TRG 2 (Rare residual cancer cells)">TRG 2 (Rare residual cancer cells <10%)</option>
+	<option value="TRG 3 (Fibrosis outgrowing residual cancer)">TRG 3 (Fibrosis outgrowing residual cancer 10-50%)</option>
+	<option value="TRG 4 (Residual cancer outgrowing fibrosis)">TRG 4 (Residual cancer outgrowing fibrosis >50%)</option>
+	<option value="TRG 5 (Absence of regressive changes)">TRG 5 (Absence of regressive changes)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
+</table>
+</p>
 
-<br>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins for esophagus resection specimens:</label></legend>
-<li><p>- Proximal margin:<br>
-<select class="element select medium" ID="A21">
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Proximal margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A21">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
@@ -472,10 +539,15 @@ Coding is not completed. Report cannot be generated.
 	<option value="Uninvolved by invasive carcinoma, involved by low grade glandular dysplasia">Uninvolved by invasive carcinoma, involved by low grade glandular dysplasia</option>
 	<option value="Uninvolved by invasive carcinoma, involved by intestinal metaplasia (Barrett esophagus) without dysplasia">Uninvolved by invasive carcinoma, involved by intestinal metaplasia (Barrett esophagus) without dysplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Distal margin:<br>
-<select class="element select medium" ID="A22">
+<tr>
+<td>
+<label class="description">- Distal margin:<br>
+</td>
+<td>
+<select class="element select large" ID="A22">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
@@ -487,26 +559,39 @@ Coding is not completed. Report cannot be generated.
 	<option value="Uninvolved by invasive carcinoma, involved by low grade glandular dysplasia">Uninvolved by invasive carcinoma, involved by low grade glandular dysplasia</option>
 	<option value="Uninvolved by invasive carcinoma, involved by intestinal metaplasia (Barrett esophagus) without dysplasia">Uninvolved by invasive carcinoma, involved by intestinal metaplasia (Barrett esophagus) without dysplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Radial margin:<br>
-<select class="element select medium" ID="A23">
+<tr>
+<td>
+<label class="description">- Radial margin:<br>
+</td>
+<td>
+<select class="element select large" ID="A23">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Other margin(s) (specify: ):<br>
-<select class="element select medium" ID="A24">
+<tr>
+<td>
+<label>- Other margin(s) (specify: ):</label>
+</td>
+<td>
+<select class="element select large" ID="A24">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
 	<option value="Involved by tumor">Involved by tumor</option>
 </select>
-</p></li>
+</td>
+</tr>
+</table>
+</p>
 
-<br>
 </fieldset>
 </p>
 
@@ -514,8 +599,16 @@ Coding is not completed. Report cannot be generated.
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins for endoscopic resection:</label></legend>
 
-<li><p>- Mucosal margin: <br>
-<select class="element select medium" ID="A25">
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Mucosal margin: </label>
+</td>
+<td>
+<select class="element select large" ID="A25">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
@@ -527,27 +620,39 @@ Coding is not completed. Report cannot be generated.
 	<option value="Uninvolved by invasive carcinoma, involved by low grade glandular dysplasia">Uninvolved by invasive carcinoma, involved by low grade glandular dysplasia</option>
 	<option value="Uninvolved by invasive carcinoma, involved by intestinal metaplasia (Barrett esophagus) without dysplasia">Uninvolved by invasive carcinoma, involved by intestinal metaplasia (Barrett esophagus) without dysplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Deep margin:<br>
-<select class="element select medium" ID="A26">
+<tr>
+<td>
+<label class="description">- Deep margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A26">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
 	<option value="Involved by tumor">Involved by tumor</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Other margin(s) (specify: ): <br>
-<select class="element select medium" ID="A27">
+<tr>
+<td>
+<label>- Other margin(s) (specify: ): </label>
+</td>
+<td>
+<select class="element select large" ID="A27">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by tumor, specify distance (mm):">Uninvolved by tumor, specify distance (mm):</option>
 	<option value="Involved by tumor">Involved by tumor</option>
 </select>
-</p></li>
+</td>
+</tr>
+</table>
+</p>
 
-<br>
 </fieldset>
 </p>
 
@@ -555,28 +660,61 @@ Coding is not completed. Report cannot be generated.
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional ymph nodes: </label></legend>
 
-<li><p>- Number of regional lymph nodes examined:
-<input type="text" class="element text small" ID="A28" size="10"></p>
+<p>
+<table border="1">
+<col width="75%">
 
-<p>- Number of lymph nodes involved:
-<input type="text" class="element text small" ID="A29" size="10"></p></li>
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A28" size="10">
+</td>
+</tr>
 
-<li><p>- Extracapsular spread:
-<select class="element select small" ID="A30">
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A29" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extracapsular spread:</label>
+</td>
+<td>
+<select class="element select large" ID="A30">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" class="element text small" ID="A31" size="20"></p>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A31" size="20">
+</td>
+</tr>
 
-<p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" class="element text small" ID="A32" size="20"></p></li>
-
-<br>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A32" size="20">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -584,20 +722,33 @@ Coding is not completed. Report cannot be generated.
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>
-  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A33" value=" m (multiple primary tumors) "><label class="choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A34" value=" r (recurrent) "><label class="choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A35" value=" y (post treatment) "><label class="choice">y (post treatment)</label>
-</p><//li>
+<p>
+<table border="1">
+<col width="40%">
 
-<li><p>  - Primary tumor (pT):<br>
-<select class="element select medium" ID="A36">
+<tr>
+<td>
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox"  id="A33" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox"  id="A34" value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox"  id="A35" value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A36">
 	<option value=""></option>
 	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pTis: High-grade dysplasia, defined as malignant cells confined to the epithelium by basement membrane">pTis: High-grade dysplasia, defined as malignant cells confined to the epithelium by basement membrane</option>
 	<option value="  - pT1: Tumor invades the lamina propria or muscularis mucosae">pT1: Tumor invades the lamina propria or muscularis mucosae</option>
+
 	<option value="  - pT1a: Tumor invades the lamina propria or muscularis mucosae">pT1a: Tumor invades the lamina propria or muscularis mucosae</option>
 	<option value="  - pT1b: Tumor invades the submucosa">pT1b: Tumor invades the submucosa</option>
 	<option value="  - pT2: Tumor invades the muscularis propria">pT2: Tumor invades the muscularis propria</option>
@@ -606,10 +757,15 @@ Coding is not completed. Report cannot be generated.
 	<option value="  - pT4a: Tumor invades the pleura, pericardium, azygos vein, diaphragm, or peritoneum">pT4a: Tumor invades the pleura, pericardium, azygos vein, diaphragm, or peritoneum</option>
 	<option value="  - pT4b: Tumor invades other adjacent structures, such as aorta, vertebral body, or airway">pT4b: Tumor invades other adjacent structures, such as aorta, vertebral body, or airway</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A37">
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN): </label>
+</td>
+<td>
+<select class="element select large" ID="A37">
 	<option value=""></option>
 	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
@@ -617,45 +773,56 @@ Coding is not completed. Report cannot be generated.
 	<option value="  - pN2: Metastasis in three to six regional lymph nodes">pN2: Metastasis in three to six regional lymph nodes</option>
 	<option value="  - pN3: Metastasis in seven or more regional lymph nodes">pN3: Metastasis in seven or more regional lymph nodes</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A38">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Distant metastasis (pM): </label>
+</td>
+<td>
+<select class="element select large" ID="A38">
 	<option value=""></option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
+</td>
+</tr>
+
+<tr>
+<td>
+    - Specify site(s), if known:
+<input type="text" class="element text medium" ID="A39" size="35">
+</td>
+</tr>
+</table>
 </p>
 
-<p>    - Specify site(s), if known:<br>
-<input type="text" class="element text medium" ID="A39" size="35">
-</p></li>
-<br>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
-<li><p>
-<input type="checkbox" class="element checkbox" id="A40" value="  - Intestinal metaplasia (Barrett’s esophagus)"><label class="choice">Intestinal metaplasia (Barrett’s esophagus)</label>
-<input type="checkbox" class="element checkbox" id="A41" value="  - Low-grade squamous dysplasia"><label class="choice">Low-grade squamous dysplasia</label>
-<input type="checkbox" class="element checkbox" id="A42" value="  - High-grade squamous dysplasia"><label class="choice">High-grade squamous dysplasia</label>
-<input type="checkbox" class="element checkbox" id="A43" value="  - Low-grade glandular dysplasia"><label class="choice">Low-grade glandular dysplasia</label>
-<input type="checkbox" class="element checkbox" id="A44" value="  - High-grade glandular dysplasia"><label class="choice">High-grade glandular dysplasia</label>
-<input type="checkbox" class="element checkbox" id="A45" value="  - Esophagitis (type):"><label class="choice">Esophagitis (type):</label>
-<input type="checkbox" class="element checkbox" id="A46" value="  - Gastritis (type):"><label class="choice">Gastritis (type):</label>
+<p>
+<input type="checkbox"  id="A40" value="  - Intestinal metaplasia (Barrett’s esophagus)"><label >Intestinal metaplasia (Barrett’s esophagus)</label><br>
+<input type="checkbox"  id="A41" value="  - Low-grade squamous dysplasia"><label >Low-grade squamous dysplasia</label><br>
+<input type="checkbox"  id="A42" value="  - High-grade squamous dysplasia"><label >High-grade squamous dysplasia</label><br>
+<input type="checkbox"  id="A43" value="  - Low-grade glandular dysplasia"><label >Low-grade glandular dysplasia</label><br>
+<input type="checkbox"  id="A44" value="  - High-grade glandular dysplasia"><label >High-grade glandular dysplasia</label><br>
+<input type="checkbox"  id="A45" value="  - Esophagitis (type):"><label >Esophagitis (type):</label><br>
+<input type="checkbox"  id="A46" value="  - Gastritis (type):"><label >Gastritis (type):</label><br>
 </p>
 <p>- Other (specify):
 <input type="text" class="element text medium" ID="A47" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A48" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -672,7 +839,7 @@ Coding is not completed. Report cannot be generated.
 <br>
 
 <div id="footer">
-Last upated on 09-Apr-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 06-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Esophagus 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

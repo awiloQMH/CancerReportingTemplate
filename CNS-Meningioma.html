@@ -25,11 +25,11 @@ if (frm.A03.value !== ""){
 }
 
 if (frm.A04.value !== ""){
-	Template += "- Mitotic count (adjusted for Nikon 22 mm eyepiece): " + "\n" + "  - " + frm.A04.value + "\n";
+	Template += "- Mitotic count (adjusted for Nikon 22 mm eyepiece): " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
-	Template += "- Brain invasion: " + "\n" + "  - " + frm.A05.value + "\n";
+	Template += "- Brain invasion: " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value + frm.A07.value + frm.A08.value + frm.A09.value + frm.A10.value !== ""){
@@ -37,27 +37,27 @@ if (frm.A06.value + frm.A07.value + frm.A08.value + frm.A09.value + frm.A10.valu
 }
 
 if (frm.A06.value !== ""){
-	Template += "  - Increased cellularity: " + "\n" + "    - " + frm.A06.value + "\n";
+	Template += "  - Increased cellularity: " + frm.A06.value + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "  - Patternless growth: " + "\n" + "    - "  + frm.A07.value + "\n";
+	Template += "  - Patternless growth: " + frm.A07.value + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "  - Increased nuclear to cytoplasmic ratio (small cell change): " + "\n" + "    - " + frm.A08.value + "\n";
+	Template += "  - Increased nuclear to cytoplasmic ratio (small cell change): " + frm.A08.value + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "  - Prominent nucleoli: " + "\n" + "    - "  + frm.A09.value + "\n";
+	Template += "  - Prominent nucleoli: " + frm.A09.value + "\n";
 }
 
 if (frm.A10.value !== ""){
-	Template += "  - Necrosis: " + "\n" + "    - "  +  frm.A10.value + "\n" ;
+	Template += "  - Necrosis: " + frm.A10.value + "\n" ;
 }
 
 if (frm.A11.value !== ""){
-	Template += "- Anaplasia (sarcoma, carcinoma, or melanoma-like histology): " + "\n" + "   - "  + frm.A11.value + "\n" ;
+	Template += "- Anaplasia (sarcoma, carcinoma, or melanoma-like histology): " + frm.A11.value + "\n" ;
 }
 
 if (frm.A12.value !== ""){
@@ -81,7 +81,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -91,9 +96,23 @@ function CopyToClipboard() {
 		<h2>Meningioma</h2>
 	</div>
 <form>
-<li>
-<p><label class="description">- Histological type (WHO 2016):</label>
-<select class="element select medium" ID="A01">
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<p>
+<label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A03" class="element textarea medium"></textarea>
+</p>
+
+<p>
+<table border="1">
+<col width="70%">
+<tr>
+<td>
+<label class="description">- Histological type (WHO 2016):</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
  <option value=""></option>
  <option value="Meningioma">Meningioma</option> 
  <option value="Meningothelial meningioma">Meningothelial meningioma</option>
@@ -112,11 +131,16 @@ function CopyToClipboard() {
  <option value="Rhabdoid meningioma">Rhabdoid meningioma</option>
  <option value="Anaplastic (malignant) meningioma">Anaplastic (malignant) meningioma</option>
 </select>
-</p>
-</li>
-<li>
-<p><label class="description">- WHO Grade:</label> 
-<select class="element select medium" ID="A02">
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label class="description">- WHO Grade:</label> 
+</td>
+<td>
+<select class="element select large" ID="A02">
  <option value=""></option>
  <option value="I">I</option>
  <option value="II">II</option>
@@ -124,36 +148,52 @@ function CopyToClipboard() {
  <option value="Not applicable">Not applicable</option>
  <option value="Cannot be determined, specify details:">Cannot be determined, specify details:</option>
 </select>
-</p>
-<li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Tumor histology and immunohistochemical studies: </label>
- <textarea ID="A03" name="A03" class="element textarea medium"></textarea>
-</p></li>
-
-<li>
-<p>
+<tr>
+<td>
 <label class="description">- Mitotic count (adjusted for Nikon 22 mm eyepiece):</label>
-<select class="element select medium" ID="A04">
+</td>
+<td>
+<select class="element select large" ID="A04">
 	<option value=""></option>
 	<option value="< 6 / 10 HPFs"> < 6 / 10 HPFs</option>
 	<option value="> or = 6 / 10 HPFs (atypical meningioma)"> > or = 6 / 10 HPFs (atypical meningioma)</option>
 	<option value="> or = 30 / 10 HPFs (anaplastic meningioma)"> > or = 30 / 10 HPFs (anaplastic meningioma)</option> 
 </select>
-</p>
-</li>
-<li>
-<p>
+</td>
+</tr>
+
+
+<tr>
+<td>
 <label class="description">- Brain invasion:</label>
-<select class="element select medium" ID="A05">
+</td>
+<td>
+<select class="element select large" ID="A05">
 	<option value=""></option>
 	<option value="Present (WHO Grade II)">Present (WHO Grade II)</option>
 	<option value="Absent"> Absent</option>
 	<option value="No brain parenchyma seen">No brain parenchyma seen</option> 
 </select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Anaplasia (sarcoma, carcinoma, or melanoma-like histology):</label>
+</td>
+<td>
+<select class="element select large" ID="A11">
+	<option value=""></option>
+	<option value="Present (WHO Grade II)">Present (WHO Grade II)</option>
+	<option value="Absent"> Absent</option>
+</select>
+</td>
+</tr>
+</table>
 </p>
-</li>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -161,65 +201,62 @@ function CopyToClipboard() {
 <p>
 - at least 3 out of 5 required for diagnosis of "atypical meningioma"
 </p>
-<br>
-<li>
-<p>	
-- Increased cellularity:<br>
-    <select class="element select small" ID="A06">
-			<option value=""></option>
-			<option value="Present">Present</option>
-			<option value="Absent">Absent</option>
-	</select>
-	</p>
-</li>
-<li><p>
-- Patternless growth:<br>
-    <select class="element select small" ID="A07">
-			<option value=""></option>
-			<option value="Present">Present</option>
-			<option value="Absent">Absent</option>
-	</select>
- </p></li>
-<li><p>
-- Increased nuclear to cytoplasmic ratio (small cell change):<br>
-    <select class="element select small" ID="A08">
-			<option value=""></option>
-			<option value="Present">Present</option>
-			<option value="Absent">Absent</option>
-	</select></p></li>
+<p>
+<table border="1">
+<col width="70%">
 
-<li><p>
-- Prominent nucleoli:<br>
-    <select class="element select small" ID="A09">
+<tr>
+<td>- Increased cellularity:</td>
+    <td><select class="element select large" ID="A06">
 			<option value=""></option>
 			<option value="Present">Present</option>
 			<option value="Absent">Absent</option>
-	</select></p></li>
+	</select></td>
+<tr>
 
-<li><p>
-- Necrosis:<br> 
-    <select class="element select small" ID="A10">
+</tr>
+<td>- Patternless growth:</td>
+    <td><select class="element select large" ID="A07">
+			<option value=""></option>
+			<option value="Present">Present</option>
+			<option value="Absent">Absent</option>
+	</select></td>
+</tr>
+<tr>
+<td>- Increased nuclear to cytoplasmic ratio (small cell change):</td>
+    <td><select class="element select large" ID="A08">
+			<option value=""></option>
+			<option value="Present">Present</option>
+			<option value="Absent">Absent</option>
+	</select></td>
+</tr>
+<tr>
+<td>- Prominent nucleoli:</td>
+    <td><select class="element select large" ID="A09">
+			<option value=""></option>
+			<option value="Present">Present</option>
+			<option value="Absent">Absent</option>
+	</select></td>
+</tr>
+<tr>
+<td>- Necrosis:</td> 
+    <td><select class="element select large" ID="A10">
 			<option value=""></option>
 			<option value="Present">Present</option>
 			<option value="Present, history of prior treatment noted">Present, history of prior treatment noted</option>
 			<option value="Absent">Absent</option>
-	</select></p></li>
-<br>
+	</select></td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
 </fieldset>
 </p>
 
-<li><p>
-<label class="description">- Anaplasia (sarcoma, carcinoma, or melanoma-like histology):</label>
-<select class="element select medium" ID="A11">
-	<option value=""></option>
-	<option value="Present (WHO Grade II)">Present (WHO Grade II)</option>
-	<option value="Absent"> Absent</option>
-</select>
-</p></li>
-
-<li><p><label class="description">- Additional notes:</label>
+<p><label class="description">- Additional notes:</label>
  <textarea ID="A12" name="A12" class="element textarea medium" style="border-color:grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -234,7 +271,7 @@ function CopyToClipboard() {
 </form>
 <br>
 <div id="footer">
-Last upated on 23-Jan-2019, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 06-June-2019, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

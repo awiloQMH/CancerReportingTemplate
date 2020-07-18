@@ -14,50 +14,39 @@ function updateDescription (frm)
 
 if (frm.A10.value !== ""){
 	Template += "- Tumor Proportion Score (TPS)  : " + frm.A10.value + "\n";
-};
+}
 
 if (frm.A11.value !== ""){
 	Template += "- Combined positive score (CPS) : " + frm.A11.value + "\n";
-};
+}
 
-if (frm.A12.value !== ""){
-	Template += "- Tumor cell (%) TC)  : " + frm.A12.value + "\n";
-};
-
-if (frm.A13.value !== ""){
-	Template += "- Immune cell % (IC) : " + frm.A13.value + "\n";
-};
 if (frm.A04.value !== ""){
-	Template += "\n" + "- Tumor cells with membranous signals > or = 1 (%) : " + frm.A04.value + "\n";
-};
+	Template += "\n" + "- Tumor cells with membranous signals > or = 1+ (%) : " + frm.A04.value + "\n";
+}
 
 if (frm.A05.value !== ""){
 	Template += "  - " + frm.A05.value + "\n";
-};
+}
 
 if (frm.A06.value !== ""){
 	Template += "- Proportion of immune cells among the tumor (%) : " + frm.A06.value + "\n";
-};
+}
 
 if (frm.A07.value !== ""){
-	Template += "  - Proportion of immune cells with > or = 1 signals (%) : " + frm.A07.value + "\n";
-};
-
-if (frm.A08.value !== ""){
-	Template += "  - "+ frm.A08.value + "\n";
-};
+	Template += "  - Proportion of immune cells with > or = 1+ signals, among immune cells (%) : " + frm.A07.value + "\n";
+}
 
 if (frm.A01.value !== ""){
 	Template += "\n" + "- Antibody (anti-PD-L1, anti-CD274): " + frm.A01.value + "\n";
-};
+}
 
 if (frm.A02.value !== ""){
 	Template += "- Number of viable tumor cells: " + frm.A02.value + "\n";
-};
+}
 
 if (frm.A03.value !== ""){
 	Template += "- Fixation time in buffered formalin : " + frm.A03.value + "\n";
-};
+}
 
 
 frm.holdtext.value = Template;
@@ -78,57 +67,65 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Approved-Immune-Checkpoint-Inhibitors.pdf" target="_blank">
+		<h2><a href=".\cap\Approved-Immune-Checkpoint-Inhibitors-20200605.pdf" target="_blank">
 		<div class="tooltip">
 		PD-L1 immunohistochemistry test
-		<span class="tooltiptext">FDA approved therapy (09-Mar-2019)</span>
+		<span class="tooltiptext">FDA approved therapy (05-June-2020)</span>
 		</div>
 		</a></h2>
 	</div>
 <form>
 <p>
-Immuno-oncology trends can be followed through portals in <a href="https://www.cancerresearch.org/scientists/immuno-oncology-landscape" target="_blank">Cancer Research Institute</a> (New York), <a href="https://www.keytrudahcp.com/biomarker-testing/ target="_blank"">Keytruda: pathologist centre </a> 
+Immuno-oncology trends can be followed through portals in <a href="https://www.cancerresearch.org/scientists/immuno-oncology-landscape" target="_blank">Cancer Research Institute</a> (New York), <a href="https://www.keytrudahcp.com/biomarker-testing/" target="_blank">Keytruda: pathologist centre </a> 
 and staining examples in lung cancers can be found in the <a href=".\cap\iaslc_pd-l1_atlas_mar2018_lo-res.pdf" target="_blank">IASLC Color Atlas</a>.
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;"> 
 <legend><label class="description">Analytical details:</label></legend>
+<p>
+<table border="1">
+<col width="50%">
 
-<p><fieldset style="border-color:#e6e6ff;">	
-<li><p><label class="description">- <a href=".\cap\PD-L1 Interpretation Guide.pdf" target="_blank">Tumor cells with membranous signals > or = 1 (%)</a> :</label>
-<input type="text" class="element text small" name="A04" ID="A04" size="35">
-</p>
-<p><label>- Further details:</label>
-<input type="text" class="element text small" name="A05" ID="A05" size="35">
-</p></li>
-</fieldset></p>
+<tr>	
+<td rowspan="2" valign="top"><label class="description">- <a href=".\cap\PD-L1 Interpretation Guide.pdf" target="_blank">Tumor cells (%)</a> :</label>
+(with membrane signals > or = 1+ among 100 tumor cells)
+</td>
+<td><input type="text" class="element text large" ID="A04" size="35"></td>
+</tr>
 
-<p><fieldset style="border-color:#e6e6ff;">
-<li><p><label class="description">- Proportion of immune cells among the tumor (%) :</label>
-<input type="text" class="element text small" name="A06" ID="A06" size="35">
-</p>
+<tr>
+<td><label>- Further details : </label>
+<input type="text" class="element text large" ID="A05" size="35"></td>
+</tr>
 
-<p><label class="description">- Proportion of immune cells with > or = 1 signals (%) :</label>
-<input type="text" class="element text small" name="A07" ID="A07" size="35">
-</p>
+<tr>
+<td rowspan="2" valign="top"><label class="description">- Immune cells among the tumor (%):</label>
+(any types of signals > or = 1+)
+</td>
+<td><input type="text" class="element text large" ID="A06" size="35"></td>
+</tr>
 
-<p><label>- Further details:</label>
-<input type="text" class="element text small" name="A08" ID="A08" size="35">
-</p></li>
-</fieldset></p>
+<tr>
+<td>- Positive immune cells among immune cells (%) :
+<input type="text" class="element text large" ID="A07" size="35"></td>
+<tr>
 
-<p><fieldset style="border-color:#e6e6ff;">
-<li><p>	
-<label>- <a href="https://www.nature.com/articles/s41379-019-0327-4#Sec17" target="_blank">Antibody (anti-PD-L1, anti-CD274)</a>:</label><br>
-	<select class="element select medium"  ID="A01">
+<tr>	
+<td><label>- <a href="https://www.nature.com/articles/s41379-019-0327-4#Sec17" target="_blank">Antibody (anti-PD-L1, anti-CD274)</a> : </label></td>
+	<td><select class="element select large"  ID="A01">
 		<option value=""></option>
 		<option value="22C3 (Dako)">22C3 (Dako)</option>
 		<option value="28-8 (Dako)">28-8 (Dako)</option>
@@ -136,49 +133,53 @@ and staining examples in lung cancers can be found in the <a href=".\cap\iaslc_p
 		<option value="SP142 (Roche)">SP142 (Roche)</option>
 		<option value="E1L3N (Cell Signaling)">E1L3N (Cell Signaling)</option>
 		<option value="Other, specify:">Other, specify:</option>
-	</select>
-</p>
+	</select></td>
+</tr>
 
-<p>
-<label>- Number of viable tumor cells:</label><br>
-	<select class="element select medium"  ID="A02">
-		<option value=""></option>
+<tr>
+<td><label>- Number of viable tumor cells : </label></td>
+	<td><select class="element select large"  ID="A02">
+		<option value=""></option> 
 		<option value="> or = 50">> or = 50</option>
 		<option value="> or = 100">> or = 100</option>
 		<option value="less than 100">less than 100</option>
-	</select>
-</p>
+	</select></td>
+</tr>
 
-<p>
-<label>- Fixation time in buffered formalin :</label><br>
-	<select class="element select medium"  ID="A03">
+<tr>
+<td><label>- Fixation time in buffered formalin : </label></td>
+	<td><select class="element select large"  ID="A03">
 		<option value=""></option>
 		<option value="Optimal fixation (6-72 hours)">Optimal fixation (6-72 hours)</option>
 		<option value="Prolonged intervals (> 72 hours)">Prolonged intervals (> 72 hours)</option>
 		<option value="Uncertain">Uncertain</option>
-	</select>
+	</select></td>
+</tr>
+</table>
 </p>
-
-<br>
-</fieldset></p>
 </fieldset>
 
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">PD-L1 scoring:</label></legend>
-
-<li><p><label class="description">- Tumor Proportion Score (TPS):</label>
-<input type="text" class="element text small" name="A10" ID="A10" size="35">
-</p></li>
-<li><p><label class="description">- Combined positive score (CPS):</label>	
-<input type="text" class="element text small" name="A11" ID="A11" size="35">
-</p></li>
-<li><p><label class="description">- Tumor cell % (TC):</label>	
-<input type="text" class="element text small" name="A12" ID="A12" size="35">
-</p></li>
-<li><p><label class="description">- Immune cell % (IC, with tumor area as demominator):</label>	
-<input type="text" class="element text small" name="A13" ID="A13" size="35">
-</p></li>
-<br>
+<p>
+<table border="1">
+<col width="60%">
+<tr>	
+<td><label class="description">- Tumor Proportion Score (TPS) % :</label></td>
+<td><input type="text" class="element text large" ID="A10" size="35"></td>
+</tr>
+<tr>
+<td><label class="description">- Combined Positive Score (CPS) :</label></td>	
+<td><input type="text" class="element text large" ID="A11" size="35"></td>
+</tr>
+</table>
+</p>
+<p>
+<a href="https://www.keytrudahcp.com/biomarker-testing/" target="_blank">
+<img src=".\cap\PD-L1 TPS CPS.jpg" alt="Risk assessment" width="600">
+(from Keytruda website, 06-June-2020)
+</a>
+</p>
 </fieldset>
 
 <br><br>
@@ -197,7 +198,7 @@ and staining examples in lung cancers can be found in the <a href=".\cap\iaslc_p
 <br>
 
 <div id="footer">
-			Last upated 19-Feb-2020. <br>
+			Last upated 08-July-2020. <br>
 			Form and cascade style sheet are based on <a href="https://www.phpform.org" target="_blank">pform.org</a>. <br>
 			Codes and Javascripts are modified from <a href="https://www.w3schools.com/" target="_blank">W3 School tutorials</a> and <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>. <br><br>
 			Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

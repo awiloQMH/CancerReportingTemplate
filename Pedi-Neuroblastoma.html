@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,19 +13,19 @@ function updateDescription (frm)
 	
 
 if (frm.A01.value !== ""){
-	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+	Template += "- Procedure: " + frm.A01.value + "\n";
 }
 
 if (frm.A02.value !== ""){
-	Template += "- Tumor site: " + "\n" + "   - " + frm.A02.value + "\n";
+	Template += "- Tumor site: " + frm.A02.value + "\n";
 }
 
 if (frm.A03.value !== ""){
-	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
+	Template += "- Tumor size: " + frm.A03.value + "\n";
 }
 
 if (frm.A04.value !== ""){
-	Template += "- Patient age: " + "\n" + "  - "+ frm.A04.value + "\n";
+	Template += "- Patient age: " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
@@ -33,31 +33,31 @@ if (frm.A05.value !== ""){
 }
 
 if (frm.A06.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A06.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A06.value + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "- Degree of differentiation: " + "\n" + "  - " + frm.A07.value + "\n";
+	Template += "- Degree of differentiation: " + frm.A07.value + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "- Mitotic-karyorrhectic index (MKI): " + "\n" + "  - " + frm.A08.value + "\n";
+	Template += "- Mitotic-karyorrhectic index (MKI): " + frm.A08.value + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "- Treatment history: " + "\n" + "  - " + frm.A09.value + "\n";
+	Template += "- Treatment history: " + frm.A09.value + "\n";
 }
 
 if (frm.A10.value !== ""){
-	Template += "- Treatment effects:  " + "\n" + "  - " + frm.A10.value + "\n";
+	Template += "- Treatment effects:  " + frm.A10.value + "\n";
 }
 
 if (frm.A11.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A11.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A11.value + "\n";
 }
 
 if (frm.A12.value !== ""){
-	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A12.value + "\n";
+	Template += "- Perineural invasion:  " + frm.A12.value + "\n";
 }
 
 if (frm.A13.value + frm.A14.value !== ""){
@@ -77,7 +77,7 @@ if (frm.A15.value !== ""){
 }
 
 if (frm.A16.value !== ""){
-	Template += "\n" + "- Surgical margins: " + "\n" + "  - " + frm.A16.value + "\n";
+	Template += "\n" + "- Surgical margins: " + frm.A16.value + "\n";
 }
 
 if (frm.A17.value + frm.A18.value + frm.A19.value + frm.A20.value + frm.A21.value !== ""){
@@ -97,11 +97,11 @@ if (frm.A19.value !== ""){
 }
 
 if (frm.A20.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A20.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + "\n";
 }
 
 if (frm.A22.value !== ""){
@@ -150,17 +150,19 @@ table, th, td {
 	</div>
 	
 <form>
-
+<p> This is additional protocol for <a href=".\cap\cp-pediatric-neuroblastoma-biopsy-19-4000.pdf" target="_blank">biopsy specimen</a>.</p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
 
-
+<p>
 <table border="1">
-<col width="20%">
+<col width="60%">
 
 <tr>
-<td>- Procedure:</td>
+<td>
+<label class="description">- Procedure:</label>
+</td>
 <td><select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="Resection">Resection </option> 
@@ -171,7 +173,9 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor site:</td>
+<td>
+<label class="description">- Tumor site:</label>
+</td>
 <td><select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="Adrenal/periadrenal">Adrenal/periadrenal</option>
@@ -184,7 +188,9 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor size:</td>
+<td>
+<label class="description">- Tumor size:</label>
+</td>
 <td><select class="element select large" ID="A03">
 		<option value=""></option>
 		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
@@ -194,13 +200,9 @@ table, th, td {
 </tr>
 
 <tr>
-<td>  </td>
-<td>  </td>
-</tr>
-
-
-<tr>
-<td>- Patient age:</td>
+<td>
+<label class="description">- Patient age:</label>
+</td>
 <td><select class="element select large" ID="A04">
 		<option value=""></option>
 		<option value="younger than 18 months">younger than 18 months</option>
@@ -210,7 +212,7 @@ table, th, td {
 </tr>
 
 </table>
-<br>
+</p>
 </fieldset>
 </p>
 
@@ -221,12 +223,13 @@ table, th, td {
  <textarea ID="A05" class="element textarea medium"></textarea>
 </p>
 
-
+<p>
 <table border="1"> 
 <col width="60%">
 
 <tr>
-<td>- Histologic type: 
+<td>
+<label class="description">- Histologic type: </label>
 </td>
 <td><select class="element select large" ID="A06">
 	<option value=""></option>
@@ -243,7 +246,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Degree of differentiation (in untreated cases): 
+<td>
+<label class="description">- Degree of differentiation (in untreated cases):</label> 
 </td>
 <td><select class="element select large" ID="A07">
 	<option value=""></option>
@@ -256,7 +260,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Mitotic-Karyorrhectic Index (MKI, in untreated cases): </td>
+<td>
+<label class="description">- Mitotic-Karyorrhectic Index (MKI, in untreated cases): </label></td>
 <td><select class="element select large" ID="A08">
 	<option value=""></option>
 	<option value="Low (less than 100 per 5000 cells; less than 2%)">Low (less than 100 per 5000 cells; less than 2%)</option>
@@ -268,7 +273,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Treatment history: </td>
+<td>
+<label class="description">- Treatment history: </label></td>
 <td><select class="element select large" ID="A09">
 	<option value=""></option>
 	<option value="No known preoperative therapy">No known preoperative therapy</option>
@@ -278,7 +284,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Treatment effect: </td>
+<td>
+<label class="description">- Treatment effect: </label></td>
 <td><select class="element select large" ID="A10">
 	<option value=""></option>
 	<option value="Necrosis not identified">Necrosis not identified</option>
@@ -289,7 +296,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Lymphovascular invasion: </td>
+<td>
+<label class="description">- Lymphovascular invasion: </label></td>
 <td><select class="element select large" ID="A11">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -299,7 +307,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Perineural invasion: </td>
+<td>
+<label class="description">- Perineural invasion: </label></td>
 <td><select class="element select large" ID="A12">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -307,15 +316,11 @@ table, th, td {
 	<option value="Cannot be determined">Cannot be determined</option>
 </select></td>
 </tr>
-</table>
 
-
-<table border="1">
-<col width="50%">
-<label class="description">- Status of metastases:</label>
 
 <tr>
-<td rowspan="2" valign="top">- Metastases: </td>
+<td rowspan="2" valign="top">
+<label class="description">- Status of metastases:</label></td>
 <td><select class="element select large" ID="A13">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -325,12 +330,30 @@ table, th, td {
 </tr>
 
 <tr> 
-<td>- Sites of distant metastasis: 
-<input type="text" class="element text large" ID="A14" size="35"></td>
+<td>
+- Sites of distant metastasis: 
+<input type="text" class="element text small" ID="A14" size="35"></td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- N-myc amplification status: </label>
+</td>
+<td>
+<select class="element select large" ID="A22">
+	<option value=""></option>
+	<option value="Not amplified">Not amplified</option>
+	<option value="Amplified">Amplified</option>
+	<option value="Gain">Gain</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Pending">Pending</option>
+</select>
+</td>
 </tr>
 
 </table>
-
+</p>
 
 <p>
 <label class="description">- International Neuroblastoma Pathology Classification (INPC): </label>
@@ -369,11 +392,11 @@ table, th, td {
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
 <table border="1">
-<col width="60%">
+<col width="75%">
 
 <tr>
 <td>
-- Number of lymph nodes involved (specify locations):
+<label class="description">- Number of lymph nodes involved (specify locations):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A17" size="15">
@@ -382,7 +405,7 @@ table, th, td {
 
 <tr>
 <td>
-- Number of lymph nodes involved (specify locations):
+<label class="description">- Number of lymph nodes involved (specify locations):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A18" size="15">
@@ -391,7 +414,7 @@ table, th, td {
 
 <tr>
 <td>
-- Extranodal extension:
+<label class="description">- Extranodal extension:</label>
 </td>
 <td>
 <select class="element select large" ID="A19">
@@ -404,7 +427,7 @@ table, th, td {
 </tr>
 <tr>
 <td>
-- Size of largest metastatic deposit (mm), specify site:
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A20" size="15">
@@ -413,7 +436,7 @@ table, th, td {
 
 <tr>
 <td>
-- Size of largest lymph node involved (mm), specify site:
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A21" size="15">
@@ -425,18 +448,6 @@ table, th, td {
 </fieldset>
 </p>
 
-<p>
-<label class="description">- N-myc amplification status: </label>
-<select class="element select medium" ID="A22">
-	<option value=""></option>
-	<option value="Not amplified">Not amplified</option>
-	<option value="Amplified">Amplified</option>
-	<option value="Gain">Gain</option>
-	<option value="Cannot be determined">Cannot be determined</option>
-	<option value="Not applicable">Not applicable</option>
-	<option value="Pending">Pending</option>
-</select>
-</p>
 
 <p>
 <label class="description">- Additional pathologic findings:</label>
@@ -458,7 +469,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 23-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 09-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Neuroblastoma Resection 4.0.0.0 (February 2019, <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

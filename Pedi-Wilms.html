@@ -13,23 +13,23 @@ function updateDescription (frm)
 	
 
 if (frm.A01.value !== ""){
-	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+	Template += "- Procedure: " + frm.A01.value + "\n";
 }
 
 if (frm.A02.value !== ""){
-	Template += "- Specimen weight (g): " + "\n" + "   - " + frm.A02.value + "\n";
+	Template += "- Specimen weight (g): " + frm.A02.value + "\n";
 }
 
 if (frm.A03.value !== ""){
-	Template += "- Specimen laterality: " + "\n" + "  - "+ frm.A03.value + "\n";
+	Template += "- Specimen laterality: " + frm.A03.value + "\n";
 }
 
 if (frm.A04.value !== ""){
-	Template += "- Tumor focality: " + "\n" + "  - "+ frm.A04.value + "\n";
+	Template += "- Tumor focality: " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
-	Template += "- Tumor size: " + "\n" + "  - "+ frm.A05.value + "\n";
+	Template += "- Tumor size: " + frm.A05.value + "\n";
 }
 
 if (document.getElementById("A06").checked || 
@@ -54,47 +54,47 @@ if (frm.A09.value !== ""){
 }
 
 if (frm.A10.value !== ""){
-	Template += "\n" + "- Histologic type: " + "\n" + "  - " + frm.A10.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A10.value + "\n";
 }
 
 if (frm.A11.value !== ""){
-	Template += "- Tumor extent (Gerota's fasica): " + "\n" + "  - " + frm.A11.value + "\n";
+	Template += "- Tumor extent (Gerota's fasica): " + frm.A11.value + "\n";
 }
 
 if (frm.A12.value !== ""){
-	Template += "- Tumor extent (renal sinus): " + "\n" + "  - " + frm.A12.value + "\n";
+	Template += "- Tumor extent (renal sinus): " + frm.A12.value + "\n";
 }
 
 if (frm.A13.value !== ""){
-	Template += "- Tumor extent (renal vein): " + "\n" + "  - " + frm.A13.value + "\n";
+	Template += "- Tumor extent (renal vein): " + frm.A13.value + "\n";
 }
 
 if (frm.A14.value !== ""){
-	Template += "- Tumor extent (renal capsule): " + "\n" + "  - " + frm.A14.value + "\n";
+	Template += "- Tumor extent (renal capsule): " + frm.A14.value + "\n";
 }
 
 if (frm.A15.value !== ""){
-	Template += "- Tumor extent (ajacent organs): " + "\n" + "  - " + frm.A15.value + "\n";
+	Template += "- Tumor extent (ajacent organs): " + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A16.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A16.value + "\n";
 }
 
 if (frm.A17.value !== ""){
-	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A17.value + "\n";
+	Template += "- Perineural invasion:  " + frm.A17.value + "\n";
 }
 
 if (frm.A18.value !== ""){
-	Template += "- Post therapy histologic classification:  " + "\n" + "  - " + frm.A18.value + "\n";
+	Template += "- Post therapy histologic classification:  " + frm.A18.value + "\n";
 }
 
 if (frm.A19.value !== ""){
-	Template += "- Nephrogenic rests:  " + "\n" + "  - " + frm.A19.value + "\n";
+	Template += "- Nephrogenic rests:  " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
-	Template += "\n" + "- Surgical margins: " + "\n" + "  - " + frm.A20.value + "\n";
+	Template += "\n" + "- Surgical margins: " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value + frm.A25.value!== ""){
@@ -114,11 +114,11 @@ if (frm.A23.value !== ""){
 }
 
 if (frm.A24.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A24.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A24.value + "\n";
 }
 
 if (frm.A25.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A25.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A25.value + "\n";
 }
 
 if (document.getElementById("A26").checked || document.getElementById("A27").checked || 
@@ -280,10 +280,10 @@ table, th, td {
 
 
 <table border="1">
-<col width="40%">
+<col width="50%">
 
 <tr>
-<td>- Procedure:</td>
+<td><label class="description">- Procedure:</label></td>
 <td><select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="Partial nephrectomy">Partial nephrectomy</option> 
@@ -295,12 +295,12 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Specimen weight (g):</td>
+<td><label class="description">- Specimen weight (g):</label></td>
 <td><input type="text" class="element text large" ID="A02" size="15"></td>
 </tr>
 
 <tr>
-<td>- Specimen laterality:</td>
+<td><label class="description">- Specimen laterality:</label></td>
 <td><select class="element select large" ID="A03">
 		<option value=""></option>
 		<option value="Right">Right</option>
@@ -310,7 +310,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor focality:</td>
+<td><label class="description">- Tumor focality:</label></td>
 <td><select class="element select large" ID="A04">
 		<option value=""></option>
 		<option value="Unifocal">Unifocal</option>
@@ -320,7 +320,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td rowspan="2" valign="top">- Tumor size:</td>
+<td rowspan="2" valign="top"><label class="description">- Tumor size:</label></td>
 <td><select class="element select large" ID="A05">
 		<option value=""></option>
 		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
@@ -354,7 +354,7 @@ table, th, td {
 <col width="50%">
 
 <tr>
-<td>- Histologic type: 
+<td><label class="description">- Histologic type:</label> 
 </td>
 <td><select class="element select large" ID="A10">
 	<option value=""></option>
@@ -370,7 +370,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor extent (Gerota's fasica):</td>
+<td><label class="description">- Tumor extent (Gerota's fasica):</label></td>
 <td><select class="element select large" ID="A11">
 	<option value=""></option>
 	<option value="Gerota’s fascia intact">Gerota’s fascia intact</option>
@@ -380,7 +380,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor extent (renal sinus):</td>
+<td><label class="description">- Tumor extent (renal sinus):</label></td>
 <td><select class="element select large" ID="A12">
 	<option value=""></option>
 	<option value="No renal sinus involvement by tumor identified">No renal sinus involvement by tumor identified</option>
@@ -392,7 +392,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor extent (renal vein):</td>
+<td><label class="description">- Tumor extent (renal vein):</label></td>
 <td><select class="element select large" ID="A13">
 	<option value=""></option>
 	<option value="No renal vein invasion identified">No renal vein invasion identified</option>
@@ -402,7 +402,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor extent (renal capsule):</td>
+<td><label class="description">- Tumor extent (renal capsule):</label></td>
 <td><select class="element select large" ID="A14">
 	<option value=""></option>
 	<option value="No extension beyond renal capsule identified">No extension beyond renal capsule identified</option>
@@ -412,7 +412,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor extent (adjacent organs):</td>
+<td><label class="description">- Tumor extent (adjacent organs):</label></td>
 <td><select class="element select large" ID="A15">
 	<option value=""></option>
 	<option value="No tumor extension into adjacent organs identified ">No tumor extension into adjacent organs identified </option>
@@ -422,7 +422,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Lymphovascular invasion: </td>
+<td><label class="description">- Lymphovascular invasion: </label></td>
 <td><select class="element select large" ID="A16">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -432,7 +432,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Perineural invasion: </td>
+<td><label class="description">- Perineural invasion: </label></td>
 <td><select class="element select large" ID="A17">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -442,7 +442,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Post therapy histologic classification: </td>
+<td><label class="description">- Post therapy histologic classification: </label></td>
 <td><select class="element select large" ID="A18">
 	<option value=""></option>
 	<option value="No known preoperative therapy (not applicable)">No known preoperative therapy (not applicable)</option>
@@ -455,7 +455,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Nephrogenic rests: </td>
+<td><label class="description">- Nephrogenic rests:</label> </td>
 <td><select class="element select large" ID="A19">
 	<option value=""></option>
 	<option value="No nephrogenic rests identified">No nephrogenic rests identified</option>
@@ -466,6 +466,23 @@ table, th, td {
 	<option value="Cannot be determined">Cannot be determined</option>
 </select></td>
 </tr>
+
+
+<tr>
+<td rowspan="2" valign="top"><label class="description">- Status of metastases:</label></td>
+<td><select class="element select large" ID="A43">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+
+<tr> 
+<td>- Sites of distant metastasis: 
+<input type="text" class="element text small" ID="A44" size="35"></td>
+</tr>
+
 </table>
 <br>
 </fieldset>
@@ -492,10 +509,10 @@ table, th, td {
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
 <table border="1">
-<col width="60%">
+<col width="75%">
 <tr>
 <td>
-- Number of regional lymph nodes examined:
+<label class="description">- Number of regional lymph nodes examined:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A21" size="15">
@@ -504,7 +521,7 @@ table, th, td {
 
 <tr>
 <td>
-- Number of lymph nodes involved (specify locations):
+<label class="description">- Number of lymph nodes involved (specify locations):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A22" size="15">
@@ -513,7 +530,7 @@ table, th, td {
 
 <tr>
 <td>
-- Extranodal extension:
+<label class="description">- Extranodal extension:</label>
 </td>
 <td>
 <select class="element select large" ID="A23">
@@ -526,7 +543,7 @@ table, th, td {
 </tr>
 <tr>
 <td>
-- Size of largest metastatic deposit (mm), specify site:
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A24" size="15">
@@ -535,7 +552,7 @@ table, th, td {
 
 <tr>
 <td>
-- Size of largest lymph node involved (mm), specify site:
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A25" size="15">
@@ -593,29 +610,6 @@ table, th, td {
 </p>
 
 
-<p>
-<table border="1">
-<col width="50%">
-<label class="description">- Status of metastases:</label>
-
-<tr>
-<td rowspan="2" valign="top">- Metastases: </td>
-<td><select class="element select large" ID="A43">
-	<option value=""></option>
-	<option value="Not identified">Not identified</option>
-	<option value="Present">Present</option>
-	<option value="Cannot be determined">Cannot be determined</option>
-</select></td>
-</tr>
-
-<tr> 
-<td>- Sites of distant metastasis: 
-<input type="text" class="element text large" ID="A44" size="35"></td>
-</tr>
-
-</table>
-</p>
-
 <br>
 </fieldset>
 </p>
@@ -640,7 +634,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 23-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 08-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Wilms Tumor Resection 4.0.0.0 (February 2019), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

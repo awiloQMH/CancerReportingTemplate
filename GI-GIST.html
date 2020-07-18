@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -27,59 +27,59 @@ if (frm.A03.value !== ""){
 if (frm.A04.value !== ""){
 	Template += "- Tumor focality: " + "\n" + frm.A04.value + "\n";
 }
-
+*/
 if (frm.A05.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value !== ""){
-	Template += "- Histologic type: " + "\n" + frm.A06.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A06.value + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "- Histologic grade: " + "\n" + frm.A07.value + "\n";
+	Template += "- Histologic grade: " + frm.A07.value + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "- Mitotic count: " + "\n" + frm.A08.value + "\n";
+	Template += "- Mitotic count: " + frm.A08.value + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "- Necrosis: " + "\n" + frm.A09.value + "\n";
+	Template += "- Necrosis: " + frm.A09.value + "\n";
 }
 
 if (frm.A10.value !== ""){
-	Template += "- KIT (CD117) IHC: " + "\n" + frm.A10.value + "\n";
+	Template += "- KIT (CD117) IHC: " + frm.A10.value + "\n";
 }
 
 if (frm.A11.value !== ""){
-	Template += "- DOG1 IHC: " + "\n" + frm.A11.value + "\n";
+	Template += "- DOG1 IHC: " + frm.A11.value + "\n";
 }
 
 if (frm.A11a.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A11a.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A11a.value + "\n";
 }
 
 if (frm.A12.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A12.value + "\n";
+	Template += "- Perineural invasion: " + frm.A12.value + "\n";
 }
 
 if (frm.A13.value !== ""){
-	Template += "- Risk assessment: " + "\n" + frm.A13.value + "\n";
+	Template += "- Risk assessment: " + frm.A13.value + "\n";
 }
 
 if (frm.A14.value !== ""){
-	Template += "- Presurgical treatment: " + "\n" + frm.A14.value + "\n";
+	Template += "- Presurgical treatment: " + frm.A14.value + "\n";
 }
 if (frm.A15.value !== ""){
-	Template += "- Treatment effect: " + "\n" + frm.A15.value + "\n";
+	Template += "- Treatment effect: " + frm.A15.value + "\n";
 }
 if (frm.A16.value !== ""){
-	Template +=  "- Surgical margins: "  +"\n" + frm.A16.value + "\n" ;
+	Template +=  "\n" + "- Surgical margins: " + frm.A16.value + "\n" ;
 }
 
 if (frm.A17.value + frm.A18.value + frm.A19.value + frm.A20.value + frm.A21.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
 if (frm.A17.value !== ""){
@@ -95,17 +95,17 @@ if (frm.A19.value !== ""){
 }
 
 if (frm.A20.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A20.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + "\n";
 }
 
 if (document.getElementById("A22").checked || document.getElementById("A23").checked || 
 	document.getElementById("A24").checked || frm.A25.value + frm.A26.value + frm.A27.value
 	+ frm.A28.value !== ""){
-	Template += "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
 if (document.getElementById("A22").checked || document.getElementById("A23").checked ||
@@ -142,7 +142,7 @@ if (frm.A28.value !== ""){
 }
 
 if (frm.A29.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A29.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A29.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -162,7 +162,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -180,12 +185,22 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<p> This is additional protocol for <a href=".\cap\cp-gigist-gist-biopsy-19-4100.pdf" target="_blank">biopsy specimen of GIST</a>.</p>
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="  - Local excision">Local excision</option> 
 	<option value="  - Resection, specify type:">Resection, specify type:</option>
@@ -193,197 +208,249 @@ function CopyToClipboard() {
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Not specified">Not specified</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor site:</label> 
-<select class="element select medium" ID="A02">
+</td>
+<td>
+<select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="  - Specify:">Specify:</option> 
 	<option value="  - Not specified">Not specified</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A03">
+</td>
+<td>
+<select class="element select large" ID="A03">
 	<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor focality:</label> 
-<select class="element select medium" ID="A04">
+</td>
+<td>
+<select class="element select large" ID="A04">
 	<option value=""></option>
 	<option value="  - Unifocal">Unifocal</option> 
 	<option value="  - Multifocal, specify size and number:">Multifocal, specify size and number:</option>
 </select>
-</p></li>
-
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A05" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
+<p>
+<table border="1">
+<col width="60%">
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Histologic type:</label> 
-<select class="element select medium" ID="A06">
+</td>
+<td>
+<select class="element select large" ID="A06">
 	<option value=""></option>
-	<option value="  - Gastrointestinal stromal tumor, spindle cell type">Gastrointestinal stromal tumor, spindle cell type</option>
-	<option value="  - Gastrointestinal stromal tumor, epithelioid type">Gastrointestinal stromal tumor, epithelioid type</option>
-	<option value="  - Gastrointestinal stromal tumor, mixed">Gastrointestinal stromal tumor, mixed</option>	
-	<option value="  - Gastrointestinal stromal tumor, other (specify):">Gastrointestinal stromal tumor, other (specify):</option>
+	<option value="Gastrointestinal stromal tumor, spindle cell type">Gastrointestinal stromal tumor, spindle cell type</option>
+	<option value="Gastrointestinal stromal tumor, epithelioid type">Gastrointestinal stromal tumor, epithelioid type</option>
+	<option value="Gastrointestinal stromal tumor, mixed">Gastrointestinal stromal tumor, mixed</option>	
+	<option value="Gastrointestinal stromal tumor, other (specify):">Gastrointestinal stromal tumor, other (specify):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<p>
-<fieldset style="border-color:#e6e6ff;">
-<li><p>
+<tr>
+<td rowspan="2" valign="top">
 <label class="description">- Histologic grade:</label>
-<select class="element select medium" ID="A07">
+Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 fields (equals 10 mm<sup>2</sup>), divide by 2 to get mitotic count for 5 mm<sup>2</sup>
+</td>
+<td>
+<select class="element select large" ID="A07">
 	<option value=""></option>
-	<option value="  - G1: Low grade; mitotic rate < or = 5/5 mm2">G1: Low grade; mitotic rate < or = 5/5 mm2</option>
-	<option value="  - G2: High grade; mitotic rate > 5/5 mm2">G2: High grade; mitotic rate > 5/5 mm2</option>
-	<option value="  - GX: Cannot be assessed">GX: Cannot be assessed</option>	
-</select></li>
-
-<li><p>
-<label>- Mitotic count:</label>
-<select class="element select small" ID="A08">
-	<option value=""></option>
-	<option value="-  < or = 5 mitoses/5 mm2, specify:">< or = 5 mitoses/5 mm2, specify:</option>
-	<option value="-  > 5 mitoses/5 mm2, specify:"> > 5 mitoses/5 mm2, specify:</option>
-	<option value="- Cannot be determined (explain):"> Cannot be determined (explain):</option> 
-	<option value="- Not applicable"> Not applicable</option> 
+	<option value="G1: Low grade; mitotic rate < or = 5/5 mm2">G1: Low grade; mitotic rate < or = 5/5 mm2</option>
+	<option value="G2: High grade; mitotic rate > 5/5 mm2">G2: High grade; mitotic rate > 5/5 mm2</option>
+	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
 </select>
-</p></li>
-Using 22 mm eyepiece at 40x objective, counting active
- proliferative areas for 42 fields (equals 10 mm<sup>2</sup>),
- divide by 2 to get mitotic count for 5 mm<sup>2</sup>
-Or simply count 21 hot spot fields.<br>
+</td>
+</tr>
 
-</p></li>
-<br>
-</fieldset>
+<tr>
+<td>
+<label>- Mitotic count:</label><br>
+<select class="element select large" ID="A08">
+	<option value=""></option>
+	<option value="< or = 5 mitoses/5 mm2, specify:">< or = 5 mitoses/5 mm2, specify:</option>
+	<option value="> 5 mitoses/5 mm2, specify:"> > 5 mitoses/5 mm2, specify:</option>
+	<option value="Cannot be determined (explain):"> Cannot be determined (explain):</option> 
+	<option value="Not applicable"> Not applicable</option> 
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Necrosis:</label> 
+</td>
+<td>
+<select class="element select large" ID="A09">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, extent (%):">Present, extent (%):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- KIT (CD117) IHC: </label>
+</td>
+<td>
+<select class="element select large" ID="A10">
+	<option value=""></option>
+	<option value="Negative">Negative</option>
+	<option value="Positive">Positive</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- DOG1 IHC: </label>
+</td>
+<td>
+<select class="element select large" ID="A11">
+	<option value=""></option>
+	<option value="Negative">Negative</option>
+	<option value="Positive">Positive</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label class="description">- Lymphovascular invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A11a">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Perineural invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A12">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Risk assessment (Miettinen and Lasota 2006): </label>
+</td>
+<td>
+<select class="element select large" ID="A13">
+	<option value=""></option>
+	<option value="None">None</option>
+	<option value="Very low risk">Very low risk</option>
+	<option value="Low risk">Low risk</option>
+	<option value="Moderate risk">Moderate risk</option>
+	<option value="High risk">High risk</option>
+	<option value="Overtly malignant/metastatic">Overtly malignant/metastatic</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Presurgical treatment: </label>
+</td>
+<td>
+<select class="element select large" ID="A14">
+	<option value=""></option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Previous biopsy or surgery (specify):">Previous biopsy or surgery (specify):</option>
+	<option value="Systemic therapy performed (specify type):">Systemic therapy performed (specify type):</option>
+	<option value="Therapy performed, type not specified">Therapy performed, type not specified</option>
+	<option value="Not specified">Not specified</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Treatment effect: </label>
+</td>
+<td>
+<select class="element select large" ID="A15">
+	<option value=""></option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Not identified">Complete necrosis (no viable tumor)</option>
+	<option value="Present, percentage of viable tumor:">Present, percentage of viable tumor:</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+</table>
 </p>
-
-<li><p><label class="description">- Necrosis:</label> 
-<select class="element select medium" ID="A09">
-	<option value=""></option>
-	<option value="- Not idenfied">Not idenfied</option>
-	<option value="- Present, extent (%):">Present, extent (%):</option>
-	<option value="- Cannot be assessed">Cannot be assessed</option>
-</select>
-</p></li>
-
-<li><p><label class="description">- KIT (CD117) IHC: </label>
-<select class="element select medium" ID="A10">
-	<option value=""></option>
-	<option value="  - Negative">Negative</option>
-	<option value="  - Positive">Positive</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
-</select>
-</p></li>
-
-<li><p><label class="description">- DOG1 IHC: </label>
-<select class="element select medium" ID="A11">
-	<option value=""></option>
-	<option value="  - Negative">Negative</option>
-	<option value="  - Positive">Positive</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
-</select>
-</p></li>
 
 <p>
-IHC of SDHA and SDHB might be added to the recipe
-</p>
-
-<li><p>
-<label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A11a">
-	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
-</select>
-</p></li>
-
-<li><p>
-<label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A12">
-	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
-</select>
-</p></li>
-
-<li><p>
-<label class="description">- Risk assessment (Miettinen and Lasota 2006): </label>
-<select class="element select medium" ID="A13">
-	<option value=""></option>
-	<option value="  - None">Present</option>
-	<option value="  - Very low risk">Very low risk</option>
-	<option value="  - Low risk">Low risk</option>
-	<option value="  - Moderate risk">Moderate risk</option>
-	<option value="  - High risk">High risk</option>
-	<option value="  - Overtly malignant/metastatic">Overtly malignant/metastatic</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
-</select>
+ - SDHA and/or SDHB IHC might be added (Request of SDHB to be send to Queen Elizabeth Hospital).</p>
+<p>
 <img src=".\cap\GI-gist-risk-assessment.jpg" alt="Risk assessment" width="600">
-</p></li>
-
-<li><p>
-<label class="description">- Presurgical treatment: </label>
-<select class="element select medium" ID="A14">
-	<option value=""></option>
-	<option value="  - No known presurgical therapy">No known presurgical therapy</option>
-	<option value="  - Previous biopsy or surgery (specify):">Previous biopsy or surgery (specify):</option>
-	<option value="  - Systemic therapy performed (specify type):">Systemic therapy performed (specify type):</option>
-	<option value="  - Therapy performed, type not specified">Therapy performed, type not specified</option>
-	<option value="  - Not specified">Not specified</option>
-</select>
-</p></li>
-
-<li><p>
-<label class="description">- Treatment effect: </label>
-<select class="element select medium" ID="A15">
-	<option value=""></option>
-	<option value="  - No known presurgical therapy">No known presurgical therapy</option>
-	<option value="  - Not identified">Complete necrosis (no viable tumor)</option>
-	<option value="  - Present, percentage of viable tumor:">Present, percentage of viable tumor:</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
-</select>
-</p></li>
-
-<br>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins:</label></legend>
-<li><p>
-- Surgical margin:<br>
+<p>
 <select class="element select medium" ID="A16">
 	<option value=""></option>
-	<option value="  - Cannot be assessed">Cannot be assessed</option>
-	<option value="  - Involved by GIST, specify:">Involved by GIST, specify:</option>
-	<option value="  - Uninvolved by GIST, specify location and distance (mm):">Uninvolved by GIST, specify location and distance (mm):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Involved by GIST, specify:">Involved by GIST, specify:</option>
+	<option value="Uninvolved by GIST, specify location and distance (mm):">Uninvolved by GIST, specify location and distance (mm):</option>
 </select>
-</p></li>
+</p>
 
-<br>
 </fieldset>
 </p>
 
@@ -392,28 +459,61 @@ IHC of SDHA and SDHB might be added to the recipe
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional ymph nodes: </label></legend>
 
-<li><p>- Number of regional lymph nodes examined:
-<input type="text" class="element text small" ID="A17" size="5"></p></li>
+<p>
+<table border="1">
+<col width="75%">
 
-<li><p>- Number of lymph nodes involved:
-<input type="text" class="element text small" ID="A18" size="5"></p></li>
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A17" size="5">
+</td>
+</tr>
 
-<li><p>- Extracapsular spread:
-<select class="element select small" ID="A19">
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A18" size="5">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extracapsular spread:</label>
+</td>
+<td>
+<select class="element select large" ID="A19">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Size of largest metastatic deposit (mm), specify site:
-<input type="text" class="element text small" ID="A20" size="5"></p></li>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A20" size="5">
+</td>
+</tr>
 
-<li><p>- Size of largest lymph node involved (mm), specify site:
-<input type="text" class="element text small" ID="A21" size="5"></p></li>
-
-<br>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A21" size="5">
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -421,14 +521,27 @@ IHC of SDHA and SDHB might be added to the recipe
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A22" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A23" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A24" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
 
-<li><p>  - Primary tumor (pT):<br>
-<select class="element select medium" ID="A25">
+<tr>
+<td valign="top">
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox" id="A22" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox" id="A23" value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox" id="A24" value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A25">
 	<option value=""></option>
 	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -437,34 +550,50 @@ IHC of SDHA and SDHB might be added to the recipe
 	<option value="  - pT3: Tumor more than 5 cm but not more than 10 cm">pT3: Tumor more than 5 cm but not more than 10 cm</option>
 	<option value="  - pT4: Tumor more than 10 cm in greatest dimension">pT4: Tumor more than 10 cm in greatest dimension</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A26">
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN):</label>
+</td>
+<td>
+<select class="element select large" ID="A26">
 	<option value=""></option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="  - pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A27">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Distant metastasis (pM):</label>
+</td>
+<td>
+<select class="element select large" ID="A27">
 	<option value=""></option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>- Specify site(s), if known:</label>
+<input type="text" class="element text medium" ID="A28" size="35">
+</td>
+</tr>
+</table>
 </p>
 
-<p>    - Specify site(s), if known:<br>
-<input type="text" class="element text small" ID="A28" size="35">
-</p>
-<br>
 </fieldset>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A29" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -481,7 +610,7 @@ IHC of SDHA and SDHB might be added to the recipe
 <br>
 
 <div id="footer">
-Last upated on 17-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 10-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 GIST Resection 4.1.0.0	(August 2019),<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

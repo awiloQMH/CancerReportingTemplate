@@ -10,7 +10,7 @@
 function updateDescription (frm) 
 {
     var Template = "";
-	
+/*	
 if (document.getElementById("A01").checked || document.getElementById("A02").checked ||
 	document.getElementById("A03").checked || document.getElementById("A04").checked || 
 	document.getElementById("A05").checked || document.getElementById("A06").checked || 
@@ -207,9 +207,9 @@ if (frm.A42.value !== ""){
 if (frm.A43.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A43.value + "\n";
 }
-
+*/
 if (frm.A44.value !== ""){
-	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A44.value + "\n";
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A44.value + "\n";
 }
 
 if (document.getElementById("A45").checked || document.getElementById("A46").checked ||
@@ -232,7 +232,7 @@ if (document.getElementById("A45").checked || document.getElementById("A46").che
 	document.getElementById("A79").checked || document.getElementById("A80").checked || 
 	document.getElementById("A81").checked || document.getElementById("A82").checked ||
 	document.getElementById("A83").checked){
-	Template += "- Histologic type: " + "\n";
+	Template += "\n" + "- Histologic type: " + "\n";
 }
 
 if (document.getElementById("A45").checked){
@@ -392,23 +392,23 @@ if (document.getElementById("A83").checked){
 }
 
 if (frm.A84.value !== ""){
-	Template += "- Histologic grade (WHO): " + "\n" + frm.A84.value + "\n";
+	Template += "- Histologic grade (WHO): " + frm.A84.value + "\n";
 }
 
 if (frm.A85.value !== ""){
-	Template += "- Histologic grade (2-tier system for immature teratoma and serous carcinoma): " + "\n" + frm.A85.value + "\n";
+	Template += "- Histologic grade (2-tier system for immature teratoma and serous carcinoma): " + frm.A85.value + "\n";
 }
 
 if (frm.A86.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A86.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A86.value + "\n";
 }
 
 if (frm.A87.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A87.value + "\n";
+	Template += "- Perineural invasion: " + frm.A87.value + "\n";
 }
 
 if (frm.A88.value !== ""){
-	Template += "- Implants (for serous/seromucinous borderline tumors): " + "\n" + frm.A88.value + "\n";
+	Template += "- Implants (for serous/seromucinous borderline tumors): " + frm.A88.value + "\n";
 }
 
 if (document.getElementById("A89").checked || document.getElementById("A90").checked ||
@@ -505,31 +505,32 @@ if (document.getElementById("A108").checked){
 }
 
 if (frm.A109.value !== ""){
-	Template += "- Largest extrapelvic peritoneal focus: " + "\n" + frm.A109.value + "\n";
+	Template += "- Largest extrapelvic peritoneal focus: " + frm.A109.value + "\n";
 }
 
 if (frm.A110.value !== ""){
-	Template += "- Peritoneal/ascitic fluid: " + "\n" + frm.A110.value + "\n";
+	Template += "- Peritoneal/ascitic fluid: " + frm.A110.value + "\n";
 }
 
 if (frm.A111.value !== ""){
-	Template += "- Pleural fluid: " + "\n" + frm.A111.value + "\n";
+	Template += "- Pleural fluid: " + frm.A111.value + "\n";
 }
 
 if (frm.A112.value !== ""){
-	Template += "-  Treatment effect for high grade serous CA (on omentum), Chemotherapy Response Score CRS: " + "\n" + frm.A46.value + "\n";
+	Template += "- Treatment effect, Chemotherapy Response Score CRS: " + frm.A112.value + "\n";
 }
 
 if (frm.A113.value !== ""){
-	Template += "\n" + "- Surgical margins, Ectocervical/vaginal cuff margin: "  +"\n" + frm.A113.value + "\n" ;
+	Template += "\n" + "- Surgical margins, Ectocervical/vaginal cuff margin: "  + frm.A113.value + "\n" ;
 }
 
 if (frm.A114.value !== ""){
-	Template +=  "- Surgical margins, Parametrial/paracervical margin: "  +"\n" + frm.A114.value + "\n" ;
+	Template +=  "- Surgical margins, Parametrial/paracervical margin: "  + frm.A114.value + "\n" ;
 }
 
-if (frm.A115.value + frm.A116.value + frm.A117.value + frm.A118.value + frm.A119.value + frm.A120.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+if (frm.A115.value + frm.A116.value + frm.A117.value + frm.A118.value + frm.A119.value 
+	+ frm.A120.value + frm.A135.value !== ""){
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
 if (frm.A115.value !== ""){
@@ -549,13 +550,17 @@ if (frm.A118.value !== ""){
 }
 
 if (frm.A119.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A119.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A119.value  + "\n";
 }
 
 if (frm.A120.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A120.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A120.value + "\n";
 }
 
+if (frm.A135.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A135.value + "\n";
+}
+/*
 if (frm.A129.value !== ""){
 	Template += "\n" + "- FIGO Stage (2018 FIGO Cancer Report) : " + "\n" + frm.A129.value + "\n";
 }
@@ -602,7 +607,7 @@ if (frm.A127.value !== ""){
 if (frm.A128.value !== ""){
 	Template += "    - Specify site(s): " + frm.A128.value + "\n";
 }
-
+*/
 if (document.getElementById("A130").checked || document.getElementById("A131").checked ||
     document.getElementById("A132").checked || frm.A133.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
@@ -625,7 +630,7 @@ if (frm.A133.value !== ""){
 }
 
 if (frm.A134.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A134.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A134.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -645,7 +650,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -660,34 +670,35 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<input type="checkbox" class="element checkbox" id="A01" value="  - Total hysterectomy and bilateral salpingo-oophorectomy"><label class="element choice">Total hysterectomy and bilateral salpingo-oophorectomy</label>
-<input type="checkbox" class="element checkbox" id="A02" value="  - Radical hysterectomy"><label class="element choice">Radical hysterectomy</label>
-<input type="checkbox" class="element checkbox" id="A03" value="  - Simple hysterectomy"><label class="element choice">Simple hysterectomy</label>
-<input type="checkbox" class="element checkbox" id="A04" value="  - Supracervical hysterectomy"><label class="element choice">Supracervical hysterectomy</label>
-<input type="checkbox" class="element checkbox" id="A05" value="  - Bilateral salpingo-oophorectomy"><label class="element choice">Bilateral salpingo-oophorectomy</label>
-<input type="checkbox" class="element checkbox" id="A06" value="  - Right salpingo-oophorectomy"><label class="element choice">Right salpingo-oophorectomy</label>
-<input type="checkbox" class="element checkbox" id="A07" value="  - Left salpingo-oophorectomy"><label class="element choice">Left salpingo-oophorectomy</label>
-<input type="checkbox" class="element checkbox" id="A08" value="  - Salpingo-oophorectomy, side not specified"><label class="element choice">Salpingo-oophorectomy, side not specified</label>
-<input type="checkbox" class="element checkbox" id="A09" value="  - Right oophorectomy"><label class="element choice">Right oophorectomy</label>
-<input type="checkbox" class="element checkbox" id="A10" value="  - Left oophorectomy"><label class="element choice">Left oophorectomy</label>
-<input type="checkbox" class="element checkbox" id="A11" value="  - Oophorectomy, side not specified"><label class="element choice">Oophorectomy, side not specified</label>
-<input type="checkbox" class="element checkbox" id="A12" value="  - Bilateral salpingectomy"><label class="element choice">Bilateral salpingectomy</label>
-<input type="checkbox" class="element checkbox" id="A13" value="  - Right salpingectomy"><label class="element choice">Right salpingectomy</label>
-<input type="checkbox" class="element checkbox" id="A14" value="  - Left salpingectomy"><label class="element choice">Left salpingectomy</label>
-<input type="checkbox" class="element checkbox" id="A15" value="  - Salpingectomy, side not specified"><label class="element choice">Salpingectomy, side not specified</label>
-<input type="checkbox" class="element checkbox" id="A16" value="  - Omentectomy"><label class="element choice">Omentectomy</label>
-<input type="checkbox" class="element checkbox" id="A17" value="  - Peritoneal biopsies"><label class="element choice">Peritoneal biopsies</label>
-<input type="checkbox" class="element checkbox" id="A18" value="  - Peritoneal tumor debulking"><label class="element choice">Peritoneal tumor debulking</label>
-<input type="checkbox" class="element checkbox" id="A19" value="  - Peritoneal washing"><label class="element choice">Peritoneal washing</label>
-<input type="checkbox" class="element checkbox" id="A20" value="  - Pleurocentesis (pleural fluid)"><label class="element choice">Pleurocentesis (pleural fluid)</label>
-<input type="checkbox" class="element checkbox" id="A21" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
-</p></li>
+<p><label class="description">- Procedure:</label>
+<input type="checkbox" id="A01" value="  - Total hysterectomy and bilateral salpingo-oophorectomy"><label>Total hysterectomy and bilateral salpingo-oophorectomy</label><br>
+<input type="checkbox" id="A02" value="  - Radical hysterectomy"><label>Radical hysterectomy</label><br>
+<input type="checkbox" id="A03" value="  - Simple hysterectomy"><label>Simple hysterectomy</label><br>
+<input type="checkbox" id="A04" value="  - Supracervical hysterectomy"><label>Supracervical hysterectomy</label><br>
+<input type="checkbox" id="A05" value="  - Bilateral salpingo-oophorectomy"><label>Bilateral salpingo-oophorectomy</label><br>
+<input type="checkbox" id="A06" value="  - Right salpingo-oophorectomy"><label>Right salpingo-oophorectomy</label><br>
+<input type="checkbox" id="A07" value="  - Left salpingo-oophorectomy"><label>Left salpingo-oophorectomy</label><br>
+<input type="checkbox" id="A08" value="  - Salpingo-oophorectomy, side not specified"><label>Salpingo-oophorectomy, side not specified</label><br>
+<input type="checkbox" id="A09" value="  - Right oophorectomy"><label>Right oophorectomy</label><br>
+<input type="checkbox" id="A10" value="  - Left oophorectomy"><label>Left oophorectomy</label><br>
+<input type="checkbox" id="A11" value="  - Oophorectomy, side not specified"><label>Oophorectomy, side not specified</label><br>
+<input type="checkbox" id="A12" value="  - Bilateral salpingectomy"><label>Bilateral salpingectomy</label><br>
+<input type="checkbox" id="A13" value="  - Right salpingectomy"><label>Right salpingectomy</label><br>
+<input type="checkbox" id="A14" value="  - Left salpingectomy"><label>Left salpingectomy</label><br>
+<input type="checkbox" id="A15" value="  - Salpingectomy, side not specified"><label>Salpingectomy, side not specified</label><br>
+<input type="checkbox" id="A16" value="  - Omentectomy"><label>Omentectomy</label><br>
+<input type="checkbox" id="A17" value="  - Peritoneal biopsies"><label>Peritoneal biopsies</label><br>
+<input type="checkbox" id="A18" value="  - Peritoneal tumor debulking"><label>Peritoneal tumor debulking</label><br>
+<input type="checkbox" id="A19" value="  - Peritoneal washing"><label>Peritoneal washing</label><br>
+<input type="checkbox" id="A20" value="  - Pleurocentesis (pleural fluid)"><label>Pleurocentesis (pleural fluid)</label><br>
+<input type="checkbox" id="A21" value="  - Other (specify):"><label>Other (specify):</label><br>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Hysterectomy type:</label> 
 	<select class="element select medium" ID="A22">
 		<option value=""></option>
@@ -699,12 +710,12 @@ function CopyToClipboard() {
 		<option value="  - Other (specify):">Other (specify):</option>
 		<option value="  - Not specified">Not specified</option>
 	</select>
-</p></li>
+</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Specimen integrity:</label></legend>
-<li><p>
+<p>
 <label class="description">- Specimen integrity, right ovary:</label> 
 	<select class="element select medium" ID="A23">
 		<option value=""></option>
@@ -713,9 +724,9 @@ function CopyToClipboard() {
 		<option value="  - Fragmented">Fragmented</option>
 		<option value="  - Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Specimen integrity, left ovary:</label> 
 	<select class="element select medium" ID="A24">
 		<option value=""></option>
@@ -724,9 +735,9 @@ function CopyToClipboard() {
 		<option value="  - Fragmented">Fragmented</option>
 		<option value="  - Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Specimen integrity, right fallopian tube:</label> 
 	<select class="element select medium" ID="A25">
 		<option value=""></option>
@@ -735,9 +746,9 @@ function CopyToClipboard() {
 		<option value="  - Fragmented">Fragmented</option>
 		<option value="  - Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Specimen integrity, left fallopian tube:</label> 
 	<select class="element select medium" ID="A26">
 		<option value=""></option>
@@ -746,33 +757,33 @@ function CopyToClipboard() {
 		<option value="  - Fragmented">Fragmented</option>
 		<option value="  - Other (specify):">Other (specify):</option>
 	</select>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Morcellated specimen (specify organ):</label> 
-<input type="text" ID="A27" class="element text medium" ></p></li>
+<input type="text" ID="A27" class="element text medium" ></p>
 
 <br>
 
 </fieldset></p>
 
-<li><p><label class="description">- Tumor site:</label>
-<input type="checkbox" class="element checkbox" id="A28" value="  - Right ovary"><label class="element choice">Right ovary</label>
-<input type="checkbox" class="element checkbox" id="A29" value="  - Left ovary"><label class="element choice">Left ovary</label>
-<input type="checkbox" class="element checkbox" id="A30" value="  - Bilateral ovaries"><label class="element choice">Bilateral ovaries</label>
-<input type="checkbox" class="element checkbox" id="A31" value="  - Ovary, laterality cannot be determined (explain):"><label class="element choice">Ovary, laterality cannot be determined (explain):</label>
-<input type="checkbox" class="element checkbox" id="A32" value="  - Right fallopian tube"><label class="element choice">Right fallopian tube</label>
-<input type="checkbox" class="element checkbox" id="A33" value="  - Left fallopian tube"><label class="element choice">Left fallopian tube</label>
-<input type="checkbox" class="element checkbox" id="A34" value="  - Fallopian tube, laterality cannot be determined (explain):"><label class="element choice">Fallopian tube, laterality cannot be determined (explain):</label>
-<input type="checkbox" class="element checkbox" id="A35" value="  - Right tubo-ovarian"><label class="element choice">Right tubo-ovarian</label>
-<input type="checkbox" class="element checkbox" id="A36" value="  - Left tubo-ovarian"><label class="element choice">Left tubo-ovarian</label>
-<input type="checkbox" class="element checkbox" id="A37" value="  - Bilateral tubo-ovarian"><label class="element choice">Bilateral tubo-ovarian</label>
-<input type="checkbox" class="element checkbox" id="A38" value="  - Tubo-ovarian, laterality cannot be determined (explain):"><label class="element choice">Tubo-ovarian, laterality cannot be determined (explain):</label>
-<input type="checkbox" class="element checkbox" id="A39" value="  - Primary peritoneum"><label class="element choice">Primary peritoneum</label>
-<input type="checkbox" class="element checkbox" id="A40" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
-</p></li>
+<p><label class="description">- Tumor site:</label>
+<input type="checkbox" id="A28" value="  - Right ovary"><label>Right ovary</label><br>
+<input type="checkbox" id="A29" value="  - Left ovary"><label>Left ovary</label><br>
+<input type="checkbox" id="A30" value="  - Bilateral ovaries"><label>Bilateral ovaries</label><br>
+<input type="checkbox" id="A31" value="  - Ovary, laterality cannot be determined (explain):"><label>Ovary, laterality cannot be determined (explain):</label><br>
+<input type="checkbox" id="A32" value="  - Right fallopian tube"><label>Right fallopian tube</label><br>
+<input type="checkbox" id="A33" value="  - Left fallopian tube"><label>Left fallopian tube</label><br>
+<input type="checkbox" id="A34" value="  - Fallopian tube, laterality cannot be determined (explain):"><label>Fallopian tube, laterality cannot be determined (explain):</label><br>
+<input type="checkbox" id="A35" value="  - Right tubo-ovarian"><label>Right tubo-ovarian</label><br>
+<input type="checkbox" id="A36" value="  - Left tubo-ovarian"><label>Left tubo-ovarian</label><br>
+<input type="checkbox" id="A37" value="  - Bilateral tubo-ovarian"><label>Bilateral tubo-ovarian</label><br>
+<input type="checkbox" id="A38" value="  - Tubo-ovarian, laterality cannot be determined (explain):"><label>Tubo-ovarian, laterality cannot be determined (explain):</label><br>
+<input type="checkbox" id="A39" value="  - Primary peritoneum"><label>Primary peritoneum</label><br>
+<input type="checkbox" id="A40" value="  - Other (specify):"><label>Other (specify):</label><br>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Ovarian surface involvement:</label> 
 	<select class="element select medium" ID="A41">
 		<option value=""></option>
@@ -780,9 +791,9 @@ function CopyToClipboard() {
 		<option value="  - Present, specify laterality:">Present, specify laterality:</option>
 		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
 	</select>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Fallopian tube surface involvement:</label> 
 	<select class="element select medium" ID="A42">
 		<option value=""></option>
@@ -790,9 +801,9 @@ function CopyToClipboard() {
 		<option value="  - Present, specify laterality:">Present, specify laterality:</option>
 		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
 	</select>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Tumor size:</label> 
 	<select class="element select medium" ID="A43">
 		<option value=""></option>
@@ -800,261 +811,385 @@ function CopyToClipboard() {
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
 	</select>
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p>
+<p>
 <label class="description">- Tumor histology and immunohistochemical studies: </label>
 	<textarea ID="A44" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Histologic type:</label> 
-<input type="checkbox" class="element checkbox" id="A45" value="  - Serous tubal intraepithelial carcinoma (STIC)"><label class="element choice">Serous tubal intraepithelial carcinoma (STIC)</label>
-<input type="checkbox" class="element checkbox" id="A46" value="  - Serous borderline tumor/atypical proliferative serous tumor"><label class="element choice">Serous borderline tumor/atypical proliferative serous tumor</label>
-<input type="checkbox" class="element checkbox" id="A47" value="  - Serous borderline tumor/atypical proliferative serous tumor with microinvasion"><label class="element choice">Serous borderline tumor/atypical proliferative serous tumor with microinvasion</label>
-<input type="checkbox" class="element checkbox" id="A48" value="  - Serous borderline tumor-micropapillary variant/noninvasive low-grade serous carcinoma"><label class="element choice">Serous borderline tumor-micropapillary variant/noninvasive low-grade serous carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A49" value="  - Serous carcinoma"><label class="element choice">Serous carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A50" value="  - Endometrioid borderline tumor/atypical proliferative endometrioid tumor"><label class="element choice">Endometrioid borderline tumor/atypical proliferative endometrioid tumor</label>
-<input type="checkbox" class="element checkbox" id="A51" value="  - Endometrioid borderline tumor/atypical proliferative endometrioid tumor with microinvasion"><label class="element choice">Endometrioid borderline tumor/atypical proliferative endometrioid tumor with microinvasion</label>
-<input type="checkbox" class="element checkbox" id="A52" value="  - Endometrioid carcinoma"><label class="element choice">Endometrioid carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A53" value="  - Clear cell borderline tumor/atypical proliferative clear cell tumor"><label class="element choice">Clear cell borderline tumor/atypical proliferative clear cell tumor</label>
-<input type="checkbox" class="element checkbox" id="A54" value="  - Clear cell carcinoma"><label class="element choice">Clear cell carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A55" value="  - Mucinous borderline tumor/atypical proliferative mucinous tumor"><label class="element choice">Mucinous borderline tumor/atypical proliferative mucinous tumor</label>
-<input type="checkbox" class="element checkbox" id="A56" value="  - Mucinous borderline tumor/atypical proliferative mucinous tumor with intraepithelial carcinoma"><label class="element choice">Mucinous borderline tumor/atypical proliferative mucinous tumor with intraepithelial carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A57" value="  - Mucinous borderline tumor/atypical proliferative mucinous tumor with microinvasion"><label class="element choice">Mucinous borderline tumor/atypical proliferative mucinous tumor with microinvasion</label>
-<input type="checkbox" class="element checkbox" id="A58" value="  - Mucinous carcinoma"><label class="element choice">Mucinous carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A59" value="  - Mucinous carcinoma with expansile invasive pattern"><label class="element choice">Mucinous carcinoma with expansile invasive pattern</label>
-<input type="checkbox" class="element checkbox" id="A60" value="  - Mucinous carcinoma with infiltrative invasive pattern"><label class="element choice">Mucinous carcinoma with infiltrative invasive pattern</label>
-<input type="checkbox" class="element checkbox" id="A61" value="  - Seromucinous borderline tumor/atypical proliferative seromucinous tumor"><label class="element choice">Seromucinous borderline tumor/atypical proliferative seromucinous tumor</label>
-<input type="checkbox" class="element checkbox" id="A62" value="  - Seromucinous borderline tumor/atypical proliferative seromucinous tumor"><label class="element choice">Seromucinous borderline tumor/atypical proliferative seromucinous tumor</label>
-<input type="checkbox" class="element checkbox" id="A63" value="  - Seromucinous carcinoma"><label class="element choice">Seromucinous carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A64" value="  - Brenner tumor, borderline/atypical proliferative Brenner tumor"><label class="element choice">Brenner tumor, borderline/atypical proliferative Brenner tumor</label>
-<input type="checkbox" class="element checkbox" id="A65" value="  - Brenner tumor, malignant"><label class="element choice">Brenner tumor, malignant</label>
-<input type="checkbox" class="element checkbox" id="A66" value="  - Carcinoma, subtype cannot be determined"><label class="element choice">Carcinoma, subtype cannot be determinedp</label>
-<input type="checkbox" class="element checkbox" id="A67" value="  - Mixed epithelial borderline (atypical proliferative) tumor (specify types and percentages):"><label class="element choice">Mixed epithelial borderline (atypical proliferative) tumor (specify types and percentages):</label>
-<input type="checkbox" class="element checkbox" id="A68" value="  - Mixed epithelial carcinoma (specify types and percentages):"><label class="element choice">Mixed epithelial carcinoma (specify types and percentages):</label>
-<input type="checkbox" class="element checkbox" id="A69" value="  - Carcinosarcoma (malignant mixed Mullerian tumor)"><label class="element choice">Carcinosarcoma (malignant mixed Mullerian tumor)</label>
-<input type="checkbox" class="element checkbox" id="A70" value="  - Small cell carcinoma, pulmonary type"><label class="element choice">Small cell carcinoma, pulmonary type</label>
-<input type="checkbox" class="element checkbox" id="A71" value="  - Small cell carcinoma, hypercalcemic type"><label class="element choice">Small cell carcinoma, hypercalcemic type</label>
-<input type="checkbox" class="element checkbox" id="A72" value="  - Squamous cell carcinoma"><label class="element choice">Squamous cell carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A73" value="  - Transitional cell carcinoma"><label class="element choice">Transitional cell carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A74" value="  - Undifferentiated carcinoma"><label class="element choice">Undifferentiated carcinoma</label>
-<input type="checkbox" class="element checkbox" id="A75" value="  - Granulosa cell tumor, adult type"><label class="element choice">Granulosa cell tumor, adult type</label>
-<input type="checkbox" class="element checkbox" id="A76" value="  - Granulosa cell tumor, juvenile type"><label class="element choice">Granulosa cell tumor, juvenile type</label>
-<input type="checkbox" class="element checkbox" id="A77" value="  - Other sex cord-stromal tumor (specify type):"><label class="element choice">Other sex cord-stromal tumor (specify type):</label>
-<input type="checkbox" class="element checkbox" id="A78" value="  - Dysgerminoma"><label class="element choice">Dysgerminoma</label>
-<input type="checkbox" class="element checkbox" id="A79" value="  - Yolk sac tumor (endodermal sinus tumor)"><label class="element choice">Yolk sac tumor (endodermal sinus tumor)</label>
-<input type="checkbox" class="element checkbox" id="A80" value="  - Immature teratoma"><label class="element choice">Immature teratoma</label>
-<input type="checkbox" class="element checkbox" id="A81" value="  - Carcinoma arising from a teratoma (specify type):"><label class="element choice">Carcinoma arising from a teratoma (specify type):</label>
-<input type="checkbox" class="element checkbox" id="A82" value="  - Mixed malignant germ cell tumor (specify types and percentages):"><label class="element choice">Mixed malignant germ cell tumor (specify types and percentages):</label>
-<input type="checkbox" class="element checkbox" id="A83" value="  - Other (specify):"><label class="element choice">Other (specify):</label>
-</p></li>
+<input type="checkbox" id="A45" value="  - Serous tubal intraepithelial carcinoma (STIC)"><label>Serous tubal intraepithelial carcinoma (STIC)</label><br>
+<input type="checkbox" id="A46" value="  - Serous borderline tumor/atypical proliferative serous tumor"><label>Serous borderline tumor/atypical proliferative serous tumor</label><br>
+<input type="checkbox" id="A47" value="  - Serous borderline tumor/atypical proliferative serous tumor with microinvasion"><label>Serous borderline tumor/atypical proliferative serous tumor with microinvasion</label><br>
+<input type="checkbox" id="A48" value="  - Serous borderline tumor-micropapillary variant/noninvasive low-grade serous carcinoma"><label>Serous borderline tumor-micropapillary variant/noninvasive low-grade serous carcinoma</label><br>
+<input type="checkbox" id="A49" value="  - Serous carcinoma"><label>Serous carcinoma</label><br>
+<input type="checkbox" id="A50" value="  - Endometrioid borderline tumor/atypical proliferative endometrioid tumor"><label>Endometrioid borderline tumor/atypical proliferative endometrioid tumor</label><br>
+<input type="checkbox" id="A51" value="  - Endometrioid borderline tumor/atypical proliferative endometrioid tumor with microinvasion"><label>Endometrioid borderline tumor/atypical proliferative endometrioid tumor with microinvasion</label><br>
+<input type="checkbox" id="A52" value="  - Endometrioid carcinoma"><label>Endometrioid carcinoma</label><br>
+<input type="checkbox" id="A53" value="  - Clear cell borderline tumor/atypical proliferative clear cell tumor"><label>Clear cell borderline tumor/atypical proliferative clear cell tumor</label><br>
+<input type="checkbox" id="A54" value="  - Clear cell carcinoma"><label>Clear cell carcinoma</label><br>
+<input type="checkbox" id="A55" value="  - Mucinous borderline tumor/atypical proliferative mucinous tumor"><label>Mucinous borderline tumor/atypical proliferative mucinous tumor</label><br>
+<input type="checkbox" id="A56" value="  - Mucinous borderline tumor/atypical proliferative mucinous tumor with intraepithelial carcinoma"><label>Mucinous borderline tumor/atypical proliferative mucinous tumor with intraepithelial carcinoma</label><br>
+<input type="checkbox" id="A57" value="  - Mucinous borderline tumor/atypical proliferative mucinous tumor with microinvasion"><label>Mucinous borderline tumor/atypical proliferative mucinous tumor with microinvasion</label><br>
+<input type="checkbox" id="A58" value="  - Mucinous carcinoma"><label>Mucinous carcinoma</label><br>
+<input type="checkbox" id="A59" value="  - Mucinous carcinoma with expansile invasive pattern"><label>Mucinous carcinoma with expansile invasive pattern</label><br>
+<input type="checkbox" id="A60" value="  - Mucinous carcinoma with infiltrative invasive pattern"><label>Mucinous carcinoma with infiltrative invasive pattern</label><br>
+<input type="checkbox" id="A61" value="  - Seromucinous borderline tumor/atypical proliferative seromucinous tumor"><label>Seromucinous borderline tumor/atypical proliferative seromucinous tumor</label><br>
+<input type="checkbox" id="A62" value="  - Seromucinous borderline tumor/atypical proliferative seromucinous tumor"><label>Seromucinous borderline tumor/atypical proliferative seromucinous tumor</label><br>
+<input type="checkbox" id="A63" value="  - Seromucinous carcinoma"><label>Seromucinous carcinoma</label><br>
+<input type="checkbox" id="A64" value="  - Brenner tumor, borderline/atypical proliferative Brenner tumor"><label>Brenner tumor, borderline/atypical proliferative Brenner tumor</label><br>
+<input type="checkbox" id="A65" value="  - Brenner tumor, malignant"><label>Brenner tumor, malignant</label><br>
+<input type="checkbox" id="A66" value="  - Carcinoma, subtype cannot be determined"><label>Carcinoma, subtype cannot be determinedp</label><br>
+<input type="checkbox" id="A67" value="  - Mixed epithelial borderline (atypical proliferative) tumor (specify types and percentages):"><label>Mixed epithelial borderline (atypical proliferative) tumor (specify types and percentages):</label><br>
+<input type="checkbox" id="A68" value="  - Mixed epithelial carcinoma (specify types and percentages):"><label>Mixed epithelial carcinoma (specify types and percentages):</label><br>
+<input type="checkbox" id="A69" value="  - Carcinosarcoma (malignant mixed Mullerian tumor)"><label>Carcinosarcoma (malignant mixed Mullerian tumor)</label><br>
+<input type="checkbox" id="A70" value="  - Small cell carcinoma, pulmonary type"><label>Small cell carcinoma, pulmonary type</label><br>
+<input type="checkbox" id="A71" value="  - Small cell carcinoma, hypercalcemic type"><label>Small cell carcinoma, hypercalcemic type</label><br>
+<input type="checkbox" id="A72" value="  - Squamous cell carcinoma"><label>Squamous cell carcinoma</label><br>
+<input type="checkbox" id="A73" value="  - Transitional cell carcinoma"><label>Transitional cell carcinoma</label><br>
+<input type="checkbox" id="A74" value="  - Undifferentiated carcinoma"><label>Undifferentiated carcinoma</label><br>
+<input type="checkbox" id="A75" value="  - Granulosa cell tumor, adult type"><label>Granulosa cell tumor, adult type</label><br>
+<input type="checkbox" id="A76" value="  - Granulosa cell tumor, juvenile type"><label>Granulosa cell tumor, juvenile type</label><br>
+<input type="checkbox" id="A77" value="  - Other sex cord-stromal tumor (specify type):"><label>Other sex cord-stromal tumor (specify type):</label><br>
+<input type="checkbox" id="A78" value="  - Dysgerminoma"><label>Dysgerminoma</label><br>
+<input type="checkbox" id="A79" value="  - Yolk sac tumor (endodermal sinus tumor)"><label>Yolk sac tumor (endodermal sinus tumor)</label><br>
+<input type="checkbox" id="A80" value="  - Immature teratoma"><label>Immature teratoma</label><br>
+<input type="checkbox" id="A81" value="  - Carcinoma arising from a teratoma (specify type):"><label>Carcinoma arising from a teratoma (specify type):</label><br>
+<input type="checkbox" id="A82" value="  - Mixed malignant germ cell tumor (specify types and percentages):"><label>Mixed malignant germ cell tumor (specify types and percentages):</label><br>
+<input type="checkbox" id="A83" value="  - Other (specify):"><label>Other (specify):</label><br>
+</p>
 
-<li><p>
+<p>
+<table border="1">
+<col width="70%">
+<tr>
+<td>
 <label class="description">- Histologic grade (WHO):</label>
-	<select class="element select medium" ID="A84">
+</td>
+<td>
+	<select class="element select large" ID="A84">
 		<option value=""></option>
-		<option value="  - G1: Well differentiated">G1: Well differentiated</option>
-		<option value="  - G2: Moderately differentiated">G2: Moderately differentiated</option>
-		<option value="  - G3: Poorly differentiated">G3: Poorly differentiated</option>
-		<option value="  - GX: Cannot be assessed">GX: Cannot be assessed</option>
-		<option value="  - Not applicable">Not applicable</option>	
+		<option value="G1: Well differentiated">G1: Well differentiated</option>
+		<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
+		<option value="G3: Poorly differentiated">G3: Poorly differentiated</option>
+		<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>
+		<option value="Not applicable">Not applicable</option>	
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Histologic grade (2-tier system for immature teratoma and serous carcinoma):</label>
-	<select class="element select medium" ID="A85">
+<tr>
+<td>
+<label class="description">- Histologic grade (for immature teratoma and serous carcinoma):</label>
+</td>
+<td>
+	<select class="element select large" ID="A85">
 		<option value=""></option>
-		<option value="  - Low grade">Low grade</option>
-		<option value="  - High grade">High grade</option>
-		<option value="  - Other (specify)":>Other (specify)</option>
-		<option value="  - Not applicable">Not applicable</option>	
+		<option value="Low grade">Low grade</option>
+		<option value="High grade">High grade</option>
+		<option value="Other (specify)":>Other (specify)</option>
+		<option value="Not applicable">Not applicable</option>	
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Lymphovascular invasion: </label>
-	<select class="element select medium" ID="A86">
+</td>
+<td>
+	<select class="element select large" ID="A86">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present">Present</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Perineural invasion: </label>
-	<select class="element select medium" ID="A87">
+</td>
+<td>
+	<select class="element select large" ID="A87">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present">Present</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Implants (for serous/seromucinous borderline tumors):</label>
-	<select class="element select medium" ID="A88">
+</td>
+<td>
+	<select class="element select large" ID="A88">
 		<option value=""></option>
-		<option value="  - Not identified">Not identified</option>
-		<option value="  - Present, specify site:">Present, specify site:</option>
-		<option value="  - Not sampled">Not sampled</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present, specify site:">Present, specify site:</option>
+		<option value="Not sampled">Not sampled</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Other tissue/ organ involvement:</label>
-<input type="checkbox" class="element checkbox" id="A89" value="  - Not applicable"><label class="element choice">Not applicable</label>
-<input type="checkbox" class="element checkbox" id="A90" value="  - Not identified"><label class="element choice">Not identified</label>
-<input type="checkbox" class="element checkbox" id="A91" value="  - Right ovary"><label class="element choice">Right ovary</label>
-<input type="checkbox" class="element checkbox" id="A92" value="  - Left ovary"><label class="element choice">Left ovary</label>
-<input type="checkbox" class="element checkbox" id="A93" value="  - Ovary (side not specifLeft ovaryed)"><label class="element choice">Ovary (side not specified)</label>
-<input type="checkbox" class="element checkbox" id="A94" value="  - Right fallopian tube"><label class="element choice">Right fallopian tube</label>
-<input type="checkbox" class="element checkbox" id="A95" value="  - Left fallopian tube"><label class="element choice">Left fallopian tube</label>
-<input type="checkbox" class="element checkbox" id="A96" value="  - Fallopian tube (side not specified)"><label class="element choice">Fallopian tube (side not specified)</label>
-<input type="checkbox" class="element checkbox" id="A97" value="  - Vagina"><label class="element choice">Vagina</label>
-<input type="checkbox" class="element checkbox" id="A98" value="  - Right parametrium"><label class="element choice">Right parametrium</label>
-<input type="checkbox" class="element checkbox" id="A99" value="  - Left parametrium"><label class="element choice">Left parametrium</label>
-<input type="checkbox" class="element checkbox" id="A100" value="  - Parametrium (side not specified)"><label class="element choice">Parametrium (side not specified)</label>
-<input type="checkbox" class="element checkbox" id="A101" value="  - Pelvic wall"><label class="element choice">Pelvic wall</label>
-<input type="checkbox" class="element checkbox" id="A102" value="  - Bladder wall"><label class="element choice">Bladder wall</label>
-<input type="checkbox" class="element checkbox" id="A103" value="  - Bladder mucosa"><label class="element choice">Bladder mucosa</label>
-<input type="checkbox" class="element checkbox" id="A104" value="  - Rectal wall"><label class="element choice">Rectal wall</label>
-<input type="checkbox" class="element checkbox" id="A105" value="  - Bowel mucosa"><label class="element choice">Bowel mucosa</label>
-<input type="checkbox" class="element checkbox" id="A106" value="  - Omentum"><label class="element choice">Omentum</label>
-<input type="checkbox" class="element checkbox" id="A107" value="  - Other organs/tissue (specify):"><label class="element choice">Other organs/tissue (specify):</label>
-<input type="checkbox" class="element checkbox" id="A108" value="  - Cannot be determined (explain):"><label class="element choice">Cannot be determined (explain):</label>
-</p></li>
-
-<li><p>
+<tr>
+<td>
 <label class="description">- Largest extrapelvic peritoneal focus:</label>
-	<select class="element select medium" ID="A109">
+</td>
+<td>
+	<select class="element select large" ID="A109">
 		<option value=""></option>
-		<option value="  - Microscopic">Microscopic</option>
-		<option value="  - Macroscopic (< or = 2 cm)">Macroscopic (< or = 2 cm)</option>
-		<option value="  - Macroscopic (> 2 cm)">Macroscopic (> 2 cm)</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="Microscopic">Microscopic</option>
+		<option value="Macroscopic (< or = 2 cm)">Macroscopic (< or = 2 cm)</option>
+		<option value="Macroscopic (> 2 cm)">Macroscopic (> 2 cm)</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Peritoneal/ascitic fluid: </label>
-	<select class="element select medium" ID="A110">
+</td>
+<td>
+	<select class="element select large" ID="A110">
 		<option value=""></option>
-		<option value="  - Not submitted/ unknown">Not submitted/ unknown</option>
-		<option value="  - Negative for malignancy (normal/benign)">Negative for malignancy (normal/benign)</option>
-		<option value="  - Atypical and/or suspicious (explain):">Atypical and/or suspicious (explain):</option>
-		<option value="  - Neoplastic cells (applicable only to borderline/atypical proliferative tumor)">Neoplastic cells (applicable only to borderline/atypical proliferative tumor)</option>
-		<option value="  - Malignant (positive for malignancy)">Malignant (positive for malignancy)</option>
-		<option value="  - Unsatisfactory/nondiagnostic (explain):">Unsatisfactory/nondiagnostic (explain):</option>
-		<option value="  - Results pending">Results pending</option>
+		<option value="Not submitted/ unknown">Not submitted/ unknown</option>
+		<option value="Negative for malignancy (normal/benign)">Negative for malignancy (normal/benign)</option>
+		<option value="Atypical and/or suspicious (explain):">Atypical and/or suspicious (explain):</option>
+		<option value="Neoplastic cells (applicable only to borderline/atypical proliferative tumor)">Neoplastic cells (applicable only to borderline/atypical proliferative tumor)</option>
+		<option value="Malignant (positive for malignancy)">Malignant (positive for malignancy)</option>
+		<option value="Unsatisfactory/nondiagnostic (explain):">Unsatisfactory/nondiagnostic (explain):</option>
+		<option value="Results pending">Results pending</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Pleural fluid: </label>
-	<select class="element select medium" ID="A111">
+</td>
+<td>
+	<select class="element select large" ID="A111">
 		<option value=""></option>
-		<option value="  - Not submitted/ unknown">Not submitted/ unknown</option>
-		<option value="  - Negative for malignancy (normal/benign)">Negative for malignancy (normal/benign)</option>
-		<option value="  - Atypical and/or suspicious (explain):">Atypical and/or suspicious (explain):</option>
-		<option value="  - Malignant (positive for malignancy)">Malignant (positive for malignancy)</option>
-		<option value="  - Unsatisfactory/nondiagnostic (explain):">Unsatisfactory/nondiagnostic (explain):</option>
-		<option value="  - Results pending">Results pending</option>
+		<option value="Not submitted/ unknown">Not submitted/ unknown</option>
+		<option value="Negative for malignancy (normal/benign)">Negative for malignancy (normal/benign)</option>
+		<option value="Atypical and/or suspicious (explain):">Atypical and/or suspicious (explain):</option>
+		<option value="Malignant (positive for malignancy)">Malignant (positive for malignancy)</option>
+		<option value="Unsatisfactory/nondiagnostic (explain):">Unsatisfactory/nondiagnostic (explain):</option>
+		<option value="Results pending">Results pending</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-<label class="description">- Treatment effect for high grade serous CA (on omentum), Chemotherapy Response Score CRS: </label>
-	<select class="element select medium" ID="A112">
+<tr>
+<td>
+<label class="description">- Treatment effect for high grade serous CA, Chemotherapy Response Score: </label>
+</td>
+<td>
+	<select class="element select large" ID="A112">
 		<option value=""></option>
-		<option value="  - No known presurgical therapy">No known presurgical therapy</option>
-		<option value="  - No definite or minimal response identified (CRS 1)">No definite or minimal response identified (CRS 1)</option>
-		<option value="  - Moderate response identified (CRS 2)">Moderate response identified (CRS 2)</option>
-		<option value="  - Marked response with no or minimal residual cancer (CRS 3)">Marked response with no or minimal residual cancer (CRS 3)</option>
-		<option value="  - Cannot be determined">Cannot be determined</option>
+		<option value="No known presurgical therapy">No known presurgical therapy</option>
+		<option value="No definite or minimal response identified (CRS 1)">No definite or minimal response identified (CRS 1)</option>
+		<option value="Moderate response identified (CRS 2)">Moderate response identified (CRS 2)</option>
+		<option value="Marked response with no or minimal residual cancer (CRS 3)">Marked response with no or minimal residual cancer (CRS 3)</option>
+		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
-</p></li>
+</td>
+</tr>
+</table>
+</p>
 
-<br>
+<p>
+<label class="description">- Other tissue/ organ involvement:</label><br>
+<input type="checkbox" id="A89" value="  - Not applicable"><label>Not applicable</label><br>
+<input type="checkbox" id="A90" value="  - Not identified"><label>Not identified</label><br>
+<input type="checkbox" id="A91" value="  - Right ovary"><label>Right ovary</label><br>
+<input type="checkbox" id="A92" value="  - Left ovary"><label>Left ovary</label><br>
+<input type="checkbox" id="A93" value="  - Ovary (side not specifLeft ovaryed)"><label>Ovary (side not specified)</label><br>
+<input type="checkbox" id="A94" value="  - Right fallopian tube"><label>Right fallopian tube</label><br>
+<input type="checkbox" id="A95" value="  - Left fallopian tube"><label>Left fallopian tube</label><br>
+<input type="checkbox" id="A96" value="  - Fallopian tube (side not specified)"><label>Fallopian tube (side not specified)</label><br>
+<input type="checkbox" id="A97" value="  - Vagina"><label>Vagina</label><br>
+<input type="checkbox" id="A98" value="  - Right parametrium"><label>Right parametrium</label><br>
+<input type="checkbox" id="A99" value="  - Left parametrium"><label>Left parametrium</label><br>
+<input type="checkbox" id="A100" value="  - Parametrium (side not specified)"><label>Parametrium (side not specified)</label><br>
+<input type="checkbox" id="A101" value="  - Pelvic wall"><label>Pelvic wall</label><br>
+<input type="checkbox" id="A102" value="  - Bladder wall"><label>Bladder wall</label><br>
+<input type="checkbox" id="A103" value="  - Bladder mucosa"><label>Bladder mucosa</label><br>
+<input type="checkbox" id="A104" value="  - Rectal wall"><label>Rectal wall</label><br>
+<input type="checkbox" id="A105" value="  - Bowel mucosa"><label>Bowel mucosa</label><br>
+<input type="checkbox" id="A106" value="  - Omentum"><label>Omentum</label><br>
+<input type="checkbox" id="A107" value="  - Other organs/tissue (specify):"><label>Other organs/tissue (specify):</label><br>
+<input type="checkbox" id="A108" value="  - Cannot be determined (explain):"><label>Cannot be determined (explain):</label><br>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Surgical margins of excision specimen: </label></legend>
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
 <label class="description">- Ectocervical/vaginal cuff margin:</label>
-	<select class="element select medium" ID="A113">
+</td>
+<td>
+	<select class="element select large" ID="A113">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
-		<option value="  - Involved by carcinioma">Involved by carcinioma</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+		<option value="Involved by carcinioma">Involved by carcinioma</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Parametrial/paracervical margin:</label>
-	<select class="element select medium" ID="A114">
+</td>
+<td>
+	<select class="element select large" ID="A114">
 		<option value=""></option>
-		<option value="  - Cannot be assessed">Cannot be assessed</option>
-		<option value="  - Uninvolved by carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
-		<option value="  - Involved by carcinioma">Involved by carcinioma</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+		<option value="Involved by carcinioma">Involved by carcinioma</option>
 	</select>
-</p></li>
-
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
-
-<li><p>
-- Number of lymph nodes examined:
-<input type="text" class="element text small" ID="A115" size="10">
-</p>
-
 <p>
-- Number of lymph nodes with metastasis > 10 mm:
-<input type="text" class="element text small" ID="A116" size="10">
-</p>
+<table border="1">
+<col width="80%">
+<tr>
+<td>
+<label class="description">- Number of lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A115" size="10">
+</td>
+</tr>
 
-<p>
-- Number of lymph nodes with metastasis < or = 10 mm (exclude ITC):
-<input type="text" class="element text small" ID="A117" size="10">
-</p>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with metastasis > 10 mm:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A116" size="10">
+</td>
+</tr>
 
-<p>
-- Number of lymph nodes with isolated tumor cells (< or = 0.2 mm):
-<input type="text" class="element text small" ID="A118" size="10">
-</p>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with metastasis < or = 10 mm (exclude ITC):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A117" size="10">
+</td>
+</tr>
 
-<li><p>
-- Size of largest metastatic deposit (mm), specify site:
-<input type="text" class="element text small" ID="A119" size="20">
-</p>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with isolated tumor cells (< or = 0.2 mm):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A118" size="10">
+</td>
+</tr>
 
-<p>
-- Size of largest lymph node involved (mm), specify site:
-<input type="text" class="element text small" ID="A120" size="20">
-</p></li>
-<br>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A119" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A120" size="20">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A135">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> FIGO stage (2018 Cancer Report):</label></legend>
-<li><p>
+	<legend> <label class="description"><a href=".\cap\GYN_OvaryCA.pdf" target="_blank"> FIGO stage (2018 Cancer Report):</a></label></legend>
+<!--
+<a href=".\cap\GYN_OvaryCA.pdf" target="_blank">
+<img src=".\cap\GYN_OvaryCA.JPG" alt="FIGO2018" width="600" >
+</a>
+<br>
+Click the table for the original reference.
+-->
+<p>
+I: Tumor confined to ovaries or fallopian tube(s)<br><br>
+- IA: Tumor limited to 1 ovary (capsule intact) or fallopian tube; no tumor on ovarian or fallopian tube<br> surface; no malignant cells in the ascites or peritoneal washings<br>
+- IB: Tumor limited to both ovaries (capsules intact) or fallopian tubes; no tumor on ovarian or <br>fallopian tube surface; no malignant cells in the ascites or peritoneal washings<br>
+- IC: Tumor limited to 1 or both ovaries or fallopian tubes, with any of the following:<br>
+-- IC1: Surgical spill intraoperatively<br>
+-- IC2: Capsule ruptured before surgery or tumor on ovarian or fallopian tube surface<br>
+-- IC3: Malignant cells present in the ascites or peritoneal washings<br><br>
+II: Tumor involves 1 or both ovaries or fallopian tubes with pelvic extension (below pelvic brim) or<br> peritoneal cancer<br><br>
+- IIA: Extension and/or implants on the uterus and/or fallopian tubes and/or ovaries<br>
+- IIB: Extension to other pelvic intraperitoneal tissues<br><br>
+III: Tumor involves 1 or both ovaries, or fallopian tubes, or primary peritoneal cancer, with <br>cytologically or histologically confirmed spread to the peritoneum outside the pelvis and/or metastasis to the retroperitoneal lymph nodes<br><br>
+- IIIA: Metastasis to the retroperitoneal lymph nodes with or without microscopic peritoneal <br>
+involvement beyond the pelvis<br>
+-- IIIA1: Positive retroperitoneal lymph nodes only (cytologically or histologically proven)<br>
+--- IIIA1(i): Metastasis ≤10 mm in greatest dimension<br>
+--- IIIA1(ii): Metastasis >10 mm in greatest dimension<br>
+-- IIIA2: Microscopic extrapelvic (above the pelvic brim) peritoneal involvement with or without<br> positive retroperitoneal lymph nodes<br>
+- IIIB: Macroscopic peritoneal metastases beyond the pelvic brim ≤2 cm in greatest dimension, with or<br> without metastasis to the retroperitoneal lymph nodes<br>
+- IIIC: Macroscopic peritoneal metastases beyond the pelvic brim >2 cm in greatest dimension, with or<br> without metastases to the retroperitoneal nodes<br><br>
+IV: Distant metastasis excluding peritoneal metastases<br><br>
+- IVA: Pleural effusion with positive cytology<br>
+- IVB: Metastases to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside <br>
+of abdominal cavity)<br><br>
+
+</p>
+<!--
+<p>
   	<select class="element select medium" ID="A129">
 		<option value=""></option>
 		<option value="  - I: Tumor confined to ovaries or fallopian tube(s)">I: Tumor confined to ovaries or fallopian tube(s)</option>
@@ -1079,25 +1214,33 @@ function CopyToClipboard() {
 		<option value="  - IVA: Pleural effusion with positive cytology">IVA: Pleural effusion with positive cytology</option>
 		<option value="  - IVB: Metastases to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside of abdominal cavity)">IVB: Metastases to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside of abdominal cavity)</option>
 	</select>
-</p></li>
-<br>
+-->
 </fieldset>
 </p>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
-	
-<li><p>
+	<legend>  Pathologic Stage Classification (AJCC 8e):</legend>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td  valign="top">
   - TNM Descriptors:
-<input type="checkbox" class="element checkbox" id="A121" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A122" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A123" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox" id="A121" value=" m (multiple primary tumors) "><label>m (multiple primary tumors)</label>
+<input type="checkbox" id="A122" value=" r (recurrent) "><label>r (recurrent)</label>
+<input type="checkbox" id="A123" value=" y (post treatment) "><label>y (post treatment)</label>
+</td>
+</tr>
 
-<li><p>
-  - Primary tumor:<br>
-	<select class="element select medium" ID="A124">
+<tr>
+<td>
+  - Primary tumor:
+</td>
+<td>
+	<select class="element select large" ID="A124">
 		<option value=""></option>
 		<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 		<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -1116,16 +1259,24 @@ function CopyToClipboard() {
 		<option value="  - pT3b: Macroscopic peritoneal metastasis beyond pelvis 2 cm or less in greatest dimension with or without metastasis to retroperitoneal lymph nodes">pT3b: Macroscopic peritoneal metastasis beyond pelvis 2 cm or less in greatest dimension with or without metastasis to retroperitoneal lymph nodes</option>
 		<option value="  - pT3c: Macroscopic peritoneal metastasis beyond pelvis more than 2 cm in greatest dimension with or without metastasis to the retroperitoneal lymph nodes (includes extension of tumor to capsule of liver and spleen without parenchymal involvement of either organ)">pT3c: Macroscopic peritoneal metastasis beyond pelvis more than 2 cm in greatest dimension with or without metastasis to the retroperitoneal lymph nodes (includes extension of tumor to capsule of liver and spleen without parenchymal involvement of either organ)</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
   - Lymph node descriptors:
-<input type="checkbox" class="element checkbox" id="A125" value=" sn (sentinel) "><label class="element choice">sn (sentinel)</label>
-</p></li>
+</td>
+<td>
+<input type="checkbox" id="A125" value=" sn (sentinel) "><label>sn (sentinel)</label>
+</td>
+</tr>
 
-<li><p>
-  - Regional lymph nodes (pN): <br>
-	<select class="element select medium" ID="A126">
+<tr>
+<td>
+  - Regional lymph nodes (pN): 
+</td>
+<td>
+	<select class="element select large" ID="A126">
 		<option value=""></option>
 		<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 		<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
@@ -1134,47 +1285,56 @@ function CopyToClipboard() {
 		<option value="  - pN1a: Metastasis up to and including 10 mm in greatest dimension">pN1a: Metastasis up to and including 10 mm in greatest dimension</option>
 		<option value="  - pN1b: Metastasis > 10 mm in greatest dimension">pN1b: Metastasis > 10 mm in greatest dimension</option>
 	</select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
-  - Distant metastasis (pM): <br>
-	<select class="element select medium" ID="A127">
+<tr>
+<td rowspan="2" valign="top">
+  - Distant metastasis (pM): 
+</td>
+<td>
+	<select class="element select large" ID="A127">
 		<option value=""></option>
 		<option value="  - pM1: Distant metastasis, including pleural effusion with positive cytology; liver or splenic parenchymal metastasis; metastasis to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside the abdominal cavity); and transmural involvement of intestine">pM1: Distant metastasis, including pleural effusion with positive cytology; liver or splenic parenchymal metastasis; metastasis to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside the abdominal cavity); and transmural involvement of intestine</option>
 		<option value="  - pM1a: Pleural effusion with positive cytology">pM1a: Pleural effusion with positive cytology</option>
 		<option value="  - pM1b: Liver or splenic parenchymal metastases; metastases to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside the abdominal cavity); transmural involvement of intestine">pM1b: Liver or splenic parenchymal metastases; metastases to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside the abdominal cavity); transmural involvement of intestine</option>
 	</select>
-</p>
+</td>
+</tr>
 
-<p>    - Specify site(s), if known:<br>
+<tr>
+<td>
+    - Specify site(s), if known:
 <input type="text" class="element text small" ID="A128" size="35">
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class="element checkbox" id="A130" value="  - Serous tubal intraepithelial carcinoma (STIC)"><label class="element choice">Serous tubal intraepithelial carcinoma (STIC)</label>
-<input type="checkbox" class="element checkbox" id="A131" value="  - Endometriosis"><label class="element choice">Endometriosis</label>
-<input type="checkbox" class="element checkbox" id="A132" value="  - Endosalpingiosis"><label class="element choice">Endosalpingiosis</label>
+<p>
+<input type="checkbox" id="A130" value="  - Serous tubal intraepithelial carcinoma (STIC)"><label >Serous tubal intraepithelial carcinoma (STIC)</label><br>
+<input type="checkbox" id="A131" value="  - Endometriosis"><label >Endometriosis</label><br>
+<input type="checkbox" id="A132" value="  - Endosalpingiosis"><label >Endosalpingiosis</label><br>
 </p>
 <p>
 - Other (specify):
 	<input type="text" class="element text medium" ID="A133" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A134" class = "element textarea medium" style="border-color:grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -1191,7 +1351,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 16-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Ovary Fallopian 1.1.1.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

@@ -11,29 +11,84 @@ function updateDescription (frm)
 {
     var Template = ""
 
+
+if (frm.IHC.value !== ""){
+Template += "- IHC Interpretation for tumor: " +  + "\n" + "  - " + frm.IHC.value + "\n"+ "\n";
+}
+
 if (frm.MLH1.value !== ""){
-Template += "- MLH1 (mutL homolog 1): " + "\n" + "  - " + frm.MLH1.value + "\n";
+Template += "- MLH1 (mutL homolog 1): " + frm.MLH1.value + "\n";
 }
 
 if (frm.MSH2.value !== ""){
-Template += "- MSH2 (mutS homolog 2): " + "\n" + "  - "+ frm.MSH2.value + "\n";
+Template += "- MSH2 (mutS homolog 2): "+ frm.MSH2.value + "\n";
 }
 
 if (frm.MSH6.value !== ""){
-Template += "- MSH6 (mutS homolog 6): " + "\n" + "  - "+ frm.MSH6.value + "\n";
+Template += "- MSH6 (mutS homolog 6): " + frm.MSH6.value + "\n";
 }
 
 if (frm.PMS2.value !== ""){
-Template += "- PMS2 (PMS1 homolog 2, mismatch repair system component): " + "\n" + "  - " + frm.PMS2.value + "\n"+ "\n";
+Template += "- PMS2 (PMS1 homolog 2): " + frm.PMS2.value + "\n";
 }
 
-if (frm.IHC.value !== ""){
-Template += "- IHC Interpretation for tumor: " + "\n" + "  - " + frm.IHC.value + "\n";
+if (frm.MSI.value !== ""){
+Template += "\n" + "- Microsatellite instability status: " + "\n" + "  - " + frm.MSI.value + "\n";
+}
+
+if (frm.BAT25.value + frm.BAT26.value + frm.NR21.value + frm.NR24.value + frm.NR27.value!== ""){
+	Template += "\n" + "- Mononucleotide Panel: " + "\n";
+}	
+
+if (frm.BAT25.value !== ""){
+	Template += "  - BAT-25 : " + frm.BAT25.value + "\n";
+}
+
+if (frm.BAT26.value !== ""){
+	Template += "  - BAT-26 : " + frm.BAT26.value + "\n";
+}
+
+if (frm.NR21.value !== ""){
+	Template += "  - NR-21 : " + frm.NR21.value + "\n";
+}
+
+if (frm.NR24.value !== ""){
+	Template += "  - NR-24 : " + frm.NR24.value + "\n";
+}
+
+if (frm.NR27.value !== ""){
+	Template += "  - NR-27 : " + frm.NR27.value + "\n";
+}
+
+if (frm.BAT251.value + frm.BAT261.value + frm.D2.value + frm.D5.value + frm.D17.value!== ""){
+	Template += "\n" + "- NCI Panel: " + "\n";
+}	
+
+if (frm.BAT251.value !== ""){
+	Template += "  - BAT-25 : " + frm.BAT251.value + "\n";
+}
+
+if (frm.BAT261.value !== ""){
+	Template += "  - BAT-26 : " + frm.BAT261.value + "\n";
+}
+
+if (frm.D2.value !== ""){
+	Template += "  - D2S123 : " + frm.D2.value + "\n";
+}
+
+if (frm.D5.value !== ""){
+	Template += "  - D5S346 : " + frm.D5.value + "\n";
+}
+
+if (frm.D17.value !== ""){
+	Template += "  - D17S250 : " + frm.D17.value + "\n";
+}
+if (frm.MSI.value !== ""){
+	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory derived method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and the normal tissue. " + "\n" + "\n" + "The MSI test is under evaluation and is not in the CAP-acredited list.";
 }
 
 frm.holdtext.value = Template;
 }
-
 
 function CopyToClipboard() {
   /* Get the text field */
@@ -49,7 +104,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -80,54 +140,213 @@ function CopyToClipboard() {
 <form>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Immunohistochemical staining:</label></legend>
+<p>
+<table border="1">
+<col width="40%">
 
-<li><p><label class="description">- MLH1 (mutL homolog 1):</label>
-<select class="element select medium"  ID="MLH1">
+<tr>
+<td >
+<label class="description">- MLH1 (mutL homolog 1):</label></td >
+<td ><select class="element select large"  ID="MLH1">
 	<option value=""></option>
 	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
 	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
 	<option value="Cannot be determined:">Cannot be determined:</option>
-</select>
-</p></li>
+</select></td >
+</tr>
 
-<li><p><label class="description">- MSH2 (mutS homolog 2):</label>
-<select class="element select medium"  ID="MSH2">
+<tr>
+<td ><label class="description">- MSH2 (mutS homolog 2):</label></td >
+<td ><select class="element select large"  ID="MSH2">
 	<option value=""></option>
 	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
 	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
 	<option value="Cannot be determined:">Cannot be determined:</option>
-</select>
-</p></li>
+</select></td >
+</tr>
 
-<li><p><label class="description">- MSH6 (mutS homolog 6):</label>
-<select class="element select medium"  ID="MSH6">
+<tr>
+<td ><label class="description">- MSH6 (mutS homolog 6):</label></td >
+<td ><select class="element select large"  ID="MSH6">
 	<option value=""></option>
 	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
 	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
 	<option value="Cannot be determined:">Cannot be determined:</option>
-</select>
-</p></li>
+</select></td >
+</tr>
 
-<li><p><label class="description">- PMS2 (PMS1 homolog 2, mismatch repair system component):</label>
-<select class="element select medium"  ID="PMS2">
+<tr>
+<td ><label class="description">- PMS2 (PMS1 homolog 2):</label></td >
+<td ><select class="element select large"  ID="PMS2">
 	<option value=""></option>
 	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
 	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
 	<option value="Cannot be determined:">Cannot be determined:</option>
-</select>
-</p></li>
-<br>
-</fieldset>
-<br>
+</select></td >
+</tr>
+</table>
+</p>
 
-<li><p><label class="description">- IHC Interpretation for the tumor:</label>
+<p><label class="description">- MMR IHC Interpretation for the tumor:</label>
 <select class="element select medium"  ID="IHC">
 	<option value=""></option>
 	<option value="No loss of nuclear signals of all 4 proteins: Not defective in DNA mismatch repair and low probability of microsatellite instability-high (MSI-H).">No loss of nuclear signals of all 4 proteins: Not defective in DNA mismatch repair and low probability of microsatellite instability-high (MSI-H).</option>
 	<option value="Loss of nuclear signals of 1 or more proteins: Defective DNA mismatch repair within the tumor. Causes could be somatic mutation or DNA methylation (sporadic), or germline alteration (Lynch syndrome).">Loss of nuclear signals of 1 or more proteins: Defective DNA mismatch repair within the tumor. </option>
 	<option value="MMR status cannot be determined by IHC.">MMR status cannot be determined by IHC.</option>
 </select>
-</p></li>
+</p>
+</fieldset>
+</p>
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">DNA-based PCR test for Microsatellite instability (MSI):</label></legend>
+
+<p>
+<table border="1">
+<col width="15%">
+<tr>
+<td colspan="2">
+<label class="description" align="Center">Mononucleotide Panel :</label>
+</td>
+<td colspan="2">
+<label class="description" align="Center">NCI Panel :</label>
+</td>
+</tr>
+
+<tr>
+<td >
+<label class="description">BAT-25:</label></td >
+<td ><select class="element select large"  ID="BAT25">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+<td >
+<label class="description">BAT-25:</label></td >
+<td ><select class="element select large"  ID="BAT251">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+</tr>
+
+<tr>
+<td >
+<label class="description">BAT-26:</label></td >
+<td ><select class="element select large"  ID="BAT26">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+<td >
+<label class="description">BAT-26:</label></td >
+<td ><select class="element select large"  ID="BAT261">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+</tr>
+
+<tr>
+<td >
+<label class="description">NR-21 :</label></td >
+<td ><select class="element select large"  ID="NR21">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+<td >
+<label class="description">D2S123:</label></td >
+<td ><select class="element select large"  ID="D2">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+</tr>
+
+<tr>
+<td >
+<label class="description">NR-24 :</label></td >
+<td ><select class="element select large"  ID="NR24">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+<td >
+<label class="description">D5S346:</label></td >
+<td ><select class="element select large"  ID="D5">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+</tr>
+
+<tr>
+<td >
+<label class="description">NR-27 :</label></td >
+<td ><select class="element select large"  ID="NR27">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+<td >
+<label class="description">D17S250:</label></td >
+<td ><select class="element select large"  ID="D17">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td >
+</tr>
+</table>
+</p>
+
+<p><label class="description">- MSI status:</label>
+<select class="element select medium"  ID="MSI">
+	<option value=""></option>
+	<option value="MSI - stable (MSS)">MSI – stable (MSS)</option>
+	<option value="MSI - low (MSI-L) 1% - 29% of the National Cancer Institute (NCI) or mononucleotide markers exhibit instability">MSI – low (MSI-L) 1% - 29% of the National Cancer Institute (NCI) or mononucleotide markers exhibit instability</option>
+	<option value="MSI - low (MSI-L) 1 of the NCI or mononucleotide markers exhibit instability">MSI – low (MSI-L) 1 of the NCI or mononucleotide markers exhibit instability</option>
+	<option value="MSI - low (MSI-L) Other (specify): ">MSI – low (MSI-L) Other (specify):</option>
+	<option value="MSI - high (MSI-H) greater or equal 30% of the NCI or mononucleotide markers exhibit instability">MSI – high (MSI-H) greater or equal 30% of the NCI or mononucleotide markers exhibit instability</option>
+	<option value="MSI - high (MSI-H) 2 or more of the NCI or mononucleotide markers exhibit instability">MSI – high (MSI-H) 2 or more of the NCI or mononucleotide markers exhibit instability</option>
+	<option value="MSI - high (MSI-H) Other (specify): ">MSI – high (MSI-H) Other (specify):</option>
+	<option value="MSI - cannot be determined.">MSI - cannot be determined.</option>
+</select>
+
+<br>
+</fieldset>
+</p>
+
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -144,7 +363,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated 19-Feb-2020, modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated 06-June-2020, modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 html form and cascade style sheet were created basing on <a href="http://www.phpform.org">pForm</a>,<br>
 with codes modified from <a href="https://www.w3schools.com/">W3 School tutorials</a> and <a href="https://stackoverflow.com/">Stack Overflow</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.</div>

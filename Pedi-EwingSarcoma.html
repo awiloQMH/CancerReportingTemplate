@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,15 +13,15 @@ function updateDescription (frm)
 	
 
 if (frm.A01.value !== ""){
-	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+	Template += "- Procedure: " + frm.A01.value + "\n";
 }
 
 if (frm.A03.value !== ""){
-	Template += "- Tumor site: " + "\n" + "   - " + frm.A03.value + "\n";
+	Template += "- Tumor site: " + frm.A03.value + "\n";
 }
 
 if (frm.A05.value !== ""){
-	Template += "- Tumor size: " + "\n" + "  - "+ frm.A05.value + "\n";
+	Template += "- Tumor size: " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value !== ""){
@@ -29,15 +29,15 @@ if (frm.A06.value !== ""){
 }
 
 if (frm.A07.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A07.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A07.value + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A08.value + "\n";
+	Template += "- Perineural invasion:  " + frm.A08.value + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "- Cytogenetic findings:  " + "\n" + "  - " + frm.A09.value + "\n";
+	Template += "- Cytogenetic findings:  " + frm.A09.value + "\n";
 }
 
 if (document.getElementById("A10").checked || document.getElementById("A11").checked || 
@@ -67,15 +67,15 @@ if (document.getElementById("A14").checked){
 }
 
 if (frm.A15.value !== ""){
-	Template += "- Treatment effects: " + "\n" + "  - " + frm.A15.value + "\n";
+	Template += "- Treatment effects: " + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
-	Template += "- Surgical margins: " + "\n" + "  - " + frm.A16.value + "\n";
+	Template += "\n" + "- Surgical margins: " + frm.A16.value + "\n";
 }
 
 if (frm.A17.value + frm.A18.value + frm.A19.value + frm.A20.value + frm.A21.value!== ""){
-	Template += "- Regional lymph nodes: " + "\n";
+	Template += "\n" + "- Regional lymph nodes: " + "\n";
 }	
 
 if (frm.A17.value !== ""){
@@ -91,11 +91,11 @@ if (frm.A19.value !== ""){
 }
 
 if (frm.A20.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A20.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + "\n";
 }
 
 if (document.getElementById("A22").checked || document.getElementById("A23").checked || 
@@ -154,7 +154,7 @@ if (frm.A32.value !== ""){
 }
 
 if (frm.A33.value !== ""){
-	Template += "- Additional pathologic findings: " + "\n" + "  - " +  frm.A33.value + "\n";
+	Template += "\n" + "- Additional pathologic findings: " + "\n" + "  - " +  frm.A33.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -195,17 +195,17 @@ table, th, td {
 	</div>
 	
 <form>
-
+<p> This is additional protocol for <a href=".\cap\cp-pediatric-ewing-biopsy-19-4000.pdf" target="_blank">biopsy specimen</a>.</p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
 
 
 <table border="1">
-<col width="20%">
+<col width="60%">
 
 <tr>
-<td>- Procedure:</td>
+<td><label class="description">- Procedure:</label></td>
 <td><select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="Resection">Resection </option> 
@@ -218,7 +218,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Tumor site:</td>
+<td><label class="description">- Tumor site:</label></td>
 <td><select class="element select large" ID="A03">
 	<option value=""></option>
 	<option value="Specify site(s): ">Specify site(s): </option>
@@ -229,7 +229,7 @@ table, th, td {
 
 </tr>
 <tr>
-<td>- Tumor size:</td>
+<td><label class="description">- Tumor size:</label></td>
 <td><select class="element select large" ID="A05">
 		<option value=""></option>
 		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
@@ -251,10 +251,10 @@ table, th, td {
 
 
 <table border="1"> 
-<col width="28%">
+<col width="50%">
 
 <tr>
-<td>- Lymphovascular invasion: 
+<td><label class="description">- Lymphovascular invasion: </label>
 </td>
 <td><select class="element select large" ID="A07">
 	<option value=""></option>
@@ -265,7 +265,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Perineural invasion: </td>
+<td><label class="description">- Perineural invasion: </label></td>
 <td><select class="element select large" ID="A08">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -275,7 +275,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Cytogenetic findings: </td>
+<td><label class="description">- Cytogenetic findings: </label></td>
 <td><select class="element select large" ID="A09">
 	<option value=""></option>
 	<option value="Not performed">Not performed</option>
@@ -285,17 +285,17 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Preresection treatment: </td>
-<td><input type="checkbox" class="element checkbox" id="A10" value="No known preresection therapy"><label class="choice">No known preresection therapy</label>
-<input type="checkbox" class="element checkbox" id="A11" value="Chemotherapy performed"><label class="choice">Chemotherapy performed</label>
-<input type="checkbox" class="element checkbox" id="A12" value="Radiation therapy performed"><label class="choice">Radiation therapy performed</label>
-<input type="checkbox" class="element checkbox" id="A13" value="Therapy performed, type not specified"><label class="choice">Therapy performed, type not specified</label>
-<input type="checkbox" class="element checkbox" id="A14" value="Not specified"><label class="choice">Not specified</label>
+<td valign="top"><label class="description">- Preresection treatment: </label></td>
+<td><input type="checkbox" id="A10" value="No known preresection therapy"><label >No known preresection therapy</label><br>
+<input type="checkbox" id="A11" value="Chemotherapy performed"><label >Chemotherapy performed</label><br>
+<input type="checkbox" id="A12" value="Radiation therapy performed"><label >Radiation therapy performed</label><br>
+<input type="checkbox" id="A13" value="Therapy performed, type not specified"><label >Therapy performed, type not specified</label><br>
+<input type="checkbox" id="A14" value="Not specified"><label >Not specified</label><br>
 </td>
 </tr>
 
 <tr>
-<td>- Treatment effect: </td>
+<td><label class="description">- Treatment effect: </label></td>
 <td><select class="element select large" ID="A15">
 	<option value=""></option>
 	<option value="Necrosis not identified">Necrosis not identified</option>
@@ -331,10 +331,10 @@ table, th, td {
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
 <table border="1">
-<col width="60%">
+<col width="75%">
 <tr>
 <td>
-- Number of regional lymph nodes examined:
+<label class="description">- Number of regional lymph nodes examined:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A17" size="15">
@@ -343,7 +343,7 @@ table, th, td {
 
 <tr>
 <td>
-- Number of lymph nodes involved (specify locations):
+<label class="description">- Number of lymph nodes involved (specify locations):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A18" size="15">
@@ -352,7 +352,7 @@ table, th, td {
 
 <tr>
 <td>
-- Extranodal extension:
+<label class="description">- Extranodal extension:</label>
 </td>
 <td>
 <select class="element select large" ID="A19">
@@ -365,7 +365,7 @@ table, th, td {
 </tr>
 <tr>
 <td>
-- Size of largest metastatic deposit (mm), specify site:
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A20" size="15">
@@ -374,7 +374,7 @@ table, th, td {
 
 <tr>
 <td>
-- Size of largest lymph node involved (mm), specify site:
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A21" size="15">
@@ -390,17 +390,23 @@ table, th, td {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e): </label></legend>
 <p>
-- TNM Descriptors:<br>
-<input type="checkbox" id="A22" value="m (multiple primary tumors) ">m (multiple primary tumors)<br>
-<input type="checkbox" id="A23" value="r (recurrent) ">r (recurrent)<br>
-<input type="checkbox" id="A24" value="y (post treatment) ">y (post treatment)<br>
-</p>
-
-<p>
 <table border="1">
 <col width="62%">
 <tr>
-<td>- Primary tumor (pT) (Head and neck):</td>
+<td valign="top">
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox" id="A22" value="m (multiple primary tumors) ">m (multiple primary tumors)<br>
+<input type="checkbox" id="A23" value="r (recurrent) ">r (recurrent)<br>
+<input type="checkbox" id="A24" value="y (post treatment) ">y (post treatment)<br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT) (Head and neck):</label>
+</td>
 <td><select class="element select large" ID="A25">
 	<option value=""></option>
 	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
@@ -414,7 +420,9 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Primary tumor (pT) (Trunk and extremities):</td>
+<td>
+<label class="description">- Primary tumor (pT) (Trunk and extremities):</label>
+</td>
 <td><select class="element select large" ID="A26">
 	<option value=""></option>
 	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
@@ -427,7 +435,9 @@ table, th, td {
 </tr>
 
 <tr>
-<td>- Primary tumor (pT) (Abdomen and thoracic visceral organs):</td>
+<td>
+<label class="description">- Primary tumor (pT) (Abdo and thoracic visceral organs):</label>
+</td>
 <td><select class="element select large" ID="A27">
 	<option value=""></option>
 	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -444,7 +454,9 @@ table, th, td {
 </tr>
 
 <tr>  
-<td>- Primary tumor (pT) (Retroperitoneum):</td>
+<td>
+<label class="description">- Primary tumor (pT) (Retroperitoneum):</label>
+</td>
 <td><select class="element select large" ID="A28">
 	<option value=""></option>
 	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
@@ -457,7 +469,9 @@ table, th, td {
 </tr>
 
 <tr>  
-<td>- Primary tumor (pT) (Orbit):</td>
+<td>
+<label class="description">- Primary tumor (pT) (Orbit):</label>
+</td>
 <td><select class="element select large" ID="A29">
 	<option value=""></option>
 	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
@@ -470,7 +484,9 @@ table, th, td {
 </tr>
 
 <tr>  
-<td>- Regional lymph nodes (pN): </td>
+<td>
+<label class="description">- Regional lymph nodes (pN): </label>
+</td>
 <td><select class="element select large" ID="A30">
 	<option value=""></option>
 	<option value="   - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
@@ -480,7 +496,9 @@ table, th, td {
 </tr>
 
 <tr> 
-<td rowspan="2" valign="top">- Distant metastasis (pM): </td>
+<td rowspan="2" valign="top">
+<label class="description">- Distant metastasis (pM): </label>
+</td>
 <td><select class="element select large" ID="A31">
 	<option value=""></option>
 	<option value="   - pM1: Distant metastasis">pM1:Distant metastasis</option>
@@ -489,7 +507,7 @@ table, th, td {
 
 <tr>    
 <td>- Specify site(s), if known:
-<input type="text" class="element text large" ID="A32" size="35"></td>
+<input type="text" class="element text small" ID="A32" size="35"></td>
 </tr>
 </table>
 </p>
@@ -518,7 +536,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 23-Feb-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 08-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Ewing Sarcoma Resection 4.0.0.0 (February 2019), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

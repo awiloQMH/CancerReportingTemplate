@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -23,29 +23,29 @@ if (frm.A02.value !== ""){
 if (frm.A03.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A03.value + "\n";
 }
-
+*/
 if (frm.A04.value !== ""){
-	Template += "\n" +  "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A04.value + "\n";
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
-	Template += "- Histologic type (WHO 2019): " + "\n" + frm.A05.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 2019): " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value !== ""){
-	Template += "- Histologic grade: " + "\n" + frm.A06.value + "\n";
+	Template += "- Histologic grade: " + frm.A06.value + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "- Tumor growth pattern: " + "\n" + frm.A07.value + "\n";
+	Template += "- Tumor growth pattern: " + frm.A07.value + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + frm.A08.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A08.value + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "- Perineural invasion: " + "\n" + frm.A09.value + "\n";
+	Template += "- Perineural invasion: " + frm.A09.value + "\n";
 }
 
 if (document.getElementById("A10").checked || document.getElementById("A11").checked ||
@@ -88,19 +88,19 @@ if (frm.A17.value + frm.A18.value + frm.A19.value !== ""){
 }	
 
 if (frm.A17.value !== ""){
-	Template +=  "  " + "- Hepatic parenchymal margin: "  +"\n" + "    - " + frm.A17.value + "\n" ;
+	Template +=  "  " + "- Hepatic parenchymal margin: " + frm.A17.value + "\n" ;
 }
 
 if (frm.A18.value !== ""){
-	Template +=  "  " + "- Bile duct margin: "  +"\n" + "    - " + frm.A18.value + "\n" ;
+	Template +=  "  " + "- Bile duct margin: " + frm.A18.value + "\n" ;
 }
 
 if (frm.A19.value !== ""){
-	Template +=  "  " + "- Other margin(s), specify: "  +"\n" + "    - " + frm.A19.value + "\n" ;
+	Template +=  "  " + "- Other margin(s), specify: " + frm.A19.value + "\n" ;
 }
 
 if (frm.A20.value + frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value !== ""){
-	Template += "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
 if (frm.A20.value !== ""){
@@ -116,11 +116,11 @@ if (frm.A22.value !== ""){
 }
 
 if (frm.A23.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A23.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A23.value + "\n";
 }
 
 if (frm.A24.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A24.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A24.value + "\n";
 }
 
 if (document.getElementById("A25").checked || document.getElementById("A26").checked ||
@@ -193,7 +193,7 @@ if (frm.A37.value !== ""){
 }
 
 if (frm.A38.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A38.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A38.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -213,7 +213,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -231,13 +236,20 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p>
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
 <label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="  - Wedge resection">Wedge resection</option> 
 	<option value="  - Partial hepatectomy">Partial hepatectomy</option> 
@@ -245,129 +257,173 @@ function CopyToClipboard() {
 	<option value="  - Other (specify):">Other (specify):</option>
 	<option value="  - Not specified">Not specified</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor focality:</label> 
-<select class="element select medium" ID="A02">
+</td>
+<td>
+<select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="  - Solitary">Solitary</option> 
 	<option value="  - Multiple">Multiple</option> 
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A03">
+</td>
+<td>
+<select class="element select large" ID="A03">
 		<option value=""></option>
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
 </select>
-</p></li>
-
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
 
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A04" class="element textarea medium"></textarea>
-</p></li>
+</p>
 
-<li><p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
 <label class="description">- Histologic type (WHO 2019):</label> 
-<select class="element select medium" ID="A05">
+</td>
+<td>
+<select class="element select large" ID="A05">
 	<option value=""></option>
-	<option value="  - Large duct intrahepatic cholangiocarcinoma">Large duct intrahepatic cholangiocarcinoma</option>
-	<option value="  - Small duct intrahepatic cholangiocarcinoma">Small duct intrahepatic cholangiocarcinoma</option>
-	<option value="  - Combined hepatocellular-cholangiocarcinoma">Combined hepatocellular-cholangiocarcinoma</option>
-	<option value="  - Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>	
-	<option value="  - Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
-	<option value="  - Undifferentiated carcinoma">Undifferentiated carcinoma</option>
-	<option value="  - Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-	<option value="  - Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="  - Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)">Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)</option>
-	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="Large duct intrahepatic cholangiocarcinoma">Large duct intrahepatic cholangiocarcinoma</option>
+	<option value="Small duct intrahepatic cholangiocarcinoma">Small duct intrahepatic cholangiocarcinoma</option>
+	<option value="Combined hepatocellular-cholangiocarcinoma">Combined hepatocellular-cholangiocarcinoma</option>
+	<option value="Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>	
+	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
+	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
+	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)">Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)</option>
+	<option value="Other (specify):">Other (specify):</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Histologic grade:</label>
-<select class="element select medium" ID="A06">
+</td>
+<td>
+<select class="element select large" ID="A06">
 	<option value=""></option>
-	<option value="  - G1: Well-differentiated">G1: Well-differentiated</option>
-	<option value="  - G2: Moderately differentiated">G2: Moderately differentiated</option>
-	<option value="  - G3: Poorly differentiated">G3: Poorly differentiated</option>
-	<option value="  - GX: Cannot be assessed">GX: Cannot be assessed</option>
-	<option value="  - Not applicable">Not applicable</option>	
+	<option value="G1: Well-differentiated">G1: Well-differentiated</option>
+	<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
+	<option value="G3: Poorly differentiated">G3: Poorly differentiated</option>
+	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>	
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Tumor growth pattern: </label>
-<select class="element select medium" ID="A07">
+</td>
+<td>
+<select class="element select large" ID="A07">
 	<option value=""></option>
-	<option value="  - Mass-forming">Mass-forming</option>
-	<option value="  - Periductal infiltrating">Periductal infiltrating</option>
-	<option value="  - Mixed mass-forming and periductal infiltrating">Mixed mass-forming and periductal infiltrating</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Mass-forming">Mass-forming</option>
+	<option value="Periductal infiltrating">Periductal infiltrating</option>
+	<option value="Mixed mass-forming and periductal infiltrating">Mixed mass-forming and periductal infiltrating</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A08">
+</td>
+<td>
+<select class="element select large" ID="A08">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A09">
+</td>
+<td>
+<select class="element select large" ID="A09">
 	<option value=""></option>
-	<option value="  - Not identified">Not identified</option>
-	<option value="  - Present">Present</option>
-	<option value="  - Cannot be determined">Cannot be determined</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
+</table>
+</p>
 
-<li><p>
+<p>
 <label class="description">- Tumor extension:</label>
-<input type="checkbox" class="element checkbox" id="A10" value="  - No evidence of primary tumor"><label class="element choice">No evidence of primary tumor</label>
-<input type="checkbox" class="element checkbox" id="A11" value="  - Tumor confined to the intrahepatic bile ducts (carcinoma in situ/high-grade dysplasia)"><label class="element choice">Tumor confined to the intrahepatic bile ducts (carcinoma in situ/high-grade dysplasia)</label>
-<input type="checkbox" class="element checkbox" id="A12" value="  - Tumor confined to hepatic parenchyma"><label class="element choice">Tumor confined to hepatic parenchyma</label>
-<input type="checkbox" class="element checkbox" id="A13" value="  - Tumor involves visceral peritoneal surface"><label class="element choice">Tumor involves visceral peritoneal surface</label>
-<input type="checkbox" class="element checkbox" id="A14" value="  - Tumor directly invades gallbladder"><label class="element choice">Tumor directly invades gallbladder</label>
-<input type="checkbox" class="element checkbox" id="A15" value="  - Tumor directly invades adjacent organs other than the gallbladder, specify: "><label class="element choice">Tumor directly invades adjacent organs other than the gallbladder, specify:</label>
-<input type="checkbox" class="element checkbox" id="A16" value="  - Cannot be assessed"><label class="element choice">Cannot be assessed</label>
-</p></li>
+<input type="checkbox" id="A10" value="  - No evidence of primary tumor"><label >No evidence of primary tumor</label><br>
+<input type="checkbox" id="A11" value="  - Tumor confined to the intrahepatic bile ducts (carcinoma in situ/high-grade dysplasia)"><label >Tumor confined to the intrahepatic bile ducts (carcinoma in situ/high-grade dysplasia)</label><br>
+<input type="checkbox" id="A12" value="  - Tumor confined to hepatic parenchyma"><label >Tumor confined to hepatic parenchyma</label><br>
+<input type="checkbox" id="A13" value="  - Tumor involves visceral peritoneal surface"><label >Tumor involves visceral peritoneal surface</label><br>
+<input type="checkbox" id="A14" value="  - Tumor directly invades gallbladder"><label >Tumor directly invades gallbladder</label><br>
+<input type="checkbox" id="A15" value="  - Tumor directly invades adjacent organs other than the gallbladder, specify: "><label >Tumor directly invades adjacent organs other than the gallbladder, specify:</label><br>
+<input type="checkbox" id="A16" value="  - Cannot be assessed"><label >Cannot be assessed</label><br>
+</p>
 
-<br>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins of excision specimen:</label></legend>
-
-<li><p>- Hepatic parenchymal margin:<br>
-<select class="element select medium" ID="A17">
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Hepatic parenchymal margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A17">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Bile duct margin:<br>
-<select class="element select medium" ID="A18">
+<tr>
+<td>
+<label class="description">- Bile duct margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A18">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
@@ -375,18 +431,24 @@ function CopyToClipboard() {
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Other margin(s), specify :<br>
-<select class="element select medium" ID="A19">
+<tr>
+<td>
+<label>- Other margin(s), specify :</label>
+</td>
+<td>
+<select class="element select large" ID="A19">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 </select>
-</p></li>
-
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
@@ -394,11 +456,12 @@ function CopyToClipboard() {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+<p>
 <table border="1">
-
+<col width="75%">
 <tr>
 <td>
-- Number of regional lymph nodes examined:
+<label class="description">- Number of regional lymph nodes examined:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A20" size="15">
@@ -406,7 +469,7 @@ function CopyToClipboard() {
 
 <tr>
 <td>
-- Number of lymph nodes involved (specify locations):
+<label class="description">- Number of lymph nodes involved (specify locations):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A21" size="15">
@@ -415,7 +478,7 @@ function CopyToClipboard() {
 
 <tr>
 <td>
-- Extranodal extension:
+<label class="description">- Extranodal extension:</label>
 </td>
 <td>
 <select class="element select large" ID="A22">
@@ -428,7 +491,7 @@ function CopyToClipboard() {
 </tr>
 <tr>
 <td>
-- Size of largest metastatic deposit (mm), specify site:
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A23" size="15">
@@ -437,29 +500,40 @@ function CopyToClipboard() {
 
 <tr>
 <td>
-- Size of largest lymph node involved (mm), specify site:
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A24" size="15">
 </td>
 </tr>
 </table>
-<br>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
-	
-<li><p>  - TNM Descriptors:<br>
-<input type="checkbox" class="element checkbox" id="A25" value=" m (multiple primary tumors) "><label class="element choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A26" value=" r (recurrent) "><label class="element choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A27" value=" y (post treatment) "><label class="element choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">	
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox" id="A25" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input type="checkbox" id="A26" value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input type="checkbox" id="A27" value=" y (post treatment) "><label >y (post treatment)</label><br>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT):<br>
-<select class="element select medium" ID="A28">
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A28">
 	<option value=""></option>
 	<option value="  - pTX: Primary tumor thickness cannot be assessed, explain: ">pTX: Primary tumor thickness cannot be assessed, explain: </option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -471,54 +545,69 @@ function CopyToClipboard() {
 	<option value="  - pT3: Tumor perforating the visceral peritoneum">pT3: Tumor perforating the visceral peritoneum</option>
 	<option value="  - pT4: Tumor involving local extrahepatic structures by direct invasion">pT4: Tumor involving local extrahepatic structures by direct invasion</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A29">
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN):</label>
+</td>
+<td>
+<select class="element select large" ID="A29">
 	<option value=""></option>
 	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="  - pN1: Metastasis in regional lymph node(s)">pN1: Metastasis in regional lymph node(s)</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A30">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Distant metastasis (pM):</label>
+</td>
+<td>
+<select class="element select large" ID="A30">
 	<option value=""></option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p>    - Specify site(s), if known:<br>
+<tr>
+<td>
+<label>- Specify site(s), if known:</label>
 <input type="text" class="element text small" ID="A31" size="35">
+</td>
+</tr>
+</table>
 </p>
-<br>
 </fieldset>
-</p></li>
+</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
 
-<li><p>
-<input type="checkbox" class = "element checkbox"  id="A32" value="  - Fibrosis (specify scheme and scale, and extent)"><label class="element choice">Fibrosis (specify scheme and scale, and extent)</label>
-<input type="checkbox" class = "element checkbox"  id="A33" value="  - Cirrhosis"><label class="element choice">Cirrhosis</label>
-<input type="checkbox" class = "element checkbox"  id="A34" value="  - Primary sclerosing cholangitis"><label class="element choice">Primary sclerosing cholangitis</label>
-<input type="checkbox" class = "element checkbox"  id="A35" value="  - Biliary stones"><label class="element choice">Biliary stones</label>
-<input type="checkbox" class = "element checkbox"  id="A36" value="  - Chronic hepatitis (specify type):"><label class="element choice">Chronic hepatitis (specify type):</label>
+<p>
+<input type="checkbox" id="A32" value="  - Fibrosis (specify scheme and scale, and extent)"><label >Fibrosis (specify scheme and scale, and extent)</label><br>
+<input type="checkbox" id="A33" value="  - Cirrhosis"><label >Cirrhosis</label><br>
+<input type="checkbox" id="A34" value="  - Primary sclerosing cholangitis"><label >Primary sclerosing cholangitis</label><br>
+<input type="checkbox" id="A35" value="  - Biliary stones"><label >Biliary stones</label><br>
+<input type="checkbox" id="A36" value="  - Chronic hepatitis (specify type):"><label >Chronic hepatitis (specify type):</label><br>
 </p>
 <p>
 - Other (specify):
 <input type="text" class = "element text medium" ID="A37" size="35">
-</p></li>
+</p>
 <br>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A38" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -535,7 +624,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 13-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 IntrahepaticBileDuct 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

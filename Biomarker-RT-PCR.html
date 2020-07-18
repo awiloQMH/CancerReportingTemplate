@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RT-PCR tests</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<style>
+div.ex1 {
+    margin-left: 30px;
+}
+
+.dropbtn {
+    background-color: #e6e6ff;
+    color: #003366;
+    padding: 16px;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size:small; 
+    border: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+	text-align:left;
+    background-color: #f1f1f1;
+    min-width: 160px; relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: pink;}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+
+<div>
+
+<img id="top" src="top.png" alt="">
+<div id="form_container">
+	<div class="form_description">
+		<h2 align="center">
+					RT-PCR
+		</h2>
+	</div>
+<p align="center">List of RT-PCR tests available in the laboratory. <br>
+Please order the test through the desktop little fox.<br>
+</p>
+<p align="center">
+<img src="data:image/png;base64,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">
+</p>
+<p>
+<table align="center" border="1">
+<col width="75%">
+<tr>
+<th>
+Diseases
+</th>
+<th>
+Tests
+</th>
+</tr>
+<tr>
+<td>	
+Alveolar rhabdomyosarcoma	
+</td>
+<td>
+PAX3-FKHR
+</tr>
+<tr>
+<td>
+Clear cell sarcoma	
+</td>
+<td>
+EWSR1-ATF1
+</tr>
+<tr>	
+<td>
+Dermatofibrosarcoma Protuberans	
+</td>
+<td>
+COL1A1-PDGFB
+</tr>
+<tr>
+<td>	
+Desmoplastic small round-cell tumour	
+</td>
+<td>
+EWSR1-WT1
+</tr>
+<tr>
+<td>	
+Extraskeletal myxoid chondrosarcoma	
+</td>
+<td>
+EWSR1-NR4A3
+</tr>
+<tr>
+<td valign="top">
+Ewing sarcoma	
+</td>
+<td>
+EWSR1-FLI1<br>
+EWSR1-ERG
+</tr>
+<tr>
+<td>	
+Myxoid liposarcoma	
+</td>
+<td>
+FUS-DDIT3
+</tr>
+<tr>
+<td>	
+Synovial sarcoma	
+</td>
+<td>
+SYT-SSX
+</td>
+</tr>
+</table>
+</p>
+ 
+<br>
+<div id = "footer">
+Last upated on 15-June-2020.<br><br>
+The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
+with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
+and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
+<br>
+<br>
+<br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+
+
+</body>
+</html>

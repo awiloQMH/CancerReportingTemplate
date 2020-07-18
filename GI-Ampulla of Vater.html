@@ -11,45 +11,45 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
-	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
+	Template += "- Procedure: " + "\n" + "  - " + frm.A01.value + "\n";
 }
 
 if (frm.A02.value !== ""){
-	Template += "- Procedure: " + "\n" + "   - " + frm.A02.value + "\n";
+	Template += "- Procedure: " + "\n" + "  - " + frm.A02.value + "\n";
 }
 
 if (frm.A03.value !== ""){
-	Template += "- Tumor site: " + "\n" + "   - " + frm.A03.value + "\n";
+	Template += "- Tumor site: " + "\n" + "  - " + frm.A03.value + "\n";
 }
 
 if (frm.A04.value !== ""){
-	Template += "- Tumor site: " + "\n" + "   - " + frm.A04.value + "\n";
+	Template += "- Tumor site: " + "\n" + "  - " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
 	Template += "- Tumor size: " + "\n" + "  - "+ frm.A05.value + "\n";
 }
-
+*/
 if (frm.A06.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A06.value + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "- Histologic type: " + "\n" + "  - " + frm.A07.value + "\n";
+	Template += "\n" + "- Histologic type: " + frm.A07.value + "\n";
 }
 
 if (frm.A08.value !== ""){
-	Template += "- Histologic type (WHO 2019): " + "\n" + "  - " + frm.A08 .value + "\n";
+	Template += "\n" + "- Histologic type (WHO 2019): " + frm.A08 .value + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "- Histologic grade: " + "\n" + "  - " + frm.A09.value + "\n";
+	Template += "- Histologic grade: " + frm.A09.value + "\n";
 }
 
 if (frm.A10.value !== ""){
-	Template += "- Histologic grade: " + "\n" + "  - " + frm.A10.value + "\n";
+	Template += "- Histologic grade: " + frm.A10.value + "\n";
 }
 
 if (document.getElementById("A11").checked || document.getElementById("A12").checked ||
@@ -64,114 +64,114 @@ if (document.getElementById("A11").checked || document.getElementById("A12").che
 }
 
 if (document.getElementById("A11").checked){
-	Template += "  " +  frm.A11.value + "\n";
+	Template += frm.A11.value + "\n";
 }
 
 if (document.getElementById("A12").checked){
-	Template += "  " +  frm.A12.value + "\n";
+	Template += frm.A12.value + "\n";
 }
 
 if (document.getElementById("A13").checked){
-	Template += "  " +  frm.A13.value + "\n";
+	Template += frm.A13.value + "\n";
 }
 
 if (document.getElementById("A14").checked){
-	Template += "  " +  frm.A14.value + "\n";
+	Template += frm.A14.value + "\n";
 }
 
 if (document.getElementById("A15").checked){
-	Template += "  " +  frm.A15.value + "\n";
+	Template += frm.A15.value + "\n";
 }
 
 if (document.getElementById("A16").checked){
-	Template += "  " +  frm.A16.value + "\n";
+	Template += frm.A16.value + "\n";
 }
 
 if (document.getElementById("A17").checked){
-	Template += "  " +  frm.A17.value + "\n";
+	Template += frm.A17.value + "\n";
 }
 
 if (document.getElementById("A18").checked){
-	Template += "  " +  frm.A18.value + "\n";
+	Template += frm.A18.value + "\n";
 }
 
 if (document.getElementById("A19").checked){
-	Template += "  " +  frm.A19.value + "\n";
+	Template += frm.A19.value + "\n";
 }
 
 if (document.getElementById("A20").checked){
-	Template += "  " +  frm.A20.value + "\n";
+	Template += frm.A20.value + "\n";
 }
 
 if (document.getElementById("A21").checked){
-	Template += "  " +  frm.A21.value + "\n";
+	Template += frm.A21.value + "\n";
 }
 
 if (document.getElementById("A22").checked){
-	Template += "  " +  frm.A22.value + "\n";
+	Template += frm.A22.value + "\n";
 }
 
 if (document.getElementById("A23").checked){
-	Template += "  " +  frm.A23.value + "\n";
+	Template += frm.A23.value + "\n";
 }
 
 if (document.getElementById("A24").checked){
-	Template += "  " +  frm.A24.value + "\n";
+	Template += frm.A24.value + "\n";
 }
 
 if (document.getElementById("A25").checked){
-	Template += "  " +  frm.A25.value + "\n";
+	Template += frm.A25.value + "\n";
 }
 
 if (document.getElementById("A26").checked){
-	Template += "  " +  frm.A26.value + "\n";
+	Template += frm.A26.value + "\n";
 }
 
 if (frm.A27.value !== ""){
-	Template += "- Lymphovascular invasion: " + "\n" + "  - " + frm.A27.value + "\n";
+	Template += "- Lymphovascular invasion: " + frm.A27.value + "\n";
 }
 
 if (frm.A28.value !== ""){
-	Template += "- Perineural invasion:  " + "\n" + "  - " + frm.A28.value + "\n";
+	Template += "- Perineural invasion:  " + frm.A28.value + "\n";
 }
 
 if (frm.A29.value + frm.A30.value + frm.A31.value + frm.A32.value + 
 	frm.A33.value + frm.A34.value + frm.A35.value + frm.A36.value +
 	frm.A37.value
 	!== ""){
-	Template += "- Resection margins: " +"\n";
+	Template += "\n" + "- Resection margins: " +"\n";
 }
 
 if (frm.A29.value !== ""){
-	Template += "  - Proximal margin (gastric or duodenal): " + "\n" + "    - " + frm.A29.value + "\n";
+	Template += "  - Proximal margin (gastric or duodenal): " + frm.A29.value + "\n";
 }
 
 if (frm.A30.value !== ""){
-	Template += "  - Distal margin (distal duodenal or jejunal): " + "\n" + "    - " + frm.A30.value + "\n";
+	Template += "  - Distal margin (distal duodenal or jejunal): " + frm.A30.value + "\n";
 }
 
 if (frm.A31.value !== ""){
-	Template += "  - Uncinate (retroperitoneal/superior mesenteric artery) margin: " + "\n" + "    - " + frm.A31.value + "\n";
+	Template += "  - Uncinate (retroperitoneal/superior mesenteric artery) margin: " + frm.A31.value + "\n";
 }
 
 if (frm.A32.value !== ""){
-	Template += "  - Bile duct margin: " + "\n" + "    - " + frm.A32.value + "\n";
+	Template += "  - Bile duct margin: " + frm.A32.value + "\n";
 }
 
 if (frm.A33.value !== ""){
-	Template += "  - Pancreatic neck/parenchymal margin: " + "\n" + "    - " + frm.A33.value + "\n";
+	Template += "  - Pancreatic neck/parenchymal margin: " + frm.A33.value + "\n";
 }
 
 if (frm.A34.value + frm.A35.value !== ""){
-	Template += "  - Other margin(s) (specify: " + frm.A34.value + "): " + "\n" + "    - " + frm.A35.value + "\n";
+	Template += "  - Other margin(s) (specify: " + frm.A34.value + "): " + frm.A35.value + "\n";
 }
 
 if (frm.A36.value + frm.A37.value !== ""){
-	Template += "  - Deep, duodenal mucosal or other margins, (" + frm.A36.value + "): " + "\n" + "    - " + frm.A37.value + "\n";
+	Template += "  - Deep, duodenal mucosal or other margins, (" + frm.A36.value + "): " + frm.A37.value + "\n";
 }
 
 if (frm.A38.value + frm.A39.value + frm.A40.value + frm.A41.value + frm.A42.value!== ""){
-	Template += "- Regional lymph nodes: " + "\n";
+	Template += "\n" + "- Regional lymph nodes: " + "\n";
 }	
 
 if (frm.A38.value !== ""){
@@ -187,11 +187,11 @@ if (frm.A40.value !== ""){
 }
 
 if (frm.A41.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A41.value + " mm" + "\n";
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A41.value + "\n";
 }
 
 if (frm.A42.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A42.value + " mm" + "\n";
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A42.value + "\n";
 }
 
 if (document.getElementById("A43").checked || document.getElementById("A44").checked || 
@@ -245,7 +245,7 @@ if (frm.A51.value !== ""){
 }
 
 if (frm.A52.value !== ""){
-	Template += "- Additional notes: " + "\n" + "  - " +  frm.A52.value + "\n";
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A52.value + "\n";
 }
 
 frm.holdtext.value = Template;
@@ -265,7 +265,12 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 </script>
-
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -281,24 +286,39 @@ function CopyToClipboard() {
 	</div>
 	
 <form>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
-<li><p><label class="description">- Procedure:</label>
-<select class="element select medium" ID="A01">
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
 	<option value=""></option>
 	<option value="Ampullectomy">Ampullectomy</option> 
 	<option value="Pancreaticoduodenectomy (Whipple resection), partial pancreatectomy">Pancreaticoduodenectomy (Whipple resection), partial pancreatectomy</option>
 	<option value="Not specified">Not specified</option>
 	</select>
-</p>
-<p>- Others :<input type="text" class="element text small" ID="A02" size="10"></p>
-</li>
+</td>
+</tr>
+<tr>
+<td>
+<label>- Others :</label><input type="text" class="element text small" ID="A02" size="10">
+</td>
+</tr>
 
-<li><p>
+
+<tr>
+<td rowspan="2" valign="top">
 <label class="description">- Tumor site:</label> 
-<select class="element select medium" ID="A03">
+</td>
+<td>
+<select class="element select large" ID="A03">
 	<option value=""></option>
 	<option value="Intra-ampullary">Intra-ampullary</option>
 	<option value="Intra-ampullary, arising from intra-ampullary papillary-tubular neoplasm (IAPN)">Intra-ampullary, arising from intra-ampullary papillary-tubular neoplasm (IAPN)</option>
@@ -308,30 +328,46 @@ function CopyToClipboard() {
 	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 	<option value="Not specified">Not specified</option>
 </select>
-</p>
-<p>- Others :<input type="text" class="element text small" ID="A04" size="10"></p></li>
+</td>
+</tr>
+<tr>
+<td>
+<label>- Others :</label><input type="text" class="element text small" ID="A04" size="10">
+</td>
+</tr>
 
-<li><p><label class="description">- Tumor size:</label> 
-<select class="element select medium" ID="A05">
-		<option value=""></option>
-		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
-		<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
-		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+<tr>
+<td>
+<label class="description">- Tumor size:</label> 
+</td>
+<td>
+<select class="element select large" ID="A05">
+	<option value=""></option>
+	<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+	<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<li><p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
  <textarea ID="A06" class="element textarea medium"></textarea>
-</p></li>
-
-<li><p><label class="description">- Histologic type (WHO 2019):</label> 
-<select class="element select medium" ID="A07">
+</p>
+<p>
+<table border="1">
+<col width="60%">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Histologic type (WHO 2019):</label> 
+</td>
+<td><select class="element select large" ID="A07">
 	<option value=""></option>
 	<option value="Adenocarcinoma">Adenocarcinoma</option>
 	<option value="Adenocarcinoma, pancreaticobiliary type">Adenocarcinoma, pancreaticobiliary type</option>
@@ -348,12 +384,21 @@ function CopyToClipboard() {
 	<option value="Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
 	<option value="Carcinoma, not otherwise specified">Carcinoma, not otherwise specified</option>
 </select>
-</p>
-<p>- Others :<input type="text" class="element text small" ID="A08" size="10"></p></li>
+</td>
+</tr>
+<tr>
+<td>
+<label>- Others :</label><input type="text" class="element text small" ID="A08" size="10">
+</td>
+</tr>
 
 
-<li><p><label class="description">- Histologic grade:</label> 
-<select class="element select medium" ID="A09">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Histologic grade:</label> 
+</td>
+<td>
+<select class="element select large" ID="A09">
 	<option value=""></option>
 	<option value="G1: Well-differentiated">G1: Well-differentiated</option>
 	<option value="G2: Moderately-differentiated">G2: Moderately-differentiated</option>
@@ -361,51 +406,63 @@ function CopyToClipboard() {
 	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>
 	<option value="Not applicable">Not applicable</option>
 </select>
-</p>
-<p>- Others :<input type="text" class="element text small" ID="A10" size="10"></p></li>
+</td>
+</tr>
+<tr>
+<td>
+<label>- Others :</label><input type="text" class="element text small" ID="A10" size="10">
+</td>
+</tr>
 
-
-<li><p>
-<label class="description">- Tumor extension:</label> 
-<input type="checkbox" class="element checkbox" id="A11" value="  - No evidence of primary tumor"><label class="choice">No evidence of primary tumor</label>
-<input type="checkbox" class="element checkbox" id="A12" value="  - Carcinoma in situ/high-grade dysplasia"><label class="choice">Carcinoma in situ/high-grade dysplasia</label>
-<input type="checkbox" class="element checkbox" id="A13" value="  - Tumor limited to the ampulla of Vater or sphincter of Oddi"><label class="choice">Tumor limited to the ampulla of Vater or sphincter of Oddi</label>
-<input type="checkbox" class="element checkbox" id="A14" value="  - Tumor invades beyond the ampulla of Vater or sphincter of Oddi"><label class="choice">Tumor invades beyond the ampulla of Vater or sphincter of Oddi</label>
-<input type="checkbox" class="element checkbox" id="A15" value="  - Tumor invades the duodenal mucosa"><label class="choice">Tumor invades the duodenal mucosa</label>
-<input type="checkbox" class="element checkbox" id="A16" value="  - Tumor invades into muscularis propria of the duodenum"><label class="choice">Tumor invades into muscularis propria of the duodenum</label>
-<input type="checkbox" class="element checkbox" id="A17" value="  - Tumor directly invades pancreas up to 0.5 cm"><label class="choice">Tumor directly invades pancreas up to 0.5 cm</label>
-<input type="checkbox" class="element checkbox" id="A18" value="  - Tumor extends more than 0.5 cm into pancreas"><label class="choice">Tumor extends more than 0.5 cm into pancreas</label>
-<input type="checkbox" class="element checkbox" id="A19" value="  - Tumor extends into peripancreatic soft tissues"><label class="choice">Tumor extends into peripancreatic soft tissues</label>
-<input type="checkbox" class="element checkbox" id="A20" value="  - Tumor extends into periduodenal tissue"><label class="choice">Tumor extends into periduodenal tissue</label>
-<input type="checkbox" class="element checkbox" id="A21" value="  - Tumor extends into duodenal serosa"><label class="choice">Tumor extends into duodenal serosa</label>
-<input type="checkbox" class="element checkbox" id="A22" value="  - Tumor invades other adjacent organs or structures other than pancreas, (specify):"><label class="choice">Tumor invades other adjacent organs or structures other than pancreas, (specify):</label>
-<input type="checkbox" class="element checkbox" id="A23" value="  - Tumor invades other adjacent organs or structures other than pancreas + posterior surface of pancreas, (specify):"><label class="choice">Tumor invades other adjacent organs or structures other than pancreas + posterior surface of pancreas, (specify):</label>
-<input type="checkbox" class="element checkbox" id="A24" value="  - Tumor invades other adjacent organs or structures other than pancreas + anterior surface of pancreas (specify):"><label class="choice">Tumor invades other adjacent organs or structures other than pancreas + anterior surface of pancreas (specify):</label>
-<input type="checkbox" class="element checkbox" id="A25" value="  - Tumor invades other adjacent organs or structures other than pancreas + Tumor involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein), (specify):"><label class="choice">Tumor invades other adjacent organs or structures other than pancreas + Tumor involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein), (specify):</label>
-<input type="checkbox" class="element checkbox" id="A26" value="  - Cannot be assessed"><label class="choice">Cannot be assessed</label>
-</p></li>
-
-<li><p>
+<tr>
+<td>
 <label class="description">- Lymphovascular invasion: </label>
-<select class="element select medium" ID="A27">
+</td>
+<td>
+<select class="element select large" ID="A27">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>
+<tr>
+<td>
 <label class="description">- Perineural invasion: </label>
-<select class="element select medium" ID="A28">
+</td>
+<td>
+<select class="element select large" ID="A28">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
-</p></li>
+</td>
+</tr>
+</table>
+</p>
 
-<br>
+<p>
+<label class="description">- Tumor extension:</label> 
+<input type="checkbox" id="A11" value="  - No evidence of primary tumor"><label >No evidence of primary tumor</label><br>
+<input type="checkbox" id="A12" value="  - Carcinoma in situ/high-grade dysplasia"><label >Carcinoma in situ/high-grade dysplasia</label><br>
+<input type="checkbox" id="A13" value="  - Tumor limited to the ampulla of Vater or sphincter of Oddi"><label >Tumor limited to the ampulla of Vater or sphincter of Oddi</label><br>
+<input type="checkbox" id="A14" value="  - Tumor invades beyond the ampulla of Vater or sphincter of Oddi"><label >Tumor invades beyond the ampulla of Vater or sphincter of Oddi</label><br>
+<input type="checkbox" id="A15" value="  - Tumor invades the duodenal mucosa"><label >Tumor invades the duodenal mucosa</label><br>
+<input type="checkbox" id="A16" value="  - Tumor invades into muscularis propria of the duodenum"><label >Tumor invades into muscularis propria of the duodenum</label><br>
+<input type="checkbox" id="A17" value="  - Tumor directly invades pancreas up to 0.5 cm"><label >Tumor directly invades pancreas up to 0.5 cm</label><br>
+<input type="checkbox" id="A18" value="  - Tumor extends more than 0.5 cm into pancreas"><label >Tumor extends more than 0.5 cm into pancreas</label><br>
+<input type="checkbox" id="A19" value="  - Tumor extends into peripancreatic soft tissues"><label >Tumor extends into peripancreatic soft tissues</label><br>
+<input type="checkbox" id="A20" value="  - Tumor extends into periduodenal tissue"><label >Tumor extends into periduodenal tissue</label><br>
+<input type="checkbox" id="A21" value="  - Tumor extends into duodenal serosa"><label >Tumor extends into duodenal serosa</label><br>
+<input type="checkbox" id="A22" value="  - Tumor invades other adjacent organs or structures other than pancreas, (specify):"><label >Tumor invades other adjacent organs or structures other than pancreas, (specify):</label><br>
+<input type="checkbox" id="A23" value="  - Tumor invades other adjacent organs or structures other than pancreas + posterior surface of pancreas, (specify):"><label >Tumor invades other adjacent organs or structures other than pancreas<br> + posterior surface of pancreas, (specify):</label><br>
+<input type="checkbox" id="A24" value="  - Tumor invades other adjacent organs or structures other than pancreas + anterior surface of pancreas (specify):"><label >Tumor invades other adjacent organs or structures other than pancreas<br> + anterior surface of pancreas (specify):</label><br>
+<input type="checkbox" id="A25" value="  - Tumor invades other adjacent organs or structures other than pancreas + Tumor involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein), (specify):"><label >Tumor invades other adjacent organs or structures other than pancreas<br> + Tumor involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein), (specify):</label><br>
+<input type="checkbox" id="A26" value="  - Cannot be assessed"><label >Cannot be assessed</label><br>
+</p>
 </fieldset>
 </p>
 
@@ -413,8 +470,15 @@ function CopyToClipboard() {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">For pancreaticoduodenal resection specimens: </label></legend>
-<li><p>- Proximal margin (gastric or duodenal):<br>
-<select class="element select medium" ID="A29">
+<p>
+<table border="1">
+<col width="70%">
+<tr>
+<td>
+<label class="description">- Proximal margin (gastric or duodenal):</label>
+</td>
+<td>
+<select class="element select large" ID="A29">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma and high-grade dysplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade dysplasia, specify distance (mm):</option>
@@ -422,10 +486,15 @@ function CopyToClipboard() {
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 	<option value="Involved by high-grade dysplasia">Involved by high-grade dysplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Distal margin (distal duodenal or jejunal):<br>
-<select class="element select medium" ID="A30">
+<tr>
+<td>
+<label class="description">- Distal margin (distal duodenal or jejunal):</label>
+</td>
+<td>
+<select class="element select large" ID="A30">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma and high-grade dysplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade dysplasia, specify distance (mm):</option>
@@ -433,19 +502,29 @@ function CopyToClipboard() {
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 	<option value="Involved by high-grade dysplasia">Involved by high-grade dysplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Uncinate (retroperitoneal/superior mesenteric artery) margin:<br>
-<select class="element select medium" ID="A31">
+<tr>
+<td>
+<label class="description">- Uncinate (retroperitoneal/superior mesenteric artery) margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A31">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Bile duct margin:<br>
-<select class="element select medium" ID="A32">
+<tr>
+<td>
+<label class="description">- Bile duct margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A32">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
@@ -453,10 +532,15 @@ function CopyToClipboard() {
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Pancreatic neck/parenchymal margin:<br>
-<select class="element select medium" ID="A33">
+<tr>
+<td>
+<label class="description">- Pancreatic neck/parenchymal margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A33">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma and pancreatic high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and pancreatic high-grade intraepithelial neoplasia, specify distance (mm):</option>
@@ -464,34 +548,40 @@ function CopyToClipboard() {
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 	<option value="Involved by pancreatic high-grade intraepithelial neoplasia">Involved by pancreatic high-grade intraepithelial neoplasia</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>- Other margin(s), specify :
-<input type="text" class="element text small" ID="A34" size="10"><br>
-<select class="element select medium" ID="A35">
+<tr>
+<td>
+<label>- Other margin(s), specify :</label>
+<input type="text" class="element text small" ID="A34" size="10">
+</td>
+<td>
+<select class="element select large" ID="A35">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 </select>
-</p></li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">For ampullectomy specimens: </label></legend>
-<li><p>- Deep, duodenal mucosal or other margins, specify:
-<input type="text" class="element text small" ID="A36" size="10"><br>
-<select class="element select medium" ID="A37">
+<p><label  class="description">- Deep, duodenal mucosal or other margins, specify:</label>
+<input type="text" ID="A36" class="element text medium" size="5"><br>
+<select class="element select large" ID="A37">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
 </select>
-</p></li>
-<br>
+</p>
 </fieldset>
 </p>
 
@@ -500,10 +590,10 @@ function CopyToClipboard() {
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 <p>
 <table border="1">
-
+<col width="75%">
 <tr>
 <td>
-- Number of regional lymph nodes examined:
+<label class="description">- Number of regional lymph nodes examined:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A38" size="15">
@@ -511,7 +601,7 @@ function CopyToClipboard() {
 
 <tr>
 <td>
-- Number of lymph nodes involved (specify locations):
+<label class="description">- Number of lymph nodes involved (specify locations):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A39" size="15">
@@ -520,7 +610,7 @@ function CopyToClipboard() {
 
 <tr>
 <td>
-- Extranodal extension:
+<label class="description">- Extranodal extension:</label>
 </td>
 <td>
 <select class="element select large" ID="A40">
@@ -533,7 +623,7 @@ function CopyToClipboard() {
 </tr>
 <tr>
 <td>
-- Size of largest metastatic deposit (mm), specify site:
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A41" size="15">
@@ -542,7 +632,7 @@ function CopyToClipboard() {
 
 <tr>
 <td>
-- Size of largest lymph node involved (mm), specify site:
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A42" size="15">
@@ -557,15 +647,26 @@ function CopyToClipboard() {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e): </label></legend>
-	
-<li><p>  - TNM Descriptors: <br>
-<input type="checkbox" class="element checkbox" id="A43" value="m (multiple primary tumors)"><label class="choice">m (multiple primary tumors)</label>
-<input type="checkbox" class="element checkbox" id="A44" value="r (recurrent)"><label class="choice">r (recurrent)</label>
-<input type="checkbox" class="element checkbox" id="A45" value="y (post treatment)"><label class="choice">y (post treatment)</label>
-</p></li>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input type="checkbox" id="A43" value="m (multiple primary tumors)"><label >m (multiple primary tumors)</label><br>
+<input type="checkbox" id="A44" value="r (recurrent)"><label >r (recurrent)</label><br>
+<input type="checkbox" id="A45" value="y (post treatment)"><label >y (post treatment)</label><br>
+</td>
+</tr>
 
-<li><p>  - Primary tumor (pT):<br>
-<select class="element select medium" ID="A46">
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A46">
 	<option value=""></option>
 	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
@@ -578,47 +679,64 @@ function CopyToClipboard() {
 	<option value="pT3b: Tumor extends into duodenal serosa without involvement of the celiac axis or superior mesenteric artery">pT3b: Tumor extends into duodenal serosa without involvement of the celiac axis or superior mesenteric artery</option>
 	<option value="pT4: Tumor involves the celiac axis, superior mesenteric artery, and/or common hepatic artery">pT4: Tumor involves the celiac axis, superior mesenteric artery, and/or common hepatic artery</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Regional lymph nodes (pN): <br>
-<select class="element select medium" ID="A47">
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN):</label>
+</td>
+<td>
+<select class="element select large" ID="A47">
 	<option value=""></option>
 	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="pN1: Metastasis in 1-3 regional lymph nodes">pN1: Metastasis in 1-3 regional lymph nodes</option>
 	<option value="pN2: Metastasis in > or = 4 regional lymph nodes">pN2: Metastasis in > or = 4 regional lymph nodes</option>
 </select>
-</p></li>
+</td>
+</tr>
 
-<li><p>  - Distant metastasis (pM): <br>
-<select class="element select medium" ID="A48">
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- Distant metastasis (pM):</label>
+</td>
+<td>
+<select class="element select large" ID="A48">
 	<option value=""></option>
 	<option value="pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
-</p>
-<p>
-    - Specify site(s), if known:<br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>- Specify site(s), if known:</label>
 <input type="text" class="element text small" ID="A49" size="35">
-</p><li>
-<br>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Additional pathologic findings: </label></legend>
-<li><p>
-<input type="checkbox" class="element checkbox" id="A50" value="Dysplasia/adenoma"><label class="element choice">Dysplasia/adenoma</label>
+<p>
+<input type="checkbox" id="A50" value="Dysplasia/adenoma"><label class="element choice">Dysplasia/adenoma</label>
+</p>
+<p>
 - Other :
 <input type="text" class="element text medium" ID="A51" size="35">
-</p></li>
+</p>
 </fieldset>
 </p>
 
-<li><p>
+<p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A52" class = "element textarea medium" style="border-color:Grey;"></textarea> 
-</p></li>
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -635,7 +753,7 @@ function CopyToClipboard() {
 <br>
 
 <div id="footer">
-Last upated on 08-May-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 10-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 AmpullaVater 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
