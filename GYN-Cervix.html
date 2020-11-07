@@ -168,7 +168,7 @@ if (frm.A33.value !== ""){
 }
 
 if (frm.A34.value !== ""){
-	Template += "- Pattern of invasion for endocervical adenocarcinoma: " + frm.A34.value + "\n";
+	Template += "- Silva pattern of invasion: " + frm.A34.value + "\n";
 }
 
 if (document.getElementById("A35").checked || document.getElementById("A36").checked ||
@@ -382,7 +382,7 @@ if (frm.A70.value !== ""){
 
 if (frm.A71.value + frm.A72.value + frm.A73.value + frm.A74.value + frm.A75.value 
     + frm.A76.value + frm.A77.value + frm.A94.value !== ""){
-	Template += "\n" + "- Lymph nodes examination: " + "\n";
+	Template += "\n" + "- Pelvic lymph nodes examination (all): " + "\n";
 }	
 
 if (frm.A71.value !== ""){
@@ -390,15 +390,15 @@ if (frm.A71.value !== ""){
 }
 
 if (frm.A72.value !== ""){
-	Template += "  - Number of sentinel lymph nodes examined: " + frm.A72.value + "\n";
+	Template += "  - Number of lymph nodes with macrometastasis: " + frm.A72.value + "\n";
 }
 
 if (frm.A73.value !== ""){
-	Template += "  - Number of lymph nodes with metastasis > 0.2 mm: " + frm.A73.value + "\n";
+	Template += "  - Number of lymph nodes with micrometastasis 2-<0.2 mm, or >200 cells: " + frm.A73.value + "\n";
 }
 
 if (frm.A74.value !== ""){
-	Template += "  - Number of lymph nodes with isolated tumor cells (< or = 0.2 mm): " + frm.A74.value + "\n";
+	Template += "  - Number of lymph nodes with isolated tumor cells (<= 0.2 mm, or <=200cells): " + frm.A74.value + "\n";
 }
 
 if (frm.A75.value !== ""){
@@ -415,6 +415,120 @@ if (frm.A77.value !== ""){
 
 if (frm.A94.value !== ""){
 	Template += "  - Extranodal extension: " + frm.A94.value + "\n";
+}
+
+
+if (frm.A96.value + frm.A97.value + frm.A98.value + frm.A99.value + frm.A100.value 
+    + frm.A101.value + frm.A102.value + frm.A103.value !== ""){
+	Template += "\n" + "- Pelvic sentinel lymph nodes examination: " + "\n";
+}	
+
+if (frm.A96.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A96.value + "\n";
+}
+
+if (frm.A97.value !== ""){
+	Template += "  - Number of lymph nodes with macrometastasis: " + frm.A97.value + "\n";
+}
+
+if (frm.A98.value !== ""){
+	Template += "  - Number of lymph nodes with micrometastasis (2-<0.2 mm, or >200 cells): " + frm.A98.value + "\n";
+}
+
+if (frm.A99.value !== ""){
+	Template += "  - Number of lymph nodes with isolated tumor cells (<= 0.2 mm, or <=200 cells): " + frm.A99.value + "\n";
+}
+
+if (frm.A100.value !== ""){
+	Template += "  - Site(s) with positive lymph nodes: " + frm.A100.value + "\n";
+}
+
+if (frm.A101.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A101.value + "\n";
+}
+
+if (frm.A102.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A102.value + "\n";
+}
+
+if (frm.A103.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A103.value + "\n";
+}
+
+
+if (frm.A104.value + frm.A105.value + frm.A106.value + frm.A107.value + frm.A108.value 
+    + frm.A109.value + frm.A110.value + frm.A111.value !== ""){
+	Template += "\n" + "- Para-aortic lymph nodes examination (all): " + "\n";
+}	
+
+if (frm.A104.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A104.value + "\n";
+}
+
+if (frm.A105.value !== ""){
+	Template += "  - Number of lymph nodes with macrometastasis: " + frm.A105.value + "\n";
+}
+
+if (frm.A106.value !== ""){
+	Template += "  - Number of lymph nodes with micrometastasis 2-<0.2 mm, or >200 cells: " + frm.A106.value + "\n";
+}
+
+if (frm.A107.value !== ""){
+	Template += "  - Number of lymph nodes with isolated tumor cells (<= 0.2 mm, or <=200cells): " + frm.A107.value + "\n";
+}
+
+if (frm.A108.value !== ""){
+	Template += "  - Site(s) with positive lymph nodes: " + frm.A108.value + "\n";
+}
+
+if (frm.A109.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A109.value + "\n";
+}
+
+if (frm.A110.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A110.value + "\n";
+}
+
+if (frm.A111.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A111.value + "\n";
+}
+
+
+if (frm.A112.value + frm.A113.value + frm.A114.value + frm.A115.value + frm.A116.value 
+    + frm.A117.value + frm.A118.value + frm.A119.value !== ""){
+	Template += "\n" + "- Para-aortic sentinel lymph nodes examination: " + "\n";
+}	
+
+if (frm.A112.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A112.value + "\n";
+}
+
+if (frm.A113.value !== ""){
+	Template += "  - Number of lymph nodes with macrometastasis: " + frm.A113.value + "\n";
+}
+
+if (frm.A114.value !== ""){
+	Template += "  - Number of lymph nodes with micrometastasis 2-<0.2 mm, or >200 cells: " + frm.A114.value + "\n";
+}
+
+if (frm.A115.value !== ""){
+	Template += "  - Number of lymph nodes with isolated tumor cells (<= 0.2 mm, or <=200cells): " + frm.A115.value + "\n";
+}
+
+if (frm.A116.value !== ""){
+	Template += "  - Site(s) with positive lymph nodes: " + frm.A116.value + "\n";
+}
+
+if (frm.A117.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A117.value + "\n";
+}
+
+if (frm.A118.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A118.value + "\n";
+}
+
+if (frm.A119.value !== ""){
+	Template += "  - Extranodal extension: " + frm.A119.value + "\n";
 }
 /* 
 if (frm.A88.value !== ""){
@@ -480,7 +594,7 @@ if (frm.A87.value !== ""){
 }
 */
 if (document.getElementById("A89").checked || document.getElementById("A90").checked ||
-	document.getElementById("A91").checked || frm.A92.value !==""){
+	document.getElementById("A91").checked || document.getElementById("A94").checked || frm.A92.value !==""){
 	Template += "\n" +  "- Additional pathologic findings: " + "\n";
 }
 
@@ -494,6 +608,10 @@ if (document.getElementById("A90").checked){
 
 if (document.getElementById("A91").checked){
 	Template += frm.A91.value + "\n";
+}
+
+if (document.getElementById("A95").checked){
+	Template += frm.A95.value + "\n";
 }
 
 if (frm.A92.value !== ""){
@@ -533,13 +651,13 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-femalereproductive-uterinecervix-resection-20-4300.pdf" target="_blank">
+		<h2><a href=".\cap\cp-gynecologic-uterinecervix-resection-20-5000.pdf" target="_blank">
 		<div class="tooltip">Carcinoma of the cervix
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
 		</a></h2>
 	</div>
-<p> This is additional protocol for <a href=".\cap\cp-femalereproductive-uterinecervix-excision-20-4300.pdf" target="_blank">excision specimen of cervix</a>.</p>
+<p> This is additional protocol for <a href=".\cap\cp-gynecologic-uterinecervix-excison-20-4400.pdf" target="_blank">excision specimen of cervix</a>.</p>
 <form>
 <!--
 <p>
@@ -620,36 +738,31 @@ table, th, td {
 <td>
 <select class="element select large" ID="A29">
 		<option value=""></option>
+		<option value="Squamous cell carcinoma, HPV-associated">Squamous cell carcinoma, HPV-associated</option>
+		<option value="Squamous cell carcinoma, HPV-independent">Squamous cell carcinoma, HPV-independent</option>
 		<option value="Squamous cell carcinoma, NOS">Squamous cell carcinoma, NOS</option>
-		<option value="Squamous cell carcinoma, keratinizing">Squamous cell carcinoma, keratinizing</option>
-		<option value="Squamous cell carcinoma, nonkeratinizing">Squamous cell carcinoma, nonkeratinizing</option>
-		<option value="Squamous cell carcinoma, basaloid">Squamous cell carcinoma, basaloid</option>	
-		<option value="Squamous cell carcinoma, verrucous">Squamous cell carcinoma, verrucous</option>
-		<option value="Squamous cell carcinoma, warty">Squamous cell carcinoma, warty</option>
-		<option value="Squamous cell carcinoma, papillary">Squamous cell carcinoma, papillary</option>
-		<option value="Squamous cell carcinoma, lymphoepithelioma-like">Squamous cell carcinoma, lymphoepithelioma-like</option>
-		<option value="Squamous cell carcinoma, squamotransitional">Squamous cell carcinoma, squamotransitional"</option>	
-		<option value="Endocervical adenocarcinoma, usual type">Endocervical adenocarcinoma, usual type</option>
-		<option value="Mucinous carcinoma, NOS">Mucinous carcinoma, NOS</option>
-		<option value="Mucinous carcinoma, intestinal type">Mucinous carcinoma, intestinal type</option>
-		<option value="Mucinous carcinoma, gastric type">Mucinous carcinoma, gastric type</option>
-		<option value="Villoglandular carcinoma">Villoglandular carcinoma</option>	
+		<option value="Adenocarcinoma, NOS">Adenocarcinoma, NOS</option>	
+		<option value="Adenocarcinoma, HPV-associated">Adenocarcinoma, HPV-associated</option>
+		<option value="Adenocarcinoma, HPV-independent, NOS">Adenocarcinoma, HPV-independent, NOS</option>
+		<option value="Adenocarcinoma, HPV-independent, gastric type">Adenocarcinoma, HPV-independent, gastric type</option>
+		<option value="Adenocarcinoma, HPV-independent, clear cell type">Adenocarcinoma, HPV-independent, clear cell type</option>
+		<option value="Adenocarcinoma, HPV-independent, mesonephric type">Adenocarcinoma, HPV-independent, mesonephric type</option>	
 		<option value="Endometrioid carcinoma, NOS">Endometrioid carcinoma, NOS</option>
-		<option value="Clear cell carcinoma">Clear cell carcinoma</option>
-		<option value="Serous carcinoma">Serous carcinoma</option>
-		<option value="Mesonephric carcinoma">Mesonephric carcinoma</option>
-		<option value="Adenocarcinoma admixed with neuroendocrine carcinoma">Adenocarcinoma admixed with neuroendocrine carcinoma</option>
+		<option value="Carcinosarcoma (malignant mixed Mullerian tumor)">Carcinosarcoma (malignant mixed Mullerian tumor)</option>
 		<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>	
-		<option value="Adenosquamous carcinoma, glassy cell variant">Adenosquamous carcinoma, glassy cell variant</option>
-		<option value="Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>
-		<option value="Adenoid basal carcinoma">Adenoid basal carcinomaa</option>	
+		<option value="Adenoid basal carcinoma">Adenoid basal carcinoma</option>
+		<option value="Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
+		<option value="Carcinoma, unclassifiable (undifferentiated carcinoma)">Carcinoma, unclassifiable (undifferentiated carcinoma)</option>	
+		<option value="Neuroendocrine tumor, NOS ">Neuroendocrine tumor, NOS </option>
+		<option value="Neuroendocrine tumor, grade 1">Neuroendocrine tumor, grade 1 </option>
+		<option value="Neuroendocrine tumor, grade 2">Neuroendocrine tumor, grade 2</option>	
 		<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
 		<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-		<option value="Mixed cell carcinoma (specify types and percentages):">Mixed cell carcinoma (specify types and percentages):</option>
-		<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>	
-		<option value="Carcinosarcoma (malignant mixed Mullerian tumor)">Carcinosarcoma (malignant mixed Mullerian tumor)</option>
-		<option value="Other (specify):">Other (specify):</option>
-		<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
+		<option value="Neuroendocrine carcinoma, NOS">Neuroendocrine carcinoma, NOS</option>
+		<option value="Mixed neuroendocrine non-neuroendocrine carcinoma">Mixed neuroendocrine non-neuroendocrine carcinoma</option>
+		<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined
+		<option value="Other (specify):">Other (specify):</option>		
+		</option>
 	</select>
 </td>
 </tr>
@@ -729,7 +842,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Pattern of invasion for endocervical adenocarcinoma:</label>
+<label class="description">- Silva pattern of invasion (endoCx adenoCA):</label>
 </td>
 <td>
 <select class="element select large" ID="A34">
@@ -750,6 +863,7 @@ table, th, td {
 		<option value=""></option>
 		<option value="Not identified">Not identified</option>
 		<option value="Present">Present</option>
+		<option value="Equivocal, explain:">Equivocal, explain:</option>
 		<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -847,10 +961,10 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+	<legend> <label class="description"> Pelvic lymph nodes (all): </label></legend>
 <p>
 <table border="1">
-<col width="75%">
+<col width="80%">
 <tr>
 <td>
 <label class="description">- Number of lymph nodes examined:</label>
@@ -862,16 +976,15 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Number of sentinel lymph nodes examined:</label>
+<label class="description">- Number of lymph nodes with macrometastasis (>2 mm):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A72" size="10">
 </td>
 </tr>
-
 <tr>
 <td>
-<label class="description">- Number of lymph nodes with metastasis (> 0.2 mm, exclude ITC):</label>
+<label class="description">- Number of lymph nodes with micrometastasis (2-<0.2 mm, >200 cells):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A73" size="10">
@@ -880,7 +993,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Number of lymph nodes with isolated tumor cells (< or = 0.2 mm):</label>
+<label class="description">- Number of lymph nodes with isolated tumor cells (<=0.2 mm, <=200 cells):</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A74" size="10">
@@ -919,6 +1032,259 @@ table, th, td {
 </td>
 <td>
 <select class="element select large" ID="A94">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pelvic sentinel lymph nodes: </label></legend>
+<p>
+<table border="1">
+<col width="80%">
+<tr>
+<td>
+<label class="description">- Number of lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A96" size="10">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with macrometastasis (>2 mm):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A97" size="10">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with micrometastasis (2-<0.2 mm, >200 cells):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A98" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with isolated tumor cells (<=0.2 mm, <=200 cells):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A99" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Site(s) with positive lymph nodes:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A100" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A101" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A102" size="20">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A103">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Para-aortic lymph nodes (all): </label></legend>
+<p>
+<table border="1">
+<col width="80%">
+<tr>
+<td>
+<label class="description">- Number of lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A104" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with macrometastasis (>2 mm):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A105" size="10">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with micrometastasis (2-<0.2 mm, >200 cells):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A106" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with isolated tumor cells (<=0.2 mm, <=200 cells):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A107" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Site(s) with positive lymph nodes:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A108" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A109" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A110" size="20">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A111">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Para-aortic sentinel lymph nodes: </label></legend>
+<p>
+<table border="1">
+<col width="80%">
+<tr>
+<td>
+<label class="description">- Number of lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A112" size="10">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with macrometastasis (>2 mm):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A113" size="10">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with micrometastasis (2-<0.2 mm, >200 cells):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A114" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Number of lymph nodes with isolated tumor cells (<=0.2 mm, <=200 cells):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A115" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Site(s) with positive lymph nodes:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A116" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A117" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A118" size="20">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A119">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
@@ -1108,7 +1474,7 @@ rectum (biopsy proven) and/or extending beyond the true pelvis (bullous edema is
 <input type="checkbox"  id="A89" value="  - Low-grade squamous intraepithelial lesion (CIN 1)"><label >Low-grade squamous intraepithelial lesion (CIN 1)</label><br>
 <input type="checkbox"  id="A90" value="  - High-grade squamous intraepithelial lesion (CIN 2 or 3)"><label >High-grade squamous intraepithelial lesion (CIN 2 or 3)</label><br>
 <input type="checkbox"  id="A91" value="  - Inflammation"><label >Inflammation</label><br>
-</p>
+<input type="checkbox"  id="A95" value="  - Endocervical adenocarcinoma in situ "><label >Endocervical adenocarcinoma in situ</label><br></p>
 <p>
 - Other (specify):
 	<input type="text" class="element text medium" ID="A92" size="35">
@@ -1137,8 +1503,8 @@ rectum (biopsy proven) and/or extending beyond the true pelvis (bullous edema is
 <br>
 
 <div id="footer">
-Last upated on 09-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Uterine Cervix Resection 4.3.0.0 (Feb 2020), <br>
+Last upated on 05-Nov-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Uterine Cervix Resection 5.0.0.0 (Oct 2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PCR tests</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<style>
+div.ex1 {
+    margin-left: 30px;
+}
+
+.dropbtn {
+    background-color: #e6e6ff;
+    color: #003366;
+    padding: 16px;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size:small; 
+    border: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+	text-align:left;
+    background-color: #f1f1f1;
+    min-width: 160px; relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: pink;}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #ffecb3;}
+</style>
+</head>
+<body>
+
+
+<div>
+
+<img id="top" src="top.png" alt="">
+<div id="form_container">
+	<div class="form_description">
+		<h2 align="center">
+					PCR-based Tests
+		</h2>
+	</div>
+<p align="center">List of PCR tests available in the laboratory.<br><br> 
+<img src="data:image/png;base64,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"/>
+</p>
+
+<p>
+DNA is extracted from micro-dissected tumor-rich tissue area on FFPE section. PCR is performed on exons with hot spot mutations and the PCR products are analysized by Sanger sequencing using capillary electrophoresis. DNA integrity is checked across PCR products of sizes 153, 247, 323 and 429 bp. Tumor content >20% is ideal for molecular analysis. Micro-dissection allows enrichment of more than 80% of tumor cells, exceeding the general accepted sensitivity of 15% for manual sequence. <br><br>
+Automated real-time PCR, digital PCR and droplet digital PCR are also available for tests requiring high sensitivity.<br><br>
+</p>
+
+<p align="center">
+Please order the test through the desktop little fox.<br><br>
+<img src="data:image/png;base64,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"/>
+</p>
+
+<p>
+<table align="center" border="1">
+<tr>
+<th>
+Genes
+</th>
+<th>
+Hot spot exons/methods
+</th>
+</tr>
+<tr>
+<td>	
+BRAF (B-Raf proto-oncogene, serine/threonine kinase)	
+</td>
+<td>
+Exons 11 & 15
+</td>
+</tr>
+<tr>
+<td>	
+EGFR (epidermal growth factor receptor)	
+</td>
+<td>
+Exons 18 - 21<br>
+<a href=".\cap\cobas EGFR Mutation Test v2 package insert v2 (2)_20160415.pdf" target="_blank">real-time PCR (liquid biopsy)</a><br>
+droplet digital PCR (liquid biopsy)
+</td>
+</tr>
+<tr>
+<td>	
+ERBB2 (HER2, erb-b2 receptor tyrosine kinase 2)
+</td>
+<td>
+Exons 8, 19, 20 & 21
+</td>
+</tr>
+<tr>
+<td>	
+Gene rearrangement IgH (immunoglobulin heavy locus)<br>
+</td>
+<td>
+genescan
+</td>
+</tr>
+<tr>
+<td>	
+Gene rearrangement TCR (T-cell receptor)<br>
+</td>
+<td>
+genescan
+</td>
+</tr>
+<tr>
+<td>	
+GNAS (GNAS complex locus)	
+</td>
+<td>
+Exons 8 & 9
+</td>
+</tr>
+<tr>
+<td>	
+Histone	H3
+</td>
+<td>
+H3F3A (H3-3A)<br>
+H3F3B (H3-3B)<br>
+HIST1H3B (H3C2)<br>
+HIST1H3C (H3C3)<br>
+HIST2H3C (H3C14)<br>
+</td>
+</tr>
+<tr>
+<td>	
+IDH-1/IDH-2	(isocitrate dehydrogenase)
+</td>
+<td>
+Exon 4
+</td>
+</tr>
+<tr>
+<td valign="top">	
+KIT (KIT proto-oncogene, receptor tyrosine kinase)
+</td>
+<td>
+Exons 9, 11, 13, 14 & 17 (for GIST)<br>
+Exons 8, 11 & 17 (for hematology)
+</td>
+</tr>
+<tr>
+<td>	
+KRAS (KRAS proto-oncogene, GTPase)
+</td>
+<td>
+Exons 2 - 4
+</td>
+</tr>
+<tr>
+<td>
+Lymphoma translocations
+</td>
+<td>	
+BCL2-IGH t(14;18)<br>
+BCL1-IGH t(11;14)
+</td>
+</tr>
+<tr>
+<td>	
+MET	(MET proto-oncogene, receptor tyrosine kinase)
+</td>
+<td>
+Exon 14
+</td>
+</tr>
+<tr>
+<td>	
+MGMT (O-6-methylguanine-DNA methyltransferase)	
+</td>
+<td>
+methylation-specific PCR
+</td>
+</tr>
+<tr>
+<td>	
+NRAS (NRAS proto-oncogene, GTPase)	
+</td>
+<td>
+Exons 2 - 4
+</td>
+</tr>
+<tr>
+<td>	
+PDGFRA (platelet derived growth factor receptor alpha)
+</td>
+<td>
+Exons 12, 14 & 18
+</td>
+</tr>
+<tr>
+<td valign="top">
+PIK3CA (phosphatidylinositol-4,5-bisphosphate<br>
+3-kinase catalytic subunit alpha)	
+</td>
+<td>
+Exons 7, 9 & 20<br>
+<a href=".\cap\PIK3CA.pdf" target="_blank">real-time PCR</a>
+</td>
+</tr>
+<tr>
+<td>	
+POLE (DNA polymerase epsilon, catalytic subunit)	
+</td>
+<td>
+Exons 9 - 14
+</td>
+</tr>
+<tr>
+<td>	
+RET	(ret proto-oncogene)
+</td>
+<td>
+Exons 10, 11, 13, 14 & 16
+</td>
+</tr>
+<tr>
+<td>	
+TERT promoter (telomerase reverse transcriptase)
+</td>
+<td>
+C228T & C250T
+</td>
+</tr>
+</table>
+</p>
+
+<br>
+<div id = "footer">
+Last upated on 07-Nov-2020.<br><br>
+The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
+with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
+and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
+<br>
+<br>
+<br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,11 +10,6 @@
 function updateDescription (frm) 
 {
     var Template = ""
-
-
-if (frm.IHC.value !== ""){
-Template += "- IHC Interpretation for tumor: " +  + "\n" + "  - " + frm.IHC.value + "\n"+ "\n";
-}
 
 if (frm.MLH1.value !== ""){
 Template += "- MLH1 (mutL homolog 1): " + frm.MLH1.value + "\n";
@@ -32,8 +27,8 @@ if (frm.PMS2.value !== ""){
 Template += "- PMS2 (PMS1 homolog 2): " + frm.PMS2.value + "\n";
 }
 
-if (frm.MSI.value !== ""){
-Template += "\n" + "- Microsatellite instability status: " + "\n" + "  - " + frm.MSI.value + "\n";
+if (frm.IHC.value !== ""){
+Template += "\n" + "- IHC Interpretation for tumor: " +  "\n" + "  - " + frm.IHC.value + "\n"+ "\n";
 }
 
 if (frm.BAT25.value + frm.BAT26.value + frm.NR21.value + frm.NR24.value + frm.NR27.value!== ""){
@@ -83,8 +78,13 @@ if (frm.D5.value !== ""){
 if (frm.D17.value !== ""){
 	Template += "  - D17S250 : " + frm.D17.value + "\n";
 }
+
 if (frm.MSI.value !== ""){
-	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory derived method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and the normal tissue. " + "\n" + "\n" + "The MSI test is under evaluation and is not in the CAP-acredited list.";
+Template += "\n" + "- Microsatellite instability status: " + "\n" + "  - " + frm.MSI.value + "\n";
+}
+
+if (frm.MSI.value !== ""){
+	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. " + "\n" + "\n" + "The MSI test is under evaluation and is not in the CAP-acredited list.";
 }
 
 frm.holdtext.value = Template;
@@ -117,7 +117,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2><a href=".\cap\cp-general-dnamismatchrepair-18biomarker-1001.pdf" target="_blank">
-		<div class="tooltip">DNA microsatellite mismatch repair immunohistochemistry test
+		<div class="tooltip">DNA MMR IHC test / MSI test
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
 		</a></h2>

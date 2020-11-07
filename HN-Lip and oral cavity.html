@@ -113,6 +113,10 @@ if (frm.A22.value !== ""){
 	Template += "\n" + "- Histologic grade (for SCC only): " + frm.A22.value + "\n";
 }
 
+if (frm.A59.value !== ""){
+	Template += "- Depth of Invasion (DOI, mm): " + frm.A59.value + "\n";
+}
+
 if (frm.A23.value !== ""){
 	Template += "- Tumor extension: " + frm.A23.value + "\n";
 }
@@ -555,6 +559,15 @@ table, th, td {
 
 <tr>
 <td>
+<label class="description">- Depth of Invasion (DOI, mm):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A59" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
 <label class="description">- Tumor extension :</label>
 </td>
 <td>
@@ -922,7 +935,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 10-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 17-Aug-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 LipOralCavity 4.0.0.1 (June 2017), <br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
