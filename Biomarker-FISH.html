@@ -3,87 +3,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FISH tests</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
 <script type="text/javascript" src="view.js"></script>
 <style>
-div.ex1 {
-    margin-left: 30px;
+.collapsible {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 14px;
 }
 
-.dropbtn {
-    background-color: #e6e6ff;
-    color: #003366;
-    padding: 16px;
-	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-	font-size:small; 
-    border: 1;
+.active, .collapsible:hover {
+  background-color: #fff2e6;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-	text-align:left;
-    background-color: #f1f1f1;
-    min-width: 160px; relative;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: pink;}
-
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-}
-
-.active, .accordion:hover {
-    background-color: #ccc;
-}
-
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
 }
 </style>
 </head>
@@ -105,288 +51,310 @@ div.ex1 {
 Click the web-link for further information for each of these tests.<br>
 Please order the test through the desktop little fox.<br>
 </p>
+<!--
 <p align="center">
 <img src="data:image/png;base64,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">
-</p>
+</p>-->
 
 <div class= "ex1">
+<button class="collapsible">1p19q co-deletion (<a href="https://www.molecular.abbott/us/en/chromosome/19" target="_blank">Vysis</a>)</button>
+<div class="content">
+  <p>Vysis LSI 1p36 SpectrumOrange/1q25 SpectrumGreen Probes and Vysis LSI 19q13 SpectrumOrange/19p13 SpectrumGreen Probes (ASR). Deletions affecting the short arm of chromosome 1 (1p36) and the long arm of chromosome 19 (19q13) are frequently found in human gliomas and are associated with a better survival. Determination of 1p and 19q status may aid in therapeutic decisions and predict outcome in patients with anaplastic oligodendrogliomas.
+  </p>
+  <p>
+  Please use Ronnie's template for scoring, total 200 tumor nuclei. 
+  </p>
+</div>
+
+<button class="collapsible">BCL2 (BCL2 apoptosis regulator) translocation  (<a href="https://www.molecular.abbott/int/en/chromosome/18" target="_blank">Vysis</a>)</button>
+<div class="content">
 <p>
-	<li>
-	<div class="tooltip">1p19q co-deletion (<a href="https://www.molecular.abbott/us/en/chromosome/19" target="_blank">Vysis</a>)
-	<span class="tooltiptext">
-	For glioma. Please use Ronnie's template for scoring. Reading total 200 tumor nuclei.
-	</span>
-	</div>	
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">BCL2 (BCL2 apoptosis regulator) translocation  (<a href="https://www.molecular.abbott/int/en/chromosome/18" target="_blank">Vysis</a>)
-	<span class="tooltiptext">
-	For identification of double hit or triple hit high-grade B-cell lymphomas.
-	</span>
-	</div></li>
-<br>	
-	<li>
-	<div class="tooltip">BCL6 (BCL6 transcription repressor) translocation  (<a href="https://www.molecularcatalog.abbott/us/en/Vysis-LSI-BCL6-Dual-Color-Break-Apart-Rearrangement-Probe" target="_blank">Vysis</a>)
-	<span class="tooltiptext">
-	For identification of double hit or triple hit high-grade B-cell lymphomas.
-	</span>
-	</div>
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">BCOR (BCL6 corepressor) translocation (<a href="https://empiregenomics.com/fish-probes/gene/BCOR/break-apart" target="_blank">Empire Genomics</a> and Propriety, China)
-	<span class="tooltiptext">
-	For BRCOR gene rearrange in Ewing-like blue round cell tumor.
-	</span>
-	</div>
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">BRAF (B-Raf proto-oncogene, serine/threonine kinase) amplification (<a href="https://www.zytovision.com/products/zytolight/z-2191" target="_blank">Zytolight</a>)<span class="tooltiptext">
-	 BRAF/CEN7 amplification probe, esp KIAA-BRAF translocation in e.g. pilocystic astrocytoma.
-	</span>
-	</div>
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">BRAF (B-Raf proto-oncogene, serine/threonine kinase) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2189" target="_blank">Zytolight</a>)<span class="tooltiptext">
-	 For BRAF translocations in melanocytic nevi, pilocytic astrocytomas, malignant melanoma, prostate and gastric cancer. BRAF/CEN7 amplification probe in evaluation (esp KIAA-BRAF translocation).
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">CDNK2A (cyclin dependent kinase inhibitor 2A) deletion (<a href="https://www.zytovision.com/products/zytolight/z-2063" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For glioma, looking for CDNK2A/CEN9 for detecting deletion.
-	</span>
-	</div>	
-	</li>
-<br>
-	<li>
-	<div class="tooltip">CIC (capicua transcriptional repressor) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2285" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For EWSR1-negative small blue round cell tumors.
-	</span>
-	</div>
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">CSF1 (colony stimulating factor 1) translocation (Propriety, China)
-	<span class="tooltiptext">
-	For giant cell tumor of tendon shealth and pigmented villonodular synovitis.
-	</span>
-	</div>	
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">CSF1R (colony stimulating factor 1 receptor) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2202" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	 Acute megakaryoblastic leukemia cell line generating the RBM6-CSF1R fusion gene. This probe is probably not useful in AP.
-	</span>
-	</div>
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">DDIT3 (DNA damage inducible transcript 3) translocation (<a href="https://www.molecular.abbott/int/en/chromosome/12.html" target="_blank">Vysis</a>) and (<a href="https://www.zytovision.com/products/zytolight/z-2100" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For myxoid liposarcoma.
-	</span>
-	</div>
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">EGFR (epidermal growth factor receptor) gene amplification (<a href="https://www.zytovision.com/products/zytolight/z-2033" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For EGFR amplification. EGFR/CEN7 dual color probe.
-	</span>
-	</div>
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">EWSR1 (EWS RNA binding protein 1) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2096" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	See Sanger's Catalogue of Somatic Mutations In Cancer (COSMIC) fusion database for potential partners of EWSR1.
-	</span>
-	</div>	
-	</li>
-<br>
-	<li>
-	<div class="tooltip">FUS (FUS RNA binding protein) translocation (<a href="https://www.molecular.abbott/int/en/chromosome/16.html" target="_blank">Vysis</a>)
-	<span class="tooltiptext">
-	For myxoid liposarcoma.
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">JAZF1 (JAZF zinc finger 1) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2132" target="_blank">Zytovision</a>)
-	<span class="tooltiptext">
-	About 50% low grade endometrial stromal sarcoma.
-	</span>
-	</div>
-	</li>
-
-<br>
-	<li>
-	<div class="tooltip">HER2 (erb-b2 receptor tyrosine kinase 2) gene amplification (<a href="https://www.molecular.abbott/us/en/products/oncology/pathvysion-her-2-dna-probe-kit" target="_blank">Vysis</a>)
-	<span class="tooltiptext">
-	For breast cancers. Please order DISH for more efficient processing.
-	</span>
-	</div>
-	</li>
-
-<br>	
-	<li>
-	<div class="tooltip">MAML2 (mastermind like transcriptional coactivator 2) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2014" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For mucoepidermoid carcinoma.
-	</span>
-	</div>
-	</li>
-
-<br>
-	<li>
-	<div class="tooltip">MDM2 (Murine Double Minute 2) gene amplification  (<a href="https://www.molecular.abbott/int/en/chromosome/12" target="_blank">Vysis</a> and <a href="https://www.zytovision.com/products/zytolight/z-2013" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	Distinguish well differentiated liposarcoma from benign adipose tumors; distinguish dedifferentiated liposarcoma from poorly differentiated sarcomas; distinguish low grade osteosarcoma (positive) from benign fibrous and fibro-osseous lesions (negative, Mod Pathol 2011;24:624).
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">MET (MET proto-oncogene, receptor tyrosine kinase) gene amplification (<a href="https://www.zytovision.com/products/zytolight/z-2087" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For the detection of MET gene amplifications found in a variety of human tumors including lung, breast, colorectal, prostate, and gastric carcinomas as well as in gliomas, melanomas and some sarcomas. 
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">MYB (MYB proto-oncogene, transcription factor) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2143" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For adenoid cystic carcinoma, also consider NFIB and MYBL1 break apart FISH tests. 
-	</span>
-	</div>
-	</li>
-<br>
-
-	<li>
-	<div class="tooltip">MYBL1 (MYB Proto-oncogene Like 1) translocation (<a href="https://empiregenomics.com/product/20768" target="_blank">Empire Genomics</a>)
-	<span class="tooltiptext">
-	For adenoid cystic carcinoma, also consider MYB and NFIB break apart FISH tests. 
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">c-Myc (MYC proto-oncogene, bHLH transcription factor) translocation (<a href="https://www.molecular.abbott/int/en/chromosome/8.html" target="_blank">Vysis</a>)
-	<span class="tooltiptext">
-	In high-grade B-cell lymphomas, the presence of MYC aberrations identifies a patient subset with a very poor prognosis, particularly 
-	when there is concomitant rearrangement of BCL2 or BCL6, a condition referred to as "double hit” DLBCL. In rare cases translocation 
-	involves MYC, BCL2 and BCL6, so called “triple hit”. MYC translocations confer a worse prognosis in patients treated with 
-	cyclophosphamide, doxorubicin, vincristine, and prednisone (CHOP), both in combination with and without rituximab.
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">N-myc (MYCN proto-oncogene, bHLH transcription factor) amplification (<a href="https://www.molecular.abbott/int/en/chromosome/2.html" target="_blank">Vysis</a>)
-	<span class="tooltiptext">
-	For neuroblastoma.
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">NFIB (Nuclear Factor I B) translocation (<a href="https://empiregenomics.com/fish-probes/gene/NFIB/break-apart" target="_blank">Empire Genomics</a>)
-	<span class="tooltiptext">
-	For adenoid cystic carcinoma, also consider MYB and MYBL1 break apart FISH tests.
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">NR4A3 (nuclear receptor subfamily 4 group A member 3) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2145" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For extraskeletal myxoid chondrosarcoma, among differential diagnosis of EWSR1 break apart-positive tumors.
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">NTRK <a href="https://www.zytovision.com/products/zytolight/z-2167" target="_blank">1</a>, <a href="https://www.zytovision.com/products/zytolight/z-2205" target="_blank">2</a> & <a href="https://www.zytovision.com/products/zytolight/z-2206" target="_blank">3</a> (neurotrophic receptor tyrosine kinase 1, 2 & 3) translocations (Zytolight)
-	<span class="tooltiptext">
-	To detect translocations involving the chromosomal regions 1q23.1 harboring the NTRK1 gene, 9q21.33 harboring the NTRK2 gene, and 15q25.3 harboring the NTRK3 gene, respectively. 
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">PHF1 (PHD finger protein 1) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2215" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For Endometrial stromal tumors (ESTs).
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">PTEN (phosphatase and tensin homolog) deletion probe (<a href="https://www.zytovision.com/products/zytolight/z-2078" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	PTEN/CEN10 dual color probe for deletion.
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">RET (RET proto-oncogene) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2148" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	To detect translocations involving the chromosomal region 10q11.21 harboring the RET gene observed e.g. in lung adenocarcinoma. Cut off as low as 15% tumor nuclei.
-	</span>
-	</div>
-	</li>
-<br>
-	<li>
-	<div class="tooltip">ROS1 (ROS proto-oncogene 1, receptor tyrosine kinase) translocation  (<a href="https://www.molecularcatalog.abbott/int/en/Vysis-ROS1-Break-Apart-FISH-Probe-Kit" target="_blank">Vysis</a> and <a href="https://www.zytovision.com/products/zytolight/z-2144t" target="_blank">Zytovision</a>) 
-	<span class="tooltiptext">
-	For confirmation of ROS1 translocation after IHC test (Zytovison and Vysis probes are available).
-	</span>
-	</div>
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">SS18 (SS18 subunit of BAF chromatin remodeling complex) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2097" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For synovial sarcoma.
-	</span>
-	</div>	
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">TFE3 (transcription factor binding to IGHM enhancer 3) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2109" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For renal cell carcinomas (RCCs) which usually affect children and adolescents, and alveolar soft part sarcoma.
-	</span>
-	</div>	
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">USP6 (ubiquitin specific peptidase 6) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2151" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For nodular fasciitis and primary aneurysmal bone cyst.
-	</span>
-	</div>	
-	</li>
-<br>	
-	<li>
-	<div class="tooltip">YWHAE translocation (<a href="https://www.zytovision.com/products/zytolight/z-2175" target="_blank">Zytolight</a>)
-	<span class="tooltiptext">
-	For high grade endometrial stromal sarcoma and clear cell sarcoma of kidney.
-	</span>
-	</div>	
-	</li>
+Vysis LSI BCL2 Break Apart FISH Probe kit is designed to detect translocations involving the chromosomal region 18q21.33 harboring the BCL2 gene. Translocations involving the BCL2 gene are commonly identified in B-cell lymphomas. In particular, the translocation t(14;18)(q32.3;q21.3) has been identified in about 80% of follicular lymphoma.
 </p>
+</div>
+
+<button class="collapsible">BCL6 (BCL6 transcription repressor) translocation  (<a href="https://www.molecularcatalog.abbott/us/en/Vysis-LSI-BCL6-Dual-Color-Break-Apart-Rearrangement-Probe" target="_blank">Vysis</a>)</button>
+<div class="content">
+<p>
+Vysis LSI BCL6 (ABR) Dual Color Break Apart DNA probe hybridizes to the band 3q27. The 5’ BCL6 SpectrumOrange probe is ~349 kb in size and flanks the ABR of BCL6. The 3’ BCL6 SpectrumGreen probe is approximately 816kb in size and flanks the MBR region of BCL6. There is an approximate 265 kb gap between the two probes.
+</p>
+<p>
+The hybridized probe fluoresces with moderate to bright intensity both in interphase nuclei and on metaphase chromosomes. In interphase nuclei of normal cells, the probe generally appears as two distinct signals (orange and green adjacent, or fused yellow). The two probes are separated by an approximately 265 kb gap that contains the entire BCL6 gene including the BCL6 breakpoint region, which may result in a gap between the orange and green signal in one or both normal, fused signals. Individual labs may wish to establish criteria for what constitutes truly split signals. Probe signals may also appear diffuse or split in interphase nuclei, depending upon the condensation of the DNA. In normal metaphase spreads, the probe may appear as one or two signals on each chromosome 3.
+</p>
+</div>
+
+<button class="collapsible">BCOR (BCL6 corepressor) translocation (<a href="https://empiregenomics.com/fish-probes/gene/BCOR/break-apart" target="_blank">Empire Genomics</a> and Propriety, China)</button>
+<div class="content">
+<p>
+Empire Genomics’ BCOR Break Apart FISH Probe is designed to flank the BCOR gene and is typically used for detecting BCOR rearrangements such as translocations in small blue round cell tumors.
+</p>
+<p>
+Chromosome: CHRX: 39910498-40036582</p>
+<p>
+Locus: Xp11.4
+</p>
+</div>
+	
+<button class="collapsible">BRAF (B-Raf proto-oncogene, serine/threonine kinase) amplification (<a href="https://www.zytovision.com/products/zytolight/z-2191" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC BRAF/CEN 7 Dual Color Probe is designed for the detection of amplifications involving the chromosomal region 7q34 harboring the BRAF gene. Activating mutations in BRAF are found in many tumor types, including malignant melanoma, thyroid, colorectal, and ovarian carcinomas, lung adenocarcinoma, as well as in some sarcomas and gliomas.
+</p>
+<p>
+BRAF/CEN7 amplification probe might be used to look for KIAA-BRAF translocation in pilocystic astrocytoma.
+</p>
+</div>
+
+<button class="collapsible">BRAF (B-Raf proto-oncogene, serine/threonine kinase) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2189" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC BRAF Dual Color Break Apart Probe is designed for the detection of rearrangements involving the chromosomal region 7q34 harboring the BRAF gene. Various BRAF translocations were observed in melanocytic nevi, pilocytic astrocytomas, malignant melanoma, prostate and gastric cancer. 
+</p>
+</div>
+
+<button class="collapsible">CDNK2A (cyclin dependent kinase inhibitor 2A) deletion (<a href="https://www.zytovision.com/products/zytolight/z-2063" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC CDKN2A/CEN 9 Dual Color Probe is designed for the detection of CDKN2A deletions frequently observed in most tumor cell lines as well as in primary human malignancies. CDKN2A gene is found in up to 80% of T-cell acute lymphoblastic leukemia cases and is associated with poor prognosis and relapse of the disease. Also uses in classification and prognostic indicator for glioma.
+</p>
+</div>
+
+<button class="collapsible">CIC (capicua transcriptional repressor) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2285" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC CIC Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 19q13.2 harboring the CIC gene. Rearrangements involving the CIC gene are frequently found in EWSR1-negative small blue round cell tumors (SBRCT) which arise in soft tissues of children and young adults and have been described as aggressive tumors with an inferior overall survival compared to Ewing sarcoma (EWS).
+</p>
+</div>
+
+<button class="collapsible">CSF1 (colony stimulating factor 1) translocation (Propriety, China)</button>
+<div class="content">
+<p>
+CSF1, the ligand of the tyrosine kinase receptor, CSF1R, can be translocated in pigmented villonodular synovitis (PVNS) and tenosynovial giant cell tumor (TGCT). Am J Surg Pathol. 2007 Jun;31(6):970-6.
+</p>
+</div>
+
+<button class="collapsible">CSF1R (colony stimulating factor 1 receptor) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2202" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC CSF1R Dual Color Break Apart Probe is designed to detect rearrangements involving the chromosomal region 5q32 harboring the CSF1R gene. Rearrangement of the CSF1R gene was first detected in an acute megakaryoblastic leukemia cell line generating the RBM6-CSF1R fusion gene. This probe is probably not useful in AP.
+</p>
+</div>
+
+<button class="collapsible">DDIT3 (DNA damage inducible transcript 3) translocation (<a href="https://www.molecular.abbott/int/en/chromosome/12.html" target="_blank">Vysis</a>) and (<a href="https://www.zytovision.com/products/zytolight/z-2100" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+Vysis DDIT3 Break Apart FISH Probe Kit and the ZytoLight ® SPEC DDIT3 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 12q13.3 harboring the DDIT3 gene. DDIT3 is consistently rearranged in myxoid liposarcomas. The FUS-DDIT3 fusion protein acts as an abnormal transcription factor and development of myxoid liposarcomas is thus regarded as a consequence of deregulated FUS-DDIT3 target genes.
+</p>
+</div>
+
+<button class="collapsible">EGFR (epidermal growth factor receptor) gene amplification (<a href="https://www.zytovision.com/products/zytolight/z-2033" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC EGFR/CEN 7 Dual Color Probe is designed for the detection of EGFR gene amplification frequently observed in solid neoplasms including non-small-cell lung cancer (NSCLC) and glioblastoma. Overexpression of EGFR has been shown in a number of tumor entities and is associated with poor prognosis. This probe is also used in the evaluation of glioma.
+</p>
+</div>
+
+<button class="collapsible">EWSR1 (EWS RNA binding protein 1) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2096" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC EWSR1 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 22q12.2 harboring the EWSR1 gene. Ewing sarcoma is the second most common, highly malignant bone tumor in children and young adults. For prognosis and appropriate treatment it is important to differentiate Ewing sarcoma/ PNET from classic neuroblastoma, Wilms tumor, and rhabdomyosarcoma.
+</p>
+<p>
+See also use the Sanger's Catalogue of Somatic Mutations In Cancer (COSMIC) fusion database to look for potential partners of EWSR1.
+</p>
+</div>
+
+<button class="collapsible">FUS (FUS RNA binding protein) translocation (<a href="https://www.molecular.abbott/int/en/chromosome/16.html" target="_blank">Vysis</a>)</button>
+<div class="content">
+<p>
+Vysis LSI FUS Break Apart FISH Probe Kit is designed to detect translocations involving the chromosomal region 16p11.2 harboring the FUS gene. FUS gene rearrangements have been shown to be involved in both solid tumors and leukemias. Occurring in over 90% of myxoid liposarcomas, the FUS-DDIT3 fusion protein is regarded as being consequential for the development of myxoid liposarcomas.
+</p>
+</div>
+
+<button class="collapsible">JAZF1 (JAZF zinc finger 1) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2132" target="_blank">Zytovision</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC JAZF1 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 7p15.1-p15.2 harboring the JAZF1 gene. In 25-30% of endometrial stromal sarcoma the JAZF1 gene is disrupted by another translocation t(6;7) where the first zinc finger domain of JAZF1 is fused to both zinc finger domains of the PHF1 gene at 6p21.32.
+</p>
+</div>
+
+<button class="collapsible">HER2 (erb-b2 receptor tyrosine kinase 2) gene amplification (<a href="https://www.molecular.abbott/us/en/products/oncology/pathvysion-her-2-dna-probe-kit" target="_blank">Vysis</a>)</button>
+<div class="content">
+<p>
+The PathVysion HER-2 DNA Probe Kit (PathVysion Kit) is designed to detect amplification of the HER-2/neu gene via fluorescence in situ hybridization (FISH) in formalin-fixed, paraffin-embedded human breast cancer tissue specimens. Please order DISH for more efficient processing.
+</p>
+</div>
+
+<button class="collapsible">MAML2 (mastermind like transcriptional coactivator 2) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2014" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC MAML2 Dual Color Break Apart Probe is designed to detect the translocation t(11;19)(q21;p13.1) specific for mucoepidermoid carcinomas.
+</p>
+</div>
+
+<button class="collapsible">MDM2 (Murine Double Minute 2) gene amplification  (<a href="https://www.molecular.abbott/int/en/chromosome/12" target="_blank">Vysis</a> and <a href="https://www.zytovision.com/products/zytolight/z-2013" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The Vysis LSI MDM2 SpectrumOrange Probe or the ZytoLight ® SPEC MDM2/CEN 12 Dual Color Probe is designed for the detection of MDM2 gene amplifications. Well-differentiated liposarcomas (WDLPS), the most common soft tissue tumors in adults, are characterized by the amplification of 12q-derived chromosomal material, harboring the MDM2 oncogene while lipomas show balanced translocations involving 12q13-15.
+</p>
+</div>
+
+<button class="collapsible">MET (MET proto-oncogene, receptor tyrosine kinase) gene amplification (<a href="https://www.zytovision.com/products/zytolight/z-2087" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC MET/CEN 7 Dual Color Probe is designed for the detection of MET gene amplifications found in a variety of human tumors including lung, breast, colorectal, prostate, and gastric carcinomas as well as in gliomas,melanomas and some sarcomas. Several inhibitors of the HGF/MET signaling pathway are being studied and developed as potent therapies to inhibit tumor growth.
+</p>
+</div>
+
+<button class="collapsible">MYB (MYB proto-oncogene, transcription factor) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2143" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC MYB Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 6q23.3 harboring the MYB gene. The MYB gene is expressed predominantly in immature progenitor cells of all hematopoietic lineages and is highly expressed in most leukemias and in some solid tumors. Translocations affecting MYB have been detected in T-cell acute lymphoblastic leukemia and adenoid cystic carcinoma. 
+</p>
+</div>
+
+<button class="collapsible">MYBL1 (MYB Proto-oncogene Like 1) translocation (<a href="https://empiregenomics.com/product/20768" target="_blank">Empire Genomics</a>)</button>
+<div class="content">
+<p>
+For adenoid cystic carcinoma, also consider MYB and NFIB break apart FISH tests. 
+</p>
+</div>
+
+<button class="collapsible">c-Myc (MYC proto-oncogene, bHLH transcription factor) translocation (<a href="https://www.molecular.abbott/int/en/chromosome/8.html" target="_blank">Vysis</a>)</button>
+<div class="content">
+<p>
+Vysis LSI MYC Break Apart Rearrangement Probe Kit is designed to detect translocations involving the chromosomal region 8q24.21 harboring the MYC (a.k.a. CMYC) gene. Translocations involving the MYC gene are considered to be cytogenetic hallmarks for Burkitt Lymphoma but are also found in other types of lymphomas.
+</p>
+<p>
+In high-grade B-cell lymphomas, the presence of MYC aberrations identifies a patient subset with a very poor prognosis, particularly when there is concomitant rearrangement of BCL2 or BCL6, a condition referred to as "double hit” DLBCL. In rare cases translocation involves MYC, BCL2 and BCL6, so called “triple hit”. MYC translocations confer a worse prognosis in patients treated with cyclophosphamide, doxorubicin, vincristine, and prednisone (CHOP), both in combination with and without rituximab.
+</p>
+</div>
+
+<button class="collapsible">N-myc (MYCN proto-oncogene, bHLH transcription factor) amplification (<a href="https://www.molecular.abbott/int/en/chromosome/2.html" target="_blank">Vysis</a>)</button>
+<div class="content">
+<p>
+Vysis LSI N-MYC SpectrumOrange Probe is designed for the detection of MYCN amplification which represents the most powerful unfavorable prognostic factor for neuroblastoma. Less frequently amplifications are found in retinoblastoma, small cell lung cancer, astrocytoma and other tumors derived from the neuroectoderm. Amplification of the MYCN gene is found in about 25% of primary neuroblastomas and is strongly associated with rapid tumor progression, advanced stages of the disease, and poor prognosis.
+</p>
+</div>
+
+<button class="collapsible">NFIB (Nuclear Factor I B) translocation (<a href="https://empiregenomics.com/fish-probes/gene/NFIB/break-apart" target="_blank">Empire Genomics</a>)</button>
+<div class="content">
+<p>
+The t(6;9)(q22-23;p23-24) translocation in adenoid cystic carcinomas (ACC) of the breast and head and neck consistently results in fusions encoding chimeric transcripts predominantly consisting of MYB exon 14 linked to the last coding exon(s) of NFIB. The minimal common part of MYB deleted as the result of fusion was exon 15 including the 3'-UTR, which contains several highly conserved target sites for miR-15a/16 and miR-150 microRNAs. Proceedings of the National Academy of Sciences 106(44):18740-4. November 2009. 
+</p>
+</div>
+
+<button class="collapsible">NR4A3 (nuclear receptor subfamily 4 group A member 3) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2145" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC NR4A3 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 9q22.33-q31.1. The most frequent reciprocal translocation is t(9;22)(q22.3-q31;q12.2) found in about 70% of EMC generating a EWSR1-NR4A3 fusion gene in which the 3’-terminal part of EWSR1 is replaced by the entire NR4A3 gene. EMC is histologically characterized by a mixture of cellular and myxoid stromal components, making it difficult to distinguish it from other benign or malignant mesenchymal tumors.
+</p>
+</div>
+
+<button class="collapsible">NTRK <a href="https://www.zytovision.com/products/zytolight/z-2167" target="_blank">1</a>, <a href="https://www.zytovision.com/products/zytolight/z-2205" target="_blank">2</a> & <a href="https://www.zytovision.com/products/zytolight/z-2206" target="_blank">3</a> (neurotrophic receptor tyrosine kinase 1, 2 & 3) translocations (Zytolight)</button>
+<div class="content">
+<p>
+To detect translocations involving the chromosomal regions 1q23.1 harboring the NTRK1 gene, 9q21.33 harboring the NTRK2 gene, and 15q25.3 harboring the NTRK3 gene, respectively. Tumors presenting NTRK1, NTRK2 and NTRK3 gene fusions can be sensitive to targeted therapies with tyrosine kinase inhibitors. The treatment of patients with NTRK1, 2, or 3 fusion-positive cancers with an NTRK inhibitor, such as the FDA-approved drugs larotrectinib or entrectinib, is associated with high response rates, regardless of NTRK gene, fusion partner, and tumor type.
+</p>
+<p>
+NTRK1 rearrangements were shown to be involved in many different tumor types in which more than 40 different fusion partners have been described, resulting in an activated chimeric NTRK1 gene. 
+</p>
+<p>
+ NTRK2 is a tyrosine kinase and plays a key role in central and peripheral nervous system development as well as in cell survival. Translocations affecting the NTRK2 gene have been reported in several cancer types, including glioblastomas, pilocytic astrocytomes, head and nech squamous cell carcinoma, and lung adenocarcinoma. 
+ </p>
+ <p>
+ Translocations affecting the NTRK3 gene have been reported in several cancer types, including glioblastomas, Philadelphia chromosome- like acute lymphoblastic leukemia, congenital fibrosarcomas, cellular mesoblastic nephromas, acute myeloid leukemia, radiation-associated thyroid cancer, secretory breast carcinoma, and mammary analog secretory carcinoma of the salivary gland. 
+ </p>
+</div>
+
+<button class="collapsible">PHF1 (PHD finger protein 1) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2215" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC PHF1 Dual Color Break Apart Probe is designed for the detection of translocations involving the chromosomal region 6p21.32 harboring the PHF1 gene. Endometrial stromal tumors (ESTs) are the second most common pure mesenchymal tumors of the uterus. ESTs may pose diagnostic challenges particularly when they exhibit variant histologic appearances.
+</p>
+<p>
+Several rearrangements involving the genes JAZF1, PHF1, or YWHAE have been identified in ESTs, detection of which may be helpful in the differential diagnosis of these tumors.
+</p>
+</div>
+
+<button class="collapsible">PTEN (phosphatase and tensin homolog) deletion probe (<a href="https://www.zytovision.com/products/zytolight/z-2078" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC PTEN/CEN 10 Dual Color Probe or is designed for the detection of PTEN deletions frequently observed in many tumor types, including renal, melanoma, endometrial, breast, prostate, lung, bladder, and thyroid cancer but also in hematological neoplasms. Deletions affecting the long arm of chromosome 10 have been detected in 30 to 50% of early and advanced stage sporadic melanomas and about 40 to 70% of prostate cancers. This probe can also be used for prognostic evaluation in glioma.
+</p>
+</div>
+
+<button class="collapsible">RET (RET proto-oncogene) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2148" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC RET Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 10q11.21 harboring the RET gene observed e.g. in lung adenocarcinoma.
+</p>
+<p>
+Since in vitro studies showed transforming activity of KIF5B-RET fusions which could be suppressed by a tyrosine kinase inhibitor, it was assumed that the chimeric oncogene might be a promising molecular target for the treatment of lung cancer. The cut off is set as low as 15% tumor nuclei.
+</p>
+</div>
+
+<button class="collapsible">ROS1 (ROS proto-oncogene 1, receptor tyrosine kinase) translocation  (<a href="https://www.molecularcatalog.abbott/int/en/Vysis-ROS1-Break-Apart-FISH-Probe-Kit" target="_blank">Vysis</a> and <a href="https://www.zytovision.com/products/zytolight/z-2144" target="_blank">Zytovision</a>)</button> 
+<div class="content">
+<p>
+The Vysis ROS1 Break Apart FISH Probe Kit or the ZytoLight ® SPEC ROS1 Dual Color Break Apart Probeuses Fluorescence in situ hybridization (FISH) technology to detect ROS1 gene rearrangements at 6q22 involving the receptor tyrosine kinase (ROS1) gene. Rearrangement of the ROS1 gene occurs in:</p>
+
+0.2%-2.4% of Colorectal Cancers (CRC),<br>
+1%-2% of Non-Small Cell Lung Cancer (NSCLC) leading to its oncogenic activation<br>
+Gastric Adenocarcinoma<br>
+Various types of melanoma, inflammatory myofibroblastic tumor, and angiosarcoma<br>
+Epithelioid hemangioendothelioma.<br>
+</p>
+<p>
+Vysis 6q22 ROS1 (Cen) SpectrumGreen probe [3′]<br>
+Vysis 6q22 ROS1 (Tel) SpectrumOrange probe [5′]
+</p>
+</div>
+
+<button class="collapsible">SS18 (SS18 subunit of BAF chromatin remodeling complex) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2097" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC SS18 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 18q11.2 harboring the SS18 gene. Translocations involving the region 18q11.2 are found in over 90% of synovial sarcoma. 
+</p>
+</div>
+
+<button class="collapsible">TFE3 (transcription factor binding to IGHM enhancer 3) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2109" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC TFE3 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region Xp11.23 harboring the TFE3 gene. Translocations involving the chromosomal region Xp11.2 are frequently detected in renal cell carcinomas (RCCs) which usually affect children and adolescents, as well as in alveolar soft part sarcoma.
+</p>
+</div>
+
+<button class="collapsible">USP6 (ubiquitin specific peptidase 6) translocation (<a href="https://www.zytovision.com/products/zytolight/z-2151" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC USP6 Dual Color Break Apart Probe is designed to detect translocations involving the USP6 gene. Translocations affecting USP6 have been initially found in primary aneurysmal bone cysts (ABC), a benign, but locally aggressive bone lesion. More recently, nodular fasciitis (NF), another mesenchymal lesion, has been tested positive for USP6 rearrangements. For both lesions it is assumed that the detection of USP6 rearrangements by FISH represents a valuable diagnostic tool.
+</p>
+</div>
+
+<button class="collapsible">YWHAE translocation (<a href="https://www.zytovision.com/products/zytolight/z-2175" target="_blank">Zytolight</a>)</button>
+<div class="content">
+<p>
+The ZytoLight ® SPEC YWHAE Dual Color Break Apart Probe is designed to detect rearrangements involving the chromosomal region 17p13.3 harboring the YWHAE gene. Altered expression of 14-3-3 family proteins is associated with development and progression of cancer. The fusion between YWHAE and one of the FAM22 family members (FAM22A or FAM22B) caused by a t(10;17)(q22;p13) has been identified in the clinically aggressive, high-grade endometrial stromal sarcoma (ESS) as well as in clear cell sarcoma of the kidney (CCSK).
+</p>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
  </div>
  
 <br>
