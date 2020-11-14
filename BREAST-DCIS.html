@@ -125,6 +125,32 @@ if (frm.A23.value !== ""){
 	Template += "  - Necrosis: " + frm.A23.value + "\n";
 }
 
+if (document.getElementById("A72").checked || document.getElementById("A73").checked || 
+    document.getElementById("A74").checked || document.getElementById("A75").checked || 
+	document.getElementById("A76").checked){
+	Template += "- Microcalcifications: " + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
 if (frm.A24.value !== ""){
 	Template +=  "\n"  + "- Surgical margins :" + "\n" + "  - Anterior: " + frm.A24.value + "\n";
 }
@@ -368,7 +394,7 @@ There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf
 
 <tr>
 <td>
-<label class="description">- Histologic type:</label> 
+<label class="description">- <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=12" target="_blank">Histologic type</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A14A">
@@ -384,7 +410,7 @@ There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf
 
 <tr>
 <td valign="top">
-<label class="description">- Architectural patterns:</label> 
+<label class="description">- <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=12" target="_blank">Architectural patterns</a>:</label> 
 </td>
 <td>
 <input type="checkbox" id="A15" value="  - Comedo"><label >Comedo</label><br>
@@ -399,7 +425,7 @@ There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf
 
 <tr>
 <td>
-<label class="description">- Nuclear grade:</label>
+<label class="description">- <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=13" target="_blank">Nuclear grade</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A22">
@@ -424,6 +450,18 @@ There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf
 	</select>
 </td>
 </tr>
+<tr>
+<td valign="top">
+<label class="description">- <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=17" target="_blank">Microcalcifications</a>:</label>
+</td>
+<td>
+	<input type="checkbox" id="A72"  value="  - Not identified"><label>Not identified</label><br>
+	<input type="checkbox" id="A73"  value="  - Present in DCIS"><label>Present in DCIS</label><br>
+	<input type="checkbox" id="A74"  value="  - Present in invasive carcinoma"><label>Present in invasive carcinoma</label><br>
+	<input type="checkbox" id="A75"  value="  - Present in non-neoplastic tissue"><label>Present in non-neoplastic tissue</label><br>
+	<input type="checkbox" id="A76"  value="  - Other (specify):"><label>Other (specify):</label><br>
+</td>
+</tr>
 </table>
 </p>
 </fieldset>
@@ -431,7 +469,7 @@ There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description">Surgical margins: </label></legend>
+<legend><label class="description"><a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=13" target="_blank">Surgical margins</a>: </label></legend>
 
 <p>
 <table border="1">
@@ -541,7 +579,7 @@ There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=14" target="_blank">Regional lymph nodes</a>: </label></legend>
 
 <p>
 <table border="1">
@@ -630,7 +668,7 @@ There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	<legend> <label class="description"> <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -717,7 +755,7 @@ There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf
 <br>
 
 <div id="footer">
-Last upated on 06-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 14-Nov-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Breast DCIS Resection 4.3.0.2 (Feb 2020).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
