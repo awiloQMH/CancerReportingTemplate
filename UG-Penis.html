@@ -167,6 +167,10 @@ if (document.getElementById("A33").checked){
 	Template += frm.A33.value + "\n";
 }
 
+if (frm.A84.value !== ""){
+	Template += "- Tumor thickness or depth of invasion (mm): " +  frm.A84.value + "\n";
+}
+
 if (frm.A34.value !== ""){
 	Template += "- Lymphovascular invasion: " + frm.A34.value + "\n";
 }
@@ -354,19 +358,18 @@ if (frm.A71.value !== ""){
 	Template += "    - Specify site: " + frm.A71.value + "\n";
 }
 
-if (document.getElementById("A72").checked ||
-	document.getElementById("A73").checked || document.getElementById("A74").checked ||
-	document.getElementById("A75").checked || document.getElementById("A76").checked ||
-	document.getElementById("A77").checked || document.getElementById("A78").checked ||
-	document.getElementById("A79").checked || document.getElementById("A80").checked ||
-	document.getElementById("A81").checked ||  frm.A82.value !==""){
+if (document.getElementById("A72").checked || document.getElementById("A73").checked ||
+    document.getElementById("A74").checked || document.getElementById("A75").checked || 
+	document.getElementById("A76").checked || document.getElementById("A77").checked || 
+	document.getElementById("A78").checked || document.getElementById("A79").checked || 
+	document.getElementById("A80").checked || document.getElementById("A81").checked ||  
+	frm.A82.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
 }
 
 if (document.getElementById("A72").checked){
 	Template += frm.A72.value + "\n";
 }
-
 
 if (document.getElementById("A73").checked){
 	Template += frm.A73.value + "\n";
@@ -565,7 +568,7 @@ table, th, td {
 <col width="60%">
 <tr>
 <td>
-<label class="description">- Histologic type (non-HPV related SCC):</label> 
+<label class="description">- <a href=".\cap\cp-penis-17protocol-4010.pdf#page=8" target="_blank">Histologic type (non-HPV related SCC)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A27">
@@ -585,7 +588,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Histologic type (HPV related SCC):</label> 
+<label class="description">- <a href=".\cap\cp-penis-17protocol-4010.pdf#page=8" target="_blank">Histologic type (HPV related SCC)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A28">
@@ -603,7 +606,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Histologic type (others):</label> 
+<label class="description">- <a href=".\cap\cp-penis-17protocol-4010.pdf#page=8" target="_blank">Histologic type (others)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A29">
@@ -618,7 +621,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Histologic grade:</label>
+<label class="description">- <a href=".\cap\cp-penis-17protocol-4010.pdf#page=8" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A30">
@@ -634,7 +637,7 @@ table, th, td {
 
 <tr>
 <td valign="top">
-<label class="description">- Tumor deep borders:</label> 
+<label class="description">- <a href=".\cap\cp-penis-17protocol-4010.pdf#page=8" target="_blank">Tumor deep borders</a>:</label> 
 </td>
 <td>
 <input type="checkbox"  id="A31" value="  - Pushing"><label >Pushing</label><br>
@@ -643,10 +646,18 @@ table, th, td {
 </td>
 </tr>
 
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-penis-17protocol-4010.pdf#page=8" target="_blank">Tumor thickness or Depth of invasion (mm)</a> :</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A84" size="10">
+</td>
+</tr>
 
 <tr>
 <td>
-<label class="description">- Lymphovascular invasion: </label>
+<label class="description">- <a href=".\cap\cp-penis-17protocol-4010.pdf#page=10" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A34">
@@ -660,7 +671,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Perineural invasion: </label>
+<label class="description">- <a href=".\cap\cp-penis-17protocol-4010.pdf#page=10" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A35">
@@ -699,7 +710,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description">Surgical margins of penectomy: </label></legend>
+<legend><label class="description"><a href=".\cap\cp-penis-17protocol-4010.pdf#page=9" target="_blank">Surgical margins of penectomy</a>: </label></legend>
 <p>
 <table border="1">
 <col width="50%">
@@ -924,7 +935,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	<legend> <label class="description"> <a href=".\cap\cp-penis-17protocol-4010.pdf#page=10" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -995,7 +1006,7 @@ table, th, td {
 <tr>
 <td>
     - Specify site(s), if known:
-<input type="text" name="A71" class="element text small" ID="A72" size="35">
+<input type="text" name="A71" class="element text small" ID="A71" size="35">
 </td>
 </tr>
 </table>
@@ -1005,7 +1016,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\cp-penis-17protocol-4010.pdf#page=11" target="_blank">Additional pathologic findings</a>: </label></legend>
 
 <p>
 <input type="checkbox"  id="A72" value="  - HPV-related penile intraepithelial neoplasia (PeIN), warty type"><label >HPV-related penile intraepithelial neoplasia (PeIN), warty type</label><br>
@@ -1045,7 +1056,8 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 10-June-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 14-Nov-2020,<br>
+based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Penis 4.0.1.0 (June 2017), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
