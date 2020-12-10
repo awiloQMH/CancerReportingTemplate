@@ -191,14 +191,10 @@ if (frm.A41.value !== ""){
 	Template += "- Treatment effect in the lymph nodes: " + frm.A41.value + "\n";
 }
 
-if (document.getElementById("A66").checked || document.getElementById("A67").checked || 
+if (document.getElementById("A67").checked || 
     document.getElementById("A68").checked || document.getElementById("A69").checked || 
 	document.getElementById("A70").checked || document.getElementById("A71").checked){
 	Template += "- Microcalcifications: " + "\n";
-}
-
-if (document.getElementById("A66").checked){
-	Template += frm.A66.value + "\n";
 }
 
 if (document.getElementById("A67").checked){
@@ -504,7 +500,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=19" target="_blank">Tumor focality</a>:</label>
+<label class="">- + <a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=19" target="_blank" >Tumor focality</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A15">
@@ -624,7 +620,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=30" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="">- + <a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=30" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A37">
@@ -638,7 +634,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td>
-<label class="description">- Dermal lymphovascular invasion: </label>
+<label class="">- + Dermal lymphovascular invasion: </label>
 </td>
 <td>
 	<select class="element select large" ID="A38">
@@ -652,7 +648,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td>
-<label class="description">- Perineural invasion: </label>
+<label class="">- + Perineural invasion: </label>
 </td>
 <td>
 	<select class="element select large" ID="A39">
@@ -666,7 +662,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td>
-<label class="description"><a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=18" target="_blank">- Treatment effect in the breast</a>: </label>
+<label class="description">- <a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=18" target="_blank"> Treatment effect in the breast</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A40">
@@ -712,28 +708,28 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td align="right">
-<label>- Size of DCIS (mm x mm x mm) :</label> 
+<label>- + Size of DCIS (mm x mm x mm) :</label> 
 <input type="text" ID="A21" class="element text small" size="20">
 </td>
 </tr>
 
 <tr>
 <td align="right">
-- Number of blocks with DCIS :
+- + Number of blocks with DCIS :
 <input type="text" ID="A22" class="element text small" size="10">
 </td>
 </tr>
 
 <tr>
 <td align="right">
-- Number of blocks examined :
+- + Number of blocks examined :
 <input type="text" ID="A23" class="element text small" size="10">
 </td>
 </tr>
 
 <tr>
 <td align="right">
-<label>- Nuclear grade:</label>
+<label>- + Nuclear grade:</label>
 	<select class="element select small" ID="A31">
 		<option value=""></option>
 		<option value="Grade I (low)">Grade I (low)</option>
@@ -745,7 +741,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td align="right">
-<label>- Necrosis: </label>
+<label>- + Necrosis: </label>
 	<select class="element select small" ID="A32">
 		<option value=""></option>
 		<option value="Not identified">Not identified</option>
@@ -757,7 +753,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td valign="top">
-<label>- Architectural patterns of ductal carcinoma in situ:</label><br>
+<label>- + Architectural patterns of ductal carcinoma in situ:</label><br>
 	<input type="checkbox" id="A24"  value="  - Comedo"><label>Comedo</label><br>
 	<input type="checkbox" id="A25"  value="  - Paget disease (DCIS involving nipple skin)"><label>Paget disease</label><br>
 	<input type="checkbox" id="A26"  value="  - Cribriform"><label>Cribriform</label><br>
@@ -771,7 +767,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 
 <tr>
 <td>
-<label>- Lobular carcinoma in situ:</label>
+<label>- + Lobular carcinoma in situ:</label>
 	<select class="element select medium" ID="A33">
 		<option value=""></option>
 		<option value="No LCIS in specimen">No LCIS in specimen</option>
@@ -781,7 +777,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 </tr>
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=33" target="_blank">Microcalcifications</a>:</label>
+<label class="">- + <a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=33" target="_blank">Microcalcifications</a>:</label>
 </td>
 <td>
 	<input type="checkbox" id="A67"  value="  - Not identified"><label>Not identified</label><br>
@@ -794,12 +790,13 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 </table>
 </p>
 <p>
-Please use the <a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC/DISH template</a> for reporting ER, PR, HER2 IHC, HER2 DISH and PD-L1.
++ Please use the <a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC/DISH template</a> for reporting ER, PR, HER2 IHC, HER2 DISH and PD-L1.
+</p>
 </fieldset>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=24" target="_blank">Surgical margins</a>: </label></legend>
+<legend><label class="description"><a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=24" target="_blank">Surgical margins</a> (at least measure the closest margin): </label></legend>
 
 <p>
 <table border="1">
@@ -1134,7 +1131,7 @@ Please use the <a href="Biomarker-Breast-markers.html" target="_blank">Breast IH
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Last upated on 10-Dec-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Breast Invasive Resection 4.4.0.0 (Feb 2020).<br>
 html form was created on 
 <a href="https://www.phpform.org">pForm</a>, 

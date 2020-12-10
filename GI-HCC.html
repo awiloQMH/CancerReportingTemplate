@@ -47,11 +47,11 @@ if (frm.A08.value !== ""){
 if (frm.A09.value !== ""){
 	Template += "- Satellitosis: " + frm.A09.value + "\n";
 }
-
+/**
 if (frm.A10.value !== ""){
 	Template += "- Lymphovascular invasion: " + frm.A10.value + "\n";
 }
-
+**/
 if (frm.A11.value !== ""){
 	Template += "- Vascular invasion: " + frm.A11.value + "\n";
 }
@@ -363,7 +363,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Satellitosis: </label>
+<label class="">- + Satellitosis: </label>
 </td>
 <td>
 <select class="element select large" ID="A09">
@@ -374,7 +374,7 @@ table, th, td {
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
 <label class="description">- <a href=".\cap\cp-gihepatobiliary-hepatocellular-20-4100.pdf#page=10" target="_blank">Lymphovascular invasion</a>: </label>
@@ -388,7 +388,7 @@ table, th, td {
 </select>
 </td>
 </tr>
-
+-->
 <tr>
 <td>
 <label class="description">- <a href=".\cap\cp-gihepatobiliary-hepatocellular-20-4100.pdf#page=10" target="_blank">Vascular invasion</a>: </label>
@@ -400,6 +400,7 @@ table, th, td {
 	<option value="Not identified">Not identified</option>
 	<option value="Present, small vessel invasion (specify tumor nodule)">Present, small vessel invasion (specify tumor nodule)</option>
 	<option value="Present, large vessel invasion (major branch of hepatic vein or portal vein)">Present, large vessel invasion (major branch of hepatic vein or portal vein)</option>
+	<option value="Present, specify tumor nodule(s):">Present, specify tumor nodule(s):</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -407,7 +408,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Perineural invasion: </label>
+<label class="">- + Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -613,7 +614,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 <p>
 <input type="checkbox"  id="A28" value="  - Fibrosis (specify extent, providing name of the scheme and assessment scale used): "><label >Fibrosis (specify extent, providing name of the scheme and assessment scale used): </label><br>
 <input type="checkbox"  id="A29" value="  - Cirrhosis"><label >Cirrhosis</label><br>
@@ -651,7 +652,8 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 5-Dec-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 08-Dec-2020, <br>
+based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Version: Hepatocellular 4.1.0.0	(Feb-2020),
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

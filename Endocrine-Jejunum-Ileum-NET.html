@@ -59,6 +59,9 @@ if (frm.A19.value !== ""){
 	Template += "- Perineural invasion:  " + frm.A19.value + "\n";
 }
 
+if (frm.A36.value !== ""){
+	Template += "- Large mesenteric mass:  " + frm.A36.value + "\n";
+}
 
 if (frm.A13.value + frm.A14.value + frm.A15.value + frm.A16.value !== ""){
 	Template += "\n" + "- Resection margins: " +"\n" + "  ";
@@ -353,7 +356,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td>
-<label class="description">- Perineural invasion: </label>
+<label >- + Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A19">
@@ -361,6 +364,20 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-endocrine-jejunal Ileal net-20-1002.pdf#page=12" target="_blank">Large mesenteric mass</a>: </label>
+</td>
+<td>
+<select class="element select large" ID="A36">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Present, specify no.:">Present, specify no.:</option>	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
 </tr>
@@ -461,7 +478,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td>
-<label class="description">- Extranodal extension:</label>
+<label >- + Extranodal extension:</label>
 </td>
 <td>
 <select class="element select large" ID="A22">
@@ -556,7 +573,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+	<legend> <label > + Additional pathologic findings: </label></legend>
 <p>
 <input type="checkbox" id="A32" value="Mesenteric tumor deposit(s) < or = to 2 cm"><label >Mesenteric tumor deposit(s) < or = to 2 cm</label><br>
 <input type="checkbox" id="A32a" value="Mesenteric vascular elastosis"><label >Mesenteric vascular elastosis</label><br>
@@ -589,7 +606,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2020,<br>
+Last upated on 10-Dec-2020,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Jejunum/Ileum NET 1.0.0.2 (Feb 2020), <br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
