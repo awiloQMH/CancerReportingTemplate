@@ -7,8 +7,12 @@
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
 <script type="text/javascript" src="view.js"></script>
 <style>
+div.ex1 {
+    margin-left: 30px;
+}
+
 .dropbtn {
-    background-color: #f9ecf2;
+    background-color: #e6e6ff;
     color: #003366;
     padding: 16px;
 	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
@@ -44,44 +48,6 @@
 
 .dropdown:hover .dropbtn {background-color: pink;}
 
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-}
-
-.active, .accordion:hover {
-    background-color: #ccc;
-}
-
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.panel {
-    padding: 0 18px;
-    background-color: #f9ecf2;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-
 </style>
 </head>
 <body>
@@ -104,7 +70,7 @@
 
 	</div>
 
-<p>
+
 <table align = "center">
 <tr>
 <td><div class="dropdown">
@@ -265,12 +231,10 @@
 	<br>mark'r</button>
 	<div class="dropdown-content">
 		<a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC/DISH</a>
-		<a href="Biomarker-MMR-IHC.html" target="_blank">MMR/MSI test</a>
+		<a href="Biomarker-MMR-IHC.html" target="_blank">MMR IHC test</a>
 		<a href="Biomarker-PD-L1-IHC.html" target="_blank">PD-L1 IHC test</a>
 		<a href="Biomarker-Stomach-HER2.html" target="_blank">Stomach HER2</a>
-		<a href="Biomarker-FISH.html" target="_blank">[QMH] FISH tests</a>
-		<a href="Biomarker-PCR.html" target="_blank">[QMH] PCR tests</a>
-		<a href="Biomarker-RT-PCR.html" target="_blank">[QMH] RT-PCR tests</a>
+		<a href="Biomarker-FISH.html" target="_blank">[QMH] FISH tests</a></li>
 		<a href=".\cap\cp-gilower-colonrectum-14biomarker-1201.pdf" target="_blank">[CAP] colon</a>
 		<a href=".\cap\cp-cns-18protocol-4000.pdf" target="_blank">[CAP] CNS</a>
 		<a href=".\cap\cp-femalereproductive-endometrium-biomarker-19-1201.pdf" target="_blank">[CAP] endometrium</a>
@@ -284,27 +248,26 @@
 
 </tr>
 </table>
-</p>
 <br>
 <br>
-<button class="accordion">Brain / Central nervous system tumors</button>
-<div class="panel">
+
+<h3>Brain / Central nervous system tumors</h3>
+<div class= "ex1">
 <p>
   <li><a href="CNS-Common_gliomas_and_ependymomas.html" target="_blank">Common gliomas and ependymomas</a></li>
   <li><a href="CNS-Meningioma.html" target="_blank">Meningioma</a></li>
 </p>
-</div>
+ </div>
  
-<button class="accordion">Breast tumors</button>
-<div class="panel">
+<h3>Breast tumors</h3>
+<div class= "ex1">
 <p>
   <li><a href="BREAST-Cancers.html" target="_blank">Breast carcinoma</a></li>
   <li><a href="BREAST-DCIS.html" target="_blank">DCIS</a></li>
-</p>
 </div>
 
-<button class="accordion">Gastrointestinal tract tumors</button>
-<div class="panel">
+<h3>Gastrointestinal tract tumors</h3>
+<div class= "ex1">
 <p>
   <li><a href="GI-Ampulla of Vater.html" target="_blank">Ampulla of Vater</a></li>
   <li><a href="GI-Anus.html" target="_blank">Anus</a></li>
@@ -323,8 +286,8 @@
 </p>
 </div>
 
-<button class="accordion">Gynecological tumors</button>
-<div class="panel">
+<h3>Gynecological tumors</h3>
+<div class= "ex1">
 <p>
   <li><a href="GYN-Cervix.html" target="_blank">Cervix</a></li>
   <li><a href="GYN-Endometrium.html" target="_blank">Endometrium</a></li>
@@ -336,8 +299,8 @@
 	</p>
 </div>
 
-<button class="accordion">Head and neck tumors</button>
-<div class="panel">
+<h3>Head and neck tumors</h3>
+<div  class= "ex1">
   <p>
   <li><a href="HN-Larynx.html" target="_blank">Larynx</a></li>
   <li><a href="HN-Lip and oral cavity.html" target="_blank">Lip and oral cavity</a></li>
@@ -347,16 +310,16 @@
   </p>
 </div>
 
-<button class="accordion">Musculoskeletal / Bone and soft tissue tumors</button>
-<div class="panel">
+<h3>Musculoskeletal / Bone and soft tissue tumors</h3>
+<div class= "ex1">
   <p>
   <li><a href="MS-Bone.html" target="_blank">Bone tumors</a></li>
   <li><a href="MS-Soft tissue sarcoma.html" target="_blank">Sarcomas in various organs</a></li>
   </p>
 </div>
  
-<button class="accordion">NET / Endocrine tumors</button>
-<div class="panel">
+<h3>NET / Endocrine tumors</h3>
+<div class= "ex1">
   <p>
   <li><a href="Endocrine-Adrenal.html" target="_blank">Adrenal gland</a></li>
   <li><a href="Endocrine-Appendix-NET.html" target="_blank">Appendix NET</a></li>
@@ -369,8 +332,8 @@
   </p>
 </div>
 
-<button class="accordion">Pediatric tumors</button>
-<div class="panel">
+<h3>Pediatric tumors</h3>
+<div class= "ex1">
 <p>
   <li><a href="Pedi-EwingSarcoma.html" target="_blank">Ewing sarcoma</a></li>
   <li><a href="Pedi-GermCellTumors.html" target="_blank">Extragonadal germ cell tumor</a></li>
@@ -382,8 +345,8 @@
 </p>
 </div>
 
-<button class="accordion">Skin tumors</button>
-<div class="panel">
+<h3>Skin tumors</h3>
+<div class= "ex1">
 <p>
   <li><a href="Skin-Melanoma.html" target="_blank">Melanoma</a></li>
   <li><a href=".\cap\cp-skin-merkelcell-17protocol-4001.pdf" target="_blank">Merkel cell carcinoma</a></li>
@@ -391,8 +354,8 @@
 </p>
 </div>
 
-<button class="accordion">Thorax tumors</button>
-<div class="panel">
+<h3>Thorax tumors</h3>
+<div  class= "ex1">
   <p>
   <li><a href="Thorax-Lung.html" target="_blank">Lung cancers</a></li>
   <li><a href="Thorax-Mesothelioma.html" target="_blank">Mesothelioma</a></li>
@@ -400,8 +363,8 @@
   </p>
 </div>
 
-<button class="accordion">Urogenital tumors</button>
-<div class="panel">
+<h3>Urogenital tumors</h3>
+<div  class= "ex1">
   <p>
   <li><a href="UG-Kidney.html" target="_blank">Kidney</a></li>
   <li><a href="UG-Penis.html" target="_blank">Penis</a></li>
@@ -414,16 +377,14 @@
 
 </div>
 
-<button class="accordion">Biomarkers</button>
-<div class="panel">
+<h3>Biomarkers</h3>
+<div class= "ex1">
 <p>
   <li><a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC & DISH tests</a></li>
-  <li><a href="Biomarker-MMR-IHC.html" target="_blank">MMR/MSI test</a></li>
+  <li><a href="Biomarker-MMR-IHC.html" target="_blank">MMR IHC test</a></li>
   <li><a href="Biomarker-PD-L1-IHC.html" target="_blank">PD-L1 IHC test</a></li>
   <li><a href="Biomarker-Stomach-HER2.html" target="_blank">Stomach HER2 test</a></li>
   <li><a href="Biomarker-FISH.html" target="_blank">[QMH] FISH tests</a></li>
-  <li><a href="Biomarker-PCR.html" target="_blank">[QMH] PCR tests</a></li>
-  <li><a href="Biomarker-RT-PCR.html" target="_blank">[QMH] RT-PCR tests</a></li>
   <li><a href=".\cap\cp-gilower-colonrectum-14biomarker-1201.pdf" target="_blank">[CAP] colorectal CA biomarkers</a></li>
   <li><a href=".\cap\cp-cns-18protocol-4000.pdf" target="_blank">[CAP] CNS tumors biomarkers</a></li>
   <li><a href=".\cap\cp-femalereproductive-endometrium-biomarker-19-1201.pdf" target="_blank">[CAP] endometrium CA biomarkers</a></li>
@@ -435,204 +396,13 @@
 </p>
 </div>
 
-<!--
-<p>
-<table border="1">
-<tr>
-<td valign="top">
-<label class="description">Brain / Central nervous system tumors</label>
-</td>
-<td>
-  <li><a href="CNS-Common_gliomas_and_ependymomas.html" target="_blank">Common gliomas and ependymomas</a></li>
-  <li><a href="CNS-Meningioma.html" target="_blank">Meningioma</a></li>
-</td>
-</tr>
 
-<tr>
-<td valign="top">
-<label class="description">Breast tumors</label>
-</td>
-<td>
-
-  <li><a href="BREAST-Cancers.html" target="_blank">Breast carcinoma</a></li>
-  <li><a href="BREAST-DCIS.html" target="_blank">DCIS</a></li>
-</td>
-</tr>
-
-<tr>
-<td valign="top">
-<label class="description">Gastrointestinal tract tumors</label>
-</td>
-<td>
-  <li><a href="GI-Ampulla of Vater.html" target="_blank">Ampulla of Vater</a></li>
-  <li><a href="GI-Anus.html" target="_blank">Anus</a></li>
-  <li><a href="GI-Appendix.html" target="_blank">Appendix</a></li>
-  <li><a href="GI-Colon-and-rectum.html" target="_blank">Colon and rectum</a></li>
-  <li><a href="GI-Esophagus.html" target="_blank">Esophagus</a></li>
-  <li><a href="GI-GIST.html" target="_blank">GIST</a></li>
-  <li><a href="GI-Distal Extrahepatic bile ducts.html" target="_blank">Hepatobiliary - Extrahepatic bile ducts</a></li>
-  <li><a href="GI-Gallbladder.html" target="_blank">Hepatobiliary - Gallbladder</a></li>
-  <li><a href="GI-HCC.html" target="_blank">Hepatobiliary - HCC</a></li>
-  <li><a href="GI-Intrahepatic bile ducts.html" target="_blank">Hepatobiliary - Intrahepatic bile ducts</a></li>
-  <li><a href="GI-Perhilar bile ducts.html" target="_blank">Hepatobiliary - Perihilar bile ducts</a></li>
-  <li><a href="GI-Pancreas.html" target="_blank">Pancreas (exocrine)</a></li>
-  <li><a href="GI-Small intestine.html" target="_blank">Small intestine</a></li>
-  <li><a href="GI-Stomach.html" target="_blank">Stomach</a></li>
-</td>
-</tr>
-
-<tr>
-<td valign="top">
-<label class="description">Gynecological tumors</label>
-</td>
-<td>
-  <li><a href="GYN-Cervix.html" target="_blank">Cervix</a></li>
-  <li><a href="GYN-Endometrium.html" target="_blank">Endometrium</a></li>
-  <li><a href="GYN-Trophoblast.html" target="_blank">Gestational trophoblastic diseases</a></li>
-  <li><a href="GYN-Ovary.html" target="_blank">Ovary, fallopian tube and peritoneum</a></li>
-  <li><a href="GYN-Sarcoma.html" target="_blank">Uterine sarcoma</a></li>
-  <li><a href="GYN-Vagina.html" target="_blank">Vagina</a></li>
-  <li><a href="GYN-Vulva.html" target="_blank">Vulva</a></li>
-</td>
-</tr>
-
-<tr>
-<td valign="top">
-<label class="description">Head and neck tumors</label>
-</td>
-<td>
-  <li><a href="HN-Larynx.html" target="_blank">Larynx</a></li>
-  <li><a href="HN-Lip and oral cavity.html" target="_blank">Lip and oral cavity</a></li>
-  <li><a href="HN-Major salivary gland.html" target="_blank">Major salivary gland</a></li>
-  <li><a href="HN-Nasal cavity and Nasal sinuses.html" target="_blank">Nasal cavity and paranasal sinuses</a></li>
-  <li><a href="HN-Pharynx.html" target="_blank">Phayrnx (nasoopharynx, oropharynx and hypopharynx)</a></li>
-</td>
-<tr>
-
-<tr>
-<td valign="top">
-<label class="description">Musculoskeletal / Bone and soft tissue tumors</label>
-</td>
-<td>
-  <li><a href="MS-Bone.html" target="_blank">Bone tumors</a></li>
-  <li><a href="MS-Soft tissue sarcoma.html" target="_blank">Sarcomas in various organs</a></li>
-</td>
-</tr>
-
-<tr>
-<td valign="top"> 
-<label class="description">NET / Endocrine tumors</label>
-</td>
-<td>
-  <li><a href="Endocrine-Adrenal.html" target="_blank">Adrenal gland</a></li>
-  <li><a href="Endocrine-Appendix-NET.html" target="_blank">Appendix NET</a></li>
-  <li><a href="Endocrine-Colon-NET.html" target="_blank">Colon NET</a></li>
-  <li><a href="Endocrine-Duodenum and Ampulla-NET.html" target="_blank">Duodenum and ampulla NET</a></li>
-  <li><a href="Endocrine-Jejunum-Ileum-NET.html" target="_blank">Jejunum-ileum NET</a></li>
-  <li><a href="Endocrine-Pancreas-NET.html" target="_blank">Pancreas endocrine tumor</a></li>
-  <li><a href="Endocrine-Stomach-NET.html" target="_blank">Stomach NET</a></li>
-  <li><a href="Endocrine-Thyroid.html" target="_blank">Thyroid gland</a></li>
-</td>
-<tr>
-
-</tr>
-<td valign="top">
-<label class="description">Pediatric tumors</label>
-</td>
-<td>
-  <li><a href="Pedi-EwingSarcoma.html" target="_blank">Ewing sarcoma</a></li>
-  <li><a href="Pedi-GermCellTumors.html" target="_blank">Extragonadal germ cell tumor</a></li>
-  <li><a href="Pedi-Hepatoblastoma.html" target="_blank">Hepatoblastoma</a></li>
-  <li><a href="Pedi-Neuroblastoma.html" target="_blank">Neuroblastoma</a></li>
-  <li><a href=".\cap\cp-retinoblastoma-17protocol-4000.pdf" target="_blank">Retinoblastoma</a></li>
-  <li><a href="Pedi-Rhadomyosarcoma.html" target="_blank">Rhabdomyosarcoma</a></li>
-  <li><a href="Pedi-Wilms.html" target="_blank">Wilms tumor</a></li>
-</td>
-</tr>
-
-<tr>
-<td valign="top">
-<label class="description">Skin tumors</label>
-</td>
-<td>
-  <li><a href="Skin-Melanoma.html" target="_blank">Melanoma</a></li>
-  <li><a href=".\cap\cp-skin-merkelcell-17protocol-4001.pdf" target="_blank">Merkel cell carcinoma</a></li>
-  <li><a href=".\cap\cp-uveal-melanoma-17protocol-4000.pdf" target="_blank">Uveal melanoma</a></li>
-</td>
-</tr>
-
-<tr>
-<td valign="top">
-<label class="description">Thorax tumors</label>
-</td>
-<td>
-  <li><a href="Thorax-Lung.html" target="_blank">Lung cancers</a></li>
-  <li><a href="Thorax-Mesothelioma.html" target="_blank">Mesothelioma</a></li>
-  <li><a href="Thorax-Thymus.html" target="_blank">Thymus</a></li>
-</td>
-</tr>
-
-<tr>
-<td valign="top">
-<label class="description">Urogenital tumors</label>
-</td>
-<td>
-  <li><a href="UG-Kidney.html" target="_blank">Kidney</a></li>
-  <li><a href="UG-Penis.html" target="_blank">Penis</a></li>
-  <li><a href="UG-Prostate.html" target="_blank">Prostate</a></li>
-  <li><a href="UG-Testis.html" target="_blank">Testis</a></li>
-  <li><a href="UG-Ureter.html" target="_blank">Ureter and renal pelvis</a></li>
-  <li><a href="UG-Urethra.html" target="_blank">Urethra and periurethral glands</a></li>
-  <li><a href="UG-Urinary Bladder.html" target="_blank">Urinary bladder</a></li>
-</td>
-</tr>
-
-<tr>
-<td valign="top">
-<label class="description">Biomarkers</label>
-</td>
-<td>
-  <li><a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC & DISH tests</a></li>
-  <li><a href="Biomarker-MMR-IHC.html" target="_blank">MMR/MSI test</a></li>
-  <li><a href="Biomarker-PD-L1-IHC.html" target="_blank">PD-L1 IHC test</a></li>
-  <li><a href="Biomarker-Stomach-HER2.html" target="_blank">Stomach HER2 test</a></li>
-  <li><a href="Biomarker-FISH.html" target="_blank">[QMH] FISH tests</a></li>
-  <li><a href=".\cap\cp-gilower-colonrectum-14biomarker-1201.pdf" target="_blank">[CAP] colorectal CA biomarkers</a></li>
-  <li><a href=".\cap\cp-cns-18protocol-4000.pdf" target="_blank">[CAP] CNS tumors biomarkers</a></li>
-  <li><a href=".\cap\cp-femalereproductive-endometrium-biomarker-19-1201.pdf" target="_blank">[CAP] endometrium CA biomarkers</a></li>
-  <li><a href=".\cap\cp-gigist-gist-biomarker-20-1002.pdf" target="_blank">[CAP] GIST biomarkers</a></li>
-  <li><a href=".\cap\cp-headandneck-17biomarker-1000.pdf" target="_blank">[CAP] H&N CA biomarkers</a></li>
-  <li><a href=".\cap\cp-thorax-lung-16biomarker-1302.pdf" target="_blank">[CAP] lung CA biomarkers</a></li>
-  <li><a href=".\cap\cp-skin-melanoma-15biomarker-1002.pdf" target="_blank">[CAP] melanoma biomarkers</a></li>
-  <li><a href=".\cap\cp-endocrine-thyroid-biomarker-16-1001.pdf" target="_blank">[CAP] thyroid CA biomarkers</a></li>
-</td>
-</tr>
-</table>
-</p>
--->
 <br>
 <br>
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
-</script>
-
 <div id = "footer">
-Last upated on 07-Nov-2020,<br>
+Last upated on 11-May-2020,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">College of American Pathologists Cancer Protocol Templates</a> (Apr-2020 version).<br>
-The html form and cascade style sheet were created on <a href="http://www.phpform.org" target="_blank">pForm</a>,<br>
+The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
 with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a>,<br>
 and buttons modified from <a href="https://icons8.com" target="_blank">Icons8</a>.<br>
 <br>

@@ -365,6 +365,7 @@ function CopyToClipboard() {
 table, th, td {
   border: 1px solid silver;
   border-collapse: collapse;
+  padding: 4px;
 }
 </style>
 </head>
@@ -459,7 +460,7 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class=""> + <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=13" target="_blank">Serum tumor markers</a>:</label></legend>
-<p><label class="">- + Pre-orchiectomy serum tumor markers:</label> 
+<p><label class="">+ Pre-orchiectomy serum tumor markers:</label> 
 <input type="checkbox" id="A05" value="  - Unknown"><label >Unknown</label><br>
 <input type="checkbox" id="A06" value="  - Serum marker studies within normal limits"><label >Serum marker studies within normal limits</label><br>
 <input type="checkbox" id="A07" value="  - Alpha-fetoprotein (AFP) elevation"><label >Alpha-fetoprotein (AFP) elevation</label><br>
@@ -467,7 +468,7 @@ table, th, td {
 <input type="checkbox" id="A09" value="  - Lactate dehydrogenase (LDH) elevation"><label >Lactate dehydrogenase (LDH) elevation</label><br>
 </p>
 
-<p><label class="">- + Post-orchiectomy serum tumor markers:</label> 
+<p><label class=""> + Post-orchiectomy serum tumor markers:</label> 
 <input type="checkbox" id="A10" value="  - Unknown"><label >Unknown</label><br>
 <input type="checkbox" id="A11" value="  - Serum marker studies within normal limits"><label >Serum marker studies within normal limits</label><br>
 <input type="checkbox" id="A12" value="  - Alpha-fetoprotein (AFP) elevation"><label >Alpha-fetoprotein (AFP) elevation</label><br>
@@ -475,7 +476,7 @@ table, th, td {
 <input type="checkbox" id="A14" value="  - Lactate dehydrogenase (LDH) elevation"><label >Lactate dehydrogenase (LDH) elevation</label><br>
 </p>
 
-<p><label class="">- + Serum tumor markers:</label>
+<p><label class=""> + Serum tumor markers:</label>
 <select class="element select medium" ID="A15">
 	<option value=""></option>
 	<option value="SX: Serum marker studies not available or performed">SX: Serum marker studies not available or performed</option> 
@@ -500,19 +501,31 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-
-<p><label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (intratubular germ cell neoplasia)</a>:</label> 
-<select class="element select medium" ID="A17">
+<legend><label class="description">Histologic type:</label></legend>
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (intratubular germ cell neoplasia)</a>:</label> 
+</td>
+<td>
+<select class="element select large" ID="A17">
 	<option value=""></option>
 	<option value="Germ cell neoplasia in situ (GCNIS)">Germ cell neoplasia in situ (GCNIS)</option>
 	<option value="Intratubular seminoma">Intratubular seminoma</option>
 	<option value="Intratubular embryonal carcinoma">Intratubular embryonal carcinoma</option>	
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p><label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type</a>:</label> 
-<select class="element select medium" ID="A18">
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (germ cell tumors)</a>:</label> 
+</td>
+<td>
+<select class="element select large" ID="A18">
 	<option value=""></option>
 	<option value="Seminoma">Seminoma</option>
 	<option value="Seminoma with syncytiotrophoblastic cells">Seminoma with syncytiotrophoblastic cells</option>
@@ -536,10 +549,15 @@ table, th, td {
 	<option value="Mixed germ cell-sex cord stromal tumor, gonadoblastoma">Mixed germ cell-sex cord stromal tumor, gonadoblastoma</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p><label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (non-choriocarcinoma trophoblastic tumor)</a>:</label> 
-<select class="element select medium" ID="A19">
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (non-choriocarcinoma trophoblastic tumor)</a>:</label> 
+</td>
+<td>
+<select class="element select large" ID="A19">
 	<option value=""></option>
 	<option value="Non-choriocarcinomatous trophoblastic tumor, NOS">Non-choriocarcinomatous trophoblastic tumor, NOS</option>
 	<option value="Placental site trophoblastic tumor">Placental site trophoblastic tumor</option>
@@ -549,19 +567,29 @@ table, th, td {
 	<option value="Teratoma with somatic-type malignancy (specify type):">Teratoma with somatic-type malignancy (specify type):</option>	
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p><label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (testicular scar/regressed germ cell tumor)</a>:</label> 
-<select class="element select medium" ID="A20">
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (testicular scar/regressed germ cell tumor)</a>:</label> 
+</td>
+<td>
+<select class="element select large" ID="A20">
 	<option value=""></option>
 	<option value="Scar diagnostic of regressed germ cell tumor">Scar diagnostic of regressed germ cell tumor</option>
 	<option value="Scar suspicious for regressed germ cell tumor">Scar suspicious for regressed germ cell tumor</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
-</p>
+</td>
+</tr>
 
-<p><label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (sex cord-stromal tumor)</a>:</label> 
-<select class="element select medium" ID="A21">
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=8" target="_blank">Histologic type (sex cord-stromal tumor)</a>:</label> 
+</td>
+<td>
+<select class="element select large" ID="A21">
 	<option value=""></option>
 	<option value="Leydig cell tumor">Leydig cell tumor</option>
 	<option value="Malignant Leydig cell tumor">Malignant Leydig cell tumor</option>
@@ -576,13 +604,15 @@ table, th, td {
 	<option value="Sex cord-stromal tumor type, unclassified">Sex cord-stromal tumor type, unclassified</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
+</td>
+</tr>
+</table>
 </p>
-<br>
 </fieldset>
 </p>
 
 <p><label class="description">- <a href=".\cap\cp-malegenital-testis-radicalorchiectomy-19-4012.pdf#page=12" target="_blank">Lymphovascular invasion</a>: </label>
-<select class="element select medium" ID="A22">
+<select class="element select small" ID="A22">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
@@ -913,7 +943,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 10-Dec-2020,<br>
+Last upated on 12-Dec-2020,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Testis Radical Orchiectomy 4.0.1.2 (August 2019) and Testis Lymphadenectomy 4.0.1.1 (February 2019), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

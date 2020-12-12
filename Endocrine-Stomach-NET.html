@@ -199,6 +199,7 @@ function CopyToClipboard() {
 table, th, td {
   border: 1px solid silver;
   border-collapse: collapse;
+  padding: 4px;
 }
 </style>
 </head>
@@ -377,7 +378,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td>
-<label >- + Perineural invasion: </label>
+<label > + Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A19">
@@ -519,7 +520,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 <col width="80%">
 <tr>
 <td>
-- Number of regional lymph nodes examined:
+<label class="description">- Number of regional lymph nodes examined:</label>
 </td>
 <td>
 <input type="text" name="A20" class="element text large" size="10">
@@ -528,7 +529,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td>
-- Number of lymph nodes involved:
+<label class="description">- Number of lymph nodes involved:</label>
 </td>
 <td>
 <input type="text" name="A21" class="element text large" size="10">
@@ -537,7 +538,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td>
-- + Extranodal extension:
++ Extranodal extension:
 </td>
 <td>
 <select class="element select large" ID="A22">
@@ -563,7 +564,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td valign="top">
-  - TNM Descriptors: <br>
+<label class="description">  - TNM Descriptors: </label>
 </td>
 <td>
 <input type="checkbox" id="A23" value="m (multiple primary tumors)">m (multiple primary tumors)<br>
@@ -574,7 +575,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td>
-  - Primary tumor (pT):<br>
+<label class="description">  - Primary tumor (pT):</label>
 </td>
 <td>
 <select class="element select large" ID="A26">
@@ -591,7 +592,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td>
-  - Regional lymph nodes (pN): <br>
+<label class="description">  - Regional lymph nodes (pN): </label>
 </td>
 <td>
 <select class="element select large" ID="A27">
@@ -605,7 +606,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td valign="top" rowspan="2">
-  - Distant metastasis (pM): <br>
+<label class="description">  - Distant metastasis (pM): </label>
 </td>
 <td>
 <select class="element select large" ID="A28">
@@ -666,7 +667,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 <br>
 <br>
 <div id="footer">
-Last upated on 10-Dec-2020,<br>
+Last upated on 12-Dec-2020,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Stomach NET 4.0.0.2 (Feb 2020), <br>
 html was form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
