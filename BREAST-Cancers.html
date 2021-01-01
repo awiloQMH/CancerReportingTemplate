@@ -426,15 +426,15 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 <label class="description">- Tumor site:</label> 
 </td>
 <td>
-	<input type="checkbox" id="A03" value="  - Upper outer quadrant"><label>Upper outer quadrant</label><br>
-	<input type="checkbox" id="A04" value="  - Lower outer quadrant"><label>Lower outer quadrant</label><br>
-	<input type="checkbox" id="A05" value="  - Upper inner quadrant"><label>Upper inner quadrant</label><br>
-	<input type="checkbox" id="A06" value="  - Lower inner quadrant"><label>Lower inner quadrant</label><br>
-	<input type="checkbox" id="A07" value="  - Central"><label>Central</label><br>
-	<input type="checkbox" id="A08" value="  - Nipple"><label>Nipple</label><br>
-	<input type="checkbox" id="A09" value="  - Position (specify): o’clock"><label>Position (specify): o’clock</label><br>
-	<input type="checkbox" id="A10" value="  - Other (specify):"><label>Other (specify):</label><br>
-	<input type="checkbox" id="A11" value="  - Not specified"><label>Not specified</label><br>
+	<input class="element checkbox" type="checkbox" id="A03" value="  - Upper outer quadrant"><label>Upper outer quadrant</label><br>
+	<input class="element checkbox" type="checkbox" id="A04" value="  - Lower outer quadrant"><label>Lower outer quadrant</label><br>
+	<input class="element checkbox" type="checkbox" id="A05" value="  - Upper inner quadrant"><label>Upper inner quadrant</label><br>
+	<input class="element checkbox" type="checkbox" id="A06" value="  - Lower inner quadrant"><label>Lower inner quadrant</label><br>
+	<input class="element checkbox" type="checkbox" id="A07" value="  - Central"><label>Central</label><br>
+	<input class="element checkbox" type="checkbox" id="A08" value="  - Nipple"><label>Nipple</label><br>
+	<input class="element checkbox" type="checkbox" id="A09" value="  - Position (specify): o’clock"><label>Position (specify): o’clock</label><br>
+	<input class="element checkbox" type="checkbox" id="A10" value="  - Other (specify):"><label>Other (specify):</label><br>
+	<input class="element checkbox" type="checkbox" id="A11" value="  - Not specified"><label>Not specified</label><br>
 </td>
 </tr>
 
@@ -760,14 +760,14 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 <tr>
 <td valign="top">
 <label>+ Architectural patterns of ductal carcinoma in situ:</label><br>
-	<input type="checkbox" id="A24"  value="  - Comedo"><label>Comedo</label><br>
-	<input type="checkbox" id="A25"  value="  - Paget disease (DCIS involving nipple skin)"><label>Paget disease</label><br>
-	<input type="checkbox" id="A26"  value="  - Cribriform"><label>Cribriform</label><br>
-	<input type="checkbox" id="A27"  value="  - Micropapillary"><label>Micropapillary</label><br>
-	<input type="checkbox" id="A28"  value="  - Papillary"><label>Papillary</label><br>
-	<input type="checkbox" id="A29"  value="  - Solid"><label>Solid</label><br>
-	<input type="checkbox" id="A30"  value="  - Other, specify:"><label>Other, specify:</label><br>
-<br>
+	<input class="element checkbox" type="checkbox" id="A24"  value="  - Comedo"><label class="choice" >Comedo</label>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A25"  value="  - Paget disease (DCIS involving nipple skin)"><label class="choice" >Paget disease</label>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A26"  value="  - Cribriform"><label class="choice" >Cribriform</label>
+	<input class="element checkbox" type="checkbox" id="A27"  value="  - Micropapillary"><label class="choice" >Micropapillary</label>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A28"  value="  - Papillary"><label class="choice" >Papillary</label>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A29"  value="  - Solid"><label class="choice" >Solid</label>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A30"  value="  - Other, specify:"><label class="choice" >Other, specify:</label>
+
 </td>
 </tr>
 
@@ -786,11 +786,11 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 <label class="">+ <a href=".\cap\cp-breast-invasive-resection-20-4400.pdf#page=33" target="_blank">Microcalcifications</a>:</label>
 </td>
 <td>
-	<input type="checkbox" id="A67"  value="  - Not identified"><label>Not identified</label><br>
-	<input type="checkbox" id="A68"  value="  - Present in DCIS"><label>Present in DCIS</label><br>
-	<input type="checkbox" id="A69"  value="  - Present in invasive carcinoma"><label>Present in invasive carcinoma</label><br>
-	<input type="checkbox" id="A70"  value="  - Present in non-neoplastic tissue"><label>Present in non-neoplastic tissue</label><br>
-	<input type="checkbox" id="A71"  value="  - Other (specify):"><label>Other (specify):</label><br>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A67"  value="  - Not identified"><label class="choice" >Not identified</label>
+	<input class="element checkbox" type="checkbox" id="A68"  value="  - Present in DCIS"><label class="choice" >Present in DCIS</label>
+	<input class="element checkbox" type="checkbox" id="A69"  value="  - Present in invasive carcinoma"><label class="choice" >Present in invasive carcinoma</label>
+	<input class="element checkbox" type="checkbox" id="A70"  value="  - Present in non-neoplastic tissue"><label class="choice" >Present in non-neoplastic tissue</label>
+	<input class="element checkbox" type="checkbox" id="A71"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
 </td>
 </tr>
 </table>
@@ -1027,9 +1027,9 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 <label class="description">- TNM Descriptors:</label>
 </td>
 <td>
-<input type="checkbox" id="A57"  value=" m (multiple foci of invasive carcinoma) "><label>m (multiple foci of invasive carcinoma)</label><br>
-<input type="checkbox" id="A58"  value=" r (recurrent) "><label>r (recurrent)</label><br>
-<input type="checkbox" id="A59"  value=" y (post treatment) "><label>y (post treatment)</label><br>
+<input class="element checkbox" type="checkbox" id="A57"  value=" m (multiple foci of invasive carcinoma) "><label class="choice" >m (multiple foci of invasive carcinoma)</label>
+<input class="element checkbox" type="checkbox" id="A58"  value=" r (recurrent) "><label class="choice" >r (recurrent)</label>
+<input class="element checkbox" type="checkbox" id="A59"  value=" y (post treatment) "><label class="choice" >y (post treatment)</label>
 </td>
 </tr>
 
@@ -1065,8 +1065,8 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 <label class="description">- Regional lymph nodes modifier: </label>
 </td>
 <td>
-<input type="checkbox"  id="A61" value=" sn "><label>sn Sentinel node(s) evaluated (< 6 lymph nodes)</label><br>
-<input type="checkbox"  id="A62" value=" f  "><label>f Nodal metastasis confirmed by FNA or biopsy</label><br>
+<input class="element checkbox" type="checkbox"  id="A61" value=" sn "><label class="choice" >sn Sentinel node(s) evaluated (< 6 lymph nodes)</label>
+<input class="element checkbox" type="checkbox"  id="A62" value=" f  "><label class="choice" >f Nodal metastasis confirmed by FNA or biopsy</label>
 </td>
 </tr>
 
@@ -1138,7 +1138,7 @@ There is different protocol for <a href=".\cap\cp-breast-invasive-biopsy-20-1100
 <br>
 
 <div id="footer">
-Last upated on 15-Dec-2020,<br>
+Last upated on 01-Jan-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Breast Invasive Resection 4.4.0.0 (Feb 2020).<br>
 html form was created on 
