@@ -302,10 +302,10 @@ table, th, td {
 <label class="description">- Tumor site:</label> 
 </td>
 <td>
-	<input type="checkbox"  id="A02" value="  - Vagina, upper third"><label >Vagina, upper third</label><br>
-	<input type="checkbox"  id="A03" value="  - Vagina, middle third"><label >Vagina, middle third</label><br>
-	<input type="checkbox"  id="A04" value="  - Vagina, lower third"><label >Vagina, lower third</label><br>
-	<input type="checkbox"  id="A05" value="  - Vagina, further delineation not specified"><label >Vagina, further delineation not specified</label><br>
+	<input class="element checkbox" type="checkbox"  id="A02" value="  - Vagina, upper third"><label >Vagina, upper third</label><br>
+	<input class="element checkbox" type="checkbox"  id="A03" value="  - Vagina, middle third"><label >Vagina, middle third</label><br>
+	<input class="element checkbox" type="checkbox"  id="A04" value="  - Vagina, lower third"><label >Vagina, lower third</label><br>
+	<input class="element checkbox" type="checkbox"  id="A05" value="  - Vagina, further delineation not specified"><label >Vagina, further delineation not specified</label><br>
 </td>
 </tr>
 
@@ -392,15 +392,15 @@ table, th, td {
 <label class="description">- Other tissue/ organ involvement:</label>
 </td>
 <td>
-		<input type="checkbox"  id="A10" value="  - Not applicable"><label >Not applicable</label><br>
-		<input type="checkbox"  id="A11" value="  - Not identified"><label >Not identified</label><br>
-		<input type="checkbox"  id="A12" value="  - Paravaginal tissues"><label >Paravaginal tissues</label><br>
-		<input type="checkbox"  id="A13" value="  - Pelvic sidewall"><label >Pelvic sidewall</label><br>
-		<input type="checkbox"  id="A14" value="  - Vagina, lower third"><label >Vagina, lower third</label><br>
-		<input type="checkbox"  id="A15" value="  - Bladder mucosa"><label >Bladder mucosa</label><br>
-		<input type="checkbox"  id="A16" value="  - Rectal mucosa"><label >Rectal mucosa</label><br>
-		<input type="checkbox"  id="A17" value="  - Other organs/tissue (specify):"><label >Other organs/tissue (specify):</label><br>
-		<input type="checkbox"  id="A18" value="  - Cannot be determined (explain):"><label >Cannot be determined (explain):</label><br>
+		<input class="element checkbox" type="checkbox"  id="A10" value="  - Not applicable"><label  class="choice">Not applicable</label>
+		<input class="element checkbox" type="checkbox"  id="A11" value="  - Not identified"><label  class="choice">Not identified</label>
+		<input class="element checkbox" type="checkbox"  id="A12" value="  - Paravaginal tissues"><label  class="choice">Paravaginal tissues</label>
+		<input class="element checkbox" type="checkbox"  id="A13" value="  - Pelvic sidewall"><label  class="choice">Pelvic sidewall</label>
+		<input class="element checkbox" type="checkbox"  id="A14" value="  - Vagina, lower third"><label  class="choice">Vagina, lower third</label>
+		<input class="element checkbox" type="checkbox"  id="A15" value="  - Bladder mucosa"><label  class="choice">Bladder mucosa</label>
+		<input class="element checkbox" type="checkbox"  id="A16" value="  - Rectal mucosa"><label  class="choice">Rectal mucosa</label>
+		<input class="element checkbox" type="checkbox"  id="A17" value="  - Other organs/tissue (specify):"><label  class="choice">Other organs/tissue (specify):</label>
+		<input class="element checkbox" type="checkbox"  id="A18" value="  - Cannot be determined (explain):"><label  class="choice">Cannot be determined (explain):</label>
 </td>
 </tr>
 
@@ -536,12 +536,11 @@ table, th, td {
 <label class="description">- Additional lymph node findings:</label>
 </td>
 <td>
-		<input type="checkbox"  id="A28" value="    - Extranodal extension"><label >Extranodal extension</label><br>
-		<input type="checkbox"  id="A29" value="    - Fixed/ulcerated nodes"><label >Fixed/ulcerated nodes</label><br>
-		<input type="checkbox"  id="A30" value="    - Other (specify):"><label >Other (specify):</label><br>
-		<input type="checkbox"  id="A31" value="    - Cannot be determined"><label >Cannot be determined</label><br>
+		<input class="element checkbox" type="checkbox"  id="A28" value="    - Extranodal extension"><label  class="choice">Extranodal extension</label>
+		<input class="element checkbox" type="checkbox"  id="A29" value="    - Fixed/ulcerated nodes"><label  class="choice">Fixed/ulcerated nodes</label>
+		<input class="element checkbox" type="checkbox"  id="A30" value="    - Other (specify):"><label  class="choice">Other (specify):</label>
+		<input class="element checkbox" type="checkbox"  id="A31" value="    - Cannot be determined"><label  class="choice">Cannot be determined</label>
 
-<br>
 </td>
 </tr>
 </table>
@@ -600,9 +599,9 @@ nearby structures or organs (Any T) It might or might not have spread to nearby 
   - TNM Descriptors:
 </td>
 <td>
-<input type="checkbox"  id="A32" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
-<input type="checkbox"  id="A33" value=" r (recurrent) "><label >r (recurrent)</label><br>
-<input type="checkbox"  id="A34" value=" y (post treatment) "><label >y (post treatment)</label><br>
+<input class="element checkbox" type="checkbox"  id="A32" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
+<input class="element checkbox" type="checkbox"  id="A33" value=" r (recurrent) "><label >r (recurrent)</label><br>
+<input class="element checkbox" type="checkbox"  id="A34" value=" y (post treatment) "><label >y (post treatment)</label><br>
 </td>
 </tr>
 
@@ -670,11 +669,11 @@ nearby structures or organs (Any T) It might or might not have spread to nearby 
 	<legend> <label > + Additional pathologic findings: </label></legend>
 
 <p>
-<input type="checkbox"  id="A40" value="  - Low-grade squamous intraepithelial lesion (VAIN 1)"><label >Low-grade squamous intraepithelial lesion (VAIN 1)</label><br>
-<input type="checkbox"  id="A41" value="  - High-grade squamous intraepithelial lesion (VAIN 2-3)"><label >High-grade squamous intraepithelial lesion (VAIN 2-3)</label><br>
-<input type="checkbox"  id="A42" value="  - Condyloma acuminatum"><label >Condyloma acuminatum</label><br>
-<input type="checkbox"  id="A43" value="  - Adenocarcinoma in situ (AIS)"><label >Adenocarcinoma in situ (AIS)</label><br>
-<input type="checkbox"  id="A44" value="  - Atypical adenosis"><label >Atypical adenosis</label><br>
+<input class="element checkbox" type="checkbox"  id="A40" value="  - Low-grade squamous intraepithelial lesion (VAIN 1)"><label  class="choice">Low-grade squamous intraepithelial lesion (VAIN 1)</label>
+<input class="element checkbox" type="checkbox"  id="A41" value="  - High-grade squamous intraepithelial lesion (VAIN 2-3)"><label  class="choice">High-grade squamous intraepithelial lesion (VAIN 2-3)</label>
+<input class="element checkbox" type="checkbox"  id="A42" value="  - Condyloma acuminatum"><label  class="choice">Condyloma acuminatum</label>
+<input class="element checkbox" type="checkbox"  id="A43" value="  - Adenocarcinoma in situ (AIS)"><label  class="choice">Adenocarcinoma in situ (AIS)</label>
+<input class="element checkbox" type="checkbox"  id="A44" value="  - Atypical adenosis"><label  class="choice">Atypical adenosis</label>
 </p>
 
 <p>
@@ -706,7 +705,7 @@ nearby structures or organs (Any T) It might or might not have spread to nearby 
 <br>
 
 <div id="footer">
-Last upated 10-Dec-2020,<br>
+Last upated 02-Jan-2021,<br>
 modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Vagina Resection 4.2.0.1 (Feb-2020), <br>
 html form and cascade style sheet were created basing on <a href="http://www.phpform.org">pForm</a>,<br>

@@ -412,10 +412,10 @@ table, th, td {
 <label class="description">- Tumor laterality:</label> 
 </td>
 <td>
-<input type="checkbox"  id="A04" value="  - Right"><label >Right</label><br>
-<input type="checkbox"  id="A05" value="  - Left"><label >Left</label><br>
-<input type="checkbox"  id="A06" value="  - Midline"><label >Midline</label><br>
-<input type="checkbox"  id="A07" value="  - Not specified"><label >Cannot be determined (explain):</label><br>
+<input class="element checkbox" type="checkbox"  id="A04" value="  - Right"><label >Right</label><br>
+<input class="element checkbox" type="checkbox"  id="A05" value="  - Left"><label >Left</label><br>
+<input class="element checkbox" type="checkbox"  id="A06" value="  - Midline"><label >Midline</label><br>
+<input class="element checkbox" type="checkbox"  id="A07" value="  - Not specified"><label >Cannot be determined (explain):</label><br>
 </td>
 </tr>
 
@@ -467,16 +467,15 @@ table, th, td {
 <label class="description">- <a href=".\cap\cp-headandneck-larynx-17protocol-4001.pdf#page=12" target="_blank">SCC and variants</a> :</label> 
 </td>
 <td>
-<input type="checkbox"  id="A11" value="  - Squamous cell carcinoma, conventional (keratinizing)"><label >Squamous cell carcinoma, conventional (keratinizing)</label><br>
-<input type="checkbox"  id="A12" value="  - Squamous cell carcinoma, nonkeratinizing"><label >Squamous cell carcinoma, nonkeratinizing</label><br>
-<input type="checkbox"  id="A13" value="  - Acantholytic squamous cell carcinoma"><label >Acantholytic squamous cell carcinoma</label><br>
-<input type="checkbox"  id="A14" value="  - Adenosquamous carcinoma"><label >Adenosquamous carcinoma</label><br>
-<input type="checkbox"  id="A15" value="  - Basaloid squamous cell carcinoma"><label >Basaloid squamous cell carcinoma</label><br>
-<input type="checkbox"  id="A16" value="  - Papillary squamous cell carcinoma"><label >Papillary squamous cell carcinoma</label><br>
-<input type="checkbox"  id="A17" value="  - Spindle cell squamous cell carcinoma"><label >Spindle cell squamous cell carcinoma</label><br>
-<input type="checkbox"  id="A18" value="  - Verrucous squamous cell carcinoma"><label >Verrucous squamous cell carcinoma</label><br>
-<input type="checkbox"  id="A19" value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label >Lymphoepithelial carcinoma (non-nasopharyngeal)</label><br>
-<br>
+<input class="element checkbox" type="checkbox"  id="A11" value="  - Squamous cell carcinoma, conventional (keratinizing)"><label  class="choice">Squamous cell carcinoma, conventional (keratinizing)</label>
+<input class="element checkbox" type="checkbox"  id="A12" value="  - Squamous cell carcinoma, nonkeratinizing"><label  class="choice">Squamous cell carcinoma, nonkeratinizing</label>
+<input class="element checkbox" type="checkbox"  id="A13" value="  - Acantholytic squamous cell carcinoma"><label  class="choice">Acantholytic squamous cell carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A14" value="  - Adenosquamous carcinoma"><label  class="choice">Adenosquamous carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A15" value="  - Basaloid squamous cell carcinoma"><label  class="choice">Basaloid squamous cell carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A16" value="  - Papillary squamous cell carcinoma"><label  class="choice">Papillary squamous cell carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A17" value="  - Spindle cell squamous cell carcinoma"><label  class="choice">Spindle cell squamous cell carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A18" value="  - Verrucous squamous cell carcinoma"><label  class="choice">Verrucous squamous cell carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A19" value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label  class="choice">Lymphoepithelial carcinoma (non-nasopharyngeal)</label>
 </td>
 </tr>
 
@@ -696,9 +695,9 @@ table, th, td {
  <label class="description">- TNM Descriptors:</label>
 </td>
 <td>
-<input type="checkbox"  id="A34" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
-<input type="checkbox"  id="A35" value=" r (recurrent) "><label >r (recurrent)</label><br>
-<input type="checkbox"  id="A36" value=" y (post treatment) "><label >y (post treatment)</label><br>
+<input class="element checkbox" type="checkbox"  id="A34" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
+<input class="element checkbox" type="checkbox"  id="A35" value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
+<input class="element checkbox" type="checkbox"  id="A36" value=" y (post treatment) "><label  class="choice">y (post treatment)</label>
 </td>
 </tr>
 
@@ -821,9 +820,9 @@ table, th, td {
   <label class="description">- TNM Descriptors:</label>
 </td>
 <td>
-<input type="checkbox"  id="A43" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
-<input type="checkbox"  id="A44" value=" r (recurrent) "><label >r (recurrent</label><br>
-<input type="checkbox"  id="A45" value=" y (post treatment) "><label >y (post treatment)</label><br>
+<input class="element checkbox" type="checkbox"  id="A43" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
+<input class="element checkbox" type="checkbox"  id="A44" value=" r (recurrent) "><label  class="choice">r (recurrent</label>
+<input class="element checkbox" type="checkbox"  id="A45" value=" y (post treatment) "><label class="choice" >y (post treatment)</label>
 </td>
 </tr>
 
@@ -884,14 +883,14 @@ table, th, td {
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 
 <p>
-<input type="checkbox"  id="A50" value="  - Dysplasia, low grade (includes hyperplasia, keratosis, and mild dysplasia)"><label ><a href=".\cap\cp-headandneck-larynx-17protocol-4001.pdf#page=18" target="_blank">Dysplasia, low grade (includes hyperplasia, keratosis, and mild dysplasia)</a></label><br>
-<input type="checkbox"  id="A51" value="  - Dysplasia, high grade (includes moderate to severe dysplasia, and carcinoma in situ)"><label ><a href=".\cap\cp-headandneck-larynx-17protocol-4001.pdf#page=18" target="_blank">Dysplasia, high grade (includes moderate to severe dysplasia, and carcinoma in situ)</a></label><br>
-<input type="checkbox"  id="A52" value="  - Squamous papilloma, solitary"><label >Sinonasal papilloma (specify type): </label><br>
-<input type="checkbox"  id="A53" value="  - Squamous papillomatosis"><label >Squamous papillomatosis</label><br>
-<input type="checkbox"  id="A54" value="  - Inflammation (specify type):"><label >Inflammation (specify type):</label><br>
-<input type="checkbox"  id="A55" value="  - Squamous metaplasia"><label >Squamous metaplasia</label><br>
-<input type="checkbox"  id="A56" value="  - Colonization, fungal"><label >Colonization, fungal</label><br>
-<input type="checkbox"  id="A57" value="  - Colonization, bacterial"><label >Colonization, bacterial</label><br>
+<input class="element checkbox" type="checkbox"  id="A50" value="  - Dysplasia, low grade (includes hyperplasia, keratosis, and mild dysplasia)"><label  class="choice"><a href=".\cap\cp-headandneck-larynx-17protocol-4001.pdf#page=18" target="_blank">Dysplasia, low grade (includes hyperplasia, keratosis, and mild dysplasia)</a></label>
+<input class="element checkbox" type="checkbox"  id="A51" value="  - Dysplasia, high grade (includes moderate to severe dysplasia, and carcinoma in situ)"><label  class="choice"><a href=".\cap\cp-headandneck-larynx-17protocol-4001.pdf#page=18" target="_blank">Dysplasia, high grade (includes moderate to severe dysplasia, and carcinoma in situ)</a></label>
+<input class="element checkbox" type="checkbox"  id="A52" value="  - Squamous papilloma, solitary"><label  class="choice">Sinonasal papilloma (specify type): </label>
+<input class="element checkbox" type="checkbox"  id="A53" value="  - Squamous papillomatosis"><label  class="choice">Squamous papillomatosis</label>
+<input class="element checkbox" type="checkbox"  id="A54" value="  - Inflammation (specify type):"><label  class="choice">Inflammation (specify type):</label>
+<input class="element checkbox" type="checkbox"  id="A55" value="  - Squamous metaplasia"><label  class="choice">Squamous metaplasia</label>
+<input class="element checkbox" type="checkbox"  id="A56" value="  - Colonization, fungal"><label  class="choice">Colonization, fungal</label>
+<input class="element checkbox" type="checkbox"  id="A57" value="  - Colonization, bacterial"><label  class="choice">Colonization, bacterial</label>
 </p>
 <p>- Other (specify):
 <input type="text" class="element text small" ID="A58" size="35">
@@ -920,7 +919,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 12-Dec-2020,<br>
+Last upated on 02-Jan-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Larynx 4.0.0.1 (June 2017), <br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

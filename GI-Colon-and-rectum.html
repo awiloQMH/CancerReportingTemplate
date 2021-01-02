@@ -338,18 +338,18 @@ table, th, td {
 </tr>
 
 <td><label class="description">- Tumor site:</label></td> 
-<td><input type="checkbox"  id="A02" value="  - Cecum"><label>Cecum</label><br>
-	<input type="checkbox"  id="A03" value="  - Ileocecal valve"><label>Ileocecal valve</label><br>
-	<input type="checkbox"  id="A04" value="  - Right (ascending) colon"><label>Right (ascending) colon</label><br>
-	<input type="checkbox"  id="A05" value="  - Hepatic flexure"><label>Hepatic flexure</label><br>
-	<input type="checkbox"  id="A06" value="  - Transverse colon"><label>Transverse colon</label><br>
-	<input type="checkbox"  id="A07" value="  - Splenic flexure"><label>Splenic flexure</label><br>
-	<input type="checkbox"  id="A08" value="  - Left (descending) colon"><label>Left (descending) colon</label><br>
-	<input type="checkbox"  id="A09" value="  - Sigmoid colon"><label >Sigmoid colon</label><br>
-	<input type="checkbox"  id="A10" value="  - Rectosigmoid"><label>Rectosigmoid</label><br>
-	<input type="checkbox"  id="A11" value="  - Rectum"><label>Rectum</label><br>
-	<input type="checkbox"  id="A12" value="  - Colon, not otherwise specified"><label>Colon, not otherwise specified</label><br>
-	<input type="checkbox"  id="A13" value="  - Cannot be determined (explain):"><label>Cannot be determined (explain):</label><br>
+<td><input class="element checkbox" type="checkbox"  id="A02" value="  - Cecum"><label>Cecum</label><br>
+	<input class="element checkbox" type="checkbox"  id="A03" value="  - Ileocecal valve"><label>Ileocecal valve</label><br>
+	<input class="element checkbox" type="checkbox"  id="A04" value="  - Right (ascending) colon"><label>Right (ascending) colon</label><br>
+	<input class="element checkbox" type="checkbox"  id="A05" value="  - Hepatic flexure"><label>Hepatic flexure</label><br>
+	<input class="element checkbox" type="checkbox"  id="A06" value="  - Transverse colon"><label>Transverse colon</label><br>
+	<input class="element checkbox" type="checkbox"  id="A07" value="  - Splenic flexure"><label>Splenic flexure</label><br>
+	<input class="element checkbox" type="checkbox"  id="A08" value="  - Left (descending) colon"><label>Left (descending) colon</label><br>
+	<input class="element checkbox" type="checkbox"  id="A09" value="  - Sigmoid colon"><label >Sigmoid colon</label><br>
+	<input class="element checkbox" type="checkbox"  id="A10" value="  - Rectosigmoid"><label>Rectosigmoid</label><br>
+	<input class="element checkbox" type="checkbox"  id="A11" value="  - Rectum"><label>Rectum</label><br>
+	<input class="element checkbox" type="checkbox"  id="A12" value="  - Colon, not otherwise specified"><label>Colon, not otherwise specified</label><br>
+	<input class="element checkbox" type="checkbox"  id="A13" value="  - Cannot be determined (explain):"><label>Cannot be determined (explain):</label><br>
 </td>
 </tr>
 
@@ -727,9 +727,9 @@ table, th, td {
   <label class="description">- TNM Descriptors:</label>
 </td>
 <td>
-<input type="checkbox" id="A42"  value=" m (multiple primary tumors) "><label>m (multiple primary tumors)</label><br>
-<input type="checkbox" id="A43"  value=" r (recurrent) "><label >r (recurrent)</label><br>
-<input type="checkbox" id="A44"  value=" y (post treatment) "><label >y (post treatment)</label><br>
+<input class="element checkbox" type="checkbox" id="A42"  value=" m (multiple primary tumors) "><label class="choice">m (multiple primary tumors)</label>
+<input class="element checkbox" type="checkbox" id="A43"  value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
+<input class="element checkbox" type="checkbox" id="A44"  value=" y (post treatment) "><label  class="choice">y (post treatment)</label>
 </td>
 </tr>
 
@@ -792,12 +792,12 @@ table, th, td {
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 
 <p>
-<input type="checkbox"   id="A49" value="  - Adenoma(s)"><label>Adenoma(s)</label><br>
-<input type="checkbox"   id="A50" value="  - Ulcerative colitis"><label>Ulcerative colitis</label><br>
-<input type="checkbox"   id="A51" value="  - Crohn disease"><label>Crohn disease</label><br>
-<input type="checkbox"   id="A52" value="  - Diverticulosis"><label>Diverticulosis</label><br>
-<input type="checkbox"   id="A53" value="  - Dysplasia arising in inflammatory bowel disease"><label >Dysplasia arising in inflammatory bowel disease</label><br>
-<input type="checkbox"   id="A54" value="  - Other polyps (type[s]):"><label>Other polyps (type[s]):</label><br>
+<input class="element checkbox" type="checkbox"   id="A49" value="  - Adenoma(s)"><label class="choice">Adenoma(s)</label>
+<input class="element checkbox" type="checkbox"   id="A50" value="  - Ulcerative colitis"><label class="choice">Ulcerative colitis</label>
+<input class="element checkbox" type="checkbox"   id="A51" value="  - Crohn disease"><label class="choice">Crohn disease</label>
+<input class="element checkbox" type="checkbox"   id="A52" value="  - Diverticulosis"><label class="choice">Diverticulosis</label>
+<input class="element checkbox" type="checkbox"   id="A53" value="  - Dysplasia arising in inflammatory bowel disease"><label class="choice" >Dysplasia arising in inflammatory bowel disease</label>
+<input class="element checkbox" type="checkbox"   id="A54" value="  - Other polyps (type[s]):"><label class="choice">Other polyps (type[s]):</label>
 </p>
 <p>
 - Other (specify):
@@ -830,7 +830,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 12-Dec-2020,<br>
+Last upated on 03-Jan-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Colon and Rectum Resection 4.1.0.0 (Feb-2020).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

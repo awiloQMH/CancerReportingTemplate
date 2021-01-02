@@ -332,11 +332,11 @@ table, th, td {
 <label class="description">- Tumor site:</label>
 </td>
 <td>
-<input type="checkbox"   id="A03" value="  - Right lobe"><label >Right lobe</label><br>
-<input type="checkbox"   id="A04" value="  - Left lobe"><label >Left lobe</label><br>
-<input type="checkbox"   id="A05" value="  - Isthmus"><label >Isthmus</label><br>
-<input type="checkbox"   id="A06" value="  - Pyramidal lobe"><label >Pyramidal lobe</label><br>
-<input type="checkbox"   id="A07" value="  - Other (specify):"><label >Other (specify):</label><br>
+<input class="element checkbox" type="checkbox"   id="A03" value="  - Right lobe"><label >Right lobe</label><br>
+<input class="element checkbox" type="checkbox"   id="A04" value="  - Left lobe"><label >Left lobe</label><br>
+<input class="element checkbox" type="checkbox"   id="A05" value="  - Isthmus"><label >Isthmus</label><br>
+<input class="element checkbox" type="checkbox"   id="A06" value="  - Pyramidal lobe"><label >Pyramidal lobe</label><br>
+<input class="element checkbox" type="checkbox"   id="A07" value="  - Other (specify):"><label >Other (specify):</label><br>
 </td>
 </tr>
 
@@ -696,9 +696,9 @@ perithyroidal (central compartment dissection):
 <label class="description">- TNM Descriptors:</label>
 </td>
 <td>
-<input type="checkbox" id="A30"  value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
-<input type="checkbox" id="A31"   value=" r (recurrent) "><label >r (recurrent)</label><br>
-<input type="checkbox" id="A32"   value=" y (post treatment) "><label >y (post treatment)</label><br>
+<input class="element checkbox" type="checkbox" id="A30"  value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
+<input class="element checkbox" type="checkbox" id="A31"   value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
+<input class="element checkbox" type="checkbox" id="A32"   value=" y (post treatment) "><label  class="choice">y (post treatment)</label>
 </td>
 </tr>
 
@@ -788,12 +788,12 @@ perithyroidal (central compartment dissection):
 	<legend> <label > + Additional pathologic findings: </label></legend>
 
 <p>
-<input type="checkbox"   id="A38" value="  - Adenoma"><label >Adenoma</label><br>
-<input type="checkbox"   id="A39" value="  - Adenomatoid nodule(s) or nodular follicular disease"><label >Adenomatoid nodule(s) or nodular follicular disease</label><br>
-<input type="checkbox"   id="A40" value="  - Diffuse hyperplasia (Graves’ disease)"><label >Diffuse hyperplasia (Graves’ disease)</label><br>
-<input type="checkbox"   id="A41" value="  - Thyroiditis (specify type):"><label >Thyroiditis (specify type):</label><br>
-<input type="checkbox"   id="A42" value="  - Parathyroid gland(s) present (specify number, location, and findings):"><label >Parathyroid gland(s) present (specify number, location, and findings):</label><br>
-<input type="checkbox"   id="A43" value="  - C-cell hyperplasia (specify type and focality:"><label >C-cell hyperplasia (specify type and focality</label><br>
+<input class="element checkbox" type="checkbox"   id="A38" value="  - Adenoma"><label  class="choice">Adenoma</label>
+<input class="element checkbox" type="checkbox"   id="A39" value="  - Adenomatoid nodule(s) or nodular follicular disease"><label  class="choice">Adenomatoid nodule(s) or nodular follicular disease</label>
+<input class="element checkbox" type="checkbox"   id="A40" value="  - Diffuse hyperplasia (Graves’ disease)"><label  class="choice">Diffuse hyperplasia (Graves’ disease)</label>
+<input class="element checkbox" type="checkbox"   id="A41" value="  - Thyroiditis (specify type):"><label  class="choice">Thyroiditis (specify type):</label>
+<input class="element checkbox" type="checkbox"   id="A42" value="  - Parathyroid gland(s) present (specify number, location, and findings):"><label  class="choice">Parathyroid gland(s) present (specify number, location, and findings):</label>
+<input class="element checkbox" type="checkbox"   id="A43" value="  - C-cell hyperplasia (specify type and focality:"><label  class="choice">C-cell hyperplasia (specify type and focality</label>
 </p>
 <p>
 - Other (specify):
@@ -823,7 +823,7 @@ perithyroidal (central compartment dissection):
 <br>
 
 <div id="footer">
-Last upated on 12-Dec-2020,<br>
+Last upated on 02-Jan-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Thyroid 4.2.0.0 (August 2019), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

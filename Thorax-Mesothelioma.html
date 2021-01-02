@@ -303,11 +303,11 @@ table, th, td {
 <label class="description">- Tumor site:</label>
 </td>
 <td>
-<input type="checkbox"  id="A02" value="Parietal pleura"><label >Parietal pleura</label><br>
-<input type="checkbox"  id="A03" value="Visceral pleura"><label >Visceral pleura</label><br>
-<input type="checkbox"  id="A04" value="Diaphragm"><label >Diaphragm</label><br>
-<input type="checkbox"  id="A05" value="Other (specify): "><label >Other (specify): </label><br>
-<input type="checkbox"  id="A06" value="Not specified"><label >Not specified</label><br>
+<input class="element checkbox" type="checkbox"  id="A02" value="Parietal pleura"><label >Parietal pleura</label><br>
+<input class="element checkbox" type="checkbox"  id="A03" value="Visceral pleura"><label >Visceral pleura</label><br>
+<input class="element checkbox" type="checkbox"  id="A04" value="Diaphragm"><label >Diaphragm</label><br>
+<input class="element checkbox" type="checkbox"  id="A05" value="Other (specify): "><label >Other (specify): </label><br>
+<input class="element checkbox" type="checkbox"  id="A06" value="Not specified"><label >Not specified</label><br>
 </td>
 </tr>
 
@@ -416,24 +416,24 @@ table, th, td {
 </table>
 </p>
 
-<p><label class="description">- Tumor extension:</label><br> 
-		<input type="checkbox" id="A15" value="No evidence of primary tumor"><label >No evidence of primary tumor</label><br>
-		<input type="checkbox" id="A16" value="Tumor limited to parietal pleura without involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura"><label >Tumor limited to parietal pleura without involvement of ipsilateral visceral, <br>mediastinal, or diaphragmatic pleura</label><br>
-		<input type="checkbox" id="A17" value="Tumor limited to parietal pleura with focal involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura"><label >Tumor limited to parietal pleura with focal involvement of ipsilateral visceral, <br>mediastinal, or diaphragmatic pleura</label><br>
-		<input type="checkbox" id="A18" value="Tumor involves all of the ipsilateral pleural surfaces (including fissure) "><label >Tumor involves all of the ipsilateral pleural surfaces (including fissure) </label><br>
-		<input type="checkbox" id="A19" value="Tumor involves diaphragmatic muscle"><label >Tumor involves diaphragmatic muscle</label><br>
-		<input type="checkbox" id="A20" value="Tumor extends into lung parenchyma"><label >Tumor extends into lung parenchyma</label><br>
-		<input type="checkbox" id="A21" value="Tumor involves endothoracic fascia"><label >Tumor involves endothoracic fascia</label><br>
-		<input type="checkbox" id="A22" value="Tumor extends into mediastinal fat"><label ">Tumor extends into mediastinal fat</label><br>
-		<input type="checkbox" id="A23" value="Solitary focus extends into the soft tissues of the chest wall"><label >Solitary focus extends into the soft tissues of the chest wall</label><br>
-		<input type="checkbox" id="A24" value="Diffuse or multiple foci extend into soft tissue of chest wall"><label >Diffuse or multiple foci extend into soft tissue of chest wall</label><br>
-		<input type="checkbox" id="A25" value="Tumor extends into but not through the pericardium"><label >Tumor extends into but not through the pericardium</label><br>
-		<input type="checkbox" id="A26" value="Tumor involves rib(s)"><label >Tumor involves rib(s)</label><br>
-		<input type="checkbox" id="A27" value="Tumor involves mediastinal organ(s) (specify):"><label >Tumor involves mediastinal organ(s) (specify):</label><br>
-		<input type="checkbox" id="A28" value="Other (specify):"><label >Other (specify):</label><br>
-		<input type="checkbox" id="A29" value="Cannot be assessed (explain):"><label >Cannot be assessed (explain):</label><br>
+<p>
+<label class="description">- Tumor extension:</label>
+		<input class="element checkbox" type="checkbox" id="A15" value="No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
+		<input class="element checkbox" type="checkbox" id="A16" value="Tumor limited to parietal pleura without involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura"><label  class="choice">Tumor limited to parietal pleura without involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura</label>
+		<input class="element checkbox" type="checkbox" id="A17" value="Tumor limited to parietal pleura with focal involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura"><label  class="choice">Tumor limited to parietal pleura with focal involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura</label>
+		<input class="element checkbox" type="checkbox" id="A18" value="Tumor involves all of the ipsilateral pleural surfaces (including fissure) "><label  class="choice">Tumor involves all of the ipsilateral pleural surfaces (including fissure) </label>
+		<input class="element checkbox" type="checkbox" id="A19" value="Tumor involves diaphragmatic muscle"><label  class="choice">Tumor involves diaphragmatic muscle</label>
+		<input class="element checkbox" type="checkbox" id="A20" value="Tumor extends into lung parenchyma"><label  class="choice">Tumor extends into lung parenchyma</label>
+		<input class="element checkbox" type="checkbox" id="A21" value="Tumor involves endothoracic fascia"><label  class="choice">Tumor involves endothoracic fascia</label>
+		<input class="element checkbox" type="checkbox" id="A22" value="Tumor extends into mediastinal fat"><label class="choice">Tumor extends into mediastinal fat</label>
+		<input class="element checkbox" type="checkbox" id="A23" value="Solitary focus extends into the soft tissues of the chest wall"><label  class="choice">Solitary focus extends into the soft tissues of the chest wall</label>
+		<input class="element checkbox" type="checkbox" id="A24" value="Diffuse or multiple foci extend into soft tissue of chest wall"><label  class="choice">Diffuse or multiple foci extend into soft tissue of chest wall</label>
+		<input class="element checkbox" type="checkbox" id="A25" value="Tumor extends into but not through the pericardium"><label class="choice" >Tumor extends into but not through the pericardium</label>
+		<input class="element checkbox" type="checkbox" id="A26" value="Tumor involves rib(s)"><label  class="choice">Tumor involves rib(s)</label>
+		<input class="element checkbox" type="checkbox" id="A27" value="Tumor involves mediastinal organ(s) (specify):"><label  class="choice">Tumor involves mediastinal organ(s) (specify):</label>
+		<input class="element checkbox" type="checkbox" id="A28" value="Other (specify):"><label  class="choice">Other (specify):</label>
+		<input class="element checkbox" type="checkbox" id="A29" value="Cannot be assessed (explain):"><label  class="choice">Cannot be assessed (explain):</label>
 </p>
-<br>
 </fieldset>
 </p>
 
@@ -521,8 +521,8 @@ table, th, td {
 <col width="40%">
 <tr>
 <td valign="top"><label class="description">- TNM Descriptors:</label></td>
-<td><input type="checkbox"  id="A36" value="r (recurrent)"><label >r (recurrent)</label><br>
-<input type="checkbox"  id="A37" value="y (post treatment)"><label >y (post treatment)</label><br>
+<td><input class="element checkbox" type="checkbox"  id="A36" value="r (recurrent)"><label  class="choice">r (recurrent)</label>
+<input class="element checkbox" type="checkbox"  id="A37" value="y (post treatment)"><label  class="choice">y (post treatment)</label>
 </td>
 </tr>
 
@@ -571,10 +571,10 @@ table, th, td {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 <p>
-<input type="checkbox" id="A42" value="Asbestos bodies"><label >Asbestos bodies</label><br>
-<input type="checkbox" id="A43" value="Pleural plaque"><label >Pleural plaque</label><br>
-<input type="checkbox" id="A44" value="Pulmonary interstitial fibrosis"><label >Pulmonary interstitial fibrosis</label><br>
-<input type="checkbox" id="A45" value="Inflammation (specify type):"><label >Inflammation (specify type):</label><br>
+<input class="element checkbox" type="checkbox" id="A42" value="Asbestos bodies"><label  class="choice">Asbestos bodies</label>
+<input class="element checkbox" type="checkbox" id="A43" value="Pleural plaque"><label  class="choice">Pleural plaque</label>
+<input class="element checkbox" type="checkbox" id="A44" value="Pulmonary interstitial fibrosis"><label  class="choice">Pulmonary interstitial fibrosis</label>
+<input class="element checkbox" type="checkbox" id="A45" value="Inflammation (specify type):"><label  class="choice">Inflammation (specify type):</label>
 </p>
 <p>- Other (specify):
 <input type="text" name="A46" class="element text medium" ID="A46" size="35">
@@ -603,7 +603,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 12-Dec-2020, <br>
+Last upated on 02-Jan-2021, <br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Mesothelioma 4.0.0.1 (June 2017), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

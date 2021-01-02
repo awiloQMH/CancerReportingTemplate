@@ -315,15 +315,15 @@ table, th, td {
 <label class="description">- Tumor site:</label> 
 </td>
 <td>
-<input type="checkbox"  id="A02" value="  - Cervical (proximal) esophagus"><label >Cervical (proximal) esophagus</label><br>
-<input type="checkbox"  id="A03" value="  - Mid esophagus, upper thoracic esophagus"><label >Mid esophagus, upper thoracic esophagus</label><br>
-<input type="checkbox"  id="A04" value="  - Mid esophagus, middle thoracic esophagus"><label >Mid esophagus, middle thoracic esophagus</label><br>
-<input type="checkbox"  id="A05" value="  - Mid esophagus, not otherwise specified"><label >Mid esophagus, not otherwise specified</label><br>
-<input type="checkbox"  id="A06" value="  - Distal esophagus (low thoracic esophagus)"><label >Distal esophagus (low thoracic esophagus)</label><br>
-<input type="checkbox"  id="A07" value="  - Esophagogastric junction (EGJ)"><label >Esophagogastric junction (EGJ)</label><br>
-<input type="checkbox"  id="A08" value="  - Proximal stomach/cardia"><label >Proximal stomach/cardia</label><br>
-<input type="checkbox"  id="A09" value="  - Other (specify):"><label >Other (specify):</label><br>
-<input type="checkbox"  id="A10" value="  - Esophagus, not otherwise specified"><label >Esophagus, not otherwise specified</label><br>
+<input class="element checkbox" type="checkbox"  id="A02" value="  - Cervical (proximal) esophagus"><label >Cervical (proximal) esophagus</label><br>
+<input class="element checkbox" type="checkbox"  id="A03" value="  - Mid esophagus, upper thoracic esophagus"><label >Mid esophagus, upper thoracic esophagus</label><br>
+<input class="element checkbox" type="checkbox"  id="A04" value="  - Mid esophagus, middle thoracic esophagus"><label >Mid esophagus, middle thoracic esophagus</label><br>
+<input class="element checkbox" type="checkbox"  id="A05" value="  - Mid esophagus, not otherwise specified"><label >Mid esophagus, not otherwise specified</label><br>
+<input class="element checkbox" type="checkbox"  id="A06" value="  - Distal esophagus (low thoracic esophagus)"><label >Distal esophagus (low thoracic esophagus)</label><br>
+<input class="element checkbox" type="checkbox"  id="A07" value="  - Esophagogastric junction (EGJ)"><label >Esophagogastric junction (EGJ)</label><br>
+<input class="element checkbox" type="checkbox"  id="A08" value="  - Proximal stomach/cardia"><label >Proximal stomach/cardia</label><br>
+<input class="element checkbox" type="checkbox"  id="A09" value="  - Other (specify):"><label >Other (specify):</label><br>
+<input class="element checkbox" type="checkbox"  id="A10" value="  - Esophagus, not otherwise specified"><label >Esophagus, not otherwise specified</label><br>
 </td>
 </tr>
 
@@ -732,9 +732,9 @@ table, th, td {
 <label class="description">- TNM Descriptors:</label>
 </td>
 <td>
-<input type="checkbox"  id="A33" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
-<input type="checkbox"  id="A34" value=" r (recurrent) "><label >r (recurrent)</label><br>
-<input type="checkbox"  id="A35" value=" y (post treatment) "><label >y (post treatment)</label><br>
+<input class="element checkbox" type="checkbox"  id="A33" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
+<input class="element checkbox" type="checkbox"  id="A34" value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
+<input class="element checkbox" type="checkbox"  id="A35" value=" y (post treatment) "><label class="choice" >y (post treatment)</label>
 </td>
 </tr>
 
@@ -805,13 +805,13 @@ table, th, td {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 <p>
-<input type="checkbox"  id="A40" value="  - Intestinal metaplasia (Barrett’s esophagus)"><label >Intestinal metaplasia (Barrett’s esophagus)</label><br>
-<input type="checkbox"  id="A41" value="  - Low-grade squamous dysplasia"><label >Low-grade squamous dysplasia</label><br>
-<input type="checkbox"  id="A42" value="  - High-grade squamous dysplasia"><label >High-grade squamous dysplasia</label><br>
-<input type="checkbox"  id="A43" value="  - Low-grade glandular dysplasia"><label >Low-grade glandular dysplasia</label><br>
-<input type="checkbox"  id="A44" value="  - High-grade glandular dysplasia"><label >High-grade glandular dysplasia</label><br>
-<input type="checkbox"  id="A45" value="  - Esophagitis (type):"><label >Esophagitis (type):</label><br>
-<input type="checkbox"  id="A46" value="  - Gastritis (type):"><label >Gastritis (type):</label><br>
+<input class="element checkbox" type="checkbox"  id="A40" value="  - Intestinal metaplasia (Barrett’s esophagus)"><label  class="choice">Intestinal metaplasia (Barrett’s esophagus)</label>
+<input class="element checkbox" type="checkbox"  id="A41" value="  - Low-grade squamous dysplasia"><label  class="choice">Low-grade squamous dysplasia</label>
+<input class="element checkbox" type="checkbox"  id="A42" value="  - High-grade squamous dysplasia"><label  class="choice">High-grade squamous dysplasia</label>
+<input class="element checkbox" type="checkbox"  id="A43" value="  - Low-grade glandular dysplasia"><label  class="choice">Low-grade glandular dysplasia</label>
+<input class="element checkbox" type="checkbox"  id="A44" value="  - High-grade glandular dysplasia"><label  class="choice">High-grade glandular dysplasia</label>
+<input class="element checkbox" type="checkbox"  id="A45" value="  - Esophagitis (type):"><label class="choice" >Esophagitis (type):</label>
+<input class="element checkbox" type="checkbox"  id="A46" value="  - Gastritis (type):"><label  class="choice">Gastritis (type):</label>
 </p>
 <p>- Other (specify):
 <input type="text" class="element text medium" ID="A47" size="35">
@@ -840,7 +840,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 12-Dec-2020,<br>
+Last upated on 03-Jan-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Esophagus 4.1.0.0 (Feb-2020), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

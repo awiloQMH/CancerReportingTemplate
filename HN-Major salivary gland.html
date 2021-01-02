@@ -261,10 +261,10 @@ table, th, td {
 <label class="description">- Tumor laterality:</label> 
 </td>
 <td>
-<input type="checkbox"  id="A03" value="  - Right"><label >Right</label><br>
-<input type="checkbox"  id="A04" value="  - Left"><label >Left</label><br>
-<input type="checkbox"  id="A05" value="  - Bilateral"><label >Bilateral</label><br>
-<input type="checkbox"  id="A06" value="  - Not specified"><label >Cannot be determined (explain):</label><br>
+<input class="element checkbox" type="checkbox"  id="A03" value="  - Right"><label >Right</label><br>
+<input class="element checkbox" type="checkbox"  id="A04" value="  - Left"><label >Left</label><br>
+<input class="element checkbox" type="checkbox"  id="A05" value="  - Bilateral"><label >Bilateral</label><br>
+<input class="element checkbox" type="checkbox"  id="A06" value="  - Not specified"><label >Cannot be determined (explain):</label><br>
 </td>
 </tr>
 
@@ -519,9 +519,9 @@ table, th, td {
 <label class="description">  - TNM Descriptors:</label>
 </td>
 <td>
-<input type="checkbox"  id="A22" value=" m (multiple primary tumors) "><label >m (multiple primary tumors)</label><br>
-<input type="checkbox"  id="A23" value=" r (recurrent) "><label >r (recurrent)</label><br>
-<input type="checkbox"  id="A24" value=" y (post treatment) "><label >y (post treatment)</label><br>
+<input class="element checkbox" type="checkbox"  id="A22" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
+<input class="element checkbox" type="checkbox"  id="A23" value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
+<input class="element checkbox" type="checkbox"  id="A24" value=" y (post treatment) "><label  class="choice">y (post treatment)</label>
 </td>
 </tr>
 
@@ -595,8 +595,8 @@ table, th, td {
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 
 <p>
-<input type="checkbox"  id="A29" value="  - Sialadenitis"><label >Sialadenitis</label><br>
-<input type="checkbox"  id="A30" value="  - Tumor associated lymphoid proliferation (TALP)"><label >Tumor associated lymphoid proliferation (TALP)</label><br>
+<input class="element checkbox" type="checkbox"  id="A29" value="  - Sialadenitis"><label  class="choice">Sialadenitis</label>
+<input class="element checkbox" type="checkbox"  id="A30" value="  - Tumor associated lymphoid proliferation (TALP)"><label  class="choice">Tumor associated lymphoid proliferation (TALP)</label>
 </p>
 
 <p>- Other (specify):
@@ -626,7 +626,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 12-Dec-2020,<br>
+Last upated on 02-Jan-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 SalivaryGland 4.0.0.1 (June 2017), <br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
