@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Colon HER2</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript">
+function updateDescription (frm) 
+{
+    var Template = ""
+
+if (frm.A07.value !== ""){
+	Template += "- HER2 IHC (for excision): " + frm.A07.value + "\n";
+};
+
+if (frm.A08.value !== ""){
+	Template += "  - Score : " + frm.A08.value + "\n";
+};
+
+if (frm.A09.value !== ""){
+	Template += "- HER2 DISH : " + frm.A09.value + "\n";
+};
+
+if (frm.A10.value !== ""){
+	Template += "  - Number of tumor cell counted : " + frm.A10.value + "\n";
+};
+
+if (frm.A11.value !== ""){
+	Template += "  - Average number of HER2 signals (black) per cell : " + frm.A11.value + "\n";
+};
+
+if (frm.A12.value !== ""){
+	Template += "  - Average number of CEP17 signals (red) per cell : " + frm.A12.value + "\n";
+};
+
+if (frm.A13.value !== ""){
+	Template += "  - HER2/CEP17 ratio : " + frm.A13.value + "\n";
+};
+
+if (document.getElementById("A14").checked || document.getElementById("A15").checked){
+	Template += "  - Other ISH abnormalities: "  + "\n";
+}
+
+if (document.getElementById("A14").checked){
+	Template += frm.A14.value + "\n";
+}
+
+if (document.getElementById("A15").checked){
+	Template += frm.A15.value + "\n";
+}
+
+
+if (frm.A19.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
+}
+
+
+if (frm.A18.value !== ""){
+	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A18.value + "\n";
+}
+if (frm.A07.value !== ""){
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system.";
+};
+
+
+if (frm.A09.value !== ""){
+	Template += "\n" + "Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by pathologist under light microscopy.";
+}
+  
+
+frm.holdtext.value = Template;
+}
+
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<script type="text/javascript" src="view.js"></script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>
+		Colon HER2 test
+		</h2>
+	</div>
+
+	<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description">HER2 gene amplification : </label></legend>
+<p>
+<table border="1">
+<col width="40%">
+<tr>	
+<td rowspan="2" valign="top"><label class="description">- HER2 IHC, excision </a> : </label>
+</td>
+	<td><select class="element select large"  ID="A07">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative for over-expression">Negative for over-expression</option>
+		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
+		<option value="Positive for over-expression">Positive for over-expression</option>
+	</select></td>
+</tr>
+
+<tr>
+<td align="right"><label>- Score:</label>
+	<select class="element select medium"  ID="A08">
+		<option value=""></option>
+		<option value="0 Negative">0 Negative (No reactivity or membranous reactivity in cancer cells)</option>
+		<option value="1 Negative">1 Negative (Faint or barely perceptible membranous react ivity in > or = 50% of cancer cells OR intense signals in <10% tumor cells)</option>
+		<option value="2 Equivocal">2 Equivocal (Weak to moderate complete, basolateral or lateral membranous reactivity in > or = 50% tumor cells OR intense signals in < 50% tumor cells)</option>
+		<option value="3 Positive">3 Positive (Strong complete, basolateral or lateral membranous reactivity in > or = 50% tumor cells)</option>
+	</select></td>
+</tr>
+
+<tr>
+<td rowspan="6" valign="top"><label class="description">- HER2/neu oncoprotein DISH : </label></td>
+	<td><select class="element select large"  ID="A09">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative for HER2 amplification">Negative for HER2 amplification</option>
+		<option value="Positive for HER2 amplification (ratio >= 2 in 50% cells)">Positive for HER2 amplification (ratio >= 2 in 50% cells)</option>
+	</select></td>
+</tr>
+
+<tr>
+<td align="right">- Number of tumor cell counted :
+<input type="text" ID="A10" class="element text small" size="10"></td>
+</tr>
+
+<tr>
+<td align="right">- HER2 signals (black) per cell :
+<input type="text" ID="A11" class="element text small" size="10"></td>
+</tr>
+
+<tr>
+<td align="right">- CEP17 signals (red) per cell :
+<input type="text" ID="A12" class="element text small" size="10"></td>
+</tr>
+
+<tr>
+<td align="right">- HER2/CEP17 ratio :
+<input type="text" ID="A13" class="element text small" size="10"></td>
+</tr>
+
+<tr>
+<td>- Other ISH abnormalities:<br>
+<input type="checkbox" id="A14" value="    - Aneusomy"><label>Aneusomy</label><br>
+	<input type="checkbox" id="A15" value="    - Heterogeneous signals"><label >Heterogeneous signals</label><br>
+<br>
+</td>
+<br>
+</tr>
+
+<tr>
+<td>
+<label>- Fixation time in buffered formalin :</label>
+</td>
+<td>
+<select class="element select large"  ID="A18">
+		<option value=""></option>
+		<option value="Optimal fixation (6-72 hours)">Optimal fixation (6-72 hours)</option>
+		<option value="Prolonged intervals (> 72 hours)">Prolonged intervals (> 72 hours)</option>
+		<option value="Uncertain">Uncertain</option>
+	</select>
+</td>
+</table>
+</p>
+</fieldset>
+</p>
+<p>
+The HERACLES criteria of HER2 POSITIVE:<br>
+<br>
+3+ HER2 IHC score in more than 50% of the tumor cells<br>
+OR<br>
+3+ HER2 IHC score in 10~50% of the tumor cells by IHC + FISH/DISH positive<br>
+OR<br>
+2+ HER2 IHC score in more than 50% of the tumor cells by IHC + FISH/DISH positive<br>
+<br>
+Lancet Oncol 2016 17(6):738–746.<br>
+</p>
+
+<p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A19" class = "element textarea medium" style="border-color:grey;"></textarea> 
+</p>
+
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated 28-Mar-2021<br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>
+
