@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NGS tests</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<style>
+div.ex1 {
+    margin-left: 30px;
+}
+
+.dropbtn {
+    background-color: #e6e6ff;
+    color: #003366;
+    padding: 16px;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size:small; 
+    border: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+	text-align:left;
+    background-color: #f1f1f1;
+    min-width: 160px; relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: pink;}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: left;
+  padding: 8px;
+}
+  
+tr:nth-child(even) {background-color: #ffe6ff;
+}
+</style>
+</head>
+<body>
+
+
+<div>
+
+<img id="top" src="top.png" alt="">
+<div id="form_container">
+	<div class="form_description">
+		<h2 align="center">
+					Next Generation Sequencing
+		</h2>
+	</div>
+<p align="center">
+
+
+List of NGS tests on the pipeline. 
+<br><br>
+
+</p>
+
+<p>We are trying to run amplicon-based library preparation on Illumina iSeq1000, MiniSeq, NextSeq 500 and NextSeq 550.</p>
+
+<p>
+1. Somatic and Germ line BRCA Tesing<br>
+The AmpliSeq for Illumina BRCA Panel is a targeted resequencing assay for research of somatic and germline variants across BRCA1 and BRCA2 genes. Targeting all exonic regions and flanking intronic sequences of BRCA1 and BRCA2, and detecting somatic mutations as low as 5% variant allele frequency using cloud based analysis. <br>
+Germline mutation is also supplemented by MLPA on peripheral leukocyte DNA.
+</p>
+<p>
+2. Focus Panel for Solid Tumor (somatic DNA + RNA) <br>
+The AmpliSeq for Illumina Focus Panel is a targeted resequencing assay for biomarker analysis of 52 genes with known relevance to solid tumors. All variants are confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.)<br>
+<p>
+<img src=".\cap\AmpliSeq_for_Illumina_Focus_Targets_List.png" alt="DNA List" width="450">
+</p>
+<p>
+<img src=".\cap\AmpliSeq_for_Illumina_Focus_Fusion_List.png" alt="Fusion list">
+</p>
+</p>
+<p>
+3. Comprehensive Panel for Solild Tumor (somatic DNA + RNA) <br>
+The AmpliSeq for Illumina Comprehensive Panel v3 offers coverage of key cancer genes, including kinase domains and genes involved in DNA repair, targetting 161 unique cancer-associated genes<br>
+</p>
+<br>
+<div id = "footer">
+Last upated on 09-May-2021.<br><br>
+The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
+with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
+and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
+<br>
+<br>
+<br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+
+
+</body>
+</html>
