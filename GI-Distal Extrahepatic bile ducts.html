@@ -124,7 +124,7 @@ if (document.getElementById("A24").checked){
 }
 
 if (frm.A25.value !== ""){
-	Template += "- Depth of tumor extension: " + frm.A25.value + "\n";
+	Template += "- Depth of tumor invasion: " + frm.A25.value + "\n";
 }
 
 if (frm.A26.value + frm.A27.value + frm.A28.value + frm.A29.value + frm.A30.value +
@@ -296,7 +296,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-20-4100.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the distal extrahepatic bile ducts
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -372,7 +372,7 @@ table, th, td {
 <col width="40%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-20-4100.pdf#page=9" target="_blank">Histologic type (WHO 2019)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type (WHO 2019)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A09">
@@ -398,7 +398,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-20-4100.pdf#page=9" target="_blank">Histologic grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A10">
@@ -414,7 +414,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-20-4100.pdf#page=10" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A11">
@@ -428,7 +428,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-20-4100.pdf#page=10" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -442,15 +442,15 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Depth of tumor extension: </label>
+<label class="description">- Depth of tumor invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A25">
 	<option value=""></option>
 	<option value="No invasion (carcinoma in situ/high-grade dysplasia)">No invasion (carcinoma in situ/high-grade dysplasia)</option>
-	<option value="Tumor invades with a depth < 5 mm">Tumor invades with a depth < 5 mm</option>
-	<option value="Tumor invades with a depth of 5 - 12 mm">Tumor invades with a depth of 5 - 12 mm</option>
-	<option value="Tumor invades with a depth > 12 mm">Tumor invades with a depth > 12 mm</option>
+	<option value="Less than 5 mm">Less than 5 mm</option>
+	<option value="5 to 12 mm">5 to 12 mm</option>
+	<option value="Greater than 12 mm">Greater than 12 mm</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -469,7 +469,7 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A20" value="  - Tumor invades the pancreas, involves anterior surface of pancreas"><label  class="choice">Tumor invades the pancreas, involves anterior surface of pancreas</label>
 <input class="element checkbox" type="checkbox"  id="A21" value="  - Tumor invades the pancreas, involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein)"><label  class="choice">Tumor invades the pancreas, involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein)</label>
 <input class="element checkbox" type="checkbox"  id="A22" value="  - Tumor invades the gallbladder"><label  class="choice">Tumor invades gallbladder</label>
-<input class="element checkbox" type="checkbox"  id="A23" value="  - Tumor directly invades adjacent organs other than the gallbladder, specify: "><label class="choice">Tumor directly invades adjacent organs other than the gallbladder, specify:</label>
+<input class="element checkbox" type="checkbox"  id="A23" value="  - Tumor directly invades adjacent organs other than the gallbladder, specify (duodenum, amplulla, stomach, gallbladder, omentum, celiac azis, superior mesenteric artery, common hepatic artery, etc.): "><label class="choice">Tumor directly invades adjacent organs other than the gallbladder, specify (duodenum, amplulla, stomach, gallbladder, omentum, celiac azis, superior mesenteric artery, common hepatic artery, etc.):</label>
 <input class="element checkbox" type="checkbox"  id="A24" value="  - Cannot be assessed"><label class="choice" >Cannot be assessed</label>
 </p>
 </fieldset>
@@ -724,12 +724,12 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-20-4100.pdf#page=11" target="_blank">Primary tumor (pT)</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=6" target="_blank">Primary tumor (pT)</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A44">
 	<option value=""></option>
-	<option value="  - pTX: Primary tumor thickness cannot be assessed, explain: ">pTX: Primary tumor thickness cannot be assessed, explain: </option>
+	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pTis: Carcinoma in situ/high-grade dysplasia">pTis: Carcinoma in situ/high-grade dysplasia</option>
 	<option value="  - pT1: Tumor invades the bile duct wall with a depth < 5 mm">pT1: Tumor invades the bile duct wall with a depth < 5 mm</option>
@@ -742,12 +742,13 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-distalextrahepaticbileducts-20-4100.pdf#page=11" target="_blank">Regional lymph nodes (pN)</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Regional lymph nodes (pN)</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A45">
 	<option value=""></option>
-	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="  - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="  - pN1: Metastasis in 1 - 3 regional lymph nodes">pN1: Metastasis in 1 - 3 regional lymph nodes</option>
 	<option value="  - pN2: Metastasis in > or = 4 regional lymph nodes">pN2: Metastasis in > or = 4 regional lymph nodes</option>
@@ -816,9 +817,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 03-Jan-2021,<br>
+Last upated on 13-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-DistalExtrahepaticBileDucts 4.1.0.0	(Feb-2020), <br>
+BileDuctDE 4.2.0.0	(June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

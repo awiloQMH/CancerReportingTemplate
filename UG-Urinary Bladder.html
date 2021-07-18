@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-/*
+
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
 }
@@ -23,48 +23,13 @@ if (frm.A02.value !== ""){
 if (frm.A03.value !== ""){
 	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
 }
-*/
+
 if (frm.A04.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A04.value + "\n";
 }
 
 if (frm.A05.value !== ""){
 	Template += "\n" + "- Histologic type: " + frm.A05.value + "\n";
-}
-
-if (document.getElementById("A06").checked || document.getElementById("A07").checked ||
-	document.getElementById("A08").checked || document.getElementById("A09").checked ||
-	document.getElementById("A10").checked || document.getElementById("A11").checked ||
-	document.getElementById("A12").checked){
-	Template += "- Associated epithelial lesions: " + "\n";
-}
-
-if (document.getElementById("A06").checked){
-	Template += frm.A06.value + "\n";
-}
-
-if (document.getElementById("A07").checked){
-	Template += frm.A07.value + "\n";
-}
-
-if (document.getElementById("A08").checked){
-	Template += frm.A08.value + "\n";
-}
-
-if (document.getElementById("A09").checked){
-	Template += frm.A09.value + "\n";
-}
-
-if (document.getElementById("A10").checked){
-	Template += frm.A10.value + "\n";
-}
-
-if (document.getElementById("A11").checked){
-	Template += frm.A11.value + "\n";
-}
-
-if (document.getElementById("A12").checked){
-	Template += frm.A12.value + "\n";
 }
 
 if (frm.A13.value !== ""){
@@ -344,6 +309,41 @@ if (frm.A70.value !== ""){
 	Template += "  - " +  frm.A70.value + "\n";
 }
 
+if (document.getElementById("A06").checked || document.getElementById("A07").checked ||
+	document.getElementById("A08").checked || document.getElementById("A09").checked ||
+	document.getElementById("A10").checked || document.getElementById("A11").checked ||
+	document.getElementById("A12").checked){
+	Template += "- Associated epithelial lesions: " + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += frm.A11.value + "\n";
+}
+
+if (document.getElementById("A12").checked){
+	Template += frm.A12.value + "\n";
+}
+
 if (frm.A71.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A71.value + "\n";
 }
@@ -378,7 +378,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-urinary-bladder-resection-20-4020.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder_4.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the urinary bladder
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -388,11 +388,11 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\cp-urinary-bladder-biopsy-20-4020.pdf" target="_blank">biopsy and TURBT specimens</a>.</p>
-<!--
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder.Bx.TURBT_4.1.0.0.REL_CAPCP.pdf" target="_blank">biopsy and TURBT specimens</a>.</p>
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description">Gross descriptions:</label></legend>
+	<legend><label class="description">Gross core data elements:</label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -449,7 +449,7 @@ table, th, td {
 </p>
 </fieldset>
 </p>
--->
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
@@ -462,7 +462,7 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-bladder-resection-20-4020.pdf#page=8" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder_4.1.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A05">
@@ -504,23 +504,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td valign="top">
-<label class="">+ Associated epithelial lesions:</label> 
-</td>
 <td>
-<input class="element checkbox" type="checkbox"  id="A06" value="  - None identified"><label  class="choice">None identified</label>
-<input class="element checkbox" type="checkbox"  id="A07" value="  - Urothelial papilloma"><label  class="choice">Urothelial papilloma</label>
-<input class="element checkbox" type="checkbox"  id="A08" value="  - Urothelial papilloma, inverted type"><label  class="choice">Urothelial papilloma, inverted type</label>
-<input class="element checkbox" type="checkbox"  id="A09" value="  - Papillary urothelial neoplasm, low malignant potential (PUNLMP)"><label  class="choice">Papillary urothelial neoplasm, low malignant potential (PUNLMP)</label>
-<input class="element checkbox" type="checkbox"  id="A10" value="  - Urothelial proliferation of uncertain malignant potential"><label  class="choice">Urothelial proliferation of uncertain malignant potential</label>
-<input class="element checkbox" type="checkbox"  id="A11" value="  - Urothelial dysplasia"><label  class="choice">Urothelial dysplasia</label>
-<input class="element checkbox" type="checkbox"  id="A12" value="  - Cannot be assessed (explain):"><label  class="choice">Cannot be assessed (explain):</label>
-</td>
-</tr>
-
-<tr>
-<td>
-<label class="description">- <a href=".\cap\cp-urinary-bladder-resection-20-4020.pdf#page=10" target="_blank">Histologic grade for urothelial carcinoima</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic grade for urothelial carcinoima</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A13">
@@ -534,7 +519,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-bladder-resection-20-4020.pdf#page=10" target="_blank">Histologic grade for SCC or adenoCA</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic grade for SCC or adenoCA</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A14">
@@ -566,7 +551,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-bladder-resection-20-4020.pdf#page=13" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A21">
@@ -594,8 +579,7 @@ table, th, td {
 </table>
 </p>
 
-<p><label class="description">- <a href=".\cap\cp-urinary-bladder-resection-20-4020.pdf#page=11" target="_blank">Tumor extension</a> :</label> 
-<input class="element checkbox" type="checkbox"  id="A23" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
+<p><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Tumor extension</a> :</label> 
 <input class="element checkbox" type="checkbox"  id="A24" value="  - Noninvasive papillary carcinoma"><label  class="choice">Noninvasive papillary carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A25" value="  - Urothelial carcinoma in situ, “flat tumor”"><label  class="choice">Urothelial carcinoma in situ, “flat tumor”</label>
 <input class="element checkbox" type="checkbox"  id="A26" value="  - Tumor invades subepithelial connective tissue"><label  class="choice">Tumor invades subepithelial connective tissue</label>
@@ -616,6 +600,7 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A41" value="  - Tumor invades adjacent structures, rectum"><label  class="choice">Tumor invades adjacent structures, rectum</label>
 <input class="element checkbox" type="checkbox"  id="A42" value="  - Tumor invades adjacent structures, other (specify):"><label  class="choice">Tumor invades adjacent structures, other (specify):</label>
 <input class="element checkbox" type="checkbox"  id="A43" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
+<input class="element checkbox" type="checkbox"  id="A23" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </p>
 
 </fieldset>
@@ -779,7 +764,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-urinary-bladder-resection-20-4020.pdf#page=13" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -801,7 +786,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A57">
 	<option value=""></option>
-	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value=" pT not assigned (cannot be determined based on available pathological information)"> pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="pTa: Non-invasive papillary carcinoma">pTa: Non-invasive papillary carcinoma</option>
 	<option value="pTis: Urothelial carcinoma in situ: “flat tumor”">pTis: Urothelial carcinoma in situ: “flat tumor”</option>
@@ -827,7 +812,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A58">
 	<option value=""></option>
-	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="pN1: Single regional lymph node metastasis in true pelvis (perivesical, obturator, internal [hypogastric] and external iliac), or presacral lymph node">pN1: Single regional lymph node metastasis in true pelvis (perivesical, obturator, internal [hypogastric] and external iliac), or presacral lymph node</option>
 	<option value="pN2: Multiple regional lymph node metastasis in true pelvis (perivesical, hypogastric, obturator, internal and external iliac, or presacral lymph node)">pN2: Multiple regional lymph node metastasis in true pelvis (perivesical, hypogastric, obturator, internal and external iliac, or presacral lymph node)</option>
@@ -843,6 +829,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A59">
 	<option value=""></option>
+	<option value="Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="pM1: Distant metastasis">pM1: Distant metastasis</option>
 	<option value="pM1a: Distant metastasis limited to lymph nodes beyond the common iliacs">pM1a: Distant metastasis limited to lymph nodes beyond the common iliacs</option>
 	<option value="pM1b: Non-lymph node distant metastases">pM1b: Non-lymph node distant metastases</option>
@@ -878,7 +865,25 @@ table, th, td {
 <p>- Other (specify):
 <input type="text" lass="element text medium" ID="A70" size="35">
 </p>
-<br>
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="">+ Associated epithelial lesions:</label> 
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A06" value="  - None identified"><label  class="choice">None identified</label>
+<input class="element checkbox" type="checkbox"  id="A07" value="  - Urothelial papilloma"><label  class="choice">Urothelial papilloma</label>
+<input class="element checkbox" type="checkbox"  id="A08" value="  - Urothelial papilloma, inverted type"><label  class="choice">Urothelial papilloma, inverted type</label>
+<input class="element checkbox" type="checkbox"  id="A09" value="  - Papillary urothelial neoplasm, low malignant potential (PUNLMP)"><label  class="choice">Papillary urothelial neoplasm, low malignant potential (PUNLMP)</label>
+<input class="element checkbox" type="checkbox"  id="A10" value="  - Urothelial proliferation of uncertain malignant potential"><label  class="choice">Urothelial proliferation of uncertain malignant potential</label>
+<input class="element checkbox" type="checkbox"  id="A11" value="  - Urothelial dysplasia"><label  class="choice">Urothelial dysplasia</label>
+<input class="element checkbox" type="checkbox"  id="A12" value="  - Cannot be assessed (explain):"><label  class="choice">Cannot be assessed (explain):</label>
+</td>
+</tr>
+</table>
 </fieldset>
 </p>
 
@@ -902,9 +907,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 16-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Urinary Bladder Resection 4.0.2.0 (February 2020), <br>
+Urinary Bladder Resection 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

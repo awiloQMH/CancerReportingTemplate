@@ -323,7 +323,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Panc.Exo_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of pancreas
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -409,7 +409,7 @@ table, th, td {
 <col width="40%">
 <tr>
 <td rowspan="2" valign="top">
-<label class="description">- <a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf#page=8" target="_blank">Histologic type (2019)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Panc.Exo_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type (2019)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -439,6 +439,7 @@ table, th, td {
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
 	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm">Mixed neuroendocrine-non-neuroendocrine neoplasm</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
 </td>
 </tr>
@@ -451,7 +452,7 @@ table, th, td {
 
 <tr>
 <td rowspan="2" valign="top">
-<label class="description">- <a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf#page=9" target="_blank">Histologic grade</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Panc.Exo_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic grade</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A14">
@@ -472,7 +473,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf#page=11" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Panc.Exo_4.2.0.0.REL_CAPCP.pdf#page=11" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A30">
@@ -486,7 +487,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf#page=11" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Panc.Exo_4.2.0.0.REL_CAPCP.pdf#page=11" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A31">
@@ -500,16 +501,17 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf#page=10" target="_blank">Treatment effect</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Panc.Exo_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Treatment effect</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A32">
 	<option value=""></option>
 	<option value="No known presurgical therapy">No known presurgical therapy</option>
-	<option value="Score 0, no viable cancer cells (complete response)">Score 0, no viable cancer cells (complete response)</option>
-	<option value="Score 1, single cells or rare small groups of cancer cells (near complete response)">Score 1, single cells or rare small groups of cancer cells (near complete response)</option>
-	<option value="Score 2, residual cancer with evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response)">Score 2, residual cancer with evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response)</option>
-	<option value="Absent">Absent</option>
+	<option value="Present, with no viable cancer cells (complete response, score 0)">Present, with no viable cancer cells (complete response, score 0)</option>
+	<option value="Present, with single cells or rare small groups of cancer cells (near complete response, score 1)">Present, with single cells or rare small groups of cancer cells (near complete response, score 1)</option>
+	<option value=" Present, with residual cancer showing evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response, score 2)"> Present, with residual cancer showing evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response, score 2)</option>
+	<option value=" Present (not otherwise specified)"> Present (not otherwise specified)</option>
+	<option value="Absent, with extensive residual cancer and no evident tumor regression (poor or no response, score 3)">Absent, with extensive residual cancer and no evident tumor regression (poor or no response, score 3)</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -518,27 +520,27 @@ table, th, td {
 </p>
 <p>
 <label class="description">- Tumor extension:</label> 
-<input class="element checkbox" type="checkbox" id="A16" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 <input class="element checkbox" type="checkbox" id="A17" value="  - Tumor is confined to the pancreas"><label  class="choice">Tumor is confined to the pancreas</label>
+<input class="element checkbox" type="checkbox" id="A26" value="  - Tumor is confined to the pancreas + posterior surface of pancreas"><label  class="choice">Tumor is confined to the pancreas + posterior surface of pancreas</label>
+<input class="element checkbox" type="checkbox" id="A27" value="  - Tumor is confined to the pancreas + anterior surface of pancreas"><label  class="choice">Tumor is confined to the pancreas + anterior surface of pancreas</label>
+<input class="element checkbox" type="checkbox" id="A28" value="  - Tumor is confined to the pancreas + vascular bed/groove (corresponding to superior mesenteric vein/portal vein)"><label  class="choice">Tumor is confined to the pancreas + vascular bed/groove (corresponding to superior mesenteric vein/portal vein)</label>
 <input class="element checkbox" type="checkbox" id="A18" value="  - Tumor invades the ampulla of Vater or sphincter of Oddi"><label  class="choice">Tumor invades the ampulla of Vater or sphincter of Oddi</label>
 <input class="element checkbox" type="checkbox" id="A19" value="  - Tumor invades the duodenal wall"><label  class="choice">Tumor invades the duodenal wall</label>
-<input class="element checkbox" type="checkbox" id="A20" value="  - Tumor invades peripancreatic soft tissues (specify):"><label  class="choice">Tumor invades peripancreatic soft tissues (specify):</label>
-<input class="element checkbox" type="checkbox" id="A21" value="  - Tumor invades peripancreatic soft tissues + retroperitoneal soft tissue, (specify):"><label  class="choice">Tumor invades peripancreatic soft tissues + retroperitoneal soft tissue, (specify):</label>
-<input class="element checkbox" type="checkbox" id="A22" value="  - Tumor invades peripancreatic soft tissues + mesenteric adipose tissue, (specify):"><label  class="choice">Tumor invades peripancreatic soft tissues + mesenteric adipose tissue, (specify):</label>
-<input class="element checkbox" type="checkbox" id="A23" value="  - Tumor invades peripancreatic soft tissues + mesocolon, (specify):"><label  class="choice">Tumor invades peripancreatic soft tissues + mesocolon, (specify):</label>
-<input class="element checkbox" type="checkbox" id="A24" value="  - Tumor invades peripancreatic soft tissues + extrapancreatic common bile duct, (specify):"><label class="choice" >Tumor invades peripancreatic soft tissues + extrapancreatic common bile duct, (specify):</label>
-<input class="element checkbox" type="checkbox" id="A25" value="  - Tumor invades adjacent organs or structures (specify):"><label  class="choice">Tumor invades adjacent organs or structures (specify):</label>
-<input class="element checkbox" type="checkbox" id="A26" value="  - Tumor invades adjacent organs + posterior surface of pancreas, (specify):"><label  class="choice">Tumor invades adjacent organs + posterior surface of pancreas, (specify):</label>
-<input class="element checkbox" type="checkbox" id="A27" value="  - Tumor invades adjacent organs + anterior surface of pancreas, (specify):"><label  class="choice">Tumor invades adjacent organs + anterior surface of pancreas, (specify):</label>
-<input class="element checkbox" type="checkbox" id="A28" value="  - Tumor invades adjacent organs + vascular bed/groove (corresponding to superior mesenteric vein/portal vein)"><label  class="choice">Tumor invades adjacent organs + vascular bed/groove (corresponding to superior mesenteric vein/portal vein)</label>
+<input class="element checkbox" type="checkbox" id="A20" value="  - Tumor invades peripancreatic soft tissues"><label  class="choice">Tumor invades peripancreatic soft tissues</label>
+<input class="element checkbox" type="checkbox" id="A21" value="  - Tumor invades peripancreatic soft tissues + retroperitoneal soft tissue"><label  class="choice">Tumor invades peripancreatic soft tissues + retroperitoneal soft tissue</label>
+<input class="element checkbox" type="checkbox" id="A22" value="  - Tumor invades peripancreatic soft tissues + mesenteric adipose tissue"><label  class="choice">Tumor invades peripancreatic soft tissues + mesenteric adipose tissue</label>
+<input class="element checkbox" type="checkbox" id="A23" value="  - Tumor invades peripancreatic soft tissues + mesocolon"><label  class="choice">Tumor invades peripancreatic soft tissues + mesocolon</label>
+<input class="element checkbox" type="checkbox" id="A24" value="  - Tumor invades peripancreatic soft tissues + extrapancreatic common bile duct, "><label class="choice" >Tumor invades peripancreatic soft tissues + extrapancreatic common bile duct</label>
+<input class="element checkbox" type="checkbox" id="A25" value="  - Tumor invades adjacent organs or structures (specify: stomach, superior mesenteric vein, portal vein, celac acis, superior mesenteric artery, common hepatic artery, etc.)"><label  class="choice">Tumor invades adjacent organs or structures (specify: stomach, superior mesenteric vein, portal vein, celac acis, superior mesenteric artery, common hepatic artery, etc.)</label>
 <input class="element checkbox" type="checkbox" id="A29" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
+<input class="element checkbox" type="checkbox" id="A16" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description"><a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf#page=9" target="_blank">For pancreaticoduodenal resection specimens</a>: </label></legend>
+	<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Panc.Exo_4.2.0.0.REL_CAPCP.pdf#page=11" target="_blank">For pancreaticoduodenal resection specimens</a>: </label></legend>
 <p>
 <table border="1">
 <col width="70%">
@@ -799,7 +801,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-pancreas-exocrine-17protocol-4001.pdf#page=11" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Panc.Exo_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -821,7 +823,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A55">
 	<option value=""></option>
-	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="pTis: Carcinoma in situ (including any types of high-grade dysplasia)">pTis: Carcinoma in situ (including any types of high-grade dysplasia)</option>
 	<option value="pT1: Tumor < or = 2 cm in greatest danimension">pT1: Tumor < or = 2 cm in greatest dimension</option>
@@ -842,7 +844,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A56">
 	<option value=""></option>
-	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="pN1: Metastasis in one to three regional lymph nodes">pN1: Metastasis in one to three regional lymph nodes</option>
 	<option value="pN2: Metastasis in four or more regional lymph nodes">pN2: Metastasis in four or more regional lymph nodes</option>
@@ -908,9 +911,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 03-Jan-2021,<br>
+Last upated on 14-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-PancreasExocrine 4.0.0.1 (June 2017), <br>
+PancreasExocrine 4.2.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

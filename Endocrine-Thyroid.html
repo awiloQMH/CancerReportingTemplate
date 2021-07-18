@@ -70,6 +70,14 @@ if (frm.A13.value !== ""){
 	Template += "- Mitotic count (per 2 mm2): " + frm.A13.value + "\n";
 } 
 
+if (frm.A02.value !== ""){
+	Template += "- Tumor focality: " + "\n" + frm.A02.value + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "- Tumor size: " + "\n" + frm.A08.value + "\n";
+}
+
 if (frm.A14.value !== ""){
 	Template += "- Angionvasion: "  + frm.A14.value + "\n";
 }
@@ -273,7 +281,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-endocrine-thyroid-19-4200.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Carcinoma of the thyroid
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -370,7 +378,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-endocrine-thyroid-19-4200.pdf#page=11" target="_blank">Histologic type (Papillary carcinoma)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=12" target="_blank">Histologic type (Papillary carcinoma)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A10">
@@ -391,7 +399,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-endocrine-thyroid-19-4200.pdf#page=13" target="_blank">Histologic type (Follicular carcinoma)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=14" target="_blank">Histologic type (Follicular carcinoma)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A11">
@@ -412,7 +420,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-endocrine-thyroid-19-4200.pdf#page=15" target="_blank">Histologic type (Others)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=16" target="_blank">Histologic type (Others)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -437,10 +445,37 @@ table, th, td {
 </td>
 </tr>
 
+<tr>
+<td>
+<label class="description">- Tumor focality:</label> 
+</td>
+<td>
+<select class="element select large" ID="A02">
+	<option value=""></option>
+	<option value="  - Unifocal">Unifocal</option>
+	<option value="  - Multifocal ">Multifocal </option>
+	<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
+</td>
+</tr>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-endocrine-thyroid-19-4200.pdf#page=16" target="_blank">Angionvasion</a>: </label>
+<label class="description">- Tumor size:</label> 
+</td>
+<td>
+<select class="element select large" ID="A08">
+		<option value=""></option>
+		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=18" target="_blank">Angionvasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A14">
@@ -483,7 +518,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-endocrine-thyroid-19-4200.pdf#page=18" target="_blank">Extrathyroidal extension</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=17" target="_blank">Extrathyroidal extension</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A17">
@@ -522,7 +557,7 @@ Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup><br>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-endocrine-thyroid-19-4200.pdf#page=18" target="_blank">Lymph nodes examination</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=18" target="_blank">Lymph nodes examination</a>: </label></legend>
 
 <p>
 <table border="1">
@@ -686,7 +721,7 @@ perithyroidal (central compartment dissection):
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-endocrine-thyroid-19-4200.pdf#page=22" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=24" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 <p>
 <table border="1">
 <col width="60%">
@@ -709,7 +744,7 @@ perithyroidal (central compartment dissection):
 <td>
 <select class="element select large" ID="A33">
 	<option value=""></option>
-	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pT1a: Tumor < or = 1 cm, limited to the thyroid">pT1a: Tumor < or = 1 cm, limited to the thyroid</option>
 	<option value="  - pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid">pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid</option>
@@ -729,7 +764,7 @@ perithyroidal (central compartment dissection):
 <td>
 <select class="element select large" ID="A34">
 	<option value=""></option>
-	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pT1a: Tumor < or = 1 cm, limited to the thyroid">pT1a: Tumor < or = 1 cm, limited to the thyroid</option>
 	<option value="  - pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid">pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid</option>
@@ -751,7 +786,8 @@ perithyroidal (central compartment dissection):
 <td>
 <select class="element select large" ID="A35">
 	<option value=""></option>
-	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="  - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="  - pN0a: One or more cytologically or histologically confirmed benign lymph nodes">pN0a: One or more cytologically or histologically confirmed benign lymph nodes</option>
 	<option value="  - pN1: Metastasis to regional nodes">pN1: Metastasis to regional nodes</option>
@@ -823,9 +859,9 @@ perithyroidal (central compartment dissection):
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 11-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Thyroid 4.2.0.0 (August 2019), <br>
+Thyroid 4.3.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

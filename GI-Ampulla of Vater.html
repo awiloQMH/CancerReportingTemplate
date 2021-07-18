@@ -57,9 +57,8 @@ if (document.getElementById("A11").checked || document.getElementById("A12").che
 	document.getElementById("A15").checked || document.getElementById("A16").checked ||
 	document.getElementById("A17").checked || document.getElementById("A18").checked || 
 	document.getElementById("A19").checked || document.getElementById("A20").checked || 
-	document.getElementById("A21").checked || document.getElementById("A22").checked ||
-	document.getElementById("A23").checked || document.getElementById("A24").checked || 
-	document.getElementById("A25").checked || document.getElementById("A26").checked){
+	document.getElementById("A21").checked || document.getElementById("A22").checked || 
+	document.getElementById("A26").checked){
 	Template += "- Tumor extension: " + "\n";
 }
 
@@ -109,18 +108,6 @@ if (document.getElementById("A21").checked){
 
 if (document.getElementById("A22").checked){
 	Template += frm.A22.value + "\n";
-}
-
-if (document.getElementById("A23").checked){
-	Template += frm.A23.value + "\n";
-}
-
-if (document.getElementById("A24").checked){
-	Template += frm.A24.value + "\n";
-}
-
-if (document.getElementById("A25").checked){
-	Template += frm.A25.value + "\n";
 }
 
 if (document.getElementById("A26").checked){
@@ -278,7 +265,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Ampulla_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the Ampulla of Vater
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -366,7 +353,7 @@ table, th, td {
 <col width="60%">
 <tr>
 <td rowspan="2" valign="top">
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf#page=9" target="_blank">Histologic type (WHO 2019)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Ampulla_4.2.0.0.REL_CAPCP.pdf#page=8" target="_blank">Histologic type (WHO 2019)</a>:</label> 
 </td>
 <td><select class="element select large" ID="A07">
 	<option value=""></option>
@@ -396,7 +383,7 @@ table, th, td {
 
 <tr>
 <td rowspan="2" valign="top">
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf#page=9" target="_blank">Histologic grade</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Ampulla_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic grade</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A09">
@@ -417,7 +404,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf#page=5" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Ampulla_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A27">
@@ -431,7 +418,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf#page=5" target="_blank">Perineural invasion</a>: </label>
+<label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Ampulla_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A28">
@@ -447,22 +434,25 @@ table, th, td {
 
 <p>
 <label class="description">- Tumor extension:</label> 
-<input class="element checkbox" type="checkbox" id="A11" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
+
 <input class="element checkbox" type="checkbox" id="A12" value="  - Carcinoma in situ/high-grade dysplasia"><label  class="choice">Carcinoma in situ/high-grade dysplasia</label>
 <input class="element checkbox" type="checkbox" id="A13" value="  - Tumor limited to the ampulla of Vater or sphincter of Oddi"><label  class="choice">Tumor limited to the ampulla of Vater or sphincter of Oddi</label>
 <input class="element checkbox" type="checkbox" id="A14" value="  - Tumor invades beyond the ampulla of Vater or sphincter of Oddi"><label  class="choice">Tumor invades beyond the ampulla of Vater or sphincter of Oddi</label>
-<input class="element checkbox" type="checkbox" id="A15" value="  - Tumor invades the duodenal mucosa"><label  class="choice">Tumor invades the duodenal mucosa</label>
+<input class="element checkbox" type="checkbox" id="A15" value="  - Tumor invades the duodenal submucosa"><label  class="choice">Tumor invades the duodenal submucosa</label>
 <input class="element checkbox" type="checkbox" id="A16" value="  - Tumor invades into muscularis propria of the duodenum"><label  class="choice">Tumor invades into muscularis propria of the duodenum</label>
 <input class="element checkbox" type="checkbox" id="A17" value="  - Tumor directly invades pancreas up to 0.5 cm"><label  class="choice">Tumor directly invades pancreas up to 0.5 cm</label>
 <input class="element checkbox" type="checkbox" id="A18" value="  - Tumor extends more than 0.5 cm into pancreas"><label  class="choice">Tumor extends more than 0.5 cm into pancreas</label>
 <input class="element checkbox" type="checkbox" id="A19" value="  - Tumor extends into peripancreatic soft tissues"><label  class="choice">Tumor extends into peripancreatic soft tissues</label>
 <input class="element checkbox" type="checkbox" id="A20" value="  - Tumor extends into periduodenal tissue"><label  class="choice">Tumor extends into periduodenal tissue</label>
 <input class="element checkbox" type="checkbox" id="A21" value="  - Tumor extends into duodenal serosa"><label  class="choice">Tumor extends into duodenal serosa</label>
-<input class="element checkbox" type="checkbox" id="A22" value="  - Tumor invades other adjacent organs or structures other than pancreas, (specify):"><label  class="choice">Tumor invades other adjacent organs or structures other than pancreas, (specify):</label>
+<input class="element checkbox" type="checkbox" id="A22" value="  - Tumor invades other adjacent organs or structures other than pancreas, (specify: stomach, gallbladder, omentum, celiac axis, superior mesenteric artery, common hepatic artery):"><label  class="choice">Tumor invades other adjacent organs or structures other than pancreas, (specify: stomach, gallbladder, omentum, celiac axis, superior mesenteric artery, common hepatic artery):</label>
+<!--
 <input class="element checkbox" type="checkbox" id="A23" value="  - Tumor invades other adjacent organs or structures other than pancreas + posterior surface of pancreas, (specify):"><label  class="choice">Tumor invades other adjacent organs or structures other than pancreas + posterior surface of pancreas, (specify):</label>
 <input class="element checkbox" type="checkbox" id="A24" value="  - Tumor invades other adjacent organs or structures other than pancreas + anterior surface of pancreas (specify):"><label  class="choice">Tumor invades other adjacent organs or structures other than pancreas + anterior surface of pancreas (specify):</label>
 <input class="element checkbox" type="checkbox" id="A25" value="  - Tumor invades other adjacent organs or structures other than pancreas + Tumor involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein), (specify):"><label  class="choice">Tumor invades other adjacent organs or structures other than pancreas + Tumor involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein), (specify):</label>
-<input class="element checkbox" type="checkbox" id="A26" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
+-->
+<input class="element checkbox" type="checkbox" id="A26" value="  - Cannot be determined: "><label  class="choice">Cannot be determined: </label>
+<input class="element checkbox" type="checkbox" id="A11" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </p>
 </fieldset>
 </p>
@@ -470,7 +460,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description"><a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf#page=10" target="_blank">For pancreaticoduodenal resection specimens</a>: </label></legend>
+	<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Ampulla_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">For pancreaticoduodenal resection specimens</a>: </label></legend>
 <p>
 <table border="1">
 <col width="70%">
@@ -647,7 +637,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf#page=10" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Ampulla_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -669,7 +659,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A46">
 	<option value=""></option>
-	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="pT1a: Tumor limited to ampulla of Vater or sphincter of Oddi">pT1a: Tumor limited to ampulla of Vater or sphincter of Oddi</option>
 	<option value="pT1b: Tumor invades beyond the sphincter of Oddi (perisphincteric invasion) and/or into the duodenal submucosa">pT1b: Tumor invades beyond the sphincter of Oddi (perisphincteric invasion) and/or into the duodenal submucosa</option>
@@ -690,7 +680,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A47">
 	<option value=""></option>
-	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="pN1: Metastasis in 1-3 regional lymph nodes">pN1: Metastasis in 1-3 regional lymph nodes</option>
 	<option value="pN2: Metastasis in > or = 4 regional lymph nodes">pN2: Metastasis in > or = 4 regional lymph nodes</option>
@@ -723,7 +714,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class=""> + <a href=".\cap\cp-gihepatobiliary-ampulla-20-4100.pdf#page=14" target="_blank">Additional pathologic findings</a>: </label></legend>
+	<legend> <label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Ampulla_4.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Additional pathologic findings</a>: </label></legend>
 <p>
 <input class="element checkbox" type="checkbox" id="A50" value="Dysplasia/adenoma"><label class="element choice">Dysplasia/adenoma</label>
 </p>
@@ -754,9 +745,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 03-Jan-2021S,<br>
+Last upated on 13-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-AmpullaVater 4.1.0.0 (Feb-2020), <br>
+AmpullaVater 4.2.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

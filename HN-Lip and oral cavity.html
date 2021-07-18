@@ -248,32 +248,51 @@ if (frm.A48.value !== ""){
 	Template += "      - Specify site(s): " + frm.A48.value + "\n";
 }
 
-if (document.getElementById("A49").checked || document.getElementById("A50").checked ||
-    document.getElementById("A51").checked || document.getElementById("A52").checked ||  
-	document.getElementById("A53").checked || document.getElementById("A54").checked || 
-	document.getElementById("A55").checked || document.getElementById("A56").checked || 
+if (document.getElementById("A60").checked || 
+	document.getElementById("A61").checked ||
+    document.getElementById("A62").checked || 
+	document.getElementById("A63").checked ||
+    document.getElementById("A64").checked || 
+	document.getElementById("A65").checked ||  
+	document.getElementById("A66").checked || 
+	document.getElementById("A52").checked ||  
+	document.getElementById("A54").checked || 
+	document.getElementById("A55").checked || 
+	document.getElementById("A56").checked || 
 	frm.A57.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
 }
 
-if (document.getElementById("A49").checked){
-	Template += frm.A49.value + "\n";
+if (document.getElementById("A60").checked){
+	Template += frm.A60.value + "\n";
 }
 
-if (document.getElementById("A50").checked){
-	Template += frm.A50.value + "\n";
+if (document.getElementById("A61").checked){
+	Template += frm.A61.value + "\n";
 }
 
-if (document.getElementById("A51").checked){
-	Template += frm.A51.value + "\n";
+if (document.getElementById("A62").checked){
+	Template += frm.A62.value + "\n";
+}
+
+if (document.getElementById("A63").checked){
+	Template += frm.A63.value + "\n";
+}
+
+if (document.getElementById("A64").checked){
+	Template += frm.A64.value + "\n";
+}
+
+if (document.getElementById("A65").checked){
+	Template += frm.A65.value + "\n";
+}
+
+if (document.getElementById("A66").checked){
+	Template += frm.A66.value + "\n";
 }
 
 if (document.getElementById("A52").checked){
 	Template += frm.A52.value + "\n";
-}
-
-if (document.getElementById("A53").checked){
-	Template += frm.A53.value + "\n";
 }
 
 if (document.getElementById("A54").checked){
@@ -327,7 +346,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-headandneck-lip-oralcavity-17protocol-4001.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Cancers of the lip and oral cavity
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -336,7 +355,9 @@ table, th, td {
 		</h2>
 	</div>
 
-<p>Please also refer to <a href=".\cap\cp-headandneck-17biomarker-1000.pdf" target="_blank">H&N biomarker protocol (HeadNeckBiomarkers 1.0.0.0, Feb-2017)</a> for possible ancillary testings.</p>
+<p>
+Please also refer to <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Bmk_2.0.0.0.REL_CAPCP.pdf" target="_blank">H&N biomarker protocol (HeadNeckBiomarkers 2.0.0.0, June-2021)</a> for possible ancillary testings.
+</p>
 	
 <form>
 <!--
@@ -455,7 +476,7 @@ table, th, td {
 <col width="40%">
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\cp-headandneck-lip-oralcavity-17protocol-4001.pdf#page=12" target="_blank">SCC and variants</a> :</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">SCC and variants</a> :</label> 
 </td>
 <td>
 <input class="element checkbox" type="checkbox"  id="A10" value="  - Squamous cell carcinoma, conventional"><label  class="choice">Squamous cell carcinoma, conventional</label>
@@ -466,7 +487,7 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A15" value="  - Papillary squamous cell carcinoma"><label  class="choice">Papillary squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A16" value="  - Spindle cell squamous cell carcinoma"><label  class="choice">Spindle cell squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A17" value="  - Verrucous squamous cell carcinoma"><label  class="choice">Verrucous squamous cell carcinoma</label>
-<input class="element checkbox" type="checkbox"  id="A18" value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label  class="choice">Lymphoepithelial carcinoma (non-nasopharyngeal)</label>
+<input class="element checkbox" type="checkbox"  id="A18" value="  - Lymphoepithelial carcinoma"><label  class="choice">Lymphoepithelial carcinoma</label>
 
 </td>
 <tr>
@@ -500,9 +521,9 @@ table, th, td {
 		<option value="Adenocarcinoma, not otherwise specified, high grade"><label >Adenocarcinoma, not otherwise specified, high grade</label></option>
 		<option value="Basal cell adenocarcinoma"><label >Basal cell adenocarcinoma</label></option>
 		<option value="Carcinosarcoma (true malignant mixed tumor)"><label >Carcinosarcoma (true malignant mixed tumor)</label></option>
+		<option value="Cystadenocarcinoma"><label >Cystadenocarcinoma</label></option>
 		<option value="Intraductal carcinoma, low grade"><label >Intraductal carcinoma, low grade</label></option>
 		<option value="Intraductal carcinoma, high grade"><label >Intraductal carcinoma, high grade</label></option>
-		<option value="Lymphoepithelial carcinoma (non-nasopharyngeal)"><label >Lymphoepithelial carcinoma (non-nasopharyngeal)</label></option>
 		<option value="Myoepithelial carcinoma"><label >Myoepithelial carcinoma</label></option>
 		<option value="Oncocytic carcinoma"><label >Oncocytic carcinoma</label></option>
 		<option value="Carcinoma ex pleomorphic adenoma, minimally invasive"><label >Carcinoma ex pleomorphic adenoma, minimally invasive</label></option>
@@ -544,7 +565,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Histologic grade (for SCC only) :</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Histologic grade (for SCC only)</a> :</label>
 </td>
 <td>
 <select class="element select large" ID="A22">
@@ -560,7 +581,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-lip-oralcavity-17protocol-4001.pdf#page=11" target="_blank">Depth of Invasion (DOI, mm)</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=17" target="_blank">Depth of Invasion (DOI, mm)</a>:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A59" size="10">
@@ -592,7 +613,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-lip-oralcavity-17protocol-4001.pdf#page=14" target="_blank">Perineural invasion</a> : </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=19" target="_blank">Perineural invasion</a> : </label>
 </td>
 <td>
 <select class="element select large" ID="A25">
@@ -606,7 +627,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\cp-headandneck-lip-oralcavity-17protocol-4001.pdf#page=15" target="_blank">Worst pattern of invasion (WPOI)</a> : </label>
+<label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=19" target="_blank">Worst pattern of invasion (WPOI)</a> : </label>
 </td>
 <td>
 <select class="element select large" ID="A26">
@@ -623,7 +644,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\cp-headandneck-lip-oralcavity-17protocol-4001.pdf#page=13" target="_blank">Surgical margins</a>: </label></legend>
+<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=20" target="_blank">Surgical margins</a>: </label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -665,7 +686,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-headandneck-lip-oralcavity-17protocol-4001.pdf#page=16" target="_blank">Lymph nodes examination</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=23" target="_blank">Lymph nodes examination</a>: </label></legend>
 
 <p>
 <table border="1">
@@ -742,7 +763,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-headandneck-lip-oralcavity-17protocol-4001.pdf#page=18" target="_blank">Pathologic Stage Classification (AJCC 8e) for carcinoma</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=26" target="_blank">Pathologic Stage Classification (AJCC 8e) for carcinoma</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -764,7 +785,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A38">
 	<option value=""></option>
-	<option value="    - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="    - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="    - pTis: Carcinoma in situ">pTis: Carcinoma in situ</option>
 	<option value="    - pT1: Tumor < or = 2 cm with depth of invasion (DOI) < or = 5 mm">pT1: Tumor < or = 2 cm with depth of invasion (DOI) < or = 5 mm</option>
@@ -784,7 +805,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A39">
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)">pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)</option>
 	<option value="    - pN2a: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)">pN2a: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)</option>
@@ -806,6 +828,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A40">
 	<option value=""></option>
+	<option value="    - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="    - pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select>
 </td>
@@ -863,7 +886,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A46">
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Regional lymph node metastases present">pN1: Regional lymph node metastases present</option>
 </select>
@@ -878,6 +902,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A47">
 	<option value=""></option>
+	<option value="    -  Not applicable - pM cannot be determined from the submitted specimen(s)"> Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="    - pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select>
 </td>
@@ -896,17 +921,21 @@ table, th, td {
 </p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class=""> + Additional pathologic findings: </label></legend>
+	<legend> <label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Larynx_4.1.0.0.REL_CAPCP.pdf#page=27" target="_blank">Additional pathologic findings</a>: </label></legend>
 
 <p>
-<input class="element checkbox" type="checkbox"  id="A49" value="  - Carcinoma in situ"><label  class="choice">Carcinoma in situ</label><br>
-<input class="element checkbox" type="checkbox"  id="A50" value="  - Epithelial dysplasia (specify type): "><label  class="choice">Epithelial dysplasia (specify type): </label><br>
-<input class="element checkbox" type="checkbox"  id="A51" value="  - Sinonasal papilloma (specify type): "><label  class="choice">Sinonasal papilloma (specify type): </label><br>
-<input class="element checkbox" type="checkbox"  id="A52" value="  - Inflammation (specify type):"><label  class="choice">Inflammation (specify type):</label><br>
-<input class="element checkbox" type="checkbox"  id="A53" value="  - Squamous metaplasia"><label  class="choice">Squamous metaplasia</label><br>
-<input class="element checkbox" type="checkbox"  id="A54" value="  - Epithelial hyperplasia"><label  class="choice">Epithelial hyperplasia</label><br>
-<input class="element checkbox" type="checkbox"  id="A55" value="  - Colonization, fungal"><label  class="choice">Colonization, fungal</label><br>
-<input class="element checkbox" type="checkbox"  id="A56" value="  - Colonization, bacterial"><label  class="choice">Colonization, bacterial</label><br>
+<input class="element checkbox" type="checkbox"  id="A60" value="  - None identified"><label  class="choice">None identified</label>
+<input class="element checkbox" type="checkbox"  id="A61" value="  - Keratinizing dysplasia, mild"><label  class="choice">Keratinizing dysplasia, mild</label>
+<input class="element checkbox" type="checkbox"  id="A62" value="  - Keratinizing dysplasia, moderate"><label  class="choice">Keratinizing dysplasia, moderate</label>
+<input class="element checkbox" type="checkbox"  id="A63" value="  - Keratinizing dysplasia, severe (carcinoma in situ)"><label  class="choice">Keratinizing dysplasia, severe (carcinoma in situ)</label>
+<input class="element checkbox" type="checkbox"  id="A64" value="  - Nonkeratinizing dysplasia, mild"><label  class="choice">Nonkeratinizing dysplasia, mild</label>
+<input class="element checkbox" type="checkbox"  id="A65" value="  - Nonkeratinizing dysplasia, moderate"><label  class="choice">Nonkeratinizing dysplasia, moderate</label>
+<input class="element checkbox" type="checkbox"  id="A66" value="  - Nonkeratinizing dysplasia, severe (carcinoma in situ)"><label  class="choice">Nonkeratinizing dysplasia, severe (carcinoma in situ)</label>
+<input class="element checkbox" type="checkbox"  id="A52" value="  - Inflammation (specify type):"><label  class="choice">Inflammation (specify type):</label>
+<input class="element checkbox" type="checkbox"  id="A53" value="  - Squamous metaplasia"><label  class="choice">Squamous metaplasia</label>
+<input class="element checkbox" type="checkbox"  id="A54" value="  - Epithelial hyperplasia"><label  class="choice">Epithelial hyperplasia</label>
+<input class="element checkbox" type="checkbox"  id="A55" value="  - Colonization, fungal"><label  class="choice">Colonization, fungal</label>
+<input class="element checkbox" type="checkbox"  id="A56" value="  - Colonization, bacterial"><label  class="choice">Colonization, bacterial</label>
 
 <p>- Other (specify):
 <input type="text" class="element text small" ID="A57" size="35">
@@ -935,9 +964,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 18-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-LipOralCavity 4.0.0.1 (June 2017), <br>
+LipOralCavity 4.1.0.0 (June 2021), <br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

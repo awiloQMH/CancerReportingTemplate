@@ -138,6 +138,14 @@ if (frm.A10.value !== ""){
 	Template += "- HPV status by p16 IHC: " + frm.A10.value + "\n";
 }
 
+if (frm.A69.value !== ""){
+	Template += "- HPV by PCR: " + frm.A69.value + "\n";
+}
+
+if (frm.A70.value !== ""){
+	Template += "- EBV (EBER ISH): " + frm.A70.value + "\n";
+}
+
 if (frm.A29.value !== ""){
 	Template +=  "\n" + "- Surgical margins: "  +  frm.A29.value + "\n" ;
 }
@@ -282,6 +290,11 @@ if (document.getElementById("A56").checked || document.getElementById("A57").che
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
 }
 
+
+if (document.getElementById("A66").checked){
+	Template += frm.A66.value + "\n";
+}
+
 if (document.getElementById("A56").checked){
 	Template += frm.A56.value + "\n";
 }
@@ -320,10 +333,6 @@ if (document.getElementById("A64").checked){
 
 if (document.getElementById("A65").checked){
 	Template += frm.A65.value + "\n";
-}
-
-if (document.getElementById("A66").checked){
-	Template += frm.A66.value + "\n";
 }
 
 if (frm.A67.value !== ""){
@@ -365,7 +374,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-headandneck-pharynx-19-4002.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Cancers of the pharynx (oropharynx, hypopharynx and nasopharynx)
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -374,7 +383,9 @@ table, th, td {
 		</h2>
 	</div>
 
-<p>Please also refer to <a href=".\cap\cp-headandneck-17biomarker-1000.pdf" target="_blank">H&N biomarker protocol (HeadNeckBiomarkers 1.0.0.0, Feb-2017)</a> for possible ancillary testings.</p>
+<p>
+Please also refer to <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Bmk_2.0.0.0.REL_CAPCP.pdf" target="_blank">H&N biomarker protocol (HeadNeckBiomarkers 2.0.0.0, June-2021)</a> for possible ancillary testings.
+</p>
 
 <form>
 <!--
@@ -484,12 +495,12 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=12" target="_blank">Oropharynx and hypopharynx CA</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Oropharynx and hypopharynx CA</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A11">
 		<option value=""></option>
-		<option value="Human papillomavirus (HPV)-mediated (positive) squamous cell carcinoma (oropharynx only)">Human papillomavirus (HPV)-mediated (positive) squamous cell carcinoma (oropharynx only)</option>
+		<option value="Human papillomavirus (HPV)mediated (positive) squamous cell carcinoma (oropharynx only)">Human papillomavirus (HPV)mediated (positive) squamous cell carcinoma (oropharynx only)</option>
 		<option value="HPV-unrelated (negative) squamous cell carcinoma (oropharynx)">HPV-unrelated (negative) squamous cell carcinoma (oropharynx)</option>
 		<option value="Oropharyngeal squamous cell carcinoma, HPV status unknown">Oropharyngeal squamous cell carcinoma, HPV status unknown</option>
 		<option value="Hypopharyngeal squamous cell carcinoma">Hypopharyngeal squamous cell carcinoma</option>
@@ -499,7 +510,7 @@ table, th, td {
 
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=12" target="_blank">SCC and variants</a> :</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">SCC and variants</a> :</label> 
 </td>
 <td>
 <input class="element checkbox" type="checkbox"  id="A12" value="  - Squamous cell carcinoma, conventional (keratinizing)"><label  class="choice">Squamous cell carcinoma, conventional (keratinizing)</label>
@@ -516,7 +527,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=13" target="_blank">Nasopharynx CA</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Nasopharynx CA</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A21">
@@ -532,7 +543,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=13" target="_blank">Minor salivary glands CA</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Minor salivary glands CA</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A22">
@@ -573,22 +584,22 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=13" target="_blank">Neuroendocrine carcinoma</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=17" target="_blank">Neuroendocrine carcinoma</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A23">
 		<option value=""></option>
-		<option value="Small cell neuroendocrine carcinoma, HPV -ve"><label >Small cell neuroendocrine carcinoma, HPV -ve</label></option>
-		<option value="Small cell neuroendocrine carcinoma, HPV +ve"><label >Small cell neuroendocrine carcinoma, HPV +ve</label></option>
-		<option value="Large cell neuroendocrine carcinoma, HPV -ve"><label >Large cell neuroendocrine carcinoma, HPV -ve</label></option>
-		<option value="Large cell neuroendocrine carcinoma, HPV +ve"><label >Large cell neuroendocrine carcinoma, HPV +ve</label></option>
+		<option value="Small cell neuroendocrine carcinoma, HPV negative"><label >Small cell neuroendocrine carcinoma, HPV negative</label></option>
+		<option value="Small cell neuroendocrine carcinoma, HPV positive"><label >Small cell neuroendocrine carcinoma, HPV positive</label></option>
+		<option value="Large cell neuroendocrine carcinoma, HPV negative"><label >Large cell neuroendocrine carcinoma, HPV negative</label></option>
+		<option value="Large cell neuroendocrine carcinoma, HPV positive"><label >Large cell neuroendocrine carcinoma, HPV positive</label></option>
 	</select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=13" target="_blank">Other histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Other histologic type</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A24">
@@ -602,7 +613,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=14" target="_blank">Histologic grade (for HPV-ve SCC only)</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=17" target="_blank">Histologic grade (for HPV-ve SCC only)</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A25">
@@ -641,7 +652,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=16" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=19" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A28">
@@ -667,6 +678,34 @@ table, th, td {
 </td>
 </tr>
 
+<tr>
+<td>
+<label class="description">- HPV PCR: </label>
+</td>
+<td>
+<select class="element select large" ID="A69">
+	<option value=""></option>
+	<option value="Positive, specify:">Positive, specify:</option>
+	<option value="Negative">Negative</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- EBV (EBER ISH): </label>
+</td>
+<td>
+<select class="element select large" ID="A70">
+	<option value=""></option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
 </table>
 </p>
 </fieldset>
@@ -674,7 +713,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=15" target="_blank">Surgical margins</a>: </label></legend>
+<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=20" target="_blank">Surgical margins</a>: </label></legend>
 <p>
 <label class="description">- Surgical margins:</label>
 <select class="element select medium" ID="A29">
@@ -693,7 +732,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=16" target="_blank">Lymph nodes examination</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=20" target="_blank">Lymph nodes examination</a>: </label></legend>
 <p>
 <table border="1">
 <col width="60%">
@@ -769,7 +808,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-headandneck-pharynx-19-4002.pdf#page=20" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Pharynx_4.1.0.0.REL_CAPCP.pdf#page=25" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -793,7 +832,7 @@ table, th, td {
 - Primary tumor (pT):
 <select class="element select medium" ID="A39">
 	<option value=""></option>
-	<option value="    - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="    - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="    - pT1: Tumor < or = 2 cm">pT1: Tumor < or = 2 cm</option>
 	<option value="    - pT2: Tumor > 2 cm to < or = 4 cm">pT2: Tumor > 2 cm to < or = 4 cm</option>
@@ -808,7 +847,8 @@ table, th, td {
   - Regional lymph nodes (pN):
 <select class="element select medium" ID="A40">
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Metastasis in 4 or fewer lymph nodes">pN1: Metastasis in 4 or fewer lymph nodes</option>
 	<option value="    - pN2: Metastasis in more than 4 lymph nodes">pN2: Metastasis in more than 4 lymph nodes</option>
@@ -824,7 +864,7 @@ table, th, td {
   - Primary tumor (pT):
 <select class="element select medium" ID="A41">
 	<option value=""></option>
-	<option value="    - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="    - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="    - pTis: Carcinoma in situ">pTis: Carcinoma in situ</option>
 	<option value="    - pT1: Tumor < or = 2 cm">pT1: Tumor < or = 2 cm</option>
@@ -841,7 +881,8 @@ table, th, td {
 - Regional lymph nodes (pN): 
 <select class="element select medium" ID="A42">
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)">pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)</option>
 	<option value="    - pN2a: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)">pN2a: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)</option>
@@ -865,7 +906,7 @@ table, th, td {
   - Primary tumor (pT):
 <select class="element select medium" ID="A43">
 	<option value=""></option>
-	<option value="    - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="    - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="    - pT1: Tumor confined to nasopharynx, or extension to oropharynx and/or nasal cavity without parapharyngeal involvement">pT1: Tumor confined to nasopharynx, or extension to oropharynx and/or nasal cavity without parapharyngeal involvement</option>
 	<option value="    - pT2: Tumor with extension to parapharyngeal space, and/or adjacent soft tissue involvement (medial pterygoid, lateral pterygoid, prevertebral muscles)">pT2: Tumor with extension to parapharyngeal space, and/or adjacent soft tissue involvement (medial pterygoid, lateral pterygoid, prevertebral muscles)</option>
@@ -880,7 +921,8 @@ table, th, td {
   - Regional lymph nodes (pN):
 <select class="element select medium" ID="A44">
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Unilateral metastasis in cervical lymph node(s) and/or unilateral or bilateral metastasis in retropharyngeal lymph node(s), < or = 6 cm, above the caudal border of cricoid cartilage">pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)</option>
 	<option value="    - pN2: Bilateral metastasis in cervical lymph node(s), < or = 6 cm, above the caudal border of cricoid cartilage">pN2: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)</option>
@@ -897,7 +939,7 @@ table, th, td {
   - Primary tumor (pT):
 <select class="element select medium" ID="A45">
 	<option value=""></option>
-	<option value="    - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="    - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="    - pTis: Carcinoma in situ">pTis: Carcinoma in situ</option>
 	<option value="    - pT1: Tumor limited to one subsite of hypopharynx and/or < or = 2 cm">pT1: Tumor limited to one subsite of hypopharynx and/or < or = 2 cm</option>
@@ -915,7 +957,8 @@ table, th, td {
 <select class="element select medium" ID="A46">
 	<option value=""></option>
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)">pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)</option>
 	<option value="    - pN2a: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)">pN2a: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)</option>
@@ -937,6 +980,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A47">
 	<option value=""></option>
+	<option value="    - Not applicable - pM cannot be determined from the submitted specimen(s) ">Not applicable - pM cannot be determined from the submitted specimen(s) </option>
 	<option value="    - pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select>
 </td>
@@ -993,7 +1037,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A53">
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Regional lymph node metastases present">pN1: Regional lymph node metastases present</option>
 </select>
@@ -1007,6 +1052,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A54">
 	<option value=""></option>
+	<option value="    - Not applicable - pM cannot be determined from the submitted specimen(s) ">Not applicable - pM cannot be determined from the submitted specimen(s) </option>
 	<option value="    - pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select>
 </td>
@@ -1066,9 +1112,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 18-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Pharynx 4.0.0.2 (February 2019)
+Pharynx 4.1.0.0 (June 2021)
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

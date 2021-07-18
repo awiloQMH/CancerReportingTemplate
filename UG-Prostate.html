@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-/*
+
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -23,7 +23,7 @@ if (frm.A02.value !== ""){
 if (frm.A03.value !== ""){
 	Template += "- Prostate size (cm x cm x cm) : " + frm.A03.value + "\n";
 }
-*/
+
 if (frm.A04.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A04.value + "\n";
 }
@@ -62,6 +62,11 @@ if (frm.A11.value !== ""){
 
 if (frm.A12.value !== ""){
 	Template += "- Intraductal carcinoma (IDC): " + frm.A12.value + "\n";
+}
+
+
+if (frm.A70.value !== ""){
+	Template += "- Cribriform glands: " + frm.A70.value + "\n";
 }
 
 if (document.getElementById("A13").checked || document.getElementById("A14").checked ||
@@ -310,8 +315,12 @@ if (frm.A63.value !== ""){
 
 if (document.getElementById("A64").checked || document.getElementById("A65").checked ||
 	document.getElementById("A66").checked || document.getElementById("A67").checked ||
-	frm.A68.value !==""){
+	document.getElementById("A71").checked ||frm.A68.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += frm.A71.value + "\n";
 }
 
 if (document.getElementById("A64").checked){
@@ -368,7 +377,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the Prostate
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -376,12 +385,17 @@ table, th, td {
 		</a>
 		</h2>
 	</div>
-<p>There are additional notes for <a href=".\cap\cp-malegenital-prostate-turp-20-4050.pdf" target="_blank">TURP protocol</a>.
+
 <form>
-<!--
+
+<p>There are additional notes for <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate.TURP_4.1.0.0.REL_CAPCP.pdf" target="_blank">TURP protocol</a>.
+</p>
+
+<p>There are protocols for biopsy of <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate.Needle.Case.Bx_1.0.0.0.REL_CAPCP.pdf" target="_blank">case level </a> and <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate.Needle.Specimen.Bx_1.0.0.0.REL_CAPCP.pdf" target="_blank">specimen level </a> .
+</p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description">Gross descriptions:</label></legend>
+	<legend><label class="description">Gross core data elements:</label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -421,7 +435,7 @@ table, th, td {
 </p>
 
 </fieldset>
--->
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
@@ -438,7 +452,8 @@ table, th, td {
 	<option value="Ductal adenocarcinoma">Ductal adenocarcinoma</option>
 	<option value="Small-cell neuroendocrine carcinoma">Small-cell neuroendocrine carcinoma</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>	
-</select>
+	<option value="Cannot be determined:">Cannot be determined:</option>	
+<</select>
 </p>
 
 <p><fieldset style="border-color:#e6e6ff;">
@@ -448,7 +463,7 @@ table, th, td {
 <col width="60%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=8" target="_blank">Primary Gleason pattern</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Primary Gleason pattern</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A06">
@@ -496,29 +511,29 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=9" target="_blank">Composite Gleason Score</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=16" target="_blank">Composite Gleason Score</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A09">
 	<option value=""></option>
 	<option value="Not applicable">Not applicable</option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Grade group 1 (Gleason Score 3+3=6)">Grade group 1 (Gleason Score 3 + 3 = 6)</option>
-	<option value="Grade group 2 (Gleason Score 3+4=7)">Grade group 2 (Gleason Score 3 + 4 = 7)</option>
-	<option value="Grade group 3 (Gleason Score 4+3=7)">Grade group 3 (Gleason Score 4 + 3 = 7)</option>
-	<option value="Grade group 4 (Gleason Score 4+4=8)">Grade group 4 (Gleason Score 4 + 4 = 8)</option>
-	<option value="Grade group 4 (Gleason Score 3+5=8)">Grade group 4 (Gleason Score 3 + 5 = 8)</option>
-	<option value="Grade group 4 (Gleason Score 5+3=8)">Grade group 4 (Gleason Score 5 + 3 = 8)</option>
-	<option value="Grade group 5 (Gleason Score 4+5=9)">Grade group 5 (Gleason Score 4 + 5 = 9)</option>
-	<option value="Grade group 5 (Gleason Score 5+4=9)">Grade group 5 (Gleason Score 5 + 4 = 9)</option>
-	<option value="Grade group 5 (Gleason Score 5+5=10)">Grade group 5 (Gleason Score 5 + 5 = 10)</option>
+	<option value="Grade group 1 (Gleason Score 3 + 3 = 6)">Grade group 1 (Gleason Score 3 + 3 = 6)</option>
+	<option value="Grade group 2 (Gleason Score 3 + 4 = 7)">Grade group 2 (Gleason Score 3 + 4 = 7)</option>
+	<option value="Grade group 3 (Gleason Score 4 + 3 = 7)">Grade group 3 (Gleason Score 4 + 3 = 7)</option>
+	<option value="Grade group 4 (Gleason Score 4 + 4 = 8)">Grade group 4 (Gleason Score 4 + 4 = 8)</option>
+	<option value="Grade group 4 (Gleason Score 3 + 5 = 8)">Grade group 4 (Gleason Score 3 + 5 = 8)</option>
+	<option value="Grade group 4 (Gleason Score 5 + 3 = 8)">Grade group 4 (Gleason Score 5 + 3 = 8)</option>
+	<option value="Grade group 5 (Gleason Score 4 + 5 = 9)">Grade group 5 (Gleason Score 4 + 5 = 9)</option>
+	<option value="Grade group 5 (Gleason Score 5 + 4 = 9)">Grade group 5 (Gleason Score 5 + 4 = 9)</option>
+	<option value="Grade group 5 (Gleason Score 5 + 5 = 10)">Grade group 5 (Gleason Score 5 + 5 = 10)</option>
 </select>
 </td>
 </tr>
 
 <tr>
 <td>
-+ <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=10" target="_blank">Percentage of pattern 4 (for Gleason score > or = 7)</a>:
++ <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Percentage of pattern 4 (for Gleason score > or = 7)</a>:
 </td>
 <td>
 <input type="text" class="element text large" ID="A10" size="10">
@@ -527,7 +542,7 @@ table, th, td {
 
 <tr>
 <td>
-+ <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=10" target="_blank">Percentage of pattern 5 (for Gleason score > or = 7)</a>:
++ <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Percentage of pattern 5 (for Gleason score > or = 7)</a>:
 </td>
 <td>
 <input type="text" class="element text large" ID="A11" size="10">
@@ -537,9 +552,23 @@ table, th, td {
 </p>
 </fieldset></p>
 
-<p><label class="">+ <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=11" target="_blank">Intraductal carcinoma (IDC)</a>: </label>
+<p>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=17" target="_blank">Intraductal carcinoma (IDC)</a>: </label>
 <select class="element select medium" ID="A12">
 	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Present, IDC incorporated in grade">Present, IDC incorporated in grade</option>
+	<option value="Present, IDC not incorporated in grade">Present, IDC not incorporated in grade</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p>
+
+<p>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=11" target="_blank">Cribriform glands (for Gleason score 7 or 8 only)</a>: </label>
+<select class="element select medium" ID="A70">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
@@ -547,7 +576,7 @@ table, th, td {
 </p>
 
 <p>
-<label class="">+ <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=12" target="_blank">Tumor quantitation</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=18" target="_blank">Tumor quantitation</a>:</label>
 <input class="element checkbox" type="checkbox" id="A13" value="  - Estimated percentage of prostate involved by tumor:"><label  class="choice">Estimated percentage of prostate involved by tumor:</label>
 <input class="element checkbox" type="checkbox" id="A14" value="  - Tumor size (dominant nodule, if present), greatest dimensions (mm), additional dimension (mm x mm) and location:"><label  class="choice">Tumor size (dominant nodule, if present), greatest dimensions (mm), additional dimension (mm x mm) and location:</label>
 <input class="element checkbox" type="checkbox" id="A15" value="  - Number of positive chips out of total:"><label  class="choice">For TURP, number of positive chips out of total:</label>
@@ -555,7 +584,7 @@ table, th, td {
 
 
 <p><fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description"><a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=12" target="_blank">Extraprostatic extension (EPE) or periprostatic fat invasion</a>: </label></legend>
+	<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=18" target="_blank">Extraprostatic extension (EPE) or periprostatic fat invasion</a>: </label></legend>
 <p>
 <select class="element select medium" ID="A16">
 	<option value=""></option>
@@ -590,7 +619,7 @@ table, th, td {
 <col width="60%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=13" target="_blank">Urinary bladder neck invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=19" target="_blank">Urinary bladder neck invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A30">
@@ -605,7 +634,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=8" target="_blank">Seminal vesicle invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=20" target="_blank">Seminal vesicle invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A31">
@@ -621,7 +650,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="">+ Lymphovascular invasion: </label>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=20" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A32">
@@ -635,7 +664,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="">+ <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=14" target="_blank">Perineural invasion</a>: </label>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=21" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A33">
@@ -658,6 +687,7 @@ table, th, td {
 	<option value="Not identified">Not identified</option>
 	<option value="Radiation therapy effect present">Radiation therapy effect present</option>
 	<option value="Hormonal therapy effect present">Hormonal therapy effect present</option>
+	<option value="Radiation and hormonal therapy effects present">Radiation and hormonal therapy effects present</option>
 	<option value="Other therapy effect(s) present (specify): ">Other therapy effect(s) present (specify): </option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
@@ -671,7 +701,7 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Status of surgical margins:</label></legend>
-<p><label class="description">- <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=14" target="_blank">Surgical margins</a>:</label>
+<p><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=21" target="_blank">Surgical margins</a>:</label>
 <select class="element select medium" ID="A35">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
@@ -791,7 +821,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-malegenital-prostate-radicalprostatectomy-20-4101.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Prostate_4.2.0.0.REL_CAPCP.pdf#page=23" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -830,7 +860,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A61">
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No positive regional nodes">pN0: No positive regional nodes</option>
 	<option value="    - pN1: Metastases in regional node(s)">pN1: Metastases in regional node(s)</option>
 </select>
@@ -844,6 +875,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A62">
 	<option value=""></option>
+	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 	<option value="  - pM1a: Nonregional lymph nodes(s)">pM1a: Nonregional lymph nodes(s)</option>
 	<option value="  - pM1b: Bone(s)">pM1b: Bone(s)</option>
@@ -866,6 +898,7 @@ table, th, td {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 <p>
+<input class="element checkbox" type="checkbox" id="A71" value="  - Atypical intraductal proliferation (AIP)"><label  class="choice">Atypical intraductal proliferation (AIP)</label>
 <input class="element checkbox" type="checkbox" id="A64" value="  - High-grade prostatic intraepithelial neoplasia (PIN)"><label  class="choice">High-grade prostatic intraepithelial neoplasia (PIN)</label>
 <input class="element checkbox" type="checkbox" id="A65" value="  - Inflammation (specify type):"><label  class="choice">Inflammation (specify type):</label>
 <input class="element checkbox" type="checkbox" id="A66" value="  - Atypical adenomatous hyperplasia (adenosis)"><label  class="choice">Atypical adenomatous hyperplasia (adenosis)</label>
@@ -899,9 +932,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 14-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Prostate Radical Prostatectomy 4.1.0.1 (Mar-2020) and Prostate TURP 4.0.5.0 (Feb-2020), <br>
+Prostate Radical Prostatectomy 4.2.0.0 (June 2021), Prostate TURP 4.1.0.0 (June 2021), Prostate needle biopsy 1.0.0.0 (June 2021)<br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

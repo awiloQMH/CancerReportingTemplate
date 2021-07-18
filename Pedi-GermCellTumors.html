@@ -87,7 +87,11 @@ if (frm.A16.value !== ""){
 }
 
 if (frm.A17.value !== ""){
-	Template += "- Microscopic tumor extension (for sacrococcygeal tumor): " + frm.A17.value + "\n";
+	Template += "- Microscopic Coccyx Involvement: " + frm.A17.value + "\n";
+}
+
+if (frm.A35.value !== ""){
+	Template += "- Tumor extent: " + frm.A35.value + "\n";
 }
 
 if (frm.A18.value !== ""){
@@ -105,7 +109,6 @@ if (frm.A20.value !== ""){
 if (frm.A21.value !== ""){
 	Template += "- Treatment effects:  " + frm.A21.value + "\n";
 }
-
 
 if (frm.A22.value !== ""){
 	Template += "\n" + "- Surgical margins: " + frm.A22.value + "\n";
@@ -197,7 +200,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Extragonadal Germ Cell Tumors
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -206,10 +209,10 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\cp-pediatric-germcell-biopsy-19-4000.pdf" target="_blank">biopsy specimen</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT.Bx_4.1.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>.</p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description">Gross descriptions:</label></legend>
+	<legend><label class="description">Gross data elements:</label></legend>
 
 <p>
 <table border="1">
@@ -226,9 +229,9 @@ table, th, td {
 	</select>
 </td>
 </tr>
-
+data 
 <tr>
-<td><label class="description">- <a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf#page=7" target="_blank">Tumor site</a>:</td>
+<td><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=10" target="_blank">Tumor site</a>:</td>
 <td><select class="element select large" ID="A02">
 	<option value=""></option>
 	<option value="Intracranial">Intracranial</option>
@@ -242,7 +245,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td><label class="description">- <a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf#page=86" target="_blank">Tumor size</a>:</td>
+<td><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Tumor size</a>:</td>
 <td><select class="element select large" ID="A03">
 		<option value=""></option>
 		<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
@@ -252,7 +255,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td><label class="description">- <a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf#page=6" target="_blank">Patient age</a>:</td>
+<td><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=9" target="_blank">Patient age</a>:</td>
 <td><select class="element select large" ID="A04">
 		<option value=""></option>
 		<option value="Congenital/neonatal (birth - 6 mo)">Congenital/neonatal (birth - 6 mo)</option>
@@ -262,7 +265,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td><label class="">+ <a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf#page=13" target="_blank">Serological markers</a>:</td>
+<td><label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=17" target="_blank">Serological markers</a>:</td>
 <td><input class="element checkbox" type="checkbox" id="A05" value="Not specified"><label  class="choice">Not specified</label>
 <input class="element checkbox" type="checkbox" id="A06" value="Not performed"><label  class="choice">Not performed</label>
 <input class="element checkbox" type="checkbox" id="A07" value="Serum α-fetoprotein (AFP) (specify level): "><label  class="choice">Serum α-fetoprotein (AFP) (specify level): </label>
@@ -271,7 +274,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td><label class="">+ <a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf#page=12" target="_blank">Other clinical findings</a>:</td>
+<td><label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Other clinical findings</a>:</td>
 <td><input class="element checkbox" type="checkbox" id="A09" value="None identified"><label  class="choice">None identified</label>
 <input class="element checkbox" type="checkbox" id="A10" value="Associated syndromes (Klinefelter, Down, others...), specify:"><label  class="choice">Associated syndromes (Klinefelter, Down, etc.), specify:</label>
 <input class="element checkbox" type="checkbox" id="A11" value="Associated malignancy (leukemia, myelodysplastic syndrome, others...), specify: "><label  class="choice">Associated malignancy (leukemia, MDS, etc.), specify: </label>
@@ -291,11 +294,15 @@ table, th, td {
 </p>
 
 <p>
+Ancillary IHC can include SALL4, OCT3/4, CD30, AFP, Glypican-3 and beta-HCG.
+</p>
+
+<p>
 <table border="1"> 
 <col width="65%">
 
 <tr>
-<td rowspan="2" valign="top"><label class="description">- Histologic type (teratoma): </label>
+<td rowspan="2" valign="top"><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type (teratoma)</a>: </label>
 </td>
 <td><select class="element select large" ID="A14">
 	<option value=""></option>
@@ -306,7 +313,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td><label class="description">- <a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf#page=9" target="_blank">Histologic grade (Norris 1976)</a>:</label>
+<td><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Histologic grade (Norris 1976)</a>:</label>
 <select class="element select large" ID="A16">
 	<option value=""></option>
 	<option value="Grade 1">Grade 1</option>
@@ -330,11 +337,24 @@ table, th, td {
 </tr>	
 
 <tr>
-<td><label class="description">- Microscopic tumor extension (for sacrocoocygeal tumor): </label></td>
+<td><label class="description">- Microscopic Coccyx Involvement: </label></td>
 <td><select class="element select large" ID="A17">
 	<option value=""></option>
-	<option value="Tumor involving coccyx identified">Tumor involving coccyx identified</option>
-	<option value="Coccyx uninvolved">Coccyx uninvolved</option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
+</select></td>
+</tr>
+
+<tr>
+<td><label class="description">+ Tumor extent (applicable to adult [post-pubertal] extragonadal germ cell tumors): </label></td>
+<td><select class="element select large" ID="A35">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Well-circumscribed without focal adhesions to pleura or pericardium">Well-circumscribed without focal adhesions to pleura or pericardium
+	<option value="Well-circumscribed with focal adhesions to pleura or pericardium">Well-circumscribed with focal adhesions to pleura or pericardium</option>
+	<option value="Confined to the mediastinum with macroscopic and / or microscopic invasion into adjacent structures (i.e., pleura, pericardium, and great vessels) (specify)">Confined to the mediastinum with macroscopic and / or microscopic invasion into adjacent structures (i.e., pleura, pericardium, and great vessels) (specify)</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
@@ -370,7 +390,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td><label class="">+ <a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf#page=10" target="_blank">Treatment effect</a>: </label></td>
+<td><label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Treatment effect</a>: </label></td>
 <td><select class="element select large" ID="A21">
 	<option value=""></option>
 	<option value="Necrosis not identified">Necrosis not identified</option>
@@ -385,7 +405,7 @@ table, th, td {
 <p>
 <table border="1">
 <col width="65%">
-<label class="description">- Status of metastases:</label>
+<label class="description">- Distant metastasis:</label>
 
 <tr> 
 <td><label class="description">- Sites of distant metastasis: </label></td>
@@ -489,7 +509,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-pediatric-germcell-resection-19-4000.pdf#page=11" target="_blank">Pathologic Stage Classification</a> : </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Pathologic Stage Classification</a> : </label></legend>
 <p>
 <table border="1">
 <col width="70%">
@@ -541,9 +561,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 03-Jan-2020,<br>
+Last upated on 18-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Germ Cell Resection 4.0.0.0 (February 2019), <br>
+Germ Cell Resection 4.1.0.0 (June 2019), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -57,8 +57,12 @@ if (frm.A10.value !== ""){
 	Template += "- Histologic grade: " + frm.A10.value + "\n";
 }
 
-if (frm.A11.value !== ""){
-	Template += "- Necrosis: " + frm.A11.value + "\n";
+if (frm.A03.value !== ""){
+	Template += "- Tumor size: " + "\n" + frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Tumor weight (whole organ): " + " " + frm.A04.value + "\n";
 }
 
 if (frm.A12.value !== ""){
@@ -67,6 +71,10 @@ if (frm.A12.value !== ""){
 
 if (frm.A13.value !== ""){
 	Template += "- Perineural invasion: " + frm.A13.value + "\n";
+}
+
+if (frm.A11.value !== ""){
+	Template += "- Necrosis: " + frm.A11.value + "\n";
 }
 
 if (document.getElementById("A14").checked || document.getElementById("A15").checked ||
@@ -274,7 +282,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-endocrine-adrenal-20-4100.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Adrenal_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the adrenal gland
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -389,7 +397,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-endocrine-adrenal-20-4100.pdf#page=6" target="_blank">Histologic grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Adrenal_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic grade</a>:</label>
 </td>
 <td valign="top">
 <select class="element select large" ID="A10">
@@ -403,21 +411,30 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Necrosis:</label> 
+<label class="description">- Tumor size:</label> 
 </td>
 <td>
-<select class="element select large" ID="A11">
+<select class="element select large" ID="A03">
 	<option value=""></option>
-	<option value="Not idenfied">Not idenfied</option>
-	<option value="Present, extent (%):">Present, extent (%):</option>
-	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+	<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+	<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
 </select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label > + <a href=".\cap\cp-endocrine-adrenal-20-4100.pdf#page=8" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- Tumor weight (whole gland):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A04" size="5">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description"> - <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Adrenal_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -447,8 +464,22 @@ table, th, td {
 </tr>
 
 <tr>
+<td>
+<label >+ Necrosis:</label> 
+</td>
+
+<td>
+<select class="element select large" ID="A11">
+	<option value=""></option>
+	<option value="Not idenfied">Not idenfied</option>
+	<option value="Present, extent (%):">Present, extent (%):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+</select>
+</td>
+</tr>
+<tr>
 <td valign="top">
-<label > + <a href=".\cap\cp-endocrine-adrenal-20-4100.pdf#page=11" target="_blank">Functional status</a>:</label>
+<label > + <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Adrenal_4.2.0.0.REL_CAPCP.pdf#page=8" target="_blank">Functional status</a>:</label>
 </td>
 <td>
 <input class="element checkbox" type="checkbox" id="A20" value="  - Urinary 17-ketosteroids increased (10 mg/g creatinine/24 hours)"><label  class="choice">Urinary 17-ketosteroids increased (10 mg/g cr/24 hours)</label>
@@ -463,7 +494,7 @@ table, th, td {
 
 <tr>
 <td valign="top">
-<label > + <a href=".\cap\cp-endocrine-adrenal-20-4100.pdf#page=12" target="_blank">Ancillary studies</a>:</label>
+<label > + <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Adrenal_4.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Ancillary studies</a>:</label>
 </td>
 <td>
 <input class="element checkbox" type="checkbox" id="A27" value="  - Proliferation index Ki-67 (specify):"><label  class="choice">Proliferation index Ki-67 (specify):</label>
@@ -588,12 +619,12 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">  - <a href=".\cap\cp-endocrine-adrenal-20-4100.pdf#page=8" target="_blank">Primary tumor (pT):</a></label>
+<label class="description">  - <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Adrenal_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Primary tumor (pT):</a></label>
 </td>
 <td>
 <select class="element select large" ID="A39">
 	<option value=""></option>
-	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pT1: Tumor < or = 5 cm, no extra-adrenal invasion">pT1: Tumor < or = 5 cm, no extra-adrenal invasion</option>
 	<option value="  - pT2: Tumor > 5 cm, no extra-adrenal invasion">pT2: Tumor > 5 cm, no extra-adrenal invasion</option>
@@ -610,7 +641,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A40">
 	<option value=""></option>
-	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="  - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="  - pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
 </select>
@@ -677,10 +709,10 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 10-Jul-2021,<br>
 based on 
 <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Adrenal Gland 4.1.0.0 (February 2020).<br>
+Adrenal Gland 4.2.0.0 (June 2021).<br>
 html form was created on <a href="https://www.phpform.org"  target="_blank">pForm</a>, <a href="https://www.w3schools.com/"  target="_blank">W3 School</a>, 
 <a href="https://stackoverflow.com/"  target="_blank">StackOverflow</a>, and 
 <a href="https://icons8.com" target="_blank">Icons8</a>.<br><br>

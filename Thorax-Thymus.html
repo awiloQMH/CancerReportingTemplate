@@ -36,17 +36,19 @@ if (frm.A06.value !== ""){
 	Template += "- Histologic type: " + frm.A06.value + "\n";
 }
 
-if (frm.A07.value !== ""){
-	Template += "- Transcapsular invasion (applies only to thymomas): " + frm.A07.value + "\n";
-}
-
-if (
-    document.getElementById("A08").checked || document.getElementById("A09").checked ||
-	document.getElementById("A10").checked || document.getElementById("A11").checked ||
+if (document.getElementById("A08").checked || document.getElementById("A09").checked ||
+    document.getElementById("A10").checked || document.getElementById("A11").checked ||
 	document.getElementById("A12").checked || document.getElementById("A13").checked ||
 	document.getElementById("A14").checked || document.getElementById("A15").checked ||
 	document.getElementById("A16").checked || document.getElementById("A17").checked ||
-	document.getElementById("A18").checked ){
+	document.getElementById("A18").checked || document.getElementById("A46").checked ||
+	document.getElementById("A47").checked || document.getElementById("A48").checked ||
+	document.getElementById("A49").checked || document.getElementById("A50").checked ||
+	document.getElementById("A51").checked || document.getElementById("A52").checked ||
+	document.getElementById("A53").checked || document.getElementById("A54").checked ||
+	document.getElementById("A55").checked || document.getElementById("A56").checked ||
+	document.getElementById("A57").checked || document.getElementById("A58").checked ||
+	document.getElementById("A59").checked || document.getElementById("A60").checked){
 	Template += "- Tumor extension: " + "\n";
 }
 
@@ -94,6 +96,66 @@ if (document.getElementById("A18").checked){
 	Template += frm.A18.value + "\n";
 }
 
+if (document.getElementById("A46").checked){
+	Template += frm.A46.value + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
+if (document.getElementById("A55").checked){
+	Template += frm.A55.value + "\n";
+}
+
+if (document.getElementById("A56").checked){
+	Template += frm.A56.value + "\n";
+}
+
+if (document.getElementById("A57").checked){
+	Template += frm.A57.value + "\n";
+}
+
+if (document.getElementById("A58").checked){
+	Template += frm.A58.value + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += frm.A59.value + "\n";
+}
+
+if (document.getElementById("A60").checked){
+	Template += frm.A60.value + "\n";
+}
+
 if (frm.A19.value !== ""){
 	Template += "- Lymphovascular invasion: " + frm.A19.value + "\n";
 }
@@ -136,6 +198,9 @@ if (frm.A27.value !== ""){
 
 if (frm.A28.value !== ""){
 	Template += "\n" + "- Modified Masaoka Stage (applies only to thymomas): " + "\n" + frm.A28.value + "\n";
+}
+if (frm.A45.value !== ""){
+	Template += "    - Great vessel involvement: " + frm.A45.value + "\n";
 }
 
 if (document.getElementById("A29").checked || document.getElementById("A30").checked || 
@@ -249,7 +314,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-thymus-17protocol-4001.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\Thymus_4.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Tumors of the thymus
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -312,7 +377,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Histologic type (thymoma):</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\Thymus_4.1.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type (thymoma)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A04">
@@ -322,6 +387,9 @@ table, th, td {
 	<option value="Type B1 thymoma">Type B1 thymoma</option>
 	<option value="Type B2 thymoma">Type B2 thymoma</option>
 	<option value="Type B3 thymoma">Type B3 thymoma</option>
+	<option value="Micronodular thymoma with lymphoid stroma">Micronodular thymoma with lymphoid stroma</option>
+	<option value="Metaplastic thymoma">Metaplastic thymoma</option>
+	<option value="Thymoma with more than one histological pattern (+ Pattern %)"> Thymoma with more than one histological pattern (+ Pattern %)</option>
 </select>
 </td>
 </tr>
@@ -335,14 +403,18 @@ table, th, td {
 	<option value=""></option>
 	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
 	<option value="Basaloid carcinoma">Basaloid carcinoma</option>
-	<option value="Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
-	<option value="Lymphoepithelioma-like carcinoma">Lymphoepithelioma-like carcinoma</option>
-	<option value="Clear cell carcinoma">Clear cell carcinoma</option>
-	<option value="Sarcomatoid carcinoma">Sarcomatoid carcinoma</option>
-	<option value="Adenocarcinoma">Adenocarcinoma</option>
+	<option value="Lymphoepithelial carcinoma">Lymphoepithelial carcinoma</option>
 	<option value="NUT carcinoma">NUT carcinoma</option>
+	<option value="Clear cell carcinoma">Clear cell carcinoma</option>
+	<option value="Low-grade papillary adenocarcinoma">Low-grade papillary adenocarcinoma</option>
+	<option value="Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>
+	<option value="Thymic carcinoma with adenoid cystic carcinoma-like features">Thymic carcinoma with adenoid cystic carcinoma-like features</option>
+	<option value="Enteric-type adenocarcinoma">Enteric-type adenocarcinoma</option>
+	<option value="Adenocarcinoma NOS">Adenocarcinoma NOS</option>
+	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="Sarcomatoid carcinoma">Sarcomatoid carcinoma</option>
 	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
-	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+ 	<option value="Thymic carcinoma NOS">Thymic carcinoma NOS</option>
 </select>
 </td>
 </tr>
@@ -354,10 +426,12 @@ table, th, td {
 <td>
 <select class="element select large" ID="A06">
 	<option value=""></option>
-	<option value="Typical carcinoid">Typical carcinoid</option>
-	<option value="Atypical carcinoid">Atypical carcinoid</option>
+	<option value="Typical carcinoid / Neuroendocrine tumor, grade 1">Typical carcinoid / Neuroendocrine tumor, grade 1</option>
+	<option value="Atypical carcinoid / Neuroendocrine tumor, grade 2">Atypical carcinoid / Neuroendocrine tumor, grade 2</option>
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell carcinoma">Small cell carcinoma</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
 </td>
 </tr>
@@ -367,21 +441,6 @@ table, th, td {
 <p>
 <table border="1">
 <col width="60%">
-
-<tr>
-<td>
-<label class="description">- Transcapsular invasion :</label>
-(applies only to thymomas)
-</td>
-<td>
-<select class="element select large" ID="A07">
-	<option value=""></option>
-	<option value="Not identified">Not identified</option>
-	<option value="Present">Present</option>
-	<option value="Cannot be determined">Cannot be determined</option>
-</select>
-</td>
-</tr>
 
 <tr>
 <td>
@@ -411,6 +470,23 @@ table, th, td {
 </td>
 </tr>
 
+<!--
+<tr>
+<td>
+<label class="">+ Transcapsular invasion :</label>
+(applies only to thymomas)
+</td>
+<td>
+<select class="element select large" ID="A07">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+-->
+
 <tr>
 <td>
 <label class="description">- Treatment effect: </label>
@@ -430,17 +506,33 @@ table, th, td {
 
 <p>
 <label class="description">- Tumor extension:</label>
-<input class="element checkbox" type="checkbox"   id="A08" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
-<input class="element checkbox" type="checkbox"   id="A09" value="  - Tumor confined to thymus"><label  class="choice">Tumor confined to thymus</label>
-<input class="element checkbox" type="checkbox"   id="A10" value="  - Tumor extends to the mediastinal fat"><label  class="choice">Tumor extends to the mediastinal fat</label>
-<input class="element checkbox" type="checkbox"   id="A11" value="  - Tumor involves pulmonary parenchyma, specify lobe:"><label  class="choice">Tumor involves pulmonary parenchyma, specify lobe:</label>
-<input class="element checkbox" type="checkbox"   id="A12" value="  - Tumor involves mediastinal pleura"><label  class="choice">Tumor involves mediastinal pleura</label>
-<input class="element checkbox" type="checkbox"   id="A13" value="  - Tumor invades pericardium"><label  class="choice">Tumor invades pericardium</label>
-<input class="element checkbox" type="checkbox"   id="A14" value="  - Tumor invades diaphragm"><label  class="choice">Tumor invades diaphragm</label>
-<input class="element checkbox" type="checkbox"   id="A15" value="  - Tumor directly invades adjacent organs or structures (specify):"><label  class="choice">Tumor directly invades adjacent organs or structures (specify):</label>
+
+<input class="element checkbox" type="checkbox"   id="A09" value="  - Encapsulated tumor or capsule missing but without invasion into surrounding tissue"><label  class="choice">Encapsulated tumor or capsule missing but without invasion into surrounding tissue</label>
+<input class="element checkbox" type="checkbox"   id="A10" value="  - Microscopic transcapsular invasion into thymic or perithymic fat"><label  class="choice">Microscopic transcapsular invasion into thymic or perithymic fat</label>
+<input class="element checkbox" type="checkbox"   id="A46" value="  - Macroscopic invasion into thymic or perithymic fat"><label  class="choice"> Macroscopic invasion into thymic or perithymic fat</label>
+<input class="element checkbox" type="checkbox"   id="A47" value="  - Confined to thymus"><label  class="choice">Confined to thymus</label>
+<input class="element checkbox" type="checkbox"   id="A12" value="  - Invades mediastinal pleura"><label  class="choice">Invades mediastinal pleura</label>
+<input class="element checkbox" type="checkbox"   id="A13" value="  - Invades pericardium"><label  class="choice">Invades pericardium</label>
+<input class="element checkbox" type="checkbox"   id="A14" value="  - Invades diaphragm"><label  class="choice">Invades diaphragm</label>
+<input class="element checkbox" type="checkbox"   id="A11" value="  - Lung, specify lobe:"><label  class="choice">Lung, specify lobe:</label>
+<input class="element checkbox" type="checkbox"   id="A15" value="  - Brachiocephalic vein"><label  class="choice">Brachiocephalic vein</label>
+<input class="element checkbox" type="checkbox"   id="A48" value="  - Superior vena cava"><label  class="choice">Superior vena cava</label>
+<input class="element checkbox" type="checkbox"   id="A49" value="  - Phrenic nerve"><label  class="choice">Phrenic nerve</label>
+<input class="element checkbox" type="checkbox"   id="A50" value="  - Chest wall"><label  class="choice">Chest wall</label>
+<input class="element checkbox" type="checkbox"   id="A51" value="  - Extrapericardial pulmonary artery"><label  class="choice">Extrapericardial pulmonary artery</label>
+<input class="element checkbox" type="checkbox"   id="A52" value="  - Extrapericardial pulmonary veins"><label  class="choice">Extrapericardial pulmonary veins</label>
+<input class="element checkbox" type="checkbox"   id="A53" value="  - Ascending aorta"><label  class="choice">Ascending aorta</label>
+<input class="element checkbox" type="checkbox"   id="A54" value="  - Aortic arch"><label  class="choice">Aortic arch</label>
+<input class="element checkbox" type="checkbox"   id="A55" value="  - Descending aorta"><label  class="choice">Descending aorta</label>
+<input class="element checkbox" type="checkbox"   id="A56" value="  - Arch vessels"><label  class="choice">Arch vessels</label>
+<input class="element checkbox" type="checkbox"   id="A57" value="  - Intrapericardial pulmonary artery"><label  class="choice">Intrapericardial pulmonary artery</label>
+<input class="element checkbox" type="checkbox"   id="A58" value="  - Myocardium"><label  class="choice">Myocardium</label>
+<input class="element checkbox" type="checkbox"   id="A59" value="  - Trachea"><label  class="choice">Trachea</label>
+<input class="element checkbox" type="checkbox"   id="A60" value="  - Esophagus"><label  class="choice">Esophagus </label>
 <input class="element checkbox" type="checkbox"   id="A16" value="  - Other (specify):"><label  class="choice">Other (specify):</label>
 <input class="element checkbox" type="checkbox"   id="A17" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
 <input class="element checkbox" type="checkbox"   id="A18" value="  - No applicable"><label  class="choice">No applicable</label>
+<input class="element checkbox" type="checkbox"   id="A08" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </p>
 </fieldset>
 </p>
@@ -523,7 +615,7 @@ table, th, td {
 </p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class=""> + Modified Masaoka Stage (applies only to thymomas):</label></legend>
+	<legend> <label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\Thymus_4.1.0.0.REL_CAPCP.pdf#page=9" target="_blank">Modified Masaoka Stage (applies only to thymomas)</a>:</label></legend>
 <p> 
 <p><select class="element select medium" ID="A28">
 	<option value=""></option>
@@ -536,13 +628,22 @@ table, th, td {
 	<option value="  - Cannot be determined">Cannot be determined</option>
 </select>
 </p>
-<br>
+<p>
+<label class="">+ Great vessel involvement (for Stage III):</label>
+<select class="element select small" ID="A45">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p>
+
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\Thymus_4.1.0.0.REL_CAPCP.pdf#page=9" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -566,7 +667,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A32">
 	<option value=""></option>
-	<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pT1: Tumor encapsulated or extending into the mediastinal fat; may involve the mediastinal pleura">pT1: Tumor encapsulated or extending into the mediastinal fat; may involve the mediastinal pleura</option>
 	<option value="  - pT1a: Tumor with no mediastinal pleura involvement">pT1a: Tumor with no mediastinal pleura involvement</option>
@@ -585,7 +686,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A33">
 	<option value=""></option>
-	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="  - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="  - pN1: Metastasis in anterior (perithymic) lymph nodes">pN1: Metastasis in anterior (perithymic) lymph nodes</option>
 	<option value="  - pN2: Metastasis in deep intrathoracic or cervical lymph nodes">pN2: Metastasis in deep intrathoracic or cervical lymph nodes</option>
@@ -659,9 +761,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 13-Jul-2021,<br>
  based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Thymus 4.0.0.1 (June 2017).<br>
+Thymus 4.1.0.0 (June 2021).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

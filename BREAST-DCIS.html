@@ -82,6 +82,18 @@ if (frm.A14A.value !== ""){
 	Template += "\n" + "- Histologic type: " + frm.A14A.value + "\n";
 }
 
+if (frm.A21a.value !== ""){
+	Template += "  - Size of DCIS (mm x mm x mm): " + frm.A21a.value + "\n";
+}
+
+if (frm.A22a.value !== ""){
+	Template += "  - Number of blocks with DCIS: " + frm.A22a.value + "\n";
+}
+
+if (frm.A23a.value !== ""){
+	Template += "  - Number of blocks examined: " + frm.A23a.value + "\n";
+}
+
 if (document.getElementById("A15").checked || document.getElementById("A16").checked || 
     document.getElementById("A17").checked || document.getElementById("A18").checked || 
 	document.getElementById("A19").checked || document.getElementById("A20").checked || 
@@ -125,8 +137,8 @@ if (frm.A23.value !== ""){
 	Template += "  - Necrosis: " + frm.A23.value + "\n";
 }
 
-if (document.getElementById("A72").checked || document.getElementById("A73").checked || 
-    document.getElementById("A74").checked || document.getElementById("A75").checked || 
+if (document.getElementById("A72").checked || document.getElementById("A73").checked 
+    || document.getElementById("A75").checked || 
 	document.getElementById("A76").checked){
 	Template += "- Microcalcifications: " + "\n";
 }
@@ -137,10 +149,6 @@ if (document.getElementById("A72").checked){
 
 if (document.getElementById("A73").checked){
 	Template += frm.A73.value + "\n";
-}
-
-if (document.getElementById("A74").checked){
-	Template += frm.A74.value + "\n";
 }
 
 if (document.getElementById("A75").checked){
@@ -289,7 +297,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-breast-dcis-resection-20-4302.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Ductal carcinoma <i>in situ</i> of the breast
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -300,7 +308,7 @@ table, th, td {
 	
 <form>
 <p>
-There is different protocol for <a href=".\cap\cp-breast-dcis-biopsy-20-1001.pdf" target="_blank">biopsy specimen</a>
+There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS.Bx_1.0.1.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>
 </p>
 <p>
 Non-essential elements are identified by "+" sign.</a>
@@ -398,7 +406,7 @@ Non-essential elements are identified by "+" sign.</a>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=12" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic type</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A14A">
@@ -414,7 +422,21 @@ Non-essential elements are identified by "+" sign.</a>
 
 <tr>
 <td valign="top">
-<label class="">+ <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=12" target="_blank">Architectural patterns</a>:</label> 
+<label  class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=16" target="_blank">Sizes (Extent) of DCIS</a>:</label> 
+</td>
+<td align="right">
+<label>Size (mm x mm x mm) :</label> 
+<input type="text" ID="A21a" class="element text medium" size="20"><br>
+<label>Number of blocks with DCIS :</label>
+<input type="text" ID="A22a" class="element text medium" size="20"><br>
+<label>Number of blocks examined :</label>
+<input type="text" ID="A23a" class="element text medium" size="20"><br>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=16" target="_blank">Architectural patterns</a>:</label> 
 </td>
 <td>
 <input class="element checkbox" type="checkbox" id="A15" value="  - Comedo"><label class="choice">Comedo</label>
@@ -429,7 +451,7 @@ Non-essential elements are identified by "+" sign.</a>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=13" target="_blank">Nuclear grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=16" target="_blank">Nuclear grade</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A22">
@@ -443,7 +465,7 @@ Non-essential elements are identified by "+" sign.</a>
 
 <tr>
 <td>
-<label class="description">- Necrosis: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=17" target="_blank">Necrosis</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A23">
@@ -456,12 +478,11 @@ Non-essential elements are identified by "+" sign.</a>
 </tr>
 <tr>
 <td valign="top">
-<label class="">+ <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=17" target="_blank">Microcalcifications</a>:</label>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=17" target="_blank">Microcalcifications</a>:</label>
 </td>
 <td>
 	<input class="element checkbox" type="checkbox" id="A72"  value="  - Not identified"><label class="choice">Not identified</label>
 	<input class="element checkbox" type="checkbox" id="A73"  value="  - Present in DCIS"><label class="choice">Present in DCIS</label>
-	<input class="element checkbox" type="checkbox" id="A74"  value="  - Present in invasive carcinoma"><label class="choice">Present in invasive carcinoma</label>
 	<input class="element checkbox" type="checkbox" id="A75"  value="  - Present in non-neoplastic tissue"><label class="choice">Present in non-neoplastic tissue</label>
 	<input class="element checkbox" type="checkbox" id="A76"  value="  - Other (specify):"><label class="choice">Other (specify):</label>
 </td>
@@ -476,7 +497,7 @@ Non-essential elements are identified by "+" sign.</a>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=13" target="_blank">Surgical margins</a> (distance of the closest margin is required): </label></legend>
+<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=18" target="_blank">Surgical margins</a> (distance of the closest margin is required): </label></legend>
 
 <p>
 <table border="1">
@@ -586,7 +607,7 @@ Non-essential elements are identified by "+" sign.</a>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=14" target="_blank">Regional lymph nodes</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=19" target="_blank">Regional lymph nodes</a>: </label></legend>
 
 <p>
 <table border="1">
@@ -675,7 +696,7 @@ Non-essential elements are identified by "+" sign.</a>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-breast-dcis-resection-20-4302.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=21" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -721,7 +742,8 @@ Non-essential elements are identified by "+" sign.</a>
 <td>
 	<select class="element select large" ID="A44">
 		<option value=""></option>
-		<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+		<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+		<option value="  - pN not assigned (cannot be determined based on available pathological information)"> pN not assigned (cannot be determined based on available pathological information)</option>
 		<option value="  - pN0: No regional lymph node metastasis or ITCs only">pN0: No regional lymph node metastasis or ITCs only</option>
 		<option value="  - pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm">pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm</option>
 		<option value="  - pN0(mol+): Positive molecular findings (RT-PCR), but no ITCs detected">pN0(mol+): Positive molecular findings (RT-PCR), but no ITCs detected</option>
@@ -762,9 +784,9 @@ Non-essential elements are identified by "+" sign.</a>
 <br>
 
 <div id="footer">
-Last upated on 01-Jan-2021,<br>
+Last upated on 11-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Breast DCIS Resection 4.3.0.2 (Feb 2020).<br>
+Breast DCIS Resection 4.4.0.0 (June 2021).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

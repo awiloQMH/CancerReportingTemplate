@@ -160,6 +160,14 @@ if (frm.A33.value !== ""){
 	Template += "- Perineural invasion: " + frm.A33.value + "\n";
 }
 
+if (frm.A63.value !== ""){
+	Template += "- p16 immunohistochemisry: " + frm.A63.value + "\n";
+}
+
+if (frm.A64.value !== ""){
+	Template += "- p53 immunohistochemisry: " + frm.A64.value + "\n";
+}
+
 if (frm.A34.value !== ""){
 	Template +=  "\n" + "- Surgical margins, peripheral: "  + frm.A34.value + "\n" ;
 }
@@ -273,6 +281,7 @@ if (frm.A54.value !== ""){
 */
 if (document.getElementById("A56").checked || document.getElementById("A57").checked ||
 	document.getElementById("A57").checked || document.getElementById("A58").checked ||  
+	document.getElementById("A65").checked ||
 	document.getElementById("A59").checked || document.getElementById("A60").checked ||
 	frm.A61.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
@@ -284,6 +293,10 @@ if (document.getElementById("A56").checked){
 
 if (document.getElementById("A57").checked){
 	Template += frm.A57.value + "\n";
+}
+
+if (document.getElementById("A65").checked){
+	Template += frm.A65.value + "\n";
 }
 
 if (document.getElementById("A58").checked){
@@ -339,7 +352,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-femalereproductive-vulva-20-4101.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vulva_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Primary carcinoma of the vulva
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -439,30 +452,37 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- Histologic type:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vulva_4.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Histologic type (WHO 5e)</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A16">
 		<option value=""></option>
-		<option value="Squamous cell carcinoma, NOS">Squamous cell carcinoma, NOS</option>
-		<option value="Squamous cell carcinoma, keratinizing">Squamous cell carcinoma, keratinizing</option>
-		<option value="Squamous cell carcinoma, nonkeratinizing">Squamous cell carcinoma, nonkeratinizing</option>
-		<option value="Squamous cell carcinoma, basaloid">Squamous cell carcinoma, basaloid</option>	
-		<option value="Squamous cell carcinoma, verrucous">Squamous cell carcinoma, verrucous</option>
-		<option value="Squamous cell carcinoma, warty">Squamous cell carcinoma, warty</option>
-		<option value="Squamous cell carcinoma, papillary">Squamous cell carcinoma, papillary</option>
+		<option value="Squamous cell carcinoma, HPV-associated">Squamous cell carcinoma, HPV-associated</option>
+		<option value="Squamous cell carcinoma, HPV-independent">Squamous cell carcinoma, HPV-independent</option>
+
+		<option value="Basal cell carcinoma, NOS">Basal cell carcinoma, NOS</option>
+		<option value="Phyllodes tumor, borderline">Phyllodes tumor, borderline</option>
+		<option value="Phyllodes tumor, malignant">Phyllodes tumor, malignant</option>
 		<option value="Adenocarcinoma, NOS">Adenocarcinoma, NOS</option>
-		<option value="Adenocarcinoma, mammary gland type">Adenocarcinoma, mammary gland type</option>
-		<option value="Adenocarcinoma, skene gland type">Adenocarcinoma, skene gland type</option>
-		<option value="Adenocarcinoma, sweat gland type">Adenocarcinoma, sweat gland type</option>
+		<option value="Adenocarcinoma of anogenital mammary-like glands">Adenocarcinoma of anogenital mammary-like glands</option>
 		<option value="Adenocarcinoma, intestinal type">Adenocarcinoma, intestinal type</option>
-		<option value="Adenocarcinoma, with associated Paget disease">Adenocarcinoma, with associated Paget disease</option>
+		<option value="Paget disease, extramammary">Paget disease, extramammary</option>		
+		<option value="Sweat gland adenocarcinoma">Sweat gland adenocarcinoma</option>		
+		<option value="Apocrine adenocarcinoma">Apocrine adenocarcinoma</option>		
+		<option value="Eccrine adenocarcinoma ">Eccrine adenocarcinoma </option>
+		<option value="Porocarcinoma, NOS">Porocarcinoma, NOS</option>		
+		<option value="Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>
 		<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-		<option value="Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>	
-		<option value="Adenoid basal carcinoma">Adenoid basal carcinoma</option>	
+		<option value="Carcinoma, poorly differentiated, NOS">Carcinoma, poorly differentiated, NOS</option>	
 		<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
 		<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-		<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+		<option value="Combined small cell neuroendocrine carcinoma">Combined small cell neuroendocrine carcinoma</option>
+		<option value="Combined large cell neuroendocrine carcinoma">Combined large cell neuroendocrine carcinoma</option>
+		<option value="Neuroendocrine tumor, NOS">Neuroendocrine tumor, NOS</option>
+		<option value="Neuroendocrine tumor, grade 1">Neuroendocrine tumor, grade 1</option>
+		<option value="Neuroendocrine tumor, grade 2">Neuroendocrine tumor, grade 2</option>
+		<option value="Myoepithelial carcinoma">Myoepithelial carcinoma</option>
+		<option value="Epithelial-myoepithelial carcinoma">Epithelial-myoepithelial carcinoma</option>
 		<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
 		<option value="Other (specify):">Other (specify):</option>
 	</select>
@@ -479,8 +499,7 @@ table, th, td {
 		<option value="G1: Well differentiated">G1: Well differentiated</option>
 		<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
 		<option value="G3: Poorly differentiated">G3: Poorly differentiated</option>
-		<option value="G4: Undifferentiated">G4: Undifferentiated</option>	
-		<option value="GX: Undifferentiated">GX: Cannot be assessed</option>	
+		<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
 		<option value="Other (specify):">Other (specify):</option>
 		<option value="Not applicable">Not applicable</option>	
 	</select>
@@ -489,7 +508,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-femalereproductive-vulva-20-4101.pdf#page=9" target="_blank">Depth of invasion</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vulva_4.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Depth of invasion</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A18">
@@ -502,7 +521,7 @@ table, th, td {
 
 <tr>
 <td>
-<label > + <a href=".\cap\cp-femalereproductive-vulva-20-4101.pdf#page=10" target="_blank">Tumor border</a>:</label> 
+<label > + <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vulva_4.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">Tumor border</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A19">
@@ -535,7 +554,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-femalereproductive-vulva-20-4101.pdf#page=10" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vulva_4.2.0.0.REL_CAPCP.pdf#page=16" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A32">
@@ -560,6 +579,44 @@ table, th, td {
 	</select>
 </td>
 </tr>
+
+
+<tr>
+<td>
+<label > + <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vulva_4.2.0.0.REL_CAPCP.pdf#page=18" target="_blank">p16 IHC</a>: </label>
+</td>
+<td>
+	<select class="element select large" ID="A63">
+		<option value=""></option>
+		<option value="Positive">Positive</option>
+		<option value="Negative">Negatve</option>
+		<option value="Other (specify):">Other (specify):</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vulva_4.2.0.0.REL_CAPCP.pdf#page=18" target="_blank">p53 IHC</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A64">
+		<option value=""></option>
+		<option value="Normal (wild type)">Normal (wild type)</option>
+		<option value="Abnormal (mutated)">Abnormal (mutated)</option>
+		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression)</option>
+		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression))">Abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
+		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+	</select>
+</td>
+</tr>
+
+</table>
+</p>
+
+<p> 
+HPV-ISH is not available, PCR-sequencing type test can be ordered.
+</p>
 </table>
 </p>
 </fieldset>
@@ -851,8 +908,9 @@ structures<br><br>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label > + Additional pathologic findings: </label></legend>
 <p>
-	<input class="element checkbox" type="checkbox"  id="A56" value="  - Low-grade squamous intraepithelial lesion (VIN 1)"><label  class="choice">Low-grade squamous intraepithelial lesion (VIN 1)</label>
-	<input class="element checkbox" type="checkbox"  id="A57" value="  - High-grade squamous intraepithelial lesion (VIN 2-3)"><label  class="choice">High-grade squamous intraepithelial lesion (VIN 2-3)</label>
+	<input class="element checkbox" type="checkbox"  id="A56" value="  - Low grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 1 (VIN 1)"><label  class="choice">Low grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 1 (VIN 1)</label>
+	<input class="element checkbox" type="checkbox"  id="A57" value="  - High grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 2 (VIN 2)"><label  class="choice">High grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 2 (VIN 2)</label>
+	<input class="element checkbox" type="checkbox"  id="A65" value="  - High grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 2 (VIN 3)"><label  class="choice">High grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 3 (VIN 3)</label>
 	<input class="element checkbox" type="checkbox"  id="A58" value="  - Vulvar intraepithelial neoplasia, differentiated (simplex) type (dVIN)"><label  class="choice">Vulvar intraepithelial neoplasia, differentiated (simplex) type (dVIN)</label>
 	<input class="element checkbox" type="checkbox"  id="A59" value="  - Condyloma acuminatum"><label  class="choice">Condyloma acuminatum</label>
 	<input class="element checkbox" type="checkbox"  id="A60" value="  - Lichen sclerosus"><label  class="choice">Lichen sclerosus</label>
@@ -885,9 +943,9 @@ structures<br><br>
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 18-July-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-partially on Vulva 4.1.0.1 (Feb-2020) and ACS vulva cancer staging<br>
+partially on Vulva 4.2.0.0 (June 2021)<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

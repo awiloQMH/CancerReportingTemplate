@@ -57,8 +57,184 @@ if (frm.A10.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A10.value + "\n";
 }
 
-if (frm.A11.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A11.value + "\n";
+if (frm.A48.value !=="" || frm.A49.value !=="" || frm.A50.value !=="" ||
+    frm.A51.value !=="" || frm.A52.value !=="" || frm.A53.value !=="" || 
+	document.getElementById("A54").checked || document.getElementById("A55").checked ||  
+	document.getElementById("A56").checked || document.getElementById("A57").checked || 
+	document.getElementById("A58").checked || document.getElementById("A59").checked || 
+	document.getElementById("A60").checked || frm.A61.value !=="" ||
+	document.getElementById("A62").checked || frm.A63.value !==""){
+	Template += "- Histologic type: Epithelioid meosthelioma" + "\n";
+}
+
+if (frm.A48.value !=="" || frm.A49.value !=="" || frm.A50.value !=="" ||
+    frm.A51.value !=="" || frm.A52.value !=="" || frm.A53.value !=="" ){
+	Template += "  - Architecture: " + "\n";
+}
+
+if (frm.A48.value !== ""){
+	Template += "    - Tubulopapillary (%) :" + frm.A48.value + "\n";
+}
+
+if (frm.A49.value !== ""){
+	Template += "    - Trabecular (%) : " + frm.A49.value + "\n";
+}
+
+if (frm.A50.value !== ""){
+	Template += "    - Adenomatoid (%) : " + frm.A50.value + "\n";
+}
+
+if (frm.A51.value !== ""){
+	Template += "    - Solid (%) : " + frm.A51.value + "\n";
+}
+
+if (frm.A52.value !== ""){
+	Template += "    - Micropapillary (%) : " + frm.A52.value + "\n";
+}
+
+if (frm.A53.value !== ""){
+	Template += "    - Other (specifiy) (%) : " + frm.A53.value + "\n";
+}
+
+
+if (document.getElementById("A54").checked || document.getElementById("A55").checked ||  
+	document.getElementById("A56").checked || document.getElementById("A57").checked || 
+	document.getElementById("A58").checked || document.getElementById("A59").checked || 
+	document.getElementById("A60").checked || frm.A61.value !==""){
+	Template += "  - Cytological features: " + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += "    - " +  frm.A54.value + "\n";
+}
+
+if (document.getElementById("A55").checked){
+	Template += "    - " +  frm.A55.value + "\n";
+}
+
+if (document.getElementById("A56").checked){
+	Template += "    - " +  frm.A56.value + "\n";
+}
+
+if (document.getElementById("A57").checked){
+	Template += "    - " +  frm.A57.value + "\n";
+}
+
+if (document.getElementById("A58").checked){
+	Template += "    - " +  frm.A58.value + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += "    - " +  frm.A59.value + "\n";
+}
+
+if (document.getElementById("A60").checked){
+	Template += "    - " +  frm.A60.value + "\n";
+}
+
+if (frm.A61.value !== ""){
+	Template += "    - Other (specifiy) : " + frm.A61.value + "\n";
+}
+
+if (document.getElementById("A62").checked || frm.A63.value !==""){
+	Template += "  - Stromal features: " + "\n";
+}
+
+if (document.getElementById("A62").checked){
+	Template += "    - " +  frm.A62.value + "\n";
+}
+
+if (frm.A63.value !== ""){
+	Template += "    - Other (specifiy) : " + frm.A63.value + "\n";
+}
+
+if (document.getElementById("A64").checked || document.getElementById("A65").checked ||  
+	document.getElementById("A66").checked || frm.A67.value !=="" || 
+	document.getElementById("A68").checked || document.getElementById("A69").checked ||
+	frm.A70.value !==""){
+	Template += "- Histologic type: Sacromatoid meosthelioma" + "\n";
+}
+
+if (document.getElementById("A64").checked || document.getElementById("A65").checked ||  
+	document.getElementById("A66").checked || frm.A67.value !=="" ){
+	Template += "  - Cytological features: " + "\n";
+}
+
+if (document.getElementById("A64").checked){
+	Template += "    - " +  frm.A64.value + "\n";
+}
+
+if (document.getElementById("A65").checked){
+	Template += "    - " +  frm.A65.value + "\n";
+}
+
+if (document.getElementById("A66").checked){
+	Template += "    - " +  frm.A66.value + "\n";
+}
+
+if (frm.A67.value !== ""){
+	Template += "    - Other (specifiy) : " + frm.A67.value + "\n";
+}
+
+if (document.getElementById("A68").checked || document.getElementById("A69").checked ||
+	frm.A70.value !==""){
+	Template += "  - Stromal features: " + "\n";
+}
+
+if (document.getElementById("A68").checked){
+	Template += "    - " +  frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template += "    - " +  frm.A69.value + "\n";
+}
+
+if (frm.A70.value !== ""){
+	Template += "    - Other (specifiy) : " + frm.A70.value + "\n";
+}
+
+if (frm.A71.value !=="" || frm.A72.value !=="" ||frm.A73.value !==""){
+	Template += "- Histologic type: Biphasic meosthelioma" + "\n";
+}
+
+if (frm.A71.value !== ""){
+	Template += "  - Sacromatoid pattern (%) : " + frm.A71.value + "\n";
+}
+
+if (frm.A72.value !== ""){
+	Template += "  - Other (specifiy) : " + frm.A72.value + "\n";
+}
+
+if (frm.A73.value !== ""){
+	Template += "  - Cannot be determined : " + frm.A73.value + "\n";
+}
+
+if (frm.A74.value !== ""){
+	Template += "- Other histologic type: " + frm.A74.value + "\n";
+}
+
+if (frm.A75.value !== ""){
+	Template += "- Cannot be determined: " + frm.A75.value + "\n";
+}
+
+if (frm.A76.value !== ""){
+	Template += "- Histologic grade: " + frm.A76.value + "\n";
+}
+
+if (frm.A77.value !== ""){
+	Template += "  - Nuclear grade: " + frm.A77.value + "\n";
+}
+
+if (frm.A78.value !== ""){
+	Template += "    - Nuclear atypia score: " + frm.A78.value + "\n";
+}
+
+if (frm.A79.value !== ""){
+	Template += "    - Mitotic count score: " + frm.A80.value + "\n";
+}
+
+if (frm.A80.value !== ""){
+	Template += "  - Necrosis: " + frm.A80.value + "\n";
 }
 
 if (frm.A12.value !== ""){
@@ -266,8 +442,8 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-thorax-mesothelioma-17protocol-4001.pdf" target="_blank">
-		Malignant Pleural Mesothelioma
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\PleuraPericard_4.1.0.0.REL_CAPCP.pdf" target="_blank">
+		Malignant Pleural/Pericardial Mesothelioma
 		</a></h2>
 	</div>
 	
@@ -361,27 +537,312 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
-<p><label class="description">- Tumor histology and immunohistochemical studies: </label>
+<p><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\PleuraPericard_4.1.0.0.REL_CAPCP.pdf#page=10" target="_blank">Tumor histology and immunohistochemical studies</a>: </label>
  <textarea ID="A10" class="element textarea medium"></textarea>
 </p>
 
 <p>
 <table border="1"> 
+<col width="25%">
+<tr>
+<td rowspan="16">
+<label class="description">Epithelioid mesothelioma</label>
+</td>
+<td rowspan="6">
+<label class="">+ Architecture</label>
+</td>
+<td>
+Tubulopapillary (%): 
+</td>
+<td>
+<input type="text" class="element text large" ID="A48" size="20">
+</td>
+</tr>
+<tr>
+<td>
+Trabecular (%):
+</td>
+<td>
+<input type="text" class="element text large" ID="A49" size="20">
+</td>
+</tr>
+<tr>
+<td>
+Adenomatoid (%):
+</td>
+<td>
+<input type="text" class="element text large" ID="A50" size="20">
+</td>
+</tr>
+<tr>
+<td>
+Solid (%):
+</td>
+<td>
+<input type="text" class="element text large" ID="A51" size="20">
+</td>
+</tr>
+<tr>
+<td>
+Micropapillary (%):
+</td>
+<td>
+<input type="text" class="element text large" ID="A52" size="20">
+</td>
+</tr>
+<tr>
+<td>
+Other (specifiy) (%):
+</td>
+<td>
+<input type="text" class="element text large" ID="A53" size="20">
+</td>
+</tr>
+<tr>
+<td rowspan="8">
+<label class="">+ Cytological features</label>
+</td>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A54" value="Rhabdoid"><label  class="choice">Rhabdoid</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A55" value="Deciduoid"><label  class="choice">Deciduoid</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A56" value="Small cell"><label  class="choice">Small cell</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A57" value="Clear cell"><label  class="choice">Clear cell</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A58" value="Signet ring"><label  class="choice">Signet ring</label>
+</td>
+</tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A59" value="Lymphohistiocytoid"><label  class="choice">Lymphohistiocytoid</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A60" value="Pleomorphic"><label  class="choice">Pleomorphic</label>
+</td>
+</tr>
+<tr>
+<td>
+Other (specifiy):
+</td>
+<td>
+<input type="text" class="element text large" ID="A61" size="20">
+</td>
+</tr>
+<tr>
+<td rowspan="2">
++ Stromal features:
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A62" value="Myxoid predominant"><label  class="choice">Myxoid predominant</label>
+</td>
+</tr>
+<tr>
+<td>
+Other (specifiy):
+</td>
+<td>
+<input type="text" class="element text large" ID="A63" size="20">
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<table border="1"> 
+<col width="25%">
+<tr>
+<td rowspan="7">
+<label class="description">Sacromatoid mesothelioma</label>
+</td>
+<td rowspan="4">
+<label class="">+ Cytological features</label>
+</td>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A64" value=" Lymphohistiocytoid"><label  class="choice"> Lymphohistiocytoid</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A65" value="Transitional"><label  class="choice">Transitional</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A66" value="Pleomorphic"><label  class="choice">Pleomorphic</label>
+</td>
+</tr>
+<tr>
+<td>
+Other (specifiy):
+</td>
+<td>
+<input type="text" class="element text large" ID="A67" size="25">
+</td>
+</tr>
+<tr>
+<td rowspan="3">
++ Stromal features:
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A68" value="Desmoplastic"><label  class="choice">Desmoplastic</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input class="element checkbox" type="checkbox" id="A69" value="With heterologous differentiation"><label  class="choice">With heterologous differentiation</label>
+</td>
+</tr>
+<tr>
+<td>
+Other (specifiy):
+</td>
+<td>
+<input type="text" class="element text large" ID="A70" size="25">
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<table border="1"> 
+<col width="25%">
+<tr>
+<td rowspan="3">
+<label class="description">Biphasic mesothelioma</label>
+</td>
+<td>
+<label class="description">Sacromatoid pattern (%)</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A71" size="35">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">Other (specify):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A72" size="35">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">Cannot be determined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A73" size="35">
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<table border="1">
 <col width="60%">
+<tr>
+<td>
+<label class="description">- Other histologic type not listed (specify):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A74" size="30">
+</td>
+</tr>
 
 <tr>
-<td><label class="description">- Histologic type:</label> 
+<td>
+<label class="description">- Cannot be determined (explain):</label>
 </td>
-<td><select class="element select large" ID="A11">
+<td>
+<input type="text" class="element text large" ID="A75" size="30">
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<table border="1"> 
+<col width="20%">
+<tr>
+<td rowspan="5" valign="top">
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\PleuraPericard_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic Grade</a>: </label></td>
+<td colspan="3">
+<select class="element select large" ID="A76">
 	<option value=""></option>
-	<option value="Epithelioid mesothelioma">Epithelioid mesothelioma</option>
-	<option value="Sarcomatoid mesothelioma">Sarcomatoid mesothelioma</option>
-	<option value="Biphasic mesothelioma">Biphasic mesothelioma</option>
-	<option value="Desmoplastic mesothelioma">Desmoplastic mesothelioma</option>
-	<option value="Other histologic type not listed (specify): ">Other histologic type not listed (specify): </option>
+	<option value="Low grade (nuclear grades 1 and 2 without necrosis)">Low grade (nuclear grades 1 and 2 without necrosis)</option>
+	<option value=" High grade (nuclear grade 2 with necrosis, or nuclear grade 3 with or without necrosis)"> High grade (nuclear grade 2 with necrosis, or nuclear grade 3 with or without necrosis)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td rowspan="3"  valign="top">
+<label class="">Nuclear Grade: </label></td>
+<td  colspan="2">
+<select class="element select large" ID="A77">
+	<option value=""></option>
+	<option value="1 (sum score of 2 or 3)">1 (sum score of 2 or 3)</option>
+	<option value="2 (sum score of 4 or 5)">2 (sum score of 4 or 5)</option>
+	<option value="3 (sum score of 6)">3 (sum score of 6)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+
+
+<tr>
+<td><label class="">Nuclear Atypia Score: </label></td>
+<td><select class="element select large" ID="A78">
+	<option value=""></option>
+	<option value="1 (mild)">1 (mild)</option>
+	<option value="2 (moderate)">2 (moderate)</option>
+	<option value="3 (severe)">3 (severe)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select></td>
 </tr>
 
+<tr>
+<td><label class="">Mitotic Count Score: </label></td>
+<td>
+<select class="element select large" ID="A79">
+    <option value=""></option>
+	<option value="1 (low, up to 1 mitosis per 2 mm2)">1 (low, up to 1 mitosis per 2 mm2)</option>
+	<option value="2 (intermediate, 2 to 4 mitoses per 2 mm2)">2 (intermediate, 2 to 4 mitoses per 2 mm2)</option>
+	<option value="3 (high, 5 or more mitoses per 2 mm2)">3 (high, 5 or more mitoses per 2 mm2)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="">Necrosis: </label></td>
+<td  colspan="2">
+<select class="element select large" ID="A80">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
+</table>
+</p>
+
+<p>
+<table border="1"> 
+<col width="60%">
 <tr>
 <td><label class="">+ Lymphovascular invasion: </label></td>
 <td><select class="element select large" ID="A12">
@@ -404,7 +865,7 @@ table, th, td {
 
 
 <tr>
-<td><label class="">+ Treatment effect: </label></td>
+<td><label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\PleuraPericard_4.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Treatment effect</a>: </label></td>
 <td><select class="element select large" ID="A14">
 	<option value=""></option>
 	<option value="No known presurgical therapy">No known presurgical therapy</option>
@@ -417,7 +878,7 @@ table, th, td {
 </p>
 
 <p>
-<label class="description">- Tumor extension:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\PleuraPericard_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Tumor extension</a>:</label>
 		<input class="element checkbox" type="checkbox" id="A15" value="No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 		<input class="element checkbox" type="checkbox" id="A16" value="Tumor limited to parietal pleura without involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura"><label  class="choice">Tumor limited to parietal pleura without involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura</label>
 		<input class="element checkbox" type="checkbox" id="A17" value="Tumor limited to parietal pleura with focal involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura"><label  class="choice">Tumor limited to parietal pleura with focal involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura</label>
@@ -514,7 +975,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-thorax-mesothelioma-17protocol-4001.pdf#page=7" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>	
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\PleuraPericard_4.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>	
 
 <p>
 <table border="1">
@@ -530,7 +991,7 @@ table, th, td {
 <td><label class="description">- Primary tumor (pT):</label></td>
 <td><select class="element select large" ID="A38">
 	<option value=""></option>
-	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="pT not assigned (cannot be determined based on available pathological information) ">pT not assigned (cannot be determined based on available pathological information) </option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="pT1: Tumor limited to the ipsilateral parietal pleura with or without involvement of visceral pleura, mediastinal pleura or diaphragmatic pleura">pT1: pT1: Tumor limited to the ipsilateral parietal pleura with or without involvement of visceral pleura, mediastinal pleura or diaphragmatic pleura</option>
 	<option value="pT2: Tumor involving each of the ipsilateral pleural surfaces (parietal, mediastinal, diaphragmatic, and visceral pleura) with involvement of diaphragmatic muscle or extension of tumor from visceral pleura into the underlying pulmonary parenchyma">pT2: Tumor involving each of the ipsilateral pleural surfaces (parietal, mediastinal, diaphragmatic, and visceral pleura) with involvement of diaphragmatic muscle or extension of tumor from visceral pleura into the underlying pulmonary parenchyma</option>
@@ -543,7 +1004,8 @@ table, th, td {
 <td><label class="description">- Regional lymph nodes (pN): </label></td>
 <td><select class="element select large" ID="A39">
 	<option value=""></option>
-	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="pN1:Metastases in the ipsilateral bronchopulmonary hilar or mediastinal (including the internal mammary, peridiaphragmatic, pericardial fat pad, or intercostal) lymph nodes">pN1: Metastases in the ipsilateral bronchopulmonary hilar or mediastinal (including the internal mammary, peridiaphragmatic, pericardial fat pad, or intercostal) lymph nodes</option>
 	<option value="pN2: Metastases in the contralateral mediastinal, ipsilateral, or contralateral supraclavicular lymph nodes">pN2: Metastases in the contralateral mediastinal, ipsilateral, or contralateral supraclavicular lymph nodes </option>
@@ -603,9 +1065,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021, <br>
+Last upated on 12-Jul-2021, <br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Mesothelioma 4.0.0.1 (June 2017), <br>
+Malignant Pleural Mesothelioma 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

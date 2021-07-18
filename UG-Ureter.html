@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-/*
+
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + "   - " + frm.A01.value + "\n";
 }
@@ -27,48 +27,13 @@ if (frm.A03.value !== ""){
 if (frm.A04.value !== ""){
 	Template += "- Tumor size: " + "\n" + "  - "+ frm.A04.value + "\n";
 }
-*/
+
 if (frm.A05.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value !== ""){
 	Template += "\n" + "- Histologic type: " + frm.A06.value + "\n";
-}
-
-if (document.getElementById("A07").checked ||
-	document.getElementById("A08").checked || document.getElementById("A09").checked ||
-	document.getElementById("A10").checked || document.getElementById("A11").checked ||
-	document.getElementById("A12").checked || document.getElementById("A13").checked){
-	Template += "- Associated epithelial lesions: " + "\n";
-}
-
-if (document.getElementById("A07").checked){
-	Template += frm.A07.value + "\n";
-}
-
-if (document.getElementById("A08").checked){
-	Template += frm.A08.value + "\n";
-}
-
-if (document.getElementById("A09").checked){
-	Template += frm.A09.value + "\n";
-}
-
-if (document.getElementById("A10").checked){
-	Template += frm.A10.value + "\n";
-}
-
-if (document.getElementById("A11").checked){
-	Template += frm.A11.value + "\n";
-}
-
-if (document.getElementById("A12").checked){
-	Template += frm.A12.value + "\n";
-}
-
-if (document.getElementById("A13").checked){
-	Template += frm.A13.value + "\n";
 }
 
 if (frm.A14.value !== ""){
@@ -277,6 +242,41 @@ if (frm.A54.value !== ""){
 	Template += "  - " +  frm.A54.value + "\n";
 }
 
+if (document.getElementById("A07").checked ||
+	document.getElementById("A08").checked || document.getElementById("A09").checked ||
+	document.getElementById("A10").checked || document.getElementById("A11").checked ||
+	document.getElementById("A12").checked || document.getElementById("A13").checked){
+	Template += "- Associated epithelial lesions: " + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += frm.A11.value + "\n";
+}
+
+if (document.getElementById("A12").checked){
+	Template += frm.A12.value + "\n";
+}
+
+if (document.getElementById("A13").checked){
+	Template += frm.A13.value + "\n";
+}
+
 if (document.getElementById("A48A").checked || document.getElementById("A49A").checked ||
 	document.getElementById("A50A").checked || document.getElementById("A51A").checked ||
 	document.getElementById("A52A").checked || document.getElementById("A53A").checked ||
@@ -346,7 +346,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the ureter and renal pelvis
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -356,10 +356,14 @@ table, th, td {
 	</div>
 	
 <form>
-<!--
+
+<p>
+There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis.Bx_2.2.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a> for biopsy specimens.
+</p>
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description">Gross descriptions:</label></legend>
+	<legend><label class="description">Gross core data elements:</label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -428,7 +432,7 @@ table, th, td {
 </p>
 </fieldset>
 </p>
--->
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
@@ -441,7 +445,7 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf#page=8" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A06">
@@ -483,23 +487,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td valign="top">
-<label class="">+ Associated epithelial lesions:</label> 
-</td>
 <td>
-<input class="element checkbox" type="checkbox"  id="A07" value="  - None identified"><label  class="choice">None identified</label>
-<input class="element checkbox" type="checkbox"  id="A08" value="  - Urothelial papilloma"><label  class="choice">Urothelial papilloma</label>
-<input class="element checkbox" type="checkbox"  id="A09" value="  - Urothelial papilloma, inverted type"><label  class="choice">Urothelial papilloma, inverted type</label>
-<input class="element checkbox" type="checkbox"  id="A10" value="  - Papillary urothelial neoplasm, low malignant potential (PUNLMP)"><label  class="choice">Papillary urothelial neoplasm, low malignant potential (PUNLMP)</label>
-<input class="element checkbox" type="checkbox"  id="A11" value="  - Urothelial proliferation of uncertain malignant potential"><label  class="choice">Urothelial proliferation of uncertain malignant potential</label>
-<input class="element checkbox" type="checkbox"  id="A12" value="  - Urothelial dysplasia"><label  class="choice">Urothelial dysplasia</label>
-<input class="element checkbox" type="checkbox"  id="A13" value="  - Cannot be assessed (explain):"><label  class="choice">Cannot be assessed (explain):</label>
-</td>
-</tr>
-
-<tr>
-<td>
-<label class="description">- <a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf#page=10" target="_blank">Histologic grade for urothelial carcinoima</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic grade for urothelial carcinoima</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A14">
@@ -513,7 +502,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf#page=10" target="_blank">Histologic grade for SCC or adenoCA</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic grade for SCC or adenoCA</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A15">
@@ -545,7 +534,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="">+ <a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf#page=11" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A22">
@@ -573,8 +562,7 @@ table, th, td {
 </table>
 </p>
 
-<p><label class="description">- <a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf#page=10" target="_blank">Tumor extension </a>:</label> 
-<input class="element checkbox" type="checkbox"  id="A24" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
+<p><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=13" target="_blank">Tumor extension </a>:</label> 
 <input class="element checkbox" type="checkbox"  id="A25" value="  - Noninvasive papillary carcinoma"><label  class="choice">Noninvasive papillary carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A26" value="  - Carcinoma in situ"><label class="choice" >Carcinoma in situ</label>
 <input class="element checkbox" type="checkbox"  id="A27" value="  - Tumor invades subepithelial connective tissue"><label  class="choice">Tumor invades subepithelial connective tissue</label>
@@ -582,6 +570,7 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A29" value="  - Tumor invades beyond muscularis into periureteral fat or peripelvic fat or the renal parenchyma"><label  class="choice">Tumor invades beyond muscularis into periureteral fat or peripelvic fat or the renal parenchyma</label>
 <input class="element checkbox" type="checkbox"  id="A30" value="  - Tumor invades adjacent organs, or through the kidney into the perinephric fat"><label class="choice" >Tumor invades adjacent organs, or through the kidney into the perinephric fat</label>
 <input class="element checkbox" type="checkbox"  id="A31" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
+<input class="element checkbox" type="checkbox"  id="A24" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </p>
 </fieldset>
 </p>
@@ -666,7 +655,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf#page=11" target="_blank">Regional lymph nodes</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Regional lymph nodes</a>: </label></legend>
 
 <p>
 <table border="1">
@@ -727,7 +716,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -750,7 +739,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A44">
 	<option value=""></option>
-	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="pTa: Non-invasive papillary carcinoma">pTa: Non-invasive papillary carcinoma</option>
 	<option value="pTis: Carcinoma in situ">pTis: Carcinoma in situ</option>
@@ -770,7 +759,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A45">
 	<option value=""></option>
-	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="pN1: Metastasis < or = 2 cm in greatest dimension, in a single lymph node">pN1: Metastasis < or = 2 cm in greatest dimension, in a single lymph node</option>
 	<option value="pN2: Metastasis > 2 cm, in a single lymph node; or multiple lymph nodes">pN2: Metastasis > 2 cm, in a single lymph node; or multiple lymph nodes</option>
@@ -785,6 +775,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A46">
 	<option value=""></option>
+	<option value="Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
 </td>
@@ -816,13 +807,32 @@ table, th, td {
 <p>- Other (specify):
 <input type="text" class="element text medium" ID="A54" size="35">
 </p>
-<br>
+
+<p>
+<table border="1">
+<col width="50%">
+<tr>
+<td valign="top">
+<label class="">+ Associated epithelial lesions:</label> 
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A07" value="  - None identified"><label  class="choice">None identified</label>
+<input class="element checkbox" type="checkbox"  id="A08" value="  - Urothelial papilloma"><label  class="choice">Urothelial papilloma</label>
+<input class="element checkbox" type="checkbox"  id="A09" value="  - Urothelial papilloma, inverted type"><label  class="choice">Urothelial papilloma, inverted type</label>
+<input class="element checkbox" type="checkbox"  id="A10" value="  - Papillary urothelial neoplasm, low malignant potential (PUNLMP)"><label  class="choice">Papillary urothelial neoplasm, low malignant potential (PUNLMP)</label>
+<input class="element checkbox" type="checkbox"  id="A11" value="  - Urothelial proliferation of uncertain malignant potential"><label  class="choice">Urothelial proliferation of uncertain malignant potential</label>
+<input class="element checkbox" type="checkbox"  id="A12" value="  - Urothelial dysplasia"><label  class="choice">Urothelial dysplasia</label>
+<input class="element checkbox" type="checkbox"  id="A13" value="  - Cannot be assessed (explain):"><label  class="choice">Cannot be assessed (explain):</label>
+</td>
+</tr>
+</table>
+</p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-urinary-ureterrenalpelvis-resection-19-2100.pdf#page=13" target="_blank">Pathologic Findings in ipsilateral nonneoplastic renal tissue</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=17" target="_blank">Pathologic Findings in ipsilateral nonneoplastic renal tissue</a>: </label></legend>
 
 <p>
 <input class="element checkbox" type="checkbox"  id="A48A" value="  - No or insufficient renal parenchyma"><label  class="choice">No or insufficient renal parenchyma</label>
@@ -835,7 +845,7 @@ table, th, td {
 <p>- Other (specify):
 <input type="text" class="element text medium" ID="A54A" size="35">
 </p>
-<br>
+
 </fieldset>
 </p>
 
@@ -859,9 +869,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 16-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Ureter and Renal Pelvis Resection 2.1.0.0 (August 2019), <br>
+Ureter and Renal Pelvis Resection 2.2.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

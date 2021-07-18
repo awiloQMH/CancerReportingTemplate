@@ -104,6 +104,14 @@ if (frm.A20.value !== ""){
 	Template += "- Perineural invasion: " + frm.A20.value + "\n";
 }
 
+if (frm.A48.value !== ""){
+	Template += "- p16 immunohistochemisry: " + frm.A48.value + "\n";
+}
+
+if (frm.A49.value !== ""){
+	Template += "- p53 immunohistochemisry: " + frm.A49.value + "\n";
+}
+
 if (frm.A21.value !== ""){
 	Template +=  "\n" + "- Surgical margins, peripheral: " + frm.A21.value + "\n" ;
 }
@@ -202,6 +210,7 @@ if (frm.A38.value !== ""){
 }
 */
 if (document.getElementById("A40").checked || document.getElementById("A41").checked ||
+	document.getElementById("A47").checked ||
 	document.getElementById("A42").checked || document.getElementById("A43").checked ||
 	document.getElementById("A44").checked || frm.A45.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
@@ -213,6 +222,10 @@ if (document.getElementById("A40").checked){
 
 if (document.getElementById("A41").checked){
 	Template += frm.A41.value + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += frm.A47.value + "\n";
 }
 
 if (document.getElementById("A42").checked){
@@ -265,7 +278,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-femalereproductive-vagina-resection-20-4201.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vagina_4.3.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Primary Carcinoma of the Vagina
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -273,7 +286,7 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\cp-femalereproductive-vagina-biopsy-19-42000.pdf" target="_blank">biopsy specimen of vagina</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\VVagina.Bx_4.3.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen of vagina</a>.</p>
 <!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -340,20 +353,20 @@ table, th, td {
 <col width="60%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-femalereproductive-vagina-resection-20-4201.pdf#page=7" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vagina_4.3.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic type</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A08">
 		<option value=""></option>
+		<option value="Squamous cell carcinoma, HPV-assocated">Squamous cell carcinoma, HPV-assocated</option>
+		<option value="Squamous cell carcinoma, HPV-independen">Squamous cell carcinoma, HPV-independen</option>
 		<option value="Squamous cell carcinoma, NOS">Squamous cell carcinoma, NOS</option>
-		<option value="Squamous cell carcinoma, keratinizing">Squamous cell carcinoma, keratinizing</option>
-		<option value="Squamous cell carcinoma, nonkeratinizing">Squamous cell carcinoma, nonkeratinizing</option>
-		<option value="Squamous cell carcinoma, basaloid">Squamous cell carcinoma, basaloid</option>	
-		<option value="Squamous cell carcinoma, verrucous">Squamous cell carcinoma, verrucous</option>
-		<option value="Squamous cell carcinoma, warty">Squamous cell carcinoma, warty</option>
-		<option value="Squamous cell carcinoma, papillary">Squamous cell carcinoma, papillary</option>
 		<option value="Adenocarcinoma, NOS">Adenocarcinoma, NOS</option>
+		<option value="Adenocarcinoma, HPV-associated">Adenocarcinoma, HPV-associated</option>
+		<option value="Adenocarcinoma,  Skene, Cowper and Littre gland origin">Adenocarcinoma,  Skene, Cowper and Littre gland origin</option>
 		<option value="Mucinous carcinoma, NOS">Mucinous carcinoma, NOS</option>	
+		<option value="Mucinous carcinoma, gastric type">Mucinous carcinoma, gastric type</option>	
+		<option value="Mucinous carcinoma, intestinal type">Mucinous carcinoma, intestinal type</option>	
 		<option value="Endometrioid carcinoma">Endometrioid carcinoma</option>
 		<option value="Clear cell carcinoma">Clear cell carcinoma</option>
 		<option value="Mesonephric carcinoma">Mesonephric carcinoma</option>
@@ -361,8 +374,14 @@ table, th, td {
 		<option value="Adenoid basal carcinoma">Adenoid basal carcinoma</option>	
 		<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
 		<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
+		<option value="Combined small cell neuroendocrine carcinoma">Combined small cell neuroendocrine carcinoma</option>
+		<option value="Combined large cell neuroendocrine carcinoma">Combined large cell neuroendocrine carcinoma</option>
+		<option value="Neuroendocrine tumor, NOS">Neuroendocrine tumor, NOS</option>
 		<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+		<option value="Mixed tumor NOS">Mixed tumor NOS</option>
 		<option value="Carcinosarcoma">Carcinosarcoma</option>
+		<option value="Adenosarcoma">Adenosarcoma</option>
+		<option value=" Germ cell tumor (specify):"> Germ cell tumor (specify):</option>
 		<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
 		<option value="Other (specify):">Other (specify):</option>
 	</select>
@@ -371,7 +390,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-femalereproductive-vagina-resection-20-4201.pdf#page=8" target="_blank">Histologic grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Vagina_4.3.0.0.REL_CAPCP.pdf#page=14" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A09">
@@ -431,7 +450,42 @@ table, th, td {
 	</select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label > + p16 IHC: </label>
+</td>
+<td>
+	<select class="element select large" ID="A48">
+		<option value=""></option>
+		<option value="Positive">Positive</option>
+		<option value="Negative">Negatve</option>
+		<option value="Other (specify):">Other (specify):</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="">+ p53 IHC:</label>
+</td>
+<td>
+	<select class="element select large" ID="A49">
+		<option value=""></option>
+		<option value="Normal (wild type)">Normal (wild type)</option>
+		<option value="Abnormal (mutated)">Abnormal (mutated)</option>
+		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression)</option>
+		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression))">Abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
+		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+	</select>
+</td>
+</tr>
+
 </table>
+</p>
+
+<p> 
+HPV-ISH is not available, PCR-sequencing type test can be ordered.
 </p>
 </fieldset>
 </p>
@@ -669,8 +723,9 @@ nearby structures or organs (Any T) It might or might not have spread to nearby 
 	<legend> <label > + Additional pathologic findings: </label></legend>
 
 <p>
-<input class="element checkbox" type="checkbox"  id="A40" value="  - Low-grade squamous intraepithelial lesion (VAIN 1)"><label  class="choice">Low-grade squamous intraepithelial lesion (VAIN 1)</label>
-<input class="element checkbox" type="checkbox"  id="A41" value="  - High-grade squamous intraepithelial lesion (VAIN 2-3)"><label  class="choice">High-grade squamous intraepithelial lesion (VAIN 2-3)</label>
+<input class="element checkbox" type="checkbox"  id="A40" value="  - Low grade squamous intraepithelial lesion / vaginal intraepithelial neoplasia, grade 1 (VAIN 1)"><label  class="choice">Low grade squamous intraepithelial lesion / vaginal intraepithelial neoplasia, grade 1(VaIN 1)</label>
+<input class="element checkbox" type="checkbox"  id="A41" value="  - High grade squamous intraepithelial lesion / vaginal intraepithelial neoplasia, grade 2 (VaIN 2)"><label  class="choice">High grade squamous intraepithelial lesion / vaginal intraepithelial neoplasia, grade 2 (VaIN 2)</label>
+<input class="element checkbox" type="checkbox"  id="A47" value="  - High grade squamous intraepithelial lesion / vaginal intraepithelial neoplasia, grade 3 (VaIN 3)"><label  class="choice">High grade squamous intraepithelial lesion / vaginal intraepithelial neoplasia, grade 3 (VaIN 3)</label>
 <input class="element checkbox" type="checkbox"  id="A42" value="  - Condyloma acuminatum"><label  class="choice">Condyloma acuminatum</label>
 <input class="element checkbox" type="checkbox"  id="A43" value="  - Adenocarcinoma in situ (AIS)"><label  class="choice">Adenocarcinoma in situ (AIS)</label>
 <input class="element checkbox" type="checkbox"  id="A44" value="  - Atypical adenosis"><label  class="choice">Atypical adenosis</label>
@@ -705,9 +760,9 @@ nearby structures or organs (Any T) It might or might not have spread to nearby 
 <br>
 
 <div id="footer">
-Last upated 02-Jan-2021,<br>
+Last upated 18-Jul-2021,<br>
 modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Vagina Resection 4.2.0.1 (Feb-2020), <br>
+Vagina Resection 4.3.0.0 (June 2021), <br>
 html form and cascade style sheet were created basing on <a href="http://www.phpform.org">pForm</a>,<br>
 with codes modified from <a href="https://www.w3schools.com/">W3 School tutorials</a> and <a href="https://stackoverflow.com/">Stack Overflow</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.</div>

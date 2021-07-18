@@ -151,6 +151,10 @@ if (frm.A30.value !== ""){
 	Template += "- Histologic grade: " + frm.A30.value + "\n";
 }
 
+if (frm.A91.value !== ""){
+	Template += "- Two-Tier Grading System (for endometrioid carcinomas only): " + frm.A91.value + "\n";
+}
+
 if (frm.A31.value !== ""){
 	Template += "- Myometrial invasion: " + frm.A31.value + "\n";
 }
@@ -181,6 +185,14 @@ if (frm.A37.value !== ""){
 
 if (frm.A38.value !== ""){
 	Template += "- Cervical stromal involvement: " + frm.A38.value + "\n";
+}
+
+if (frm.A92.value !== ""){
+	Template += "  - Depth of cervical stromal invasion: " + frm.A92.value + "\n";
+}
+
+if (frm.A93.value !== ""){
+	Template += "  - Cervical stromal thickness: " + frm.A93.value + "\n";
 }
 
 if (document.getElementById("A39").checked || document.getElementById("A40").checked ||
@@ -462,7 +474,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Carcinoma and carcinosarcoma of the endometrium
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -554,26 +566,29 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf#page=9" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=16" target="_blank">Histologic type (WHO 5e)</a>:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A29">
 		<option value=""></option>
 		<option value="Endometrioid carcinoma, NOS">Endometrioid carcinoma, NOS</option>
-		<option value="Endometrioid carcinoma with squamous differentiation">Endometrioid carcinoma with squamous differentiation</option>
-		<option value="Endometrioid carcinoma, villoglandular variant">Endometrioid carcinoma, villoglandular variant</option>
-		<option value="Endometrioid carcinoma with secretory differentiation">Endometrioid carcinoma with secretory differentiation</option>	
-		<option value="Endometrioid carcinoma, other variant (specify):">Endometrioid carcinoma, other variant (specify):</option>
+		<option value="Endometrioid carcinoma, POLE-ultramutated endometrioid carcinoma">Endometrioid carcinoma, POLE-ultramutated endometrioid carcinoma</option>
+		<option value="Endometrioid carcinoma, Mismatch repair–deficient endometrioid carcinoma">Endometrioid carcinoma, Mismatch repair–deficient endometrioid carcinoma</option>
+		<option value="Endometrioid carcinoma, p53-mutant endometrioid carcinoma">Endometrioid carcinoma, p53-mutant endometrioid carcinoma</option>	
+		<option value="Endometrioid carcinoma, no specific molecular profile (NSMP) endometrioid carcinoma">Endometrioid carcinoma, no specific molecular profile (NSMP) endometrioid carcinoma</option>
 		<option value="Serous endometrial intraepithelial carcinoma">Serous endometrial intraepithelial carcinoma</option>
 		<option value="Serous carcinoma">Serous carcinoma</option>
 		<option value="Carcinosarcoma (malignant mixed Mullerian tumor)">Carcinosarcoma (malignant mixed Mullerian tumor)</option>
-		<option value="Mucinous carcinoma">Mucinous carcinoma</option>	
+		<option value="Mucinous carcinoma, intestinal type">Mucinous carcinoma, intestinal type</option>	
 		<option value="Clear cell carcinoma">Clear cell carcinoma</option>
 		<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
 		<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 		<option value="Mixed cell carcinoma (specify types and percentages):">Mixed cell carcinoma (specify types and percentages):</option>
-		<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>	
 		<option value="Dedifferentiated carcinoma">Dedifferentiated carcinoma</option>
+		<option value="Undifferentiated carcinoma, NOS">Undifferentiated carcinoma, NOS</option>	
+		<option value="Mesonephric adenocarcinoma">Mesonephric adenocarcinoma</option>	
+		<option value="Squamous cell carcinoma, NOS">Squamous cell carcinoma, NOS</option>	
+		<option value="Mesonephric-like adenocarcinoma">Mesonephric-like adenocarcinoma</option>	
 		<option value="Other (specify):">Other (specify):</option>
 	</select>
 </td>
@@ -581,7 +596,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf#page=10" target="_blank">Histologic grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=18" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A30">
@@ -596,8 +611,23 @@ table, th, td {
 </tr>
 
 <tr>
+<td>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=18" target="_blank">Two-Tier Grading System</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A91">
+		<option value=""></option>
+		<option value="Low grade (encompassing FIGO 1 and 2)">Low grade (encompassing FIGO 1 and 2)</option>
+		<option value="High grade (FIGO 3)">High grade (FIGO 3)</option>
+		<option value="Other (specify):">Other (specify):</option>
+		<option value="Cannot be assessed">Cannot be assessed</option>	
+	</select>
+</td>
+</tr>
+
+<tr>
 <td rowspan="4" valign="top">
-<label class="description">- <a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf#page=10" target="_blank">Myometrial invasion</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=19" target="_blank">Myometrial invasion</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A31">
@@ -658,7 +688,7 @@ table, th, td {
 
 <tr>
 <td>
-<label >- + <a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf#page=11" target="_blank">Lower uterine segment involvement</a>: </label>
+<label >- + <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=19" target="_blank">Lower uterine segment involvement</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A37">
@@ -672,8 +702,8 @@ table, th, td {
 </tr>
 
 <tr>
-<td>
-<label class="description">- <a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf#page=9" target="_blank">Cervical stromal involvement</a>: </label>
+<td valign="top" rowspan="3">
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=20" target="_blank">Cervical stromal involvement</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A38">
@@ -686,14 +716,31 @@ table, th, td {
 </tr>
 
 <tr>
+<td  align="right">
+<label class="">+ Depth of Cervical Stroma Invasion:</label>
+<input type="text" class="element text small" ID="A92" size="10">
+</td>
+</tr>
+
+<tr>
+<td  align="right">
+<label class="">+ Cervical Stroma Thickness:</label>
+<input type="text" class="element text small" ID="A93" size="10">
+</td>
+</tr>
+
+<tr>
 <td>
-<label class="description">- <a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf#page=12" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=20" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A59">
 		<option value=""></option>
 		<option value="Not identified">Not identified</option>
 		<option value="Present">Present</option>
+		<option value="Present, Low (less than 3 vessel involvement) (specify location, if possible):">Present, Low (less than 3 vessel involvement) (specify location, if possible):</option>
+		<option value="Present, Extensive (greater than or equal to 3 vessel involvement) (specify location, if possible):">Present, Extensive (greater than or equal to 3 vessel involvement) (specify location, if possible):</option>
+		<option value="Equivocal (explain):">Equivocal (explain):</option>
 		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
 </td>
@@ -715,14 +762,15 @@ table, th, td {
 
 <tr>
 <td>
-<label > + <a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf#page=12" target="_blank">Peritoneal/ascitic fluid</a>: </label>
+<label > + <a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=20" target="_blank">Peritoneal/ascitic fluid</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A61">
 		<option value=""></option>
 		<option value="Not submitted/ unknown">Not submitted/ unknown</option>
 		<option value="Negative for malignancy (normal/benign)">Negative for malignancy (normal/benign)</option>
-		<option value="Atypical and/or suspicious (explain):">Atypical and/or suspicious (explain):</option>
+		<option value="Atypical (explain):">Atypical (explain):</option>
+		<option value="Suspicious (explain):">Suspicious (explain):</option>
 		<option value="Malignant (positive for malignancy)">Malignant (positive for malignancy)</option>
 		<option value="Unsatisfactory/nondiagnostic (explain):">Unsatisfactory/nondiagnostic (explain):</option>
 		<option value="Results pending">Results pending</option>
@@ -760,7 +808,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\cp-femalereproductive-endometrium-20-4102.pdf#page=12" target="_blank">Surgical margins of excision specimen</a>: </label></legend>
+<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Gynecologic-Protocol-Folder\Uterus Endo_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Surgical margins of excision specimen</a>: </label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -1151,9 +1199,9 @@ IV: 	Tumor invades bladder and/or bowel mucosa, and/or distant metastases<br><br
 <br>
 
 <div id="footer">
-Last upated on 10-Dec-2020,<br>
+Last upated on 18-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Endometrium 4.1.0.2 (Feb-2020) <br>
+Endometrium 4.2.0.0 (June 2021) <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

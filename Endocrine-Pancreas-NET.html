@@ -44,6 +44,14 @@ if (frm.A08.value !== ""){
 	Template += "  - Ki-67 labeling index: " + frm.A08.value + "\n";
 }
 
+if (frm.A03.value !== ""){
+	Template += "- Tumor size: " + "\n" + "  - "+ frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Tumor focality: " + "\n" + "  - "+ frm.A04.value + "\n";
+}
+
 if (frm.A09.value !== ""){
 	Template += "- Functional type: " + frm.A09.value + "\n" ;
 }
@@ -275,7 +283,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Endocrine pancreas tumor
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -370,7 +378,7 @@ table, th, td {
 <col width="40%">
 <tr>
 <td rowspan="3" valign="top">
-<label class="description">- <a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=9" target="_blank">Histologic type and grade</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type and grade</a>:</label> 
 Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup>.
 </td>
 <td>
@@ -388,7 +396,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <tr>
 <td align="right">
-<label">- <a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=11" target="_blank">Mitotic rate</a>:</label>
+<label">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Mitotic rate</a>:</label>
 <select class="element select medium" ID="A07">
 	<option value=""></option>
 	<option value="< 2 mitoses/2 mm2"> < 2 mitoses/2 mm2</option>
@@ -402,7 +410,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <tr>
 <td align="right">
-<label>- <a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=11" target="_blank">Ki-67 labeling index</a>:</label>
+<label>- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Ki-67 labeling index</a>:</label>
 <select class="element select medium" ID="A08">
 	<option value=""></option>
 	<option value="< 3%">< 3%</option>
@@ -416,7 +424,35 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <tr>
 <td>
-<label > + <a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=12" target="_blank">Functional type</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Tumor size</a>:</label> 
+</td>
+<td>
+<select class="element select large" ID="A03">
+	<option value=""></option>
+	<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+	<option value="All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Tumor focality</a>:</label> 
+</td>
+<td>
+<select class="element select large" ID="A04">
+	<option value=""></option>
+	<option value="Unifocal">Unifocal</option>
+	<option value="Multifocal (specify number of tumors):">Multifocal (specify number of tumors):</option>
+	<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label > + <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=9" target="_blank">Functional type</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A09">
@@ -438,7 +474,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <tr>
 <td>
-<label > + <a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=13" target="_blank">Tumor necrosis</a>: </label>
+<label > + <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=15" target="_blank">Tumor necrosis</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A17">
@@ -452,7 +488,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=14" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A18">
@@ -466,7 +502,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=14" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=15" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A19">
@@ -629,7 +665,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description"><a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=13" target="_blank">For pancreaticoduodenal resection specimens</a>: </label></legend>
+	<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=15" target="_blank">For pancreaticoduodenal resection specimens</a>: </label></legend>
 <p>
 <table border="1">
 <col width="80%">
@@ -769,7 +805,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-endocrine-pancreas endocrine-20-4002.pdf#page=14" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
 	
 <p>
 <table border="1">
@@ -793,7 +829,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 <td>
 <select class="element select large" ID="A38">
 	<option value=""></option>
-	<option value="pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pT1: Tumor limited to the pancreas, <2 cm">pT1: Tumor limited to the pancreas, <2 cm</option>
 	<option value="pT2: Tumor limited to the pancreas, 2-4 cm">pT2: Tumor limited to the pancreas, 2-4 cm</option>
 	<option value="pT3: Tumor limited to the pancreas, >4 cm; or tumor invading the duodenum or common bile duct">pT3: Tumor limited to the pancreas, >4 cm; or tumor invading the duodenum or common bile duct</option>
@@ -809,7 +845,8 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 <td>
 <select class="element select large" ID="A39">
 	<option value=""></option>
-	<option value="pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
 </select>
@@ -877,9 +914,9 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 11-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Pancreas Endocrine 4.0.0.2 (Feb 2020), <br>
+Pancreas Endocrine 4.1.0.0 (June 2021), <br>
 html was form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

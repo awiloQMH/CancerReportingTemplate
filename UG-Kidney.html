@@ -11,13 +11,17 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-/*
+
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + frm.A01.value + "\n";
 }
 
 if (frm.A02.value !== ""){
 	Template += "- Tumor laterality: " + frm.A02.value + "\n";
+}
+
+if (frm.A58.value !== ""){
+	Template += "- Tumor focality: " + frm.A58.value + "\n";
 }
 
 if (document.getElementById("A03").checked || document.getElementById("A04").checked ||
@@ -49,7 +53,7 @@ if (document.getElementById("A07").checked){
 if (frm.A08.value !== ""){
 	Template += "- Tumor size: " + frm.A08.value + "\n";
 }
-*/
+
 if (frm.A09.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A09.value + "\n";
 }
@@ -316,7 +320,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\cp-urinary-kidney-resection-20-4020.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney_4.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Invasive carcinoma of renal tubular origin
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -326,11 +330,11 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\cp-urinary-kidney-biopsy-20-4020.pdf" target="_blank">biopsy specimen</a>.</p>
-<!--
+<p> This is additional protocol for <a href="..\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney.Bx_4.1.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>.</p>
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description">Gross descriptions:</label></legend>
+	<legend><label class="description">Gross core data elements:</label></legend>
 <p>
 <table border="1">
 <col width="70%">
@@ -366,15 +370,29 @@ table, th, td {
 </tr>
 
 <tr>
+<td>
+<label class="description">- Tumor Focality:</label> 
+</td>
+<td>
+<select class="element select large" ID="A58">
+	<option value=""></option>
+	<option value="  - Unifocal">Unifocal</option> 
+	<option value="  - Multifocal">Multifocal</option>
+	<option value="  - Not specified">Not specified</option>
+</select>
+</td>
+</tr>
+
+<tr>
 <td valign="top">
 <label class="description">- Tumor site:</label>
 </td>
 <td>
-<input class="element checkbox" type="checkbox"  id="A03" value="  - Upper pole"><label >Upper pole</label><br>
-<input class="element checkbox" type="checkbox"  id="A04" value="  - Middle"><label >Middle</label><br>
-<input class="element checkbox" type="checkbox"  id="A05" value="  - Lower pole"><label >Lower pole</label><br>
-<input class="element checkbox" type="checkbox"  id="A06" value="  - Other (specify):"><label >Other (specify):</label><br>
-<input class="element checkbox" type="checkbox"  id="A07" value="  - Not specified"><label >Not specified</label><br>
+<input class="element checkbox" type="checkbox"  id="A03" value="  - Upper pole"><label class="choice">Upper pole</label>
+<input class="element checkbox" type="checkbox"  id="A04" value="  - Middle"><label class="choice">Middle</label>
+<input class="element checkbox" type="checkbox"  id="A05" value="  - Lower pole"><label class="choice">Lower pole</label>
+<input class="element checkbox" type="checkbox"  id="A06" value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox"  id="A07" value="  - Not specified"><label class="choice">Not specified</label>
 </td>
 </tr>
 
@@ -396,7 +414,7 @@ table, th, td {
 
 </fieldset>
 </p>
--->
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
@@ -410,12 +428,12 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-kidney-resection-20-4020.pdf#page=7" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney_4.1.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A10">
 	<option value=""></option>
-	<option value=" Clear cell renal cell carcinoma">Clear cell renal cell carcinoma</option>
+	<option value="Clear cell renal cell carcinoma">Clear cell renal cell carcinoma</option>
 	<option value="Multilocular cystic clear cell renal cell neoplasm of low malignant potential">Multilocular cystic clear cell renal cell neoplasm of low malignant potential</option>
 	<option value="Papillary renal cell carcinoma">Papillary renal cell carcinoma</option>	
 	<option value="Papillary renal cell carcinoma, Type 1">Papillary renal cell carcinoma, Type 1</option>
@@ -433,6 +451,7 @@ table, th, td {
 	<option value="Hereditary leiomyomatosis and renal cell carcinoma-associated renal cell carcinoma">Hereditary leiomyomatosis and renal cell carcinoma-associated renal cell carcinoma</option>
 	<option value="Succinate dehydrogenase (SDH) deficient renal cell carcinoma">Succinate dehydrogenase (SRenal cell carcinoma, unclassifiedMelanoma in situ arising in a giant congenital nevus</option>
 	<option value="Collecting duct carcinoma">Collecting duct carcinoma</option>	
+	<option value="Renal cell carcinoma, unclassified">Renal cell carcinoma, unclassified</option>
 	<option value="Other (specify):">Other (specify):</option>
 </select>
 </td>
@@ -440,13 +459,14 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-kidney-resection-20-4020.pdf#page=8" target="_blank">Sarcomatoid features</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Sarcomatoid features</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A11">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
+	<option value="Present, specify %:">Present, specify %:</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -454,7 +474,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-kidney-resection-20-4020.pdf#page=8" target="_blank">Rhabdoid features</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Rhabdoid features</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -468,7 +488,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-kidney-resection-20-4020.pdf#page=8" target="_blank">Histologic grade (WHO / ISUP Grade)</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney_4.1.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic grade (WHO / ISUP Grade)</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A13">
@@ -485,13 +505,14 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-urinary-kidney-resection-20-4020.pdf#page=9" target="_blank">Tumoe necrosis</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Tumoe necrosis</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A14">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
+	<option value="Present, specify %:">Present, specify %:</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -529,8 +550,7 @@ table, th, td {
 </p>
 
 <p>
-<label class="description">- <a href=".\cap\cp-urinary-kidney-resection-20-4020.pdf#page=9" target="_blank">Tumor extension</a>:</label>
-<input class="element checkbox" type="checkbox"  id="A17" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Tumor extension</a>:</label>
 <input class="element checkbox" type="checkbox"  id="A18" value="  - Tumor limited to kidney"><label  class="choice">Tumor limited to kidney</label>
 <input class="element checkbox" type="checkbox"  id="A19" value="  - Tumor extension into perinephric tissue (beyond renal capsule)"><label  class="choice">Tumor extension into perinephric tissue (beyond renal capsule)</label>
 <input class="element checkbox" type="checkbox"  id="A20" value="  - Tumor extension into renal sinus"><label  class="choice">Tumor extension into renal sinus</label>
@@ -541,6 +561,7 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A25" value="  - Tumor extension into adrenal gland (non-contiguous)"><label  class="choice">Tumor extension into adrenal gland (non-contiguous)</label>
 <input class="element checkbox" type="checkbox"  id="A26" value="  - Tumor extension into other organ(s)/structure(s) (specify):"><label  class="choice">Tumor extension into other organ(s)/structure(s) (specify):</label>
 <input class="element checkbox" type="checkbox"  id="A27" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
+<input class="element checkbox" type="checkbox"  id="A17" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </p>
 </fieldset>
 </p>
@@ -627,7 +648,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-urinary-kidney-resection-20-4020.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Kidney_4.1.0.0.REL_CAPCP.pdf#page=15" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -650,7 +671,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A46">
 	<option value=""></option>
-	<option value="  - pTX: Primary tumor thickness cannot be assessed, explain: ">pTX: Primary tumor thickness cannot be assessed, explain: </option>
+	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pT1: Tumor < or = 7 cm, limited to the kidney">T1: Tumor < or = 7 cm, limited to the kidney</option>
 	<option value="  - pT1a: Tumor < or = 4 cm, limited to the kidney">pT1a: Tumor < or = 4 cm, limited to the kidney</option>
@@ -674,7 +695,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A47">
 	<option value=""></option>
-	<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="  - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="  - pN1: Metastasis in regional lymph node(s)">pN1: Metastasis in regional lymph node(s)</option>
 </select>
@@ -688,6 +710,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A48">
 	<option value=""></option>
+	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
 </td>
@@ -744,9 +767,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br>
+Last upated on 14-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Kidney Resection 4.0.2.0 (Feb-2020), <br>
+Kidney Resection 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

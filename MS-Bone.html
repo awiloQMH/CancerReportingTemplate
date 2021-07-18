@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-/*
+
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -67,7 +67,7 @@ if (document.getElementById("A11").checked){
 if (frm.A12.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A12.value + "\n";
 }
-*/
+
 if (frm.A12a.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A12a.value + "\n";
 }
@@ -86,6 +86,10 @@ if (frm.A15.value !== ""){
 
 if (frm.A16.value !== ""){
 	Template += "- Histologic grade:" + frm.A16.value + "\n";
+}
+
+if (frm.A39.value !== ""){
+	Template += "  - Treatment effect:" +  frm.A39.value + "\n";
 }
 
 if (frm.A17.value !== ""){
@@ -204,10 +208,6 @@ if (document.getElementById("A38").checked){
 	Template += frm.A38.value + "\n";
 }
 
-if (frm.A39.value !== ""){
-	Template += "  - Treatment effect:" +  frm.A39.value + "\n";
-}
-
 if (frm.A40.value !== ""){
 	Template += "  - Other (specify): " +  frm.A40.value + "\n";
 }
@@ -247,7 +247,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-other-bone-resection-20-4010.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone_4.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Bone tumors
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -256,9 +256,9 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\cp-other-bone-biopsy-20-4010.pdf" target="_blank">biopsy specimen of bone tumours</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone.Bx_4.1.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen of bone tumours</a>.</p>
 <p>
-<!--
+
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
 <p>
@@ -302,15 +302,15 @@ table, th, td {
 <label class="description">- Tumor location and extent:</label> 
 </td>
 <td>
-<input class="element checkbox" type="checkbox"  id="A03" value="  - Epiphysis or apophysis"><label  class="choice">Epiphysis or apophysis</label><br>
-<input class="element checkbox" type="checkbox"  id="A04" value="  - Metaphysis"><label  class="choice">Metaphysis</label><br>
-<input class="element checkbox" type="checkbox"  id="A05" value="  - Diaphysis"><label  class="choice">Diaphysis</label><br>
-<input class="element checkbox" type="checkbox"  id="A06" value="  - Cortical"><label  class="choice">Cortical</label><br>
-<input class="element checkbox" type="checkbox"  id="A07" value="  - Medullary cavity"><label  class="choice">Medullary cavity</label><br>
-<input class="element checkbox" type="checkbox"  id="A08" value="  - Surface"><label  class="choice">Surface</label><br>
-<input class="element checkbox" type="checkbox"  id="A09" value="  - Tumor involves joint"><label  class="choice">Tumor involves joint</label><br>
-<input class="element checkbox" type="checkbox"  id="A10" value="  - Tumor extension into soft tissue"><label  class="choice">Tumor extension into soft tissue</label><br>
-<input class="element checkbox" type="checkbox"  id="A11" value="  - Cannot be determined"><label  class="choice">Cannot be determined</label><br>
+<input class="element checkbox" type="checkbox"  id="A03" value="  - Epiphysis or apophysis"><label  class="choice">Epiphysis or apophysis</label>
+<input class="element checkbox" type="checkbox"  id="A04" value="  - Metaphysis"><label  class="choice">Metaphysis</label>
+<input class="element checkbox" type="checkbox"  id="A05" value="  - Diaphysis"><label  class="choice">Diaphysis</label>
+<input class="element checkbox" type="checkbox"  id="A06" value="  - Cortical"><label  class="choice">Cortical</label>
+<input class="element checkbox" type="checkbox"  id="A07" value="  - Medullary cavity"><label  class="choice">Medullary cavity</label>
+<input class="element checkbox" type="checkbox"  id="A08" value="  - Surface"><label  class="choice">Surface</label>
+<input class="element checkbox" type="checkbox"  id="A09" value="  - Tumor involves joint"><label  class="choice">Tumor involves joint</label>
+<input class="element checkbox" type="checkbox"  id="A10" value="  - Tumor extension into soft tissue"><label  class="choice">Tumor extension into soft tissue</label>
+<input class="element checkbox" type="checkbox"  id="A11" value="  - Cannot be determined"><label  class="choice">Cannot be determined</label>
 </td>
 </tr>
 
@@ -331,7 +331,7 @@ table, th, td {
 </p>
 </fieldset>
 </p>
--->
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
@@ -342,32 +342,148 @@ table, th, td {
 <p>
 <table border="1">
 <col width="50%">
+<tr>
+<td>
+Chondrogenic Tumors 
+</td>
+<td>
+Chondrosarcoma<br>
+Dedifferentiated chondrosarcoma<br> 
+Periosteal chondrosarcoma<br> 
+Clear cell chondrosarcoma<br>
+Mesenchymal chondrosarcoma<br> 
+</td>
+</tr>
+<tr>
+<td>
+Osteogenic Tumors  
+</td>
+<td>
+Low grade central osteosarcoma<br> 
+Osteosarcoma NOS <br>
+Conventional osteosarcoma <br>
+Telangiectatic osteosarcoma <br>
+Small cell osteosarcoma <br>
+Parosteal osteosarcoma <br>
+Periosteal osteosarcoma <br>
+High grade surface osteosarcoma <br>
+Secondary osteosarcoma <br>
++Precipitating Factor for Secondary Osteosarcoma: <br>
+</td>
+</tr>
+<tr>
+<td>
+Chondrogenic Tumors 
+</td>
+<td>
+Chondrosarcoma<br>
+Dedifferentiated chondrosarcoma<br> 
+Periosteal chondrosarcoma<br> 
+Clear cell chondrosarcoma<br>
+Mesenchymal chondrosarcoma<br> 
+</td>
+</tr>
+<tr>
+<td>
+Undifferentiated Small Round Cell Sarcomas  
+</td>
+<td>
+Ewing sarcoma <br>
+Round cell sarcoma with EWSR1-non ETS fusions <br>
+CIC-rearranged sarcoma <br>
+Sarcoma with BCOR genetic alterations <br>
+
+</td>
+</tr>
+<tr>
+<td>
+Fibrogenic Tumors 
+</td>
+<td>
+Fibrosarcoma of bone 
+</td>
+</tr>
+<tr>
+<td>
+Malignancy in giant cell tumor of bone 
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Notochordal Tumors 
+</td>
+<td>
+Chordoma NOS <br> 
+Chondroid chordoma <br>
+Poorly differentiated chordoma <br>
+Dedifferentiated chordoma <br>
+
+</td>
+</tr>
+<tr>
+<td>
+Vascular Tumors 
+</td>
+<td>
+Epithelioid hemangioendothelioma <br>
+Angiosarcoma <br>
+
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<table border="1">
+<col width="50%">
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-other-bone-resection-20-4010.pdf#page=10" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic type</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A13">
 	<option value=""></option>
-	<option value="Chondrogenic tumors, specify:">Chondrogenic tumors, specify:</option>
-	<option value="Osteogenic tumors, specify:">Osteogenic tumors, specify:</option>
-	<option value="Fibrogenic tumors, specify:">Fibrogenic tumors, specify:)</option>
-	<option value="Hematopoietic tumors, specify:">Hematopoietic tumors, specify:</option>
-	<option value="Osteoclastic giant cell rich tumors, specify:">Osteoclastic giant cell rich tumors, specify:</option>
-	<option value="Notochordal tumors, specify:">Notochordal tumors, specify:)</option>	
-	<option value="Vascular tumors, specify:">Vascular tumors, specify:</option>
-	<option value="Myogenic tumor, specify:">Myogenic tumor, specify:</option>
-	<option value="Lipogenic tumors, specify:">Lipogenic tumors, specify:)</option>
-	<option value="Tumors of undefined neoplastic nature, specify:">Tumors of undefined neoplastic nature, specify:</option>
-	<option value="Miscellaneous tumors, specify:">Miscellaneous tumors, specify:</option>
-</select>
+	<option value="Chondrosarcoma">Chondrosarcoma</option>
+	<option value="Dedifferentiated chondrosarcoma">Dedifferentiated chondrosarcoma</option>
+	<option value="Periosteal chondrosarcoma">Periosteal chondrosarcoma</option>
+	<option value="Clear cell chondrosarcoma">Clear cell chondrosarcoma</option>
+	<option value="Mesenchymal chondrosarcoma">Mesenchymal chondrosarcoma</option>
+	<option value="Low grade central osteosarcoma"> Low grade central osteosarcoma</option>
+	<option value="Osteosarcoma NOS">Osteosarcoma NOS</option>
+	<option value="Conventional osteosarcoma">Conventional osteosarcoma</option>
+	<option value="Telangiectatic osteosarcoma">Telangiectatic osteosarcoma</option>
+	<option value="Small cell osteosarcoma">Small cell osteosarcoma</option>
+	<option value="Parosteal osteosarcoma">Parosteal osteosarcoma</option>
+	<option value="Periosteal osteosarcoma">Periosteal osteosarcoma</option>
+	<option value="High grade surface osteosarcoma">High grade surface osteosarcoma</option>
+	<option value="Secondary osteosarcoma, specify:">Secondary osteosarcoma, specify:</option>
+	<option value="Ewing sarcoma">Ewing sarcoma</option>
+	<option value="Round cell sarcoma with EWSR1-non ETS fusions">Round cell sarcoma with EWSR1-non ETS fusions</option>
+	<option value="CIC-rearranged sarcoma">CIC-rearranged sarcoma</option>
+	<option value="Sarcoma with BCOR genetic alterations">Sarcoma with BCOR genetic alterations</option>
+	<option value="Fibrosarcoma of bone">Fibrosarcoma of bone</option>
+	<option value="Malignancy in giant cell tumor of bone">Malignancy in giant cell tumor of bone</option>
+	<option value="Chordoma NOS">Chordoma NOS</option>	
+	<option value="Chondroid chordoma">Chondroid chordoma</option>	
+	<option value="Poorly differentiated chordoma">Poorly differentiated chordoma</option>	
+	<option value="Dedifferentiated chordoma">Dedifferentiated chordoma</option>	
+	<option value="Epithelioid hemangioendothelioma">Epithelioid hemangioendothelioma</option>
+	<option value="Angiosarcoma">Angiosarcoma</option>
+	<option value="Leiomyosarcoma of bone">Leiomyosarcoma of bone</option>
+	<option value="Adamantinoma">Adamantinoma</option>
+	<option value="Dedifferentiated adamantinoma">Dedifferentiated adamantinoma</option>
+	<option value="Undifferentiated high-grade pleomorphic sarcoma">Undifferentiated high-grade pleomorphic sarcoma</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option></select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\cp-other-bone-resection-20-4010.pdf#page=11" target="_blank">Mitotic rate (per 10 traditional HPF)</a>:</label>
+<label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Mitotic rate (per 10 traditional HPF)</a>:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A14" size="10">
@@ -392,7 +508,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-other-bone-resection-20-4010.pdf#page=10" target="_blank">Histologic grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A16">
@@ -408,7 +524,22 @@ table, th, td {
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\cp-other-bone-resection-20-4010.pdf#page=12" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone_4.1.0.0.REL_CAPCP.pdf#page=17" target="_blank">Treatment effect</a>: </label> 
+</td>
+<td>
+<select class="element select large" ID="A39">
+	<option value=""></option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, specify percentage of viable tumor:">Present, specify percentage of viable tumor:</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone_4.1.0.0.REL_CAPCP.pdf#page=17" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A17">
@@ -435,7 +566,10 @@ table, th, td {
 </tr>
 </table>
 </p>
+<p>
 - Using 22 mm eyepiece & 40x objective, count 10 most active fields and divide by 1.373, approximating 10 traditional high power fields of 10 x 0.1734 mm<sup>2</sup>.
+</p>
+
 </fieldset>
 </p>
 
@@ -518,7 +652,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\cp-other-bone-resection-20-4010.pdf#page=13" target="_blank">Pathologic stage classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone_4.1.0.0.REL_CAPCP.pdf#page=18" target="_blank">Pathologic stage classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -542,7 +676,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A28">
 	<option value=""></option>
-	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="   - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="   - pT1: Tumor < or = 8 cm in greatest dimension">pT1: Tumor < or = 2 cm</option>
 	<option value="   - pT2: Tumor > 8 cm in greatest dimension">pT2: Tumor > 8 cm in greatest dimension</option>
@@ -558,7 +692,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A29">
 	<option value=""></option>
-	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="   - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="   - pT1: Tumor confined to one vertebral segment or two adjacent vertebral segment">pT1: Tumor confined to one vertebral segment or two adjacent vertebral segment</option>
 	<option value="   - pT2: Tumor confined to three adjacent vertebral segments">pT2: Tumor confined to three adjacent vertebral segments</option>
@@ -577,7 +711,7 @@ table, th, td {
 <td>
 <select class="element select large" ID="A30">
 	<option value=""></option>
-	<option value="   - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
+	<option value="   - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="   - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="   - pT1: Tumor confined to one pelvic segment with no extraosseous extension">pT1: Tumor confined to one pelvic segment with no extraosseous extension</option>
 	<option value="   - pT1a: Tumor < or = 8 cm in greatest dimension">pT1a: Tumor < or = 8 cm in greatest dimension</option>
@@ -602,7 +736,8 @@ table, th, td {
 <td>
 <select class="element select large" ID="A31">
 	<option value=""></option>
-	<option value="   - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="   - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="   - pN not assigned (cannot be determined based on available pathological information)"> pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="   - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="   - pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
 </select>
@@ -655,23 +790,6 @@ table, th, td {
 </td>
 </tr>
 
-
-<tr>
-<td>
-<label class="description">- <a href=".\cap\cp-other-bone-resection-20-4010.pdf#page=14" target="_blank">Treatment effect</a>: </label> 
-</td>
-<td>
-<select class="element select large" ID="A39">
-	<option value=""></option>
-	<option value="No known presurgical therapy">No known presurgical therapy</option>
-	<option value="Not identified">Not identified</option>
-	<option value="Present, specify percentage of viable tumor:">Present, specify percentage of viable tumor:</option>
-	<option value="Cannot be determined">Cannot be determined</option>
-</select>
-</td>
-</tr>
-
-
 <tr>
 <td>
 <label class=""> + Other (specify): </label> 
@@ -705,8 +823,8 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 02-Jan-2021,<br> based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Bone Resection 4.0.1.0 (Feb 2020).<br>
+Last upated on 18-Jul-2021,<br> based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Bone Resection 4.1.0.0 (June 2021).<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
