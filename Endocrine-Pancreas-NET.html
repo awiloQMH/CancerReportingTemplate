@@ -189,7 +189,57 @@ if (frm.A49.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A49.value + "\n";
 }
 
-if (document.getElementById("A35").checked || document.getElementById("A36").checked || document.getElementById("A37").checked || frm.A38.value!=="" || frm.A39.value!=="" || frm.A40.value!=="" || frm.A41.value!==""){
+if (document.getElementById("A50").checked || document.getElementById("A51").checked ||
+	document.getElementById("A52").checked || document.getElementById("A53").checked ||
+	document.getElementById("A54").checked || document.getElementById("A55").checked ||
+	document.getElementById("A56").checked || document.getElementById("A57").checked ||
+    document.getElementById("A58").checked || document.getElementById("A59").checked){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
+if (document.getElementById("A55").checked){
+	Template += frm.A55.value + "\n";
+}
+
+if (document.getElementById("A56").checked){
+	Template += frm.A56.value + "\n";
+}
+
+if (document.getElementById("A57").checked){
+	Template += frm.A57.value + "\n";
+}
+
+if (document.getElementById("A58").checked){
+	Template += frm.A58.value + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += frm.A59.value + "\n";
+}
+
+if (document.getElementById("A35").checked || document.getElementById("A36").checked ||
+    document.getElementById("A37").checked || frm.A38.value!=="" ||
+	frm.A39.value!=="" || frm.A40.value!=="" ){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -218,13 +268,13 @@ if (frm.A39.value !== ""){
 }
 
 if (frm.A40.value !== ""){
-	Template += "  - Distant metastasis (required only if confirmed pathologically in this case): " + "\n" + "    - " + frm.A40.value + "\n";
+	Template += "  - Distant metastasis (pM): " + "\n" + "    - " + frm.A40.value + "\n";
 }
-
+/**
 if (frm.A41.value !== ""){
 	Template += "    - Specify site(s): " + frm.A41.value + "\n";
 }
-
+**/
 if (document.getElementById("A42").checked || document.getElementById("A43").checked ||  document.getElementById("A44").checked ||  document.getElementById("A45").checked || frm.A46.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
 }
@@ -805,6 +855,24 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A50"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A51"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A52"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A53"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A54"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A55"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A56"  value="  - Peritoneum (specify):"><label class="choice" >Peritoneum (specify):</label>
+<input class="element checkbox" type="checkbox" id="A57"  value="  - Ovary (specify):"><label class="choice" >Ovary (specify):</label>
+<input class="element checkbox" type="checkbox" id="A58"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A59"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
 	
 <p>
@@ -854,12 +922,13 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 </tr>
 
 <tr>
-<td rowspan="2" valign="top">
+<td>
 <label class="description">- Distant metastasis (pM):</label>
 </td>
 <td>
 <select class="element select large" ID="A40">
 	<option value=""></option>
+	<option value="Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
 	<option value="pM1a: Metastasis confined to liver">pM1a: Metastasis confined to liver</option>
 	<option value="pM1b: Metastasis in at least one extrahepatic site">pM1b: Metastasis in at least one extrahepatic site</option>
@@ -867,12 +936,13 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
 <label>- Specify site(s), if known:</label>
 <input type="text" name="A41" class="element text small" ID="A41" size="35">
 </td>
+-->
 </tr>
 </table>
 </p>
@@ -914,7 +984,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 <br>
 
 <div id="footer">
-Last upated on 11-Jul-2021,<br>
+Last upated on 19-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Pancreas Endocrine 4.1.0.0 (June 2021), <br>
 html was form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

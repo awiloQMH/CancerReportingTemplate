@@ -187,9 +187,45 @@ if (frm.A35.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A35.value + "\n";
 }
 
+if (document.getElementById("A48").checked ||
+	document.getElementById("A49").checked || document.getElementById("A50").checked ||
+	document.getElementById("A51").checked || document.getElementById("A52").checked ||
+	document.getElementById("A53").checked || 
+	document.getElementById("A54").checked ){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
 if (document.getElementById("A36").checked || document.getElementById("A37").checked ||
 	document.getElementById("A38").checked || frm.A39.value + frm.A40.value + frm.A41.value
-	+ frm.A42.value !== ""){
+	!== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -221,11 +257,11 @@ if (frm.A40.value !== ""){
 if (frm.A41.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A41.value + "\n";
 }
-
+/**
 if (frm.A42.value !== ""){
 	Template += "    - Specify site(s): " + frm.A42.value + "\n";
 }
-
+**/
 if (document.getElementById("A43").checked || document.getElementById("A44").checked ||
 	document.getElementById("A45").checked || frm.A46.value !==""){
 	Template += "\n" + "- Additional pathologic findings:" + "\n";
@@ -602,6 +638,19 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A48"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A49"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A50"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A51"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A52"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A53"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A54"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description">Pathologic Stage Classification (AJCC 8e): </label> </legend>
 <p>	
 <table border="1">
@@ -650,23 +699,26 @@ table, th, td {
 </tr>
 
 <tr>
-<td rowspan="2" valign="top">
+<td >
 <label class="description">  - Distant metastasis (pM):</label>
 </td>
 <td>
 <select class="element select large" ID="A41">
 	<option value=""></option>
+	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
     - Specify site(s), if known:
 <input type="text" class="element text small" ID="A42" size="35">
 </td>
 </tr>
+-->
+
 </table>
 </p>
 </fieldset>
@@ -709,7 +761,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 10-Jul-2021,<br>
+Last upated on 19-Jul-2021,<br>
 based on 
 <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Adrenal Gland 4.2.0.0 (June 2021).<br>

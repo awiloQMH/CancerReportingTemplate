@@ -286,10 +286,54 @@ if (frm.A56.value !== ""){
 	Template += "  - Extranodal extension (ENE) : " + frm.A56.value + "\n";
 }
 
+if (document.getElementById("A72").checked || document.getElementById("A73").checked ||
+	document.getElementById("A74").checked || document.getElementById("A75").checked ||
+	document.getElementById("A76").checked || document.getElementById("A77").checked ||
+	document.getElementById("A78").checked || document.getElementById("A79").checked ||
+    document.getElementById("A80").checked){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
+if (document.getElementById("A77").checked){
+	Template += frm.A77.value + "\n";
+}
+
+if (document.getElementById("A78").checked){
+	Template += frm.A78.value + "\n";
+}
+
+if (document.getElementById("A79").checked){
+	Template += frm.A79.value + "\n";
+}
+
+if (document.getElementById("A80").checked){
+	Template += frm.A80.value + "\n";
+}
+
 if (document.getElementById("A57").checked || document.getElementById("A58").checked ||
     document.getElementById("A59").checked || document.getElementById("A61").checked || 
 	document.getElementById("A62").checked || frm.A60.value + frm.A63.value + 
-	frm.A64.value + frm.A65.value !== ""){
+	frm.A64.value){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -334,9 +378,11 @@ if (frm.A64.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A64.value + "\n";
 }
 
+/**
 if (frm.A65.value !== ""){
 	Template += "    - Specify site(s): " + frm.A65.value + "\n";
 }
+**/
 
 if (frm.A66.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" +  frm.A66.value + "\n";
@@ -1016,6 +1062,23 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\B
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A72"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A73"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A74"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A75"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A76"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A77"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A78"  value="  - Brain (specify):"><label class="choice" >Brain (specify):</label>
+<input class="element checkbox" type="checkbox" id="A79"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A80"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.Invasive_4.5.0.0.REL_CAPCP.pdf#page=34" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
@@ -1097,23 +1160,26 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\B
 </tr>
 
 <tr>
-<td rowspan="2" valign="top">
+<td >
 <label class="description">- Distant metastasis (pM): </label>
 </td>
 <td>
 	<select class="element select large" ID="A64">
 		<option value=""></option>
 		<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
-		<option value="  - pM1: Distant metastasis">pM1:Distant metastasis</option>
+		<option value="  - pM1: Histologically proven metastases larger than 0.2 mm">pM1: Histologically proven metastases larger than 0.2 mm</option>
 	</select>
 </td>
 </tr>
+
+<!--?--
 <tr>
 <td>
     <label>- Specify site(s), if known:</label>
 <input type="text" class="element text medium" ID="A65" size="35">
 </td>
 </tr>
+-->
 
 </table>
 </p>
@@ -1140,7 +1206,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\B
 <br>
 
 <div id="footer">
-Last upated on 11-Jul-2021,<br>
+Last upated on 19-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Breast Invasive Resection 4.5.0.0 (June 2021).<br>
 html form was created on 

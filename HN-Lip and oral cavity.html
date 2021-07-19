@@ -170,9 +170,53 @@ if (frm.A34.value !== ""){
 	Template += "  - Laterality : "  + frm.A34.value + "\n";
 }
 
+if (document.getElementById("A67").checked || document.getElementById("A68").checked ||
+	document.getElementById("A69").checked || document.getElementById("A70").checked ||
+	document.getElementById("A71").checked || document.getElementById("A72").checked ||
+	document.getElementById("A73").checked || document.getElementById("A74").checked ||
+	document.getElementById("A75").checked){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A67").checked){
+	Template += frm.A67.value + "\n";
+}
+
+if (document.getElementById("A68").checked){
+	Template += frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template += frm.A69.value + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += frm.A70.value + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
 if (document.getElementById("A35").checked || document.getElementById("A36").checked || 
     document.getElementById("A37").checked || frm.A38.value + frm.A39.value + 
-	frm.A40.value + frm.A41.value !== ""){
+	frm.A40.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition) :" + "\n";
 }
 
@@ -205,13 +249,8 @@ if (frm.A40.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + frm.A40.value + "\n";
 }
 
-if (frm.A41.value !== ""){
-	Template += "      - Specify site(s): " + frm.A41.value + "\n";
-}
-
 if (document.getElementById("A42").checked || document.getElementById("A43").checked || 
-    document.getElementById("A44").checked || frm.A45.value + frm.A46.value + frm.A47.value	+
-	frm.A48.value !== ""){
+    document.getElementById("A44").checked || frm.A45.value + frm.A46.value + frm.A47.value !== ""){
 	Template += "\n" + "- Pathologic Stage Classification (AJCC 8e) for mucosal melanoma::" + "\n";
 }
 
@@ -242,10 +281,6 @@ if (frm.A46.value !== ""){
 
 if (frm.A47.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + frm.A47.value + "\n";
-}
-
-if (frm.A48.value !== ""){
-	Template += "      - Specify site(s): " + frm.A48.value + "\n";
 }
 
 if (document.getElementById("A60").checked || 
@@ -760,6 +795,22 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Nec
 </p>
 </fieldset>
 </p>
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A67"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A68"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A69"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A70"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A71"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A72"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A73"  value="  - Brain (specify):"><label class="choice" >Brain (specify):</label>
+<input class="element checkbox" type="checkbox" id="A74"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A75"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -833,13 +884,14 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Nec
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
     - Specify site(s), if known:
 <input type="text" class="element text small" ID="A41" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -908,13 +960,14 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Nec
 </td>
 </tr>
 </p>
-
+<!--
 <tr>
 <td>
     - Specify site(s), if known:
 <input type="text" class="element text small" ID="A48" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -964,7 +1017,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Nec
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 19-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 LipOralCavity 4.1.0.0 (June 2021), <br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

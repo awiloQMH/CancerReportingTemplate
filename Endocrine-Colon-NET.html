@@ -112,7 +112,55 @@ if (frm.A22.value !== ""){
 	Template += "  - Extranodal extension: " + frm.A22.value + "\n";
 }
 
-if (document.getElementById("A23").checked || document.getElementById("A24").checked || document.getElementById("A25").checked || frm.A26.value!=="" || frm.A27.value!=="" || frm.A28.value!=="" || frm.A29.value!==""){
+if (document.getElementById("A36").checked || document.getElementById("A37").checked ||
+	document.getElementById("A38").checked || document.getElementById("A39").checked ||
+	document.getElementById("A40").checked || document.getElementById("A41").checked ||
+	document.getElementById("A42").checked || document.getElementById("A43").checked ||
+    document.getElementById("A44").checked || document.getElementById("A45").checked){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A36").checked){
+	Template += frm.A36.value + "\n";
+}
+
+if (document.getElementById("A37").checked){
+	Template += frm.A37.value + "\n";
+}
+
+if (document.getElementById("A38").checked){
+	Template += frm.A38.value + "\n";
+}
+
+if (document.getElementById("A39").checked){
+	Template += frm.A39.value + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += frm.A40.value + "\n";
+}
+
+if (document.getElementById("A41").checked){
+	Template += frm.A41.value + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += frm.A43.value + "\n";
+}
+
+if (document.getElementById("A44").checked){
+	Template += frm.A44.value + "\n";
+}
+
+if (document.getElementById("A45").checked){
+	Template += frm.A45.value + "\n";
+}
+
+if (document.getElementById("A23").checked || document.getElementById("A24").checked || document.getElementById("A25").checked || frm.A26.value!=="" || frm.A27.value!=="" || frm.A28.value!=="" ){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -143,11 +191,11 @@ if (frm.A27.value !== ""){
 if (frm.A28.value !== ""){
 	Template += "  - Distant metastasis (required only if confirmed pathologically in this case): " + "\n" + "    - " + frm.A28.value + "\n";
 }
-
+/**
 if (frm.A29.value !== ""){
 	Template += "    - Specify site(s), if known: " + frm.A29.value + "\n";
 }
-
+**/
 if (document.getElementById("A31").checked || frm.A32.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
 }
@@ -585,6 +633,24 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A36"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A37"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A38"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A39"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A40"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A41"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A42"  value="  - Peritoneum (specify):"><label class="choice" >Peritoneum (specify):</label>
+<input class="element checkbox" type="checkbox" id="A43"  value="  - Ovary (specify):"><label class="choice" >Ovary (specify):</label>
+<input class="element checkbox" type="checkbox" id="A44"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A45"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\ColoRectal.NET_4.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
 	
 <p>
@@ -636,12 +702,13 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 </tr>
 
 <tr>
-<td rowspan="2" valign="top">
+<td>
 <label class="description">  - Distant metastasis (pM): </label>
 </td>
 <td>
 <select class="element select large" ID="A28">
 	<option value=""></option>
+	<option value="Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
 	<option value="pM1a: Metastasis confined to liver">pM1a: Metastasis confined to liver</option>
 	<option value="pM1b: Metastasis in at least one extrahepatic site">pM1b: Metastasis in at least one extrahepatic site</option>
@@ -649,13 +716,14 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
 - Specify site(s), if known:
 <input type="text" name="A29" class="element text small" ID="A29" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -695,7 +763,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 <br>
 
 <div id="footer">
-Last upated on 11-Jul-2021,<br>
+Last upated on 19-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 ColonRectum NET 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
