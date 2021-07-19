@@ -128,10 +128,45 @@ if (frm.A24.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A24.value + "\n";
 }
 
+if (document.getElementById("A42").checked || document.getElementById("A43").checked || 
+	document.getElementById("A44").checked || document.getElementById("A45").checked || 
+	document.getElementById("A46").checked || document.getElementById("A47").checked || 
+	document.getElementById("A48").checked ){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += frm.A43.value + "\n";
+}
+
+if (document.getElementById("A44").checked){
+	Template += frm.A44.value + "\n";
+}
+
+if (document.getElementById("A45").checked){
+	Template += frm.A45.value + "\n";
+}
+
+if (document.getElementById("A46").checked){
+	Template += frm.A46.value + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+
 if (document.getElementById("A25").checked || document.getElementById("A26").checked ||
 	document.getElementById("A27").checked || frm.A28.value +
-	frm.A29.value + frm.A30.value + frm.A31.value + frm.A32.value +
-	frm.A33.value !== ""){
+	frm.A29.value + frm.A30.value + frm.A31.value + frm.A32.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -172,10 +207,6 @@ if (frm.A32.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + frm.A32.value + "\n";
 }
 
-if (frm.A33.value !== ""){
-	Template += "    - Specify site(s), if known: " + frm.A33.value + "\n";
-}
-
 if (document.getElementById("A34").checked || document.getElementById("A35").checked ||
 	document.getElementById("A36").checked || document.getElementById("A37").checked ||
 	document.getElementById("A38").checked ||  frm.A39.value + frm.A40.value !==""){
@@ -185,7 +216,7 @@ if (document.getElementById("A34").checked || document.getElementById("A35").che
 if (document.getElementById("A34").checked || document.getElementById("A35").checked ||
 	document.getElementById("A36").checked || document.getElementById("A37").checked ||
 	document.getElementById("A38").checked ){
-	Template += "  - Treatment effects: " + "\n";
+	Template += "  - Pre-Treatment effects: " + "\n";
 }
 
 if (document.getElementById("A34").checked){
@@ -652,6 +683,21 @@ Angiosarcoma <br>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A42"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A43"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A44"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A45"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A46"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A47"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A48"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Bone-and-Soft-Tissue-Protocol-Folder\Bone_4.1.0.0.REL_CAPCP.pdf#page=18" target="_blank">Pathologic stage classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
@@ -751,19 +797,21 @@ Angiosarcoma <br>
 <td>
 <select class="element select large" ID="A32">
 	<option value=""></option>
+	<option value="   - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="   - pM1: Distant metastasis">pM1: Distant metastasis</option>
 	<option value="   - pM1a: Lung">pM1a: Lung</option>
 	<option value="   - pM1b: Metastasis involving distant sites other than lung">pM1b: Metastasis involving distant sites other than lung</option>
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
     - Specify site(s), if known:
 	<input type="text" class="element text small" ID="A33" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -823,7 +871,7 @@ Angiosarcoma <br>
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br> based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 19-Jul-2021,<br> based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Bone Resection 4.1.0.0 (June 2021).<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

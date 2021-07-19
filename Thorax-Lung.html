@@ -226,8 +226,65 @@ if (frm.A48.value !== ""){
 	Template += "  - Extranodal extension: " + frm.A48.value + "\n";
 }
 
+if (document.getElementById("A64").checked || document.getElementById("A65").checked ||
+	document.getElementById("A66").checked || document.getElementById("A67").checked ||
+	document.getElementById("A68").checked || document.getElementById("A69").checked ||
+	document.getElementById("A70").checked || document.getElementById("A71").checked ||
+    document.getElementById("A72").checked || document.getElementById("A73").checked ||
+	document.getElementById("A74").checked || document.getElementById("A74").checked ){
+	Template += "- Distant metastasis:" + "\n";
+}
+68
+if (document.getElementById("A64").checked){
+	Template += frm.A64.value + "\n";
+}
+
+if (document.getElementById("A65").checked){
+	Template += frm.A65.value + "\n";
+}
+
+if (document.getElementById("A66").checked){
+	Template += frm.A66.value + "\n";
+}
+
+if (document.getElementById("A67").checked){
+	Template += frm.A67.value + "\n";
+}
+
+if (document.getElementById("A68").checked){
+	Template += frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template += frm.A69.value + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += frm.A70.value + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
 if (document.getElementById("A49").checked || document.getElementById("A50").checked || document.getElementById("A51").checked ||
-	frm.A52.value + frm.A53.value + frm.A54.value + frm.A55.value !== ""){
+	frm.A52.value + frm.A53.value + frm.A54.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -257,10 +314,6 @@ if (frm.A53.value !== ""){
 
 if (frm.A54.value !== ""){
 	Template += "  - Distant metastasis (required only if confirmed pathologically in this case): " + "\n" + "    - " + frm.A54.value + "\n";
-}
-
-if (frm.A55.value !== ""){
-	Template += "    - Specify site(s): " + frm.A55.value + "\n";
 }
 
 if (document.getElementById("A56").checked || document.getElementById("A57").checked ||  document.getElementById("A58").checked ||  document.getElementById("A59").checked ||  document.getElementById("A60").checked ||  document.getElementById("A61").checked || frm.A62.value !==""){
@@ -771,6 +824,24 @@ and updated <a href=".\cap\CAP-IASLC-AMP_Lung_Molec_Testing_Slides_APPROVED_2018
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A64"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A65"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A66"  value="  - Single extrathoracic metastasis in one organ (includes a single non-regional lymph node) (specify):"><label class="choice" >Single extrathoracic metastasis in one organ (includes a single non-regional lymph node) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A67"  value="  - Separate tumor nodule(s) in contralateral lobe (specify):"><label class="choice" >Separate tumor nodule(s) in contralateral lobe (specify):</label>
+<input class="element checkbox" type="checkbox" id="A68"  value="  - Pleural nodules (specify):"><label class="choice" >Pleural nodules (specify):</label>
+<input class="element checkbox" type="checkbox" id="A69"  value="  - Pericardial nodules (specify):"><label class="choice" >Pericardial nodules (specify):</label>
+<input class="element checkbox" type="checkbox" id="A70"  value="  - Malignant pleural effusion (specify):"><label class="choice" >Malignant pleural effusion (specify):</label>
+<input class="element checkbox" type="checkbox" id="A71"  value="  - Malignant pericardial effusion (specify):"><label class="choice" >Malignant pericardial effusion (specify):</label>
+<input class="element checkbox" type="checkbox" id="A72"  value="  - Multiple extrathoracic metastases in a single organ (specify):"><label class="choice" >Multiple extrathoracic metastases in a single organ (specify):</label>
+<input class="element checkbox" type="checkbox" id="A73"  value="  - Multiple extrathoracic metastasis in multiple organs (specify):"><label class="choice" >Multiple extrathoracic metastasis in multiple organs (specify):</label>
+<input class="element checkbox" type="checkbox" id="A74"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A75"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\Lung_4.2.0.0.REL_CAPCP.pdf#page=21" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>	
 
 <p>
@@ -837,6 +908,7 @@ and updated <a href=".\cap\CAP-IASLC-AMP_Lung_Molec_Testing_Slides_APPROVED_2018
 <td>
 <select class="element select large" ID="A54">
 	<option value=""></option>
+	<option value="Not applicable - pM cannot be determined from the submitted specimen(s)"> Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
 	<option value="pM1a: Separate tumor nodule(s) in contralateral lobe; tumor with pleural or pericardial nodules or malignant pleural (or pericardial) effusion">pM1a: Separate tumor nodule(s) in contralateral lobe; tumor with pleural or pericardial nodules or malignant pleural (or pericardial) effusion</option>
 	<option value="pM1b: Single extrathoracic metastasis in a single organ (including involvement of a single nonregional lymph node)">pM1b: Single extrathoracic metastasis in a single organ (including involvement of a single nonregional lymph node)</option>
@@ -844,13 +916,14 @@ and updated <a href=".\cap\CAP-IASLC-AMP_Lung_Molec_Testing_Slides_APPROVED_2018
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
     - Specify site(s), if known:
 <input type="text" name="A55" class="element text medium" ID="A55" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -894,7 +967,7 @@ and updated <a href=".\cap\CAP-IASLC-AMP_Lung_Molec_Testing_Slides_APPROVED_2018
 <br>
 
 <div id="footer">
-Last upated on 12-Jul-2021,<br>
+Last upated on 19-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Lung 4.2.0.0 (June 2021).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

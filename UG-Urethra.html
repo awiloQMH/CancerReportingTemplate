@@ -247,9 +247,29 @@ if (frm.A64.value !== ""){
 	Template += "    - Size of largest lymph node involved (mm), specify site: " + frm.A64.value + " mm" + "\n";
 }
 
+if (document.getElementById("A80").checked || document.getElementById("A81").checked ||
+	document.getElementById("A82").checked || document.getElementById("A83").checked ){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A80").checked){
+	Template += frm.A80.value + "\n";
+}
+
+if (document.getElementById("A81").checked){
+	Template += frm.A81.value + "\n";
+}
+
+if (document.getElementById("A82").checked){
+	Template += frm.A82.value + "\n";
+}
+
+if (document.getElementById("A83").checked){
+	Template += frm.A83.value + "\n";
+}
 
 if (document.getElementById("A65").checked || document.getElementById("A66").checked ||
- document.getElementById("A67").checked || frm.A68.value + frm.A69.value + frm.A70.value + frm.A71.value + frm.A72.value !== ""){
+ document.getElementById("A67").checked || frm.A68.value + frm.A69.value + frm.A70.value + frm.A71.value  !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -283,10 +303,6 @@ if (frm.A70.value !== ""){
 
 if (frm.A71.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "    - " + frm.A71.value + "\n";
-}
-
-if (frm.A72.value !== ""){
-	Template += "    - Specify site: " + frm.A72.value + "\n";
 }
 
 if (document.getElementById("A73").checked || document.getElementById("A74").checked ||  document.getElementById("A75").checked ||  document.getElementById("A76").checked ||  document.getElementById("A77").checked ||  frm.A78.value !==""){
@@ -770,6 +786,16 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A80"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A81"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A82"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A83"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra_4.1.0.0.REL_CAPCP.pdf#page=15" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
@@ -841,7 +867,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td valign="top" rowspan="2">
+<td >
 <label class="description">  - Distant metastasis (pM): </label>
 </td>
 <td>
@@ -852,13 +878,14 @@ table, th, td {
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
     - Specify site(s):
 <input type="text" name="A72" class="element text large" ID="A72" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -923,7 +950,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 16-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Urethra Resection 4.1.0.0 (June 2021), <br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

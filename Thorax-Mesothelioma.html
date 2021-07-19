@@ -348,8 +348,34 @@ if (frm.A35.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A35.value + "\n";
 }
 
+if (document.getElementById("A81").checked || document.getElementById("A82").checked ||
+	document.getElementById("A83").checked || document.getElementById("A84").checked ||
+	document.getElementById("A85").checked ){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A81").checked){
+	Template += frm.A81.value + "\n";
+}
+
+if (document.getElementById("A82").checked){
+	Template += frm.A82.value + "\n";
+}
+
+if (document.getElementById("A83").checked){
+	Template += frm.A83.value + "\n";
+}
+
+if (document.getElementById("A84").checked){
+	Template += frm.A84.value + "\n";
+}
+
+if (document.getElementById("A85").checked){
+	Template += frm.A85.value + "\n";
+}
+
 if (document.getElementById("A36").checked || document.getElementById("A37").checked ||
-	frm.A38.value + frm.A39.value + frm.A40.value + frm.A41.value !== ""){
+	frm.A38.value + frm.A39.value + frm.A40.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -375,10 +401,6 @@ if (frm.A39.value !== ""){
 
 if (frm.A40.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "    - " + frm.A40.value + "\n";
-}
-
-if (frm.A41.value !== ""){
-	Template += "    - Specify site(s): " + frm.A41.value + "\n";
 }
 
 if (document.getElementById("A42").checked || document.getElementById("A43").checked ||  
@@ -975,6 +997,17 @@ Other (specifiy):
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A81"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A82"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A83"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A84"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A85"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\PleuraPericard_4.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>	
 
 <p>
@@ -1012,17 +1045,19 @@ Other (specifiy):
 </select></td>
 </tr>
 <tr>
-<td rowspan="2" valign="top"><label class="description">- Distant metastasis (pM): </label></td>
+<td ><label class="description">- Distant metastasis (pM): </label></td>
 <td><select class="element select large" ID="A40">
 	<option value=""></option>
+	<option value="Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select></td>
 </tr>
-
+<!--
 <tr>
 <td>    - Specify site(s), if known:
 <input type="text" name="A41" class="element text medium" ID="A41" size="35"></td>
 </tr>
+-->
 </table>
 </p>
 
@@ -1065,7 +1100,7 @@ Other (specifiy):
 <br>
 
 <div id="footer">
-Last upated on 12-Jul-2021, <br>
+Last upated on 19-Jul-2021, <br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Malignant Pleural Mesothelioma 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

@@ -227,6 +227,32 @@ if (frm.A53.value !== ""){
 	Template += "    - Size of largest lymph node involved (mm), specify site: " + frm.A53.value + "\n";
 }
 
+if (document.getElementById("A72").checked || document.getElementById("A73").checked ||
+	document.getElementById("A74").checked || document.getElementById("A75").checked ||
+	document.getElementById("A76").checked ){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
 if (document.getElementById("A54").checked || document.getElementById("A55").checked ||
 	document.getElementById("A56").checked || frm.A57.value + frm.A58.value + frm.A59.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
@@ -260,11 +286,11 @@ if (frm.A58.value !== ""){
 if (frm.A59.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "    - " + frm.A59.value + "\n";
 }
-
+/**
 if (frm.A60.value !== ""){
 	Template += "    - Specify site: " + frm.A60.value + "\n";
 }
-
+**/
 if (document.getElementById("A62").checked ||
 	document.getElementById("A63").checked || document.getElementById("A64").checked || 
 	document.getElementById("A65").checked || document.getElementById("A66").checked || 
@@ -764,6 +790,17 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A72"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A73"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A74"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A75"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A76"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Bladder_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 <p>
 <table border="1">
@@ -823,7 +860,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td valign="top" rowspan="2">
+<td >
 <label class="description">  - Distant metastasis (pM): </label>
 </td>
 <td>
@@ -836,13 +873,14 @@ table, th, td {
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
     - Specify site(s), if known:
 <input type="text" class="element text small" ID="A60" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -907,7 +945,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 16-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Urinary Bladder Resection 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

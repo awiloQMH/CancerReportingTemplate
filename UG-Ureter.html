@@ -168,9 +168,29 @@ if (frm.A40.value !== ""){
 	Template += "    - Size of largest lymph node involved (mm), specify site: " + frm.A40.value + "\n";
 }
 
+if (document.getElementById("A56").checked || document.getElementById("A57").checked ||
+	document.getElementById("A58").checked || document.getElementById("A59").checked ){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A56").checked){
+	Template += frm.A56.value + "\n";
+}
+
+if (document.getElementById("A57").checked){
+	Template += frm.A57.value + "\n";
+}
+
+if (document.getElementById("A58").checked){
+	Template += frm.A58.value + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += frm.A59.value + "\n";
+}
 
 if (document.getElementById("A41").checked || document.getElementById("A42").checked ||
-	document.getElementById("A43").checked || frm.A44.value + frm.A45.value + frm.A46.value + frm.A47.value !== ""){
+	document.getElementById("A43").checked || frm.A44.value + frm.A45.value + frm.A46.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -203,9 +223,6 @@ if (frm.A46.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "    - " + frm.A46.value + "\n";
 }
 
-if (frm.A47.value !== ""){
-	Template += "    - Specify site: " + frm.A47.value + "\n";
-}
 
 if (document.getElementById("A48").checked || document.getElementById("A49").checked ||
 	document.getElementById("A50").checked || document.getElementById("A51").checked ||
@@ -716,6 +733,16 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A56"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A57"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A58"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A59"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
@@ -769,7 +796,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 </tr>
 
 <tr>
-<td valign="top" rowspan="2">
+<td >
 <label class="description">  - Distant metastasis (pM):</label>
 </td>
 <td>
@@ -780,13 +807,14 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
     - Specify site(s), if known:
 <input type="text" class="element text small" ID="A47" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -869,7 +897,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 <br>
 
 <div id="footer">
-Last upated on 16-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Ureter and Renal Pelvis Resection 2.2.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

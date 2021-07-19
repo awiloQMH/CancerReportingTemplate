@@ -321,8 +321,53 @@ if (frm.A64.value !== ""){
 	Template += "    - Size of largest lymph node involved (mm), specify site: " + frm.A64.value + "\n";
 }
 
+if (document.getElementById("A85").checked || document.getElementById("A86").checked ||
+	document.getElementById("A87").checked || document.getElementById("A88").checked ||
+	document.getElementById("A88").checked || document.getElementById("A90").checked ||
+	document.getElementById("A91").checked || document.getElementById("A92").checked ||
+    document.getElementById("A93").checked){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A85").checked){
+	Template += frm.A85.value + "\n";
+}
+
+if (document.getElementById("A86").checked){
+	Template += frm.A86.value + "\n";
+}
+
+if (document.getElementById("A87").checked){
+	Template += frm.A87.value + "\n";
+}
+
+if (document.getElementById("A88").checked){
+	Template += frm.A88.value + "\n";
+}
+
+if (document.getElementById("A89").checked){
+	Template += frm.A89.value + "\n";
+}
+
+if (document.getElementById("A90").checked){
+	Template += frm.A90.value + "\n";
+}
+
+if (document.getElementById("A91").checked){
+	Template += frm.A91.value + "\n";
+}
+
+if (document.getElementById("A92").checked){
+	Template += frm.A92.value + "\n";
+}
+
+if (document.getElementById("A93").checked){
+	Template += frm.A93.value + "\n";
+}
+
+
 if (document.getElementById("A65").checked || document.getElementById("A66").checked ||
-	document.getElementById("A67").checked || frm.A68.value + frm.A69.value + frm.A70.value + frm.A71.value !== ""){
+	document.getElementById("A67").checked || frm.A68.value + frm.A69.value + frm.A70.value  !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -353,10 +398,6 @@ if (frm.A69.value !== ""){
 
 if (frm.A70.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "    - " + frm.A70.value + "\n";
-}
-
-if (frm.A71.value !== ""){
-	Template += "    - Specify site: " + frm.A71.value + "\n";
 }
 
 if (document.getElementById("A72").checked || document.getElementById("A73").checked ||
@@ -935,6 +976,21 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A85"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A86"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A87"  value="  - Site(s) outside the true pelvis (specify):"><label class="choice" >Site(s) outside the true pelvis (specify):</label>
+<input class="element checkbox" type="checkbox" id="A88"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A89"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A90"  value="  - Cutaneous nodules distant from the primary site (specify):"><label class="choice" >Cutaneous nodules distant from the primary site (specify):</label>
+<input class="element checkbox" type="checkbox" id="A91"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A92"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A93"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf#page=15" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
@@ -993,7 +1049,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td valgin="top" rowspan="2">
+<td>
 <label class="description"> - Distant metastasis (pM):</label>
 </td>
 <td>
@@ -1004,13 +1060,14 @@ table, th, td {
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
     - Specify site(s), if known:
 <input type="text" name="A71" class="element text small" ID="A71" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -1058,7 +1115,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 14-Jul-2021,<br>
+Last upated on 19-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Penis 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
