@@ -138,32 +138,59 @@ if (frm.A27.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A27.value + "\n";
 }
 
+if (document.getElementById("A36").checked || document.getElementById("A37").checked ||
+	document.getElementById("A38").checked || document.getElementById("A39").checked ||
+	document.getElementById("A40").checked || document.getElementById("A41").checked ||
+	frm.A31.value + frm.A33.value !== "" ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A36").checked){
+	Template += frm.A36.value + "\n";
+}
+
+if (document.getElementById("A37").checked){
+	Template += frm.A37.value + "\n";
+}
+
+if (document.getElementById("A38").checked){
+	Template += frm.A38.value + "\n";
+}
+
+if (document.getElementById("A39").checked){
+	Template += frm.A39.value + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += frm.A40.value + "\n";
+}
+
+if (document.getElementById("A41").checked){
+	Template += frm.A41.value + "\n";
+}
+/**
+if (frm.A30.value !== ""){
+	Template += "  - Sites of distant metastasis: " + frm.A30.value + "\n";
+}
+**/
+if (frm.A31.value !== ""){
+	Template += "  - Size of largest metastasis: " + frm.A31.value + "\n";
+}
+/**
+if (frm.A32.value !== ""){
+	Template += "  - Metastases to other organs: " + frm.A32.value + "\n";
+}
+**/
+if (frm.A33.value !== ""){
+	Template += "  - Histologic type(s): " + frm.A33.value + "\n";
+}
+
 if (frm.A28.value !== ""){
 	Template += "\n" + "- Children’s Oncology Group Staging for any Malignant Extragonadal Germ Cell Tumors: " + "\n" + "  - " + frm.A28.value + "\n";
 }
 
 if (frm.A29.value !== ""){
 	Template += "\n" + "- Moran and Suster Proposed Clinical Staging for Mediastinal Germ Cell Tumors: " + "\n" + "  - " + frm.A29.value + "\n";
-}
-
-if (frm.A30.value + frm.A31.value + frm.A32.value + frm.A33.value !== ""){
-	Template += "\n" + "- Status of metastases:" + "\n";
-}
-
-if (frm.A30.value !== ""){
-	Template += "  - Sites of distant metastasis: " + frm.A30.value + "\n";
-}
-
-if (frm.A31.value !== ""){
-	Template += "  - Size of largest metastasis: " + frm.A31.value + "\n";
-}
-
-if (frm.A32.value !== ""){
-	Template += "  - Metastases to other organs: " + frm.A32.value + "\n";
-}
-
-if (frm.A33.value !== ""){
-	Template += "  - Histologic type(s): " + frm.A33.value + "\n";
 }
 
 if (frm.A34.value !== ""){
@@ -401,33 +428,6 @@ Ancillary IHC can include SALL4, OCT3/4, CD30, AFP, Glypican-3 and beta-HCG.
 </tr>
 </table>
 </p>
-
-<p>
-<table border="1">
-<col width="65%">
-<label class="description">- Distant metastasis:</label>
-
-<tr> 
-<td><label class="description">- Sites of distant metastasis: </label></td>
-<td><input type="text" class="element text large" ID="A30" size="35"></td>
-</tr>
-
-<tr> 
-<td><label class="description">- Sizes of distant metastasis (cm): </label></td>
-<td><input type="text" class="element text large" ID="A31" size="35"></td>
-</tr>
-<tr> 
-<td><label class="description">- Metastases to other organs (specify): </label></td>
-<td><input type="text" class="element text large" ID="A32" size="35"></td>
-</tr>
-<tr> 
-<td><label class="description">- Histologic type(s), specify: </label></td>
-<td><input type="text" class="element text large" ID="A33" size="35"></td>
-</tr>
-
-</table>
-</p>
-
 </fieldset>
 </p>
 
@@ -509,6 +509,45 @@ Ancillary IHC can include SALL4, OCT3/4, CD30, AFP, Glypican-3 and beta-HCG.
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A36"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A37"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A38"  value="  - Intrathoracic organ(s) or site(s) (i.e., lymph nodes, lung, etc.) (specify):"><label class="choice" >Intrathoracic organ(s) or site(s) (i.e., lymph nodes, lung, etc.) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A39"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A40"  value="  - Other extrathoracic organ(s) or site(s) (specify):"><label class="choice" >Other extrathoracic organ(s) or site(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A41"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+<p>
+<table border="1">
+<col width="65%">
+<!--
+<tr> 
+<td><label class="description">- Sites of distant metastasis: </label></td>
+<td><input type="text" class="element text large" ID="A330" size="35"></td>
+</tr>
+-->
+<tr> 
+<td><label class="">+ Sizes of distant metastasis (cm): </label></td>
+<td><input type="text" class="element text large" ID="A31" size="35"></td>
+</tr>
+
+<!--
+<tr> 
+<td><label class="description">- Metastases to other organs (specify): </label></td>
+<td><input type="text" class="element text large" ID="A32" size="35"></td>
+</tr>
+-->
+<tr> 
+<td><label class="">+ Histologic type(s), specify: </label></td>
+<td><input type="text" class="element text large" ID="A33" size="35"></td>
+</tr>
+
+</table>
+</p>
+</fieldset>
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\ExGonad.GCT_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Pathologic Stage Classification</a> : </label></legend>
 <p>
 <table border="1">
@@ -561,7 +600,7 @@ Ancillary IHC can include SALL4, OCT3/4, CD30, AFP, Glypican-3 and beta-HCG.
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Germ Cell Resection 4.1.0.0 (June 2019), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

@@ -154,9 +154,40 @@ if (frm.A30.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A30.value + "\n";
 }
 
+if (document.getElementById("A47").checked ||
+	document.getElementById("A48").checked || document.getElementById("A49").checked ||
+	document.getElementById("A50").checked || document.getElementById("A51").checked ||
+	document.getElementById("A52").checked  ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
 if (document.getElementById("A31").checked || document.getElementById("A32").checked ||
 	document.getElementById("A33").checked || frm.A34.value + frm.A35.value + frm.A36.value
-	+ frm.A37.value !== ""){
+	!== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -188,11 +219,11 @@ if (frm.A35.value !== ""){
 if (frm.A36.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A36.value + "\n";
 }
-
+/**
 if (frm.A37.value !== ""){
 	Template += "    - Specify site(s): " + frm.A37.value + "\n";
 }
-
+**/
 if (document.getElementById("A38").checked || document.getElementById("A39").checked ||
 	document.getElementById("A40").checked || document.getElementById("A41").checked ||
 	document.getElementById("A42").checked || document.getElementById("A43").checked ||
@@ -554,6 +585,20 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A47"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A48"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A49"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A50"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A51"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A52"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 <p>
 <table border="1">
@@ -609,23 +654,25 @@ table, th, td {
 </tr>
 
 <tr>
-<td rowspan="2" valign="top">
+<td ">
 <label class="description">- Distant metastasis (pM):</label>
 </td>
 <td>
 <select class="element select large" ID="A36">
 	<option value=""></option>
-	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
+	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
+<	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
 <label>- Specify site(s), if known:</label>
 <input type="text" class="element text small" ID="A37" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -672,7 +719,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 13-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Gallbladder 4.2.0.0	(June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

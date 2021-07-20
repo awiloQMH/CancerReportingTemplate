@@ -385,6 +385,55 @@ if (frm.A77.value !== ""){
 if (frm.A90.value !== ""){
 	Template += "  - Extranodal extension: " + frm.A90.value + "\n";
 }
+
+if (document.getElementById("A94").checked || document.getElementById("A95").checked ||
+	document.getElementById("A96").checked || document.getElementById("A97").checked ||
+	document.getElementById("A98").checked || document.getElementById("A99").checked ||
+ 	document.getElementById("A100").checked || document.getElementById("A101").checked ||
+ 	document.getElementById("A102").checked || document.getElementById("A103").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A94").checked){
+	Template += frm.A94.value + "\n";
+}
+
+if (document.getElementById("A95").checked){
+	Template += frm.A95.value + "\n";
+}
+
+if (document.getElementById("A96").checked){
+	Template += frm.A96.value + "\n";
+}
+
+if (document.getElementById("A97").checked){
+	Template += frm.A97.value + "\n";
+}
+
+if (document.getElementById("A98").checked){
+	Template += frm.A98.value + "\n";
+}
+
+if (document.getElementById("A99").checked){
+	Template += frm.A99.value + "\n";
+}
+
+if (document.getElementById("A100").checked){
+	Template += frm.A100.value + "\n";
+}
+
+if (document.getElementById("A101").checked){
+	Template += frm.A101.value + "\n";
+}
+
+if (document.getElementById("A102").checked){
+	Template += frm.A102.value + "\n";
+}
+
+if (document.getElementById("A103").checked){
+	Template += frm.A103.value + "\n";
+}
+
 /*
 if (frm.A85.value !== ""){
 	Template += "- FIGO Stage (2018 FIGO Cancer Report): " + "\n" + frm.A85.value + "\n";
@@ -1028,6 +1077,24 @@ table, th, td {
 </fieldset>
 </p>
 
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A94"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A95"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A96"  value="  - Inguinal lymph node(s):"><label class="choice" >Inguinal lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A97"  value="  - Omentum:"><label class="choice" >Omentum:</label>
+<input class="element checkbox" type="checkbox" id="A98"  value="  - Extrapelvic peritoneum:"><label class="choice" >Extrapelvic peritoneum:</label>
+<input class="element checkbox" type="checkbox" id="A99"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A100"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A101"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A102"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A103"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\GYN_UterusCA.pdf" target="_blank">FIGO Stage (2018 FIGO Cancer Report):</a></label></legend>
 <!--
@@ -1199,7 +1266,7 @@ IV: 	Tumor invades bladder and/or bowel mucosa, and/or distant metastases<br><br
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Endometrium 4.2.0.0 (June 2021) <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

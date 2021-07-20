@@ -97,9 +97,39 @@ if (frm.A20.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A20.value + "\n";
 }
 
+if (document.getElementById("A38").checked || document.getElementById("A39").checked ||
+	document.getElementById("A40").checked || document.getElementById("A41").checked ||
+	document.getElementById("A42").checked || document.getElementById("A43").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A38").checked){
+	Template += frm.A38.value + "\n";
+}
+
+if (document.getElementById("A39").checked){
+	Template += frm.A39.value + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += frm.A40.value + "\n";
+}
+
+if (document.getElementById("A41").checked){
+	Template += frm.A41.value + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += frm.A43.value + "\n";
+}
+
 if (document.getElementById("A21").checked || document.getElementById("A22").checked ||
 	document.getElementById("A23").checked ||
-	frm.A24.value + frm.A25.value + frm.A26.value + frm.A27.value !== ""){
+	frm.A24.value + frm.A25.value + frm.A26.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -131,11 +161,11 @@ if (frm.A25.value !== ""){
 if (frm.A26.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A26.value + "\n";
 }
-
+/**
 if (frm.A27.value !== ""){
 	Template += "    - Specify site(s): " + frm.A27.value + "\n";
 }
-
+**/
 if (document.getElementById("A28").checked || document.getElementById("A29").checked ||
 	document.getElementById("A30").checked || document.getElementById("A31").checked ||
 	document.getElementById("A32").checked || document.getElementById("A33").checked ||
@@ -541,6 +571,20 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A38"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A39"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A40"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A41"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A42"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A43"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 <p>
 <table border="1">
@@ -591,23 +635,25 @@ table, th, td {
 </tr>
 
 <tr>
-<td rowspan="2" valign="top">
+<td>
 <label class="description">- Distant metastasis (pM): </label>
 </td>
 <td>
 <select class="element select large" ID="A26">
 	<option value=""></option>
+	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
 <label>- Specify site(s), if known:</label>
 <input type="text" class="element text small" ID="A27" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -653,7 +699,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 13-Jul-2021, <br>
+Last upated on 20-Jul-2021, <br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Version: Hepatocellular 4.2.0.0	(June 2021),
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

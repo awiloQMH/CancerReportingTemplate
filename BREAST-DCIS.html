@@ -224,9 +224,54 @@ if (frm.A38.value !== ""){
 	Template += "  - Extranodal extension (ENE) : " + frm.A38.value + "\n";
 }
 
+if (document.getElementById("A47").checked || document.getElementById("A48").checked ||
+	document.getElementById("A49").checked || document.getElementById("A50").checked ||
+	document.getElementById("A51").checked || document.getElementById("A52").checked ||
+	document.getElementById("A53").checked || document.getElementById("A54").checked ||
+    document.getElementById("A55").checked){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
+if (document.getElementById("A55").checked){
+	Template += frm.A55.value + "\n";
+}
+
+
 if (document.getElementById("A39").checked || document.getElementById("A40").checked ||
     document.getElementById("A42").checked || document.getElementById("A43").checked || 
-	frm.A41.value + frm.A44.value !== ""){
+	frm.A41.value + frm.A44.value + frm.A46.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -261,6 +306,11 @@ if (document.getElementById("A43").checked){
 if (frm.A44.value !== ""){
 	Template += "  - Regional lymph nodes (pN): " + "\n" + "  " + frm.A44.value + "\n";
 }
+
+if (frm.A46.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A46.value + "\n";
+}
+
 
 if (frm.A45.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A45.value + "\n";
@@ -696,6 +746,23 @@ Non-essential elements are identified by "+" sign.</a>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A47"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A48"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A49"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A50"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A51"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A52"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A53"  value="  - Brain (specify):"><label class="choice" >Brain (specify):</label>
+<input class="element checkbox" type="checkbox" id="A54"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A55"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Breast-Protocol-Folder\Breast.DCIS_4.4.0.0.REL_CAPCP.pdf#page=21" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
@@ -759,6 +826,20 @@ Non-essential elements are identified by "+" sign.</a>
 	</select>
 </td>
 </tr>
+
+<tr>
+<td >
+<label class="description">- Distant metastasis (pM): </label>
+</td>
+<td>
+	<select class="element select large" ID="A46">
+		<option value=""></option>
+		<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
+		<option value="  - pM1: Histologically proven metastases larger than 0.2 mm">pM1: Histologically proven metastases larger than 0.2 mm</option>
+	</select>
+</td>
+</tr>
+
 </table>
 </p>
 </fieldset>
@@ -784,7 +865,7 @@ Non-essential elements are identified by "+" sign.</a>
 <br>
 
 <div id="footer">
-Last upated on 11-Jul-2021,<br>
+Last upated on 19-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Breast DCIS Resection 4.4.0.0 (June 2021).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

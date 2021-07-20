@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Reporting templates</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<style>
+.dropbtn {
+    background-color: #ebfafa;
+    color: #003366;
+    padding: 16px;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size:small; 
+    border: 1px solid silver;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+	text-align:left;
+    background-color: #ccd9ff;
+    min-width: 160px; relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #d9ccff;}
+
+.accordion {
+    background-color: #ebfafa;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid silver;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+}
+
+.active, .accordion:hover {
+    background-color: #d9ccff;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #ccd9ff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+</style>
+</head>
+<body>
+
+
+<div>
+
+<img id="top" src="top.png" alt="">
+<div id="form_container">
+	<div class="form_description">
+
+		<h2 align="center"><a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">
+						<div class="tooltip">Reporting templates for tumor excision specimens
+						<span class="tooltiptext">click to access original CAP templates</span>
+						</div>
+						</a>						
+						
+		</h2>
+
+
+	</div>
+
+<p>
+<table align = "center">
+<tr>
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,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">
+	<br>Brain</button>
+	<div class="dropdown-content">
+		<a href="CNS-Common_gliomas_and_ependymomas.html" target="_blank">Common gliomas and ependymomas</a>
+		<a href="CNS-Meningioma.html" target="_blank">Meningioma</a>
+	</div>
+</div></td>
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARSSURBVFhH7ZffaxxVFMfjD7QgWqm+FMX6IoIPggiioE9Cpc2D6D8ggiBWrS2IiA9GWh8Czc5sbBWNhqr70HQxzcykJjszMdk0aVGSzMw2oa0+2BZRyYtmd36mMXM9Z/bMZrKZ2Z2G6dt+4LDDd+75cc+9c3emq0OHDtug1i88YXFCweSEt0m6ZdRy0gGLE4sOLz1HUnssXliyeJFBkRWSbhkmL/4S5OLFiyS1B2b0ATkxu3/kaZIzp8oLj4d5oBkfktweixveDTNbrzsLH5OcOWZefCcs0OVHHiU5HeEywz4cIylzTF74tp5D/JOk9EBh3wSz48R/ScocWNbFoEBeEEhKT7T9tT7pQZIzBWLXqMBjJKWnxouvhgVCsU+SnBmsZ2pHGN/ipPdJTk+NG3khEmAvyZlh50YfCuNDM94iOT21vPT8RoFCN8mZsZI7vSu7AnMj+0nOjH96izvD+LAHD5KcHpsTXw4D2Lkzz5CcKXDWrlKOPEnpgbPp3bDAmz5EUwI5rmJ8ONJGSUoPHNR9gTPMEp64O0nOFFjacWrCrySlw1ONk86pc79bn//InKHpZTal30+3MoOp8zvt4fOzmMMeVH23pBUYY7fR7dZ4ij7tKrrrlRZMVzXYqqLlvAljCgofoCHbBmKcAPsLY0Js3x1bcFxZd+F6jhWLd9Cw1kAAGYxtNX0Zfr/EYv3S0i4a3hZHnX+k7quf8hTj761xA5NpeGuw9a6qezEBGgb3cdZvQpdfbzVrXzbugc70gs9B8LGb40QNc/qzl+8l12Ssk5Pd7tm5C7DM16AAPy4YmhPem6jsI9cteIq2vz4+OU6QQzGuYk7MTa7JwKP/KT1Z8LIqrdiFqWm3tKAnFqvoX3hK5SNybwD6IdAH43wwlivPG3ahPGN9JlXDfJib3JOBv7Xh0CFq9lelRa+kXdyaLLAb/tjP91GILn/st7uhwy50btPYYPy4tmgPyJfjcmBuCpEMnH/lWGcwk5fWneLMBOyX9U2JJ4zrnqy/gscE7slVVXsNuvRHdAz62MWZMhzKflzsugllKiMZODyNeOcNsws/lWHz/xctAM1WKs/C0nY36zjW/n7yQlysqGFuKiMZGKg2O8aZc3pWiRYBS7puHh3SakeGdKepw+7QTOKqNJlKZSQTfUhaGX5UwZ7UwiLM3h/Y8p43AsPrRnHj85XWy7ph0MEjVEYy+CkIA9fiAjSb+XVpISwElpZVDw+urRwaXMPrULcGlOC7o51BY25U86OPURmtwZnEBYkzV9GW8G/Klef2Bg8JGHTtJXhINFfWLsX5xBmsyCeUvj2YBJxONAdpNnzT8QqT77Eedju5NkDN/m7yABwdjXOuheVTvyhEwTdpcD6H+21TQE68gl12jp3dQ0MTqR4/8wDswcPgcx5+vTAGTg5iyGZeepGGbh/8fsC3aqtPeAoTknzTsJ7iXXb/8MP4AoxfdSR36NBh+3R1/Q+jXRSR+s1LEwAAAABJRU5ErkJggg==">
+	<br>Breast</button>
+	<div class="dropdown-content">
+		<a href="BREAST-Cancers.html" target="_blank">CA breast</a>
+		<a href="BREAST-DCIS.html" target="_blank">DCIS</a>
+	</div>
+</div></td>
+
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUcSURBVFhH7VhZbxtVFI7E3wCxI34FVILEW+wEFV54hBeeeKES4ikb8Tp2VSRUikqBF6S6CWljO3aREGKxZzEIRBOahgakOCGCh9iJszjxuMP5xnfqWZ3GHQse8klHmVyfc8+Zs91zZ+AU/YY3/sPTI0kp60+IO764cBBMSoWXY/yzIDxjzR8X9oIpKQdeyAyFS8+EOClPv+05yfhitM5JN4emi8+rinoBFAYSYnUyty7PLB0q1241lPHMWivAiTsgPGPty9+OFPAEEkLNE+HP4O9Ubr2FdSeZa7cOlclMpRmIi9veqPAoU3kyhJLS9emFjdbC3XuKnj7/sa6SeT1a2Gx6oqV7+Gv+zUlmgowMceICU9kdQ1PSY2poyP2BuLBL4TiYu920bNqN5pdl23Unmlk8VBByZoIzYJyfQgO3pxcbyiyFdI5CZLdpNzqpgaBXP/hpl7w4+1JEeoqZY0UoJeXHyTi7DczkZohBN5abykS20vJz4pajkRTWBhLXbgN4Eh5Fco9l1mQt4ceyFRlrs6xIoMAbK72oFRbW9TLDCbE2nl2XYZCdHsgEk+I8M8kItARsaBaau32kUDtQcxK5ghzFW6KVjLRbSbvNcFJ2MCE8ib3wO/2fw7pehir8iWFOuo6QmvWA4AR/XKyrBpkBZcmv/7YITWTXZOQHY3MFaC0oDrOu3O8txRPjZe1F7wPegNBlYdsggP9ROFoDdgsII9qLXpdG0a82qZ+KVYNO6neFsUxFNjNz5FGEh7G5Bn+i+Di9eBVFibCa9U7mKhQ1KcfYSYDyxK6lICeRm4zNVbR7bnkGeXqpVLXoxTpjVQvkIE3VpmcCYY0Y9xmb68DZTOHcuSLtGPTiiDQ4Bj3QLsRYCyUf8BjqASMOeqknymRThrHdf5NtfSP9jJ6xZqkoF2EXuUj+r6baT/VF4guLz5kNxDPWUOGMzXUgffS5j2MSJ9FgpPgCY2mD3FnAGKQxaoSTop8hxmz4fn7DEOLozU0bD3YvkuMnjR6h9l9OqH34/ZZBL448DMmMrd1mrv5qNbCfbQZAfg9zovDuzB9Her2WKsYxN7lgdDUIjTqYLPclxO1pXaihYjMrxhHN4hi4GpOG3VGnjuQuH3UA5V8W1wK9Po2myFmWEwy90G5YUHthP467uFC3m54ufPNPy9YpcKmdAPKhH4WCscruHH7jylLdEy69xdg6cHojrGEWZGyuIZgq35jKrlsmmo+KVYWGlzuMrQMcLYi9WWA6v9FCvjA21+CJ8m+/fvHnulkfmrU3xh8xtg70VTV/p1NV71xdbdAU/K2bR54vzp995Xx5F8ep3jjQpVKNOod0l7EaASOCnPjdOTJKE0ALgNFkvHGIfAjQmLX6MV+zGPcpTTU0QNA1gT/LWK1A3wsXrJd1dHfDhPEQQAgzuiiBsisthVpdYyhWHGVs9jimmu0vNMeAlA7T0bUCw+A90nForuCLxS3yXnmJiTjD6fqJyzxtfOJ244kIgVHKN4QUXkPz1yboDF2SsIbKHU2VdwejvI+JOQNfnOwu8OPza01cLRnbAyOULC/CAPN++BhFKXMAr1JaLXvDvJ+JdAc+h6GT0/ilfgIB4Vm93fXwFYraSQueem/2z71z6dU9DCW4zL/5yRLdpcUUYzsZ2hcacYFCuk8h38clvNdPZGSg6jEMojS5nMd4hW+NAU668Fo6/Qhj++9ABspf/LKvXsjZ0v8LVL0pqv4GXdYTbOkUp+hgYOBfm+8LOW2CZNMAAAAASUVORK5CYII=">
+	<br>GI</button>
+	<div class="dropdown-content">
+		<a href="GI-Ampulla of Vater.html" target="_blank">Ampulla of Vater</a>
+		<a href="GI-Anus.html" target="_blank">Anus</a>
+		<a href="GI-Appendix.html" target="_blank">Appendix</a>
+		<a href="GI-Colon-and-rectum.html" target="_blank">Colon and rectum</a>
+		<a href="GI-Esophagus.html" target="_blank">Esophagus</a>
+		<a href="GI-GIST.html" target="_blank">GIST</a>
+		<a href="GI-Distal Extrahepatic bile ducts.html" target="_blank">Hepatobiliary -  Extrahepatic bile ducts</a>
+		<a href="GI-Gallbladder.html" target="_blank">Hepatobiliary -  <br>Gallbladder</a>
+		<a href="GI-HCC.html" target="_blank">Hepatobiliary -  <br>HCC</a>
+		<a href="GI-Intrahepatic bile ducts.html" target="_blank">Hepatobiliary -  Intrahepatic bile ducts</a>
+		<a href="GI-Perhilar bile ducts.html" target="_blank">Hepatobiliary - Perihilar bile ducts</a>
+		<a href="GI-Pancreas.html" target="_blank">Pancreas (exocrine)</a>
+		<a href="GI-Small intestine.html" target="_blank">Small intestine</a>
+		<a href="GI-Stomach.html" target="_blank">Stomach</a>
+  	</div>
+</div></td>
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,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">
+	<br>GYN</button>
+	<div class="dropdown-content">
+		<a href="GYN-Cervix.html" target="_blank">Cervix</a>
+		<a href="GYN-Endometrium.html" target="_blank">Endometrium</a>
+		<a href="GYN-Trophoblast.html" target="_blank">Gestational trophoblastic diseases</a>
+		<a href="GYN-Ovary.html" target="_blank">Ovary<br>fallopian tube<br>peritoneum</a>
+		<a href="GYN-Sarcoma.html" target="_blank">Uterine sarcoma</a>
+		<a href="GYN-Vagina.html" target="_blank">Vagina</a>
+		<a href="GYN-Vulva.html" target="_blank">Vulva</a>
+	</div>
+</div></td>
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ+SURBVFhH7ZhLqE1RGICPZynvt0JEKBOKKMSAEIUBpZgw4JooA/KcSCGPREpMkGJAKQwMFEoxIBKKiQyU5wR5833rOCXn3nPWPtfaW7lffZ39r3P33v/9z9rrsUtt/EN0xbE4E6dhTyycLrgO7+OPP/yG57A/FsJwfIgm8wR34SpchMvxGH7CZ7gTB2FudMPH+AGX2dAC8/EWfsdXOAlzYQtauVrJ/c5kfI13sZ0NqbmHDzDLzdai/9SsECWkL3qjfSGKZwh63rYQJWQMeiMrkpV3eLJ8mI7xaIKrQ5QNn+oT5cN0DEYT3BSieHqh5+0OUUI642c8HKJ4pqAJrgxRYm6j41sWNqIJjg5RYi6g/cmpLpbL+BE7hSgh/dB59gx2tCGSNWgFl4QoISPQG20IUTwT0POcr5Pi7PECb+IwGyLojQfQBMfZkBrHwC94J0T1caVjcqdDlBN70eHGhWo9ruOj8mF+zEGrUm9GGYk+VP7EudIercpzdCHQHA7q5/Eruh3InaloXzwVomrmoVXeE6KCcPA9Uj6sopKgn4VhAi3Ny7PR7xeGqAD6oAkcClE1dgG/b2Rp1moG4BU0gbk2NEN3fIkO7CabC0NxB75Fhw83ULWYgW6YKvO3m/okTMez6JBh1W6gu7UYrPZxdGD3XGegFegw1GpM7Bp64fd4FF32N8JA3Ixu5r3eU3Tx4JiamQ64H910v8Gt+Lfet3jtpVh5M3EV3S1mwkp58iX0aU2BiW5Hi+BeuwdGsQBNzj7XUPkz0oTe72CIIvABsL+5jssLVzxuI+p2I7eHlvzir+O8XI9WcTHWZCL6h0XpU16TUej7vKJ0ndnG/0Kp9BNVNrrKBR8xJwAAAABJRU5ErkJggg==">
+	<br>H&N</button>
+	<div class="dropdown-content">
+		<a href="HN-Larynx.html" target="_blank">Larynx</a>
+		<a href="HN-Lip and oral cavity.html" target="_blank">Lip and oral cavity</a>
+		<a href="HN-Major salivary gland.html" target="_blank">Major salivary gland</a>
+		<a href="HN-Nasal cavity and Nasal sinuses.html" target="_blank">Nasal cavity and paranasal sinuses</a>
+		<a href="HN-Pharynx.html" target="_blank">Nasoopharynx<br>Oropharynx<br>Hypopharynx</a>
+		</div>
+</div></td>
+
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,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">
+	<br>MS</button>
+	<div class="dropdown-content">
+		<a href="MS-Bone.html" target="_blank">Bone tumors</a>
+		<a href="MS-Soft tissue sarcoma.html" target="_blank">Sarcomas</a>
+	</div>
+</div></td>
+</tr>
+<tr>
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,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">
+	<br>NET</button>
+	<div class="dropdown-content">
+		<a href="Endocrine-Adrenal.html" target="_blank">Adrenal</a>
+		<a href="Endocrine-Appendix-NET.html" target="_blank">Appendix NET</a>
+		<a href="Endocrine-Colon-NET.html" target="_blank">Colon NET</a>
+		<a href="Endocrine-Duodenum and Ampulla-NET.html" target="_blank">Duodenum and ampulla NET</a>
+		<a href="Endocrine-Jejunum-Ileum-NET.html" target="_blank">Jejunum-ileum NET</a>
+		<a href="Endocrine-Pancreas-NET.html" target="_blank">Pancreas endocrine tumor</a>
+		<a href="Endocrine-Stomach-NET.html" target="_blank">Stomach NET</a>
+		<a href="Endocrine-Thyroid.html" target="_blank">Thyroid</a>
+		</div>
+</div></td>
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPASURBVFhH7Zd5yE1pHMcPYw+Dsc9kwowhS5QsWcYMM2QmaWrQkMlaJCGR7GKSLCkzjaU0888USY1GQ1EkkS0kW2TLErLLNvh8znuPzr2O+7733r8091uf3vs855znOee3Pb83KKqoov6HKg8/wyqo6ESOqgqTYVE4KlAuNgDahaMgqAzb4RWchRqQTbVhILQIR0FQB46Az++DclCQhoKLyS5YmPr9C1SC0jQTouc3wlp4CeNBTxSsCvAVbIBoowfwHTSE0qQH+sE2iJ6/CN9CPShI1WEqnINo8ThaYifowiR9BPPhKiQ9/wL+gV6Qs/qAX+pCp2FOau4zaA39YSVcB+/5G+IWHQS3wWuHYDp8Cc2gDfhRuvsueM9foEHKpFHg112DnyBbILuoVvJ+Lf0pzAM3PQ99IZvqwq/g/UehVLebsW52GBo7UUb1hodwB9zMmKsJZZXJ6L5mdhUnkmTM6BbLRz4B/DW4iaFRzYkcNQL8OD2SqKVg4PcIR/lpBfwHLcNR7toMT6BBOIrJE+EGWIQLkYX5MRhX+cgP04ozwlFMbcELo8NRYbJmmvn56gDsKPlZIq3nueoLFuLeSJYU1/oxHOWu38CE6x6OkHHjglfgCydismRcgq7hKF0jwVJkzYvrezDZjGePR5PO+pmp2XAZ3rxISuPgHjyCDk642Ltibw/48hPDUbr+BK9p/UzZRERFXJJOG1/ea1PCUboscc9htQOTYzcklQYLrzUqqTGwyNp2fRiO0mUWesQdBF2dVOybwDBIqnufw1PQ3cEY0B36vZsTBWosPANdlE9M2ylZTzVc1KYFnUGTGo+Z8kT4uORnmppCUsuk6y6A11V9sA/MVPPU37i0tIXeTH7rsPDA96jyRInrd/DlPdAnwTSI2iddHFcn0Btzw1GJ/gVbtDVgLM+CveDzNhBxDYakdUO1B027CeIxo/X+AAuwD8stWALxDkRLH4f7UMuJlOx+toBuj543e21m4/8yfAJWhZNgH5ooU98F1kNmYtjuWy4M7g+ciEmrR1YRj81M99u8tgIzNDNpbMNOgXHb0Yl3yQeXgZscA3vAbPJLh4MlRQtZwzxPfX4/dIFs8qUNG+ueYfANlElD4Ca40RlYDj1B+RE/wDrQJd5zAqIKoHU9TdzQawa8Da8hpPSE5cWYjppara91c1LU8mtJFxFbfDtkf5s4Zqx1MilmjN0FYOPq/cb3VvCcdmys+o+UPWimy3NWI1gMbqa1JkAuDamxaxZ7bFq8/SgtWVRRRRVV1PutIHgNRYfvI4xqdWQAAAAASUVORK5CYII=">
+	<br>Child</button>
+	<div class="dropdown-content">
+		<a href="Pedi-EwingSarcoma.html" target="_blank">Ewing sarcoma</a>
+		<a href="Pedi-GermCellTumors.html" target="_blank">Extragonadal germ cell tumor</a>
+		<a href="Pedi-Hepatoblastoma.html" target="_blank">Hepatoblastoma</a>
+		<a href="Pedi-Neuroblastoma.html" target="_blank">Neuroblastoma</a>
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Ophthalmic-Protocol-Folder\Retinoblastoma_4.1.0.0.REL_CAPCP.pdf" target="_blank">Retinoblastoma</a>
+		<a href="Pedi-Rhadomyosarcoma.html" target="_blank">Rhabdomyosarcoma</a>
+		<a href="Pedi-Wilms.html" target="_blank">Wilms tumor</a>
+	</div>
+</div></td>
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOPSURBVFhH7ZdZSFRRGMctopVoIai3nnqs94qypLmzqtmClmEFPQSRtFAoPQxEeufOncW2MS2DIlopWqCoF8tx7jZqqSElSlhaRi6jzuYyns5nZ4Tqck1u4Qn8wx/ufN/5vvkx555lUqZFZCyuXkse6dMWTlxlZIUz5CNlQmgGwwpVhmKJIRG6hOF2Mw4xbjr7dA4J0SObvWa+xSl/s7mUKhKiSyanWGB0iMjslA6RED0y8G8WWJxSyOQQR82ssJqE6ZHZIRVmX2yImTgpYrejmSRMh3ba387G0xrKv9OGrG7FT8L0CK/cvGxf/UD+7bZBPMWnSJgeWVxKs/1ZN9pV2thlZMVNJEyHGEdgXYY3OFBak0AWXo4wbmEpSdEhKy/fPHLv44jbH0VmXu4hYToEG7OZk2Le6iiCKbZ5ggGSokMMJ+Tm+BrCl/D0nnjwGeF9sISk6JCVV6oLH39FAHjwRkvEyFJ0gmxx1CzCe1/8gjw0BrinrKmb4QI2kp564TN3W25ZYz/Agbedq+vFZ/Eakp564RPj5smHX8bgwHi6Y/gms4Kkp154z+uB1ZsExGfwcKq9ci5J6xNciSZrEycmMt3BCqi38IGVVpccScIlASG31aNcg7FqPSYy1I8JPnwIjU7KjZ1DyIoXBdQzrLh975WmviTceWkIwX4IOTMnDsJYtR5a1g34srkfZXmDrVCPIfhj9z8lfgGMQi7Lo7RU4rFqPbSsG/CG1ImySpS7UA8nBpwcar/gVm/w1nWhU7WHlnUDFj1ujRlY4SjUp7uCrfyr8M+Azh+A+Op1+PSjlqhaDy3rBjxwuaHXwEppUA8r+KwQHwf0KcMI3wOHIGdgAxv3l9eH1HpoWTdgukuOpRWJy6EeVqxPGRkHBCe/wOaqWQZj1XpoWTegDX+plfUvgXqrU+52+yPjcCWBOL4oyH2QS/VWLk53ynG1HlrWDbiv/E3IyEkboB5PcVGOrzEMkDDV+yreRXGsDHKGImF9Xmldn1oPLesGrKjqSGR65BdQj0+MWQCJj7cus1Pux3/Ur+xwC/Mgl+lRnpS9bE+o9dCybsDmrhGU66sLW1xyAWnzm6y8eHzXhdrwezxWrYeWdQOCX3fExyAzvcpzWNEZXPVCMMNJmyG2+2JtuLY9plo7kf8KILilO4Gu+jsS8E5aeGkQDM/wCkBOreZP/NcA/5WnAfX6/wOk0QSPZqWkfAf4qZrOdJo84QAAAABJRU5ErkJggg==">
+	<br>Skin</button>
+	<div class="dropdown-content">
+		<a href="Skin-Melanoma.html" target="_blank">Melanoma</a>
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Skin-Protocol-Folder\Skin.Merkel_4.1.0.0.REL_CAPCP.pdf" target="_blank">Merkel cell carcinoma</a>
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Ophthalmic-Protocol-Folder\Uvea.Mel_4.1.0.0.REL_CAPCP.pdf" target="_blank">Uveal melanoma</a>
+	</div>
+</div></td>
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,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">
+	<br>Thorax</button>
+	<div class="dropdown-content">
+		<a href="Thorax-Lung.html" target="_blank">Lung cancers</a>
+		<a href="Thorax-Mesothelioma.html" target="_blank">Mesothelioma</a>
+		<a href="Thorax-Thymus.html" target="_blank">Thymus</a>
+		</div>
+</div></td>
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATLSURBVFhH7ZjfT5tVGMcbL+bNrrzQCy+88MYL/RuMJrS0lMJciDExWRY3E5doiImaGJNpMtbfJYzJj/IjMAQGLhsMRtjIUBn0/dEWCpRSYBsynMwJSuVXgb7v43PKoTI8pZxSpol+k2+a9O37PJ8+5z3POefV/CekNfd/aHLJvxjtkqqziJCDnyanHNXbJL/u/MA79GdPXwWtrUcQKnys2AvWW3PQMhKFG1MKXAmuQ5UYgS/aZiDXIYPBLv2hLRrIp7c9PeXapcAJ9yi0hzeh667KdMdEDMzdP4PRIakGq1hLbz18GSzCWziMcDW0wQTb7cahFSgo9WNFpRANcbjCoZv8svMnJkwyt2Gl3744qGZbxR4a5vBkdHhjDf4VJshebh2NQl6xDDqr5xwNdTjS20RoCcaYEKlcI0VwpsvKm0XCCzRc5qW3ilAfUJgA+/FHjZNgtEk+Gi7zynXKitu/Ce0TbIBUJq0I+yVk2/pfpiEzK5PLO1fqWYW6g1Txm0l8FsXrNGRmpbMIFwpb7qsVPgXqh1XoZACkcjU2c6NDjtGQB5fe7HktzymW57nkWb1NWMdVBMrldSCQVYMKtIYU6JhiwyRzvssLWouQRVOkp+ySrmfzXFItgq1+fXs21nd3CcLzMbgZWsS+NgRu70YcctuNo2wYls80hFWdWaimqfhVcDZ4JN8piZ80j6+Ef92E6UX1CZf0PIDTdRMJuDoc7i6OKlpuzpFhnqbp+IXLWd2nTaHV+7vAiMceb0BBiR8qfX9V8PokGySZyXOY5/RGaTo+ZRUNvJrvkpiVIy7rnYWvuh4l4C6R6jEg9nLT0CoYnZJCU/IJdysV5JljwRGfqh6Byh3PH5kkLIi9TDYbBlyVaEo+YfUe3Lm3zIQjxp0JDu8WHPHV8TR6Ij6v2LLSA8T9WzTZ8BLvBryWxqpybXwz/QqSf8YC2/ZJ9/ATE+RKGhVsGVkDclSgKfmUCtDePQO23t8TgDz9b9v1vmXATrFJU/IpFaA8s4qNOgBu/xYgWU1ucK4kF76fx9XE9xtNyae9ANsCC/B+zUgkxy6on7c/TFSxOcg3zORgpbcIfTQln5IBOrt/jBod4mOtWTiea5cj9t7FBGAFVpNnsrxXE1RxjbfQlHxiAbYPL+DShHBOz3Pa857CE1Vj6s6ZfJmjgh2Tsfie0Fg08ApNyScW4Oma4QipHLlucnpnS/qXE3DNQTZIMpf2zeME8S7Hk6UjFqDBJmy8fva7o+Q6nnUVty8Wh6sdwspxTpAPLoVBZ/Y0x5OlIxYg+Y5ejh+cKukMbhnjmxzknEz6X845z4s0HL9SAZJ3MG7/VgU7Oat3BquHK8gtGio9pQLEDWykTFyLV5EFkcwX7yyQyaFk2QPP01DpKRUgHngaPv52Wq3GBs0CYbkpgNsrh4zb/IGTNEz6SgWIu+2jOXZRKZfWmDC7Xe9fgvxiLzZmqYmGOJhSARLhLDxlwqSVnkUmFHHHlAK2nkfxnmewCqX01oNrP4BEpGFjJdXCy1Px1xrtE7H4i6J63xIUdT2EY8VeFeHWMzKsO7VfQKI37Ldf0lvFH0wOeYO0H2KyS8E94z2tVfhMA/AM/WnmxAP4j+hfD/hu2eDfAMl39PL/0mg0mj8BHQ0S3xaPDtQAAAAASUVORK5CYII=">
+	<br>URO</button>
+	<div class="dropdown-content">
+		<a href="UG-Kidney.html" target="_blank">Kidney</a>
+		<a href="UG-Penis.html" target="_blank">Penis</a>
+		<a href="UG-Prostate.html" target="_blank">Prostate</a>
+		<a href="UG-Testis.html" target="_blank">Testis</a>
+		<a href="UG-Ureter.html" target="_blank">Ureter and <br>renal pelvis</a>
+		<a href="UG-Urethra.html" target="_blank">Urethra and <br>periurethral glands</a>
+		<a href="UG-Urinary Bladder.html" target="_blank">Urinary bladder</a>
+
+	</div>
+</div></td>
+
+<td><div class="dropdown">
+	<button class="dropbtn">
+	<img src="data:image/png;base64,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">
+	<br>mark'r</button>
+	<div class="dropdown-content">
+		<a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC/DISH</a>
+		<a href="Biomarker-Colon-HER2.html" target="_blank">Colon HER2 test</a>
+		<a href="Biomarker-MMR-IHC.html" target="_blank">MMR/MSI test</a>
+		<a href="Biomarker-PD-L1-IHC.html" target="_blank">PD-L1 IHC test</a>
+		<a href="Biomarker-Stomach-HER2.html" target="_blank">Stomach HER2</a>
+		<a href="Biomarker-FISH.html" target="_blank">[QMH] FISH tests</a>
+		<a href="Biomarker-NGS.html" target="_blank">[QMH] NGS tests</a>
+		<a href="Biomarker-PCR.html" target="_blank">[QMH] PCR tests</a>
+		<a href="Biomarker-RT-PCR.html" target="_blank">[QMH] RT-PCR tests</a>
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\ColoRectal.Bmk_1.3.0.0.REL_CAPCP.pdf" target="_blank">[CAP] colon</a>
+		<a href=".\cap\cp-femalereproductive-endometrium-biomarker-19-1201.pdf" target="_blank">[CAP] endometrium</a>
+		<a href=".\cap\cp-gigist-gist-biomarker-20-1002.pdf" target="_blank">[CAP] GIST</a>
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Bmk_2.0.0.0.REL_CAPCP.pdf" target="_blank">[CAP] H&N </a>
+		<a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\Lung.Bmk_2.0.0.0.REL_CAPCP.pdf" target="_blank">[CAP] lung</a>
+		<a href=".\cap\cp-skin-melanoma-15biomarker-1002.pdf" target="_blank">[CAP] melanoma</a>
+		<a href=".\cap\cp-endocrine-thyroid-biomarker-16-1001.pdf" target="_blank">[CAP] thyroid</a>
+		</div>
+</div></td>
+
+</tr>
+</table>
+</p>
+
+<button class="accordion">Brain / Central nervous system tumors</button>
+<div class="panel">
+<p>
+  <li><a href="CNS-Common_gliomas_and_ependymomas.html" target="_blank">Common gliomas and ependymomas</a></li>
+  <li><a href="CNS-Meningioma.html" target="_blank">Meningioma</a></li>
+</p>
+</div>
+ 
+<button class="accordion">Breast tumors</button>
+<div class="panel">
+<p>
+  <li><a href="BREAST-Cancers.html" target="_blank">Breast carcinoma</a></li>
+  <li><a href="BREAST-DCIS.html" target="_blank">DCIS</a></li>
+</p>
+</div>
+
+<button class="accordion">Gastrointestinal tract tumors</button>
+<div class="panel">
+<p>
+  <li><a href="GI-Ampulla of Vater.html" target="_blank">Ampulla of Vater</a></li>
+  <li><a href="GI-Anus.html" target="_blank">Anus</a></li>
+  <li><a href="GI-Appendix.html" target="_blank">Appendix</a></li>
+  <li><a href="GI-Colon-and-rectum.html" target="_blank">Colon and rectum</a></li>
+  <li><a href="GI-Esophagus.html" target="_blank">Esophagus</a></li>
+  <li><a href="GI-GIST.html" target="_blank">GIST</a></li>
+  <li><a href="GI-Distal Extrahepatic bile ducts.html" target="_blank">Hepatobiliary - Extrahepatic bile ducts</a></li>
+  <li><a href="GI-Gallbladder.html" target="_blank">Hepatobiliary - Gallbladder</a></li>
+  <li><a href="GI-HCC.html" target="_blank">Hepatobiliary - HCC</a></li>
+  <li><a href="GI-Intrahepatic bile ducts.html" target="_blank">Hepatobiliary - Intrahepatic bile ducts</a></li>
+  <li><a href="GI-Perhilar bile ducts.html" target="_blank">Hepatobiliary - Perihilar bile ducts</a></li>
+  <li><a href="GI-Pancreas.html" target="_blank">Pancreas (exocrine)</a></li>
+  <li><a href="GI-Small intestine.html" target="_blank">Small intestine</a></li>
+  <li><a href="GI-Stomach.html" target="_blank">Stomach</a></li>
+</p>
+</div>
+
+<button class="accordion">Gynecological tumors</button>
+<div class="panel">
+<p>
+  <li><a href="GYN-Cervix.html" target="_blank">Cervix</a></li>
+  <li><a href="GYN-Endometrium.html" target="_blank">Endometrium</a></li>
+  <li><a href="GYN-Trophoblast.html" target="_blank">Gestational trophoblastic diseases</a></li>
+  <li><a href="GYN-Ovary.html" target="_blank">Ovary, fallopian tube and peritoneum</a></li>
+  <li><a href="GYN-Sarcoma.html" target="_blank">Uterine sarcoma</a></li>
+  <li><a href="GYN-Vagina.html" target="_blank">Vagina</a></li>
+  <li><a href="GYN-Vulva.html" target="_blank">Vulva</a></li>
+	</p>
+</div>
+
+<button class="accordion">Head and neck tumors</button>
+<div class="panel">
+  <p>
+  <li><a href="HN-Larynx.html" target="_blank">Larynx</a></li>
+  <li><a href="HN-Lip and oral cavity.html" target="_blank">Lip and oral cavity</a></li>
+  <li><a href="HN-Major salivary gland.html" target="_blank">Major salivary gland</a></li>
+  <li><a href="HN-Nasal cavity and Nasal sinuses.html" target="_blank">Nasal cavity and paranasal sinuses</a></li>
+  <li><a href="HN-Pharynx.html" target="_blank">Phayrnx (nasoopharynx, oropharynx and hypopharynx)</a></li>
+  </p>
+</div>
+
+<button class="accordion">Musculoskeletal / Bone and soft tissue tumors</button>
+<div class="panel">
+  <p>
+  <li><a href="MS-Bone.html" target="_blank">Bone tumors</a></li>
+  <li><a href="MS-Soft tissue sarcoma.html" target="_blank">Sarcomas in various organs</a></li>
+  </p>
+</div>
+ 
+<button class="accordion">NET / Endocrine tumors</button>
+<div class="panel">
+  <p>
+  <li><a href="Endocrine-Adrenal.html" target="_blank">Adrenal gland</a></li>
+  <li><a href="Endocrine-Appendix-NET.html" target="_blank">Appendix NET</a></li>
+  <li><a href="Endocrine-Colon-NET.html" target="_blank">Colon NET</a></li>
+  <li><a href="Endocrine-Duodenum and Ampulla-NET.html" target="_blank">Duodenum and ampulla NET</a></li>
+  <li><a href="Endocrine-Jejunum-Ileum-NET.html" target="_blank">Jejunum-ileum NET</a></li>
+  <li><a href="Endocrine-Pancreas-NET.html" target="_blank">Pancreas endocrine tumor</a></li>
+  <li><a href="Endocrine-Stomach-NET.html" target="_blank">Stomach NET</a></li>
+  <li><a href="Endocrine-Thyroid.html" target="_blank">Thyroid gland</a></li>
+  </p>
+</div>
+
+<button class="accordion">Pediatric tumors</button>
+<div class="panel">
+<p>
+  <li><a href="Pedi-EwingSarcoma.html" target="_blank">Ewing sarcoma</a></li>
+  <li><a href="Pedi-GermCellTumors.html" target="_blank">Extragonadal germ cell tumor</a></li>
+  <li><a href="Pedi-Hepatoblastoma.html" target="_blank">Hepatoblastoma</a></li>
+  <li><a href="Pedi-Neuroblastoma.html" target="_blank">Neuroblastoma</a></li>
+  <li><a href=".\cap\Cancer-Protocols-2021-06-Update\Ophthalmic-Protocol-Folder\Retinoblastoma_4.1.0.0.REL_CAPCP.pdf" target="_blank">Retinoblastoma</a></li>
+  <li><a href="Pedi-Rhadomyosarcoma.html" target="_blank">Rhabdomyosarcoma</a></li>
+  <li><a href="Pedi-Wilms.html" target="_blank">Wilms tumor</a></li>
+</p>
+</div>
+
+<button class="accordion">Skin tumors</button>
+<div class="panel">
+<p>
+  <li><a href="Skin-Melanoma.html" target="_blank">Melanoma</a></li>
+  <li><a href=".\cap\Cancer-Protocols-2021-06-Update\Skin-Protocol-Folder\Skin.Merkel_4.1.0.0.REL_CAPCP.pdf" target="_blank">Merkel cell carcinoma</a></li>
+  <li><a href=".\cap\Cancer-Protocols-2021-06-Update\Ophthalmic-Protocol-Folder\Uvea.Mel_4.1.0.0.REL_CAPCP.pdf" target="_blank">Uveal melanoma</a></li>
+</p>
+</div>
+
+<button class="accordion">Thorax tumors</button>
+<div class="panel">
+  <p>
+  <li><a href="Thorax-Lung.html" target="_blank">Lung cancers</a></li>
+  <li><a href="Thorax-Mesothelioma.html" target="_blank">Mesothelioma</a></li>
+  <li><a href="Thorax-Thymus.html" target="_blank">Thymus</a></li>
+  </p>
+</div>
+
+<button class="accordion">Urogenital tumors</button>
+<div class="panel">
+  <p>
+  <li><a href="UG-Kidney.html" target="_blank">Kidney</a></li>
+  <li><a href="UG-Penis.html" target="_blank">Penis</a></li>
+  <li><a href="UG-Prostate.html" target="_blank">Prostate</a></li>
+  <li><a href="UG-Testis.html" target="_blank">Testis</a></li>
+  <li><a href="UG-Ureter.html" target="_blank">Ureter and renal pelvis</a></li>
+  <li><a href="UG-Urethra.html" target="_blank">Urethra and periurethral glands</a></li>
+  <li><a href="UG-Urinary Bladder.html" target="_blank">Urinary bladder</a></li>
+  </p>
+
+</div>
+
+<button class="accordion">Biomarkers</button>
+<div class="panel">
+<p>
+  <li><a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC & DISH tests</a></li>
+  <li><a href="Biomarker-Colon-HER2.html" target="_blank">Colon HER2 test</a></li>
+  <li><a href="Biomarker-MMR-IHC.html" target="_blank">MMR/MSI test</a></li>
+  <li><a href="Biomarker-PD-L1-IHC.html" target="_blank">PD-L1 IHC test</a></li>
+  <li><a href="Biomarker-Stomach-HER2.html" target="_blank">Stomach HER2 test</a></li>
+  <li><a href="Biomarker-FISH.html" target="_blank">[QMH] FISH tests</a></li>
+  <li><a href="Biomarker-NGS.html" target="_blank">[QMH] NGS tests</a></li>
+  <li><a href="Biomarker-PCR.html" target="_blank">[QMH] PCR tests</a></li>
+  <li><a href="Biomarker-RT-PCR.html" target="_blank">[QMH] RT-PCR tests</a></li>
+  <li><a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\ColoRectal.Bmk_1.3.0.0.REL_CAPCP.pdf" target="_blank">[CAP] colon</a></li>
+  <li><a href=".\cap\cp-femalereproductive-endometrium-biomarker-19-1201.pdf" target="_blank">[CAP] endometrium</a></li>
+  <li><a href=".\cap\cp-gigist-gist-biomarker-20-1002.pdf" target="_blank">[CAP] GIST</a></li>
+  <li><a href=".\cap\Cancer-Protocols-2021-06-Update\Head-and-Neck-Protocol-Folder\HN.Bmk_2.0.0.0.REL_CAPCP.pdf" target="_blank">[CAP] H&N </a></li>
+  <li><a href=".\cap\Cancer-Protocols-2021-06-Update\Thorax-Protocol-Folder\Lung.Bmk_2.0.0.0.REL_CAPCP.pdf" target="_blank">[CAP] lung</a></li>
+  <li><a href=".\cap\cp-skin-melanoma-15biomarker-1002.pdf" target="_blank">[CAP] melanoma</a></li>
+  <li><a href=".\cap\cp-endocrine-thyroid-biomarker-16-1001.pdf" target="_blank">[CAP] thyroid</a></li>
+</p>
+</div>
+
+<!--
+<p>
+<table border="1">
+<tr>
+<td valign="top">
+<label class="description">Brain / Central nervous system tumors</label>
+</td>
+<td>
+  <li><a href="CNS-Common_gliomas_and_ependymomas.html" target="_blank">Common gliomas and ependymomas</a></li>
+  <li><a href="CNS-Meningioma.html" target="_blank">Meningioma</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">Breast tumors</label>
+</td>
+<td>
+
+  <li><a href="BREAST-Cancers.html" target="_blank">Breast carcinoma</a></li>
+  <li><a href="BREAST-DCIS.html" target="_blank">DCIS</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">Gastrointestinal tract tumors</label>
+</td>
+<td>
+  <li><a href="GI-Ampulla of Vater.html" target="_blank">Ampulla of Vater</a></li>
+  <li><a href="GI-Anus.html" target="_blank">Anus</a></li>
+  <li><a href="GI-Appendix.html" target="_blank">Appendix</a></li>
+  <li><a href="GI-Colon-and-rectum.html" target="_blank">Colon and rectum</a></li>
+  <li><a href="GI-Esophagus.html" target="_blank">Esophagus</a></li>
+  <li><a href="GI-GIST.html" target="_blank">GIST</a></li>
+  <li><a href="GI-Distal Extrahepatic bile ducts.html" target="_blank">Hepatobiliary - Extrahepatic bile ducts</a></li>
+  <li><a href="GI-Gallbladder.html" target="_blank">Hepatobiliary - Gallbladder</a></li>
+  <li><a href="GI-HCC.html" target="_blank">Hepatobiliary - HCC</a></li>
+  <li><a href="GI-Intrahepatic bile ducts.html" target="_blank">Hepatobiliary - Intrahepatic bile ducts</a></li>
+  <li><a href="GI-Perhilar bile ducts.html" target="_blank">Hepatobiliary - Perihilar bile ducts</a></li>
+  <li><a href="GI-Pancreas.html" target="_blank">Pancreas (exocrine)</a></li>
+  <li><a href="GI-Small intestine.html" target="_blank">Small intestine</a></li>
+  <li><a href="GI-Stomach.html" target="_blank">Stomach</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">Gynecological tumors</label>
+</td>
+<td>
+  <li><a href="GYN-Cervix.html" target="_blank">Cervix</a></li>
+  <li><a href="GYN-Endometrium.html" target="_blank">Endometrium</a></li>
+  <li><a href="GYN-Trophoblast.html" target="_blank">Gestational trophoblastic diseases</a></li>
+  <li><a href="GYN-Ovary.html" target="_blank">Ovary, fallopian tube and peritoneum</a></li>
+  <li><a href="GYN-Sarcoma.html" target="_blank">Uterine sarcoma</a></li>
+  <li><a href="GYN-Vagina.html" target="_blank">Vagina</a></li>
+  <li><a href="GYN-Vulva.html" target="_blank">Vulva</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">Head and neck tumors</label>
+</td>
+<td>
+  <li><a href="HN-Larynx.html" target="_blank">Larynx</a></li>
+  <li><a href="HN-Lip and oral cavity.html" target="_blank">Lip and oral cavity</a></li>
+  <li><a href="HN-Major salivary gland.html" target="_blank">Major salivary gland</a></li>
+  <li><a href="HN-Nasal cavity and Nasal sinuses.html" target="_blank">Nasal cavity and paranasal sinuses</a></li>
+  <li><a href="HN-Pharynx.html" target="_blank">Phayrnx (nasoopharynx, oropharynx and hypopharynx)</a></li>
+</td>
+<tr>
+
+<tr>
+<td valign="top">
+<label class="description">Musculoskeletal / Bone and soft tissue tumors</label>
+</td>
+<td>
+  <li><a href="MS-Bone.html" target="_blank">Bone tumors</a></li>
+  <li><a href="MS-Soft tissue sarcoma.html" target="_blank">Sarcomas in various organs</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top"> 
+<label class="description">NET / Endocrine tumors</label>
+</td>
+<td>
+  <li><a href="Endocrine-Adrenal.html" target="_blank">Adrenal gland</a></li>
+  <li><a href="Endocrine-Appendix-NET.html" target="_blank">Appendix NET</a></li>
+  <li><a href="Endocrine-Colon-NET.html" target="_blank">Colon NET</a></li>
+  <li><a href="Endocrine-Duodenum and Ampulla-NET.html" target="_blank">Duodenum and ampulla NET</a></li>
+  <li><a href="Endocrine-Jejunum-Ileum-NET.html" target="_blank">Jejunum-ileum NET</a></li>
+  <li><a href="Endocrine-Pancreas-NET.html" target="_blank">Pancreas endocrine tumor</a></li>
+  <li><a href="Endocrine-Stomach-NET.html" target="_blank">Stomach NET</a></li>
+  <li><a href="Endocrine-Thyroid.html" target="_blank">Thyroid gland</a></li>
+</td>
+<tr>
+
+</tr>
+<td valign="top">
+<label class="description">Pediatric tumors</label>
+</td>
+<td>
+  <li><a href="Pedi-EwingSarcoma.html" target="_blank">Ewing sarcoma</a></li>
+  <li><a href="Pedi-GermCellTumors.html" target="_blank">Extragonadal germ cell tumor</a></li>
+  <li><a href="Pedi-Hepatoblastoma.html" target="_blank">Hepatoblastoma</a></li>
+  <li><a href="Pedi-Neuroblastoma.html" target="_blank">Neuroblastoma</a></li>
+  <li><a href=".\cap\cp-retinoblastoma-17protocol-4000.pdf" target="_blank">Retinoblastoma</a></li>
+  <li><a href="Pedi-Rhadomyosarcoma.html" target="_blank">Rhabdomyosarcoma</a></li>
+  <li><a href="Pedi-Wilms.html" target="_blank">Wilms tumor</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">Skin tumors</label>
+</td>
+<td>
+  <li><a href="Skin-Melanoma.html" target="_blank">Melanoma</a></li>
+  <li><a href=".\cap\cp-skin-merkelcell-17protocol-4001.pdf" target="_blank">Merkel cell carcinoma</a></li>
+  <li><a href=".\cap\cp-uveal-melanoma-17protocol-4000.pdf" target="_blank">Uveal melanoma</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">Thorax tumors</label>
+</td>
+<td>
+  <li><a href="Thorax-Lung.html" target="_blank">Lung cancers</a></li>
+  <li><a href="Thorax-Mesothelioma.html" target="_blank">Mesothelioma</a></li>
+  <li><a href="Thorax-Thymus.html" target="_blank">Thymus</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">Urogenital tumors</label>
+</td>
+<td>
+  <li><a href="UG-Kidney.html" target="_blank">Kidney</a></li>
+  <li><a href="UG-Penis.html" target="_blank">Penis</a></li>
+  <li><a href="UG-Prostate.html" target="_blank">Prostate</a></li>
+  <li><a href="UG-Testis.html" target="_blank">Testis</a></li>
+  <li><a href="UG-Ureter.html" target="_blank">Ureter and renal pelvis</a></li>
+  <li><a href="UG-Urethra.html" target="_blank">Urethra and periurethral glands</a></li>
+  <li><a href="UG-Urinary Bladder.html" target="_blank">Urinary bladder</a></li>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">Biomarkers</label>
+</td>
+<td>
+  <li><a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC & DISH tests</a></li>
+  <li><a href="Biomarker-MMR-IHC.html" target="_blank">MMR/MSI test</a></li>
+  <li><a href="Biomarker-PD-L1-IHC.html" target="_blank">PD-L1 IHC test</a></li>
+  <li><a href="Biomarker-Stomach-HER2.html" target="_blank">Stomach HER2 test</a></li>
+  <li><a href="Biomarker-FISH.html" target="_blank">[QMH] FISH tests</a></li>
+  <li><a href=".\cap\cp-gilower-colonrectum-14biomarker-1201.pdf" target="_blank">[CAP] colorectal CA biomarkers</a></li>
+  <li><a href=".\cap\cp-cns-18protocol-4000.pdf" target="_blank">[CAP] CNS tumors biomarkers</a></li>
+  <li><a href=".\cap\cp-femalereproductive-endometrium-biomarker-19-1201.pdf" target="_blank">[CAP] endometrium CA biomarkers</a></li>
+  <li><a href=".\cap\cp-gigist-gist-biomarker-20-1002.pdf" target="_blank">[CAP] GIST biomarkers</a></li>
+  <li><a href=".\cap\cp-headandneck-17biomarker-1000.pdf" target="_blank">[CAP] H&N CA biomarkers</a></li>
+  <li><a href=".\cap\cp-thorax-lung-16biomarker-1302.pdf" target="_blank">[CAP] lung CA biomarkers</a></li>
+  <li><a href=".\cap\cp-skin-melanoma-15biomarker-1002.pdf" target="_blank">[CAP] melanoma biomarkers</a></li>
+  <li><a href=".\cap\cp-endocrine-thyroid-biomarker-16-1001.pdf" target="_blank">[CAP] thyroid CA biomarkers</a></li>
+</td>
+</tr>
+</table>
+</p>
+-->
+<br>
+<br>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+<div id = "footer">
+Last upated on 11-Jul-2021,<br>
+based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">College of American Pathologists Cancer Protocol Templates</a> (June-2021 version).<br>
+The html form and cascade style sheet were created on <a href="http://www.phpform.org" target="_blank">pForm</a>,<br>
+with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a>,<br>
+and buttons modified from <a href="https://icons8.com" target="_blank">Icons8</a>.<br>
+<br>
+<br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+
+
+</body>
+</html>

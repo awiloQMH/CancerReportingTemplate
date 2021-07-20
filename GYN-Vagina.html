@@ -166,6 +166,29 @@ if (document.getElementById("A30").checked){
 if (document.getElementById("A31").checked){
 	Template += frm.A31.value + "\n";
 }
+
+if (document.getElementById("A50").checked ||
+	document.getElementById("A51").checked || document.getElementById("A52").checked ||
+	document.getElementById("A53").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
 /*
 if (frm.A39.value !== ""){
 	Template += "\n" + "- FIGO Stage (2015 FIGO Cancer Report): " + "\n" + frm.A39.value + "\n";
@@ -599,6 +622,18 @@ HPV-ISH is not available, PCR-sequencing type test can be ordered.
 </tr>
 </table>
 </p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A50"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A51"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A52"  value="  - Specify:"><label class="choice" >Specify:</label>
+<input class="element checkbox" type="checkbox" id="A53"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
 </fieldset>
 </p>
 

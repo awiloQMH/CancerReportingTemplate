@@ -59,7 +59,11 @@ if (frm.A11.value !== ""){
 if (frm.A12.value !== ""){
 	Template += "- Perineural invasion:  " + frm.A12.value + "\n";
 }
+if (frm.A22.value !== ""){
+	Template += "\n" + "- N-myc amplification status: " + frm.A22.value + "\n";
+}
 
+/**
 if (frm.A13.value + frm.A14.value !== ""){
 	Template += "\n" + "- Status of metastases:" + "\n";
 }
@@ -71,7 +75,7 @@ if (frm.A13.value !== ""){
 if (frm.A14.value !== ""){
 	Template += "  - Sites of distant metastasis: " + frm.A14.value + "\n";
 }
-
+**/
 if (frm.A15.value !== ""){
 	Template += "\n" + "- International Neuroblastoma Pathology Prognostic Classification:  " + "\n" + "  - " + frm.A15.value + "\n";
 }
@@ -104,8 +108,26 @@ if (frm.A21.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + "\n";
 }
 
-if (frm.A22.value !== ""){
-	Template += "\n" + "- N-myc amplification status: " + "\n" + "  - " +  frm.A22.value + "\n";
+if (document.getElementById("A24").checked ||
+	document.getElementById("A25").checked || document.getElementById("A26").checked ||
+	document.getElementById("A27").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A24").checked){
+	Template += frm.A24.value + "\n";
+}
+
+if (document.getElementById("A25").checked){
+	Template += frm.A25.value + "\n";
+}
+
+if (document.getElementById("A26").checked){
+	Template += frm.A26.value + "\n";
+}
+
+if (document.getElementById("A27").checked){
+	Template += frm.A23.value + "\n";
 }
 
 if (frm.A23.value !== ""){
@@ -318,7 +340,7 @@ table, th, td {
 </select></td>
 </tr>
 
-
+<!--
 <tr>
 <td rowspan="2" valign="top">
 <label class="description">- Distant metastasis:</label></td>
@@ -336,7 +358,7 @@ table, th, td {
 - Sites of distant metastasis: 
 <input type="text" class="element text small" ID="A14" size="35"></td>
 </tr>
-
+-->
 <tr>
 <td>
 <label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\Neuroblastoma_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">MYCN amplification status</a>: </label>
@@ -453,6 +475,17 @@ Other ancillary investigations included ALK mutation and amplification, ATRX mut
 </fieldset>
 </p>
 
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A24"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A25"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A26"  value="  - Specify:"><label class="choice" >Specify:</label>
+<input class="element checkbox" type="checkbox" id="A27"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
 
 <p>
 <label class="">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\Neuroblastoma_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank"> + Additional pathologic findings</a>:</label>
@@ -474,7 +507,7 @@ Other ancillary investigations included ALK mutation and amplification, ATRX mut
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Neuroblastoma Resection 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

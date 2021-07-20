@@ -272,8 +272,52 @@ if (frm.A55.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A55.value + "\n";
 }
 
+if (document.getElementById("A70").checked || document.getElementById("A71").checked ||
+	document.getElementById("A72").checked || document.getElementById("A73").checked ||
+	document.getElementById("A74").checked || document.getElementById("A75").checked ||
+	document.getElementById("A76").checked || document.getElementById("A77").checked ||
+    document.getElementById("A78").checked){
+	Template += "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += frm.A70.value + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
+if (document.getElementById("A77").checked){
+	Template += frm.A77.value + "\n";
+}
+
+if (document.getElementById("A78").checked){
+	Template += frm.A78.value + "\n";
+}
+
 if (document.getElementById("A56").checked || document.getElementById("A57").checked || 
-	document.getElementById("A58").checked || frm.A59.value + frm.A60.value + frm.A61.value + frm.A62.value !== ""){
+	document.getElementById("A58").checked || frm.A59.value + frm.A60.value + frm.A61.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -303,22 +347,14 @@ if (frm.A60.value !== ""){
 }
 
 if (frm.A61.value !== ""){
-	Template += "  - Distant metastasis: " + "\n" +  "  " + frm.A61.value + "\n";
+	Template += "  - Distant metastasis (pM): " + "\n" +  "  " + frm.A61.value + "\n";
 }
 
-if (frm.A62.value !== ""){
-	Template += "    - Specify site(s): " + frm.A62.value + "\n";
-}
-
-if (document.getElementById("A62").checked || document.getElementById("A63").checked ||
+if (document.getElementById("A63").checked ||
 	document.getElementById("A64").checked || document.getElementById("A65").checked ||
 	document.getElementById("A66").checked || document.getElementById("A67").checked ||  
 	frm.A68.value !==""){
 	Template += "\n" +  "- Additional pathologic findings: " + "\n";
-}
-
-if (document.getElementById("A62").checked){
-	Template += frm.A62.value + "\n";
 }
 
 if (document.getElementById("A63").checked){
@@ -662,6 +698,26 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A70"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A71"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A72"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A73"  value="  - Intraperitoneal acellular mucin without identifiable tumor cells in the disseminated peritoneal
+mucinous deposits (specify):"><label class="choice" >Intraperitoneal acellular mucin without identifiable tumor cells in the disseminated peritoneal
+mucinous deposits (specify):</label>
+<input class="element checkbox" type="checkbox" id="A74"  value="  - Intraperitoneal metastasis only (including peritoneal mucinous deposits containing tumor cells) (specify):"><label class="choice" >Intraperitoneal metastasis only (including peritoneal mucinous deposits containing tumor cells) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A75"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A76"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A77"  value="  - Site(s) other than peritoneum (specify):"><label class="choice" >Site(s) other than peritoneum (specify):</label>
+<input class="element checkbox" type="checkbox" id="A78"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf#page=13" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
@@ -719,12 +775,13 @@ table, th, td {
 </tr>
 
 <tr>
-<td rowspan="2" valign="top">
+<td >
 <label class="description">- Distant metastasis (pM):</label>
 </td>
 <td>
 <select class="element select large" ID="A61">
 	<option value=""></option>
+	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 	<option value="  - pM1a: Intraperitoneal acellular mucin, without identifiable tumor cells in the disseminated peritoneal mucinous deposits">pM1a: Intraperitoneal acellular mucin, without identifiable tumor cells in the disseminated peritoneal mucinous deposits</option>
 	<option value="  - pM1b: Intraperitoneal metastasis only, including peritoneal mucinous deposits containing tumor cells">pM1b: Intraperitoneal metastasis only, including peritoneal mucinous deposits containing tumor cells</option>
@@ -732,13 +789,14 @@ table, th, td {
 </select>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
 <label>- Specify site(s), if known:</label>
 <input type="text" ID="A62" class = "element text small" size="35">
 </td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -783,7 +841,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 13-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Appendix 4.2.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

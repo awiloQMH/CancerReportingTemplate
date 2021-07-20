@@ -121,6 +121,41 @@ if (frm.A25.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A25.value + "\n";
 }
 
+if (document.getElementById("A46").checked ||
+	document.getElementById("A47").checked || document.getElementById("A48").checked ||
+	document.getElementById("A49").checked || document.getElementById("A50").checked ||
+	document.getElementById("A51").checked || document.getElementById("A52").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A46").checked){
+	Template += frm.A46.value + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
 if (document.getElementById("A26").checked || document.getElementById("A27").checked || 
 	document.getElementById("A28").checked || document.getElementById("A29").checked ||
 	document.getElementById("A30").checked || document.getElementById("A31").checked ||
@@ -218,7 +253,7 @@ if (document.getElementById("A41").checked){
 if (document.getElementById("A42").checked){
 	Template += "    - " +  frm.A42.value + "\n";
 }
-
+/**
 if (frm.A43.value + frm.A44.value !== ""){
 	Template += "\n" + "- Status of metastases:" + "\n";
 }
@@ -230,7 +265,7 @@ if (frm.A43.value !== ""){
 if (frm.A44.value !== ""){
 	Template += "  - Sites of distant metastasis: " + frm.A44.value + "\n";
 }
-
+**/
 if (frm.A45.value !== ""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n" + "  - " +  frm.A45.value + "\n";
 }
@@ -469,7 +504,7 @@ table, th, td {
 </select></td>
 </tr>
 
-
+<!--
 <tr>
 <td rowspan="2" valign="top"><label class="description">- Distant metastasis:</label></td>
 <td><select class="element select large" ID="A43">
@@ -485,7 +520,7 @@ table, th, td {
 <td>- Sites of distant metastasis: 
 <input type="text" class="element text small" ID="A44" size="35"></td>
 </tr>
-
+-->
 </table>
 <br>
 </fieldset>
@@ -569,6 +604,21 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A46"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A47"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A48"  value="  - Lymph node(s) outside of the abdomino-pelvic region (specify):"><label class="choice" >Lymph node(s) outside of the abdomino-pelvic region (specify):</label>
+<input class="element checkbox" type="checkbox" id="A49"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A50"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A51"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A52"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\Kidney.Wilms_4.1.0.0.REL_CAPCP.pdf#page=15" target="_blank">Children’s Oncology Group Staging System (2005)</a>: </label></legend>
 
 <p>
@@ -635,7 +685,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Wilms Tumor Resection 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

@@ -232,6 +232,64 @@ if (document.getElementById("A45").checked){
 if (document.getElementById("A46").checked){
 	Template += frm.A46.value + "\n";
 }
+
+if (document.getElementById("A66").checked || document.getElementById("A67").checked ||
+	document.getElementById("A68").checked || document.getElementById("A69").checked ||
+	document.getElementById("A70").checked || document.getElementById("A71").checked ||
+	document.getElementById("A72").checked || document.getElementById("A73").checked ||
+	document.getElementById("A74").checked || document.getElementById("A75").checked ||
+	document.getElementById("A76").checked || document.getElementById("A77").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A66").checked){
+	Template += frm.A66.value + "\n";
+}
+
+if (document.getElementById("A67").checked){
+	Template += frm.A67.value + "\n";
+}
+
+if (document.getElementById("A68").checked){
+	Template += frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template += frm.A69.value + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += frm.A70.value + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
+if (document.getElementById("A77").checked){
+	Template += frm.A77.value + "\n";
+}
+
 /*
 if (frm.A55.value !== ""){
 	Template += "\n" + "- FIGO Stage (2018 FIGO Cancer Report): " + "\n" + frm.A55.value + "\n";
@@ -756,6 +814,26 @@ HPV-ISH is not available, PCR-sequencing type test can be ordered.
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A66"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A67"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A68"  value="  - Pelvic lymph node(s):"><label class="choice" >Pelvic lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A69"  value="  - Internal iliac / hypogastric lymph node(s):"><label class="choice" >Internal iliac / hypogastric lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A70"  value="  - External iliac lymph node(s):"><label class="choice" >External iliac lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A71"  value="  - Common iliac lymph node(s):"><label class="choice" >Common iliac lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A72"  value="  - Presacral lymph node(s):"><label class="choice" >Presacral lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A73"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A74"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A75"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A76"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A77"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"><a href=".\cap\GYN_VulvaCA.pdf" target="_blank"> FIGO stage (2018 Cancer Report):</a></label></legend>
 <!--
 <a href=".\cap\GYN_VulvaCA.pdf" target="_blank">
@@ -943,7 +1021,7 @@ structures<br><br>
 <br>
 
 <div id="footer">
-Last upated on 18-July-2021,<br>
+Last upated on 20-July-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 partially on Vulva 4.2.0.0 (June 2021)<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

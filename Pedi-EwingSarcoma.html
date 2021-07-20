@@ -98,9 +98,39 @@ if (frm.A21.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A21.value + "\n";
 }
 
+if (document.getElementById("A34").checked || document.getElementById("A35").checked ||
+	document.getElementById("A36").checked || document.getElementById("A37").checked ||
+	document.getElementById("A38").checked || document.getElementById("A39").checked){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A34").checked){
+	Template += frm.A34.value + "\n";
+}
+
+if (document.getElementById("A35").checked){
+	Template += frm.A35.value + "\n";
+}
+
+if (document.getElementById("A36").checked){
+	Template += frm.A36.value + "\n";
+}
+
+if (document.getElementById("A37").checked){
+	Template += frm.A37.value + "\n";
+}
+
+if (document.getElementById("A38").checked){
+	Template += frm.A38.value + "\n";
+}
+
+if (document.getElementById("A39").checked){
+	Template += frm.A39.value + "\n";
+}
+
 if (document.getElementById("A22").checked || document.getElementById("A23").checked || 
 	document.getElementById("A24").checked || frm.A25.value + frm.A26.value + frm.A27.value + 
-	frm.A28.value + frm.A29.value + frm.A30.value + frm.A31.value + frm.A32.value!== ""){
+	frm.A28.value + frm.A29.value + frm.A30.value + frm.A31.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -148,11 +178,11 @@ if (frm.A30.value !== ""){
 if (frm.A31.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + frm.A31.value + "\n";
 }
-
+/**
 if (frm.A32.value !== ""){
 	Template += "    - Specify site(s), if known: " + frm.A32.value + "\n";
 }
-
+**/
 if (frm.A33.value !== ""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n" + "  - " +  frm.A33.value + "\n";
 }
@@ -389,6 +419,20 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A34"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A35"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A36"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A37"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A38"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A39"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e): </label></legend>
 <p>
 <table border="1">
@@ -497,19 +541,21 @@ table, th, td {
 </tr>
 
 <tr> 
-<td rowspan="2" valign="top">
+<td>
 <label class="description">- Distant metastasis (pM): </label>
 </td>
 <td><select class="element select large" ID="A31">
 	<option value=""></option>
+	<option value="   - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="   - pM1: Distant metastasis">pM1:Distant metastasis</option>
 </select></td>
 </tr>
-
+<!--
 <tr>    
 <td>- Specify site(s), if known:
 <input type="text" class="element text small" ID="A32" size="35"></td>
 </tr>
+-->
 </table>
 </p>
 
@@ -537,7 +583,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Ewing Sarcoma Resection 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

@@ -139,6 +139,50 @@ if (frm.A29.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A29.value + "\n";
 }
 
+if (document.getElementById("A48").checked ||
+	document.getElementById("A49").checked || document.getElementById("A50").checked ||
+	document.getElementById("A51").checked || document.getElementById("A52").checked ||
+	document.getElementById("A53").checked || document.getElementById("A54").checked ||
+    document.getElementById("A55").checked || frm.A56.value !== ""){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
+if (document.getElementById("A55").checked){
+	Template += frm.A55.value + "\n";
+}
+
+if (frm.A56.value !== ""){
+	Template += "  - Histologic type: " + frm.A56.value + "\n";
+}
+/**
 if (frm.A30.value + frm.A31.value + frm.A32.value !== ""){
 	Template += "\n" + "- Status of metastases:" + "\n";
 }
@@ -154,7 +198,7 @@ if (frm.A31.value !== ""){
 if (frm.A32.value !== ""){
 	Template += "  - Histologic type: " + frm.A32.value + "\n";
 }
-
+**/
 if (document.getElementById("A33").checked || document.getElementById("A34").checked || 
 	document.getElementById("A35").checked || document.getElementById("A36").checked || 
 	document.getElementById("A37").checked || document.getElementById("A38").checked || 
@@ -477,7 +521,7 @@ table, th, td {
 	<option value="Cannot be determined">Cannot be determined</option>
 </select></td>
 </tr>
-
+<!--
 <tr>
 <td rowspan="3" valign="top">
 <label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\Liver.Hepatoblastoma_4.0.1.0.REL_CAPCP.pdf#page=13" target="_blank">Distant metastasis</a>:</label>
@@ -499,6 +543,7 @@ table, th, td {
 <td>- Histologic type present (specify): 
 <input type="text" class="element text large" ID="A32" size="35"></td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -583,6 +628,24 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A48"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A49"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A50"  value="  - Interior phrenic lymph node(s):"><label class="choice" >Interior phrenic lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A51"  value="  - Lymph node(s) distal to hilum:"><label class="choice" >Lymph node(s) distal to hilum:</label>
+<input class="element checkbox" type="checkbox" id="A52"  value="  - Hepatoduodenal ligament lymph node(s):"><label class="choice" >Hepatoduodenal ligament lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A53"  value="  - Caval region lymph node(s):"><label class="choice" >Caval region lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A54"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A55"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+<label class="">+ Histologic Type Present in Distant Metastasis:</label>
+<input type="text" class="element text medium" ID="A56" size="15">
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Pediatric-Protocol-Folder\Liver.Hepatoblastoma_4.0.1.0.REL_CAPCP.pdf#page=14" target="_blank">Children’s Oncology Group Staging System</a>: </label></legend>
 
 <p>
@@ -654,7 +717,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Hepatoblastoma Resection 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

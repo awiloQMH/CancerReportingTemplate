@@ -530,6 +530,65 @@ if (frm.A118.value !== ""){
 if (frm.A119.value !== ""){
 	Template += "  - Extranodal extension: " + frm.A119.value + "\n";
 }
+
+if (document.getElementById("A120").checked || document.getElementById("A121").checked ||
+	document.getElementById("A123").checked ||
+	document.getElementById("A124").checked || document.getElementById("A125").checked ||
+	document.getElementById("A126").checked || document.getElementById("A127").checked ||
+ 	document.getElementById("A128").checked || document.getElementById("A129").checked ||
+ 	document.getElementById("A130").checked || document.getElementById("A131").checked ||
+    document.getElementById("A132").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A120").checked){
+	Template += frm.A120.value + "\n";
+}
+
+if (document.getElementById("A121").checked){
+	Template += frm.A121.value + "\n";
+}
+
+if (document.getElementById("A123").checked){
+	Template += frm.A123.value + "\n";
+}
+
+if (document.getElementById("A124").checked){
+	Template += frm.A124.value + "\n";
+}
+
+if (document.getElementById("A125").checked){
+	Template += frm.A125.value + "\n";
+}
+
+if (document.getElementById("A126").checked){
+	Template += frm.A126.value + "\n";
+}
+
+if (document.getElementById("A127").checked){
+	Template += frm.A127.value + "\n";
+}
+
+if (document.getElementById("A128").checked){
+	Template += frm.A128.value + "\n";
+}
+
+if (document.getElementById("A129").checked){
+	Template += frm.A129.value + "\n";
+}
+
+if (document.getElementById("A130").checked){
+	Template += frm.A130.value + "\n";
+}
+
+if (document.getElementById("A131").checked){
+	Template += frm.A131.value + "\n";
+}
+
+if (document.getElementById("A132").checked){
+	Template += frm.A132.value + "\n";
+}
+
 /* 
 if (frm.A88.value !== ""){
 	Template += "- FIGO Stage (2018 FIGO Cancer Report): " + "\n" + frm.A88.value + "\n";
@@ -1303,6 +1362,26 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A120"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A121"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A123"  value="  - Uterine serosa:"><label class="choice" >Uterine serosa:</label>
+<input class="element checkbox" type="checkbox" id="A124"  value="  - Adnexa:"><label class="choice" >Adnexa:</label>
+<input class="element checkbox" type="checkbox" id="A125"  value="  - Inguinal lymph node(s):"><label class="choice" >Inguinal lymph node(s):</label>
+<input class="element checkbox" type="checkbox" id="A126"  value="  - Omentum:"><label class="choice" >Omentum:</label>
+<input class="element checkbox" type="checkbox" id="A127"  value="  - Extrapelvic peritoneum:"><label class="choice" >Extrapelvic peritoneum:</label>
+<input class="element checkbox" type="checkbox" id="A128"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A129"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A130"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A131"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A132"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"><a href=".\cap\GYN_CervixCA.pdf" target="_blank">FIGO Stage (2018 FIGO Cancer Report):</a></label></legend>
 <!--<a href=".\cap\GYN_CervixCA.pdf" target="_blank">
 <img src=".\cap\GYN_CervixCA.JPG" alt="FIGO2018" width="600">
@@ -1508,7 +1587,7 @@ rectum (biopsy proven) and/or extending beyond the true pelvis (bullous edema is
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Uterine Cervix Resection 5.0.1.1 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

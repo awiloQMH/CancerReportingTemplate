@@ -197,8 +197,38 @@ if (frm.A41.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A41.value + "\n";
 }
 
+if (document.getElementById("A59").checked || document.getElementById("A60").checked ||
+	document.getElementById("A61").checked || document.getElementById("A62").checked ||
+	document.getElementById("A63").checked || document.getElementById("A64").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += frm.A59.value + "\n";
+}
+
+if (document.getElementById("A60").checked){
+	Template += frm.A60.value + "\n";
+}
+
+if (document.getElementById("A61").checked){
+	Template += frm.A61.value + "\n";
+}
+
+if (document.getElementById("A62").checked){
+	Template += frm.A62.value + "\n";
+}
+
+if (document.getElementById("A63").checked){
+	Template += frm.A63.value + "\n";
+}
+
+if (document.getElementById("A64").checked){
+	Template += frm.A64.value + "\n";
+}
+
 if (document.getElementById("A42").checked || document.getElementById("A43").checked || 
-	document.getElementById("A44").checked || frm.A45.value + frm.A46.value + frm.A47.value + frm.A48.value !== ""){
+	document.getElementById("A44").checked || frm.A45.value + frm.A46.value + frm.A47.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -230,11 +260,11 @@ if (frm.A46.value !== ""){
 if (frm.A47.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" +  "  " + frm.A47.value + "\n";
 }
-
+/**
 if (frm.A48.value !== ""){
 	Template += "    - Specify site(s): " + frm.A48.value + "\n";
 }
-
+**/
 if (document.getElementById("A49").checked || document.getElementById("A50").checked ||
 	document.getElementById("A51").checked ||  document.getElementById("A52").checked ||
 	document.getElementById("A53").checked ||  document.getElementById("A54").checked ||  
@@ -724,6 +754,20 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A59"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A60"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A61"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A62"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A63"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A64"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\ColoRectal_4.2.0.0.REL_CAPCP.pdf#page=21" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
 
 <p>
@@ -779,17 +823,19 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 <td rowspan="2" valign="top"><label class="description"> - Distant metastasis (pM): </label></td> 
 <td> <select class="element select large" ID="A47">
 	<option value=""></option>
+	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="  - pM1: Metastasis to one or more distant sites or organs or peritoneal metastasis is identified">pM1: Metastasis to one or more distant sites or organs or peritoneal metastasis is identified</option>
 	<option value="  - pM1a: Metastasis to one site or organ is identified without peritoneal metastasis">pM1a: Metastasis to one site or organ is identified without peritoneal metastasis</option>
 	<option value="  - pM1b: Metastasis to two or more sites or organs is identified without peritoneal metastasis">pM1b: Metastasis to two or more sites or organs is identified without peritoneal metastasis</option>
 	<option value="  - pM1c: Metastasis to the peritoneal surface is identified alone or with other site or organ metastases">pM1c: Metastasis to the peritoneal surface is identified alone or with other site or organ metastases</option>
 </select></td> 
 </tr>
-
+<!--
 <tr>
 <td>    - Specify site(s), if known:
  <input type="text" ID="A48" class = "element text small" size="35"></td> 
 </tr>
+-->
 </table>
 </p>
 </fieldset>
@@ -838,7 +884,7 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 <br>
 
 <div id="footer">
-Last upated on 13-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Colon and Rectum Resection 4.2.0.0 (June 2021).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

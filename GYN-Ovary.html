@@ -627,6 +627,56 @@ if (frm.A120.value !== ""){
 if (frm.A135.value !== ""){
 	Template += "  - Extranodal extension: " + frm.A135.value + "\n";
 }
+
+if (document.getElementById("A156").checked || document.getElementById("A157").checked ||
+	document.getElementById("A158").checked || document.getElementById("A159").checked ||
+	document.getElementById("A160").checked || document.getElementById("A161").checked ||
+	document.getElementById("A162").checked || document.getElementById("A163").checked ||
+ 	document.getElementById("A164").checked || document.getElementById("A165").checked 
+    ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A156").checked){
+	Template += frm.A156.value + "\n";
+}
+
+if (document.getElementById("A157").checked){
+	Template += frm.A157.value + "\n";
+}
+
+if (document.getElementById("A158").checked){
+	Template += frm.A158.value + "\n";
+}
+
+if (document.getElementById("A159").checked){
+	Template += frm.A159.value + "\n";
+}
+
+if (document.getElementById("A160").checked){
+	Template += frm.A160.value + "\n";
+}
+
+if (document.getElementById("A161").checked){
+	Template += frm.A161.value + "\n";
+}
+
+if (document.getElementById("A162").checked){
+	Template += frm.A162.value + "\n";
+}
+
+if (document.getElementById("A163").checked){
+	Template += frm.A163.value + "\n";
+}
+
+if (document.getElementById("A164").checked){
+	Template += frm.A164.value + "\n";
+}
+
+if (document.getElementById("A165").checked){
+	Template += frm.A165.value + "\n";
+}
+
 /*
 if (frm.A129.value !== ""){
 	Template += "\n" + "- FIGO Stage (2018 FIGO Cancer Report) : " + "\n" + frm.A129.value + "\n";
@@ -1253,6 +1303,24 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A156"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A157"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A158"  value="  - Pleural effusion with positive cytology"><label class="choice" >Pleural effusion with positive cytology</label>
+<input class="element checkbox" type="checkbox" id="A159"  value="  - Liver parenchyma:"><label class="choice" >Liver parenchyma:</label>
+<input class="element checkbox" type="checkbox" id="A160"  value="  - Splenic parenchyma:"><label class="choice" >Splenic parenchyma:</label>
+<input class="element checkbox" type="checkbox" id="A161"  value="  - Extra-abdominal organ(s): "><label class="choice" >Extra-abdominal organ(s): </label>
+<input class="element checkbox" type="checkbox" id="A162"  value="  -  Inguinal or retroperitoneal lymph node(s) and lymph node(s) outside the abdominal cavity:"><label class="choice" > Inguinal or retroperitoneal lymph node(s) and lymph node(s) outside the abdominal cavity:</label>
+<input class="element checkbox" type="checkbox" id="A163"  value="  - Transmural involvement of intestine:"><label class="choice" >Transmural involvement of intestine:</label>
+<input class="element checkbox" type="checkbox" id="A164"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A165"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"><a href=".\cap\GYN_OvaryCA.pdf" target="_blank"> FIGO stage (2018 Cancer Report):</a></label></legend>
 <!--
 <a href=".\cap\GYN_OvaryCA.pdf" target="_blank">
@@ -1450,7 +1518,7 @@ of abdominal cavity)<br><br>
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Ovary Fallopian 1.2.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>

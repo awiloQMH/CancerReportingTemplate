@@ -145,6 +145,60 @@ if (frm.A28.value !== ""){
 if (frm.A29.value !== ""){
 	Template +=  "  - Other margins (specify): "  + frm.A29.value + "\n" ;
 }
+
+if (document.getElementById("A40").checked || 
+	document.getElementById("A41").checked || document.getElementById("A42").checked ||
+	document.getElementById("A43").checked || document.getElementById("A44").checked ||
+	document.getElementById("A45").checked || document.getElementById("A46").checked ||
+	document.getElementById("A47").checked || document.getElementById("A48").checked ||
+ 	document.getElementById("A49").checked || document.getElementById("A50").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += frm.A40.value + "\n";
+}
+
+if (document.getElementById("A41").checked){
+	Template += frm.A41.value + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += frm.A43.value + "\n";
+}
+
+if (document.getElementById("A44").checked){
+	Template += frm.A44.value + "\n";
+}
+
+if (document.getElementById("A45").checked){
+	Template += frm.A45.value + "\n";
+}
+
+if (document.getElementById("A46").checked){
+	Template += frm.A46.value + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
 /*
 if (frm.A36.value !== ""){
 	Template += "\n" + "- FIGO Stage (2015 FIGO Cancer Report): " + "\n" + frm.A36.value + "\n";
@@ -462,6 +516,25 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A40"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A41"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A42"  value="  - Lung:"><label class="choice" >Lung :</label>
+<input class="element checkbox" type="checkbox" id="A43"  value="  - Spleen:"><label class="choice" >Spleen:</label>
+<input class="element checkbox" type="checkbox" id="A44"  value="  - Kidney:"><label class="choice" >Kidney:</label>
+<input class="element checkbox" type="checkbox" id="A45"  value="  - Gastrointestinal tract:"><label class="choice" >Gastrointestinal tract:</label>
+<input class="element checkbox" type="checkbox" id="A46"  value="  - Liver:"><label class="choice" >Liver:</label>
+<input class="element checkbox" type="checkbox" id="A47"  value="  - Brain:"><label class="choice" >Brain:</label>
+<input class="element checkbox" type="checkbox" id="A48"  value="  - Lymph node(s) (specify):"><label class="choice" >Lymph node(s), any LN, (specify):</label>
+<input class="element checkbox" type="checkbox" id="A49"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A50"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"><a href=".\cap\GYN_Trophoblastic.pdf" target="_blank"> FIGO stage (2015 Cancer Report):</a></label></legend>
 <!--
 <a href=".\cap\GYN_Trophoblastic.pdf" target="_blank">
@@ -598,7 +671,7 @@ IV: All other metastatic sites<br><br>
 <br>
 
 <div id="footer">
-Last upated on 18-Jul-2021,<br>
+Last upated on 20-Jul-2021,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Trophoblast 4.1.0.0 (June 2021), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
