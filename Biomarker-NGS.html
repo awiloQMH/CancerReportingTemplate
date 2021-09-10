@@ -7,93 +7,28 @@
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
 <script type="text/javascript" src="view.js"></script>
 <style>
-div.ex1 {
-    margin-left: 30px;
-}
-
-.dropbtn {
-    background-color: #e6e6ff;
-    color: #003366;
-    padding: 16px;
-	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-	font-size:small; 
-    border: 1;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-	text-align:left;
-    background-color: #f1f1f1;
-    min-width: 160px; relative;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: pink;}
-
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-}
-
-.active, .accordion:hover {
-    background-color: #ccc;
-}
-
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  text-align: left;
+.collapsible {
+  background-color: white;
+  color: black;
+  cursor: pointer;
   padding: 8px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 14px;
 }
-  
-tr:nth-child(even) {background-color: #ffe6ff;
+
+.active, .collapsible:hover {
+  background-color: #fff2e6;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
 }
 </style>
 </head>
@@ -109,13 +44,14 @@ tr:nth-child(even) {background-color: #ffe6ff;
 					Next Generation Sequencing
 		</h2>
 	</div>
+<p>Next Generation Sequencing is ran in the Illumina iSeq100, MiniSeq, NextSeq 500 and NextSeq 550, using Illumina's "sequencing by synthesis" chemistry, upon different targeted sequencing panels.</p>
 <p align="center">
 <img src="data:image/png;base64,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"/>
 </p>
 
-<p>Next Generation Sequencing is run in the Illumina iSeq100, MiniSeq, NextSeq 500 and NextSeq 550.</p>
-<button class="accordion">Somatic and Germline BRCA1/2 Testing</button>
-<div class="panel">
+
+<button class="collapsible">Somatic and Germline BRCA1 and BRCA2 Testing (tumor tissue and blood)</button>
+<div class="content">
 <p>
 The AmpliSeq for Illumina BRCA Panel is a targeted resequencing assay for research of somatic and germline variants across BRCA1 and BRCA2 genes. Targeting all exonic regions and flanking intronic sequences (~20 bp) of the BRCA1 and BRCA2 genes, and detecting somatic mutations down to 5% variant allele frequency using cloud based analysis. <br>
 Somatic mutation testing is done on the FFPE block or cytology cell block.
@@ -128,8 +64,8 @@ Consent is necessary for ordering this test. (<a href=".\cap\BRCA12Consent-e01.d
 Pamphlets for BRCA testing in high staged, high grade ovarian cancer (<a href=".\cap\BRCA12Leaflet-e01.pdf" target="_blank">English</a>)(<a href=".\cap\BRCA12Leaflet-c01.pdf" target="_blank">Chinese</a>)
 </p>
 </div>
-<button class="accordion">Focus Panel for Solid Tumor (somatic DNA + RNA)</button>
-<div class="panel">
+<button class="collapsible">Focus Panel for Solid Tumor (somatic DNA + RNA)</button>
+<div class="content">
 <p>
 The AmpliSeq for Illumina Focus Panel is a targeted resequencing assay for biomarker analysis of 52 genes with known relevance to solid tumors. All variants are confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.)
 </p>
@@ -141,8 +77,8 @@ The AmpliSeq for Illumina Focus Panel is a targeted resequencing assay for bioma
 </p>
 </div>
 
-<button class="accordion">Comprehensive Panel for Solild Tumor (somatic DNA + RNA)</button>
-<div class="panel">
+<button class="collapsible">Comprehensive Panel for Solild Tumor (somatic DNA + RNA)</button>
+<div class="content">
 <p>
 The AmpliSeq for Illumina Comprehensive Panel v3 offers coverage of key cancer genes, including kinase domains and genes involved in DNA repair, targetting 161 unique cancer-associated genes
 </p>
@@ -164,25 +100,25 @@ AKT2, ALK, AR, AXL, BRAF, BRCA1, BRCA2, CDKN2A, EGFR, ERBB2, ERBB4, ERG, ESR1, E
 </p>
 </div>
 <script>
-var acc = document.getElementsByClassName("accordion");
+var coll = document.getElementsByClassName("collapsible");
 var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
     } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
+      content.style.maxHeight = content.scrollHeight + "px";
     } 
   });
 }
 </script>
-<br>
+ 
 <br>
 <div id = "footer">
-Last upated on 28-Aug-2021.<br><br>
+Last upated on 10-Sep-2021.<br><br>
 The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
 with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
 and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
@@ -192,8 +128,8 @@ and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
 </div>
-</div>
 <img id="bottom" src="bottom.png" alt="">
+</div>
 
 
 </body>
