@@ -53,9 +53,35 @@
 <button class="collapsible">Somatic and Germline BRCA1 and BRCA2 Testing (tumor tissue and blood)</button>
 <div class="content">
 <p>
-The AmpliSeq for Illumina BRCA Panel is a targeted resequencing assay for research of somatic and germline variants across BRCA1 and BRCA2 genes. Targeting all exonic regions and flanking intronic sequences (~20 bp) of the BRCA1 and BRCA2 genes, and detecting somatic mutations down to 5% variant allele frequency using cloud based analysis. <br>
-Somatic mutation testing is done on the FFPE block or cytology cell block.
-Germline mutation testing is performed on peripheral white cells from the EDTA blood sample and is also supplemented by MLPA.
+Somatic mutation testing is done on the FFPE block or cytology cell block. <br><br>
+Germline mutation testing is performed on FFPE block and peripheral white cells from the EDTA blood sample, and is also supplemented by MLPA.
+</p>
+
+<p>
+Sequencing	  :	The AmpliSeq for Illumina BRCA Panel is a targeted resequencing 
+				assay for somatic and germline variants across BRCA1 and BRCA2 genes, 
+				targeting all exonic regions and flanking intronic sequences (~20 bp) 
+				of the BRCA1 and BRCA2 genes.<br><br>
+Bioinformatics: Illumina Local Run Manager: DNA Amplicon (BaseSpace Workflow) 2.1.0.19
+				[DNA Amplicon Workflow (3.24.1.10-master), BWA-MEM Whole-Genome 
+                (Aligner) 0.7.12-r1039, Pisces Variant Caller 5.2.9.23, Illumina 
+                Annotation Engine 2.0.11-0-g7fb24a09, Bam Metrics v0.0.22, 
+                and SAMtools 1.2] <br><br>
+Curation      : Human GRCh37/hg19, BRCA Exchange, ClinVar, Varsome<br><br>
+Limitations   : In-house evaluation showed this test could detect SNP-indel type
+                mutations with a variant allelic frequency greater or equal to 5%. 
+                Due to the nature of FFPE specimen and limitations of the 
+                amplicon-based library preparation, false negativity cannot be
+                completely excluded, including, but not limited to, large deletion,
+                large duplication and gross chromosomal abnormalities. <br>
+</p>
+<p>
+<a href=".\cap\MLPA_General_Protocol_MDP-v007.pdf" target="_blank">MLPA</a>          : SALSA MLPA Probemix kits (MRC, Holland):
+                <a href=".\cap\Product_description_P002-D1_BRCA1-v08.pdf" target="_blank">P002 BRCA1</a>,
+				<a href=".\cap\Product_description_P239-C1_BRCA1_region-v02.pdf" target="_blank">P090 BRCA2</a> and 
+				<a href=".\cap\Product_description_P090-C1_BRCA2-v03.pdf" target="_blank">P239 BRCA1 region</a>;<br>
+                <a href=".\cap\Coffalyser.Net-Reference-Manual-v07.pdf" target="_blank">Coffalyzer.net software</a> v.210604.1451 (DB v140701.000) for quality control, visualization and analysis of data.
+
 </p>
 <p>
 Consent is necessary for ordering this test. (<a href=".\cap\BRCA12Consent-e01.docx">Engish</a>) (<a href=".\cap\BRCA12Consent-c01.docx">Chinese</a>)
@@ -118,7 +144,7 @@ for (i = 0; i < coll.length; i++) {
  
 <br>
 <div id = "footer">
-Last upated on 10-Sep-2021.<br><br>
+Last upated on 11-Oct-2021.<br><br>
 The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
 with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
 and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
