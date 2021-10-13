@@ -44,7 +44,7 @@
 					Next Generation Sequencing
 		</h2>
 	</div>
-<p>Next Generation Sequencing is ran in the Illumina iSeq100, MiniSeq, NextSeq 500 and NextSeq 550, using Illumina's "sequencing by synthesis" chemistry, upon different targeted sequencing panels.</p>
+<p>Next Generation Sequencing is ran on the Illumina MiniSeq and NextSeq 500, using "sequencing by synthesis" chemistry, upon different targeted sequencing panels.</p>
 <p>
 Genomic DNA QC : Quantified by Qubit and the integrity control by conventional PCR<br>
 Library QC    : Check by automatic electrophoresis (Bioanalyser)<br>
@@ -61,7 +61,7 @@ Bioinformatics :<br>
 <img src=".\cap\Workflow_appDNAA_576x507.png" alt="workflow" width="600">
 <br>
 Curation      : <br>
-Human GRCh37/hg19, ClinVar, Varsome<br>
+Human GRCh37/hg19, BRCA Exchange, ClinVar, Varsome<br>
 <br>
 <br>
 Limitations   : Our system could detect SNV-indel type  mutations with a variant allelic frequency greater or equal to 5%. Due to the nature of  FFPE specimen and limitations of the amplicon-based library preparation, false negativity, including, but not limited to, large deletion, large duplication and gross chromosomal abnormalities, cannot be completely excluded.
@@ -82,9 +82,8 @@ Germline mutation testing is performed on FFPE block and peripheral white cells 
 <p>
 Sequencing	  :	The AmpliSeq for Illumina BRCA Panel is a targeted resequencing 
 				assay for somatic and germline variants across BRCA1 and BRCA2 genes, 
-				targeting all exonic regions and flanking intronic sequences (~20 bp) 
-				of the BRCA1 and BRCA2 genes.<br><br>
-Curation      : Human GRCh37/hg19, BRCA Exchange, ClinVar, Varsome
+				targeting all the exonic regions and the flanking intronic sequences 
+				of the BRCA1 and BRCA2 genes.
 </p>
 <p>
 <a href=".\cap\MLPA_General_Protocol_MDP-v007.pdf" target="_blank">MLPA</a>          : SALSA MLPA Probemix kits (MRC, Holland):
@@ -95,26 +94,40 @@ Curation      : Human GRCh37/hg19, BRCA Exchange, ClinVar, Varsome
 
 </p>
 <p>
-Consent is necessary for ordering this test. (<a href=".\cap\BRCA12Consent-e01.docx">Engish</a>) (<a href=".\cap\BRCA12Consent-c01.docx">Chinese</a>)
+All findings are to be confirmed by orthogonal methods, including Sanger sequencing and others.
+</p>
+<p>
+Consent is necessary for ordering this test (either somatic test alone, or somatic and germline tests). (<a href=".\cap\BRCA12Consent-e01.docx">Engish</a>) (<a href=".\cap\BRCA12Consent-c01.docx">Chinese</a>)
 </p>
 <p>
 Pamphlets for BRCA testing in high staged, high grade ovarian cancer (<a href=".\cap\BRCA12Leaflet-e01.pdf" target="_blank">English</a>)(<a href=".\cap\BRCA12Leaflet-c01.pdf" target="_blank">Chinese</a>)
 </p>
 </div>
-<button class="collapsible">Focus Panel for Solid Tumor (somatic DNA + RNA)</button>
+<button class="collapsible">Focus Panel for Solid Tumor (somatic DNA + RNA) [not yet launched]</button>
 <div class="content">
 <p>
-The AmpliSeq for Illumina Focus Panel is a targeted resequencing assay for biomarker analysis of 52 genes with known relevance to solid tumors. All variants are confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.)
+The AmpliSeq for Illumina Focus Panel is a targeted resequencing assay for biomarker analysis of 52 genes with known relevance to solid tumors. All variants are to be confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.)
 </p>
 <p>
-<img src=".\cap\AmpliSeq_for_Illumina_Focus_Targets_List.png" alt="DNA List" width="450">
+Hot spot mutations:<br>
+AKT1, ALK, AR,	BRAF,	CDK4,	CTNNB1,	DDR2,	EGFR,	ERBB2,	ERBB3,	ERBB4,	ESR1,	FGFR2,	FGFR3,	GNA11,	GNAQ,	HRAS,	IDH1,	IDH2,	JAK1,	JAK2,	JAK3,	KIT,	KRAS,	MAP2K1,	MAP2K2,	MET,	MTOR,	NRAS,	PDGFRA,	PIK3CA,	RAF1,	RET,	ROS1,	SMO
 </p>
+
 <p>
+Copy Number Variants:<br>
+ALK,	AR,	BRAF,	CCND1,	CDK4,	CDK6,	EGFR,	ERBB2,	FGFR1,	FGFR2,	FGFR3,	FGFR4,	KIT,	KRAS,	MET,	MYC,	MYCN,	PDGFRA,	PIK3CA
+</p>
+
+<p>
+Fusion Drivers:<br>
+	ABL1,	ALK,	AKT3,	AXL,	BRAF,	EGFR,	ERBB2,	ERG,	ETV1,	ETV4,	ETV5,	FGFR1,	FGFR2,	FGFR3,	MET,	NTRK1,	NTRK2,	NTRK3,	PDGFRA,	PPARG,	RAF1,	RET,	ROS1
+<br>
+<br>
 <img src=".\cap\AmpliSeq_for_Illumina_Focus_Fusion_List.png" alt="Fusion list">
 </p>
 </div>
 
-<button class="collapsible">Comprehensive Panel for Solild Tumor (somatic DNA + RNA)</button>
+<button class="collapsible">Comprehensive Panel for Solild Tumor (somatic DNA + RNA)  [not yet launched]</button>
 <div class="content">
 <p>
 The AmpliSeq for Illumina Comprehensive Panel v3 offers coverage of key cancer genes, including kinase domains and genes involved in DNA repair, targetting 161 unique cancer-associated genes
@@ -155,7 +168,7 @@ for (i = 0; i < coll.length; i++) {
  
 <br>
 <div id = "footer">
-Last upated on 12-Oct-2021.<br><br>
+Last upated on 13-Oct-2021.<br><br>
 The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
 with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
 and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
