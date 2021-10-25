@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HER2 DISH calculator</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+
+<style type="text/css">
+/*<![CDATA[*/
+#container {
+     width:112px;
+     background:#ccc;
+     margin:20px auto;
+}
+#container input {
+     width:100px;
+     margin:5px 6px;
+}
+#table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+}
+/*//]]>*/
+</style>
+
+<script type="text/javascript">
+//<![CDATA[
+function doSums(what) {
+  var df=document.forms[0];
+  var a=parseFloat(df[1].value);
+  var b=parseFloat(df[2].value);
+  var c=parseFloat(df[3].value);
+  var d=parseFloat(df[4].value);
+  var e=parseFloat(df[5].value);
+  var f=parseFloat(df[6].value);
+  var g=parseFloat(df[7].value);
+  var h=parseFloat(df[8].value);
+  var i=parseFloat(df[9].value);
+  var j=parseFloat(df[10].value);
+  var k=parseFloat(df[11].value);
+  var l=parseFloat(df[12].value);
+  var m=parseFloat(df[13].value);
+  var n=parseFloat(df[14].value);
+  var o=parseFloat(df[15].value);
+  var p=parseFloat(df[16].value);
+  var q=parseFloat(df[17].value);
+  var r=parseFloat(df[18].value);
+  var s=parseFloat(df[19].value);
+  var t=parseFloat(df[20].value);
+  var a1=parseFloat(df[21].value);
+  var b1=parseFloat(df[22].value);
+  var c1=parseFloat(df[23].value);
+  var d1=parseFloat(df[24].value);
+  var e1=parseFloat(df[25].value);
+  var f1=parseFloat(df[26].value);
+  var g1=parseFloat(df[27].value);
+  var h1=parseFloat(df[28].value);
+  var i1=parseFloat(df[29].value);
+  var j1=parseFloat(df[30].value);
+  var k1=parseFloat(df[31].value);
+  var l1=parseFloat(df[32].value);
+  var m1=parseFloat(df[33].value);
+  var n1=parseFloat(df[34].value);
+  var o1=parseFloat(df[35].value);
+  var p1=parseFloat(df[36].value);
+  var q1=parseFloat(df[37].value);
+  var r1=parseFloat(df[38].value);
+  var s1=parseFloat(df[39].value);
+  var t1=parseFloat(df[40].value);
+  
+if((isNaN(a))||(isNaN(b))||(isNaN(c))||(isNaN(d))||
+   (isNaN(e))||(isNaN(f))||(isNaN(g))||(isNaN(h))|| 
+   (isNaN(i))||(isNaN(j))||(isNaN(k))||(isNaN(l))||
+   (isNaN(m))||(isNaN(n))||(isNaN(o))||(isNaN(p))||
+   (isNaN(q))||(isNaN(r))||(isNaN(s))||(isNaN(t))||
+   (isNaN(a1))||(isNaN(b1)||(isNaN(c1))||(isNaN(d1))||
+   (isNaN(e1))||(isNaN(f1))||(isNaN(g1))||(isNaN(h1))||
+   (isNaN(i1))||(isNaN(j1))||(isNaN(k1))||(isNaN(l1))||
+   (isNaN(m1))||(isNaN(n1))||(isNaN(o1))||(isNaN(p1))||
+   (isNaN(q1))||(isNaN(r1))||(isNaN(s1))||(isNaN(t1))
+   )
+   ) {
+alert("four numbers please !");
+     df.reset();
+     df[0].focus();
+     return;
+ }
+if(what=="mean") {
+    df[42].value=((a+c+e+g+i+k+m+o+q+s+a1+c1+e1+g1+i1+k1+m1+o1+q1+s1)/20).toFixed(2);
+    df[43].value=((b+d+f+h+j+l+n+p+r+t+b1+d1+f1+h1+j1+l1+n1+p1+r1+t1)/20).toFixed(2);
+	df[44].value=(df[42].value/df[43].value).toFixed(2)
+
+  }
+ }
+//]]>
+</script>
+
+</head>
+<body onload="document.forms[0][0].focus()">
+
+<form action="#">
+<fieldset id="container">
+<p>
+<table>
+<table border="1">
+<caption> <label class="description">HER2 DISH calculator</label></caption>
+  <tr>
+    <th>Nucleus</th>
+    <th>HER2</th>
+    <th>CEN17</th>
+	<th>Nucleus</th>
+    <th>HER2</th>
+    <th>CEN17</th>
+  </tr>
+<tr>
+<td>01</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>11</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>02</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>12</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>03</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>13</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>04</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>14</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>05</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>15</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>06</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>16</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>07</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>17</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>08</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>18</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>09</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>19</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>10</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+<td>20</td>
+<td><input type="text"/></td>
+<td><input type="text"/></td>
+</tr>
+</table>
+</p>
+<br>
+<input type="button" value="Calculate" onclick="doSums('mean')"/>
+<br>
+<p>
+<table>
+<table border="1">
+<tr>
+	<td>HER2/nucleus</td>
+	<td><input type="text"/></td>
+</tr>
+<tr>
+	<td>CEN17/nucleus   
+	<td><input type="text"/></td>
+</tr>
+<tr>
+	<td>HER2/CEN17 ratio
+	<td><input type="text"/></td>
+</tr>
+</table>
+</p>
+<br>
+<input type="reset" value="reset" onclick="document.forms[0][0].focus()"/><br><br>
+
+Last upated 25-Oct-2021, <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>,<br>
+javascripts were modified from codes published in <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://https://www.webdeveloper.com/">Web Developer</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</fieldset>
+
+</form>
+
+</body>
+</html>
