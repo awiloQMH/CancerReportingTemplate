@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PD-L1 calculator</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+
+<style type="text/css">
+/*<![CDATA[*/
+#container {
+     width:112px;
+     background:#ccc;
+     margin:20px auto;
+}
+#container input {
+     width:100px;
+     margin:5px 6px;
+}
+#table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+}
+/*//]]>*/
+</style>
+
+<script type="text/javascript">
+//<![CDATA[
+function doSums(what) {
+  var df=document.forms[0];
+  var C4=parseFloat(df[1].value);
+  var C5=parseFloat(df[2].value);
+  var C6=parseFloat(df[3].value);
+  
+if((isNaN(C4))||(isNaN(C5))||(isNaN(C6))
+   ) {
+alert("four numbers please !");
+     df.reset();
+     df[0].focus();
+     return;
+ }
+if(what=="mean") {
+    df[5].value= C4.toFixed(2);
+    df[6].value=((C4*(100-C5)/100+C5*C6/100)/((C4*(100-C5)/100+C5*C6/100)+(100-C4)*(100-C5)/100)*100).toFixed(2);
+    df[7].value=(C5*C6/100).toFixed(2);
+    df[8].value=(C4*(100-C5)/100+parseFloat(df[7].value)).toFixed(2);
+  }
+ }
+//]]>
+</script>
+
+</head>
+<body onload="document.forms[0][0].focus()">
+
+<form action="#">
+<fieldset id="container">
+<table>
+<table border="1">
+<col width="60%">
+<caption> <label class="description">PD-L1 calculator</label></caption>
+  <tr>
+    <th>Descriptions</th>
+    <th>Percentage</th>
+  </tr>
+<tr>
+<td>tumor cell %</td>
+<td><input type="text"/></td>
+</tr>
+<td>immune cell % in tumor</td>
+<td><input type="text"/></td>
+</tr>
+<td>+ve immune cells % (among immune cells)</td>
+<td><input type="text"/></td>
+</tr>
+</table>
+<br>
+<input type="button" value="calculate" onclick="doSums('mean')"/>
+<br>
+<table>
+<table border="1">
+<tr>
+<td>
+TPS or TC%
+</td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>
+CPS
+</td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>
+IC%
+</td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td>
+Total +ve cells%
+</td>
+<td><input type="text"/></td>
+</tr>
+</table>
+
+<br>
+
+<input type="reset" value="reset" onclick="document.forms[0][0].focus()"/><br><br>
+
+Last upated 25-Oct-2021, <br>
+html form was created on <a href="https://www.phpform.org">pForm</a>,<br>
+javascripts were modified from codes published in <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://https://www.webdeveloper.com/">Web Developer</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</fieldset>
+</form>
+
+</body>
+</html>
