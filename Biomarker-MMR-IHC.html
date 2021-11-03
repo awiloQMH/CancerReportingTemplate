@@ -28,7 +28,9 @@ Template += "- PMS2 (PMS1 homolog 2): " + frm.PMS2.value + "\n";
 }
 
 if (frm.IHC.value !== ""){
-Template += "\n" + "- IHC Interpretation for tumor: " +  "\n" + "  - " + frm.IHC.value + "\n"+ "\n";
+Template += "\n" + "- IHC Interpretation for tumor: " +  "\n" + "  - " + frm.IHC.value + "\n"+ "\n"+
+"Antibodies for MLH1, MSH2, MSH6 and PMS2 are G168-15, FE11, 44/MSH6 and A16-4, respectively."+
+"\n";
 }
 
 if (frm.BAT25.value + frm.BAT26.value + frm.NR21.value + frm.NR24.value + frm.NR27.value!== ""){
@@ -366,7 +368,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated 11-Oct-2021,<br>
+Last upated 03-Nov-2021,<br>
 modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 html form and cascade style sheet were created basing on <a href="http://www.phpform.org">pForm</a>,<br>
 with codes modified from <a href="https://www.w3schools.com/">W3 School tutorials</a> and <a href="https://stackoverflow.com/">Stack Overflow</a>.<br><br>
