@@ -202,7 +202,7 @@ if (document.getElementById("A55").checked){
 
 if (document.getElementById("A36").checked || document.getElementById("A37").checked || 
 	document.getElementById("A38").checked || frm.A39.value + frm.A40.value + frm.A41.value !== ""){
-	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 9th edition):" + "\n";
 }
 
 if (document.getElementById("A36").checked || document.getElementById("A37").checked || 
@@ -298,7 +298,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-11-Update\Anus_4.2.0.1.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Anus_5.0.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Carcinoma of the Anus
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -307,7 +307,7 @@ table, th, td {
 	
 <form>
 <p>
-There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Anus.Bx.TDE_4.2.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>
+There is different protocol for <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Anus.Bx.TDE_4.2.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>
 </p>
 <!--
 <p>
@@ -391,17 +391,20 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 <col width="40%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Anus_4.2.0.1.REL_CAPCP.pdf#page=9" target="_blank">Histologic type (WHO 2019)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Anus_5.0.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type (WHO 2019)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A06">
 	<option value=""></option>
 	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>
+	<option value="Basal cell carcinoma">Basal cell carcinoma</option>
 	<option value="Verrucous squamous cell carcinoma">Verrucous squamous cell carcinoma</option>
 	<option value="Adenocarcinoma">Adenocarcinoma</option>
+	<option value="Adenocarcinoma of the anal glands">Adenocarcinoma of the anal glands</option>
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
+	<option value="Mixed adenoneuroendocrine carcinoma (MANEC)">Mixed adenoneuroendocrine carcinoma (MANEC)</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
 </select>
@@ -410,7 +413,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Anus_4.2.0.1.REL_CAPCP.pdf#page=10" target="_blank">Histologic grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Anus_5.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A07">
@@ -456,7 +459,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Anus_4.2.0.1.REL_CAPCP.pdf#page=11" target="_blank">Treatment effect</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Anus_5.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Treatment effect</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A21">
@@ -711,7 +714,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-11-Update\Anus_4.2.0.1.REL_CAPCP.pdf#page=11" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Anus_5.0.0.0.REL_CAPCP.pdf#page=14" target="_blank">Pathologic Stage Classification (AJCC 9e)</a>:</label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -735,7 +738,6 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 	<option value=""></option>
 	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
-	<option value="  - pTis: High-grade squamous intraepithelial lesion (previously termed carcinoma in situ, Bowen disease, anal intraepithelial neoplasia II–III, high-grade anal intraepithelial neoplasia)">pTis: High-grade squamous intraepithelial lesion (previously termed carcinoma in situ, Bowen disease, anal intraepithelial neoplasia II–III, high-grade anal intraepithelial neoplasia)</option>
 	<option value="  - pT1: Tumor < or = 2 cm">pT1: Tumor < or = 2 cm</option>
 	<option value="  - pT2: Tumor > 2 cm but < or = 5 cm">pT2: Tumor > 2 cm but < or = 5 cm</option>
 	<option value="  - pT3: Tumor > 5 cm">pT3: Tumor > 5 cm</option>
@@ -757,6 +759,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 	<option value="  - pN1a: Metastasis in inguinal, mesorectal, or internal iliac lymph nodes">pN1a: Metastasis in inguinal, mesorectal, or internal iliac lymph nodes</option>
 	<option value="  - pN1b: Metastasis in external iliac lymph nodes">pN1b: Metastasis in external iliac lymph nodes</option>
 	<option value="  - pN1c: Metastasis in external iliac with any N1a nodes">pN1c: Metastasis in external iliac with any N1a nodes</option>
+	<option value="  - pN1 (subcategory cannot be determined)">pN1 (subcategory cannot be determined)</option>
 </select>
 </td>
 </tr>
@@ -824,9 +827,9 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\G
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2021,<br>
+Last upated on 25-Jun-2022,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Anus 4.2.0.1 (Nov 2021), <br>
+Anus 5.0.0.0 (Jun 2022), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

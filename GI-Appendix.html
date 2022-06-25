@@ -318,7 +318,7 @@ if (document.getElementById("A78").checked){
 
 if (document.getElementById("A56").checked || document.getElementById("A57").checked || 
 	document.getElementById("A58").checked || frm.A59.value + frm.A60.value + frm.A61.value !== ""){
-	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 9th edition):" + "\n";
 }
 
 if (document.getElementById("A56").checked || document.getElementById("A57").checked || 
@@ -352,7 +352,8 @@ if (frm.A61.value !== ""){
 
 if (document.getElementById("A63").checked ||
 	document.getElementById("A64").checked || document.getElementById("A65").checked ||
-	document.getElementById("A66").checked || document.getElementById("A67").checked ||  
+	document.getElementById("A66").checked || document.getElementById("A67").checked ||
+    document.getElementById("A79").checked ||	
 	frm.A68.value !==""){
 	Template += "\n" +  "- Additional pathologic findings: " + "\n";
 }
@@ -375,6 +376,10 @@ if (document.getElementById("A66").checked){
 
 if (document.getElementById("A67").checked){
 	Template += frm.A67.value + "\n";
+}
+
+if (document.getElementById("A79").checked){
+	Template += frm.A79.value + "\n";
 }
 
 if (frm.A68.value !== ""){
@@ -415,7 +420,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Carcinoma of the Appendix
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -493,7 +498,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type (WHO 2019)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type (WHO 2019)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -519,7 +524,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A13">
@@ -537,7 +542,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Lymphovascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A24">
@@ -551,7 +556,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Perineural invasion</a>: </label>
+<label class=""> + <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A25">
@@ -565,7 +570,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Tumor deposits</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Tumor deposits</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A26">
@@ -597,7 +602,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Surgical margins for surgical specimens</a>:</label></legend>
+	<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Surgical margins for surgical specimens</a>:</label></legend>
 <p><label class="description">- Proximal margin:</label>
 <input class="element checkbox" type="checkbox"   id="A27" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
 <input class="element checkbox" type="checkbox"   id="A28" value="  - Uninvolved by invasive carcinoma, specifiy distance (mm):"><label  class="choice">Uninvolved by invasive carcinoma, specifiy distance (mm):</label>
@@ -718,7 +723,7 @@ mucinous deposits (specify):</label>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Appendix_4.2.0.0.REL_CAPCP.pdf#page=13" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=14" target="_blank">Pathologic Stage Classification (AJCC 9e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -745,12 +750,13 @@ mucinous deposits (specify):</label>
 	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pTis: Carcinoma in situ (intramucosal carcinoma; invasion of the lamina propria or extension into but not through the muscularis mucosae)">pTis: Carcinoma in situ (intramucosal carcinoma; invasion of the lamina propria or extension into but not through the muscularis mucosae)</option>
-	<option value="  - pTTis(LAMN): Low-grade appendiceal mucinous neoplasm confined by the muscularis propria">pTTis(LAMN): Low-grade appendiceal mucinous neoplasm confined by the muscularis propria</option>
+	<option value="  - pTis(LAMN): Low-grade appendiceal mucinous neoplasm confined by the muscularis propria">pTis(LAMN): Low-grade appendiceal mucinous neoplasm confined by the muscularis propria</option>
 	<option value="  - pT1: Tumor invades the submucosa (through the muscularis mucosa but not into the muscularis propria)">pT1: Tumor invades the submucosa (through the muscularis mucosa but not into the muscularis propria)</option>
 	<option value="  - pT2: Tumor invades the muscularis propria">pT2: Tumor invades the muscularis propria</option>
 	<option value="  - pT3: Tumor invades through the muscularis propria into the subserosa or mesoappendix">pT3: Tumor invades through the muscularis propria into the subserosa or mesoappendix</option>
 	<option value="  - pT4a: Tumor invades through the visceral peritoneum, including the acellular mucin or mucinous epithelium involving the serosa of the appendix or serosa of the mesoappendix">pT4a: Tumor invades through the visceral peritoneum, including the acellular mucin or mucinous epithelium involving the serosa of the appendix or serosa of the mesoappendix</option>
 	<option value="  - pT4b: Tumor directly invades (or adheres to) adjacent organs or structures">pT4b: Tumor directly invades (or adheres to) adjacent organs or structures</option>
+	<option value="  - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)</option>
 </select>
 </td>
 </tr>
@@ -765,10 +771,10 @@ mucinous deposits (specify):</label>
 	<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
 	<option value="  - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
-	<option value="  - pN1: 1-3 regional lymph nodes are positive (tumor in lymph nodes measuring > or = 0.2 mm), or any number of tumor deposits are present and all identifiable lymph nodes are negative">pN1: One to three regional lymph nodes are positive (tumor in lymph nodes measuring > or = 0.2 mm), or any number of tumor deposits are present and all identifiable lymph nodes are negative</option>
 	<option value="  - pN1a: 1 regional lymph node is positive">pN1a: 1 regional lymph node is positive</option>
 	<option value="  - pN1b: 2 or 3 regional lymph nodes are positive">pN1b: 2 or 3 regional lymph nodes are positive</option>
 	<option value="  - pN1c: No regional lymph nodes are positive, but there are tumor deposits in the subserosa, mesentery, or nonperitonealized pericolic, or perirectal/mesorectal tissues.">pN1c: No regional lymph nodes are positive, but there are tumor deposits in the subserosa, mesentery, or nonperitonealized pericolic, or perirectal/mesorectal tissues.</option>
+	<option value="  - pN1 (subcategory cannot be determined)">pN1 (subcategory cannot be determined)</option>
 	<option value="  - pN2: > or = 4 regional lymph nodes are positive">pN2: > or = 4 regional lymph nodes are positive</option>
 </select>
 </td>
@@ -782,10 +788,10 @@ mucinous deposits (specify):</label>
 <select class="element select large" ID="A61">
 	<option value=""></option>
 	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
-	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
 	<option value="  - pM1a: Intraperitoneal acellular mucin, without identifiable tumor cells in the disseminated peritoneal mucinous deposits">pM1a: Intraperitoneal acellular mucin, without identifiable tumor cells in the disseminated peritoneal mucinous deposits</option>
 	<option value="  - pM1b: Intraperitoneal metastasis only, including peritoneal mucinous deposits containing tumor cells">pM1b: Intraperitoneal metastasis only, including peritoneal mucinous deposits containing tumor cells</option>
 	<option value="  - pM1c: Metastasis to sites other than peritoneum">pM1c: Metastasis to sites other than peritoneum</option>
+	<option value="  - pM1 (subcategory cannot be determined)">pM1 (subcategory cannot be determined)</option>
 </select>
 </td>
 </tr>
@@ -798,6 +804,9 @@ mucinous deposits (specify):</label>
 </tr>
 -->
 </table>
+</p>
+<p>
+Acellular mucin or mucinous epithelium may invade into the muscularis propria. (T1 and T2 are not applicable to LAMN; Acellular mucin or mucinous epithelium that extends into the subserosa or serosa should be classified as T3 or T4a, respectively.)
 </p>
 </fieldset>
 </p>
@@ -812,6 +821,7 @@ mucinous deposits (specify):</label>
 <input class="element checkbox" type="checkbox"   id="A65" value="  - Ulcerative colitis"><label  class="choice">Ulcerative colitis</label>
 <input class="element checkbox" type="checkbox"   id="A66" value="  - Crohn disease"><label  class="choice">Crohn disease</label>
 <input class="element checkbox" type="checkbox"   id="A67" value="  - Diverticulosis"><label  class="choice">Diverticulosis</label>
+<input class="element checkbox" type="checkbox"   id="A79" value="  - Sessile serrated lesion / adenoma / polyp"><label  class="choice">Sessile serrated lesion / adenoma / polyp</label>
 </p>
 <p>
 - Other (specify):
@@ -841,9 +851,9 @@ mucinous deposits (specify):</label>
 <br>
 
 <div id="footer">
-Last upated on 20-Jul-2021,<br>
+Last upated on 25-Jun-2022,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Appendix 4.2.0.0 (June 2021), <br>
+Appendix 5.0.0.0 (June 2022), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
