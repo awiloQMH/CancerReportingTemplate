@@ -1,6 +1,6 @@
 body
 {
-	background:#eeebfa;
+	background:#fff7e6;
 	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
 	font-size:small;
 	margin:8px 0 16px;
@@ -9,7 +9,7 @@ body
 
 #form_container
 {
-	background:#fff;
+	background:#f9ffe6;
 	
 	margin:0 auto;
 	text-align:left;
