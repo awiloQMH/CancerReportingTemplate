@@ -10,13 +10,89 @@
 function updateDescription (frm) 
 {
     var Template = "";
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - "+ frm.A02.value + "\n" +"\n";
+}
+
+if (frm.A11.value + frm.A14.value + frm.A15.value + frm.A16.value +
+    frm.A17.value + frm.A18.value + frm.A19.value + frm.A20.value +
+	frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value +
+    frm.A25.value + frm.A26.value + frm.A27.value + frm.A28.value +
+	frm.A29.value !== ""){
+	Template += "- Integrated diagnosis (WHO 2021): " + "\n" ;
+}
+
+if (frm.A11.value !== ""){
+	Template += "  - " + frm.A11.value + "\n" ;
+}	
+
+if (frm.A14.value !== ""){
+	Template += "  - " + frm.A14.value + "\n" ;
+}
+
+if (frm.A15.value !== ""){
+	Template += "  - " + frm.A15.value + "\n" ;
+}	
+
+if (frm.A16.value !== ""){
+	Template += "  - " + frm.A16.value + "\n" ;
+}
+
+if (frm.A17.value !== ""){
+	Template += "  - " + frm.A17.value + "\n" ;
+}	
+
+if (frm.A18.value !== ""){
+	Template += "  - " + frm.A18.value + "\n" ;
+}
+
+if (frm.A19.value !== ""){
+	Template += "  - " + frm.A19.value + "\n" ;
+}	
+
+if (frm.A20.value !== ""){
+	Template += "  - " + frm.A20.value + "\n" ;
+}
+
+if (frm.A21.value !== ""){
+	Template += "  - " + frm.A21.value + "\n" ;
+}	
+
+if (frm.A22.value !== ""){
+	Template += "  - " + frm.A22.value + "\n" ;
+}
+
+if (frm.A23.value !== ""){
+	Template += "  - " + frm.A23.value + "\n" ;
+}	
+
+if (frm.A24.value !== ""){
+	Template += "  - " + frm.A24.value + "\n" ;
+}
+
+if (frm.A25.value !== ""){
+	Template += "  - " + frm.A25.value + "\n" ;
+}	
+
+if (frm.A26.value !== ""){
+	Template += "  - " + frm.A26.value + "\n" ;
+}
+
+if (frm.A27.value !== ""){
+	Template += "  - " + frm.A27.value + "\n" ;
+}	
+
+if (frm.A28.value !== ""){
+	Template += "  - " + frm.A28.value + "\n" ;
+}
+
+if (frm.A29.value !== ""){
+	Template += "  - " + frm.A29.value + "\n" ;
+}
 	
 if (frm.A01.value !== ""){
 	Template += "- Histological type (WHO 2016): " + frm.A01.value + "\n";
-}
-
-if (frm.A02.value !== ""){
-	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - "+ frm.A02.value + "\n" +"\n";
 }
 
 if (frm.A03.value !== ""){
@@ -40,7 +116,7 @@ if (frm.A06.value !== ""){
 }
 
 if (frm.A07.value !== ""){
-	Template += "  - Histone H3 K27M expression (immunohistochemistry): " + frm.A07.value + "\n" + "    - Send out test to Queen Elizabeth Hospital" + "\n";
+	Template += "  - Histone H3 K27M expression (immunohistochemistry): " + frm.A07.value + "\n" ;
 }
 
 if (frm.A08.value !== ""){
@@ -54,9 +130,9 @@ if (frm.A09.value !== ""){
 if (frm.A10.value !== ""){
 	Template += "  - Others, specify: " + frm.A10.value + "\n" ;
 }
-
-if (frm.A11.value !== ""){
-	Template += "\n" + "- Integrated final diagnosis (WHO 2016): " + frm.A11.value + "\n" ;
+	
+if (frm.A13.value !== ""){
+	Template += "- Treatment effect: " + frm.A13.value + "\n" ;
 }
 
 if (frm.A12.value !== ""){
@@ -93,8 +169,8 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\cp-cns-18protocol-4000.pdf" target="_blank">
-		<div class="tooltip">Common Gliomas and Ependymomas
+		<h2><a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf" target="_blank">
+		<div class="tooltip">Tumors of the Brain and Spinal Cord
 		<span class="tooltiptext">click to access further explanations in the original CAP template</span>
 		</div>
 		</a></h2>
@@ -105,6 +181,13 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 <legend><label class="description">Microscopic descriptions :</label></legend>
+
+<p>
+Layer 1: Integrated diagnosis (combined tissue-based histological and molecular diagnosis)<br>
+Layer 2: Histopathological classification<br>
+Layer 3: CNS WHO grade<br>
+Layer 4: Molecular Information<br>
+</p>
  
 <p>
 <label class="description">- Tumor histology and immunohistochemical studies: </label>
@@ -112,11 +195,333 @@ table, th, td {
 </p>
 
 <p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Integrated diagnosis (WHO 2021)</a>:</label></legend>
+<p>
 <table border="1">
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-cns-18protocol-4000.pdf#page=11" target="_blank">Histological type (WHO 2016)</a>:</label>
+<label class="description">- Adult diffuse gliomas:</label>
+</td>
+<td>
+<select class="element select large" ID="A11">
+ <option value=""></option>
+ <option value="Astrocytoma, IDH-mutant">Astrocytoma, IDH-mutant</option> 
+ <option value="Oligodendroglioma, IDH-mutant and 1p/19q-codeleted">Oligodendroglioma, IDH-mutant and 1p/19q-codeleted</option> 
+ <option value="Glioblastoma, IDH-wildtype">Glioblastoma, IDH-wildtype</option> 
+ <option value="Other (e.g., NEC, NOS) (specify):">Other (e.g., NEC, NOS) (specify):</option> 
+ <option value="Cannot be determined:">Cannot be determined:</option> 
+ <option value="Pending">Pending</option> 
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Pediatric-type diffuse low-grade gliomas:</label>
+</td>
+<td>
+<select class="element select large" ID="A14">
+ <option value=""></option>
+ <option value="Diffuse astrocytoma, MYB- or MYBL1-altered">Diffuse astrocytoma, MYB- or MYBL1-altered</option> 
+ <option value="Angiocentric glioma">Angiocentric glioma</option> 
+ <option value="Polymorphous low-grade neuroepithelial tumor of the young">Polymorphous low-grade neuroepithelial tumor of the young</option> 
+ <option value="Diffuse low-grade glioma, MAPK pathway-altered">Diffuse low-grade glioma, MAPK pathway-altered</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Pediatric-type diffuse high-grade gliomas:</label>
+</td>
+<td>
+<select class="element select large" ID="A15">
+ <option value=""></option>
+ <option value="Diffuse midline glioma, H3 K27-altered">Diffuse midline glioma, H3 K27-altered</option> 
+ <option value="Diffuse hemispheric glioma, H3 G34-mutant">Diffuse hemispheric glioma, H3 G34-mutant</option> 
+ <option value="Diffuse pediatric-type high-grade glioma, H3-wildtype and IDH-wildtype">Diffuse pediatric-type high-grade glioma, H3-wildtype and IDH-wildtype</option> 
+ <option value="Infant-type hemispheric glioma">Infant-type hemispheric glioma</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Circumscribed astrocytic gliomas:</label>
+</td>
+<td>
+<select class="element select large" ID="A16">
+ <option value=""></option>
+ <option value="Pilocytic astrocytoma">Pilocytic astrocytoma</option> 
+ <option value="High-grade astrocytoma with piloid features">High-grade astrocytoma with piloid features</option> 
+ <option value="Pleomorphic xanthoastrocytoma">Pleomorphic xanthoastrocytoma</option> 
+ <option value="Subependymal giant cell astrocytoma">Subependymal giant cell astrocytoma</option>
+ <option value="Chordoid glioma">Chordoid glioma</option>
+ <option value="Astroblastoma, MN1-altered">Astroblastoma, MN1-altered</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Glioneuronal and neuronal tumors:</label>
+</td>
+<td>
+<select class="element select large" ID="A17">
+ <option value=""></option>
+ <option value="Ganglioglioma">Ganglioglioma</option> 
+ <option value="Gangliocytoma">Gangliocytoma</option> 
+ <option value="Desmoplastic infantile ganglioglioma">Desmoplastic infantile ganglioglioma</option> 
+ <option value="Desmoplastic infantile astrocytoma">Desmoplastic infantile astrocytoma</option>
+ <option value="Dysembryoplastic neuroepithelial tumor">Dysembryoplastic neuroepithelial tumor</option>
+ <option value="Diffuse glioneuronal tumor with oligodendroglioma-like features and nuclear clusters">Diffuse glioneuronal tumor with oligodendroglioma-like features and nuclear clusters</option> 
+ <option value="Papillary glioneuronal tumor">Papillary glioneuronal tumor</option> 
+ <option value="Rosette-forming glioneuronal tumor">Rosette-forming glioneuronal tumor</option> 
+ <option value="Myxoid glioneuronal tumor">Myxoid glioneuronal tumor</option>
+ <option value="Diffuse leptomeningeal glioneuronal tumor">Diffuse leptomeningeal glioneuronal tumor</option>
+ <option value="Multinodular and vacuolating neuronal tumor">Multinodular and vacuolating neuronal tumor</option> 
+ <option value="Dysplastic cerebellar gangliocytoma (Lhermitte-Duclos disease)">Dysplastic cerebellar gangliocytoma (Lhermitte-Duclos disease)</option> 
+ <option value="Central neurocytoma">Central neurocytoma</option> 
+ <option value="Extraventricular neurocytoma">Extraventricular neurocytoma</option>
+ <option value="Cerebellar liponeurocytoma">Cerebellar liponeurocytoma</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Ependymal tumors:</label>
+</td>
+<td>
+<select class="element select large" ID="A18">
+ <option value=""></option>
+ <option value="Supratentorial ependymoma">Supratentorial ependymoma</option> 
+ <option value="Supratentorial ependymoma, ZFTA fusion-positive">Supratentorial ependymoma, ZFTA fusion-positive</option> 
+ <option value="Supratentorial ependymoma, YAP1 fusion-positive">Supratentorial ependymoma, YAP1 fusion-positive</option> 
+ <option value="Posterior fossa ependymoma">Posterior fossa ependymoma</option>
+ <option value="Posterior fossa group A (PFA) ependymoma">Posterior fossa group A (PFA) ependymoma</option>
+ <option value="Posterior fossa group B (PFB) ependymoma">Posterior fossa group B (PFB) ependymoma</option> 
+ <option value="Spinal ependymoma">Spinal ependymoma</option> 
+ <option value="Spinal ependymoma, MYCN-amplified">Spinal ependymoma, MYCN-amplified</option> 
+ <option value="Myxopapillary ependymoma">Myxopapillary ependymoma</option>
+ <option value="Subependymoma">Subependymoma</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Choroid plexus tumors:</label>
+</td>
+<td>
+<select class="element select large" ID="A19">
+ <option value=""></option>
+ <option value="Choroid plexus papilloma">Choroid plexus papilloma</option> 
+ <option value="Atypical choroid plexus papilloma">Atypical choroid plexus papilloma</option> 
+ <option value="Choroid plexus carcinoma">Choroid plexus carcinoma</option> 
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Molecularly Defined Medulloblastomas:</label>
+</td>
+<td>
+<select class="element select large" ID="A20">
+ <option value=""></option>
+ <option value="Medulloblastoma, WNT-activated">Medulloblastoma, WNT-activated</option> 
+ <option value="Medulloblastoma, SHH-activated and TP53-wildtype">Medulloblastoma, SHH-activated and TP53-wildtype</option> 
+ <option value="Medulloblastoma, SHH-activated and TP53-mutant">Medulloblastoma, SHH-activated and TP53-mutant</option> 
+ <option value="Medulloblastoma, non-WNT / non-SHH">Medulloblastoma, non-WNT / non-SHH</option> 
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Histologically Defined Medulloblastomas:</label>
+</td>
+<td>
+<select class="element select large" ID="A21">
+ <option value=""></option>
+ <option value="Classic medulloblastoma">Classic medulloblastoma</option> 
+ <option value="Desmoplastic / nodular medulloblastoma">Desmoplastic / nodular medulloblastoma</option> 
+ <option value="Medulloblastoma with extensive nodularity">Medulloblastoma with extensive nodularity</option> 
+ <option value="Large cell / anaplastic medulloblastoma">Large cell / anaplastic medulloblastoma</option> 
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Other CNS embryonal tumors:</label>
+</td>
+<td>
+<select class="element select large" ID="A22">
+ <option value=""></option>
+ <option value="Atypical teratoid / rhabdoid tumor">Atypical teratoid / rhabdoid tumor</option> 
+ <option value="Cribriform neuroepithelial tumor">Cribriform neuroepithelial tumor</option> 
+ <option value="Embryonal tumor with multilayered rosettes">Embryonal tumor with multilayered rosettes</option> 
+ <option value="CNS neuroblastoma, FOXR2-activated">CNS neuroblastoma, FOXR2-activated</option> 
+ <option value="CNS tumor with BCOR internal tandem duplication">CNS tumor with BCOR internal tandem duplication</option> 
+ <option value="CNS embryonal tumor, NEC / NOS">CNS embryonal tumor, NEC / NOS</option> 
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Pineal tumors:</label>
+</td>
+<td>
+<select class="element select large" ID="A23">
+ <option value=""></option>
+ <option value="Pineocytoma">Pineocytoma</option> 
+ <option value="Pineal parenchymal tumor of intermediate differentiation">Pineal parenchymal tumor of intermediate differentiation</option> 
+ <option value="Pineoblastoma">Pineoblastoma</option> 
+ <option value="Papillary tumor of the pineal region">Papillary tumor of the pineal region</option> 
+ <option value="Desmoplastic myxoid tumor of the pineal region, SMARCB1-mutant">Desmoplastic myxoid tumor of the pineal region, SMARCB1-mutant</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Cranial and paraspinal nerve tumors:</label>
+</td>
+<td>
+<select class="element select large" ID="A24">
+ <option value=""></option>
+ <option value="Schwannoma">Schwannoma</option> 
+ <option value="Neurofibroma">Neurofibroma</option> 
+ <option value="Plexiform neurofibroma">Plexiform neurofibroma</option> 
+ <option value="Perineurioma">Perineurioma</option> 
+ <option value="Hybrid nerve sheath tumor (specify subtype(s)):">Hybrid nerve sheath tumor (specify subtype(s)):</option>
+ <option value="Malignant melanotic nerve sheath tumor">Malignant melanotic nerve sheath tumor</option> 
+ <option value="Malignant peripheral nerve sheath tumor">Malignant peripheral nerve sheath tumor</option> 
+ <option value="Cauda equina neuroendocrine tumor (previously paraganglioma)">Cauda equina neuroendocrine tumor (previously paraganglioma)</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Mesenchymal tumors involving the CNS:</label>
+</td>
+<td>
+<select class="element select large" ID="A25">
+ <option value=""></option>
+ <option value="Solitary fibrous tumor">Solitary fibrous tumor</option> 
+ <option value="Hemangioma">Hemangioma</option> 
+ <option value="Cavernous malformation">Cavernous malformation</option> 
+ <option value="Arteriovenous malformation">Arteriovenous malformation</option> 
+ <option value="Hemangioblastoma">Hemangioblastoma</option>
+ <option value="Embryonal rhabdomyosarcoma">Embryonal rhabdomyosarcoma</option> 
+ <option value="Alveolar rhabdomyosarcoma">Alveolar rhabdomyosarcoma</option> 
+ <option value="Rhabdomyosarcoma, pleomorphic type">Rhabdomyosarcoma, pleomorphic type</option>
+ <option value="Spindle cell rhabdomyosarcoma">Spindle cell rhabdomyosarcoma</option> 
+ <option value="Intracranial mesenchymal tumor, FET::CREB fusion-positive">Intracranial mesenchymal tumor, FET::CREB fusion-positive</option> 
+ <option value="CIC-rearranged sarcoma">CIC-rearranged sarcoma</option> 
+ <option value="Primary intracranial sarcoma, DICER1-mutant">Primary intracranial sarcoma, DICER1-mutant</option> 
+ <option value="Ewing sarcoma">Ewing sarcoma</option>
+ <option value="Mesenchymal chondrosarcoma">Mesenchymal chondrosarcoma</option> 
+ <option value="Chondrosarcoma">Chondrosarcoma</option> 
+ <option value="Dedifferentiated chondrosarcoma">Dedifferentiated chondrosarcoma</option>
+ <option value="Chordoma">Chordoma</option> 
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Melanocytic tumors:</label>
+</td>
+<td>
+<select class="element select large" ID="A26">
+ <option value=""></option>
+ <option value="Meningeal melanocytosis">Meningeal melanocytosis</option> 
+ <option value="Meningeal melanomatosis">Meningeal melanomatosis</option> 
+ <option value="Meningeal melanocytoma">Meningeal melanocytoma</option> 
+ <option value="Meningeal melanoma">Meningeal melanoma</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Hematolymphoid tumors involving the CNS:</label>
+</td>
+<td>
+<select class="element select large" ID="A27">
+ <option value=""></option>
+ <option value="Primary diffuse large B-cell lymphoma of the CNS">Primary diffuse large B-cell lymphoma of the CNS</option> 
+ <option value="Immunodeficiency-associated CNS lymphoma">Immunodeficiency-associated CNS lymphoma</option> 
+ <option value="Lymphomatoid granulomatosis">Lymphomatoid granulomatosis</option> 
+ <option value="Intravascular large B-cell lymphoma">Intravascular large B-cell lymphoma</option> 
+ <option value="MALT lymphoma of the dura">MALT lymphoma of the dura</option>
+ <option value="Other low-grade B-cell lymphomas of the CNS (specify subtype(s)):">Other low-grade B-cell lymphomas of the CNS (specify subtype(s)):</option> 
+ <option value="Anaplastic large cell lymphoma (ALK+ / ALK-)">Anaplastic large cell lymphoma (ALK+ / ALK-)</option> 
+ <option value="T-cell lymphoma">T-cell lymphoma</option>
+ <option value="NK / T-cell lymphoma">NK / T-cell lymphoma</option> 
+ <option value="Erdheim-Chester disease">Erdheim-Chester disease</option> 
+ <option value="Rosai-Dorfman disease">Rosai-Dorfman disease</option> 
+ <option value="Juvenile xanthogranuloma">Juvenile xanthogranuloma</option> 
+ <option value="Langerhans cell histiocytosis">Langerhans cell histiocytosis</option>
+ <option value="Histiocytic sarcoma">Histiocytic sarcoma</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Germ cell tumors:</label>
+</td>
+<td>
+<select class="element select large" ID="A28">
+ <option value=""></option>
+ <option value="Mature teratoma">Mature teratoma</option> 
+ <option value="Immature teratoma">Immature teratoma</option> 
+ <option value="Teratoma with somatic-type malignancy">Teratoma with somatic-type malignancy</option> 
+ <option value="Germinoma">Germinoma</option> 
+ <option value="Embryonal carcinoma">Embryonal carcinoma</option>
+ <option value="Yolk sac tumor">Yolk sac tumor</option> 
+ <option value="Choriocarcinoma">Choriocarcinoma</option> 
+ <option value="Mixed germ cell tumor (specify subtype(s), if known):">Mixed germ cell tumor (specify subtype(s), if known):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumors of the sellar region:</label>
+</td>
+<td>
+<select class="element select large" ID="A29">
+ <option value=""></option>
+ <option value="Adamantinomatous craniopharyngioma">Adamantinomatous craniopharyngioma</option> 
+ <option value="Papillary craniopharyngioma">Papillary craniopharyngioma</option> 
+ <option value="Pituicytoma">Pituicytoma</option> 
+ <option value="Granular cell tumor of the sellar region">Granular cell tumor of the sellar region</option> 
+ <option value="Spindle cell oncocytoma">Spindle cell oncocytoma</option>
+ <option value="Pituitary adenoma / pituitary neuroendocrine tumor (PitNET)">Pituitary adenoma / pituitary neuroendocrine tumor (PitNET)</option> 
+ <option value="Pituitary blastoma">Pituitary blastoma</option> 
+</select>
+</td>
+</tr>
+
+</table>
+</p>
+
+<p>
+<table border="1">
+<col width="50%">
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histological type</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A01">
@@ -141,21 +546,25 @@ table, th, td {
  <option value="Ependymoma, clear cell ependymoma">Ependymoma, clear cell ependymoma</option>
  <option value="Ependymoma, tanycytic ependymoma">Ependymoma, tanycytic ependymoma</option>
  <option value="Anaplastic ependymoma">Anaplastic ependymoma</option>
+ <option value="Other:">Other:</option>
+
 </select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label class="description">- WHO Grade:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=14" target="_blank">CNS WHO Grade</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A03">
  <option value=""></option>
- <option value="I">I</option>
- <option value="II">II</option>
- <option value="III">III</option>
- <option value="IV">IV</option>
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
+ <option value="Pending">Pending</option>
+ <option value="Other (specify):">Other (specify):</option>
  <option value="Not applicable">Not applicable</option>
  <option value="Cannot be determined, specify details:">Cannot be determined, specify details:</option>
 </select>
@@ -164,55 +573,31 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\cp-cns-18protocol-4000.pdf#page=11" target="_blank">Integrated final diagnosis (WHO 2016)</a>:</label>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=17" target="_blank">Treatment effect</a>:</label> 
 </td>
 <td>
-<select class="element select large" ID="A11">
+<select class="element select large" ID="A13">
  <option value=""></option>
- <option value="Diffuse astrocytoma, IDH-mutant">Diffuse astrocytoma, IDH-mutant</option> 
- <option value="Gemistocytic astrocytoma, IDH-mutant">Gemistocytic astrocytoma, IDH-mutant</option> 
- <option value="Diffuse astrocytoma, IDH-wildtype">Diffuse astrocytoma, IDH-wildtype</option> 
- <option value="Diffuse astrocytoma, NOS">Diffuse astrocytoma, NOS</option>
- <option value="Anaplastic astrocytoma, IDH-mutant">Anaplastic astrocytoma, IDH-mutant</option> 
- <option value="Anaplastic astrocytoma, IDH-wildtype">Anaplastic astrocytoma, IDH-wildtype</option> 
- <option value="Anaplastic astrocytoma, NOS">Anaplastic astrocytoma, NOS</option> 
- <option value="Glioblastoma, IDH-wildtype">Glioblastoma, IDH-wildtype</option> 
- <option value="Giant cell glioblastoma">Giant cell glioblastoma</option> 
- <option value="Gliosarcoma">Gliosarcoma</option> 
- <option value="Epithelioid glioblastoma">Epithelioid glioblastoma</option> 
- <option value="Glioblastoma, IDH-mutant">Glioblastoma, IDH-mutant</option> 
- <option value="Glioblastoma, NOS">Glioblastoma, NOS</option> 
- <option value="Diffuse midline glioma, H3 K27M-mutant">Diffuse midline glioma, H3 K27M-mutant</option> 
- <option value="Oligodendroglioma, IDH-mutant and 1p/19q-codeleted">Oligodendroglioma, IDH-mutant and 1p/19q-codeleted</option>
- <option value="Oligodendroglioma, NOS">Oligodendroglioma, NOS</option> 
- <option value="Anaplastic oligodendroglioma, IDH-mutant and 1p/19q-codeleted">Anaplastic oligodendroglioma, IDH-mutant and 1p/19q-codeleted</option> 
- <option value="Anaplastic oligodendroglioma, NOS">Anaplastic oligodendroglioma, NOS</option>
- <option value="Oligoastrocytoma, NOS">Oligoastrocytoma, NOS</option> 
- <option value="Anaplastic oligoastrocytoma, NOS">Anaplastic oligoastrocytoma, NOS</option> 
- <option value="Other astrocytic tumours">Other astrocytic tumours</option>
- <option value="Pilocytic astrocytoma">Pilocytic astrocytoma</option> 
- <option value="Pilomyxoid astrocytoma">Pilomyxoid astrocytoma</option> 
- <option value="Subependymal giant cell astrocytoma">Subependymal giant cell astrocytoma</option> 
- <option value="Pleomorphic xanthoastrocytoma">Pleomorphic xanthoastrocytoma</option> 
- <option value="Anaplastic pleomorphic xanthoastrocytoma">Anaplastic pleomorphic xanthoastrocytoma</option> 
- <option value="Ependymal tumours">Ependymal tumours</option>
- <option value="Subependymoma">Subependymoma</option> 
- <option value="Myxopapillary ependymoma">Myxopapillary ependymoma</option> 
- <option value="Ependymoma">Ependymoma</option>
- <option value="Papillary ependymoma">Papillary ependymoma</option> 
- <option value="Clear cell ependymoma">Clear cell ependymoma</option> 
- <option value="Tanycytic ependymoma">Tanycytic ependymoma</option> 
- <option value="Anaplastic ependymoma">Anaplastic ependymoma</option>
+ <option value="Not identified">Not identified</option>
+ <option value="Present">Present</option>
+ <option value="Present (Necrotic tumor%):">Present (+ Necrotic tumor%):</option>
+ <option value="Cannot be determined, specify details:">Cannot be determined, specify details:</option>
 </select>
 </td>
 </tr>
+
 </table>
+</p>
+</fieldset>
 </p>
 
 <p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=17" target="_blank">Biomarker studies for gliomas (where applicable)</a>:</label></legend>
+<p>
 <TABLE border= "1">
 <col width="70%">
-<legend><label class="description">- <a href=".\cap\cp-cns-18protocol-4000.pdf#page=14" target="_blank">Biomarker studies for gliomas (where applicable)</a>:</label></legend>
+
   <TR>
     <TD>- IDH1 R132H expression (immunohistochemistry):</TD>
     <TD>
@@ -271,8 +656,8 @@ table, th, td {
     <TD><select class="element select large" ID="A09">
 			<option value=""></option>
 			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Absent">Absent</option>
-			<option value="Present, specify:">Present, specify:</option> 
+			<option value="Negative">Negative</option>
+			<option value="Positive">Positive</option> 
 		</select>
 	</TD>
   </TR>
@@ -283,6 +668,7 @@ table, th, td {
   </TR>
   </TABLE>
 </p>
+</fieldset>
 
 </fieldset>
 </p>
@@ -305,7 +691,8 @@ table, th, td {
 <br>
 <br>
 <div id="footer">
-Last upated on 14-Nov-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 23-Sep-2022, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Tumors of the Brain and Spinal Cord 1.0.0.0 (Sep 2022 version)<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

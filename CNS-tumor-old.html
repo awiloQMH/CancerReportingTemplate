@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CNS tumors</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+if (frm.A01.value !== ""){
+	Template += "- Histological type (WHO 2016): " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "\n" + "- Tumor histology and immunohistochemical studies: " + "\n" + "  - "+ frm.A02.value + "\n" +"\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- WHO Grade: " + frm.A03.value + "\n" + "\n";
+}
+
+if (frm.A04.value + frm.A05.value + frm.A06.value + frm.A07.value + frm.A08.value + frm.A09.value + frm.A10.value !== ""){
+	Template += "- Biomarker studies for gliomas : " + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "  - IDH1 R132H expression (immunohistochemistry): " + frm.A04.value + "\n";
+}
+
+if (frm.A05.value !== ""){
+	Template += "  - IDH1/IDH2 mutation (by Sanger sequencing): " + frm.A05.value + "\n" + "    - see also report: MB#" + "\n";
+}
+
+if (frm.A06.value !== ""){
+	Template += "  - ATRX expression (immunohistochemistry): " + frm.A06.value + "\n";
+}
+
+if (frm.A07.value !== ""){
+	Template += "  - Histone H3 K27M expression (immunohistochemistry): " + frm.A07.value + "\n" + "    - Send out test to Queen Elizabeth Hospital" + "\n";
+}
+
+if (frm.A08.value !== ""){
+	Template += "  - Chromosomal arm 1p / 19q codeletion (by FISH): " + frm.A08.value + "\n" + "    - see also report: MB#" + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "  - BRAF V600E mutation (by Sanger sequencing): " + frm.A09.value  + "\n" + "    - see also report: MB#" + "\n";
+}
+
+if (frm.A10.value !== ""){
+	Template += "  - Others, specify: " + frm.A10.value + "\n" ;
+}
+
+if (frm.A11.value !== ""){
+	Template += "\n" + "- Integrated final diagnosis (WHO 2016): " + frm.A11.value + "\n" ;
+}
+
+if (frm.A12.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A12.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report has been copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;  
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-cns-18protocol-4000.pdf" target="_blank">
+		<div class="tooltip">Common Gliomas and Ependymomas
+		<span class="tooltiptext">click to access further explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Microscopic descriptions :</label></legend>
+ 
+<p>
+<label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A02" name="A02" class="element textarea medium"></textarea>
+</p>
+
+<p>
+<table border="1">
+<col width="50%">
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-cns-18protocol-4000.pdf#page=11" target="_blank">Histological type (WHO 2016)</a>:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
+ <option value=""></option>
+ <option value="Diffuse astrocytoma">Diffuse astrocytoma</option> 
+ <option value="Gemistocytic astrocytoma">Gemistocytic astrocytoma </option>
+ <option value="Anaplastic astrocytoma">Anaplastic astrocytoma </option>
+ <option value="Glioblastoma">Glioblastoma</option>
+ <option value="Glioblastoma, giant cell glioblastoma">Glioblastoma, giant cell glioblastoma</option>
+ <option value="Glioblastoma, gliosarcoma">Glioblastoma, gliosarcoma</option>
+ <option value="Glioblastoma, epithelioid glioblastoma">Glioblastoma, epithelioid glioblastoma</option> 
+ <option value="Oligodendroglioma">Oligodendroglioma</option>
+ <option value="Anaplastic oligodendroglioma">Anaplastic oligodendroglioma</option>
+ <option value="Oligoastrocytoma">Oligoastrocytoma</option>
+ <option value="Anaplastic oligoastrocytoma">Anaplastic oligoastrocytoma</option>
+ <option value="Pilocytic astrocytoma">Pilocytic astrocytoma</option>
+ <option value="Pilocytic astrocytoma, pilomyxoid astrocytoma">Pilocytic astrocytoma, pilomyxoid astrocytoma</option>
+ <option value="Pleomorphic xanthoastrocytoma">Pleomorphic xanthoastrocytoma</option>
+ <option value="Anaplastic pleomorphic xanthoastrocytoma">Anaplastic pleomorphic xanthoastrocytoma</option>
+ <option value="Ependymoma">Ependymoma</option>
+ <option value="Ependymoma, papillary ependymoma">Ependymoma, papillary ependymoma</option>
+ <option value="Ependymoma, clear cell ependymoma">Ependymoma, clear cell ependymoma</option>
+ <option value="Ependymoma, tanycytic ependymoma">Ependymoma, tanycytic ependymoma</option>
+ <option value="Anaplastic ependymoma">Anaplastic ependymoma</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- WHO Grade:</label> 
+</td>
+<td>
+<select class="element select large" ID="A03">
+ <option value=""></option>
+ <option value="I">I</option>
+ <option value="II">II</option>
+ <option value="III">III</option>
+ <option value="IV">IV</option>
+ <option value="Not applicable">Not applicable</option>
+ <option value="Cannot be determined, specify details:">Cannot be determined, specify details:</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\cp-cns-18protocol-4000.pdf#page=11" target="_blank">Integrated final diagnosis (WHO 2016)</a>:</label>
+</td>
+<td>
+<select class="element select large" ID="A11">
+ <option value=""></option>
+ <option value="Diffuse astrocytoma, IDH-mutant">Diffuse astrocytoma, IDH-mutant</option> 
+ <option value="Gemistocytic astrocytoma, IDH-mutant">Gemistocytic astrocytoma, IDH-mutant</option> 
+ <option value="Diffuse astrocytoma, IDH-wildtype">Diffuse astrocytoma, IDH-wildtype</option> 
+ <option value="Diffuse astrocytoma, NOS">Diffuse astrocytoma, NOS</option>
+ <option value="Anaplastic astrocytoma, IDH-mutant">Anaplastic astrocytoma, IDH-mutant</option> 
+ <option value="Anaplastic astrocytoma, IDH-wildtype">Anaplastic astrocytoma, IDH-wildtype</option> 
+ <option value="Anaplastic astrocytoma, NOS">Anaplastic astrocytoma, NOS</option> 
+ <option value="Glioblastoma, IDH-wildtype">Glioblastoma, IDH-wildtype</option> 
+ <option value="Giant cell glioblastoma">Giant cell glioblastoma</option> 
+ <option value="Gliosarcoma">Gliosarcoma</option> 
+ <option value="Epithelioid glioblastoma">Epithelioid glioblastoma</option> 
+ <option value="Glioblastoma, IDH-mutant">Glioblastoma, IDH-mutant</option> 
+ <option value="Glioblastoma, NOS">Glioblastoma, NOS</option> 
+ <option value="Diffuse midline glioma, H3 K27M-mutant">Diffuse midline glioma, H3 K27M-mutant</option> 
+ <option value="Oligodendroglioma, IDH-mutant and 1p/19q-codeleted">Oligodendroglioma, IDH-mutant and 1p/19q-codeleted</option>
+ <option value="Oligodendroglioma, NOS">Oligodendroglioma, NOS</option> 
+ <option value="Anaplastic oligodendroglioma, IDH-mutant and 1p/19q-codeleted">Anaplastic oligodendroglioma, IDH-mutant and 1p/19q-codeleted</option> 
+ <option value="Anaplastic oligodendroglioma, NOS">Anaplastic oligodendroglioma, NOS</option>
+ <option value="Oligoastrocytoma, NOS">Oligoastrocytoma, NOS</option> 
+ <option value="Anaplastic oligoastrocytoma, NOS">Anaplastic oligoastrocytoma, NOS</option> 
+ <option value="Other astrocytic tumours">Other astrocytic tumours</option>
+ <option value="Pilocytic astrocytoma">Pilocytic astrocytoma</option> 
+ <option value="Pilomyxoid astrocytoma">Pilomyxoid astrocytoma</option> 
+ <option value="Subependymal giant cell astrocytoma">Subependymal giant cell astrocytoma</option> 
+ <option value="Pleomorphic xanthoastrocytoma">Pleomorphic xanthoastrocytoma</option> 
+ <option value="Anaplastic pleomorphic xanthoastrocytoma">Anaplastic pleomorphic xanthoastrocytoma</option> 
+ <option value="Ependymal tumours">Ependymal tumours</option>
+ <option value="Subependymoma">Subependymoma</option> 
+ <option value="Myxopapillary ependymoma">Myxopapillary ependymoma</option> 
+ <option value="Ependymoma">Ependymoma</option>
+ <option value="Papillary ependymoma">Papillary ependymoma</option> 
+ <option value="Clear cell ependymoma">Clear cell ependymoma</option> 
+ <option value="Tanycytic ependymoma">Tanycytic ependymoma</option> 
+ <option value="Anaplastic ependymoma">Anaplastic ependymoma</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<TABLE border= "1">
+<col width="70%">
+<legend><label class="description">- <a href=".\cap\cp-cns-18protocol-4000.pdf#page=14" target="_blank">Biomarker studies for gliomas (where applicable)</a>:</label></legend>
+  <TR>
+    <TD>- IDH1 R132H expression (immunohistochemistry):</TD>
+    <TD>
+      <select class="element select large" ID="A04">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative">Negative</option>
+		<option value="Positive">Positive</option> 
+		</select>
+    </TD>
+  </TR>
+  <TR>
+    <TD>- IDH1/IDH2 mutation (by Sanger sequencing):</TD>
+    <TD><select class="element select large" ID="A05">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Absent">Absent</option>
+			<option value="Present, specify:">Present, specify:</option> 
+		</select></TD>
+  </TR>
+  <TR>
+    <TD>- ATRX expression (immunohistochemistry):</TD>
+    <TD><select class="element select large" ID="A06">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Intact nuclear expression">Intact nuclear expression</option>
+			<option value="Loss of nuclear expression">Loss of nuclear expression</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Histone H3 K27M expression (immunohistochemistry):</TD>
+    <TD><select class="element select large" ID="A07">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive">Positive</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Chromosomal arm 1p / 19q codeletion (by FISH):</TD>
+    <TD><select class="element select large" ID="A08">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="None detected">None detected</option>
+			<option value="1p/19q codeletion">1p/19q codeletion</option>
+			<option value="1p only deletion">1p only deletion</option>
+			<option value="19q only deletion">19q only deletion</option>
+			<option value="Polysomy, specify:">Polysomy, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- BRAF V600E mutation (by Sanger sequencing):</TD>
+    <TD><select class="element select large" ID="A09">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Absent">Absent</option>
+			<option value="Present, specify:">Present, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Others, specify:</TD>
+    <TD><input type="text" class="element text large" ID="A10" size="10"></textarea>
+	</TD>
+  </TR>
+  </TABLE>
+</p>
+
+</fieldset>
+</p>
+
+<p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A12" name="A12" class="element textarea medium" style="border-color:grey;"></textarea> 
+</p>
+
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea medium" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+<div id="footer">
+Last upated on 14-Nov-2020, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+
+</body>
+</html>
