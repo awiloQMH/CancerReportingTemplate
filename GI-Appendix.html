@@ -75,7 +75,8 @@ if (document.getElementById("A14").checked || document.getElementById("A15").che
 	document.getElementById("A16").checked || document.getElementById("A17").checked ||
 	document.getElementById("A18").checked || document.getElementById("A19").checked ||
     document.getElementById("A20").checked || document.getElementById("A21").checked ||
-	document.getElementById("A22").checked || document.getElementById("A23").checked){
+	document.getElementById("A22").checked || document.getElementById("A23").checked ||
+	document.getElementById("A80").checked || document.getElementById("A81").checked){
 	Template += "- Tumor extension: " + "\n";
 }
 
@@ -87,8 +88,16 @@ if (document.getElementById("A15").checked){
 	Template += frm.A15.value + "\n";
 }
 
+if (document.getElementById("A80").checked){
+	Template += frm.A80.value + "\n";
+}
+
 if (document.getElementById("A16").checked){
 	Template += frm.A16.value + "\n";
+}
+
+if (document.getElementById("A81").checked){
+	Template += frm.A81.value + "\n";
 }
 
 if (document.getElementById("A17").checked){
@@ -420,7 +429,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2022-12-Update\Gastrointestinal Protocol Folder\Appendix_5.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Carcinoma of the Appendix
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -542,7 +551,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\Appendix_5.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Lymphatic and/on vascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A24">
@@ -587,7 +596,9 @@ table, th, td {
 <p>
 <label class="description">- Tumor extension:</label>
 <input class="element checkbox" type="checkbox"   id="A15" value="  - Tumor invades lamina propria or muscularis mucosa"><label  class="choice">Tumor invades lamina propria or muscularis mucosa</label>
+<input class="element checkbox" type="checkbox"   id="A80" value="  - Acellular mucin invades submucosa"><label  class="choice">Acellular mucin invades submucosa</label>
 <input class="element checkbox" type="checkbox"   id="A16" value="  - Tumor invades submucosa"><label  class="choice">Tumor invades submucosa</label>
+<input class="element checkbox" type="checkbox"   id="A81" value="  - Acellular mucin invades muscularis propria"><label  class="choice">Acellular mucin invades muscularis propria</label>
 <input class="element checkbox" type="checkbox"   id="A17" value="  - Tumor invades muscularis propria"><label  class="choice">Tumor invades muscularis propria</label>
 <input class="element checkbox" type="checkbox"   id="A18" value="  - Acellular mucin invades subserosa or mesoappendix but does not extend to the serosal surface"><label  class="choice">Acellular mucin invades subserosa or mesoappendix but does not extend to the serosal surface</label>
 <input class="element checkbox" type="checkbox"   id="A19" value="  - Tumor invades through the muscularis propria into the subserosa or mesoappendix but does not extend to the serosal surface"><label  class="choice">Tumor invades through the muscularis propria into the subserosa or mesoappendix but does not extend to the serosal surface</label>
@@ -851,9 +862,9 @@ Acellular mucin or mucinous epithelium may invade into the muscularis propria. (
 <br>
 
 <div id="footer">
-Last upated on 25-Jun-2022,<br>
+Last upated on 14-Jan-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Appendix 5.0.0.0 (June 2022), <br>
+Appendix 5.1.0.0 (Dec 2022), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-/*
+
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -44,7 +44,7 @@ if (document.getElementById("A06").checked){
 if (document.getElementById("A07").checked){
 	Template += frm.A07.value + "\n";
 }
-*/
+
 if (frm.A08.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A08.value + "\n";
 }
@@ -79,7 +79,11 @@ if (frm.A11.value !== ""){
 
 if (document.getElementById("A14").checked || document.getElementById("A15").checked ||
 	document.getElementById("A16").checked || document.getElementById("A17").checked || 
-	document.getElementById("A18").checked || document.getElementById("A19").checked){
+	document.getElementById("A18").checked || document.getElementById("A19").checked || 
+	document.getElementById("A55").checked || document.getElementById("A56").checked || 
+	document.getElementById("A57").checked || document.getElementById("A58").checked || 
+	document.getElementById("A59").checked || document.getElementById("A60").checked || 
+	document.getElementById("A61").checked){
 	Template += "- Tumor extension:" + "\n";
 }
 
@@ -107,6 +111,33 @@ if (document.getElementById("A19").checked){
 	Template += frm.A19.value + "\n";
 }
 
+if (document.getElementById("A55").checked){
+	Template += frm.A55.value + "\n";
+}
+
+if (document.getElementById("A56").checked){
+	Template += frm.A56.value + "\n";
+}
+
+if (document.getElementById("A57").checked){
+	Template += frm.A57.value + "\n";
+}
+
+if (document.getElementById("A58").checked){
+	Template += frm.A58.value + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += frm.A59.value + "\n";
+}
+
+if (document.getElementById("A60").checked){
+	Template += frm.A60.value + "\n";
+}
+
+if (document.getElementById("A61").checked){
+	Template += frm.A61.value + "\n";
+}
 if (document.getElementById("A20").checked || document.getElementById("A21").checked ||
 	document.getElementById("A22").checked || document.getElementById("A23").checked || 
 	document.getElementById("A24").checked || document.getElementById("A25").checked ||
@@ -143,12 +174,25 @@ if (document.getElementById("A26").checked){
 }
 
 if (document.getElementById("A27").checked || document.getElementById("A28").checked ||
-	document.getElementById("A29").checked){
+	document.getElementById("A29").checked || document.getElementById("A62").checked ||
+	document.getElementById("A63").checked || document.getElementById("A64").checked){
 	Template += "- Ancillary studies:" + "\n";
 }
 
 if (document.getElementById("A27").checked){
 	Template += frm.A27.value + "\n";
+}
+
+if (document.getElementById("A62").checked){
+	Template += frm.A62.value + "\n";
+}
+
+if (document.getElementById("A63").checked){
+	Template += frm.A63.value + "\n";
+}
+
+if (document.getElementById("A64").checked){
+	Template += frm.A64.value + "\n";
 }
 
 if (document.getElementById("A28").checked){
@@ -318,7 +362,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2021-11-Update\Adrenal_4.2.1.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2022-12-Update\Endocrine Protocol Folder\Adrenal_4.3.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the adrenal gland
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -328,7 +372,7 @@ table, th, td {
 	</div>
 	
 <form>
-<!--
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
@@ -405,7 +449,7 @@ table, th, td {
 </p>
 </fieldset>
 </p>
--->
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
@@ -423,10 +467,12 @@ table, th, td {
 <td>
 <select class="element select large" ID="A09">
 	<option value=""></option>
-	<option value="Adrenal cortical carcinoma">Adrenal cortical carcinoma</option>
-	<option value="Adrenal cortical carcinoma, oncocytic type">Adrenal cortical carcinoma, oncocytic type</option>
-	<option value="Adrenal cortical carcinoma, myxoid type">Adrenal cortical carcinoma, myxoid type</option>	
-	<option value="Adrenal cortical carcinoma, sarcomatoid type">Adrenal cortical carcinoma, sarcomatoid type</option>
+	<option value="Conventional adrenal cortical carcinoma">Conventional adrenal cortical carcinoma</option>
+	<option value="Oncocytic adrenal cortical carcinoma">Oncocytic adrenal cortical carcinoma</option>
+	<option value="Myxoid adrenal cortical carcinoma">Myxoid adrenal cortical carcinoma</option>	
+	<option value="Sarcomatoid adrenal cortical carcinoma">Sarcomatoid adrenal cortical carcinoma</option>
+	<option value="Other histologic subtype not listed (specify):">Other histologic subtype not listed (specify):</option>
+	<option value="Carcinoma, subtype cannot be determined:">Carcinoma, subtype cannot be determined:</option>
 </select>
 </td>
 </tr>
@@ -438,8 +484,8 @@ table, th, td {
 <td valign="top">
 <select class="element select large" ID="A10">
 	<option value=""></option>
-	<option value="G1: Low grade; mitotic rate < or = 20/50hpf (specify: )">G1: Low grade; mitotic rate < or = 20/50hpf  (specify: )</option>
-	<option value="G2: High grade; mitotic rate > 20/50hpf  (specify: )">G2: High grade; mitotic rate > 20/50hpf  (specify: )</option>
+	<option value="G1: Low grade; mitotic rate < or = 20/10 mm2 (specify: )">G1: Low grade; mitotic rate < or = 20/10 mm2  (specify: )</option>
+	<option value="G2: High grade; mitotic rate > 20/10 mm2  (specify: )">G2: High grade; mitotic rate > 20/10 mm2  (specify: )</option>
 	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
 </select>
 </td>
@@ -447,30 +493,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Tumor size:</label> 
-</td>
-<td>
-<select class="element select large" ID="A03">
-	<option value=""></option>
-	<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
-	<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
-	<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
-</select>
-</td>
-</tr>
-
-<tr>
-<td>
-<label class="description">- Tumor weight (whole gland):</label>
-</td>
-<td>
-<input type="text" class="element text large" ID="A04" size="5">
-</td>
-</tr>
-
-<tr>
-<td>
-<label class="description"> - <a href=".\cap\Cancer-Protocols-2021-11-Update\Adrenal_4.2.1.0.REL_CAPCP.pdf#page=12" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description"> - <a href=".\cap\Cancer-Protocols-2021-11-Update\Adrenal_4.2.1.0.REL_CAPCP.pdf#page=12" target="_blank">Lymphatic and/on vascular invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -512,7 +535,29 @@ table, th, td {
 	<option value="Cannot be assessed">Cannot be assessed</option>
 </select>
 </td>
+
+
+<tr>
+<td valign="top">
+<label class="description">- Tumor extension:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"   id="A14" value="  - Not applicable"><label  class="choice">Not applicable</label>
+<input class="element checkbox" type="checkbox"   id="A15" value="  - Confined to adrenal cortex without invasion into or through the adrenal capsule (if present)"><label  class="choice">Confined to adrenal cortex without invasion into or through the adrenal capsule (if present)</label>
+<input class="element checkbox" type="checkbox"   id="A16" value="  - Invades into or through the adrenal capsule, with no peri-adrenal adipose tissue invasion"><label  class="choice">Invades into or through the adrenal capsule, with no peri-adrenal adipose tissue invasion</label>
+<input class="element checkbox" type="checkbox"   id="A17" value="  - Kidney"><label  class="choice">Kidney</label>
+<input class="element checkbox" type="checkbox"   id="A18" value="  - Pancreas"><label  class="choice">Pancreas</label>
+<input class="element checkbox" type="checkbox"   id="A19" value="  - Liver"><label  class="choice">Liver</label>
+<input class="element checkbox" type="checkbox"   id="A55" value="  - Spleen"><label  class="choice">Spleen</label>
+<input class="element checkbox" type="checkbox"   id="A56" value="  - Diaphragm"><label class="choice" >Diaphragm</label>
+<input class="element checkbox" type="checkbox"   id="A57" value="  - Stomach"><label  class="choice">Stomach</label>
+<input class="element checkbox" type="checkbox"   id="A58" value="  - Peri-adrenal adipose tissue"><label  class="choice">Peri-adrenal adipose tissue</label>
+<input class="element checkbox" type="checkbox"   id="A59" value="  - Large blood vessels"><label  class="choice">Large blood vessels</label>
+<input class="element checkbox" type="checkbox"   id="A60" value="  - Other adjacent organs and structures (specify):"><label  class="choice">Other adjacent organs and structures (specify):</label>
+<input class="element checkbox" type="checkbox"   id="A61" value="  - Cannot be determined: "><label  class="choice">Cannot be determined: </label>
+</td>
 </tr>
+
 <tr>
 <td valign="top">
 <label > + <a href=".\cap\Cancer-Protocols-2021-11-Update\Adrenal_4.2.1.0.REL_CAPCP.pdf#page=8" target="_blank">Functional status</a>:</label>
@@ -530,12 +575,15 @@ table, th, td {
 
 <tr>
 <td valign="top">
-<label > + <a href=".\cap\Cancer-Protocols-2021-11-Update\Adrenal_4.2.1.0.REL_CAPCP.pdf#page=14" target="_blank">Ancillary studies</a>:</label>
+<label class="description"> - <a href=".\cap\Cancer-Protocols-2022-12-Update\Endocrine Protocol Folder\Adrenal_4.3.0.0.REL_CAPCP.pdf#page=19" target="_blank">Ancillary studies</a>:</label>
 </td>
 <td>
-<input class="element checkbox" type="checkbox" id="A27" value="  - Proliferation index Ki-67 (specify):"><label  class="choice">Proliferation index Ki-67 (specify):</label>
-<input class="element checkbox" type="checkbox" id="A28" value="  - Reticulin stain (specify type(s) and result(s)):"><label  class="choice">Reticulin stain (specify type(s) and result(s)):</label>
-<input class="element checkbox" type="checkbox" id="A29" value="  - Other (specify type and result):"><label  class="choice">Other (specify type and result):</label>
+<b><input class="element checkbox" type="checkbox" id="A27" value="   Proliferation index Ki-67 (specify):"><label  class="choice">- Proliferation index Ki-67 (specify):</label></b>
+<input class="element checkbox" type="checkbox" id="A62" value="   SF1/Melan-A/Calretinin/Inhibin/Synaptophysin: "><label  class="choice">+ SF1/Melan-A/Calretinin/Inhibin/Synaptophysin</label>
+<input class="element checkbox" type="checkbox" id="A63" value="   p53: "><label  class="choice">+ p53</label>
+<input class="element checkbox" type="checkbox" id="A64" value="   beta-catenin: "><label  class="choice">+ beta-catenin</label>
+<input class="element checkbox" type="checkbox" id="A28" value="   Reticulin stain (specify type(s) and result(s)):"><label  class="choice">+ Reticulin stain (specify type(s) and result(s)):</label>
+<input class="element checkbox" type="checkbox" id="A29" value="   Other (specify type and result):"><label  class="choice">+ Other (specify type and result):</label>
 </td>
 </tr>
 </table>
@@ -544,7 +592,7 @@ table, th, td {
 <p>
 - Use 22 mm eyepiece at 40x objective, counting 21 fields, approximates original cut-off of 20 mitosis per 50 high power fields for the 20 mm objective in older microscopes.
 </p>
-
+<!--
 <p>
 <label class="description">- Tumor extension:</label>
 <input class="element checkbox" type="checkbox" id="A14" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
@@ -554,6 +602,7 @@ table, th, td {
 <input class="element checkbox" type="checkbox" id="A18" value="  - Tumor invades into adjacent organs (specify):"><label  class="choice">Tumor invades into adjacent organs (specify):</label>
 <input class="element checkbox" type="checkbox" id="A19" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
 </p>
+-->
 
 </fieldset>
 </p>
@@ -761,10 +810,10 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2021,<br>
+Last upated on 14-Jan-2023,<br>
 based on 
 <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Adrenal Gland 4.2.0.1 (Nov 2021).<br>
+Adrenal Gland 4.3.0.0 (Dec 2022).<br>
 html form was created on <a href="https://www.phpform.org"  target="_blank">pForm</a>, <a href="https://www.w3schools.com/"  target="_blank">W3 School</a>, 
 <a href="https://stackoverflow.com/"  target="_blank">StackOverflow</a>, and 
 <a href="https://icons8.com" target="_blank">Icons8</a>.<br><br>

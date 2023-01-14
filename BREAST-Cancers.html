@@ -222,7 +222,7 @@ if (document.getElementById("A71").checked){
 }
 
 if (frm.A42.value !== ""){
-	Template += "\n" + "- Surgical margin" + "\n" + "  - Anterior: " + frm.A42.value + "\n";
+	Template += "\n" + "- Surgical margin for invasive tumor:" + "\n" + "  - Anterior: " + frm.A42.value + "\n";
 }
 
 if (frm.A43.value !== ""){
@@ -247,6 +247,34 @@ if (frm.A47.value !== ""){
 
 if (frm.A48.value !== ""){
 	Template += "  - Other (specify): " + frm.A48.value + "\n";
+}
+	
+if (frm.A81.value !== ""){
+	Template += "\n" + "- Surgical margin for DCIS:" + "\n" + "  - Anterior: " + frm.A81.value + "\n";
+}
+
+if (frm.A82.value !== ""){
+	Template += "  - Posterior: " + frm.A82.value + "\n";
+}
+
+if (frm.A83.value !== ""){
+	Template += "  - Superior: " + frm.A83.value + "\n";
+}
+
+if (frm.A84.value !== ""){
+	Template += "  - Inferior: " + frm.A84.value + "\n";
+}
+
+if (frm.A85.value !== ""){
+	Template += "  - Medial: " + frm.A85.value + "\n";
+}
+
+if (frm.A86.value !== ""){
+	Template += "  - Lateral: " + frm.A86.value + "\n";
+}
+
+if (frm.A87.value !== ""){
+	Template += "  - Other (specify): " + frm.A87.value + "\n";
 }
 
 if (frm.A49.value + frm.A50.value + frm.A51.value + frm.A52.value + frm.A53.value + 
@@ -418,7 +446,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2022-09-Update\Breast Protocol Folder\Breast.Invasive_4.7.0.1.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2022-12-Update\Breast Protocol Folder\Breast.Invasive_4.8.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Invasive carcinoma of the breast
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -672,13 +700,15 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=32" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=32" target="_blank">Lymphatic and/or vascular invasion</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A37">
 		<option value=""></option>
 		<option value="Not identified">Not identified</option>
 		<option value="Present">Present</option>
+		<option value="Present, Focal (LVI in one block only)">Present, Focal (LVI in one block only)</option>
+		<option value="Present, Extensive (LVI in two or more blocks)">Present, Extensive (LVI in two or more blocks)</option>
 		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
 </td>
@@ -852,7 +882,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=34" target="_blank">Surgical margins</a> (at least one closest margin): </label></legend>
+<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=34" target="_blank">Surgical margins for invasive tumor</a> (at least one closest margin): </label></legend>
 
 <p>
 <table border="1">
@@ -866,9 +896,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 	<select class="element select large" ID="A42">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
 		<option value="Uninvolved by invasive carcinoma, closest distance:">Uninvolved by invasive carcinoma, closest distance:</option>
-		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
 		<option value="Involved by invasive carcinoima">Involved by invasive carcinoma</option>
 	</select>
 </td>
@@ -882,9 +910,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 	<select class="element select large" ID="A43">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
 		<option value="Uninvolved by invasive carcinoma, closest distance:">Uninvolved by invasive carcinoma, closest distance:</option>
-		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
 		<option value="Involved by invasive carcinoima">Involved by invasive carcinoma</option>
 	</select>
 </td>
@@ -898,9 +924,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 	<select class="element select large" ID="A44">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
 		<option value="Uninvolved by invasive carcinoma, closest distance:">Uninvolved by invasive carcinoma, closest distance:</option>
-		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
 		<option value="Involved by invasive carcinoima">Involved by invasive carcinoma</option>
 	</select>
 </td>
@@ -914,9 +938,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 	<select class="element select large" ID="A45">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
 		<option value="Uninvolved by invasive carcinoma, closest distance:">Uninvolved by invasive carcinoma, closest distance:</option>
-		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
 		<option value="Involved by invasive carcinoima">Involved by invasive carcinoma</option>
 	</select>
 </td>
@@ -930,9 +952,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 	<select class="element select large" ID="A46">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
 		<option value="Uninvolved by invasive carcinoma, closest distance:">Uninvolved by invasive carcinoma, closest distance:</option>
-		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
 		<option value="Involved by invasive carcinoima">Involved by invasive carcinoma</option>
 	</select>
 </td>
@@ -946,9 +966,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 	<select class="element select large" ID="A47">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
 		<option value="Uninvolved by invasive carcinoma, closest distance:">Uninvolved by invasive carcinoma, closest distance:</option>
-		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
 		<option value="Involved by invasive carcinoima">Involved by invasive carcinoma</option>
 	</select>
 </td>
@@ -962,10 +980,118 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2022-09-Update\B
 	<select class="element select large" ID="A48">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
 		<option value="Uninvolved by invasive carcinoma, closest distance:">Uninvolved by invasive carcinoma, closest distance:</option>
-		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
 		<option value="Involved by invasive carcinoima">Involved by invasive carcinoma</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=34" target="_blank">Surgical margins for DCIS</a> (at least one closest margin): </label></legend>
+
+<p>
+<table border="1">
+<col width="60%">
+
+<tr>
+<td>
+<label class="description">- Anterior margin:</label>
+</td>
+<td>
+	<select class="element select large" ID="A81">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
+		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Posterior margin:</label>
+</td>
+<td>
+	<select class="element select large" ID="A82">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
+		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Superior margin:</label>
+</td>
+<td>
+	<select class="element select large" ID="A83">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
+		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Inferior margin:</label>
+</td>
+<td>
+	<select class="element select large" ID="A84">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
+		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Medial margin:</label>
+</td>
+<td>
+	<select class="element select large" ID="A85">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
+		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Lateral margin:</label>
+</td>
+<td>
+	<select class="element select large" ID="A86">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
+		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>- Other margins (specify):</label>
+</td>
+<td>
+	<select class="element select large" ID="A87">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by DCIS (>2 mm), closest distance:">Uninvolved by DCIS (>2 mm), closest distance:</option>
+		<option value="Involved by DCIS, closest distance:">Involved by DCIS, closest distance:</option>
 	</select>
 </td>
 </tr>
@@ -1213,9 +1339,9 @@ Approximately 1000 tumor cells are contained in a 3-dimensional 0.2-mm cluster. 
 <br>
 
 <div id="footer">
-Last upated on 08-Nov-2022,<br>
+Last upated on 14-Jan-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Breast Invasive Resection 4.7.0.1 (Sep 2022).<br>
+Breast Invasive Resection 4.8.0.0 (Dec 2022).<br>
 html form was created on 
 <a href="https://www.phpform.org">pForm</a>, 
 <a href="https://www.w3schools.com/">W3 School</a>, 
