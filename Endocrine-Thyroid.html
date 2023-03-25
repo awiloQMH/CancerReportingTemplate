@@ -66,9 +66,37 @@ if (frm.A12.value !== ""){
 	Template += "\n" + "- Histologic type: " + frm.A12.value + "\n";
 } 
 
-if (frm.A13.value !== ""){
-	Template += "- Mitotic count (per 2 mm2): " + frm.A13.value + "\n";
+if (frm.A53.value !== ""){
+	Template += "\n" + "- Histologic type: " + frm.A53.value + "\n";
 } 
+
+if (frm.A54.value !== ""){
+	Template += "\n" + "- Histologic type: " + frm.A54.value + "\n";
+} 
+
+if (frm.A55.value !== ""){
+	Template += "\n" + "- Histologic type: " + frm.A55.value + "\n";
+} 
+
+if (frm.A56.value !== ""){
+	Template += "\n" + "- Histologic type: " + frm.A56.value + "\n";
+} 
+
+if (frm.A57.value !== ""){
+	Template += "\n" + "- Histologic type: " + frm.A57.value + "\n";
+} 
+
+if (frm.A58.value !== ""){
+	Template += "\n" + "- Histologic type: " + frm.A58.value + "\n";
+} 
+
+if (frm.A13.value !== ""){
+	Template += "- Mitotic count (per 2 mm2): " + "\n" + frm.A13.value + "\n";
+} 
+
+if (frm.A59.value !== ""){
+	Template += "- Ki67 labeling index: " + frm.A59.value + "\n";
+}
 
 if (frm.A02.value !== ""){
 	Template += "- Tumor focality: " + "\n" + frm.A02.value + "\n";
@@ -76,6 +104,10 @@ if (frm.A02.value !== ""){
 
 if (frm.A08.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A08.value + "\n";
+}
+
+if (frm.A60.value !== ""){
+	Template += "- Tumor necrosis: " + "\n" + frm.A60.value + "\n";
 }
 
 if (frm.A14.value !== ""){
@@ -316,7 +348,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-03-Update\Endocrine Protocol Folder\Thyroid_4.4.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Carcinoma of the thyroid
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -409,65 +441,178 @@ table, th, td {
 </p>
 <p>
 <table border="1">
-<col width="50%">
+<col width="60%">
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=12" target="_blank">Histologic type (Papillary carcinoma)</a>:</label> 
+<label class="description">- Low-risk follicular cell-derived thyroid neoplasms:</label> 
 </td>
 <td>
-<select class="element select large" ID="A10">
+<select class="element select large" ID="A53">
 	<option value=""></option>
-	<option value="Papillary carcinoma, classic (usual, conventional)">Papillary carcinoma, classic (usual, conventional)</option>
-	<option value="Papillary carcinoma, follicular variant, encapsulated/well demarcated, with tumor capsular invasion">Papillary carcinoma, follicular variant, encapsulated/well demarcated, with tumor capsular invasion</option>
-	<option value="Papillary carcinoma, follicular variant, encapsulated/well demarcated, noninvasive">Papillary carcinoma, follicular variant, encapsulated/well demarcated, with tumor capsular invasion</option>
-	<option value="Papillary carcinoma, follicular variant, infiltrative">Papillary carcinoma, follicular variant, infiltrative</option>
-	<option value="Papillary carcinoma, tall cell variant">Papillary carcinoma, tall cell variant</option>
-	<option value="Papillary carcinoma, cribriform-morular variant">Papillary carcinoma, cribriform-morular variant</option>
-	<option value="Papillary carcinoma, diffuse sclerosing variant">Papillary carcinoma, diffuse sclerosing variant</option>
-	<option value="Papillary carcinoma, other variant (specify):">Papillary carcinoma, other variant (specify):</option>
-	<option value="Papillary carcinoma">Papillary carcinoma</option>
-	<option value="Noninvasive follicular thyroid neoplasm with papillary like nuclear features (NIFTP)">Noninvasive follicular thyroid neoplasm with papillary like nuclear features (NIFTP)</option>
+	<option value="Thyroid follicular tumor of uncertain malignant potential">Thyroid follicular tumor of uncertain malignant potential</option>
+	<option value="Thyroid well-differentiated tumor of uncertain malignant potential">Thyroid well-differentiated tumor of uncertain malignant potential</option>
+	<option value="Hyalinizing trabecular tumor">Hyalinizing trabecular tumor</option>
+	<option value="Non-invasive follicular thyroid neoplasm with papillary like nuclear features (NIFTP)">Non-invasive follicular thyroid neoplasm with papillary like nuclear features (NIFTP)</option>
+	<option value="Other low-risk follicular cell-derived thyroid neoplasm (specify):">Other low-risk follicular cell-derived thyroid neoplasm (specify):</option>
 </select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=14" target="_blank">Histologic type (Follicular carcinoma)</a>:</label> 
+<label class="description">- Follicular carcinoma:</label> 
 </td>
 <td>
 <select class="element select large" ID="A11">
 	<option value=""></option>
-	<option value="Follicular carcinoma, minimally invasive">Follicular carcinoma, minimally invasive</option>
-	<option value="Follicular carcinoma, encapsulated angioinvasive">Follicular carcinoma, encapsulated angioinvasive</option>
-	<option value="Follicular carcinoma, widely invasive">Follicular carcinoma, widely invasive</option>
-	<option value="Follicular carcinoma, minimally invasive, oncocytic (Hurthle cell)">Follicular carcinoma, minimally invasive, oncocytic (Hurthle cell)</option>
-	<option value="Follicular carcinoma, encapsulated angioinvasive, oncocytic (Hurthle cell)">Follicular carcinoma, encapsulated angioinvasive, oncocytic (Hurthle cell)</option>
-	<option value="Follicular carcinoma, widely invasive, oncocytic (Hurthle cell)">Follicular carcinoma, widely invasive, oncocytic (Hurthle cell)</option>
-	<option value="Follicular carcinoma, minimally invasive, other variant (specify):">Follicular carcinoma, minimally invasive, other variant (specify):</option>
-	<option value="Follicular carcinoma, encapsulated angioinvasive, other variant (specify):">Follicular carcinoma, encapsulated angioinvasive, other variant (specify):</option>
-	<option value="Follicular carcinoma, widely invasive, other variant (specify):">Follicular carcinoma, widely invasive, other variant (specify):</option>
-	<option value="Follicular carcinoma">Follicular carcinoma</option>
+	<option value="Minimally invasive follicular carcinoma">Minimally invasive follicular carcinoma</option>
+	<option value="Encapsulated angioinvasive follicular carcinoma">Encapsulated angioinvasive follicular carcinoma</option>
+	<option value="Widely invasive follicular carcinoma">Widely invasive follicular carcinoma</option>
+	<option value="Other follicular carcinoma (specify):">Other follicular carcinoma (specify):</option>
 </select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Thyroid_4.3.0.0.REL_CAPCP.pdf#page=16" target="_blank">Histologic type (Others)</a>:</label> 
+<label class="description">- Invasive encapsulated follicular variant papillary thyroid carcinoma:</label> 
+</td>
+<td>
+<select class="element select large" ID="A54">
+	<option value=""></option>
+	<option value="Minimally invasive follicular variant papillary carcinoma">Minimally invasive follicular variant papillary carcinoma</option>
+	<option value="Minimally invasive oncocytic follicular variant papillary carcinoma">Minimally invasive oncocytic follicular variant papillary carcinoma</option>
+	<option value="Encapsulated angioinvasive follicular variant papillary carcinoma">Encapsulated angioinvasive follicular variant papillary carcinoma</option>
+	<option value="Encapsulated angioinvasive oncocytic follicular variant papillary carcinoma">Encapsulated angioinvasive oncocytic follicular variant papillary carcinoma</option>
+	<option value="Minimally invasive follicular variant papillary carcinoma">Minimally invasive follicular variant papillary carcinoma</option>
+	<option value="Widely invasive follicular variant papillary carcinoma">Widely invasive follicular variant papillary carcinoma</option>
+	<option value="Other invasive encapsulated follicular variant papillary thyroid carcinoma (specify):">Other invasive encapsulated follicular variant papillary thyroid carcinoma (specify):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Papillary carcinoma:</label> 
+</td>
+<td>
+<select class="element select large" ID="A10">
+	<option value=""></option>
+	<option value="Papillary carcinoma, classic subtype">Papillary carcinoma, classic subtype</option>
+	<option value="Papillary carcinoma, encapsulated classic subtype">Papillary carcinoma, encapsulated classic subtype</option>
+	<option value="Papillary carcinoma, oncocytic classic subtype">Papillary carcinoma, oncocytic classic subtype</option>
+	<option value="Papillary carcinoma, infiltrative follicular subtype">Papillary carcinoma, infiltrative follicular subtype</option>
+	<option value="Papillary carcinoma, tall cell variant">Papillary carcinoma, tall cell variant</option>
+	<option value="Papillary carcinoma, hobnail subtype">Papillary carcinoma, hobnail subtype</option>
+	<option value="Papillary carcinoma, columnar cell subtype">Papillary carcinoma, columnar cell subtype</option>
+	<option value="Papillary carcinoma, clear cell subtype">Papillary carcinoma, clear cell subtype</option>
+	<option value="Papillary carcinoma, spindle cell subtype">Papillary carcinoma, spindle cell subtype</option>
+	<option value="Papillary carcinoma, solid subtype">Papillary carcinoma, solid subtype</option>
+	<option value="Papillary carcinoma, diffuse sclerosing subtype">Papillary carcinoma, diffuse sclerosing subtype</option>
+	<option value="Papillary carcinoma with fibromatosis / fasciitis-like / desmoid type stroma">Papillary carcinoma with fibromatosis / fasciitis-like / desmoid type stroma</option>
+	<option value="Papillary carcinoma, Warthin-like subtype">Papillary carcinoma, Warthin-like subtype</option>
+	<option value="Papillary carcinoma, other subtype (specify):">Papillary carcinoma, other subtype (specify):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Oncocytic carcinoma of the thyroid:</label> 
 </td>
 <td>
 <select class="element select large" ID="A12">
 	<option value=""></option>
-	<option value="Poorly differentiated thyroid carcinoma">Poorly differentiated thyroid carcinoma</option>
-	<option value="Undifferentiated (anaplastic) carcinoma, focal or minor component without extrathyroidal extension">Undifferentiated (anaplastic) carcinoma, focal or minor component without extrathyroidal extension</option>
-	<option value="Undifferentiated (anaplastic) carcinoma, major component">Undifferentiated (anaplastic) carcinoma, major component</option>
-	<option value="Undifferentiated (anaplastic) carcinoma, not otherwise specify">Undifferentiated (anaplastic) carcinoma, not otherwise specify</option>
-	<option value="Medullary carcinoma">Medullary carcinoma</option>
-	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
-	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
+	<option value="Minimally invasive oncocytic carcinoma">Minimally invasive oncocytic carcinoma</option>
+	<option value="Encapsulated angioinvasive oncocytic carcinoma">Encapsulated angioinvasive oncocytic carcinoma</option>
+	<option value="Widely invasive oncocytic carcinoma">Widely invasive oncocytic carcinoma</option>
+	<option value="Oncocytic carcinoma, other (specify):">Oncocytic carcinoma, other (specify):</option>
 </select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- High-grade follicular cell-derived differentiated thyroid carcinoma:</label> 
+</td>
+<td>
+<select class="element select large" ID="A55">
+	<option value=""></option>
+	<option value="High-grade follicular thyroid carcinoma (specify subtype):">High-grade follicular thyroid carcinoma (specify subtype):</option>
+	<option value="High-grade invasive encapsulated follicular variant papillary thyroid carcinoma (specify
+subtype):">High-grade invasive encapsulated follicular variant papillary thyroid carcinoma (specify subtype):</option>
+	<option value="High-grade papillary thyroid carcinoma (specify subtype):">High-grade papillary thyroid carcinoma (specify subtype):</option>
+	<option value="High-grade oncocytic carcinoma of the thyroid (specify subtype):">High-grade oncocytic carcinoma of the thyroid (specify subtype):</option>
+	<option value="High-grade differentiated thyroid carcinoma, NOS">High-grade differentiated thyroid carcinoma, NOS</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Poorly differentiated thyroid carcinoma:</label> 
+</td>
+<td>
+<select class="element select large" ID="A56">
+	<option value=""></option>
+	<option value="Poorly differentiated thyroid carcinoma, NOS">Poorly differentiated thyroid carcinoma, NOS</option>
+	<option value="Oncocytic poorly differentiated thyroid carcinoma">Oncocytic poorly differentiated thyroid carcinoma</option>
+	<option value="Poorly differentiated thyroid carcinoma, other (specify):">Poorly differentiated thyroid carcinoma, other (specify):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Anaplastic follicular cell-derived thyroid carcinoma:</label> 
+</td>
+<td>
+<select class="element select large" ID="A57">
+	<option value=""></option>
+	<option value="Anaplastic thyroid carcinoma, NOS">Anaplastic thyroid carcinoma, NOS</option>
+	<option value="Anaplastic thyroid carcinoma, focal or minor component without extrathyroidal extension">Anaplastic thyroid carcinoma, focal or minor component without extrathyroidal extension</option>
+	<option value="Anaplastic thyroid carcinoma, major component">Anaplastic thyroid carcinoma, major component</option>
+	<option value="Other anaplastic follicular cell-derived thyroid carcinoma (specify):">Other anaplastic follicular cell-derived thyroid carcinoma (specify):</option>
+</select>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label class="description">- Other carcinomas:</label> 
+</td>
+<td>
+<select class="element select large" ID="A58">
+	<option value=""></option>
+	<option value="Medullary thyroid carcinoma">Medullary thyroid carcinoma</option>
+	<option value="Other medullary thyroid carcinoma (specify):">Other medullary thyroid carcinoma (specify):</option>
+	<option value="Mixed medullary carcinoma and follicular thyroid carcinoma (specify):">Mixed medullary carcinoma and follicular thyroid carcinoma (specify):</option>
+	<option value="Mixed medullary carcinoma and follicular variant papillary carcinoma (specify):">Mixed medullary carcinoma and follicular variant papillary carcinoma (specify):</option>
+	<option value="Mixed medullary carcinoma and papillary thyroid carcinoma (specify):">Mixed medullary carcinoma and papillary thyroid carcinoma (specify):</option>
+	<option value="Other mixed medullary and follicular cell-derived thyroid carcinoma (specify):">Other mixed medullary and follicular cell-derived thyroid carcinoma (specify):</option>
+	<option value="Mucoepidermoid carcinoma of the thyroid gland">Mucoepidermoid carcinoma of the thyroid gland</option>
+	<option value="Secretory carcinoma of salivary gland type">Secretory carcinoma of salivary gland type</option>
+	<option value="Other salivary gland-type carcinoma of the thyroid (specify):">Other salivary gland-type carcinoma of the thyroid (specify):</option>
+	<option value="Thymoma family (specify, if possible):">Thymoma family (specify, if possible):</option>
+	<option value="Thymic carcinoma family (specify, if possible):">Thymic carcinoma family (specify, if possible):</option>
+	<option value="Spindle epithelial tumor with thymus-like elements (SETTLE)">Spindle epithelial tumor with thymus-like elements (SETTLE)</option>
+	<option value="Other thymic neoplasm within the thyroid (specify):">Other thymic neoplasm within the thyroid (specify):</option>
+	<option value="Cribriform-morular thyroid carcinoma">Cribriform-morular thyroid carcinoma</option>
+	<option value="Sclerosing mucoepidermoid carcinoma with eosinophilia (SMECE)">Sclerosing mucoepidermoid carcinoma with eosinophilia (SMECE)</option>
+	<option value="Other thyroid neoplasm of uncertain cytogenesis (specify):">Other thyroid neoplasm of uncertain cytogenesis (specify):</option>
+	<option value="Embryonal thyroid neoplasm, thyroblastoma">Embryonal thyroid neoplasm, thyroblastoma</option>
+	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+	<option value="Malignant thyroid neoplasm, type cannot be determined:">Malignant thyroid neoplasm, type cannot be determined:</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+</td>
+<td>
 </td>
 </tr>
 
@@ -476,9 +621,26 @@ table, th, td {
 <label class="description">- Mitotic count (per 2 mm<sup>2</sup>):</label>
 </td>
 <td>
-<input type="text" ID="A13" class = "element text large" size="10"><br>
+<select class="element select large" ID="A13">
+	<option value=""></option>
+	<option value="  - Less than 3 mitoses per 2mm2, specify:">Less than 3 mitoses per 2mm2</option>
+	<option value="  - Greater than or equal to 3 but less than 5 mitoses per 2 mm2, specify:">Greater than or equal to 3 but less than 5 mitoses per 2 mm2</option>
+	<option value="  - Greater than or equal to 5 mitoses per 2 mm2, specify:">Greater than or equal to 5 mitoses per 2 mm2</option>
+	<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
+</select>
 </td>
 </tr>
+
+
+<tr>
+<td>
+<label class="description">- Ki67 Labeing index:</label>
+</td>
+<td>
+<input type="text" ID="A59" class = "element text large" size="20">
+</td>
+</tr>
+
 
 <tr>
 <td>
@@ -504,6 +666,20 @@ table, th, td {
 		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
 		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
 		<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumor necrosis:</label> 
+</td>
+<td>
+<select class="element select large" ID="A60">
+	<option value=""></option>
+	<option value="  - Not identified">Not identified</option>
+	<option value="  - Present, specify:">Present, specify:</option>
+	<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
 </select>
 </td>
 </tr>
@@ -568,8 +744,13 @@ table, th, td {
 </tr>
 </table>
 </p>
+<p>
 Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup><br>
 Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup><br>
+</p>
+<p>
+The Ki-67 proliferation index reporting is required in all medullary thyroid carcinomas as well as in the medullary thyroid carcinoma component of mixed medullary and follicular cell-derived thyroid carcinomas. The Ki-67 proliferation assessment should follow the IARC / WHO guidelines. Visual estimation based on routine microscopic examination (also known as eyeballing) is not allowed.
+</p>
 </fieldset>
 </p>
 
@@ -796,11 +977,14 @@ perithyroidal (central compartment dissection):
 	<option value=""></option>
 	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="  - pT1 (subcategory cannot be determined)">pT1 (subcategory cannot be determined)</option>
 	<option value="  - pT1a: Tumor < or = 1 cm, limited to the thyroid">pT1a: Tumor < or = 1 cm, limited to the thyroid</option>
 	<option value="  - pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid">pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid</option>
 	<option value="  - pT2: Tumor > 2 cm, but < or = 4 cm, limited to thyroid">pT2: Tumor > 2 cm, but < or = 4 cm, limited to thyroid</option>
+	<option value="  - pT3 (subcategory cannot be determined)">pT3 (subcategory cannot be determined)</option>
 	<option value="  - pT3a: Tumor > 4 cm limited to the thyroid">pT3a: Tumor > 4 cm limited to the thyroid</option>
 	<option value="  - pT3b: Gross extrathyroidal extension invading only strap muscles (sternohyoid, sternothyroid, thyrohyoid, or omohyoid muscles) from a tumor of any size">pT3b: Gross extrathyroidal extension invading only strap muscles (sternohyoid, sternothyroid, thyrohyoid, or omohyoid muscles) from a tumor of any size</option>
+	<option value="  - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)</option>
 	<option value="  - pT4a: Gross extrathyroidal extension invading subcutaneous soft tissues, larynx, trachea, esophagus, or recurrent laryngeal nerve from a tumor of any size">pT4a: Gross extrathyroidal extension invading subcutaneous soft tissues, larynx, trachea, esophagus, or recurrent laryngeal nerve from a tumor of any size</option>
 	<option value="  - pT4b: Gross extrathyroidal extension invading prevertebral fascia or encasing the carotid artery or mediastinal vessels from a tumor of any size">pT4b: Gross extrathyroidal extension invading prevertebral fascia or encasing the carotid artery or mediastinal vessels from a tumor of any size</option>
 </select>
@@ -816,11 +1000,14 @@ perithyroidal (central compartment dissection):
 	<option value=""></option>
 	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+	<option value="  - pT1 (subcategory cannot be determined)">pT1 (subcategory cannot be determined)</option>
 	<option value="  - pT1a: Tumor < or = 1 cm, limited to the thyroid">pT1a: Tumor < or = 1 cm, limited to the thyroid</option>
 	<option value="  - pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid">pT1b: Tumor > 1 cm but < or = 2 cm, limited to the thyroid</option>
 	<option value="  - pT2: Tumor > 2 cm, but < or = 4 cm, limited to thyroid">pT2: Tumor > 2 cm, but < or = 4 cm, limited to thyroid</option>
+	<option value="  - pT3 (subcategory cannot be determined)">pT3 (subcategory cannot be determined)</option>
 	<option value="  - pT3a: Tumor > 4 cm limited to the thyroid">pT3a: Tumor > 4 cm limited to the thyroid</option>
 	<option value="  - pT3b: Gross extrathyroidal extension invading only strap muscles (sternohyoid, sternothyroid, thyrohyoid, or omohyoid muscles) from a tumor of any size">pT3b: Gross extrathyroidal extension invading only strap muscles (sternohyoid, sternothyroid, thyrohyoid, or omohyoid muscles) from a tumor of any size</option>
+	<option value="  - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)</option>
 	<option value="  - pT4a: Moderately advanced disease; tumor of any size with gross extrathyroidal extension into the nearby tissues of the neck, including subcutaneous soft tissue, larynx, trachea, esophagus, or recurrent laryngeal nerve">pT4a: Moderately advanced disease; tumor of any size with gross extrathyroidal extension into the nearby tissues of the neck, including subcutaneous soft tissue, larynx, trachea, esophagus, or recurrent laryngeal nerve</option>
 	<option value="  - pT4b: Very advanced disease; tumor of any size with extension toward the spine or into nearby large blood vessels, gross extrathyroidal extension invading the prevertebral fascia, or encasing the carotid artery or mediastinal vessels">pT4b: Very advanced disease; tumor of any size with extension toward the spine or into nearby large blood vessels, gross extrathyroidal extension invading the prevertebral fascia, or encasing the carotid artery or mediastinal vessels</option>
 </select>
@@ -911,9 +1098,9 @@ perithyroidal (central compartment dissection):
 <br>
 
 <div id="footer">
-Last upated on 19-Jul-2021,<br>
+Last upated on 25-Mar-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Thyroid 4.3.0.0 (June 2021), <br>
+Thyroid 4.4.0.0 (Mar 2023), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

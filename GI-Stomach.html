@@ -105,7 +105,11 @@ if (frm.A20.value !== ""){
 }
 
 if (frm.A21.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A21.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 2019): " + frm.A21.value + "\n";
+}
+
+if (frm.A61.value !== ""){
+	Template += "  - Histologic type (Lauren): " + frm.A61.value + "\n";
 }
 
 if (frm.A22.value !== ""){
@@ -330,7 +334,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2022-12-Update\Gastrointestinal Protocol Folder\Stomach_4.3.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-03-Update\Gastrointestinal Protocol Folder\Stomach_4.4.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the stomach
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -415,25 +419,37 @@ table, th, td {
 </p>
 <p>
 <table border="1">
-<col width="40%">
+<col width="45%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=12" target="_blank">Adenocarcinoma</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=12" target="_blank">Adenocarcinoma (WHO 2019)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A21">
 	<option value=""></option>
-	<option value="Intestinal type, Lauren classification">Intestinal type, Lauren classification</option>
-	<option value="Diffuse type (includes signet-ring carcinoma, classified as >50% signet-ring cells), Lauren classification">Diffuse type (includes signet-ring carcinoma, classified as >50% signet-ring cells), Lauren classification</option>
-	<option value="Mixed (approximately equal amounts of intestinal and diffuse), Lauren classification">Mixed (approximately equal amounts of intestinal and diffuse), Lauren classification</option>
-	<option value="Tubular adenocarcinoma, WHO 2019">Tubular adenocarcinoma, WHO 2019</option>	
-	<option value="Poorly cohesive carcinoma (including signet-ring cell carcinoma and other variants), WHO 2019">Poorly cohesive carcinoma (including signet-ring cell carcinoma and other variants), WHO 2019</option>
-	<option value="Mucinous adenocarcinoma (> 50% mucinous), WHO 2019">Mucinous adenocarcinoma (> 50% mucinous), WHO 2019</option>
-	<option value="Papillary adenocarcinoma, WHO 2019">Papillary adenocarcinoma, WHO 2019</option>
-	<option value="Mixed carcinoma (mixture of discrete glandular (tubular/papillary) and signet-ring/poorly cohesive cellular histological components), WHO 2019">Mixed carcinoma (mixture of discrete glandular (tubular/papillary) and signet-ring/poorly cohesive cellular histological components), WHO 2019</option>
+	<option value="Tubular adenocarcinoma">Tubular adenocarcinoma</option>	
+	<option value="Poorly cohesive carcinoma (including signet-ring cell carcinoma and other variants)">Poorly cohesive carcinoma (including signet-ring cell carcinoma and other variants)</option>
+	<option value="Mucinous adenocarcinoma (> 50% mucinous)">Mucinous adenocarcinoma (> 50% mucinous)</option>
+	<option value="Papillary adenocarcinoma">Papillary adenocarcinoma</option>
+	<option value="Mixed carcinoma (mixture of discrete glandular (tubular/papillary) and signet-ring/poorly cohesive cellular histological components)">Mixed carcinoma (mixture of discrete glandular (tubular/papillary) and signet-ring/poorly cohesive cellular histological components)</option>
 </select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label>+ Lauren</a>:</label> 
+</td>
+<td>
+<select class="element select large" ID="A61">
+	<option value=""></option>
+	<option value="Intestinal type">Intestinal type</option>
+	<option value="Diffuse type (includes signet-ring carcinoma, >50% signet-ring cells)">Diffuse type (includes signet-ring carcinoma, >50% signet-ring cells)</option>
+	<option value="Mixed (approximately equal amounts of intestinal and diffuse)">Mixed (approximately equal amounts of intestinal and diffuse)</option>
+</select>
+</td>
+</tr>
+
 
 <tr>
 <td>
@@ -870,9 +886,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 14-Jan-2023,<br>
+Last upated on 25-Mar-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Stomach 4.3.0.0	(Dec 2022), <br>
+Stomach 4.4.0.0	(Mar 2023), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
