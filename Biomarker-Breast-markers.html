@@ -125,7 +125,7 @@ if (frm.A07.value !== ""){
 };
 
 if (frm.A09.value !== ""){
-	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by pathologist under light microscopy.";
+	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by a pathologist under light microscopy.";
 } 
 
 if (frm.A22.value !== ""){
@@ -196,7 +196,7 @@ table, th, td {
 </table>
 </p>
 <p>
-- For HER2, see 2018 ASCO guidelines below. <br>
+- For HER2, see 2018 ASCO guidelines below. Do not report HER2-LOW at this mooment.<br>
 - Reference for <a href=".\cap\PATHWAY anti-HER-2_neu (4B5) Rabbit Monoclonal Primary Antibody Interpretation Guide for Breast Cancer.pdf" target="_blank">4B5 antibody</a><br>
 - For PD-L1, IC% = positive immune cells amng the total number of cells in a tumor area. <br>
 - For PD-L1, CPS = Total positive cells / (Positive cells + Negative tumor cells).<br>
@@ -292,16 +292,28 @@ table, th, td {
 </select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=17" target="_blank">Ki67 Proliferation index %</a> :</label>
+</td>
+<td>
+<input type="text" ID="A16" class="element text large" size="40">
+</td>
+</tr>
+
 <tr>
 <td rowspan="3" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=13" target="_blank">HER2/neu oncoprotein IHC</a> :</label></td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=13" target="_blank">HER2/neu oncoprotein IHC</a> :</label>
+Do not report "HER2-Low" at this moment.
+</td>
 	<td><select class="element select large"  ID="A07">
 		<option value=""></option>
 		<option value="Cannot be determined">Cannot be determined</option>
 		<option value="Negative for over-expression">Negative for over-expression</option>
 		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
-		<option value="HER2-low (IHC 1+ or IHC 2+ & DISH-)">HER2-low (IHC 1+ or IHC 2+ & DISH-)</option>
 		<option value="Positive for over-expression">Positive for over-expression</option>
+		<option value="HER2-low (IHC 1+ or IHC 2+ & DISH-)">HER2-low (IHC 1+ or IHC 2+ & DISH-)</option>
 	</select></td>
 </tr>
 
@@ -322,16 +334,6 @@ table, th, td {
 - Cells with Intense Complete Stain (%):
 <input type="text" class="element text small" ID="A25" size="3"></td>
 </tr>
-
-
-<tr>
-<td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=17" target="_blank">Ki67 Proliferation index %</a> :</label>
-</td>
-<td>
-<input type="text" ID="A16" class="element text large" size="40">
-</td>
-<tr>
 
 <tr><td rowspan="7" valign="top">
 <label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=15" target="_blank">HER2/neu oncoprotein DISH</a> :</label>
@@ -359,7 +361,7 @@ table, th, td {
 </tr>
 
 <tr><td align="right">
-- Averagen CEP17 signals (red) per cell :
+- Average CEP17 signals (red) per cell :
 <input type="text" class="element text small" ID="A12" size="10"></td>
 </tr>
 
@@ -516,11 +518,17 @@ HER2 category: HER2-low<br>
 HER2 IHC 2+ + HER2 DISH negative<br>
 OR<br>
 HER2 IHC 1+<br>
-Tarantino P et al. 2020<br>
+Tarantino P et al. 2020<br><br>
+Breast cancers with HER2 IHC score 1+ or HER2 IHC score 2+ and a negative ISH result are eligible for clinically appropriate HER2-targeted therapy and may be reported as “HER2 Low”.
 </p>
 <p>
-<img src=".\cap\lowHER2.png" alt="lowHER2" width="600">
+<a href=".\cap\lowHER2.png" target="_blank"><img src=".\cap\lowHER2.png" alt="lowHER2 from Roche" width="600"></a>
+<br>
+From Roche website<br>
+<br>
 </p>
+
+
 <!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -682,7 +690,7 @@ Tarantino P et al. 2020<br>
 <br>
 
 <div id="footer">
-Last upated 10-Nov-2022, based on <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.0 Jun-2022</a>.<br>
+Last upated 27-Mar-2023, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.1 Mar-2023</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
