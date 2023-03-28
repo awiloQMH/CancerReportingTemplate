@@ -92,14 +92,14 @@ if (frm.A29.value !== ""){
 }
 	
 if (frm.A01.value !== ""){
-	Template += "- Histological type (WHO 2016): " + frm.A01.value + "\n";
+	Template += "- Histological type: " + frm.A01.value + "\n";
 }
 
 if (frm.A03.value !== ""){
 	Template += "- WHO Grade: " + frm.A03.value + "\n" + "\n";
 }
 
-if (frm.A04.value + frm.A05.value + frm.A06.value + frm.A07.value + frm.A08.value + frm.A09.value + frm.A10.value !== ""){
+if (frm.A04.value + frm.A05.value + frm.A06.value + frm.A30.value + frm.A08.value + frm.A31.value + frm.A32.value + frm.A10.value + frm.A33.value + frm.A34.value + frm.A35.value + frm.A36.value + frm.A37.value + frm.A38.value + frm.A39.value + frm.A40.value !== ""){
 	Template += "- Biomarker studies for gliomas : " + "\n";
 }
 
@@ -108,29 +108,64 @@ if (frm.A04.value !== ""){
 }
 
 if (frm.A05.value !== ""){
-	Template += "  - IDH1/IDH2 mutation (by Sanger sequencing): " + frm.A05.value + "\n" + "    - see also report: MB#" + "\n";
+	Template += "  - IDH1/IDH2 mutation (by Sanger sequencing): " + frm.A05.value + "\n" + "    - see report: MB#" + "\n";
 }
 
 if (frm.A06.value !== ""){
 	Template += "  - ATRX expression (immunohistochemistry): " + frm.A06.value + "\n";
 }
 
-if (frm.A07.value !== ""){
-	Template += "  - Histone H3 K27M expression (immunohistochemistry): " + frm.A07.value + "\n" ;
+if (frm.A30.value !== ""){
+	Template += "  - p53 expression (immunohistochemistry): " + frm.A30.value + "\n" ;
 }
 
 if (frm.A08.value !== ""){
-	Template += "  - Chromosomal arm 1p / 19q codeletion (by FISH): " + frm.A08.value + "\n" + "    - see also report: MB#" + "\n";
+	Template += "  - Chromosomal arm 1p / 19q codeletion (by FISH): " + frm.A08.value + "\n" + "    - see  report: MB#" + "\n";
 }
 
-if (frm.A09.value !== ""){
-	Template += "  - BRAF V600E mutation (by Sanger sequencing): " + frm.A09.value  + "\n" + "    - see also report: MB#" + "\n";
+if (frm.A31.value !== ""){
+	Template += "  - CDNK2A/B homozygous deletion (by FISH): " + frm.A31.value + "\n" + "    - see report: MB#" + "\n";
 }
 
+if (frm.A32.value !== ""){
+	Template += "  - TERT promoter mutation (by Sanger sequencing): " + frm.A32.value  + "\n" + "    - see report: MB#" + "\n";
+}
 if (frm.A10.value !== ""){
 	Template += "  - Others, specify: " + frm.A10.value + "\n" ;
 }
-	
+
+if (frm.A33.value !== ""){
+	Template += "  - TERT promoter mutation (by Sanger sequencing): " + frm.A33.value  + "\n" + "    - see report: MB#" + "\n";
+}
+
+if (frm.A34.value !== ""){
+	Template += "  - Histone H3 K27M expression (immunohistochemistry): " + frm.A34.value + "\n";
+}
+
+if (frm.A35.value !== ""){
+	Template += "  - Histone H3 G34W expression (immunohistochemistry): " + frm.A35.value + "\n" ;
+}
+
+if (frm.A36.value !== ""){
+	Template += "  - Histone H3 mutation (by Sanger sequencing): " + frm.A36.value  + "\n" + "    - see report: MB#" + "\n";
+}
+
+if (frm.A37.value !== ""){
+	Template += "  - BRAF V600E mutation (by Sanger sequencing): " + frm.A37.value  + "\n" + "    - see report: MB#" + "\n";
+}
+
+if (frm.A38.value !== ""){
+	Template += "  - Chromosome 7 loss / 10 gain (by FISH): " + frm.A38.value + "\n" + "    - see report: MB#" + "\n";
+}
+
+if (frm.A39.value !== ""){
+	Template += "  - EGFR gene amplification (by FISH): " + frm.A39.value + "\n" + "    - see report: MB#" + "\n";
+}
+
+if (frm.A40.value !== ""){
+	Template += "  - Others, specify: " + frm.A40.value + "\n" ;
+}
+
 if (frm.A13.value !== ""){
 	Template += "- Treatment effect: " + frm.A13.value + "\n" ;
 }
@@ -188,21 +223,217 @@ Layer 2: Histopathological classification<br>
 Layer 3: CNS WHO grade<br>
 Layer 4: Molecular Information<br>
 </p>
+
 <p>
-<a href=".\cap\Brat2022.pdf" target="_blank">Molecular Biomarker Testing for the Diagnosis of Diffuse Gliomas</a>: Guideline From the College of American Pathologists in Collaboration With the American Association of Neuropathologists, Association for Molecular Pathology, and Society for Neuro-Oncology 
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Biomarker studies for gliomas:</label></legend>
+
+<p>
+<a href=".\cap\Brat2022.pdf" target="_blank">Molecular Biomarker Testing for the Diagnosis of Diffuse Gliomas</a>: Guideline From the College of American Pathologists in Collaboration With the American Association of Neuropathologists, Association for Molecular Pathology, and Society for Neuro-Oncology
+<br>
+(<a href=".\cap\Brat2022.pdf" target="_blank">Brat et al 2022, Arch Pathol Lab Med—Vol 146, May 2022<a>)<br><br> 
 </p>
+
 <p>
 <a href=".\cap\Glioma_2022_Recommendations.jpg" target="_blank"><img src=".\cap\Glioma_2022_Recommendations.jpg" alt="workflow" width="600"></a>
 </p>
+<br>
+<br>
 <p>
+<label class="description">- IDH status:</label>
+<TABLE border= "1">
+<col width="70%">
+
+  <TR>
+    <TD>- IDH1 R132H (IHC):</TD>
+    <TD>
+      <select class="element select large" ID="A04">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative">Negative</option>
+		<option value="Positive">Positive</option> 
+		</select>
+    </TD>
+  </TR>
+  <TR>
+    <TD>- IDH1/IDH2 mutation (sequencing):</TD>
+    <TD><select class="element select large" ID="A05">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive, specify:">Positive, specify:</option> 
+		</select></TD>
+  </TR>
+ </table>
+ </p>
+ <br><br>
+<label class="description">- IDH mutant:</label>
+ <p>
 <a href=".\cap\Glioma_2022_molecularinvestigations_01.jpg" target="_blank"><img src=".\cap\Glioma_2022_molecularinvestigations_01.jpg" alt="workflow" width="600"></a>
 </p>
+ <p>
+<TABLE border= "1">
+<col width="60%">
+
+  <TR>
+    <TD>- ATRX expression (IHC):</TD>
+    <TD><select class="element select large" ID="A06">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Intact nuclear expression">Intact nuclear expression</option>
+			<option value="Loss of nuclear expression">Loss of nuclear expression</option> 
+		</select>
+	</TD>
+  </TR>
+<tr>
+	<td>
+		- p53 expression (IHC):
+	</td>
+	<td>
+	<select class="element select large" ID="A30">
+		<option value=""></option>
+		<option value="Normal (wild type)">Normal (wild type)</option>
+		<option value="Abnormal (mutated)">Abnormal (mutated)</option>
+		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
+		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression))">Abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
+		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+	</select>
+	</td>
+</tr>
+  <TR>
+    <TD>- Chr. 1p/19q codeletion (FISH):</TD>
+    <TD><select class="element select large" ID="A08">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="None detected">None detected</option>
+			<option value="1p/19q codeletion">1p/19q codeletion</option>
+			<option value="1p only deletion">1p only deletion</option>
+			<option value="19q only deletion">19q only deletion</option>
+			<option value="Polysomy, specify:">Polysomy, specify:</option> 
+			<option value="Other abnormalities, specify:">Other abnormalities, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- CDKN2A/CDKN2B homozygous deletion (FISH):</TD>
+    <TD><select class="element select large" ID="A31">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive">Positive</option> 
+			<option value="Other abnormalities, specify:">Other abnormalities, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>+ TERT promoter mutation (sequencing):</TD>
+    <TD><select class="element select large" ID="A32">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive, specify:">Positive, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Others, specify:</TD>
+    <TD><input type="text" class="element text large" ID="A10" size="10"></textarea>
+	</TD>
+  </TR>
+  </TABLE>
+</p>
+<br><br>
+<label class="description">- IDH wild-type:</label>
 <p>
 <a href=".\cap\Glioma_2022_molecularinvestigations_02.jpg" target="_blank"><img src=".\cap\Glioma_2022_molecularinvestigations_02.jpg" alt="workflow" width="600"></a>
-<br>
-(<a href=".\cap\Brat2022.pdf" target="_blank">Brat et al 2022, Arch Pathol Lab Med—Vol 146, May 2022<a>)<br><br>
 </p>
+<p>
+<TABLE border= "1">
+<col width="60%">
 
+  <TR>
+    <TD>- TERT promoter mutation (sequencing):</TD>
+    <TD><select class="element select large" ID="A33">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive, specify:">Positive, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Histone H3 K27M (IHC):</TD>
+    <TD><select class="element select large" ID="A34">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive">Positive</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Histone H3 G34W (IHC):</TD>
+    <TD><select class="element select large" ID="A35">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive">Positive</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>     
+	 <TD>- Histone H3 mutation (sequencing):</TD>
+    <TD><select class="element select large" ID="A36">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive, specify:">Positive, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- BRAF V600E mutation (sequencing):</TD>
+    <TD><select class="element select large" ID="A37">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive">Positive</option> 
+			<option value="Other abnormalities, specify:">Other abnormalities, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- Chr. 7+/10- (FISH):</TD>
+    <TD><select class="element select large" ID="A38">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="None detected">None detected</option>
+			<option value="Chromosome 7+/10- detected">Chromosome 7+/10- detected</option>
+			<option value="Chromosome 7+ detected">Chromosome 7+ detected</option>
+			<option value="Chromosome 10- detected">Chromosome 10- detected</option>
+			<option value="Other abnormalities, specify:">Other abnormalities, specify:</option> 
+		</select>
+	</TD>
+  </TR>
+  <TR>
+    <TD>- EGFR amplification (FISH):</TD>
+    <TD><select class="element select large" ID="A39">
+			<option value=""></option>
+			<option value="Cannot be determined">Cannot be determined</option>
+			<option value="Negative">Negative</option>
+			<option value="Positive, specify:">Positive, specify:</option> 
+			<option value="Other abnormalities, specify:">Other abnormalities, specify:</option> 
+		</select>
+	</TD>  </TR>
+  <TR>
+    <TD>- Others, specify:</TD>
+    <TD><input type="text" class="element text large" ID="A40" size="10"></textarea>
+	</TD>
+  </TR>
+  </TABLE>
+</p>
+</fieldset>
+</p>
 
 <p>
 <label class="description">- Tumor histology and immunohistochemical studies: </label>
@@ -607,85 +838,6 @@ Layer 4: Molecular Information<br>
 </fieldset>
 </p>
 
-<p>
-<fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=17" target="_blank">Biomarker studies for gliomas (where applicable)</a>:</label></legend>
-<p>
-<TABLE border= "1">
-<col width="70%">
-
-  <TR>
-    <TD>- IDH1 R132H expression (immunohistochemistry):</TD>
-    <TD>
-      <select class="element select large" ID="A04">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative">Negative</option>
-		<option value="Positive">Positive</option> 
-		</select>
-    </TD>
-  </TR>
-  <TR>
-    <TD>- IDH1/IDH2 mutation (by Sanger sequencing):</TD>
-    <TD><select class="element select large" ID="A05">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Absent">Absent</option>
-			<option value="Present, specify:">Present, specify:</option> 
-		</select></TD>
-  </TR>
-  <TR>
-    <TD>- ATRX expression (immunohistochemistry):</TD>
-    <TD><select class="element select large" ID="A06">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Intact nuclear expression">Intact nuclear expression</option>
-			<option value="Loss of nuclear expression">Loss of nuclear expression</option> 
-		</select>
-	</TD>
-  </TR>
-  <TR>
-    <TD>- Histone H3 K27M expression (immunohistochemistry):</TD>
-    <TD><select class="element select large" ID="A07">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Negative">Negative</option>
-			<option value="Positive">Positive</option> 
-		</select>
-	</TD>
-  </TR>
-  <TR>
-    <TD>- Chromosomal arm 1p / 19q codeletion (by FISH):</TD>
-    <TD><select class="element select large" ID="A08">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="None detected">None detected</option>
-			<option value="1p/19q codeletion">1p/19q codeletion</option>
-			<option value="1p only deletion">1p only deletion</option>
-			<option value="19q only deletion">19q only deletion</option>
-			<option value="Polysomy, specify:">Polysomy, specify:</option> 
-		</select>
-	</TD>
-  </TR>
-  <TR>
-    <TD>- BRAF V600E mutation (by Sanger sequencing):</TD>
-    <TD><select class="element select large" ID="A09">
-			<option value=""></option>
-			<option value="Cannot be determined">Cannot be determined</option>
-			<option value="Negative">Negative</option>
-			<option value="Positive">Positive</option> 
-		</select>
-	</TD>
-  </TR>
-  <TR>
-    <TD>- Others, specify:</TD>
-    <TD><input type="text" class="element text large" ID="A10" size="10"></textarea>
-	</TD>
-  </TR>
-  </TABLE>
-</p>
-</fieldset>
-
 </fieldset>
 </p>
 
@@ -707,7 +859,7 @@ Layer 4: Molecular Information<br>
 <br>
 <br>
 <div id="footer">
-Last upated on 27-Mar-2023, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 28-Mar-2023, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Tumors of the Brain and Spinal Cord 1.0.0.0 (Sep 2022 version)<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
