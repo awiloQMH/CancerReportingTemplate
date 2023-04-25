@@ -44,6 +44,11 @@
 					Next Generation Sequencing
 		</h2>
 	</div>
+
+<p>
+<a href=".\cap\A start at standardizing neoplastic cellularity assessment-CAPTODAY.pdf" target="_blank">CAP</a> recommends using <a href=".\cap\Neoplastic_Fig5.jpg" target="_blank">neoplastic cellularity</a> as the number of neoplastic cells or nuclei compared to the overall or toal number of cells or nuclei.<br>
+</p>
+
 <p>Next Generation Sequencing is ran on the Illumina MiniSeq and NextSeq 500, using "sequencing by synthesis" chemistry, upon different targeted sequencing panels.</p>
 <p>
 Genomic DNA QC : Quantified by Qubit and the integrity control by conventional PCR<br>
@@ -51,21 +56,20 @@ Library QC    : Check by automatic electrophoresis (Bioanalyser)<br>
 Sequencing QC : Coverage > 500x, Q30 > 80%<br>
 <br>
 Bioinformatics :<br>
-		<a href="https://support.illumina.com/help/BaseSpace_App_DNA_Amplicon_v2_OLH_1000000041403/Content/Source/HomePages/Home_Page_DNA_Amplicon_App.htm" target="_blank">
-				DNA Amplicon (BaseSpace Workflow) 2.1.0.19 </a><br>
-                via Illumina Local
-                Run Manager on a desktop PC [DNA Amplicon Workflow (3.24.1.8+
+                Illumina Local Run Manager on a desktop PC <a href="https://support.illumina.com/help/BaseSpace_App_DNA_Amplicon_v2_OLH_1000000041403/Content/Source/HomePages/Home_Page_DNA_Amplicon_App.htm" target="_blank">
+		DNA Amplicon (BaseSpace Workflow) 2.1.0.19 </a> [DNA Amplicon Workflow (3.24.1.8+
                 master), BWA-MEM Whole-Genome(Aligner)0.7.9a-isis-1.0.2, Pisces
                 Variant Caller 5.2.9.23, Illumina Annotation Engine 2.0.11-0-
-                g7fb24a09, Bam Metrics v0.0.22, and SAMtools 0.1.19-isis-1.0.3] 
-  <br><br>
+                g7fb24a09, Bam Metrics v0.0.22, and SAMtools 0.1.19-isis-1.0.3, 
+				Annotation Dataset 91.26.44] 
+ <br><br>
 <img src=".\cap\Workflow_appDNAA_576x507.png" alt="workflow" width="600">
 <br>
 Curation      : <br>
-Human GRCh37/hg19, BRCA Exchange, ClinVar, VarSome<br>
+Human GRCh37/hg19, BRCA Exchange, ClinVar, Genome Nexus, Franklin, VarSome<br>
 <br>
 <br>
-Limitations   : The workflow could detect SNV-indel type  mutations with a variant allelic frequency greater or equal to 5%. Variants of VAF <10% might not be reliably confirmed by Sanger sequencing. Due to the nature of FFPE specimen and limitations of the amplicon-based library preparation, genomic changes resulting in false negativity, including, but not limited to, large deletion, large duplication and gross chromosomal abnormalities, cannot be completely excluded.
+Limitations   : The workflow could detect SNV-indel type  mutations with a variant allelic frequency greater or equal to 5%. However, variants with VAF<10% might fall short of Sanger sequencing confirmation. Due to the nature of FFPE specimen and limitations of the amplicon-based library preparation, genomic changes leading to false negativity, including, but not limited to, large deletion, large duplication and gross chromosomal abnormalities, cannot be completely excluded.
 
 </p>
 <p align="center">
@@ -94,11 +98,11 @@ Sequencing	  :	The AmpliSeq for Illumina BRCA Panel is a targeted resequencing
 				confirmed by 
 				<a href=".\cap\Product_description_P087-D1_BRCA1_Confirmation-v05.pdf"  target="_blank">P087 BRCA1 Confirmation</a> or
 				<a href=".\cap\Product_description_P077-B1_BRCA2_Confirmation-v06.pdf"  target="_blank">P077 BRCA2 Confirmation</a> whichever is applicable;				
-                <a href=".\cap\Coffalyser.Net-Reference-Manual-v07.pdf" target="_blank">Coffalyzer.Net software</a> v.210604.1451 (database v.210226.000) for <a href=".\cap\MLPA_QC_LKCHAN.pdf"  target="_blank">quality control</a>, visualization and analysis of data.
+                <a href=".\cap\Coffalyser.Net-Reference-Manual-v07.pdf" target="_blank">Coffalyzer.Net software</a> v.220513.1739 (database v.220401.0000) for <a href=".\cap\MLPA_QC_LKCHAN.pdf"  target="_blank">quality control</a>, visualization and analysis of data.
 
 </p>
 <p>
-All findings are to be confirmed by orthogonal methods, including Sanger sequencing and others.
+All findings are to be confirmed by orthogonal methods, including Sanger sequencing, RT-PCR and FISH.
 </p>
 <p>
 Consent is necessary for ordering this test (either somatic test alone, or somatic and germline tests). (<a href=".\cap\BRCA12Consent-e01.docx">Engish</a>) (<a href=".\cap\BRCA12Consent-c01.docx">Chinese</a>)
@@ -114,7 +118,7 @@ The AmpliSeq for Illumina Focus Panel is a targeted resequencing assay for bioma
 </p>
 <p>
 Hot spot mutations:<br>
-AKT1, ALK, AR,	BRAF,	CDK4,	CTNNB1,	DDR2,	EGFR,	ERBB2,	ERBB3,	ERBB4,	ESR1,	FGFR1,	FGFR2,	FGFR3,	GNA11,	GNAQ,	HRAS,	IDH1,	IDH2,	JAK1,	JAK2,	JAK3,	KIT,	KRAS,	MAP2K1,	MAP2K2,	MET,	MTOR,	NRAS,	PDGFRA,	PIK3CA,	RAF1,	RET,	ROS1,	SMO
+AKT1, ALK, AR,	BRAF,	CDK4,	CTNNB1,	DDR2,	EGFR,	ERBB2,	ERBB3,	ERBB4,	ESR1, FGFR1, FGFR2, FGFR3,	GNA11,	GNAQ,	HRAS,	IDH1,	IDH2,	JAK1,	JAK2,	JAK3,	KIT,	KRAS,	MAP2K1,	MAP2K2,	MET,	MTOR,	NRAS,	PDGFRA,	PIK3CA,	RAF1,	RET,	ROS1,	SMO
 </p>
 
 <p>
@@ -172,7 +176,7 @@ for (i = 0; i < coll.length; i++) {
  
 <br>
 <div id = "footer">
-Last upated on 02-Dec-2021.<br><br>
+Last upated on 23-Apr-2023.<br><br>
 The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
 with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
 and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.
