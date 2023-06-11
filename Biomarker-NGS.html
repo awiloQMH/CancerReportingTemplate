@@ -8,7 +8,7 @@
 <script type="text/javascript" src="view.js"></script>
 <style>
 .collapsible {
-  background-color: white;
+  background-color: #ebfafa;
   color: black;
   cursor: pointer;
   padding: 8px;
@@ -92,17 +92,17 @@ Limitations   : The workflow could detect SNV-indel type  mutations with a varia
 <p>The <a href="https://www.thermofisher.com/hk/en/home/life-science/sequencing/next-generation-sequencing/ion-torrent-next-generation-sequencing-workflow/ion-torrent-next-generation-sequencing-run-sequence/ion-torrent-genexus-system.html" target="_blank">Ion Torrent Genexus System</a> automates sample and library preparation, sequencing, analysis, and reporting. The Genexus Purification System and Genexus Integrated Sequencer with Genexus Software work together seamlessly, tracking sample information and results automatically through the process. This automated system reduces manual steps and facilitates quality data and quick reports.</p>
 <p>
 Genomic DNA/RNA QC : Quantified by Qubit and the integrity control by conventional PCR<br>
-Library QC    : Integrated<br>
+Library QC    : Integrated in the automated system<br>
 DNA Sequencing QC : >=Q20 bases, Uniformity<br>
 RNA Sequencing QC : >=Q20 bases, Mapped<br>
 <br>
 Bioinformatics : Integrated<br>
-The factory bioinformatics reports a standardized table of known variants. An in-house bioinformatic pipeline is installed for screening uncalled variants for the 12-gene lung cancer panel.<br><br>
+The factory bioinformatics reports a standardized table of known variants. An in-house bioinformatic pipeline is installed for screening uncalled variants for the 12-gene lung cancer panel. Sequencing data of selected cases should also be reviewed by Integrated Genome Viewer (IGV).<br><br>
 Curation      : <br>
 Human GRCh37/hg19, ClinVar, Genome Nexus, Franklin, VarSome<br>
 <br>
 <br>
-Limitations   : The workflow could detect SNV-indel type mutations with a variant allelic frequency greater or equal to 5%. However, variants with VAF<10% might fall short of Sanger sequencing confirmation. Due to the nature of FFPE specimen and limitations of the amplicon-based library preparation, genomic changes leading to false negativity, including, but not limited to, large deletion, large duplication and gross chromosomal abnormalities, cannot be completely excluded. 
+Limitations   : The workflow could detect SNV-indel type mutations with a variant allelic frequency greater or equal to 5%. However, variants with VAF less than 10% might fall short of Sanger sequencing confirmation. Due to the nature of FFPE specimen and limitations of the amplicon-based library preparation, false negative results cannot be completely excluded. These latter missed genomic changes might include large deletion, large duplication, gross chromosomal abnormalities, intronic variants, etc. 
 
 </p>
 </div>
@@ -111,7 +111,7 @@ Limitations   : The workflow could detect SNV-indel type mutations with a varian
 <img src="data:image/png;base64,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"/>
 </p>
 
-<button class="collapsible">Somatic and Germline BRCA1 and BRCA2 Testing (tumor tissue and blood)</button>
+<button class="collapsible">BRCA1 and BRCA2 Somatic and Germline Testing (tumor tissue and blood)</button>
 <div class="content">
 <p>
 Somatic mutation testing is done on the FFPE block or cytology cell block. <br><br>
@@ -146,10 +146,10 @@ Pamphlets for BRCA testing in high staged, high grade ovarian cancer (<a href=".
 </p>
 </div>
 
-<button class="collapsible">Oncomine Precision Assay (somatic DNA + RNA) [on pipeline]</button>
+<button class="collapsible">Lung Cancer Somatic Mutation Analysis (tumor tissue) [coming soon]</button>
 <div class="content">
 <p>
-The Oncomine Precision Assay, Ion Torrent Genexus System, is an automatic targeted resequencing assay for biomarker analysis of 50 genes with known relevance to solid tumors. Variants can be confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.)
+The Oncomine Precision Assay, Ion Torrent Genexus System, is an automatic targeted assay for genetic analysis of 50 genes with known relevance to solid tumors. Variants can be confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.). SNV/indel, CNV and fusion variants are included.
 </p>
 <p>
 Actionable variants in a 12-gene lung cancer somatic mutation panel are reported:<br>
@@ -173,10 +173,14 @@ Fusion Drivers (18):<br>
 </p>
 </div>
 
-<button class="collapsible">Focus Panel for Solid Tumor (somatic DNA + RNA) [supplementary]</button>
+<button class="collapsible">Lung Cancer Somatic Mutation Analysis (tumor tissue) [backup]</button>
 <div class="content">
 <p>
-The AmpliSeq for Illumina Focus Panel is a targeted resequencing assay for biomarker analysis of 52 genes with known relevance to solid tumors. Variants can be confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.)
+The AmpliSeq for Illumina Focus Panel is a targeted resequencing assay for biomarker analysis of 52 genes with known relevance to solid tumors. Variants can be confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.). SNV/indel and fusion variants are reported. Detection of CNV variant required cloud computation and is performed infrequently.
+</p>
+<p>
+Actionable variants in a 12-gene lung cancer somatic mutation panel are reported:<br>
+ALK, BRAF, EGFR, ERBB2, KRAS, MET, NTRK1, NTRK2, NTRK3, PIK3CA, RET and ROS1 genes<br>
 </p>
 <p>
 Hot spot mutations (35):<br>
@@ -197,7 +201,7 @@ Fusion Drivers (23):<br>
 </p>
 </div>
 
-<button class="collapsible">Comprehensive Panel for Solild Tumor (somatic DNA + RNA)  [not yet launched]</button>
+<button class="collapsible">Comprehensive Panel for Solild Tumor (somatic DNA + RNA)  [not launching]</button>
 <div class="content">
 <p>
 The AmpliSeq for Illumina Comprehensive Panel v3 offers coverage of key cancer genes, including kinase domains and genes involved in DNA repair, targetting 161 unique cancer-associated genes
