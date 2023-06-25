@@ -191,6 +191,39 @@ if (frm.A41.value !== ""){
 	Template += "- Treatment effect in the lymph nodes: " + frm.A41.value + "\n";
 }
 
+if (frm.A88.value + frm.A89.value + frm.A90.value + frm.A91.value + frm.A92.value + 
+    frm.A93.value + frm.A94.value !== ""){
+	Template += "- Residual Cancer Burden: " + "\n";
+}
+
+if (frm.A88.value !== ""){
+	Template += "  - Score: " + frm.A88.value + "\n";
+}
+
+if (frm.A89.value !== ""){
+	Template += "  - Class: " + frm.A89.value + "\n";
+}
+
+if (frm.A90.value !== ""){
+	Template += "    - Primary tumor area (mm x mm): " + frm.A90.value + "\n";
+}
+
+if (frm.A91.value !== ""){
+	Template += "    - Overall cancer cellularity (area %): " + frm.A91.value + "\n";
+}
+
+if (frm.A92.value !== ""){
+	Template += "    - in situ disesae (area %): " + frm.A92.value + "\n";
+}
+
+if (frm.A93.value !== ""){
+	Template += "    - No. of positive lymph nodes: " + frm.A93.value + "\n";
+}
+
+if (frm.A94.value !== ""){
+	Template += "    - Largest LN metastasis (mm): " + frm.A94.value + "\n";
+}
+
 if (document.getElementById("A66").checked || document.getElementById("A67").checked || 
     document.getElementById("A68").checked || document.getElementById("A69").checked || 
 	document.getElementById("A70").checked || document.getElementById("A71").checked){
@@ -446,7 +479,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Invasive_4.8.1.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\Breast.Invasive_4.9.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Invasive carcinoma of the breast
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -704,7 +737,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=32" target="_blank">Lymphatic and/or vascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\Breast.Invasive_4.9.0.0.REL_CAPCP.pdf#page=34" target="_blank">Lymphatic and/or vascular invasion</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A37">
@@ -774,6 +807,73 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 		<option value="No lymph node metastases. Fibrous scarring or histiocytic aggregates, possibly related to prior lymph node metastases with pathologic complete response">No lymph node metastases. FFibrous scarring or histiocytic aggregates, possibly related to prior lymph node metastases with pathologic complete response</option>
 		<option value="No lymph node metastases and no fibrous scarring or histiocytic aggregates in the nodes">No lymph node metastases and no fibrous scarring or histiocytic aggregates in the nodes</option>
 	</select>
+</td>
+</tr>
+
+<tr>
+<td rowspan="8" valign="top">
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\Breast.Invasive_4.9.0.0.REL_CAPCP.pdf#page=35" target="_blank">Residual Cancer Burden</a>: </label>
+<br>
+<a href="http://www3.mdanderson.org/app/medcalc/index.cfm?pagename=jsconvert3" target="blank">MD Anderson Calculator</a><br>
+1. Primary tumor bed area<br>
+2. Lymph node<br>
+<a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\PLM_protocol_RCB_calculators_BRO.pdf" target="_blank">Protocol</a><br>
+<a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\jco.2007.10.6823.pdf" target="_blank">Symmans et al. 2007</a>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label> RCB:</label>
+<input type="text" ID="A88" class="element text medium" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label> Class:</label>
+	<select class="element select medium" ID="A89">
+		<option value=""></option>
+		<option value="RCB-0 (pCR)">RCB-0 (pCR)</option>
+		<option value="RCB-I">RCB-I</option>
+		<option value="RCB-II">RCB-II</option>
+		<option value="RCB-III">RCB-III</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Primary tumor bed area (mm x mm) :</label> 
+<input type="text" ID="A90" class="element text small" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Overall cancer cellularity (area%) :</label> 
+<input type="text" ID="A91" class="element text small" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>in situ (area%) :</label> 
+<input type="text" ID="A92" class="element text small" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>No. of positive LN :</label> 
+<input type="text" ID="A93" class="element text small" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Largest LN metastasis (mm) :</label> 
+<input type="text" ID="A94" class="element text small" size="20">
 </td>
 </tr>
 
@@ -1106,7 +1206,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=35" target="_blank">Regional lymph nodes</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\Breast.Invasive_4.9.0.0.REL_CAPCP.pdf#page=38" target="_blank">Regional lymph nodes</a>: </label></legend>
 
 <p>
 <table border="1">
@@ -1343,9 +1443,9 @@ Approximately 1000 tumor cells are contained in a 3-dimensional 0.2-mm cluster. 
 <br>
 
 <div id="footer">
-Last upated on 25-Mar-2023,<br>
+Last upated on 25-Jun-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Breast Invasive Resection 4.8.1.0 (Mar 2023).<br>
+Breast Invasive Resection 4.9.0.0 (Jun 2023).<br>
 html form was created on 
 <a href="https://www.phpform.org">pForm</a>, 
 <a href="https://www.w3schools.com/">W3 School</a>, 

@@ -86,15 +86,15 @@ if (document.getElementById("A16").checked){
 }
 
 if (frm.A17.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A17.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A17.value + "\n";
 }
 
 if (frm.A18.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A18.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A18.value + "\n";
 }
 
 if (frm.A19.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A19.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
@@ -102,7 +102,11 @@ if (frm.A20.value !== ""){
 }
 
 if (frm.A21.value !== ""){
-	Template += "- Histologic grade for SCC: " + frm.A21.value + "\n";
+	Template += "- Histologic grade: " + frm.A21.value + "\n";
+}
+
+if (frm.A70.value !== ""){
+	Template += "- Grade/Intrinsic biologic potential: " + frm.A70.value + "\n";
 }
 
 if (frm.A22.value !== ""){
@@ -110,7 +114,7 @@ if (frm.A22.value !== ""){
 }
 
 if (frm.A23.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A23.value + "\n";
+	Template += "- Lymphatic and/on vascular invasion: " + frm.A23.value + "\n";
 }
 
 if (frm.A24.value !== ""){
@@ -358,7 +362,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Nasal_4.1.1.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the nasal cavity and paranasal sinuses
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -478,93 +482,99 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Bmk_2.0.0
 <col width="40%">
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Nasal_4.1.1.0.REL_CAPCP.pdf#page=12" target="_blank">SCC and variants</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">SCC and variants (WHO 5e)</a>:</label> 
 </td>
 <td>
 <input class="element checkbox" type="checkbox"  id="A16" value="  - Squamous cell carcinoma, keratinizing"><label  class="choice">Squamous cell carcinoma, keratinizing</label>
 <input class="element checkbox" type="checkbox"  id="A07" value="  - Squamous cell carcinoma, nonkeratinizing"><label  class="choice">Squamous cell carcinoma, nonkeratinizing</label>
+<input class="element checkbox" type="checkbox"  id="A14" value="  - Squamous cell carcinoma, nonkeratinizing, transcriptionally active high-risk HPV-associated"><label  class="choice">Squamous cell carcinoma, nonkeratinizing, transcriptionally active high-risk HPV-associated</label>
+<input class="element checkbox" type="checkbox"  id="A15" value="  - Squamous cell carcinoma, nonkeratinizing, DEK::AFF2 translocated"><label  class="choice">Squamous cell carcinoma, nonkeratinizing, DEK::AFF2 translocated</label>
 <input class="element checkbox" type="checkbox"  id="A08" value="  - Adenosquamous carcinoma"><label  class="choice">Adenosquamous carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A09" value="  - Basaloid squamous cell carcinoma"><label  class="choice">Basaloid squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A10" value="  - Papillary squamous cell carcinoma"><label  class="choice">Papillary squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A11" value="  - Spindle cell squamous cell carcinoma"><label class="choice" >Spindle cell squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A12" value="  - Verrucous squamous cell carcinoma"><label  class="choice">Verrucous squamous cell carcinoma</label>
-<input class="element checkbox" type="checkbox"  id="A13" value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label  class="choice">Lymphoepithelial carcinoma (non-nasopharyngeal)</label>
-<input class="element checkbox" type="checkbox"  id="A14" value="  - Sinonasal undifferentiated carcinoma (SNUC)"><label  class="choice">Sinonasal undifferentiated carcinoma (SNUC)</label>
-<input class="element checkbox" type="checkbox"  id="A15" value="  - NUT carcinoma"><label  class="choice">NUT carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A13" value="  - Other (specify):"><label  class="choice">Other (specify):</label>
+</label>
 </td>
 </tr>
 
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Nasal_4.1.1.0.REL_CAPCP.pdf#page=12" target="_blank">AdenoCA, non-salivary gland type</a> :</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">Other CA</a> :</label> 
 </td>
 <td>
-	<select class="element select medium" ID="A17">
+	<select class="element select large" ID="A17">
 		<option value=""></option>
+		<option value="NUT carcinoma"><label >NUT carcinoma</label></option>
+		<option value="SWI / SNF complex-deficient sinonasal carcinoma"><label >SWI / SNF complex-deficient sinonasal carcinoma</label></option>
+		<option value="Sinonasal lymphoepithelial carcinoma"><label >Sinonasal lymphoepithelial carcinoma</label></option>
+		<option value="Sinonasal undifferentiated carcinoma (SNUC), IDH mutated"><label >Sinonasal undifferentiated carcinoma (SNUC), IDH mutated</label></option>
+		<option value="Sinonasal undifferentiated carcinoma (SNUC), IDH wild type"><label >Sinonasal undifferentiated carcinoma (SNUC), IDH wild type</label></option>
+		<option value="Sinonasal undifferentiated carcinoma (SNUC), IDH status unknown"><label >Sinonasal undifferentiated carcinoma (SNUC), IDH status unknown</label></option>
+		<option value="Teratocarcinosarcoma"><label >Teratocarcinosarcoma</label></option>
+		<option value="HPV-associated multiphenotypic sinonasal carcinoma"><label >HPV-associated multiphenotypic sinonasal carcinoma</label></option>
 		<option value="Intestinal adenocarcinoma, papillary pattern"><label >Intestinal adenocarcinoma, papillary pattern</label></option>
-		<option value="ntestinal adenocarcinoma, colonic pattern"><label >Intestinal adenocarcinoma, colonic pattern</label></option>
+		<option value="Intestinal adenocarcinoma, colonic pattern"><label >Intestinal adenocarcinoma, colonic pattern</label></option>
 		<option value="Intestinal adenocarcinoma, solid pattern"><label >Intestinal adenocarcinoma, solid pattern</label></option>
-		<option value="Intestinal adenocarcinoma, mucinous pattern"><label >Intestinal adenocarcinoma, mucinous pattern</label></option>
 		<option value="Intestinal adenocarcinoma, mixed pattern"><label >Intestinal adenocarcinoma, mixed pattern</label></option>
-		<option value="Non-intestinal adenocarcinoma, low grade"><label >Non-intestinal adenocarcinoma, low grade</label></option>
-		<option value="Non-intestinal adenocarcinoma, intermediate grade"><label >Non-intestinal adenocarcinoma, intermediate grade</label></option>
-		<option value="Non-intestinal adenocarcinoma, high grade"><label >Non-intestinal adenocarcinoma, high grade</label></option>
+		<option value="Non-intestinal (seromucinous) adenocarcinoma"><label >Non-intestinal (seromucinous) adenocarcinoma</label></option>
 	</select>
 </td>
 </tr>
 
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Nasal_4.1.1.0.REL_CAPCP.pdf#page=12" target="_blank">Minor salivary glands CA</a> :</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">Minor salivary glands CA</a> :</label> 
 </td>
 <td>
-	<select class="element select medium" ID="A18">
+	<select class="element select large" ID="A18">
 		<option value=""></option>
-		<option value="Mucoepidermoid carcinoma, low grade"><label >Mucoepidermoid carcinoma, low grade</label></option></option>
-		<option value="Mucoepidermoid carcinoma, intermediate grade"><label >Mucoepidermoid carcinoma, intermediate grade</label></option></option>
-		<option value="Mucoepidermoid carcinoma, high grade"><label >Mucoepidermoid carcinoma, high grade</label></option></option>
-		<option value="Adenoid cystic carcinoma, tubular pattern, specify percentage of solid component:"><label >Adenoid cystic carcinoma, tubular pattern, specify percentage of solid component:</label></option>
-		<option value="Adenoid cystic carcinoma, cribriform pattern, specify percentage of solid component:"><label >Adenoid cystic carcinoma, cribriform pattern, specify percentage of solid component:</label></option>
-		<option value="Adenoid cystic carcinoma, solid pattern, specify percentage of solid component:"><label >Adenoid cystic carcinoma, solid pattern, specify percentage of solid component:</label></option>
-		<option value="Acinic cell carcinoma"><label >Acinic cell carcinoma</label></option>
-		<option value="Polymorphous adenocarcinoma, classic, low grade"><label >Polymorphous adenocarcinoma, classic, low grade</label></option>
-		<option value="Polymorphous adenocarcinoma, classic, intermediate grade"><label >Polymorphous adenocarcinoma, classic, intermediate grade</label></option>
-		<option value="Polymorphous adenocarcinoma, classic, high grade"><label >Polymorphous adenocarcinoma, classic, high grade</label></option>
-		<option value="Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), low grade"><label >Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), low grade</label></option>
-		<option value="Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), intermediate grade"><label >Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), intermediate grade</label></option>
-		<option value="Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), high grade"><label >Polymorphous adenocarcinoma, cribriform (cribriform adenocarcinoma of salivary origin), high grade</label></option>
-		<option value="(Mammary analogue) Secretory carcinoma"><label >(Mammary analogue) Secretory carcinoma</label></option>
-		<option value="Salivary duct carcinoma"><label >Salivary duct carcinoma</label></option>
-		<option value="Epithelial-myoepithelial carcinoma"><label >Epithelial-myoepithelial carcinoma</label></option>
-		<option value="(Hyalinizing) clear cell carcinoma"><label >(Hyalinizing) clear cell carcinoma</label></option>
-		<option value="Adenocarcinoma, not otherwise specified, low grade"><label >Adenocarcinoma, not otherwise specified, low grade</label></option>
-		<option value="Adenocarcinoma, not otherwise specified, intermediate grade"><label >Adenocarcinoma, not otherwise specified, intermediate grade</label></option>
-		<option value="Adenocarcinoma, not otherwise specified, high grade"><label >Adenocarcinoma, not otherwise specified, high grade</label></option>
-		<option value="Basal cell adenocarcinoma"><label >Basal cell adenocarcinoma</label></option>
-		<option value="Carcinosarcoma (true malignant mixed tumor)"><label >Carcinosarcoma (true malignant mixed tumor)</label></option>
-		<option value="Intraductal carcinoma, low grade"><label >Intraductal carcinoma, low grade</label></option>
-		<option value="Intraductal carcinoma, high grade"><label >Intraductal carcinoma, high grade</label></option>
-		<option value="Lymphoepithelial carcinoma (non-nasopharyngeal)"><label >Lymphoepithelial carcinoma (non-nasopharyngeal)</label></option>
-		<option value="Myoepithelial carcinoma"><label >Myoepithelial carcinoma</label></option>
-		<option value="Oncocytic carcinoma"><label >Oncocytic carcinoma</label></option>
-		<option value="Carcinoma ex pleomorphic adenoma, minimally invasive"><label >Carcinoma ex pleomorphic adenoma, minimally invasive</label></option>
-		<option value="Carcinoma ex pleomorphic adenoma, invasive"><label >Carcinoma ex pleomorphic adenoma, invasive</label></option>
-		<option value="Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive)"><label >Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive)</label></option>
+		<option value="Carcinoma ex pleomorphic adenoma, minimally invasive + malignant component">Carcinoma ex pleomorphic adenoma, minimally invasive + malignant component</option>
+		<option value="Carcinoma ex pleomorphic adenoma, invasive + malignant component">Carcinoma ex pleomorphic adenoma, invasive + malignant component</option>
+		<option value="Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive) + malignant component">Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive) + malignant component</option>
+		<option value="Carcinoma ex pleomorphic adenoma, extent cannot be determined + malignant component">CCarcinoma ex pleomorphic adenoma, extent cannot be determined + malignant component</option>
+		<option value="Mucoepidermoid carcinoma, low grade">Mucoepidermoid carcinoma, low grade</option>
+		<option value="Mucoepidermoid carcinoma, intermediate grade">Mucoepidermoid carcinoma, intermediate grade</option>
+		<option value="Mucoepidermoid carcinoma, high grade">Mucoepidermoid carcinoma, high grade</option>
+		<option value="Adenoid cystic carcinoma, tubular pattern, specify percentage of solid component:">Adenoid cystic carcinoma, tubular pattern, specify percentage of solid component:</option>
+		<option value="Adenoid cystic carcinoma, cribriform pattern, specify percentage of solid component:">Adenoid cystic carcinoma, cribriform pattern, specify percentage of solid component:</option>
+		<option value="Adenoid cystic carcinoma, solid pattern, specify percentage of solid component:">Adenoid cystic carcinoma, solid pattern, specify percentage of solid component:</option>
+		<option value="Acinic cell carcinoma">Acinic cell carcinoma</option>
+		<option value="Secretory carcinoma">Secretory carcinoma</option>
+		<option value="Polymorphous adenocarcinoma, conventional">Polymorphous adenocarcinoma, conventional</option>
+		<option value="Polymorphous adenocarcinoma, cribriform subtype (% papillary and cribriform components)">Polymorphous adenocarcinoma, cribriform subtype (% papillary and cribriform components)</option>
+		<option value="Salivary duct carcinoma">Salivary duct carcinoma</option>
+		<option value="Epithelial-myoepithelial carcinoma">Epithelial-myoepithelial carcinoma</option>
+		<option value="Hyalinizing clear cell carcinoma">Hyalinizing clear cell carcinoma</option>
+		<option value="Microsecretory adenocarcinoma">Microsecretory adenocarcinoma</option>
+		<option value="Intraductal carcinoma (specify subtype):">Intraductal carcinoma (specify subtype):</option>
+		<option value="Basal cell adenocarcinoma">Basal cell adenocarcinoma</option>
+		<option value="Carcinosarcoma">Carcinosarcoma</option>
+		<option value="Mucinous adenocarcinoma, not otherwise specified">Mucinous adenocarcinoma, not otherwise specified</option>
+		<option value="Mucinous adenocarcinoma, intraductal papillary mucinous neoplasia subtype">Mucinous adenocarcinoma, intraductal papillary mucinous neoplasia subtype</option>
+		<option value="Mucinous adenocarcinoma, colloid / signet ring subtype">Mucinous adenocarcinoma, colloid / signet ring subtype</option>
+		<option value="Sclerosing microcystic adenocarcinoma">Sclerosing microcystic adenocarcinoma</option>
+		<option value="Lymphoepithelial carcinoma">Lymphoepithelial carcinoma</option>
+		<option value="Myoepithelial carcinoma">Myoepithelial carcinoma</option>
+		<option value="Sebaceous adenocarcinoma">Sebaceous adenocarcinoma</option>
+		<option value="Sialoblastoma">Sialoblastoma</option>
 	</select>
 </td>
 </tr>
 
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Nasal_4.1.1.0.REL_CAPCP.pdf#page=12" target="_blank">Neuroendocrine carcinoma</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">Neuroendocrine carcinoma</a>:</label> 
 </td>
 <td>
-	<select class="element select medium" ID="A19">
+	<select class="element select large" ID="A19">
 		<option value=""></option>
-		<option value="Well-differentiated neuroendocrine carcinoma (typical carcinoid tumor)"><label >Well-differentiated neuroendocrine carcinoma (typical carcinoid tumor)</label></option>
-		<option value="Moderately differentiated neuroendocrine carcinoma (atypical carcinoid tumor)"><label >Moderately differentiated neuroendocrine carcinoma (atypical carcinoid tumor)</label></option>
-		<option value="Poorly differentiated neuroendocrine carcinoma, small cell type"><label >Poorly differentiated neuroendocrine carcinoma, small cell type</label></option>
-		<option value="Poorly differentiated neuroendocrine carcinoma, large cell type"><label >Poorly differentiated neuroendocrine carcinoma, large cell type</label></option>
+		<option value="Neuroendocrine tumor, grade 1"><label >Neuroendocrine tumor, grade 1</label></option>
+		<option value="Neuroendocrine tumor, grade 2"><label >Neuroendocrine tumor, grade 2</label></option>
+		<option value="Neuroendocrine tumor, grade 3"><label >Neuroendocrine tumor, grade 3</label></option>
+		<option value="Neuroendocrine carcinoma, small cell type"><label >Neuroendocrine carcinoma, small cell type</label></option>
+		<option value="Neuroendocrine carcinoma, large cell type"><label >Neuroendocrine carcinoma, large cell type</label></option>
 		<option value="Combined (or composite) neuroendocrine carcinoma with (specify types):"><label >Combined (or composite) neuroendocrine carcinoma with (specify types):</label></option>
 	</select>
 </td>
@@ -572,10 +582,10 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Bmk_2.0.0
 
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Nasal_4.1.1.0.REL_CAPCP.pdf#page=13" target="_blank">Other histologic type</a> :</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">Other histologic type</a> :</label> 
 </td>
 <td>
-	<select class="element select medium" ID="A20">
+	<select class="element select large" ID="A20">
 		<option value=""></option>
 		<option value="Mucosal melanoma"><label >Mucosal melanoma</label></option>
 		<option value="Carcinoma, type cannot be determined"><label >Carcinoma, type cannot be determined</label></option>
@@ -586,7 +596,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Bmk_2.0.0
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Nasal_4.1.1.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic grade (for SCC only)</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf#page=17" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A21">
@@ -602,6 +612,22 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Bmk_2.0.0
 
 <tr>
 <td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf#page=17" target="_blank">Grade/Intrinsic biologic potential</a>:</label>
+</td>
+<td>
+<select class="element select large" ID="A70">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Low">Low</option>
+	<option value="Intermediate">Intermediate</option>
+	<option value="High / High-grade transformation">High / High-grade transformation</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>	
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
 <label class=""> + Tumor extension:</label>
 </td>
 <td>
@@ -611,7 +637,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Bmk_2.0.0
 
 <tr>
 <td>
-<label class="description">- Lymphovascular invasion: </label>
+<label class="description">- Lymphatic and/or Vascular Invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A23">
@@ -625,13 +651,16 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Bmk_2.0.0
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Nasal_4.1.1.0.REL_CAPCP.pdf#page=14" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Nasal_4.2.0.0.REL_CAPCP.pdf#page=21" target="_blank">Perineural invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A24">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
+	<option value="Present, intratumoral">Present, intratumoral</option>
+	<option value="Present, extratumoral">Present, extratumoral</option>
+	<option value="Present, intraneural, size of nerve">Present, intraneural, size of nerve</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -691,8 +720,9 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Bmk_2.0.0
 <select class="element select large" ID="A28">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
-	<option value="Present, distance from capsule (mm):   (> 2 mm, ENEma)">Present, distance from capsule (mm):   (> 2 mm, ENEma)</option>
-	<option value="Present, distance from capsule (mm):   (< or = 2 mm, ENEmi)">Present, distance from capsule (mm):   (< or = 2 mm, ENEmi)</option>
+	<option value="Present, distance from capsule (mm):   (> 2 mm, ENEma)">Present, distance from capsule (mm):   (> 2 mm)</option>
+	<option value="Present, distance from capsule (mm):   (< or = 2 mm, ENEmi)">Present, distance from capsule (mm):   (< or = 2 mm)</option>
+	<option value="Present, distance from capsule (mm):   (< 1 mm)">Present, distance from capsule (mm):   (< 1 mm)</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -975,9 +1005,9 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Bmk_2.0.0
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2021,<br>
+Last upated on 25-Jun-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-NasalCavityParanasalSinus 4.1.1.0 (Nov 2021), <br>
+NasalCavityParanasalSinus 4.2.0.0 (Jun 2023), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
