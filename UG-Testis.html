@@ -93,27 +93,27 @@ if (frm.A16.value !== ""){
 }
 
 if (frm.A17.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A17.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A17.value + "\n";
 }
 
 if (frm.A18.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A18.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A18.value + "\n";
 }
 
 if (frm.A19.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A19.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A20.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A21.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A21.value + "\n";
 }
 
 if (frm.A22.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A22.value + "\n";
+	Template += "- Lymphatic and / or Vascular Invasion: " + frm.A22.value + "\n";
 }
 
 if (frm.A23.value !== ""){
@@ -400,7 +400,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-11-Update\Testis-Radical-Orchiectomy_4.1.0.1.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Testis_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Malignant germ cell and sex cord-stromal tumos of the testis
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -408,7 +408,7 @@ table, th, td {
 		</a>
 		</h2>
 	</div>
-<p>There is separated <a href=".\cap\Cancer-Protocols-2021-11-Update\Testis-Lymphadenectomy_4.1.0.1.REL_CAPCP.pdf" target="_blank">protocol for lymphadenectomy</a>.</p>	
+<p>There is separated <a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Testis.RPL_4.2.0.0.REL_CAPCP.pdf" target="_blank">protocol for lymphadenectomy</a>.</p>	
 <form>
 
 <p>
@@ -527,7 +527,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description">Histologic type:</label></legend>
+<legend><label class="description">Histologic type (WHO 5e):</label></legend>
 <p>
 <table border="1">
 <col width="75%">
@@ -539,9 +539,8 @@ table, th, td {
 <select class="element select large" ID="A17">
 	<option value=""></option>
 	<option value="Germ cell neoplasia in situ (GCNIS)">Germ cell neoplasia in situ (GCNIS)</option>
-	<option value="Intratubular seminoma">Intratubular seminoma</option>
-	<option value="Intratubular embryonal carcinoma">Intratubular embryonal carcinoma</option>	
-	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
+	<option value="Other intratubular germ cell tumor (specify):">Other intratubular germ cell tumor (specify):</option>
+	<option value="Gonadoblastoma">Gonadoblastoma</option>
 </select>
 </td>
 </tr>
@@ -555,7 +554,6 @@ table, th, td {
 	<option value=""></option>
 	<option value="Seminoma">Seminoma</option>
 	<option value="Seminoma with syncytiotrophoblastic cells">Seminoma with syncytiotrophoblastic cells</option>
-	<option value="Seminoma with associated scar">Seminoma with associated scar</option>	
 	<option value="Embryonal carcinoma">Embryonal carcinoma</option>
 	<option value="Yolk sac tumor, postpubertal type">Yolk sac tumor, postpubertal type</option>
 	<option value="Choriocarcinoma">Choriocarcinoma</option>	
@@ -567,13 +565,10 @@ table, th, td {
 	<option value="Mixed germ cell tumor, Other (specify type and percentage):">Mixed germ cell tumor, Other (specify type and percentage):</option>
 	<option value="Spermatocytic tumor">Spermatocytic tumor</option>
 	<option value="Spermatocytic tumor with a sarcomatous component">Spermatocytic tumor with a sarcomatous component</option>
-	<option value="Prepubertal type teratoma">Prepubertal type teratoma</option>
-	<option value="Prepubertal type teratoma, dermoid cyst">Prepubertal type teratoma, dermoid cyst</option>
-	<option value="Prepubertal type teratoma, epidermoid cyst">Prepubertal type teratoma, epidermoid cyst</option>
-	<option value="Prepubertal type teratoma, well-differentiated neuroendocrine tumor (monodermal teratoma)">Prepubertal type teratoma, well-differentiated neuroendocrine tumor (monodermal teratoma)</option>
-	<option value="Prepubertal type teratoma, other (specify):">Prepubertal type teratoma, other (specify):</option>
-	<option value="Yolk sac tumor, prepubertal type">Yolk sac tumor, prepubertal type</option>
-	<option value="Mixed teratoma and yolk sac tumor, prepubertal type">Mixed teratoma and yolk sac tumor, prepubertal type</option>
+	<option value="Testicular neuroendocrine tumor, prepubertal-type">Testicular neuroendocrine tumor, prepubertal-type</option>
+	<option value="Mixed teratoma and yolk sac tumor, prepubertal-type">Mixed teratoma and yolk sac tumor, prepubertal-type</option>
+	<option value="Yolk sac tumor, prepubertal-type">Yolk sac tumor, prepubertal-type</option>
+
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
 </td>
@@ -591,7 +586,10 @@ table, th, td {
 	<option value="Epithelioid trophoblastic tumor">Epithelioid trophoblastic tumor</option>	
 	<option value="Cystic trophoblastic tumor">Cystic trophoblastic tumor</option>
 	<option value="Teratoma, postpubertal type">Teratoma, postpubertal type</option>
-	<option value="Teratoma with somatic-type malignancy (specify type):">Teratoma with somatic-type malignancy (specify type):</option>	
+	<option value="Teratoma with somatic-type malignancy, Adenocarcinoma">Teratoma with somatic-type malignancy, Adenocarcinoma</option>	
+	<option value="Teratoma with somatic-type malignancy, Embryonic-type neuroectodermal tumor">Teratoma with somatic-type malignancy, Embryonic-type neuroectodermal tumor</option>	
+	<option value="Teratoma with somatic-type malignancy, Rhabdomyosarcoma">Teratoma with somatic-type malignancy, Rhabdomyosarcoma</option>	
+	<option value="Teratoma with somatic-type malignancy, Other (specify):>Teratoma with somatic-type malignancy, Other (specify):</option>	
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
 </td>
@@ -619,17 +617,13 @@ table, th, td {
 <select class="element select large" ID="A21">
 	<option value=""></option>
 	<option value="Leydig cell tumor">Leydig cell tumor</option>
-	<option value="Malignant Leydig cell tumor">Malignant Leydig cell tumor</option>
 	<option value="Sertoli cell tumor, NOS">Sertoli cell tumor, NOS</option>	
 	<option value="Sertoli cell tumor, malignant">Sertoli cell tumor, malignant</option>
 	<option value="Sertoli cell tumor, large cell calcifying">Sertoli cell tumor, large cell calcifying</option>
 	<option value="Sertoli cell tumor, intratubular large cell hyalinizing">Sertoli cell tumor, intratubular large cell hyalinizing</option>	
 	<option value="Granulosa cell tumor, adult type">Granulosa cell tumor, adult type</option>
-	<option value="Granulosa cell tumor, juvenile type">Granulosa cell tumor, juvenile type</option>
-	<option value="Fibroma-thecoma">Fibroma-thecoma</option>
 	<option value="Sex cord-stromal tumor, mixed type (specify components and approximate percentages):">Sex cord-stromal tumor, mixed type (specify components and approximate percentages):</option>
 	<option value="Sex cord-stromal tumor type, unclassified">Sex cord-stromal tumor type, unclassified</option>
-	<option value="Mixed germ cell-sex cord stromal tumor, gonadoblastoma">Mixed germ cell-sex cord stromal tumor, gonadoblastoma</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
 </td>
@@ -639,7 +633,7 @@ table, th, td {
 </fieldset>
 </p>
 
-<p><label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Testis-Radical-Orchiectomy_4.1.0.1.REL_CAPCP.pdf#page=17" target="_blank">Lymphovascular invasion</a>: </label>
+<p><label >- <b><a href=".\cap\Cancer-Protocols-2021-11-Update\Testis-Radical-Orchiectomy_4.1.0.1.REL_CAPCP.pdf#page=17" target="_blank">Lymphatic and / or Vascular Invasion</a>: </B>
 <select class="element select small" ID="A22">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -648,7 +642,7 @@ table, th, td {
 </select>
 </p>
 
-<p><label class="">- + Perineural invasion: </label>
+<p><label class="">+ Perineural invasion: </label>
 <select class="element select medium" ID="A23">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -985,9 +979,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2021,<br>
+Last upated on 01-Oct-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Testis Radical Orchiectomy 4.1.0.1 (Nov 21) and Testis Lymphadenectomy 4.1.0.1 (Nov 2021), <br>
+Testis Radical Orchiectomy 4.2.0.0 (Sep-2023) and Testis Lymphadenectomy 4.2.0.0 (Sep-2023), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

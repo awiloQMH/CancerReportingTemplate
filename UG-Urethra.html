@@ -29,7 +29,7 @@ if (frm.A04.value !== ""){
 }
 
 if (frm.A05.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A05.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A05.value + "\n";
 }
 
 if (frm.A15.value !== ""){
@@ -69,7 +69,7 @@ if (document.getElementById("A22").checked){
 }
 
 if (frm.A23.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A23.value + "\n";
+	Template += "- Lymphatic and / or Vascular Invasion: " + frm.A23.value + "\n";
 }
 
 if (frm.A24.value !== ""){
@@ -407,7 +407,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra_4.1.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Urethra_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the urethra and periurethral glands
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -417,7 +417,7 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra.Bx_4.1.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Urethra.Bx_4.2.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>.</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -490,25 +490,24 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type (WHO 5e)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A05">
 	<option value=""></option>
 	<option value="Papillary urothelial carcinoma, noninvasive">Papillary urothelial carcinoma, noninvasive</option>
-	<option value="Papillary urothelial carcinoma, invasive">Papillary urothelial carcinoma, invasive</option>
 	<option value="Urothelial carcinoma in situ">Urothelial carcinoma in situ</option>
-	<option value="Urothelial carcinoma, invasive">Urothelial carcinoma, invasive</option>
-	<option value="Urothelial carcinoma, nested (including large nested) variant">Urothelial carcinoma, nested (including large nested) variant</option>
-	<option value="Urothelial carcinoma, microcystic variant">Urothelial carcinoma, microcystic variant</option>
-	<option value="Urothelial carcinoma, micropapillary variant">Urothelial carcinoma, micropapillary variant</option>
-	<option value="Urothelial carcinoma, lymphoepithelioma-like variant">Urothelial carcinoma, lymphoepithelioma-like variant</option>
-	<option value="Urothelial carcinoma, plasmacytoid / signet ring / diffuse variant">Urothelial carcinoma, plasmacytoid / signet ring / diffuse variant</option>	
-	<option value="Urothelial carcinoma, sarcomatoid variant">Urothelial carcinoma, sarcomatoid variant</option>
-	<option value="Urothelial carcinoma, giant cell variant">Urothelial carcinoma, giant cell variant</option>
-	<option value="Urothelial carcinoma, poorly differentiated variant">Urothelial carcinoma, poorly differentiated variant</option>
-	<option value="Urothelial carcinoma, lipid-rich variant">Urothelial carcinoma, lipid-rich variant</option>
-	<option value="Urothelial carcinoma, clear cell variant">Urothelial carcinoma, clear cell variant</option>
+	<option value="Urothelial carcinoma, invasive (conventional)">Urothelial carcinoma, invasive (conventional)</option>
+	<option value="Urothelial carcinoma, micropapillary">Urothelial carcinoma, micropapillary</option>
+	<option value="Urothelial carcinoma, nested">Urothelial carcinoma, nested </option>
+	<option value="Urothelial carcinoma, tubular and microcystic">Urothelial carcinoma, tubular and microcystic</option>
+	<option value="Urothelial carcinoma, lymphoepithelioma-like">Urothelial carcinoma, lymphoepithelioma-like</option>
+	<option value="Urothelial carcinoma, plasmacytoid">Urothelial carcinoma, plasmacytoid</option>	
+	<option value="Urothelial carcinoma, sarcomatoid">Urothelial carcinoma, sarcomatoid</option>
+	<option value="Urothelial carcinoma, giant cell">Urothelial carcinoma, giant cell</option>
+	<option value="Urothelial carcinoma, poorly differentiated">Urothelial carcinoma, poorly differentiated</option>
+	<option value="Urothelial carcinoma, lipid-rich">Urothelial carcinoma, lipid-rich </option>
+	<option value="Urothelial carcinoma, clear cell (glycogen-rich)">Urothelial carcinoma, clear cell (glycogen-rich)</option>
 	<option value="Urothelial carcinoma with squamous differentiation (with %):">Urothelial carcinoma with squamous differentiation (with %):</option>
 	<option value="Urothelial carcinoma with glandular differentiation (with %)">Urothelial carcinoma with glandular differentiation (with %)</option>	
 	<option value="Urothelial carcinoma with trophoblastic differentiation (with %)">Urothelial carcinoma with trophoblastic differentiation (with %)</option>
@@ -516,16 +515,20 @@ table, th, td {
 	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
 	<option value="Verrucous carcinoma">Verrucous carcinoma</option>
 	<option value="Squamous cell carcinoma in situ (no invasive carcinoma identified)">Squamous cell carcinoma in situ (no invasive carcinoma identified)</option>
-	<option value="Adenocarcinoma">Adenocarcinoma</option>
+	<option value="Adenocarcinoma, NOS">Adenocarcinoma, NOS</option>
 	<option value="Adenocarcinoma, enteric">Adenocarcinoma, enteric</option>	
 	<option value="Adenocarcinoma, mucinous">Adenocarcinoma, mucinous</option>
 	<option value="Adenocarcinoma, mixed">Adenocarcinoma, mixed</option>
+	<option value="Adenocarcinoma, signet-ring cell">Adenocarcinoma, signet-ring cell</option>
 	<option value="Adenocarcinoma in situ (no invasive carcinoma identified)">Adenocarcinoma in situ (no invasive carcinoma identified)</option>
 	<option value="Clear cell carcinoma">Clear cell carcinoma</option>
 	<option value="Endometrioid carcinoma">Endometrioid carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma (with %)">Small cell neuroendocrine carcinoma (with %)</option>
 	<option value="Large cell neuroendocrine carcinoma (with %)">Large cell neuroendocrine carcinoma (with %)</option>
 	<option value="Well differentiated neuroendocrine carcinoma (with %)">Well differentiated neuroendocrine carcinoma (with %)</option>
+	<option value="Littre gland adenocarcinoma">Littre gland adenocarcinoma</option>
+	<option value="Skene gland adenocarcinoma">Skene gland adenocarcinoma</option>
+	<option value="Cowper gland adenocarcinoma">Cowper gland adenocarcinoma</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
 </td>
@@ -579,7 +582,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A23">
@@ -950,9 +953,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 20-Jul-2021,<br>
+Last upated on 01-Oct-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Urethra Resection 4.1.0.0 (June 2021), <br>
+Urethra Resection 4.2.0.0 (Sep-2023), <br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

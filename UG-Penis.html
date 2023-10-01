@@ -136,11 +136,11 @@ if (frm.A26.value !== ""){
 }
 
 if (frm.A27.value !== ""){
-	Template += "\n" + "- Histologic type (non-HPV related SCC): " + frm.A27.value + "\n";
+	Template += "\n" + "- Histologic type (HPV-independent SCC): " + frm.A27.value + "\n";
 }
 
 if (frm.A28.value !== ""){
-	Template += "\n" + "- Histologic type (HPV related SCC): " + frm.A28.value + "\n";
+	Template += "\n" + "- Histologic type (HPV-associated SCC): " + frm.A28.value + "\n";
 }
 
 if (frm.A29.value !== ""){
@@ -173,7 +173,7 @@ if (frm.A84.value !== ""){
 }
 
 if (frm.A34.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A34.value + "\n";
+	Template += "- Lymphatic and / or Vascular Invasion: " + frm.A34.value + "\n";
 }
 
 if (frm.A35.value !== ""){
@@ -421,20 +421,20 @@ if (document.getElementById("A74").checked){
 	Template += frm.A74.value + "\n";
 }
 
-if (document.getElementById("A75").checked){
-	Template += frm.A75.value + "\n";
-}
-
-if (document.getElementById("A76").checked){
-	Template += frm.A76.value + "\n";
+if (document.getElementById("A78").checked){
+	Template += frm.A78.value + "\n";
 }
 
 if (document.getElementById("A77").checked){
 	Template += frm.A77.value + "\n";
 }
 
-if (document.getElementById("A78").checked){
-	Template += frm.A78.value + "\n";
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
 }
 
 if (document.getElementById("A79").checked){
@@ -487,7 +487,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Penis_4.2.0.0.REL_CAPCP.doc.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the penis
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -611,36 +611,37 @@ table, th, td {
 <col width="60%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type (non-HPV related SCC)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type (HPV-independent SCC)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A27">
 	<option value=""></option>
 	<option value="Squamous cell carcinoma, usual type">Squamous cell carcinoma, usual type</option>
-	<option value="Pseudohyperplastic carcinoma">Pseudohyperplastic carcinoma</option>
-	<option value="Pseudoglandular carcinoma">Pseudoglandular carcinoma</option>	
 	<option value="Verrucous carcinoma">Verrucous carcinoma</option>
-	<option value="Carcinoma cuniculatum">Carcinoma cuniculatum</option>
 	<option value="Papillary squamous cell carcinoma, NOS">Papillary squamous cell carcinoma, NOS</option>
-	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>	
 	<option value="Sarcomatoid squamous cell carcinoma">Sarcomatoid squamous cell carcinoma</option>
+	<option value="Mixed (specify):">Mixed (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>	
+	<option value="Mixed HPV-independent HPV-associated squamous cell carcinoma (specify histologic types):">Mixed HPV-independent HPV-associated squamous cell carcinoma (specify histologic types):</option>
 </select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type (HPV related SCC)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type (HPV-associated SCC)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A28">
 	<option value=""></option>
-	<option value="Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>
-	<option value="Papillary-basaloid squamous cell carcinoma">Papillary-basaloid squamous cell carcinoma</option>
+	<option value="Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma
 	<option value="Warty carcinoma">Warty carcinoma</option>	
-	<option value="Warty-basaloid squamous cell carcinoma">Warty-basaloid squamous cell carcinoma</option>
 	<option value="Clear cell squamous cell carcinoma">Clear cell squamous cell carcinoma</option>
 	<option value="Lymphoepithelioma-like carcinoma">Lymphoepithelioma-like carcinoma</option>
+	<option value="Medullary carcinoma">Medullary carcinoma</option>
+	<option value="Mixed (specify):">Mixed (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>	
+	<option value="Mixed HPV-independent HPV-associated squamous cell carcinoma (specify histologic types):">Mixed HPV-independent HPV-associated squamous cell carcinoma (specify histologic types):</option>
 </select>
 </td>
 </tr>
@@ -652,6 +653,9 @@ table, th, td {
 <td>
 <select class="element select large" ID="A29">
 	<option value=""></option>
+	<option value="Squamous cell carcinoma, NOS (NOS and p16 stain is not available)">Squamous cell carcinoma, NOS (NOS and p16 stain is not available)</option>
+	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>	
+	<option value="Mucoepidermoid carcinoma">Mucoepidermoid carcinoma</option>	
 	<option value="Paget disease">Paget disease</option>
 	<option value="Adnexal carcinoma (specify type): ">Adnexal carcinoma (specify type):</option>
 	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
@@ -698,7 +702,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A34">
@@ -1078,13 +1082,13 @@ table, th, td {
 	<legend> <label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Penis_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Additional pathologic findings</a>: </label></legend>
 
 <p>
-<input class="element checkbox" type="checkbox"  id="A72" value="  - HPV-related penile intraepithelial neoplasia (PeIN), warty type"><label  class="choice">HPV-related penile intraepithelial neoplasia (PeIN), warty type</label>
-<input class="element checkbox" type="checkbox"  id="A73" value="  - HPV-related penile intraepithelial neoplasia (PeIN), basaloid type"><label  class="choice">HPV-related penile intraepithelial neoplasia (PeIN), basaloid type</label>
-<input class="element checkbox" type="checkbox"  id="A74" value="  - HPV-related penile intraepithelial neoplasia (PeIN), warty-basaloid type"><label  class="choice">HPV-related penile intraepithelial neoplasia (PeIN), warty-basaloid type</label>
-<input class="element checkbox" type="checkbox"  id="A75" value="  - Non-HPV-related PeIN (differentiated [simplex] penile intraepithelial neoplasia)"><label  class="choice">Non-HPV-related PeIN (differentiated [simplex] penile intraepithelial neoplasia)</label>
-<input class="element checkbox" type="checkbox"  id="A76" value="  - Pleomorphic PeIN"><label  class="choice">Pleomorphic PeIN</label>
-<input class="element checkbox" type="checkbox"  id="A77" value="  - Spindle PeIN"><label  class="choice">Spindle PeIN</label>
-<input class="element checkbox" type="checkbox"  id="A78" value="  - Clear cell PEIN"><label  class="choice">Clear cell PEIN</label>
+<input class="element checkbox" type="checkbox"  id="A72" value="  - HPV-associated penile intraepithelial neoplasia (PeIN), warty type"><label  class="choice">HPV-associated penile intraepithelial neoplasia (PeIN), warty type</label>
+<input class="element checkbox" type="checkbox"  id="A73" value="  - HPV-associated penile intraepithelial neoplasia (PeIN), basaloid type"><label  class="choice">HPV-associated penile intraepithelial neoplasia (PeIN), basaloid type</label>
+<input class="element checkbox" type="checkbox"  id="A74" value="  - HPV-associated penile intraepithelial neoplasia (PeIN), Pagetoid"><label  class="choice">HPV-associated penile intraepithelial neoplasia (PeIN), Pagetoid type</label>
+<input class="element checkbox" type="checkbox"  id="A78" value="  - HPV-associated penile intraepithelial neoplasia (PeIN), Clear cell"><label  class="choice">HPV-associated penile intraepithelial neoplasia (PeIN), Clear cell</label>
+<input class="element checkbox" type="checkbox"  id="A77" value="  - HPV-associated penile intraepithelial neoplasia (PeIN), Mixed (specify):"><label  class="choice">HPV-associated penile intraepithelial neoplasia (PeIN), Mixed (specify):</label>
+<input class="element checkbox" type="checkbox"  id="A75" value="  - HPV-independent differentiated penile intraepithelial neoplasia (PeIN)"><label  class="choice">HPV-independent differentiated penile intraepithelial neoplasia (PeIN)</label>
+<input class="element checkbox" type="checkbox"  id="A76" value="  - Mixed HPV associated-HPV independent"><label  class="choice">Mixed HPV associated-HPV independent</label>
 <input class="element checkbox" type="checkbox"  id="A79" value="  - Lichen sclerosus"><label  class="choice">Lichen sclerosus</label>
 <input class="element checkbox" type="checkbox"  id="A80" value="  - Squamous hyperplasia"><label class="choice" >Squamous hyperplasia</label>
 <input class="element checkbox" type="checkbox"  id="A81" value="  - Condyloma acuminatum"><label  class="choice">Condyloma acuminatum</label>
@@ -1115,9 +1119,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 19-Jul-2021,<br>
+Last upated on 01-Oct-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Penis 4.1.0.0 (June 2021), <br>
+Penis 4.2.0.0 (Sep 2023), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

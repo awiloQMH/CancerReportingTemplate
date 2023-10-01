@@ -29,7 +29,7 @@ if (frm.A04.value !== ""){
 }
 
 if (frm.A05.value !== ""){
-	Template += "\n" + "- Histologic type: " + frm.A05.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value + frm.A07.value + frm.A08.value + frm.A09.value + frm.A10.value + frm.A11.value !== ""){
@@ -161,7 +161,7 @@ if (frm.A31.value !== ""){
 }
 
 if (frm.A32.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A32.value + "\n";
+	Template += "- Lymphatic and / or Vascular Invasion: " + frm.A32.value + "\n";
 }
 
 if (frm.A33.value !== ""){
@@ -404,7 +404,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-11-Update\Prostate_4.2.0.1.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Prostate_4.3.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the Prostate
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -415,10 +415,10 @@ table, th, td {
 
 <form>
 
-<p>There are additional notes for <a href=".\cap\Cancer-Protocols-2021-11-Update\Prostate_4.2.0.1.REL_CAPCP.pdf" target="_blank">TURP protocol</a>.
+<p>There are additional notes for <a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Prostate.TURP_4.2.0.0.REL_CAPCP.pdf" target="_blank">TURP protocol</a>.
 </p>
 
-<p>There are protocols for biopsy of <a href=".\cap\Cancer-Protocols-2021-11-Update\Prostate.Needle.Case.Bx_1.0.0.1.REL_CAPCP.pdf" target="_blank">case level </a> and <a href=".\cap\Cancer-Protocols-2021-11-Update\Prostate.Needle.Specimen.Bx_1.0.0.1.REL_CAPCP.pdf" target="_blank">specimen level </a> .
+<p>There are protocols for biopsy of <a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Prostate.Needle.Case.Bx_1.0.0.1.REL_CAPCP.pdf" target="_blank">case level </a> and <a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Prostate.Needle.Specimen.Bx_1.0.0.1.REL_CAPCP.pdf" target="_blank">specimen level </a> .
 </p>
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -472,14 +472,25 @@ table, th, td {
 
 
 <p>
-<label class="description">- Histologic type:</label> 
+<label class="description">- Histologic type (WHO 5e):</label> 
 <select class="element select medium" ID="A05">
 	<option value=""></option>
-	<option value="Acinar adenocarcinoma">Acinar adenocarcinoma</option>
+	<option value="Acinar adenocarcinoma, conventional (usual)">Acinar adenocarcinoma, conventional (usual)</option>
+	<option value="Acinar adenocarcinoma, signet-ring-like cell">Acinar adenocarcinoma, signet-ring-like cell</option>
+	<option value="Acinar adenocarcinoma, pleomorphic giant cell">Acinar adenocarcinoma, pleomorphic giant cell</option>
+	<option value="Acinar adenocarcinoma, sarcomatoid">Acinar adenocarcinoma, sarcomatoid</option>
+	<option value="Acinar adenocarcinoma, prostatic intraepithelial neoplasia-like">Acinar adenocarcinoma, prostatic intraepithelial neoplasia-like</option>
+	<option value="Intraductal carcinoma">Intraductal carcinoma</option>
 	<option value="Ductal adenocarcinoma">Ductal adenocarcinoma</option>
-	<option value="Small-cell neuroendocrine carcinoma">Small-cell neuroendocrine carcinoma</option>
+	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
+	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="Basal cell (adenoid cystic) carcinoma">Basal cell (adenoid cystic) carcinoma</option>
+	<option value="Adenocarcinoma with neuroendocrine differentiation">Adenocarcinoma with neuroendocrine differentiation</option>
+	<option value="Well-differentiated neuroendocrine tumor">Well-differentiated neuroendocrine tumor</option>
+	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>	
-	<option value="Cannot be determined:">Cannot be determined:</option>	
+	<option value="Carcinoma, type cannot be determined:">Carcinoma, type cannot be determined:</option>	
 <</select>
 </p>
 
@@ -677,7 +688,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="">+ <a href=".\cap\Cancer-Protocols-2021-11-Update\Prostate_4.2.0.1.REL_CAPCP.pdf#page=20" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2021-11-Update\Prostate_4.2.0.1.REL_CAPCP.pdf#page=20" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A32">
@@ -885,7 +896,7 @@ table, th, td {
 	<option value=""></option>
 	<option value="    - pT2: Organ confined">pT2: Organ confined</option>
 	<option value="    - pT3: Extraprostatic extension">pT3: Extraprostatic extension</option>
-	<option value="    - pT3a: Extraprostatic extension (unilateral or bilateral) or microscopic invasion of bladder neck">pT3a: Extraprostatic extension (unilateral or bilateral) or microscopic invasion of bladder neck</option>
+	<option value="    - pT3a: Extraprostatic extension or microscopic invasion of bladder neck">pT3a: Extraprostatic extension or microscopic invasion of bladder neck</option>
 	<option value="    - pT3b: Tumor invades seminal vesicle(s)">pT3b: Tumor invades seminal vesicle(s)</option>
 	<option value="    - pT4: Tumor is fixed or invades adjacent structures other than seminal vesicles such as external sphincter, rectum, bladder, levator muscles, and/or pelvic wall ">pT4: Tumor is fixed or invades adjacent structures other than seminal vesicles such as external sphincter, rectum, bladder, levator muscles, and/or pelvic wall </option>
 </select>
@@ -972,9 +983,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2021,<br>
+Last upated on 01-Oct-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Prostate Radical Prostatectomy 4.2.0.1 (Nov 2021), Prostate TURP 4.1.0.0 (June 2021), Prostate needle biopsy 1.0.0.1 (Nov 2021)<br>
+Prostate Radical Prostatectomy 4.3.0.0 (Sep-2023), Prostate TURP 4.2.0.0 (Sep-2023), Prostate needle biopsy 1.1.0.0 (Sep-2023)<br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
