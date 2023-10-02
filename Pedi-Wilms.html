@@ -57,24 +57,29 @@ if (frm.A10.value !== ""){
 	Template += "\n" + "- Histologic type: " + frm.A10.value + "\n";
 }
 
+
+if (frm.A19.value !== ""){
+	Template += "- Nephrogenic rests:  " + frm.A19.value + "\n";
+}
+
 if (frm.A11.value !== ""){
-	Template += "- Tumor extent (Gerota's fasica): " + frm.A11.value + "\n";
+	Template += "- Tumor Disruption: " + frm.A11.value + "\n";
 }
 
 if (frm.A12.value !== ""){
-	Template += "- Tumor extent (renal sinus): " + frm.A12.value + "\n";
+	Template += "- Renal Sinus Involvement: " + frm.A12.value + "\n";
 }
 
 if (frm.A13.value !== ""){
-	Template += "- Tumor extent (renal vein): " + frm.A13.value + "\n";
+	Template += "- Renal Vein Involvement: " + frm.A13.value + "\n";
 }
 
 if (frm.A14.value !== ""){
-	Template += "- Tumor extent (renal capsule): " + frm.A14.value + "\n";
+	Template += "- Extension Beyond Renal Capsule: " + frm.A14.value + "\n";
 }
 
 if (frm.A15.value !== ""){
-	Template += "- Tumor extent (ajacent organs): " + frm.A15.value + "\n";
+	Template += "- Direct Extension into Adjacent Organs: " + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
@@ -87,10 +92,6 @@ if (frm.A17.value !== ""){
 
 if (frm.A18.value !== ""){
 	Template += "- Post therapy histologic classification:  " + frm.A18.value + "\n";
-}
-
-if (frm.A19.value !== ""){
-	Template += "- Nephrogenic rests:  " + frm.A19.value + "\n";
 }
 
 if (frm.A20.value !== ""){
@@ -300,7 +301,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-09-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.1.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Wilms and Other Pediatric Renal Tumor
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -308,7 +309,7 @@ table, th, td {
 		</a></h2>
 	</div>
 
-<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms.Bx_4.1.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\Pediatric Protocol Folder\Kidney.Wilms.Bx_5.0.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>.</p>
 <p>
 OPTIONAL: Expert Consultation before completion of the reporting.
 </p>
@@ -401,7 +402,6 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 	<option value="Wilms tumor, favorable histology">Wilms tumor, favorable histology</option>
 	<option value="Wilms tumor, focal anaplasia">Wilms tumor, focal anaplasia</option>
 	<option value="Wilms tumor, diffuse anaplasia">Wilms tumor, diffuse anaplasia</option>
-	<option value="Nephrogenic rest only">Nephrogenic rest only</option>
 	<option value="Congenital mesoblastic nephroma (cellular, classic, or mixed)">Congenital mesoblastic nephroma (cellular, classic, or mixed)</option>
 	<option value="Clear cell sarcoma of kidney">Clear cell sarcoma of kidney</option>
 	<option value="Rhabdoid tumor">Rhabdoid tumor</option>
@@ -410,53 +410,68 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 </tr>
 
 <tr>
-<td><label class="description">- Tumor extent (Gerota's fasica):</label></td>
+<td><label class="">+ <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=16" target="_blank">Nephrogenic rests</a>:</label> </td>
+<td><select class="element select large" ID="A19">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Intralobar">Intralobar</option>
+	<option value="Perilobar, diffuse and hyperplastic">Perilobar, diffuse and hyperplastic</option>
+	<option value="Perilobar, multifocal">Perilobar, multifocal</option>
+	<option value="Perilobar, focal">Perilobar, focal</option>
+	<option value="Perilobar">Perilobar</option>
+	<option value="Present, unclassified">Present, unclassified</option>
+	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
+</select></td>
+</tr>
+
+<tr>
+<td><label class="description">- Tumor Disruption (pre-op or intra-op):</label></td>
 <td><select class="element select large" ID="A11">
 	<option value=""></option>
-	<option value="Gerota’s fascia intact">Gerota’s fascia intact</option>
-	<option value="Gerota’s fascia disrupted">Gerota’s fascia disrupted</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Identified">Identified</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
 
 <tr>
-<td><label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=17" target="_blank">Tumor extent (renal sinus)</a>:</label></td>
+<td><label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=17" target="_blank">Renal Sinus Involved by Viable Tumor</a>:</label></td>
 <td><select class="element select large" ID="A12">
 	<option value=""></option>
-	<option value="No renal sinus involvement by tumor identified">No renal sinus involvement by tumor identified</option>
-	<option value="Tumor minimally extends into renal sinus soft tissue">Tumor minimally extends into renal sinus soft tissue</option>
-	<option value="Tumor more than minimally involves renal sinus soft tissue">Tumor more than minimally involves renal sinus soft tissue</option>
-	<option value="Tumor involves lymph-vascular spaces in the renal sinus">Tumor involves lymph-vascular spaces in the renal sinus</option>
+	<option value="NNot identified">Not identified</option>
+	<option value="Minimal extension into renal sinus soft tissue (a single focus less than 5 mm in greatest dimension located greater than 5 mm from the nearest margin)">Minimal extension into renal sinus soft tissue (a single focus less than 5 mm in greatest dimension located greater than 5 mm from the nearest margin)</option>
+	<option value="More than minimal extension into renal sinus soft tissue">More than minimal extension into renal sinus soft tissue</option>
+	<option value="Involvement of renal sinus lymphovascular spaces">Involvement of renal sinus lymphovascular spaces</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
 
 <tr>
-<td><label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=18" target="_blank">Tumor extent (renal vein)</a>:</label></td>
+<td><label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=18" target="_blank">Renal Vein Involvement by Viable Tumor</a>:</label></td>
 <td><select class="element select large" ID="A13">
 	<option value=""></option>
-	<option value="No renal vein invasion identified">No renal vein invasion identified</option>
-	<option value="Renal vein invasion present">Renal vein invasion presentd</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Identified">Identified</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
 
 <tr>
-<td><label class="description">- Tumor extent (renal capsule):</label></td>
+<td><label class="description">- Extension Beyond Renal Capsule:</label></td>
 <td><select class="element select large" ID="A14">
 	<option value=""></option>
-	<option value="No extension beyond renal capsule identified">No extension beyond renal capsule identified</option>
-	<option value="Extension beyond renal capsule present">Extension beyond renal capsule present</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Identified">Identified</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
 
 <tr>
-<td><label class="description">- Tumor extent (adjacent organs):</label></td>
+<td><label class="description">- Direct Extension into Adjacent Organs:</label></td>
 <td><select class="element select large" ID="A15">
 	<option value=""></option>
-	<option value="No tumor extension into adjacent organs identified ">No tumor extension into adjacent organs identified </option>
-	<option value="Tumor extension into adjacent organ present (specify organ: )">Tumor extension into adjacent organ present (specify organ: )</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Presnt (specify):">Presnt (specify):</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
@@ -491,19 +506,6 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 	<option value="Intermediate risk, viable tumor present comprising greater than 33% of mass, with blastemal histology present in less than 6% of viable tumor">Intermediate risk, viable tumor present comprising greater than 33% of mass, with blastemal histology present in less than 6% of viable tumor</option>
 	<option value="High risk (viable tumor more than 33% of mass with blastemal histology present in more than 66% of viable tumor)">High risk (viable tumor more than 33% of mass with blastemal histology present in more than 66% of viable tumor)</option>
 	<option value="Not applicable">Not applicable</option>
-</select></td>
-</tr>
-
-<tr>
-<td><label class="">+ <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=16" target="_blank">Nephrogenic rests</a>:</label> </td>
-<td><select class="element select large" ID="A19">
-	<option value=""></option>
-	<option value="No nephrogenic rests identified">No nephrogenic rests identified</option>
-	<option value="Nephrogenic rests present - intralobar">Nephrogenic rests present - intralobar</option>
-	<option value="Nephrogenic rests present - perilobar, diffuse, hyperplastic">Nephrogenic rests present - perilobar, diffuse, hyperplastic</option>
-	<option value="Nephrogenic rests present - perilobar, multifocal">Nephrogenic rests present - perilobar, multifocal</option>
-	<option value="Nephrogenic rests present - perilobar, unclassified">Nephrogenic rests present - perilobar, unclassified</option>
-	<option value="Cannot be determined">Cannot be determined</option>
 </select></td>
 </tr>
 
@@ -689,9 +691,9 @@ Specifically, comments on Vascular, Ureteral and Soft tissue margins.
 <br>
 
 <div id="footer">
-Last upated on 14-Jan-2023,<br>
+Last upated on 02-Oct-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Wilms Tumor Resection 4.3.0.0 (Dec 2022), <br>
+Wilms Tumor Resection 4.3.0.1 (Sep-2023), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
