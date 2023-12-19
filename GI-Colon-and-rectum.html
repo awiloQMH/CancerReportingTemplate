@@ -105,8 +105,20 @@ if (frm.A21.value !== ""){
 	Template += "- Tumor extension: " + frm.A21.value + "\n";
 }
 
+if (frm.A66.value !== ""){
+	Template += "- For pT1, Depth of Sub-mucosal Invasion: " + frm.A66.value + "\n";
+}
+
+if (frm.A67.value !== ""){
+	Template += "- For pT1, Extent of Sub-mucosal Invasion: " + frm.A67.value + "\n";
+}
+
+if (frm.A65.value !== ""){
+	Template += "- Macroscopic Tumor Perforation: " + frm.A65.value + "\n";
+}
+
 if (frm.A22.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A22.value + "\n";
+	Template += "- Lymphatic and / or Vascular Invasion: " + frm.A22.value + "\n";
 }
 
 if (frm.A23.value !== ""){
@@ -152,7 +164,7 @@ if (frm.A32.value !== ""){
 if (frm.A33.value !== ""){
 	Template +=  "- Status of non-invasive tumor at margin(s): " + frm.A33.value + "\n" ;
 }
-
+/**
 if (frm.A34.value !== ""){
 	Template +=  "\n" + "- Deep margin: " + frm.A34.value + "\n" ;
 }
@@ -164,7 +176,7 @@ if (frm.A35.value !== ""){
 if (frm.A36.value !== ""){
 	Template +=  "- Other margin(s) (specify: ): " + frm.A36.value + "\n" ;
 }
-
+**/
 if (frm.A37.value + frm.A38.value + frm.A39.value + frm.A40.value + frm.A41.value !== ""){
 	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
@@ -337,14 +349,14 @@ table, th, td {
 <div id="form_container">
 
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2022-06-Update\Gastrointestinal Protocol Folder\ColoRectal_4.2.0.2.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-12-Update\Gastrointestinal Protocol Folder\ColoRectal_4.3.0.0.REL_CAPCP.pdf" target="_blank">
 		Cancers of the colon and rectum
 		</a></h2>
 	</div>
 	
 <form>
 <p>
-There is a different protocol for <a href=".\cap\Cancer-Protocols-2021-11-Update\ColoRectal.Bx_4.2.0.2.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>
+There is a different protocol for <a href=".\cap\Cancer-Protocols-2023-12-Update\Gastrointestinal Protocol Folder\ColoRectal.Bx_4.3.0.0. REL_CAPCP.pdf" target="_blank">biopsy specimen</a>
 </p>
 <p>
 There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\ColoRectal.Bmk_1.3.0.0.REL_CAPCP.pdf" target="_blank">biomarkers</a>
@@ -492,8 +504,6 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 </select></td> 
 </tr>
 
-
-
 <tr>
 <td> <label class="description">- Tumor extension:</label></td> 
 <td> <select class="element select large" ID="A21">
@@ -510,11 +520,32 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 </select></td> 
 </tr>
 
-
+<tr>
+<td rowspan="2" valign="top"> <label class="description"> - Sub-mucosal Invasion (pT1 only): </label></td> 
+<td>Depth of Sub-mucosal Invasion<br>
+    <select class="element select large" ID="A66">
+		<option value=""></option>
+		<option value="Less than 1 mm">Less than 1 mm</option>
+		<option value="Greater than or equal to 1 mm and less than 2 mm">Greater than or equal to 1 mm and less than 2 mm</option>
+		<option value="Greater than 2 mm">Greater than 2 mm</option>
+		<option value="Exact depth in mm">Exact depth in mm</option>
+		<option value="Cannot be determined">Cannot be determined</option>
+	</select> </td> 
+</tr>
+<tr>
+<td>Extent of Sub-mucosal Invasion<br>
+		<select class="element select large" ID="A67">
+			<option value=""></option>
+			<option value="Tumor invades into upper one third of submucosa">Tumor invades into upper one third of submucosa</option>
+			<option value="Tumor invades into middle one third of submucosa">Tumor invades into middle one third of submucosa</option>
+			<option value="Tumor invades into lower one third of submucosa">Tumor invades into lower one third of submucosa</option>
+			<option value="Cannot be determined">Cannot be determined</option>
+		</select></td> 
+</tr>
 
 <tr>
-<td> <label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\ColoRectal_4.2.0.0.REL_CAPCP.pdf#page=16" target="_blank">Lymphovascular invasion</a>: </label></td> 
-<td> <select class="element select large" ID="A22">
+<td><label class="description">- Macroscopic Tumor Perforation: </label></td> 
+<td><select class="element select large" ID="A65">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
@@ -522,7 +553,18 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 </select></td> 
 </tr>
 
-
+<tr>
+<td> <label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\ColoRectal_4.2.0.0.REL_CAPCP.pdf#page=16" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label></td> 
+<td> <select class="element select large" ID="A22">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Small vessel">Small vessel</option>
+	<option value="Large vessel (venous), intramural">Large vessel (venous), intramural</option>
+	<option value="Large vessel (venous), extramural">Large vessel (venous), extramural</option>
+	<option value="Present (not otherwise specified)">Present (not otherwise specified)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td> 
+</tr>
 
 <tr>
 <td><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\ColoRectal_4.2.0.0.REL_CAPCP.pdf#page=16" target="_blank">Perineural invasion</a>: </label></td> 
@@ -532,7 +574,7 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select></td> 
-</p>
+</tr>
 
 
 
@@ -662,7 +704,7 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 </p>
 </fieldset>
 </p>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins for transanal disk excision or polypectomy specimens:</label></legend>
@@ -707,7 +749,7 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 </p>
 </fieldset>
 </p>
-
+--!>
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\ColoRectal_4.2.0.0.REL_CAPCP.pdf#page=26" target="_blank">Lymph nodes examination</a>: </label></legend>
@@ -884,9 +926,9 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 <br>
 
 <div id="footer">
-Last upated on 24-Jun-2022,<br>
+Last upated on 19-Dec-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Colon and Rectum Resection 4.2.0.2 (June 2022).<br>
+Colon and Rectum Resection 4.3.0.0 (Dec 2023).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

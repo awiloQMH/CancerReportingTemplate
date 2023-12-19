@@ -94,7 +94,7 @@ if (frm.A17.value !== ""){
 }
 
 if (frm.A18.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A18.value + "\n";
+	Template += "- Lymphatic and / or Vascular Invasion: " + frm.A18.value + "\n";
 }
 
 if (frm.A19.value !== ""){
@@ -240,7 +240,7 @@ if (document.getElementById("A59").checked){
 if (document.getElementById("A35").checked || document.getElementById("A36").checked ||
     document.getElementById("A37").checked || frm.A38.value!=="" ||
 	frm.A39.value!=="" || frm.A40.value!=="" ){
-	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 9th edition):" + "\n";
 }
 
 if (document.getElementById("A35").checked || document.getElementById("A36").checked || document.getElementById("A37").checked){
@@ -333,7 +333,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-12-Update\Endocrine Protocol Folder\Panc.Endo_5.0.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Endocrine pancreas tumor
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -428,7 +428,7 @@ table, th, td {
 <col width="40%">
 <tr>
 <td rowspan="3" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type and grade</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type and grade (WHO 5e)</a>:</label> 
 Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup>.
 </td>
 <td>
@@ -438,7 +438,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 	<option value="G2: Well-differentiated neuroendocrine tumor">G2: Well-differentiated neuroendocrine tumor (mitosis  2-20, Ki67 3-20)</option>
 	<option value="G3: Well-differentiated neuroendocrine tumor">G3: Well-differentiated neuroendocrine tumor (mitosis > 20, Ki67 > 20)</option>
 	<option value="Other (specify):">Other (specify):</option>
-	<option value="GX: Well-differentiated neuroendocrine tumor, grade cannot be assessed">GX: Well-differentiated neuroendocrine tumor, grade cannot be assessed:</option>
+	<option value="GX: Grade cannot be assessed">GX: Grade cannot be assessed:</option>
 	<option value="Not applicable">Not applicable</option>
 </select>
 </td>
@@ -538,7 +538,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=14" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A18">
@@ -873,7 +873,7 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 9e)</a>: </label></legend>
 	
 <p>
 <table border="1">
@@ -929,10 +929,10 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 <select class="element select large" ID="A40">
 	<option value=""></option>
 	<option value="Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
-	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
-	<option value="pM1a: Metastasis confined to liver">pM1a: Metastasis confined to liver</option>
-	<option value="pM1b: Metastasis in at least one extrahepatic site">pM1b: Metastasis in at least one extrahepatic site</option>
-	<option value="pM1c: Both hepatic and extrahepatic metastases">pM1c: Both hepatic and extrahepatic metastases</option>
+	<option value="pM1 (subcategory cannot be determined)">pM1 (subcategory cannot be determined)</option>
+	<option value="pM1a: Microscopic confirmation of metastasis confined to liver">pM1a:  Microscopic confirmation of metastasis confined to liver</option>
+	<option value="pM1b: Microscopic confirmation of metastasis in at least one extrahepatic site">pM1b: Microscopic confirmation of metastasis in at least one extrahepatic site</option>
+	<option value="pM1c: Microscopic confirmation of both hepatic and extrahepatic metastases">pM1c: Microscopic confirmation of both hepatic and extrahepatic metastases</option>
 </select>
 </td>
 </tr>
@@ -984,9 +984,9 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 <br>
 
 <div id="footer">
-Last upated on 19-Jul-2021,<br>
+Last upated on 19-Dec-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Pancreas Endocrine 4.1.0.0 (June 2021), <br>
+Pancreas Endocrine 5.0.0.0 (Dec 2023), <br>
 html was form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

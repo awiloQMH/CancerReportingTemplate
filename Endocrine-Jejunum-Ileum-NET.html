@@ -61,7 +61,7 @@ if (frm.A08.value !== ""){
 }
 
 if (frm.A18.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A18.value + "\n";
+	Template += "- Lymphatic and / or Vascular Invasion: " + frm.A18.value + "\n";
 }
 
 if (frm.A19.value !== ""){
@@ -157,7 +157,7 @@ if (document.getElementById("A45").checked){
 }
 
 if (document.getElementById("A23").checked || document.getElementById("A24").checked || document.getElementById("A25").checked || frm.A26.value!=="" || frm.A27.value!=="" || frm.A28.value!=="" || frm.A29.value!==""){
-	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 9th edition):" + "\n";
 }
 
 
@@ -250,7 +250,7 @@ table, th, td {
 	<div class="form_description">
 		<h2>Jejunum and ileum neuroendocrine tumor</h2>
 	</div>
-- Explanations can be found in the original <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Jejunum_Ileum.NET_1.1.0.0.REL_CAPCP.pdf" target="_blank">CAP Jejunum and Ileum NET template</a><br><br>	
+- Explanations can be found in the original <a href=".\cap\Cancer-Protocols-2023-12-Update\Endocrine Protocol Folder\Jejunum_Ileum.NET_2.0.0.0.REL_CAPCP.pdf" target="_blank">CAP Jejunum and Ileum NET template</a><br><br>	
 	
 <form>
 <!--
@@ -334,7 +334,7 @@ table, th, td {
 <col width="50%">
 <tr>
 <td valign="top" rowspan="3">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Jejunum_Ileum.NET_1.1.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type and grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Jejunum_Ileum.NET_1.1.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type and grade (WHO 5e)</a>:</label>
 Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup>
 </td>
 <td>
@@ -344,7 +344,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 	<option value="G2: Well-differentiated neuroendocrine tumor">G2: Well-differentiated neuroendocrine tumor (mitosis  2-20, Ki67 3-20)</option>
 	<option value="G3: Well-differentiated neuroendocrine tumor">G3: Well-differentiated neuroendocrine tumor (mitosis > 20, Ki67 > 20)</option>
 	<option value="Other (specify):">Other (specify):</option>
-	<option value="GX: Well-differentiated neuroendocrine tumor, grade cannot be assessed">GX: Well-differentiated neuroendocrine tumor, grade cannot be assessed:</option>
+	<option value="GX: Grade cannot be assessed">GX: Grade cannot be assessed:</option>
 	<option value="Not applicable">Not applicable</option>
 </select>
 </td>
@@ -427,7 +427,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <tr>
 <td>
-<label class="description">- Lymphovascular invasion: </label>
+<label class="description">- Lymphatic and / or Vascular Invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A18">
@@ -599,7 +599,7 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Jejunum_Ileum.NET_1.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Jejunum_Ileum.NET_1.1.0.0.REL_CAPCP.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 9e)</a>: </label></legend>
 	
 <p>
 <table border="1">
@@ -657,10 +657,10 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 <select class="element select large" ID="A28">
 	<option value=""></option>
 	<option value="Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
-	<option value="pM1: Distant metastasis">pM1:Distant metastasis</option>
-	<option value="pM1a: Metastasis confined to liver">pM1a: Metastasis confined to liver</option>
-	<option value="pM1b: Metastasis in at least one extrahepatic site">pM1b: Metastasis in at least one extrahepatic site</option>
-	<option value="pM1c: Both hepatic and extrahepatic metastases">pM1c: Both hepatic and extrahepatic metastases</option>
+	<option value="pM1 (subcategory cannot be determined)">pM1 (subcategory cannot be determined)</option>
+	<option value="pM1a: Microscopic confirmation of metastasis confined to liver">pM1a: Microscopic confirmation of metastasis confined to liver</option>
+	<option value="pM1b: Microscopic confirmation of metastasis in at least one extrahepatic site">pM1b: Microscopic confirmation of metastasis in at least one extrahepatic site</option>
+	<option value="pM1c: Microscopic confirmation of both hepatic and extrahepatic metastases">pM1c: Microscopic confirmation of both hepatic and extrahepatic metastases</option>
 </select>
 </td>
 </tr>
@@ -712,9 +712,9 @@ Using 22 mm eyepiece at x40 objective, counting 42 fields = 10 mm<sup>2</sup>. D
 <br>
 
 <div id="footer">
-Last upated on 19-Jul-2021,<br>
+Last upated on 19-Dec-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Jejunum/Ileum NET 1.1.0.0 (June 2021), <br>
+Jejunum/Ileum NET 2.0.0.0 (Dec 2023), <br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

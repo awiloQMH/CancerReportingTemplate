@@ -523,7 +523,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2023-12-Update\Gynecologic Protocol Folder\Uterus_5.0.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Carcinoma and carcinosarcoma of the endometrium
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -787,8 +787,10 @@ table, th, td {
 		<option value=""></option>
 		<option value="Not identified">Not identified</option>
 		<option value="Present">Present</option>
-		<option value="Present, Low (less than 3 vessel involvement) (specify location, if possible):">Present, Low (less than 3 vessel involvement) (specify location, if possible):</option>
-		<option value="Present, Extensive (greater than or equal to 3 vessel involvement) (specify location, if possible):">Present, Extensive (greater than or equal to 3 vessel involvement) (specify location, if possible):</option>
+		<option value="Present, Focal (less than 5 vessel involvement) (specify location, if possible):">Present, Focal (less than 5 vessel involvement) (specify location, if possible)</option>
+		<option value="Present, Extensive / substantial (greater than or equal to 5 vessel involvement) (specify location, if
+possible):">Present, Extensive / substantial (greater than or equal to 5 vessel involvement) (specify location, if
+possible):</option>
 		<option value="Equivocal (explain):">Equivocal (explain):</option>
 		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
@@ -811,16 +813,16 @@ table, th, td {
 
 <tr>
 <td>
-<label > + <a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=20" target="_blank">Peritoneal/ascitic fluid</a>: </label>
+<label > + <a href=".\cap\Cancer-Protocols-2023-12-Update\Gynecologic Protocol Folder\Uterus_5.0.0.0.REL_CAPCP.pdf#page=22" target="_blank">Peritoneal/ascitic fluid (TIS)</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A61">
 		<option value=""></option>
 		<option value="Not submitted/ unknown">Not submitted/ unknown</option>
-		<option value="Malignant cells not identified">Malignant cells not identified</option>
-		<option value="Atypical (explain):">Atypical (explain):</option>
-		<option value="Suspicious (explain):">Suspicious (explain):</option>
-		<option value="Malignant cells present">Malignant cells present</option>
+		<option value="Negative for malignancy (NFM)">Negative for malignancy (NFM)</option>
+		<option value="Atypia of undetermined significance (AUS) (explain):">Atypia of undetermined significance (AUS)(explain):</option>
+		<option value="Suspicious for malignancy (SFM) (explain):">Suspicious for malignancy (SFM) (explain):</option>
+		<option value="Malignant (MAL)">Malignant (MAL)</option>
 		<option value="Cannot be determined:">Cannot be determined:</option>
 		<option value="Results pending">Results pending</option>
 	</select>
@@ -1096,7 +1098,7 @@ table, th, td {
 </p>
 
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\GYN_UterusCA.pdf" target="_blank">FIGO Stage (2018 FIGO Cancer Report):</a></label></legend>
+	<legend> <label class="description"> <a href=".\cap\GYN_UterusCA.pdf" target="_blank">FIGO Stage (2023 FIGO Cancer Report):</a></label></legend>
 <!--
 <a href=".\cap\GYN_UterusCA.pdf" target="_blank">
 <img src=".\cap\GYN_UterusCA.JPG" alt="FIGO2018" >
@@ -1105,20 +1107,51 @@ table, th, td {
 Click the table for the original reference.
 -->
 <p>
-I: 	Tumor confined to the corpus uteri<br><br>
-- IA: 	No or less than half myometrial invasion<br>
-- IB: 	Invasion equal to or more than half of the myometrium<br><br>
-II: 	Tumor invades cervical stroma, but does not extend beyond the uterus<br><br>
-III: 	Local and/or regional spread of the tumor<br><br>
-- IIIA: 	Tumor invades the serosa of the corpus uteri and/or adnexae<br>
-- IIIB: 	Vaginal involvement and/ or parametrial involvement<br>
-- IIIC: 	Metastases to pelvic and/or para-aortic lymph nodes<br>
--- IIIC1: Positive pelvic nodes<br>
--- IIIC2: Positive para-aortic nodes with or without positive pelvic lymph nodes<br><br>
-IV: 	Tumor invades bladder and/or bowel mucosa, and/or distant metastases<br><br>
-- IVA: 	Tumor invasion of bladder and/or bowel mucosa<br>
-- IVB: 	Distant metastasis, including intraabdominal metastases and/or inguinal nodes<br>
-
+I: Confined to the uterine corpus and ovary<br>
+IA: Disease limited to the endometrium OR non-aggressive histological type, i.e., low-grade endometrioid, with invasion of less than half of the myometrium with no or focal lymphovascular space involvement (LVSI) OR good prognosis disease<br>
+IA1: Non-aggressive histological type limited to an endometrial polyp OR confined to the endometrium<br>
+IA2: Non-aggressive histological types involving less than half of the myometrium with no or focal LVSI<br>
+IA3: Low-grade endometrioid carcinomas limited to the uterus and ovary<br>
++IAm (POLEmut): POLE mutated endometrial carcinoma, confined to the uterine corpus or with cervical extension, regardless of the degree of LVSI or histological type <br>
+IB: Non-aggressive histological types with invasion of half or more of the myometrium, and with no or focal LVSI<br>
+IC: Aggressive histological types limited to a polyp or confined to the endometrium<br>
+</p>
+<p>
+II: Invasion of cervical stroma without extrauterine extension OR with substantial LVSI OR aggressive histological types with myometrial invasion<br>
+IIA: Invasion of the cervical stroma of non-aggressive histological types<br>
+IIB: Substantial LVSI of non-aggressive histological types<br>
+IIC: Aggressive histological types with any myometrial involvement<br>
++IICm (p53abn): p53 abnormal endometrial carcinoma confined to the uterine corpus with any myometrial invasion, with or without cervical invasion, and regardless of the degree of LVSI or histological type<br>
+</p>
+<p>
+III: Local and / or regional spread of the tumor of any histological subtype<br>
+IIIA: Invasion of uterine serosa, adnexa, or both by direct extension or metastasis<br>
+IIIA1: Spread to ovary or fallopian tube (except when meeting stage IA3 criteria)<br>
+IIIA2: Involvement of uterine subserosa or spread through the uterine serosa<br>
+IIIB: Metastasis or direct spread to the vagina and / or to the parametria or pelvic peritoneum<br>
+IIIB1: Metastasis or direct spread to the vagina and / or the parametria<br>
+IIIB2: Metastasis to the pelvic peritoneum<br>
+IIIC: Metastasis to pelvic or para-aortic lymph nodes or both<br>
+IIIC1: Metastasis to the pelvic lymph nodes<br>
+IIIC1i: Micrometastasis (to pelvic nodes)<br>
+IIIC1ii: Macrometastasis (to pelvic nodes)<br>
+IIIC2: Metastasis to para-aortic lymph nodes up to the renal vessels, with or without metastasis to the pelvic lymph nodes<br>
+IIIC2i: Micrometastasis (to para-aortic lymph nodes up to the renal vessels, with or without metastasis to the pelvic nodes)<br>
+IIIC2ii: Macrometastasis (to para-aortic lymph nodes up to the renal vessels, with or without metastasis to the pelvic nodes)<br>
+</p>
+<p>
+IV: Spread to the bladder mucosa and / or intestinal mucosa and / or distant metastasis<br>
+IVA: Invasion of the bladder mucosa and / or intestine / bowel mucosa<br>
+IVB: Abdominal peritoneal metastasis beyond the pelvis<br>
+IVC: Distant metastasis, including metastasis to any extra- or intra-abdominal lymph nodes above the renal vessels, lungs, liver, brain or bone<br>
+</p>
+<p>
++FIGO Modified Classification<br>
+- Not performed<br>
+- mPOLEmut (POLE mutation)<br>
+- mMMRd (mismatch repair deficiency)<br>
+- mNSMP (no specific molecular profile)<br>
+- mp53abn (p53 abnormal)<br>
 </p>
 <!--
 <p>
@@ -1266,9 +1299,9 @@ IV: 	Tumor invades bladder and/or bowel mucosa, and/or distant metastases<br><br
 <br>
 
 <div id="footer">
-Last upated on 14-Jan-2023,<br>
+Last upated on 19-Dec-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Carcinoma and Carcinosarcoma of the Endometrium 4.4.0.0 (Dec-2022) <br>
+Carcinoma and Carcinosarcoma of the Endometrium 5.0.0.0 (Dec-2023) <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -153,7 +153,7 @@ if (document.getElementById("A31").checked){
 }
 
 if (frm.A32.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A32.value + "\n";
+	Template += "- Lymphatic and / or Vascular Invasion: " + frm.A32.value + "\n";
 }
 
 if (frm.A33.value !== ""){
@@ -338,8 +338,8 @@ if (frm.A54.value !== ""){
 }
 */
 if (document.getElementById("A56").checked || document.getElementById("A57").checked ||
-	document.getElementById("A57").checked || document.getElementById("A58").checked ||  
-	document.getElementById("A65").checked ||
+	document.getElementById("A57").checked || document.getElementById("A58").checked ||
+	document.getElementById("A78").checked || document.getElementById("A65").checked ||
 	document.getElementById("A59").checked || document.getElementById("A60").checked ||
 	frm.A61.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
@@ -361,6 +361,9 @@ if (document.getElementById("A58").checked){
 	Template += frm.A58.value + "\n";
 }
 
+if (document.getElementById("A78").checked){
+	Template += frm.A78.value + "\n";
+}
 
 if (document.getElementById("A59").checked){
 	Template += frm.A59.value + "\n";
@@ -410,7 +413,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2021-11-Update\Vulva_4.2.0.2.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2023-12-Update\Gynecologic Protocol Folder\Vulva_5.0.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Primary carcinoma of the vulva
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -612,13 +615,14 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Vulva_4.2.0.2.REL_CAPCP.pdf#page=16" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Vulva_4.2.0.2.REL_CAPCP.pdf#page=16" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label>
 </td>
 <td>
 	<select class="element select large" ID="A32">
 		<option value=""></option>
 		<option value="Not identified">Not identified</option>
 		<option value="Present">Present</option>
+		<option value="Equivocal (explain):">Equivocal (explain):</option>
 		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
 </td>
@@ -834,7 +838,7 @@ HPV-ISH is not available, PCR-sequencing type test can be ordered.
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"><a href=".\cap\GYN_VulvaCA.pdf" target="_blank"> FIGO stage (2018 Cancer Report):</a></label></legend>
+	<legend> <label class="description"><a href=".\cap\GYN_VulvaCA.pdf" target="_blank"> FIGO stage (2021 Cancer Report):</a></label></legend>
 <!--
 <a href=".\cap\GYN_VulvaCA.pdf" target="_blank">
 <img src=".\cap\GYN_VulvaCA.JPG" alt="FIGO2018" width="600">
@@ -843,25 +847,23 @@ HPV-ISH is not available, PCR-sequencing type test can be ordered.
 Click the table for the original reference.
 -->
 <p>
-I: Tumor confined to the vulva<br><br>
-- IA: Lesions ≤2 cm in size, confined to the vulva or perineum and with stromal invasion ≤1.0 mm,<br>
- no nodal metastasis<br>
-- IB: Lesions >2 cm in size or with stromal invasion >1.0 mm, confined to the vulva and/or perineum,<br>
- with negative nodes<br><br>
-II: Tumor of any size with extension to adjacent perineal structures (lower third of urethra, lower<br>
- third of vagina, anus) with negative nodes<br><br>
-III: Tumor of any size with or without extension to adjacent perineal structures (lower third of <br>
-urethra, lower third of vagina, anus) with positive inguinofemoral nodes<br><br>
-- IIIA: With 1 lymph node metastasis (≥5 mm)<br>
-- IIIA: With 1 to 2 lymph node metastasis(es) (<5 mm)<br>
-- IIIB: With 2 or more lymph node metastases (≥5 mm)<br>
-- IIIB: With 3 or more lymph node metastases (<5 mm)<br>
-- IIIC: With positive nodes with extracapsular spread<br><br>
-IV: Tumor invades other regional (upper two-thirds urethra, upper two-thirds vagina), or distant<br>
-structures<br><br>
-- IVA: Tumor invades any of the following: upper urethral and/or vaginal mucosa, bladder mucosa,<br>
- rectal mucosa, or fixed to pelvic bone, or fixed or ulcerated inguino-femoral lymph nodes<br>
-- IVB: Any distant metastasis including pelvic lymph nodes<br><br>
+I: Tumor confined to the vulva
+IA: Tumor size less than or equal to 2 cm and stromal invasion less than or equal to 1 mm<br>
+IB: Tumor size greater than 2 cm or stromal invasion greater than 1 mm<br>
+</p>
+<p>
+II: Tumor of any size with extension to lower one-third of the urethra, lower one-third of the vagina, or lower one-third of the anus with negative nodes<br>
+</p>
+<p>
+III: Tumor of any size with extension to upper part of adjacent perineal structures, or with any number of non-fixed, non-ulcerated lymph node(s)<br>
+IIIA: Tumor of any size with disease extension to upper two-thirds of the urethra, upper two-thirds of the vagina, bladder mucosa, rectal mucosa, or regional lymph node metastases less than or equal to 5 mm#<br>
+IIIB: Regional lymph node metastases greater than 5 mm<br>
+IIIC: Regional lymph node metastases with extracapsular spread<br>
+</p>
+<p>
+IV: Tumor of any size fixed to bone, or fixed, ulcerated lymph node metastases, or distant metastases<br>
+IVA: Disease fixed to pelvic<br>
+IVB: Distant metastases<br>
 </p>
 <!--
 <p>
@@ -989,7 +991,8 @@ structures<br><br>
 	<input class="element checkbox" type="checkbox"  id="A56" value="  - Low grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 1 (VIN 1)"><label  class="choice">Low grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 1 (VIN 1)</label>
 	<input class="element checkbox" type="checkbox"  id="A57" value="  - High grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 2 (VIN 2)"><label  class="choice">High grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 2 (VIN 2)</label>
 	<input class="element checkbox" type="checkbox"  id="A65" value="  - High grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 2 (VIN 3)"><label  class="choice">High grade squamous intraepithelial lesion / vulvar intraepithelial neoplasia, grade 3 (VIN 3)</label>
-	<input class="element checkbox" type="checkbox"  id="A58" value="  - Vulvar intraepithelial neoplasia, differentiated (simplex) type (dVIN)"><label  class="choice">Vulvar intraepithelial neoplasia, differentiated (simplex) type (dVIN)</label>
+	<input class="element checkbox" type="checkbox"  id="A58" value="  - Differentiated vulvar intraepithelial neoplasia (dVIN)"><label  class="choice">Differentiated vulvar intraepithelial neoplasia (dVIN)</label>
+	<input class="element checkbox" type="checkbox"  id="A78" value="  - Vulvar aberrant maturation / HPV-independent, p53-wild-type verruciform acanthotic vulvar intraepithelial neoplasia"><label  class="choice">Vulvar aberrant maturation / HPV-independent, p53-wild-type verruciform acanthotic vulvar intraepithelial neoplasia</label>
 	<input class="element checkbox" type="checkbox"  id="A59" value="  - Condyloma acuminatum"><label  class="choice">Condyloma acuminatum</label>
 	<input class="element checkbox" type="checkbox"  id="A60" value="  - Lichen sclerosus"><label  class="choice">Lichen sclerosus</label>
 </p>
@@ -1021,9 +1024,9 @@ structures<br><br>
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2021,<br>
+Last upated on 19-Dec-2023,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Vulva 4.2.0.2 (Nov 2021)<br>
+Vulva 5.0.0.0 (Dec 2023)<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
