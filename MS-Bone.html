@@ -11,7 +11,7 @@ function updateDescription (frm)
 {
     var Template = "";
 	
-
+/*
 if (frm.A01.value !== ""){
 	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
 }
@@ -67,7 +67,7 @@ if (document.getElementById("A11").checked){
 if (frm.A12.value !== ""){
 	Template += "- Tumor size: " + "\n" + frm.A12.value + "\n";
 }
-
+*/
 if (frm.A12a.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A12a.value + "\n";
 }
@@ -267,7 +267,7 @@ function CopyToClipboard() {
 </script>
 <style>
 table, th, td {
-  border: 1px solid grey;
+  border: 1px solid silver;
   border-collapse: collapse;
   padding: 4px;
 }
@@ -278,7 +278,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-11-Update\Bone_4.1.1.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2024-06-Update\Bone & Soft Tissue  Protocol Folder\Bone_4.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Bone tumors
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -287,9 +287,9 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2021-11-Update\Bone.Bx_4.1.0.1.REL_CAPCP.pdf" target="_blank">biopsy specimen of bone tumours</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2024-06-Update\Bone & Soft Tissue  Protocol Folder\Bone.Bx_4.2.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen of bone tumours</a>.</p>
 <p>
-
+<!--
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Gross descriptions:</label></legend>
 <p>
@@ -362,7 +362,7 @@ table, th, td {
 </p>
 </fieldset>
 </p>
-
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Microscopic descriptions:</label></legend>
@@ -378,7 +378,10 @@ table, th, td {
 Chondrogenic Tumors 
 </td>
 <td>
+Synovial chondromatosis<br>
+Atypical cartilaginous tumor<br>
 Chondrosarcoma<br>
+Chondrosarcoma, secondary (specify):<br>
 Dedifferentiated chondrosarcoma<br> 
 Periosteal chondrosarcoma<br> 
 Clear cell chondrosarcoma<br>
@@ -390,28 +393,18 @@ Mesenchymal chondrosarcoma<br>
 Osteogenic Tumors  
 </td>
 <td>
-Low grade central osteosarcoma<br> 
-Osteosarcoma NOS <br>
+Osteoblastoma<br>
+Low-grade central osteosarcoma<br>
+Low-grade central osteosarcoma with high-grade transformation<br>
+Parosteal osteosarcoma<br>
+Parosteal osteosarcoma with high-grade transformation<br>
 Conventional osteosarcoma <br>
 Telangiectatic osteosarcoma <br>
 Small cell osteosarcoma <br>
-Parosteal osteosarcoma <br>
 Periosteal osteosarcoma <br>
-High grade surface osteosarcoma <br>
+High-grade surface osteosarcoma <br>
 Secondary osteosarcoma <br>
 +Precipitating Factor for Secondary Osteosarcoma: <br>
-</td>
-</tr>
-<tr>
-<td>
-Chondrogenic Tumors 
-</td>
-<td>
-Chondrosarcoma<br>
-Dedifferentiated chondrosarcoma<br> 
-Periosteal chondrosarcoma<br> 
-Clear cell chondrosarcoma<br>
-Mesenchymal chondrosarcoma<br> 
 </td>
 </tr>
 <tr>
@@ -420,25 +413,23 @@ Undifferentiated Small Round Cell Sarcomas
 </td>
 <td>
 Ewing sarcoma <br>
-Round cell sarcoma with EWSR1-non ETS fusions <br>
+Round cell sarcoma with EWSR1::non ETS fusions (specify fusion): <br>
 CIC-rearranged sarcoma <br>
 Sarcoma with BCOR genetic alterations <br>
-
 </td>
 </tr>
 <tr>
 <td>
-Fibrogenic Tumors 
+Fibrogenic / fibrohistiocytic / histiocytic tumors 
 </td>
 <td>
-Fibrosarcoma of bone 
-</td>
-</tr>
-<tr>
-<td>
-Malignancy in giant cell tumor of bone 
-</td>
-<td>
+Sclerosing epithelioid fibrosarcoma<br>
+Primary malignant giant cell tumor of bone<br>
+Secondary malignant giant cell tumor of bone<br>
+Giant cell tumor of bone<br>
+Langerhans cell histiocytosis<br>
+Langerhans cell histiocytosis + single/multisystem or other:<br>
+Desmoplastic fibroma<br>
 </td>
 </tr>
 <tr>
@@ -446,11 +437,9 @@ Malignancy in giant cell tumor of bone
 Notochordal Tumors 
 </td>
 <td>
-Chordoma NOS <br> 
-Chondroid chordoma <br>
+Conventional chordoma<br> 
 Poorly differentiated chordoma <br>
 Dedifferentiated chordoma <br>
-
 </td>
 </tr>
 <tr>
@@ -458,9 +447,31 @@ Dedifferentiated chordoma <br>
 Vascular Tumors 
 </td>
 <td>
+Epithelioid hemangioma<br>
+Pseudomyogenic hemangioendothelioma<br>
 Epithelioid hemangioendothelioma <br>
 Angiosarcoma <br>
-
+</td>
+</tr>
+<tr>
+<td>
+Epithelial tumors
+</td>
+<td>
+Adamantinoma of long bones<br>
+Osteofibrous dysplasia-like adamantinoma<br>
+Dedifferentiated adamantinoma<br>
+</td>
+</tr>
+<tr>
+<td>
+Other mesenchymal tumors or tumors of uncertain differentiation
+</td>
+<td>
+Leiomyosarcoma of bone<br>
+Rhabdomyosarcoma of bone (specify fusion):<br>
+TK-fusion (NTRK, ALK, BRAF) tumor, primary intraosseous (specify fusion):<br>
+Undifferentiated pleomorphic sarcoma<br>
 </td>
 </tr>
 </table>
@@ -472,41 +483,62 @@ Angiosarcoma <br>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Bone_4.1.1.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Bone & Soft Tissue  Protocol Folder\Bone_4.2.0.0.REL_CAPCP.pdf#page=15" target="_blank">Histologic type</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A13">
 	<option value=""></option>
-	<option value="Chondrosarcoma">Chondrosarcoma</option>
+	<option value="Chondrogenic tumors">Chondrogenic tumors</option>	
+	<option value="Synovial chondromatosis">Synovial chondromatosis</option>
+	<option value="Atypical cartilaginous tumor">Atypical cartilaginous tumor</option>
+	<option value="Chondrosarcoma">Chondrosarcomandrosarcoma</option>
+	<option value="Chondrosarcoma, secondary (specify):">Chondrosarcoma, secondary (specify):</option>
 	<option value="Dedifferentiated chondrosarcoma">Dedifferentiated chondrosarcoma</option>
 	<option value="Periosteal chondrosarcoma">Periosteal chondrosarcoma</option>
 	<option value="Clear cell chondrosarcoma">Clear cell chondrosarcoma</option>
 	<option value="Mesenchymal chondrosarcoma">Mesenchymal chondrosarcoma</option>
-	<option value="Low grade central osteosarcoma"> Low grade central osteosarcoma</option>
-	<option value="Osteosarcoma NOS">Osteosarcoma NOS</option>
+	<option value="Osteogenic tumors">Osteogenic tumors</option>
+	<option value="Osteoblastoma">Osteoblastoma</option>
+	<option value="Low-grade central osteosarcoma">Low-grade central osteosarcoma</option>
+	<option value="Low-grade central osteosarcoma with high-grade transformation">Low-grade central osteosarcoma with high-grade transformation</option>
+	<option value="Parosteal osteosarcoma">Parosteal osteosarcoma</option>
+	<option value="Parosteal osteosarcoma with high-grade transformation">Parosteal osteosarcoma with high-grade transformation</option>
 	<option value="Conventional osteosarcoma">Conventional osteosarcoma</option>
 	<option value="Telangiectatic osteosarcoma">Telangiectatic osteosarcoma</option>
 	<option value="Small cell osteosarcoma">Small cell osteosarcoma</option>
-	<option value="Parosteal osteosarcoma">Parosteal osteosarcoma</option>
 	<option value="Periosteal osteosarcoma">Periosteal osteosarcoma</option>
-	<option value="High grade surface osteosarcoma">High grade surface osteosarcoma</option>
+	<option value="High-grade surface osteosarcoma">High-grade surface osteosarcoma</option>
 	<option value="Secondary osteosarcoma, specify:">Secondary osteosarcoma, specify:</option>
+	<option value="Undifferentiated small round cell sarcomas">Undifferentiated small round cell sarcomas</option>
 	<option value="Ewing sarcoma">Ewing sarcoma</option>
-	<option value="Round cell sarcoma with EWSR1-non ETS fusions">Round cell sarcoma with EWSR1-non ETS fusions</option>
+	<option value="Round cell sarcoma with EWSR1::non ETS fusions">Round cell sarcoma with EWSR1::non ETS fusions</option>
 	<option value="CIC-rearranged sarcoma">CIC-rearranged sarcoma</option>
 	<option value="Sarcoma with BCOR genetic alterations">Sarcoma with BCOR genetic alterations</option>
-	<option value="Fibrosarcoma of bone">Fibrosarcoma of bone</option>
-	<option value="Malignancy in giant cell tumor of bone">Malignancy in giant cell tumor of bone</option>
-	<option value="Chordoma NOS">Chordoma NOS</option>	
-	<option value="Chondroid chordoma">Chondroid chordoma</option>	
+	<option value="Fibrogenic / fibrohistiocytic / histiocytic tumors">Fibrogenic / fibrohistiocytic / histiocytic tumors</option>
+	<option value="Sclerosing epithelioid fibrosarcoma">Sclerosing epithelioid fibrosarcoma</option>
+	<option value="Primary malignant giant cell tumor of bone">Primary malignant giant cell tumor of bone</option>
+	<option value="Langerhans cell histiocytosis">Langerhans cell histiocytosis</option>
+	<option value="Langerhans cell histiocytosis + systemic (specify)">Langerhans cell histiocytosis + systemic (specify)</option>
+	<option value="Giant cell tumor of bone">Giant cell tumor of bone</option>
+	<option value="Desmoplastic fibroma">Desmoplastic fibroma</option>
+	<option value="Notochordal tumors">Notochordal tumors</option>
+	<option value="Conventional chordoma">Conventional chordoma</option>	
 	<option value="Poorly differentiated chordoma">Poorly differentiated chordoma</option>	
 	<option value="Dedifferentiated chordoma">Dedifferentiated chordoma</option>	
+	<option value="Vascular tumors">Vascular tumors</option>	
+	<option value="Epithelioid hemangioma">Epithelioid hemangioma</option>
+	<option value="Pseudomyogenic hemangioendothelioma">Pseudomyogenic hemangioendothelioma</option>
 	<option value="Epithelioid hemangioendothelioma">Epithelioid hemangioendothelioma</option>
 	<option value="Angiosarcoma">Angiosarcoma</option>
-	<option value="Leiomyosarcoma of bone">Leiomyosarcoma of bone</option>
+	<option value="Epithelial tumors">Epithelial tumors</option>
 	<option value="Adamantinoma">Adamantinoma</option>
+	<option value="Osteofibrous dysplasia-like adamantinoma">Osteofibrous dysplasia-like adamantinoma</option>
 	<option value="Dedifferentiated adamantinoma">Dedifferentiated adamantinoma</option>
-	<option value="Undifferentiated high-grade pleomorphic sarcoma">Undifferentiated high-grade pleomorphic sarcoma</option>
+	<option value="Other mesenchymal tumors or tumors of uncertain differentiation">Other mesenchymal tumors or tumors of uncertain differentiation</option>	
+	<option value="Leiomyosarcoma of bone">Leiomyosarcoma of bone</option>
+	<option value="Rhabdomyosarcoma of bone (specify fusion):">Rhabdomyosarcoma of bone (specify fusion):</option>	
+	<option value="TK-fusion (NTRK, ALK, BRAF) tumor, primary intraosseous (specify fusion):">TK-fusion (NTRK, ALK, BRAF) tumor, primary intraosseous (specify fusion):</option>	
+	<option value="Undifferentiated pleomorphic sarcoma">Undifferentiated pleomorphic sarcoma</option>
 	<option value="Cannot be determined:">Cannot be determined:</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option></select>
 </td>
@@ -514,7 +546,7 @@ Angiosarcoma <br>
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\Cancer-Protocols-2021-11-Update\Bone_4.1.1.0.REL_CAPCP.pdf#page=16" target="_blank">Mitotic rate (per 10 traditional HPF)</a>:</label>
+<label class=""> + <a href=".\cap\Cancer-Protocols-2024-06-Update\Bone & Soft Tissue  Protocol Folder\Bone_4.2.0.0.REL_CAPCP.pdf#page=19" target="_blank">Mitotic rate (per 10 traditional HPF or per mm2)</a>:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A14" size="10">
@@ -524,7 +556,7 @@ Angiosarcoma <br>
 
 <tr>
 <td>
-<label class="description">- Tumor necrosis:</label> 
+<label class="description">- Necrosis in the Absence of Neoadjuvant Therapy:</label> 
 </td>
 <td>
 <select class="element select large" ID="A15">
@@ -539,7 +571,7 @@ Angiosarcoma <br>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Bone_4.1.1.0.REL_CAPCP.pdf#page=14" target="_blank">Histologic grade</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Bone & Soft Tissue  Protocol Folder\Bone_4.2.0.0.REL_CAPCP.pdf#page=17" target="_blank">Histologic grade</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A16">
@@ -555,7 +587,7 @@ Angiosarcoma <br>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Bone_4.1.1.0.REL_CAPCP.pdf#page=17" target="_blank">Treatment effect</a>: </label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Bone & Soft Tissue  Protocol Folder\Bone_4.2.0.0.REL_CAPCP.pdf#page=20" target="_blank">Treatment effect</a>: </label> 
 </td>
 <td>
 <select class="element select large" ID="A39">
@@ -570,7 +602,7 @@ Angiosarcoma <br>
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\Cancer-Protocols-2021-11-Update\Bone_4.1.1.0.REL_CAPCP.pdf#page=17" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description"> - <a href=".\cap\Cancer-Protocols-2024-06-Update\Bone & Soft Tissue  Protocol Folder\Bone_4.2.0.0.REL_CAPCP.pdf#page=21" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A17">
@@ -600,6 +632,9 @@ Angiosarcoma <br>
 <p>
 - Using 22 mm eyepiece & 40x objective, count 10 most active fields and divide by 1.373, approximating 10 traditional high power fields of 10 x 0.1734 mm<sup>2</sup>.
 </p>
+<p>
+- Description of treatment effect: geographic necrosis, fibrosis, hyalinization, hemorrhage, cystic change, histiocytic response, inflammation or others
+</p>
 
 </fieldset>
 </p>
@@ -611,7 +646,8 @@ Angiosarcoma <br>
 <select class="element select medium" ID="A19">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by tumor, specify: , closest distance:  and those margins <2 cm:">Uninvolved by tumor, specify: , closest distance:  ,and those margins <2 cm:</option>
+	<option value="Uninvolved by tumor, specify: , closest distance">Uninvolved by tumor, specify: , closest distance:</option>
+	<option value="Uninvolved by tumor, those margins <2 mm:">Uninvolved by tumor, those margins <2 mm:</option>
 	<option value="Involved by tumor, specify:">Involved by tumor, specify:</option>
 </select>
 </p>
@@ -698,7 +734,7 @@ Angiosarcoma <br>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-11-Update\Bone_4.1.1.0.REL_CAPCP.pdf#page=18" target="_blank">Pathologic stage classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2024-06-Update\Bone & Soft Tissue  Protocol Folder\Bone_4.2.0.0.REL_CAPCP.pdf#page=22" target="_blank">Pathologic stage classification (AJCC 8e)</a>:</label></legend>
 	
 <p>
 <table border="1">
@@ -746,6 +782,7 @@ Angiosarcoma <br>
 	<option value="   - pT4: Extension into the spinal canal or great vessels">pT4: Extension into the spinal canal or great vessels</option>
 	<option value="   - pT4a: Extension into the spinal canal">pT4a: Extension into the spinal canal</option>
 	<option value="   - pT4b: Evidence of gross vascular invasion or tumor thrombus in the great vessels">pT4b: Evidence of gross vascular invasion or tumor thrombus in the great vessels</option>
+	<option value="   - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)</option>
 </select>
 </td>
 </tr>
@@ -762,15 +799,19 @@ Angiosarcoma <br>
 	<option value="   - pT1: Tumor confined to one pelvic segment with no extraosseous extension">pT1: Tumor confined to one pelvic segment with no extraosseous extension</option>
 	<option value="   - pT1a: Tumor < or = 8 cm in greatest dimension">pT1a: Tumor < or = 8 cm in greatest dimension</option>
 	<option value="   - pT1b: Tumor > 8 cm in greatest dimension">pT1b: Tumor > 8 cm in greatest dimension</option>
+	<option value="   - pT1 (subcategory cannot be determined)">pT1 (subcategory cannot be determined)</option>
 	<option value="   - pT2: Tumor confined to one pelvic segment with extraosseous extension or two segments without extraosseous extension">pT2: Tumor confined to one pelvic segment with extraosseous extension or two segments without extraosseous extension</option>
 	<option value="   - pT2a: Tumor < or = 8 cm in greatest dimension">pT2a: Tumor < or = 8 cm in greatest dimension</option>
 	<option value="   - pT2b: Tumor > 8 cm in greatest dimension)">pT2b: Tumor > 8 cm in greatest dimension</option>
+	<option value="   - pT2 (subcategory cannot be determined)">pT2 (subcategory cannot be determined)</option>
 	<option value="   - pT3: Tumor spanning two pelvic segments with extraosseous extension">pT3: Tumor spanning two pelvic segments with extraosseous extension</option>
 	<option value="   - pT3a: Tumor < or = 8 cm in greatest dimension">pT3a: Tumor < or = 8 cm in greatest dimension</option>
 	<option value="   - pT3b: Tumor > 8 cm in greatest dimension">pT3b: Tumor > 8 cm in greatest dimension</option>
+	<option value="   - pT3 (subcategory cannot be determined)">pT3 (subcategory cannot be determined)</option>
 	<option value="   - pT4: Tumor spanning three pelvic segments or crossing the sacroiliac joint">pT4: Tumor spanning three pelvic segments or crossing the sacroiliac joint</option>
 	<option value="   - pT4a: Tumor involves sacroiliac joint and extends medial to the sacral neuroforamen">pT4a: Tumor involves sacroiliac joint and extends medial to the sacral neuroforamen</option>
 	<option value="   - pT4b: Tumor encasement of external iliac vessels or presence of gross tumor thrombus in major pelvic vessels">pT4b: Tumor encasement of external iliac vessels or presence of gross tumor thrombus in major pelvic vessels</option>
+	<option value="   - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)</option>
 </select>
 </td>
 </tr>
@@ -871,8 +912,8 @@ Angiosarcoma <br>
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2021,<br> based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Bone Resection 4.1.1.0 (Nov 2021).<br>
+Last upated on 14-Aug-2024,<br> based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Bone Tumor Resection 4.2.0.0 (Jun 2024).<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

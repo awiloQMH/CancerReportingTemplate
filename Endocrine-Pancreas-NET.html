@@ -57,12 +57,27 @@ if (frm.A09.value !== ""){
 }
 
 
-if (document.getElementById("A10").checked || document.getElementById("A11").checked || document.getElementById("A12").checked || document.getElementById("A13").checked || document.getElementById("A14").checked || document.getElementById("A15").checked || document.getElementById("A16").checked ){
+if (document.getElementById("A10").checked 
+|| document.getElementById("A11").checked 
+|| document.getElementById("A12").checked 
+|| document.getElementById("A13").checked 
+|| document.getElementById("A14").checked 
+|| document.getElementById("A15").checked 
+|| document.getElementById("A16").checked 
+|| document.getElementById("A60").checked
+|| document.getElementById("A61").checked
+|| document.getElementById("A62").checked
+|| document.getElementById("A63").checked
+|| document.getElementById("A64").checked
+|| document.getElementById("A65").checked
+|| document.getElementById("A66").checked
+|| document.getElementById("A67").checked
+|| document.getElementById("A68").checked
+|| document.getElementById("A69").checked
+|| document.getElementById("A70").checked
+|| document.getElementById("A71").checked
+|| document.getElementById("A72").checked){
 	Template += "- Tumor extension: " + "\n";
-}
-
-if (document.getElementById("A10").checked){
-	Template += "  " +  frm.A10.value + "\n";
 }
 
 if (document.getElementById("A11").checked){
@@ -73,8 +88,60 @@ if (document.getElementById("A12").checked){
 	Template += "  " +  frm.A12.value + "\n";
 }
 
+if (document.getElementById("A60").checked){
+	Template += "  " +  frm.A60.value + "\n";
+}
+
 if (document.getElementById("A13").checked){
 	Template += "  " +  frm.A13.value + "\n";
+}
+
+if (document.getElementById("A61").checked){
+	Template += "  " +  frm.A61.value + "\n";
+}
+
+if (document.getElementById("A62").checked){
+	Template += "  " +  frm.A62.value + "\n";
+}
+
+if (document.getElementById("A63").checked){
+	Template += "  " +  frm.A63.value + "\n";
+}
+
+if (document.getElementById("A64").checked){
+	Template += "  " +  frm.A64.value + "\n";
+}
+
+if (document.getElementById("A65").checked){
+	Template += "  " +  frm.A65.value + "\n";
+}
+
+if (document.getElementById("A66").checked){
+	Template += "  " +  frm.A66.value + "\n";
+}
+
+if (document.getElementById("A67").checked){
+	Template += "  " +  frm.A67.value + "\n";
+}
+
+if (document.getElementById("A68").checked){
+	Template += "  " +  frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template += "  " +  frm.A69.value + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += "  " +  frm.A70.value + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += "  " +  frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += "  " +  frm.A72.value + "\n";
 }
 
 if (document.getElementById("A14").checked){
@@ -87,6 +154,10 @@ if (document.getElementById("A15").checked){
 
 if (document.getElementById("A16").checked){
 	Template += "  " +  frm.A16.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += "  " +  frm.A10.value + "\n";
 }
 
 if (frm.A17.value !== ""){
@@ -333,7 +404,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2023-12-Update\Endocrine Protocol Folder\Panc.Endo_5.0.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2024-06-Update\Endocrine Protocol Folder\Panc.Endo_5.0.1.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Endocrine pancreas tumor
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -428,7 +499,7 @@ table, th, td {
 <col width="40%">
 <tr>
 <td rowspan="3" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Endocrine-Protocol-Folder\Panc.Endo_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type and grade (WHO 5e)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Endocrine Protocol Folder\Panc.Endo_5.0.1.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic type and grade (WHO 5e)</a>:</label> 
 Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide by 5 to get hot spot mitotic count of 2 mm<sup>2</sup>.
 </td>
 <td>
@@ -569,13 +640,27 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 <label class="description">- Tumor extension:</label> 
 </td>
 <td>
-<input class="element checkbox" type="checkbox"  id="A10" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
-<input class="element checkbox" type="checkbox"  id="A11" value="  - Tumor is limited to the pancreas"><label  class="choice">Tumor is limited to the pancreas</label>
-<input class="element checkbox" type="checkbox"  id="A12" value="  - Tumor invades the common bile duct"><label  class="choice">Tumor invades the common bile duct</label>
-<input class="element checkbox" type="checkbox"  id="A13" value="  - Tumor invades the duodenum"><label  class="choice">Tumor invades the duodenum</label>
-<input class="element checkbox" type="checkbox"  id="A14" value="  - Tumor invades adjacent organs (specify):"><label  class="choice">Tumor invades adjacent organs (specify):</label>
+
+<input class="element checkbox" type="checkbox"  id="A11" value="  - Tumor is limited to the Pancreas"><label  class="choice">Tumor is limited to the Pancreas</label>
+<input class="element checkbox" type="checkbox"  id="A12" value="  - Tumor invades the Common bile duct"><label  class="choice">Tumor invades the Common bile duct</label>
+<input class="element checkbox" type="checkbox"  id="A60" value="  - Tumor invades the Ampulla of Vater"><label  class="choice">Tumor invades the Ampulla of Vater</label>
+<input class="element checkbox" type="checkbox"  id="A13" value="  - Tumor invades the Duodenum"><label  class="choice">Tumor invades the Duodenum</label>
+<input class="element checkbox" type="checkbox"  id="A61" value="  - Tumor invades the Stomach"><label  class="choice">Tumor invades the Stomach</label>
+<input class="element checkbox" type="checkbox"  id="A62" value="  - Tumor invades the Spleen"><label  class="choice">Tumor invades the Spleen</label>
+<input class="element checkbox" type="checkbox"  id="A63" value="  - Tumor invades the Colon"><label  class="choice">Tumor invades the Colon</label>
+<input class="element checkbox" type="checkbox"  id="A64" value="  - Tumor invades the Adrenal gland"><label  class="choice">Tumor invades the Adrenal gland</label>
+<input class="element checkbox" type="checkbox"  id="A65" value="  - Tumor invades the Celiac axis"><label  class="choice">Tumor invades the Celiac axis</label>
+<input class="element checkbox" type="checkbox"  id="A66" value="  - Tumor invades Superior mesenteric artery"><label  class="choice">Tumor invades Superior mesenteric artery</label>
+<input class="element checkbox" type="checkbox"  id="A67" value="  - Tumor invades Superior mesenteric vein"><label  class="choice">Tumor invades Superior mesenteric vein</label>
+<input class="element checkbox" type="checkbox"  id="A68" value="  - Tumor invades Splenic artery"><label  class="choice">Tumor invades Splenic artery</label>
+<input class="element checkbox" type="checkbox"  id="A69" value="  - Tumor invades Splenic vein"><label  class="choice">Tumor invades Splenic vein</label>
+<input class="element checkbox" type="checkbox"  id="A70" value="  - Tumor invades Gastroduodenal artery"><label  class="choice">Tumor invades Gastroduodenal artery</label>
+<input class="element checkbox" type="checkbox"  id="A71" value="  - Tumor invades Gastroduodenal vein"><label  class="choice">Tumor invades Gastroduodenal vein</label>
+<input class="element checkbox" type="checkbox"  id="A72" value="  - Tumor invades Portal vein"><label  class="choice">Tumor invades Portal vein</label>
+<input class="element checkbox" type="checkbox"  id="A14" value="  - Tumor invades other organs (specify):"><label  class="choice">Tumor invades other organs (specify):</label>
 <input class="element checkbox" type="checkbox"  id="A15" value="  - Tumor invades the wall of large vessels (specify):"><label  class="choice">Tumor invades the wall of large vessels (specify):</label>
 <input class="element checkbox" type="checkbox"  id="A16" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
+<input class="element checkbox" type="checkbox"  id="A10" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </td>
 </tr>
 </table>
@@ -984,9 +1069,9 @@ Using 22 mm eyepiece, x40 objective, Count 42 fields = 10 mm<sup>2</sup>. Divide
 <br>
 
 <div id="footer">
-Last upated on 19-Dec-2023,<br>
+Last upated on 14-Aug-2024,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Pancreas Endocrine 5.0.0.0 (Dec 2023), <br>
+Pancreas Endocrine 5.0.1.0 (Jun 2024), <br>
 html was form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

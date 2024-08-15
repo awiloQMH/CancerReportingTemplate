@@ -259,12 +259,18 @@ if (document.getElementById("A46").checked ||
 	document.getElementById("A151").checked ||
 	document.getElementById("A152").checked || 
 	document.getElementById("A153").checked || 	
-	document.getElementById("A83").checked){
+	document.getElementById("A83").checked || 	
+	document.getElementById("A166").checked|| 	
+	document.getElementById("A167").checked){
 	Template += "\n" + "- Histologic type: " + "\n";
 }
 
 if (document.getElementById("A46").checked){
 	Template += frm.A46.value + "\n";
+}
+
+if (document.getElementById("A166").checked){
+	Template += frm.A166.value + "\n";
 }
 
 if (document.getElementById("A47").checked){
@@ -391,6 +397,10 @@ if (document.getElementById("A145").checked){
 	Template += frm.A145.value + "\n";
 }
 
+if (document.getElementById("A167").checked){
+	Template += frm.A167.value + "\n";
+}
+
 if (document.getElementById("A146").checked){
 	Template += frm.A146.value + "\n";
 }
@@ -455,8 +465,24 @@ if (frm.A84.value !== ""){
 	Template += "- Histologic grade (WHO): " + frm.A84.value + "\n";
 }
 
+if (frm.A168.value !== ""){
+	Template += "- FIGO grade: " + frm.A168.value + "\n";
+}
+
+if (frm.A169.value !== ""){
+	Template += "- Silverberg grade: " + frm.A169.value + "\n";
+}
+
+if (frm.A170.value !== ""){
+	Template += "- Growth Pattern grade: " + frm.A170.value + "\n";
+}
+
 if (frm.A85.value !== ""){
-	Template += "- Histologic grade (2-tier system for immature teratoma and serous carcinoma): " + frm.A85.value + "\n";
+	Template += "- 2-Tier grade: " + frm.A85.value + "\n";
+}
+
+if (frm.A171.value !== ""){
+	Template += "- 3-Tier Grade: " + frm.A171.value + "\n";
 }
 
 if (frm.A86.value !== ""){
@@ -780,7 +806,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2023-03-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.4.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Primary tumors of the ovary, fallopian tube and peritoneum
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -943,12 +969,13 @@ table, th, td {
 </p>
 
 <p>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Ovary_FT_Perit_1.3.0.1.REL_CAPCP.pdf#page=19" target="_blank">Histologic type</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=22" target="_blank">Histologic type</a>:</label> 
 <input class="element checkbox" type="checkbox" id="A46" value="  - Serous borderline tumor"><label class="choice">Serous borderline tumor</label>
+<input class="element checkbox" type="checkbox" id="A166" value="  - Serous borderline tumor, micropapillary / cribriform variant"><label class="choice">Serous borderline tumor, micropapillary / cribriform variant</label>
 <input class="element checkbox" type="checkbox" id="A47" value="  - Serous borderline tumor with microinvasion"><label class="choice">Serous borderline tumor with microinvasion</label>
-<input class="element checkbox" type="checkbox" id="A48" value="  - Microinvasive low grade serous carcinoma"><label class="choice">Microinvasive low grade serous carcinomaa</label>
-<input class="element checkbox" type="checkbox" id="A49" value="  - Low grade Serous carcinoma"><label class="choice">Low grade Serous carcinoma</label>
-<input class="element checkbox" type="checkbox" id="A136" value="  - High grade Serous carcinoma"><label class="choice">High grade Serous carcinoma</label>
+<input class="element checkbox" type="checkbox" id="A48" value="  - Microinvasive low-grade serous carcinoma"><label class="choice">Microinvasive low-grade serous carcinomaa</label>
+<input class="element checkbox" type="checkbox" id="A49" value="  - Low-grade Serous carcinoma"><label class="choice">Low-grade Serous carcinoma</label>
+<input class="element checkbox" type="checkbox" id="A136" value="  - High-grade Serous carcinoma"><label class="choice">High-grade Serous carcinoma</label>
 <input class="element checkbox" type="checkbox" id="A55" value="  - Mucinous borderline tumor"><label class="choice">Mucinous borderline tumor</label>
 <input class="element checkbox" type="checkbox" id="A56" value="  - Mucinous borderline tumor with intraepithelial carcinoma"><label class="choice">Mucinous borderline tumor with intraepithelial carcinoma</label>
 <input class="element checkbox" type="checkbox" id="A57" value="  - Mucinous borderline tumor with microinvasion"><label class="choice">Mucinous borderline tumor with microinvasion</label>
@@ -960,23 +987,24 @@ table, th, td {
 <input class="element checkbox" type="checkbox" id="A53" value="  - Clear cell borderline tumor"><label class="choice">Clear cell borderline tumor</label>
 <input class="element checkbox" type="checkbox" id="A54" value="  - Clear cell carcinoma"><label class="choice">Clear cell carcinoma</label>
 <input class="element checkbox" type="checkbox" id="A64" value="  - Borderline Brenner tumor"><label class="choice">Borderline Brenner tumor</label>
-<input class="element checkbox" type="checkbox" id="A65" value="   - Malignnat Brenner tumor"><label class="choice">Malignant Brenner tumor, malignant</label>
+<input class="element checkbox" type="checkbox" id="A65" value="  - Malignnat Brenner tumor"><label class="choice">Malignant Brenner tumor, malignant</label>
 <input class="element checkbox" type="checkbox" id="A138" value="  - Mesonephric-like adenocarcinoma"><label class="choice">Mesonephric-like adenocarcinoma</label>
 <input class="element checkbox" type="checkbox" id="A71" value="  - Small cell carcinoma, hypercalcemic type"><label class="choice">Small cell carcinoma, hypercalcemic type</label>
 <input class="element checkbox" type="checkbox" id="A139" value="  - Dedifferentiated carcinoma"><label class="choice">Dedifferentiated carcinomae</label>
 <input class="element checkbox" type="checkbox" id="A74" value="  - Undifferentiated carcinoma, NOS"><label class="choice">Undifferentiated carcinoma, NOS</label>
-<input class="element checkbox" type="checkbox" id="A66" value="  - Carcinoma, subtype cannot be determined"><label class="choice">Carcinoma, subtype cannot be determinedp</label>
+<input class="element checkbox" type="checkbox" id="A69" value="  - Carcinosarcoma (malignant mixed Mullerian tumor)"><label class="choice">Carcinosarcoma (malignant mixed Mullerian tumor)</label>
+<input class="element checkbox" type="checkbox" id="A66" value="  - Carcinoma, subtype cannot be determined"><label class="choice">Carcinoma, subtype cannot be determined</label>
 <input class="element checkbox" type="checkbox" id="A67" value="  - Mixed epithelial borderline tumor (specify types and percentages):"><label class="choice">Mixed epithelial borderline tumor (specify types and percentages):</label>
 <input class="element checkbox" type="checkbox" id="A68" value="  - Mixed carcinoma (specify types and percentages):"><label class="choice">Mixed carcinoma (specify types and percentages):</label>
-<input class="element checkbox" type="checkbox" id="A69" value="  - Carcinosarcoma (malignant mixed Mullerian tumor)"><label class="choice">Carcinosarcoma (malignant mixed Mullerian tumor)</label>
-<input class="element checkbox" type="checkbox" id="A140" value="  - Endometrioid stromal sarcoma, low grade"><label class="choice">Endometrioid stromal sarcoma, low grade</label>
-<input class="element checkbox" type="checkbox" id="A141" value="  - Endometrioid stromal sarcoma, high grade"><label class="choice">Endometrioid stromal sarcoma, high grade</label>
+<input class="element checkbox" type="checkbox" id="A140" value="  - Endometrioid stromal sarcoma, low-grade"><label class="choice">Endometrioid stromal sarcoma, low-grade</label>
+<input class="element checkbox" type="checkbox" id="A141" value="  - Endometrioid stromal sarcoma, high-grade"><label class="choice">Endometrioid stromal sarcoma, high-grade</label>
 <input class="element checkbox" type="checkbox" id="A142" value="  - Adenosarcoma"><label class="choice">Adenosarcoma</label>
 <input class="element checkbox" type="checkbox" id="A143" value="  - Leiomyosarcoma"><label class="choice">Leiomyosarcoma</label>
 <input class="element checkbox" type="checkbox" id="A144" value="  - Fibrosarcoma"><label class="choice">Fibrosarcoma</label>
 <input class="element checkbox" type="checkbox" id="A75" value="  - Granulosa cell tumor, adult type"><label class="choice">Granulosa cell tumor, adult type</label>
 <input class="element checkbox" type="checkbox" id="A76" value="  - Granulosa cell tumor, juvenile type"><label class="choice">Granulosa cell tumor, juvenile type</label>
-<input class="element checkbox" type="checkbox" id="A145" value="  - Steroid cell tumor"><label class="choice">Steroid cell tumor</label>
+<input class="element checkbox" type="checkbox" id="A145" value="  - Steroid cell tumor, NOS"><label class="choice">Steroid cell tumor, NOS</label>
+<input class="element checkbox" type="checkbox" id="A167" value="  - Steroid cell tumor, malignant"><label class="choice">Steroid cell tumor, malignant</label>
 <input class="element checkbox" type="checkbox" id="A146" value="  - Sertoli-Leydig cell tumor"><label class="choice">Sertoli-Leydig cell tumor</label>
 <input class="element checkbox" type="checkbox" id="A77" value="  - Other sex cord-stromal tumor (specify type):"><label class="choice">Other sex cord-stromal tumor (specify type):</label>
 <input class="element checkbox" type="checkbox" id="A80" value="  - Immature teratoma"><label class="choice">Immature teratoma</label>
@@ -997,9 +1025,10 @@ table, th, td {
 <p>
 <table border="1">
 <col width="70%">
+
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Ovary_FT_Perit_1.3.0.1.REL_CAPCP.pdf#page=24" target="_blank">Histologic grade (WHO)</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=29" target="_blank">Histologic grade (WHO)</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A84">
@@ -1008,22 +1037,75 @@ table, th, td {
 		<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
 		<option value="G3: Poorly differentiated">G3: Poorly differentiated</option>
 		<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>
-		<option value="Not applicable">Not applicable</option>	
 	</select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Ovary_FT_Perit_1.3.0.1.REL_CAPCP.pdf#page=24" target="_blank">Histologic grade (for immature teratoma and serous carcinoma)</a>:</label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=29" target="_blank">FIGO grade</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A168">
+		<option value=""></option>
+		<option value="FIGO Grade 1 (5% or less of non-squamous solid growth)">FIGO Grade 1 (5% or less of non-squamous solid growth)</option>
+		<option value="FIGO Grade 2 (6% to 50% of non-squamous solid growth)">FIGO Grade 2 (6% to 50% of non-squamous solid growth)</option>
+		<option value="FIGO Grade 3 (more than 50% of non-squamous solid growth)">FIGO Grade 3 (more than 50% of non-squamous solid growth)</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=29" target="_blank">Silverberg grade</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A169">
+		<option value=""></option>
+		<option value="Silverberg Grade 1 (scores 3-5)">Silverberg Grade 1 (scores 3-5)</option>
+		<option value="Silverberg Grade 2 (scores 6-7)">Silverberg Grade 2 (scores 6-7)</option>
+		<option value="Silverberg Grade 3 (scores 8-9)">Silverberg Grade 3 (scores 8-9)</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=29" target="_blank">Growth Pattern-based grade</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A170">
+		<option value=""></option>
+		<option value="Low-grade, growth pattern-based (confluent / expansile growth, or less than or equal to 10% infiltrative growth)">Low-grade, growth pattern-based (confluent / expansile growth, or less than or equal to 10% infiltrative growth)</option>
+		<option value="High-grade, growth pattern-based (infiltrative growth in greater than 10% of tumor)">High-grade, growth pattern-based (infiltrative growth in greater than 10% of tumor)</option>
+		<option value="Other growth pattern-based grading (specify):">Other growth pattern-based grading (specify):</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=290" target="_blank">2-Tier grade</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A85">
 		<option value=""></option>
 		<option value="Low grade">Low grade</option>
 		<option value="High grade">High grade</option>
-		<option value="Other (specify)":>Other (specify)</option>
-		<option value="Not applicable">Not applicable</option>	
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=29" target="_blank">3-Tier grade</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A171">
+		<option value=""></option>
+		<option value="Grade 1 (low-grade)">Grade 1 (low-grade)</option>
+		<option value="Grade 2 (high-grade)">Grade 2 (high-grade)</option>
+		<option value="Grade 3 (high-grade)">Grade 3 (high-grade)</option>
 	</select>
 </td>
 </tr>
@@ -1058,7 +1140,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="">+ <a href=".\cap\Cancer-Protocols-2021-11-Update\Ovary_FT_Perit_1.3.0.1.REL_CAPCP.pdf#page=28" target="_blank">p53 IHC</a>:</label>
+<label class="">+ <a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=35" target="_blank">p53 IHC</a>:</label>
 </td>
 <td>
 	<select class="element select large" ID="A155">
@@ -1068,6 +1150,11 @@ table, th, td {
 		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
 		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression))">Abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
 		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+		<option value="Subclonal abnormal (mutated)">Subclonal abnormal (mutated)</option>
+		<option value="Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
+		<option value="Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression))">Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
+		<option value="Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)">Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+
 	</select>
 </td>
 </tr>
@@ -1158,6 +1245,14 @@ table, th, td {
 </tr>
 </table>
 </p>
+<p>
+Endometrioid carcinomas are graded via a 3-tier FIGO system identical to their endometrial counterparts. Mucinous carcinomas are graded via Silverberg, FIGO or growth pattern-based systems. Immature teratomas can be graded using either a 2-tier or 3-tier system. Sertoli-Leydig cell tumors are graded via a 3-tier grading system based on the degree of tubular differentiation of the Sertoli component, the quantity of gonadal stroma, and the number of Leydig cells. For mixed tumors, report the highest grade tumor and comment on all others.<br><br>
+FIGO Grading System (recommended for endometrioid carcinomas and may also be used for mucinous carcinomas; when severe nuclear atypia is present in the majority of the tumor cells in grade 1 or 2 tumors (grade 3 nuclei), the FIGO grade is increased by one)<br><br>
+Silverberg Grading System (recommended for mucinous carcinomas and may also be used for endometrioid carcinomas)<br><br>
+Growth Pattern-based Grading (recommended for mucinous carcinomas only)<br><br>
+2-Tier Grading System (recommended for immature teratomas only)<br><br>
+3-Tier Grading System (recommended for immature teratomas only)<br>
+</p>
 
 <p>
 <label class="description">- Other tissue/ organ involvement:</label>
@@ -1182,7 +1277,7 @@ table, th, td {
 <input class="element checkbox" type="checkbox" id="A107" value="  - Other organs/tissue (specify):"><label class="choice">Other organs/tissue (specify):</label>
 <input class="element checkbox" type="checkbox" id="A108" value="  - Cannot be determined (explain):"><label class="choice">Cannot be determined (explain):</label>
 </p>
-<p> + Ancillary studies include BRCA1 and BRCA2 mutation testing, and <a href="Biomarker-MMR-IHC.html" target="_blank">DNA mismatch repair status</a>.
+<p> + Ancillary studies include <a href="Biomarker-NGS.html" target="_blank">BRCA1 and BRCA2 mutation testing</a>, <a href="Biomarker-PCR.html" target="_blank">POLE hot spot mutations</a> and <a href="Biomarker-MMR-IHC.html" target="_blank">DNA mismatch repair status</a> (+/- other IHC tests).
 </p>
 </fieldset>
 </p>
@@ -1322,7 +1417,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"><a href=".\cap\GYN_OvaryCA.pdf" target="_blank"> FIGO stage (2018 Cancer Report):</a></label></legend>
+	<legend> <label class="description"><a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Ovary_FT_Perit_1.5.0.0.REL_CAPCP.pdf#page=14" target="_blank"> FIGO stage (2021 Cancer Report):</a></label></legend>
 <!--
 <a href=".\cap\GYN_OvaryCA.pdf" target="_blank">
 <img src=".\cap\GYN_OvaryCA.JPG" alt="FIGO2018" width="600" >
@@ -1331,29 +1426,27 @@ table, th, td {
 Click the table for the original reference.
 -->
 <p>
-I: Tumor confined to ovaries or fallopian tube(s)<br><br>
-- IA: Tumor limited to 1 ovary (capsule intact) or fallopian tube; no tumor on ovarian or fallopian tube<br> surface; no malignant cells in the ascites or peritoneal washings<br>
-- IB: Tumor limited to both ovaries (capsules intact) or fallopian tubes; no tumor on ovarian or <br>fallopian tube surface; no malignant cells in the ascites or peritoneal washings<br>
-- IC: Tumor limited to 1 or both ovaries or fallopian tubes, with any of the following:<br>
--- IC1: Surgical spill intraoperatively<br>
--- IC2: Capsule ruptured before surgery or tumor on ovarian or fallopian tube surface<br>
--- IC3: Malignant cells present in the ascites or peritoneal washings<br><br>
-II: Tumor involves 1 or both ovaries or fallopian tubes with pelvic extension (below pelvic brim) or<br> peritoneal cancer<br><br>
-- IIA: Extension and/or implants on the uterus and/or fallopian tubes and/or ovaries<br>
-- IIB: Extension to other pelvic intraperitoneal tissues<br><br>
-III: Tumor involves 1 or both ovaries, or fallopian tubes, or primary peritoneal cancer, with <br>cytologically or histologically confirmed spread to the peritoneum outside the pelvis and/or metastasis to the retroperitoneal lymph nodes<br><br>
-- IIIA: Metastasis to the retroperitoneal lymph nodes with or without microscopic peritoneal <br>
-involvement beyond the pelvis<br>
--- IIIA1: Positive retroperitoneal lymph nodes only (cytologically or histologically proven)<br>
---- IIIA1(i): Metastasis ≤10 mm in greatest dimension<br>
---- IIIA1(ii): Metastasis >10 mm in greatest dimension<br>
--- IIIA2: Microscopic extrapelvic (above the pelvic brim) peritoneal involvement with or without<br> positive retroperitoneal lymph nodes<br>
-- IIIB: Macroscopic peritoneal metastases beyond the pelvic brim ≤2 cm in greatest dimension, with or<br> without metastasis to the retroperitoneal lymph nodes<br>
-- IIIC: Macroscopic peritoneal metastases beyond the pelvic brim >2 cm in greatest dimension, with or<br> without metastases to the retroperitoneal nodes<br><br>
-IV: Distant metastasis excluding peritoneal metastases<br><br>
-- IVA: Pleural effusion with positive cytology<br>
-- IVB: Metastases to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside <br>
-of abdominal cavity)<br><br>
+I: Tumor confined to ovaries or fallopian tube(s)<br>
+IA: Tumor limited to one ovary (capsule intact) or fallopian tube; no tumor on ovarian or fallopian tube surface; no malignant cells in ascites or peritoneal washings<br>
+IB: Tumor limited to both ovaries (capsules intact) or fallopian tubes; no tumor on ovarian or fallopian tube surface; no malignant cells in the ascites or peritoneal washings<br>
+IC: Tumor limited to one or both ovaries or fallopian tubes, with any of the following:<br>
+IC1: Surgical spill<br>
+IC2: Capsule ruptured before surgery or tumor on ovarian or fallopian tube surface<br>
+IC3: Malignant cells in the ascites or peritoneal washings<br>
+IC: Tumor limited to one or both ovaries or fallopian tubes, not otherwise specified<br><br>
+II: Tumor involves one or both ovaries or fallopian tubes with pelvic extension (below pelvic brim) or peritoneal cancer<br>
+IIA: Extension and / or implants on uterus and / or fallopian tubes and / or ovaries<br>
+IIB: Extension to other pelvic intraperitoneal tissues<br><br>
+III: Tumor involves one or both ovaries or fallopian tubes, or peritoneal cancer, with cytologically or histologically confirmed spread to the peritoneum outside the pelvis and / or metastasis to the retroperitoneal lymph nodes<br>
+IIIA1: Positive retroperitoneal lymph nodes only (cytologically or histologically proven)<br>
+IIIA1(i): Metastasis up to 10 mm in greatest dimension<br>
+IIIA1(ii): Metastasis more than 10 mm in greatest dimension<br>
+IIIA2: Microscopic extrapelvic (above the pelvic brim) peritoneal involvement with or without positive retroperitoneal lymph nodes<br>
+IIIB: Macroscopic peritoneal metastases beyond the pelvis up to 2 cm in greatest dimension, with or without metastasis to the retroperitoneal lymph nodes<br>
+IIIC: Macroscopic peritoneal metastasis beyond the pelvis more than 2 cm in greatest dimension, with or without metastasis to the retroperitoneal lymph nodes (includes extension of tumor to capsule of liver and spleen without parenchymal involvement of either organ)<br><br>
+IV: Distant metastasis excluding peritoneal metastases<br>
+IVA: Pleural effusion with positive cytology<br>
+IVB: Parenchymal metastases and metastases to extra-abdominal organs (including inguinal lymph nodes and lymph nodes outside of the abdominal cavity)<br><br>
 
 </p>
 <!--
@@ -1519,9 +1612,9 @@ of abdominal cavity)<br><br>
 <br>
 
 <div id="footer">
-Last upated on 25-Mar-2022,<br>
+Last upated on 14-Aug-2024,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Ovary Fallopian 1.4.0.0 (Mar 2023), <br>
+Ovary Fallopian 1.5.0.0 (Jun 2023), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -12,12 +12,14 @@ function updateDescription (frm)
     var Template = ""
 
 
-if (frm.A10.value !== ""){
-	Template += "- Tumor Proportion Score (TPS)  : " + frm.A10.value + "\n";
+if (frm.A10.value + frm.A12.value !== ""){
+	Template += "- Tumor Proportion Score (TPS)  : " + frm.A10.value + "\n" 
+	+ "   - " + frm.A12.value  + "\n" ;
 }
 
-if (frm.A11.value !== ""){
-	Template += "- Combined positive score (CPS) : " + frm.A11.value + "\n";
+if (frm.A11.value + frm.A13.value !== ""){
+	Template += "- Combined positive score (CPS) : " + frm.A11.value + "\n"
+ 	+ "   - " + frm.A13.value  + "\n" ;
 }
 
 if (frm.A04.value !== ""){
@@ -91,6 +93,38 @@ table, th, td {
 <p>
 Immuno-oncology trends can be followed through portals in <a href="https://www.cancerresearch.org/scientists/immuno-oncology-landscape" target="_blank">Cancer Research Institute</a> (New York), <a href="https://www.keytrudahcp.com/biomarker-testing/" target="_blank">Keytruda: pathologist centre </a> 
 and staining examples in lung cancers can be found in the <a href=".\cap\iaslc_pd-l1_atlas_mar2018_lo-res.pdf" target="_blank">IASLC Color Atlas</a>.
+</p>
+
+<p>
+<table border="1"  align="center">
+<tr>
+<th>Tumors</th>
+<th>Positive</th>
+</tr>
+<tr>
+<td td rowspan="2" valign="top">
+Lung Cancers</td> 
+<td>High: TPS>=50%</td>
+</tr>
+<tr>
+<td> Low: TPS 1-49%</td>
+</tr>
+<tr>
+<td>H&N SCC</td> 
+<td>CPS>=1</td>
+<tr>
+<td>Esophagus/EGJ carcinoma</td>
+<td>CPS>=1</td>
+</tr>
+<tr>
+<td>Cervical Cancers</td> 
+<td>CPS>=1</td>
+</tr>
+<tr>
+<td>Triple Negative Breast Cancer</td> 
+<td>CPS>=10</td>
+</tr>
+</table>
 </p>
 
 <p>
@@ -183,10 +217,40 @@ and staining examples in lung cancers can be found in the <a href=".\cap\iaslc_p
 </tr>
 </table>
 </p>
+
+<p>
+<table border="1">
+<col width="60%">
+
+<tr>
+<td><label  class="description">- Tumor Proportion Score (TPS) % :</label></td>
+	<td><select class="element select large"  ID="A12">
+		<option value=""></option> 
+		<option value="Negative (<1%)">Negative (<1%)</option>
+		<option value="Low positive (1-49%)">Low positive (1-49%)</option>
+		<option value="High positive (>=50%)">High positive (>=50%)</option>
+		<option value="Consensus undefined">Consensus undefined</option>
+		</select></td>
+</tr>
+
+<tr>
+<td><label  class="description">- Combined Positive Score (CPS):</label></td>
+	<td><select class="element select large"  ID="A13">
+		<option value=""></option> 
+		<option value="Negative (<1)">Negative (<1)</option>
+		<option value="Positive (>=1)">Positive (>=1)</option>
+		<option value="Positive (>=10)">Positive (>=10)</option>
+		<option value="Consensus undefined">Consensus undefined</option>
+		<option value="Cannot be determined">Cannot be determined</option>		
+	</select></td>
+</tr>
+</table>
+</p>
+
 <p>
 <a href="https://www.keytrudahcp.com/biomarker-testing/" target="_blank">
 <img src=".\cap\PD-L1 TPS CPS.jpg" alt="Risk assessment" width="600">
-(from Keytruda website, 06-June-2020)
+(from Keytruda website, 14-Aug-2024)
 </a>
 </p>
 </fieldset>
@@ -207,7 +271,7 @@ and staining examples in lung cancers can be found in the <a href=".\cap\iaslc_p
 <br>
 
 <div id="footer">
-			Last upated 25-Oct-2021. <br>
+			Last upated 14-Aug-2024. <br>
 			Form and cascade style sheet are based on <a href="https://www.phpform.org" target="_blank">pform.org</a>. <br>
 			Codes and Javascripts are modified from <a href="https://www.w3schools.com/" target="_blank">W3 School tutorials</a> and <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>. <br><br>
 			Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

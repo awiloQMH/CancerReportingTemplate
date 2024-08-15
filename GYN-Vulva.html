@@ -169,11 +169,51 @@ if (frm.A64.value !== ""){
 }
 
 if (frm.A34.value !== ""){
-	Template +=  "\n" + "- Surgical margins, peripheral: "  + frm.A34.value + "\n" ;
+	Template +=  "\n" + "- Surgical margins for invasive tumor, peripheral: "  + frm.A34.value + "\n" ;
 }
 
 if (frm.A35.value !== ""){
-	Template +=  "- Surgical margins, deep: "  + frm.A35.value + "\n" ;
+	Template +=  "- Surgical margins for invasive tumor, deep: "  + frm.A35.value + "\n" ;
+}
+
+if (frm.A79.value !== ""){
+	Template +=  "\n" + "- Surgical margins for Squamous Precursor Lesion(s), peripheral: "  + frm.A79.value + "\n" ;
+}
+
+if (frm.A80.value !== ""){
+	Template +=  "- Surgical margins for Squamous Precursor Lesion(s), deep: "  + frm.A80.value + "\n" ;
+}
+
+if (frm.A81.value !== ""){
+	Template +=  "\n" + "- Surgical margins for HSIL, peripheral: "  + frm.A81.value + "\n" ;
+}
+
+if (frm.A82.value !== ""){
+	Template +=  "- Surgical margins for HSIL, deep: "  + frm.A82.value + "\n" ;
+}
+
+if (frm.A83.value !== ""){
+	Template +=  "\n" + "- Surgical margins for dVIN, peripheral: "  + frm.A83.value + "\n" ;
+}
+
+if (frm.A84.value !== ""){
+	Template +=  "- Surgical margins for dVIN, deep: "  + frm.A84.value + "\n" ;
+}
+
+if (frm.A85.value !== ""){
+	Template +=  "\n" + "- Surgical margins for VAM / HPVi (p53wt) vaVIN (select, peripheral: "  + frm.A85.value + "\n" ;
+}
+
+if (frm.A86.value !== ""){
+	Template +=  "- Surgical margins for VAM / HPVi (p53wt) vaVIN (select, deep: "  + frm.A86.value + "\n" ;
+}
+
+if (frm.A87.value !== ""){
+	Template +=  "\n" + "- Surgical margins for Paget Disease, peripheral: "  + frm.A87.value + "\n" ;
+}
+
+if (frm.A88.value !== ""){
+	Template +=  "- Surgical margins for Paget Disease, deep: "  + frm.A88.value + "\n" ;
 }
 
 if (
@@ -413,7 +453,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2023-12-Update\Gynecologic Protocol Folder\Vulva_5.0.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2024-06-Update\Gynecologic Protocol Folder\Vulva_5.1.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Primary carcinoma of the vulva
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -666,7 +706,8 @@ table, th, td {
 		<option value=""></option>
 		<option value="Normal (wild type)">Normal (wild type)</option>
 		<option value="Abnormal (mutated)">Abnormal (mutated)</option>
-		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression)</option>
+		<option value="Abnormal, Overexpression Basal overexpression (uniform strong, diffuse nuclear expression in basal cells)">Abnormal, Basal overexpression (uniform strong, diffuse nuclear expression in basal cells)</option>
+		<option value="Abnormal, Parabasal / diffuse overexpression">Abnormal, Parabasal / diffuse overexpression</option>
 		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression))">Abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
 		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
 	</select>
@@ -686,7 +727,7 @@ HPV-ISH is not available, PCR-sequencing type test can be ordered.
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description">Surgical margins: </label></legend>
+<legend><label class="description">Surgical margins for invasive tumor: </label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -698,12 +739,8 @@ HPV-ISH is not available, PCR-sequencing type test can be ordered.
 	<select class="element select large" ID="A34">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by invasive carcinoma, specify closest distance and location:">Uninvolved by invasive carcinoma, specify closest distance and location:</option>
-		<option value="Uninvolved by intraepithelial neoplasia, specify closest distance and location:">Uninvolved by high grade dysplasia/ in situ disease, specify closest distance and location:</option>
-		<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
-		<option value="Involved by high grade squamous intraepithelial lesion (VIN 2-3), specify location:">Involved by high grade squamous intraepithelial lesion (VIN 2-3), specify location:</option>
-		<option value="Involved by vulvar intraepithelial lesion, differentiated (simplex) type (dVIN), specify location:">Involved by vulvar intraepithelial lesion, differentiated (simplex) type (dVIN), specify location:</option>
-		<option value="Involved by Paget disease, specify location:">Involved by Paget disease, specify location:</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
 	</select>
 </td>
 </tr>
@@ -716,12 +753,198 @@ HPV-ISH is not available, PCR-sequencing type test can be ordered.
 	<select class="element select large" ID="A35">
 		<option value=""></option>
 		<option value="Cannot be assessed">Cannot be assessed</option>
-		<option value="Uninvolved by invasive carcinoma, specify closest distance and location:">Uninvolved by invasive carcinoma, specify closest distance and location:</option>
-		<option value="Uninvolved by intraepithelial neoplasia, specify closest distance and location:">Uninvolved by high grade dysplasia/ in situ disease, specify closest distance and location:</option>
-		<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
-		<option value="Involved by high grade squamous intraepithelial lesion (VIN 2-3), specify location:">Involved by high grade squamous intraepithelial lesion (VIN 2-3), specify location:</option>
-		<option value="Involved by vulvar intraepithelial lesion, differentiated (simplex) type (dVIN), specify location:">Involved by vulvar intraepithelial lesion, differentiated (simplex) type (dVIN), specify location:</option>
-		<option value="Involved by Paget disease, specify location:">Involved by Paget disease, specify location:</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins for Squamous Precursor Lesion(s): </label></legend>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Peripheral margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A79">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Deep margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A80">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins for HSIL: </label></legend>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Peripheral margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A81">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Deep margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A82">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins for dVIN: </label></legend>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Peripheral margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A83">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Deep margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A84">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins for VAM / HPVi (p53wt) vaVIN: </label></legend>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Peripheral margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A85">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Deep margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A86">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins for Paget Disease: </label></legend>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Peripheral margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A87">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Deep margins:</label>
+</td>
+<td>
+	<select class="element select large" ID="A88">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved, specify closest distance and location:">Uninvolved, specify closest distance and location:</option>
+		<option value="Involved, specify location:">Involved, specify location:</option>
 	</select>
 </td>
 </tr>
@@ -736,7 +959,7 @@ HPV-ISH is not available, PCR-sequencing type test can be ordered.
 
 <p>
 <table border="1">
-<col width="75%">
+<col width="70%">
 <tr>
 <td>
 <label class="description">- Number of regional lymph nodes examined:</label>
@@ -1024,9 +1247,9 @@ IVB: Distant metastases<br>
 <br>
 
 <div id="footer">
-Last upated on 19-Dec-2023,<br>
+Last upated on 14-Aug-2024,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Vulva 5.0.0.0 (Dec 2023)<br>
+Vulva 5.1.0.0 (Jun 2023)<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -97,7 +97,7 @@ if (frm.A22.value !== ""){
 }
 
 if (frm.A23.value !== ""){
-	Template += "  - Positive immune cells IC% : "+ frm.A23.value + "\n";
+	Template += "  - Combined positive score CPS : "+ frm.A23.value + "\n";
 }
 
 if (frm.A19.value !== ""){
@@ -125,8 +125,8 @@ if (frm.A07.value !== ""){
 }
 
 if (frm.A09.value !== ""){
-	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by a pathologist under light microscopy."
-	+ "\n" + "Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways." + "\n" +  "Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered ’HER2-negative for protein overexpression/gene amplification’ since non-overexpressed levels of the HER2 protein may be present in these cases." + "\n" + "Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).";
+	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on an automated system, and was examined by a pathologist under light microscopy."
+	+ "\n" + "- Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways." + "\n" +  "- Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered ’HER2-negative for protein overexpression/gene amplification’ since non-overexpressed levels of the HER2 protein may be present in these cases." + "\n" + "- Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).";
 } 
 
 if (frm.A22.value !== ""){
@@ -197,9 +197,9 @@ table, th, td {
 </table>
 </p>
 <p>
-- For HER2, see 2018 ASCO guidelines below. Do not report HER2-LOW at this mooment.<br>
+- For HER2, see 2018 ASCO guidelines below. <br>
+- Do not report "HER2-Low" or "HER2 Ultra-Low" at this moment<br>
 - Reference for <a href=".\cap\PATHWAY anti-HER-2_neu (4B5) Rabbit Monoclonal Primary Antibody Interpretation Guide for Breast Cancer.pdf" target="_blank">4B5 antibody</a><br>
-- For PD-L1, IC% = positive immune cells amng the total number of cells in a tumor area. <br>
 - For PD-L1, CPS = Total positive cells / (Positive cells + Negative tumor cells).<br>
 </p>
 <p>
@@ -306,7 +306,7 @@ table, th, td {
 <tr>
 <td rowspan="3" valign="top">
 <label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=13" target="_blank">HER2/neu oncoprotein IHC</a> :</label>
-Do not report "HER2-Low" at this moment.
+Do not report "HER2-Low" or "HER2 Ultra-Low" at this moment.
 </td>
 	<td><select class="element select large"  ID="A07">
 		<option value=""></option>
@@ -315,6 +315,7 @@ Do not report "HER2-Low" at this moment.
 		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
 		<option value="Positive for over-expression">Positive for over-expression</option>
 		<option value="HER2-low (IHC 1+ or IHC 2+ & DISH-)">HER2-low (IHC 1+ or IHC 2+ & DISH-)</option>
+		<option value="HER2-ultra-low (faint/barely perceptible and incomplete staining in <10% of tumor cells without amplification on FISH)">HER2-ultra-low (faint/barely perceptible and incomplete staining in <10% of tumor cells without amplification on FISH)</option>
 	</select></td>
 </tr>
 
@@ -323,7 +324,8 @@ Do not report "HER2-Low" at this moment.
 <label>- Score :</label>
 	<select class="element select medium"  ID="A08">
 		<option value=""></option>
-		<option value="0 (no staining or incomplete faint membrane staining within < or = 10% of invasive tumour cells) (i.e. negative)">0 (no staining or incomplete faint membrane staining within < or = 10% of invasive tumour cells) (i.e. negative)</option>
+		<option value="0 (no staining) (i.e. negative)">0 (no staining) (i.e. negative)</option>
+		<option value="0 (incomplete faint membrane staining within < or = 10% of invasive tumour cells) (i.e. negative)">0 (incomplete faint membrane staining within < or = 10% of invasive tumour cells) (i.e. negative)</option>
 		<option value="1 (incomplete, faint membrane staining within >10% of invasive tumour cells) (i.e. negative)">1 (incomplete, faint membrane staining within >10% of invasive tumour cells) (i.e. negative)</option>
 		<option value="2 (incomplete circumferential and/or weak/moderate staining within >10% of invasive tumour cells) (i.e. equivocal)">2 (incomplete circumferential and/or weak/moderate staining within >10% of invasive tumour cells) (i.e. equivocal)</option>
 		<option value="3 (circumferential, complete and intense membrane staining within >10% of invasive tumour cells) (i.e. positive)">3 (circumferential, complete and intense membrane staining within >10% of invasive tumour cells) (i.e. positive)</option>
@@ -339,8 +341,10 @@ Do not report "HER2-Low" at this moment.
 <tr><td rowspan="7" valign="top">
 <label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=15" target="_blank">HER2/neu oncoprotein DISH</a> :</label>
 <a href=".\Biomarker-DISH-calculator.html" target="_blank">HER2 DISH calculator</a>
-<!--<br>
-<a href=".\cap\her2_dish.xlsx" target="_blank">DOWNLOAD AN EXCEL FILE</a>-->
+<!--
+<br>
+<a href=".\cap\her2_dish.xlsx" target="_blank">DOWNLOAD AN EXCEL FILE</a>
+-->
 </td>
 	<td><select class="element select large"  ID="A09">
 		<option value=""></option>
@@ -393,9 +397,8 @@ Do not report "HER2-Low" at this moment.
 <select class="element select large"  ID="A20">
 	<option value=""></option>
 	<option value="Cannot be determined">Cannot be determined</option>
-	<option value="Negative (<1% positive cells)">Negative (<1% positive cells)</option>
-	<option value="Positive (> or = 1% immune cells positive)">Positive (> or = 1% immune cells positive)</option>
-	<option value="Positive (combined positive score CPS > or = 1)">Positive (combined positive score CPS > or = 1)</option>
+	<option value="Negative (CPS<10)">Negative (CPS<10)</option>
+	<option value="Positive (combined positive score CPS > or = 10)">Positive (combined positive score CPS > or = 10)</option>
 </select>
 </td>
 </tr>
@@ -423,13 +426,32 @@ Do not report "HER2-Low" at this moment.
 </tr>
 
 <tr>
-<td align="right"><label>- Positive immune cells (IC%) :</label>
+<td align="right"><label>- Combined positive score (CPS) :</label>
 <input type="text" class="element text small" ID="A23" size="35"></td>
 </tr>
 </table>
 </p>
 
 </fieldset>
+</p>
+
+<p align="center">
+<a href=".\cap\fmolb-09-834651-g001.jpg" target="_blank"><img src=".\cap\fmolb-09-834651-g001.jpg" alt="HER2 IHC" width="600"></a>
+<br>
+From <a href="https://doi.org/10.3389/fmolb.2022.834651"  target="_blank">Venetis et al Front. Mol. Biosci. 2022.</a>
+</p>
+
+<p>
+HER2-low<br>
+HER2 IHC 2+ AND HER2 DISH negative<br>
+OR<br>
+HER2 IHC 1+<br>
+Tarantino P et al. 2020<br><br>
+</p>
+
+<p>
+HER2 Ultra-low<br>
+It is immunohistochemically characterized by faint/barely perceptible and incomplete staining in =<10% of tumor cells without amplification on FISH. <br>
 </p>
 
 <p>
@@ -473,14 +495,18 @@ Do not report "HER2-Low" at this moment.
 </p>
 
 <p align="center" >
+<!--
 <iframe width="517" height="550" frameborder="1" scrolling="no" src="https://onedrive.live.com/embed?resid=4E150EF5229D3792%2130207&authkey=%21AFkAjAfw58fM5U4&em=2&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='HER2%20DISH'!C7&Item='HER2%20DISH'!A1%3AH22&wdHideGridlines=True&wdInConfigurator=True"></iframe>
 <br>
+-->
 <a href=".\cap\her2_dish.xlsx" target="_blank">DOWNLOAD THE EXCEL FILE</a>
 </p>
 
 <p align="center" >
+<!--
 <iframe width="517" height="350" frameborder="1" scrolling="no" src="https://onedrive.live.com/embed?resid=4E150EF5229D3792%2186767&authkey=%21ADGiu7lwQ89z-xk&em=2&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='Sheet1'!C4&Item='Sheet1'!A1%3AD12&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
 <br>
+-->
 <a href=".\cap\PD-L1.xlsx" target="_blank">DOWNLOAD THE EXCEL FILE</a>
 </p>
 
@@ -514,21 +540,15 @@ Do not report "HER2-Low" at this moment.
 </fieldset>
 </fieldset>
 </p>
+
+<!--
 <p>
-HER2 category: HER2-low<br>
-HER2 IHC 2+ + HER2 DISH negative<br>
-OR<br>
-HER2 IHC 1+<br>
-Tarantino P et al. 2020<br><br>
-Breast cancers with HER2 IHC score 1+ or HER2 IHC score 2+ and a negative ISH result are eligible for clinically appropriate HER2-targeted therapy and may be reported as “HER2 Low”.
-</p>
-<p>
-<a href=".\cap\lowHER2.png" target="_blank"><img src=".\cap\lowHER2.png" alt="lowHER2 from Roche" width="600"></a>
+<a href=".\cap\lowHER2.png" target="_blank"><img src=".\cap\lowHER2.png" alt="HER2 IHC" width="600"></a>
 <br>
 From Roche website<br>
 <br>
 </p>
-
+-->
 
 <!--
 <p>
@@ -691,7 +711,7 @@ From Roche website<br>
 <br>
 
 <div id="footer">
-Last upated 09-Jun-2023, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.1 Mar-2023</a>.<br>
+Last upated 14-Aug-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.1 Mar-2023</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
