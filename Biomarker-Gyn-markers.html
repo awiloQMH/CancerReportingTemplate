@@ -230,8 +230,8 @@ table, th, td {
 
 <p>
 - For ER/PR, POSITIVE is >= 1%<br>
-- For HER2, no consensus yet, use modified CA breast criteria. <br>
-- For PD-L1, CPS = Total positive cells / (Positive cells + Negative tumor cells).<br>
+- For HER2, no consensus yet, use MODIFIED CA breast criteria. <br>
+- For PD-L1, CPS = Total positive cells / (Positive cells + Negative tumor cells). CPS >=1 is POSITIVE.<br>
 </p>
 
 <p>
@@ -315,9 +315,9 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 	<select class="element select medium"  ID="A08">
 		<option value=""></option>
 		<option value="0 (No staining observed)">0 (No staining observed)</option>
-		<option value="1 (Incomplete membrane staining that is faint/barely perceptible in any proportion of cells or Weak complete staining in less than 10% of tumor cells)">1 (Incomplete membrane staining that is faint/barely perceptible in any proportion of cells or Weak complete staining in less than 10% of tumor cells). </option>
-		<option value="2 (Intense complete or basolateral/lateral membrane staining in 30% or less tumor cells or Weak to moderate staining in greater than or equal to 10% of tumor cells)">2 (Intense complete or basolateral/lateral membrane staining in 30% or less tumor cells or Weak to moderate staining in greater than or equal to 10% of tumor cells)</option>
-		<option value="3 (Intense complete or basolateral/lateral membrane staining in over 30% of tumor cells)">3 (Intense complete or basolateral/lateral membrane staining in over 30% of tumor cells)</option>
+		<option value="1 (Faint/Barely perceptible, incomplete membrane staining in any proportion, or weak complete staining in less than 10% of tumor cells)">1 (Faint/Barely perceptible, incomplete membrane staining in any proportion, or weak complete staining in less than 10% of tumor cells). </option>
+		<option value="2 (Strong complete or basolateral/lateral membrane staining in less than or equal to 30%, or weak to moderate staining in greater than or equal to 10% of tumor cells)">2 (Strong complete or basolateral/lateral membrane staining in less than or equal to 30%, or weak to moderate staining in greater than or equal to 10% of tumor cells)</option>
+		<option value="3 (Strong complete or basolateral / lateral membrane staining in greater than 30% of tumor cells)">3 (Strong complete or basolateral / lateral membrane staining in greater than 30% of tumor cells)</option>
 	</select>
 </td>
 </tr>
@@ -378,6 +378,10 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
 		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression))">Abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
 		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+		<option value="Subclonal abnormal (mutated)">Subclonal abnormal (mutated)</option>
+		<option value="Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
+		<option value="Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression))">Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
+		<option value="Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)">Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)</option>
 	</select>
 </td>
 </tr>
@@ -442,7 +446,11 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 </tr>
 
 <tr>
-<td  rowspan="9" valign="top"><label class="">+ MSI status:</label></td>
+<td  rowspan="9" valign="top"><label class="">+ MSI status:</label>
+<br>
+<br>
+<br>
+*Note that hereditary colon cancer clinic is using slightly different markers for MSI. Six mononucleotide repeat (BAT25, BAT26, SLC7A8 (NR-21), TMPPB5 (NR-22), ZNF-2 (NR-24) and BAT40), and three dinucleotide repeats (D2S123, D5S346, D17S250).</td>
 <td><select class="element select large"  ID="MSI">
 	<option value=""></option>
 	<option value="MSI - stable (MSS)">MSI – stable (MSS)</option>
@@ -553,7 +561,7 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 <select class="element select large"  ID="A20">
 	<option value=""></option>
 	<option value="Cannot be determined">Cannot be determined</option>
-	<option value="Negative (<1% positive cells)">Negative (<1% positive cells)</option>
+	<option value="Negative (<1% positive cells)">Negative (combined positive score CPS < 1)</option>
 	<option value="Positive (combined positive score CPS > or = 1)">Positive (combined positive score CPS > or = 1)</option>
 </select>
 </td>
@@ -590,7 +598,9 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 </p>
 </fieldset>
 </p>
-
+<p>
++ Ancillary studies include <a href="Biomarker-NGS.html" target="_blank">BRCA1 and BRCA2 germline and somatic mutation testings</a> and <a href="Biomarker-PCR.html" target="_blank">POLE hot spot mutations</a>
+</p>
 </fieldset>
 </p>
 
@@ -632,7 +642,7 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 <br>
 
 <div id="footer">
-Last upated 27-Mar-2023, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.1.0.0.REL_CAPCP.pdf" target="_blank"> Gynecologic Biomarkers 1.1.0.0 Mar-2023</a>.<br>
+Last upated 16-Aug-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.1.0.0.REL_CAPCP.pdf" target="_blank"> Gynecologic Biomarkers 1.1.0.0 Mar-2023</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
