@@ -1,0 +1,629 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Stomach/OGJ biomarkers</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript">
+function updateDescription (frm) 
+{
+    var Template = ""
+
+if (frm.A05.value !== ""){
+	Template += "- HER2 IHC (for biopsy): " + frm.A05.value + "\n";
+};
+
+if (frm.A06.value !== ""){
+	Template += "  - Score : " + frm.A06.value + "\n";
+};
+
+if (frm.A07.value !== ""){
+	Template += "- HER2 IHC (for excision): " + frm.A07.value + "\n";
+};
+
+if (frm.A08.value !== ""){
+	Template += "  - Score : " + frm.A08.value + "\n";
+};
+
+if (frm.A09.value !== ""){
+	Template += "\n" + "- HER2 DISH : " + frm.A09.value + "\n";
+};
+
+if (frm.A10.value !== ""){
+	Template += "  - Number of tumor cell counted : " + frm.A10.value + "\n";
+};
+
+if (frm.A11.value !== ""){
+	Template += "  - Average number of HER2 signals (black) per cell : " + frm.A11.value + "\n";
+};
+
+if (frm.A12.value !== ""){
+	Template += "  - Average number of CEP17 signals (red) per cell : " + frm.A12.value + "\n";
+};
+
+if (frm.A13.value !== ""){
+	Template += "  - HER2/CEP17 ratio : " + frm.A13.value + "\n";
+};
+
+if (document.getElementById("A14").checked || document.getElementById("A15").checked){
+	Template += "  - Other ISH abnormalities: "  + "\n";
+}
+
+if (document.getElementById("A14").checked){
+	Template += frm.A14.value + "\n";
+}
+
+if (document.getElementById("A15").checked){
+	Template += frm.A15.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "\n" + "- EBER status : " + frm.A27.value + "\n";
+}
+
+
+if (frm.IHC.value !== ""){
+Template += "\n" + "- DNA Mismatch Repair status: " + "\n" + "  - " + frm.IHC.value + "\n";
+}
+
+if (frm.MLH1.value !== ""){
+Template += "  - MLH1 (mutL homolog 1): " + frm.MLH1.value + "\n";
+}
+
+if (frm.MSH2.value !== ""){
+Template += "  - MSH2 (mutS homolog 2): "+ frm.MSH2.value + "\n";
+}
+
+if (frm.MSH6.value !== ""){
+Template += "  - MSH6 (mutS homolog 6): " + frm.MSH6.value + "\n";
+}
+
+if (frm.PMS2.value !== ""){
+Template += "  - PMS2 (PMS1 homolog 2): " + frm.PMS2.value + "\n";
+}
+
+if (frm.MSI.value !== ""){
+Template += "\n" + "- Microsatellite instability status: " + "\n" + "  - " + frm.MSI.value + "\n";
+}
+
+if (frm.BAT25.value + frm.BAT26.value + frm.NR21.value + frm.NR24.value + frm.NR27.value!== ""){
+	Template += "  - Mononucleotide Panel: " + "\n";
+}	
+
+if (frm.BAT25.value !== ""){
+	Template += "    - BAT-25 : " + frm.BAT25.value + "\n";
+}
+
+if (frm.BAT26.value !== ""){
+	Template += "    - BAT-26 : " + frm.BAT26.value + "\n";
+}
+
+if (frm.NR21.value !== ""){
+	Template += "    - NR-21 : " + frm.NR21.value + "\n";
+}
+
+if (frm.NR24.value !== ""){
+	Template += "    - NR-24 : " + frm.NR24.value + "\n";
+}
+
+if (frm.NR27.value !== ""){
+	Template += "    - NR-27 : " + frm.NR27.value + "\n";
+}
+
+if (frm.BAT25.value + frm.BAT26.value + frm.D2.value + frm.D5.value + frm.D17.value!== ""){
+	Template += "\n" + "  - NCI Panel: " + "\n";
+}	
+
+if (frm.BAT25.value !== ""){
+	Template += "    - BAT-25 : " + frm.BAT25.value + "\n";
+}
+
+if (frm.BAT26.value !== ""){
+	Template += "    - BAT-26 : " + frm.BAT26.value + "\n";
+}
+
+if (frm.D2.value !== ""){
+	Template += "    - D2S123 : " + frm.D2.value + "\n";
+}
+
+if (frm.D5.value !== ""){
+	Template += "    - D5S346 : " + frm.D5.value + "\n";
+}
+
+if (frm.D17.value !== ""){
+	Template += "    - D17S250 : " + frm.D17.value + "\n";
+}
+
+if (frm.A20.value !== ""){
+	Template += "\n" + "- PD-L1 : "+ frm.A20.value + "\n";
+}
+
+if (frm.A22.value !== ""){
+	Template += "  - Positive tumor cells TPS : "+ frm.A22.value + "\n";
+}
+
+if (frm.A23.value !== ""){
+	Template += "  - Combined Positive Score CPS : "+ frm.A23.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "\n" + "- Claudin 18.2 : "+ frm.A28.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "  - IHC 2+ tumor cells % : "+ frm.A29.value + "\n";
+}
+
+if (frm.A30.value !== ""){
+	Template += "  - IHC 3+ tumor cells % : "+ frm.A30.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "  - Total tumor cell positive % : "+ frm.A31.value + "\n";
+}
+
+
+if (frm.A19.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
+}
+
+if (frm.A18.value !== ""){
+	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A18.value + "\n";
+}
+if (frm.A05.value + frm.A07.value !== ""){
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system.";
+}
+
+if (frm.A09.value !== ""){
+	Template += "\n" + "Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by pathologist under light microscopy.";
+}
+
+if (frm.IHC.value !== ""){
+Template += "\n"+ "Formalin-fixed paraffin embedded sections were assessed by IHC technique for MLH1, MSH2, MSH6 and PMS2, using the antibodies G168-15, FE11, 44/MSH6 and A16-4, respectively.";
+}
+
+if (frm.MSI.value !== ""){
+	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. The MSI test is under evaluation and is not in the CAP-acredited list.";
+} 
+
+if (frm.A20.value !== ""){
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for PD-L1, using the antibody " + frm.A21.value + ". " ;
+} 
+
+if (frm.A28.value !== ""){
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for Claudin 18.2, using the antibody 43-14A (Abcam)";
+}
+
+frm.holdtext.value = Template;
+}
+
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<script type="text/javascript" src="view.js"></script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\cp-gastric-HER2biomarker17-1001.pdf" target="_blank">
+		<div class="tooltip">
+		Stomach Biomarkers test
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+
+		</div>
+
+	<form>
+
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>	
+<td rowspan="2" valign="top"><label class="description">- <a href=".\cap\StomachHER2_CAP_ACCP_ASCO.pdf" target="_blank">HER2 IHC, biopsy : </a></label>
+(> or = 5 cancer cell clusters)
+</td>
+	<td><select class="element select large"  ID="A05">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative for over-expression">Negative for over-expression</option>
+		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
+		<option value="Positive for over-expression">Positive for over-expression</option>
+	</select></td>
+</tr>
+
+<tr>
+<td align="right"><label>- Score:</label>
+	<select class="element select medium"  ID="A06">
+		<option value=""></option>
+		<option value="0 Negative(No reactivity or no membranous reactivity in any cancer cell)">0 Negative (No reactivity or no membranous reactivity in any cancer cell)</option>
+		<option value="1 Negative (Cancer cell cluster, > or = 5 cells, with a faint or barely perceptible membranous reactivity irrespective of percentage of cancer cells positive)">1 Negative (Cancer cell cluster, > or = 5 cells) with a faint or barely perceptible membranous reactivity irrespective of percentage of cancer cells positive)</option>
+		<option value="2 Equivocal (Cancer cell cluster, > or = 5 cells, with a weak to moderate complete, basolateral, or lateral membranous reactivity irrespective of percentage of cancer cells positive)">2 Equivocal (Cancer cell cluster, > or = 5 cells, with a weak to moderate complete, basolateral, or lateral membranous reactivity irrespective of percentage of cancer cells positive)</option>
+		<option value="3 Positive (Cancer cell cluster, > or = 5 cells, with a strong complete basolateral, or lateral membranous reactivity irrespective of percentage of cancer cells positive)">3 Positive (Cancer cell cluster, > or = 5 cells, with a strong complete basolateral, or lateral membranous reactivity irrespective of percentage of cancer cells positive)</option>
+	</select></td>
+</tr>
+
+
+
+<tr>
+<td rowspan="2" valign="top"><label class="description">- <a href=".\cap\StomachHER2_CAP_ACCP_ASCO.pdf" target="_blank">HER2 IHC, excision </a> : </label>
+(10% cancer cells)
+</td>
+	<td><select class="element select large"  ID="A07">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative for over-expression">Negative for over-expression</option>
+		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
+		<option value="Positive for over-expression">Positive for over-expression</option>
+	</select></td>
+</tr>
+
+<tr>
+<td align="right"><label>- Score:</label>
+	<select class="element select medium"  ID="A08">
+		<option value=""></option>
+		<option value="0 Negative (No reactivity or membranous reactivity in < 10% of cancer cells)">0 Negative (No reactivity or membranous reactivity in < 10% of cancer cells)</option>
+		<option value="1 Negative (Faint or barely perceptible membranous react ivity in > or = 10% of cancer cells; cells are reactive only in part of their membrane)">1 Negative (Faint or barely perceptible membranous react ivity in > or = 10% of cancer cells; cells are reactive only in part of their membrane)</option>
+		<option value="2 Equivocal (Weak to moderate complete, bassolateral or lateral membranous reactivity in > or = 10% of tumor cells)">2 Equivocal (Weak to moderate complete, basolateral or lateral membranous reactivity in > or = 10% of tumor cells)</option>
+		<option value="3 Positive (Strong complete, basolateral or lateral membranous reactivity in > or = 10% of cancer cells)">3 Positive (Strong complete, basolateral or lateral membranous reactivity in > or = 10% of cancer cells)</option>
+	</select></td>
+</tr>
+
+<tr>
+<td rowspan="6" valign="top"><label class="description">- <a href=".\cap\StomachHER2_CAP_ACCP_ASCO.pdf" target="_blank">HER2/neu oncoprotein DISH :</a> </label>
+<a href=".\Biomarker-DISH-calculator.html" target="_blank">HER2 DISH calculator</a>
+<br>
+<a href=".\cap\her2_dish.xlsx" target="_blank">DOWNLOAD AN EXCEL FILE</a>
+</td>
+	<td><select class="element select large"  ID="A09">
+		<option value=""></option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative for HER2 amplification">Negative for HER2 amplification</option>
+		<option value="Positive for HER2 amplification">Positive for HER2 amplification</option>
+	</select></td>
+</tr>
+
+<tr>
+<td align="right">- Number of tumor cell counted :
+<input type="text" ID="A10" class="element text small" size="10"></td>
+</tr>
+
+<tr>
+<td align="right">- HER2 signals (black) per cell :
+<input type="text" ID="A11" class="element text small" size="10"></td>
+</tr>
+
+<tr>
+<td align="right">- CEP17 signals (red) per cell :
+<input type="text" ID="A12" class="element text small" size="10"></td>
+</tr>
+
+<tr>
+<td align="right">- HER2/CEP17 ratio :
+<input type="text" ID="A13" class="element text small" size="10"></td>
+</tr>
+
+<tr>
+<td>- Other ISH abnormalities:<br>
+<input type="checkbox" id="A14" value="    - Aneusomy"><label>Aneusomy</label><br>
+	<input type="checkbox" id="A15" value="    - Heterogeneous signals"><label >Heterogeneous signals</label><br>
+<br>
+</td>
+<br>
+</tr>
+
+<tr>
+<td>
+<label class="">+ EBER ISH:</label>
+</td>
+<td>
+	<select class="element select large" ID="A27">
+		<option value=""></option>
+		<option value="Negative for the tumor cells">Negative for the tumor cells</option>
+		<option value="Positive for the tumor cells">Positive for the tumor cells</option>
+		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Reactivation in the lymphoid cells">Reactivation in the lymphoid cells</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td rowspan="5" valign="top">
+<label class="">+ MMR IHC:</label>
+</td>
+<td>
+<select class="element select large"  ID="IHC">
+	<option value=""></option>
+	<option value="No loss of nuclear signals of all 4 proteins: Not defective in DNA mismatch repair (non-dMMR or MMRp) and low probability of microsatellite instability-high (MSI-H).">No loss of nuclear signals of all 4 proteins: Not defective in DNA mismatch repair (non-dMMR or MMRp) and low probability of microsatellite instability-high (MSI-H).</option>
+	<option value="Loss of nuclear signals of 1 or more proteins: Defective DNA mismatch repair within the tumor (dMMR). Causes could be somatic mutation or DNA methylation (sporadic), or germline alteration (Lynch syndrome).">Loss of nuclear signals of 1 or more proteins: Defective DNA mismatch repair within the tumor (dMMR). </option>
+	<option value="MMR status cannot be determined by IHC.">MMR status cannot be determined by IHC.</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td  align="right" >
+<label class="">- MLH1 (mutL homolog 1):</label>
+<select class="element select medium"  ID="MLH1">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select></td >
+</tr>
+
+<tr>
+<td  align="right"><label class="">- MSH2 (mutS homolog 2):</label>
+<select class="element select medium"  ID="MSH2">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select></td >
+</tr>
+
+<tr>
+<td  align="right"><label class="">- MSH6 (mutS homolog 6):</label>
+<select class="element select medium"  ID="MSH6">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select></td >
+</tr>
+
+<tr>
+<td  align="right"><label class="">- PMS2 (PMS1 homolog 2):</label>
+<select class="element select medium"  ID="PMS2">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select></td >
+</tr>
+
+<tr>
+<td  rowspan="9" valign="top"><label class="">+ MSI status:</label></td>
+<td><select class="element select large"  ID="MSI">
+	<option value=""></option>
+	<option value="MSI - stable (MSS)">MSI – stable (MSS)</option>
+	<option value="MSI - low (MSI-L) 1% - 29% of the National Cancer Institute (NCI) or mononucleotide markers exhibit instability">MSI – low (MSI-L) 1% - 29% of the National Cancer Institute (NCI) or mononucleotide markers exhibit instability</option>
+	<option value="MSI - low (MSI-L) 1 of the NCI or mononucleotide markers exhibit instability">MSI – low (MSI-L) 1 of the NCI or mononucleotide markers exhibit instability</option>
+	<option value="MSI - low (MSI-L) Other (specify): ">MSI – low (MSI-L) Other (specify):</option>
+	<option value="MSI - high (MSI-H) greater or equal 30% of the NCI or mononucleotide markers exhibit instability">MSI – high (MSI-H) greater or equal 30% of the NCI or mononucleotide markers exhibit instability</option>
+	<option value="MSI - high (MSI-H) 2 or more of the NCI or mononucleotide markers exhibit instability">MSI – high (MSI-H) 2 or more of the NCI or mononucleotide markers exhibit instability</option>
+	<option value="MSI - high (MSI-H) Other (specify): ">MSI – high (MSI-H) Other (specify):</option>
+	<option value="MSI - cannot be determined.">MSI - cannot be determined.</option>
+</select></td>
+</tr>
+
+<tr>
+<td align="right"><label class="">BAT-25:</label>
+<select class="element select medium"  ID="BAT25">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td></tr>
+
+<tr>
+<td align="right"><label class="">BAT-26:</label>
+<select class="element select medium"  ID="BAT26">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td ></tr>
+
+<tr>
+<td align="right"><label class="">NR-21:</label>
+<select class="element select medium"  ID="NR21">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td ></tr>
+
+<tr>
+<td align="right"><label class="">NR-24 :</label>
+<select class="element select medium"  ID="NR24">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td ></tr>
+
+<tr>
+<td align="right"><label class="">NR-27 :</label>
+<select class="element select medium"  ID="NR27">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td ></tr>
+
+<tr>
+<td align="right"><label class="">D2S123:</label>
+<select class="element select medium"  ID="D2">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td ></tr>
+
+<tr>
+<td align="right"><label class="">D5S346:</label>
+<select class="element select medium"  ID="D5">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td ></tr>
+
+<tr>
+<td align="right"><label class="">D17S250:</label>
+<select class="element select medium"  ID="D17">
+	<option value=""></option>
+	<option value="Stable">Stable</option>
+	<option value="Unstable">Unstable</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+	<option value="Not performed">Not performed</option>
+</select>
+</td ></tr>
+
+<tr>	
+<td rowspan="4" valign="top">
+<label class="">+ PD-L1 assessment :</label><br>
+<a href=".\Biomarker-PDL1-calculator.html" target="_blank">PD-L1 calculator</a>
+</td>
+<td>
+<select class="element select large"  ID="A20">
+	<option value=""></option>
+	<option value="Cannot be determined">Cannot be determined</option>
+	<option value="Negative (CPS<10)">Negative (combined positive score CPS < 10)</option>
+	<option value="Positive (combined positive score CPS > or = 10)">Positive (combined positive score CPS >= 10)</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>- Antibody (anti-CD274) :</label>
+	<select class="element select small"  ID="A21">
+		<option value=""></option>
+		<option value="22C3 (Dako)">22C3 (Dako)</option>
+		<option value="28-8 (Dako)">28-8 (Dako)</option>
+		<option value="SP263 (Roche)">SP263 (Roche)</option>
+		<option value="SP142 (Roche)">SP142 (Roche)</option>
+		<option value="E1L3N (Cell Signaling)">E1L3N (Cell Signaling)</option>
+		<option value="Other, specify:">Other, specify:</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>- Positive tumor cells (TPS, %) :</label>
+<input type="text" class="element text small" ID="A22" size="35">
+</td>
+</tr>
+
+<tr>
+<td align="right"><label>- Combined Positive Score (CPS) :</label>
+<input type="text" class="element text small" ID="A23" size="35"></td>
+</tr>
+
+<tr>
+<td  rowspan="4" valign="top">
+<label class="">+ <a href="https://www.claudin182.com/stain-interpretation" target="_blank">Claudin18.2 IHC</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A28">
+		<option value=""></option>
+		<option value="Negative for the tumor cells (<75% moderate to strong membranous stain)">Negative for the tumor cells (<75% moderate to strong membranous stain)</option>
+		<option value="Positive for the tumor cells (> or =75% moderate to strong membranous stain)">Positive for the tumor cells (>=75% moderate to strong membranous stain)</option>
+		<option value="Cannot be determined">Cannot be determined</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right"><label>- <a href=".\cap\CLDN18.2_IHC.jpg" target="_blank">IHC 2+ tumor cells %</a> :</label>
+<input type="text" class="element text small" ID="A29" size="35"></td>
+</tr>
+
+<tr>
+<td align="right"><label>- <a href=".\cap\CLDN18.2_IHC.jpg" target="_blank">IHC 3+ tumor cells %</a> :</label>
+<input type="text" class="element text small" ID="A30" size="35"></td>
+</tr>
+
+<tr>
+<td align="right"><label>- Total tumor cells 2+ & 3+ : :</label>
+<input type="text" class="element text small" ID="A31" size="35"></td>
+</tr>
+<tr>
+<td>
+<label>- Fixation time in buffered formalin :</label>
+</td>
+<td>
+<select class="element select large"  ID="A18">
+		<option value=""></option>
+		<option value="Optimal fixation (6-72 hours)">Optimal fixation (6-72 hours)</option>
+		<option value="Prolonged intervals (> 72 hours)">Prolonged intervals (> 72 hours)</option>
+		<option value="Uncertain">Uncertain</option>
+	</select>
+</td>
+</table>
+</p>
+
+<p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A19" class = "element textarea medium" style="border-color:grey;"></textarea> 
+</p>
+
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated 30-Sep-2024, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>
+
