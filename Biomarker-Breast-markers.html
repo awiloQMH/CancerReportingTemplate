@@ -87,7 +87,7 @@ if (document.getElementById("A15").checked){
 if (frm.A16.value !== ""){
 	Template += "- Proliferation index Ki67 (%) : "+ frm.A16.value + "\n";
 }
-
+/*
 if (frm.A20.value !== ""){
 	Template += "- PD-L1 : "+ frm.A20.value + "\n";
 }
@@ -99,23 +99,35 @@ if (frm.A22.value !== ""){
 if (frm.A23.value !== ""){
 	Template += "  - Combined positive score CPS : "+ frm.A23.value + "\n";
 }
+*/
+
+if (frm.A28.value !== ""){
+	Template += "\n" + "- Cold ischemia time : " + frm.A28.value;
+}
+
+if (frm.A27.value !== ""){
+	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A27.value;
+}
+
+if (frm.A28.value + frm.A27.value == ""){
+	Template += "\n" + "- Ischemic and/or Formalin fixation time are not specified." ;
+}
+
+if (frm.A28.value == "Optimal (<1 hour), specify:" && frm.A27.value == "Optimal fixation (6-72 hours), specify:"){
+	Template += "\n" + "- Meet requirements specified in the latest version of the ASCO/CAP guidelines." + "\n" ;
+}else {
+	Template += "\n" + "- Do not meet requirements specified in the latest version of the ASCO/CAP guidelines. Please interpret the above results with caution." + "\n" ;
+ }
 
 if (frm.A19.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
 }
 
-if (frm.A17.value !== ""){
-	Template += "\n" + "- Cold ischemia and fixation times : " + frm.A17.value + "\n";
-}
-
-if (frm.A18.value !== ""){
-	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A18.value + "\n";
-}
-
+/*
 if (frm.A24.value !== ""){
 	Template += "\n" + "- Number of viable tumor cells : " + frm.A24.value + "\n";
 }
-
+*/
 if (frm.A01.value + frm.A04.value !== ""){
 	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system.";
 }
@@ -126,14 +138,18 @@ if (frm.A07.value !== ""){
 
 if (frm.A09.value !== ""){
 	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on an automated system, and was examined by a pathologist under light microscopy."
-	+ "\n" + "- Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways." + "\n" +  "- Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered ’HER2-negative for protein overexpression/gene amplification’ since non-overexpressed levels of the HER2 protein may be present in these cases." + "\n" + "- Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).";
-} 
+}
 
+if (frm.A09.value + frm.A07.value !== ""){
+	Template += "\n" + "\n" + "- Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways." + "\n" +  "- Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered ’HER2-negative for protein overexpression/gene amplification’ since non-overexpressed levels of the HER2 protein may be present in these cases." + "\n" + "- Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).";
+}
+
+/*
 if (frm.A22.value !== ""){
 	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for PD-L1, using the antibody : " + frm.A21.value + ". " 
 	            + frm.A24.value + " viable tumor cells are present.";
 }   
-
+*/
 frm.holdtext.value = Template;
 }
 
@@ -200,7 +216,6 @@ table, th, td {
 - For HER2, see <a href=".\cap\her2_breast_update_sor_2023.pdf" target="_blank">2023 ASCO guidelines</a> below. <br>
 - Do not report "HER2-Low" or "HER2 Ultra-Low" at this moment<br>
 - Reference for <a href=".\cap\PATHWAY anti-HER-2_neu (4B5) Rabbit Monoclonal Primary Antibody Interpretation Guide for Breast Cancer.pdf" target="_blank">4B5 antibody</a><br>
-- For PD-L1, CPS = Total positive cells / (Positive cells + Negative tumor cells).<br>
 </p>
 <p>
 <table border="1">
@@ -390,11 +405,12 @@ cells) (i.e. negative)</option>
 	<input class="element checkbox" type="checkbox" id="A15" value="    - Heterogeneous signals"><label class="choice">Heterogeneous signals</label>
 </td>
 </tr>
-
+<!--
 <tr>	
 <td rowspan="4" valign="top">
 <label class="description">- <a href=".\cap\Approved-Immune-Checkpoint-Inhibitors-20200605.pdf" target="_blank">PD-L1 assessment</a> :</label>
 - for triple negative tumors<br>
+- counting at least 100 tumor cells<br>
 <a href=".\Biomarker-PDL1-calculator.html" target="_blank">PD-L1 calculator</a>
 </td>
 <td>
@@ -433,29 +449,11 @@ cells) (i.e. negative)</option>
 <td align="right"><label>- Combined positive score (CPS) :</label>
 <input type="text" class="element text small" ID="A23" size="35"></td>
 </tr>
+-->
 </table>
 </p>
 
 </fieldset>
-</p>
-
-<p align="center">
-<a href=".\cap\fmolb-09-834651-g001.jpg" target="_blank"><img src=".\cap\fmolb-09-834651-g001.jpg" alt="HER2 IHC" width="600"></a>
-<br>
-From <a href="https://doi.org/10.3389/fmolb.2022.834651"  target="_blank">Venetis et al Front. Mol. Biosci. 2022.</a>
-</p>
-
-<p>
-HER2-low<br>
-HER2 IHC 2+ AND HER2 DISH negative<br>
-OR<br>
-HER2 IHC 1+<br>
-Tarantino P et al. 2020<br><br>
-</p>
-
-<p>
-HER2 Ultra-low<br>
-It is immunohistochemically characterized by faint/barely perceptible and incomplete staining in =<10% of tumor cells without amplification on FISH. <br>
 </p>
 
 <p>
@@ -464,8 +462,38 @@ It is immunohistochemically characterized by faint/barely perceptible and incomp
 <p>
 <table border="1">
 <col width="40%">
+
 <tr>
-<td><label>- Cold ischemia and fixation times :</label></td>
+<td>
+<label class="description">- Cold ischemia time:</label>
+</td>
+</td>
+<td>
+	<select class="element select large"  ID="A28">
+	<option value=""></option>
+	<option value="Optimal (<1 hour), specify:">Optimal (<1 hour), specify:</option>
+	<option value="Prolonged (>= 1 hour), specify:">Prolonged intervals (>= 1 hour), specify:</option>
+	<option value="Uncertain">Uncertain</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Fixation time in buffered formalin :</label>
+</td>
+<td>
+	<select class="element select large"  ID="A27">
+	<option value=""></option>
+	<option value="Optimal fixation (6-72 hours), specify:">Optimal fixation (6-72 hours), specify:</option>
+	<option value="Prolonged intervals (> 72 hours), specify:">Prolonged intervals (> 72 hours), specify:</option>
+	<option value="Uncertain">Uncertain</option>
+	</select>
+</td>
+</tr>
+<!--
+<tr>
+<td><label class="description">- Cold ischemia and fixation times :</label></td>
 	<td><select class="element select large"  ID="A17">
 		<option value=""></option>
 		<option value="Meet requirements specified in latest version of the ASCO/CAP guidelines">Meet requirements specified in latest version of the ASCO/CAP guidelines</option>
@@ -493,11 +521,12 @@ It is immunohistochemically characterized by faint/barely perceptible and incomp
 		<option value="Less than 100">Less than 100 </option>
 	</select></td>
 </tr>
+-->
 </table>
 </p>
 </fieldset>
 </p>
-
+<!--
 <p align="center" >
 
 <iframe width="517" height="550" frameborder="1" scrolling="no" src="https://onedrive.live.com/embed?resid=4E150EF5229D3792%2130207&authkey=%21AFkAjAfw58fM5U4&em=2&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='HER2%20DISH'!C7&Item='HER2%20DISH'!A1%3AH22&wdHideGridlines=True&wdInConfigurator=True"></iframe>
@@ -513,6 +542,7 @@ It is immunohistochemically characterized by faint/barely perceptible and incomp
 
 <a href=".\cap\PD-L1.xlsx" target="_blank">DOWNLOAD THE EXCEL FILE</a>
 </p>
+-->
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -549,6 +579,25 @@ Comments added in <a href=".\cap\wolff-et-al-2023-human-epidermal-growth-factor-
 Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways. <br><br>
 Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered 'HER2-negative for protein overexpression/gene amplification' since non-overexpressed levels of the HER2 protein may be present in these cases. <br><br>
 Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).”
+</p>
+
+<p align="center">
+<a href=".\cap\fmolb-09-834651-g001.jpg" target="_blank"><img src=".\cap\fmolb-09-834651-g001.jpg" alt="HER2 IHC" width="600"></a>
+<br>
+From <a href="https://doi.org/10.3389/fmolb.2022.834651"  target="_blank">Venetis et al Front. Mol. Biosci. 2022.</a>
+</p>
+
+<p>
+HER2-low<br>
+HER2 IHC 2+ AND HER2 DISH negative<br>
+OR<br>
+HER2 IHC 1+<br>
+Tarantino P et al. 2020<br><br>
+</p>
+
+<p>
+HER2 Ultra-low<br>
+It is immunohistochemically characterized by faint/barely perceptible and incomplete staining in =<10% of tumor cells without amplification on FISH. <br>
 </p>
 
 <!--
@@ -721,7 +770,7 @@ From Roche website<br>
 <br>
 
 <div id="footer">
-Last upated 24-Sep-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.1 Mar-2023</a>.<br>
+Last upated 15-Oct-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.1 Mar-2023</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
