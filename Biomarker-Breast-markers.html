@@ -87,47 +87,52 @@ if (document.getElementById("A15").checked){
 if (frm.A16.value !== ""){
 	Template += "- Proliferation index Ki67 (%) : "+ frm.A16.value + "\n";
 }
-/*
-if (frm.A20.value !== ""){
-	Template += "- PD-L1 : "+ frm.A20.value + "\n";
-}
 
-if (frm.A22.value !== ""){
-	Template += "  - Positive tumor cells TC% or TPS : "+ frm.A22.value + "\n";
-}
-
-if (frm.A23.value !== ""){
-	Template += "  - Combined positive score CPS : "+ frm.A23.value + "\n";
-}
-*/
 
 if (frm.A28.value !== ""){
-	Template += "\n" + "- Cold ischemia time : " + frm.A28.value;
+	Template += "\n" + "- Cold ischemia time : " + frm.A28.value + " min";
+} else {
+		Template += "\n" + "- Cold ischemic time is uncertain." ;
+}
+
+if (frm.A28.value <= 60 && frm.A28.value !== ""){
+		Template += "\n" + "  - Optimal (<= 60 min)." ;
+}
+
+if (frm.A28.value > 60  && frm.A28.value !== ""){
+		Template += "\n" + "  - Prolonged intervals (> 60 min)." ;
 }
 
 if (frm.A27.value !== ""){
-	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A27.value;
-}
-
-if (frm.A28.value + frm.A27.value == ""){
-	Template += "\n" + "- Ischemic and/or Formalin fixation time are not specified." ;
-}
-
-if (frm.A28.value == "Optimal (<1 hour), specify:" && frm.A27.value == "Optimal fixation (6-72 hours), specify:"){
-	Template += "\n" + "- Meet requirements specified in the latest version of the ASCO/CAP guidelines." + "\n" ;
+	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A27.value + " hours";
 }else {
-	Template += "\n" + "- Do not meet requirements specified in the latest version of the ASCO/CAP guidelines. Please interpret the above results with caution." + "\n" ;
- }
+		Template += "\n" + "- Formalin fixation time is uncertain." ;
+}
+
+if (frm.A27.value < 6  && frm.A27.value !== ""){
+		Template += "\n" + "  - Inadequate fixation (<6 hours)." ;
+}
+
+if (frm.A27.value >= 6 && frm.A27.value <= 72 && frm.A27.value !== ""){
+		Template += "\n" + "  - Optimal fixation (6-72 hours)." ;
+}
+
+if (frm.A27.value > 72  && frm.A27.value !== ""){
+		Template += "\n" + "  - Prolonged intervals (>72 hours)." ;
+}
+
+if (frm.A28.value !== "" && frm.A28.value <= 60 && frm.A27.value >= 6 && frm.A27.value <= 72){
+	Template += "\n" + "- Meet requirements specified in the latest version of the ASCO/CAP guidelines." + "\n"  ;
+} else if (frm.A28.value == "" || frm.A27.value == ""){
+	Template += "\n" + "- Given the uncertain cold ischaemia time and/or uncertain fixation time, please interpret the above results with caution." + "\n" ;
+} else if (frm.A28.value > 60 || frm.A27.value < 6 || frm.A27.value > 72){
+	Template += "\n" + "- Given the suboptimal cold ischaemia time and/or suboptimal formalin fixation time, please interpret the above results with caution." + "\n" ;
+} 
 
 if (frm.A19.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
 }
 
-/*
-if (frm.A24.value !== ""){
-	Template += "\n" + "- Number of viable tumor cells : " + frm.A24.value + "\n";
-}
-*/
 if (frm.A01.value + frm.A04.value !== ""){
 	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system.";
 }
@@ -144,12 +149,6 @@ if (frm.A09.value + frm.A07.value !== ""){
 	Template += "\n" + "\n" + "- Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways." + "\n" +  "- Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered ’HER2-negative for protein overexpression/gene amplification’ since non-overexpressed levels of the HER2 protein may be present in these cases." + "\n" + "- Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).";
 }
 
-/*
-if (frm.A22.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for PD-L1, using the antibody : " + frm.A21.value + ". " 
-	            + frm.A24.value + " viable tumor cells are present.";
-}   
-*/
 frm.holdtext.value = Template;
 }
 
@@ -195,10 +194,16 @@ table, th, td {
 	<legend> <label class="description"> Biomarkers assessments : </label></legend>
 
 <p>
-- For ER/PR, use Allred scoring for routine service, until further notice.
+- Per review after 2024 CAP site inspection <br>
+- Please fill in/estimate the cold ischemic time (in minutes) and formalin-fixation time (in hours).<br>
+- Optimal cold ishemic time <= 60 min <br>
+- Optimal formalin-fixation time 6-72 hours.
 </p>
+
 <p>
-<table align="center">
+- For ER/PR, use Allred scoring for routine service.
+<br>
+<table>
 <caption> CAP protocol (June-2021 updated):</caption>
 <tr>
 <td>ER assessment:</td>
@@ -212,10 +217,14 @@ table, th, td {
 </tr>
 </table>
 </p>
+
 <p>
-- For HER2, see <a href=".\cap\her2_breast_update_sor_2023.pdf" target="_blank">2023 ASCO guidelines</a> below. <br>
-- Do not report "HER2-Low" or "HER2 Ultra-Low" at this moment<br>
+- For HER2, see <a href=".\cap\her2_breast_update_sor_2023.pdf" target="_blank">2023 ASCO guidelines</a>. <br>
+- Do not report "HER2-Low" or "HER2 Ultra-Low" until further notice.<br>
 - Reference for <a href=".\cap\PATHWAY anti-HER-2_neu (4B5) Rabbit Monoclonal Primary Antibody Interpretation Guide for Breast Cancer.pdf" target="_blank">4B5 antibody</a><br>
+</p>
+<p>
+- Coming soon: BRCA1/BRCA2 genes germline variant test for patients with breast cancer (note: NOT somatic variant test).
 </p>
 <p>
 <table border="1">
@@ -405,51 +414,7 @@ cells) (i.e. negative)</option>
 	<input class="element checkbox" type="checkbox" id="A15" value="    - Heterogeneous signals"><label class="choice">Heterogeneous signals</label>
 </td>
 </tr>
-<!--
-<tr>	
-<td rowspan="4" valign="top">
-<label class="description">- <a href=".\cap\Approved-Immune-Checkpoint-Inhibitors-20200605.pdf" target="_blank">PD-L1 assessment</a> :</label>
-- for triple negative tumors<br>
-- counting at least 100 tumor cells<br>
-<a href=".\Biomarker-PDL1-calculator.html" target="_blank">PD-L1 calculator</a>
-</td>
-<td>
-<select class="element select large"  ID="A20">
-	<option value=""></option>
-	<option value="Cannot be determined">Cannot be determined</option>
-	<option value="Negative (CPS<10)">Negative (CPS<10)</option>
-	<option value="Positive (combined positive score CPS > or = 10)">Positive (combined positive score CPS > or = 10)</option>
-</select>
-</td>
-</tr>
 
-<tr>
-<td align="right">
-<label>- Antibody (anti-CD274) :</label>
-	<select class="element select small"  ID="A21">
-		<option value=""></option>
-		<option value="22C3 (Dako)">22C3 (Dako)</option>
-		<option value="28-8 (Dako)">28-8 (Dako)</option>
-		<option value="SP263 (Roche)">SP263 (Roche)</option>
-		<option value="SP142 (Roche)">SP142 (Roche)</option>
-		<option value="E1L3N (Cell Signaling)">E1L3N (Cell Signaling)</option>
-		<option value="Other, specify:">Other, specify:</option>
-	</select>
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label>- Positive tumor cells (TC% or TPS) :</label>
-<input type="text" class="element text small" ID="A22" size="35">
-</td>
-</tr>
-
-<tr>
-<td align="right"><label>- Combined positive score (CPS) :</label>
-<input type="text" class="element text small" ID="A23" size="35"></td>
-</tr>
--->
 </table>
 </p>
 
@@ -465,67 +430,29 @@ cells) (i.e. negative)</option>
 
 <tr>
 <td>
-<label class="description">- Cold ischemia time:</label>
-</td>
+<label class="description">- Cold ischemia time (min) :</label>
 </td>
 <td>
-	<select class="element select large"  ID="A28">
-	<option value=""></option>
-	<option value="Optimal (<1 hour), specify:">Optimal (<1 hour), specify:</option>
-	<option value="Prolonged (>= 1 hour), specify:">Prolonged intervals (>= 1 hour), specify:</option>
-	<option value="Uncertain">Uncertain</option>
-	</select>
+<input type="text" class="element text small" ID="A28" size="3">
+min
 </td>
-</tr>
 
 <tr>
 <td>
 <label class="description">- Fixation time in buffered formalin :</label>
 </td>
 <td>
-	<select class="element select large"  ID="A27">
-	<option value=""></option>
-	<option value="Optimal fixation (6-72 hours), specify:">Optimal fixation (6-72 hours), specify:</option>
-	<option value="Prolonged intervals (> 72 hours), specify:">Prolonged intervals (> 72 hours), specify:</option>
-	<option value="Uncertain">Uncertain</option>
-	</select>
+<input type="text" class="element text small" ID="A27" size="3">
+hours
 </td>
-</tr>
-<!--
-<tr>
-<td><label class="description">- Cold ischemia and fixation times :</label></td>
-	<td><select class="element select large"  ID="A17">
-		<option value=""></option>
-		<option value="Meet requirements specified in latest version of the ASCO/CAP guidelines">Meet requirements specified in latest version of the ASCO/CAP guidelines</option>
-		<option value="Do not meet requirements specified in latest version of the ASCO/CAP guidelines">Do not meet requirements specified in latest version of the ASCO/CAP guidelines</option>
-		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
-	</select></td>
+
 </tr>
 
-<tr>
-<td><label>- Fixation time in buffered formalin :</label></td>
-	<td><select class="element select large"  ID="A18">
-		<option value=""></option>
-		<option value="Optimal fixation (6-72 hours)">Optimal fixation (6-72 hours)</option>
-		<option value="Prolonged intervals (> 72 hours)">Prolonged intervals (> 72 hours)</option>
-		<option value="Uncertain">Uncertain</option>
-	</select></td>
-</tr>
-
-<tr>
-<td><label>- Number of viable tumor cells :</label></td>
-	<td><select class="element select large"  ID="A24">
-		<option value=""></option>
-		<option value="More than or equal to 50">More than or equal to 50</option>
-		<option value="More than or equal to 100">More than or equal to 100</option>
-		<option value="Less than 100">Less than 100 </option>
-	</select></td>
-</tr>
--->
 </table>
 </p>
 </fieldset>
 </p>
+
 <!--
 <p align="center" >
 
@@ -580,7 +507,7 @@ Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be
 Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered 'HER2-negative for protein overexpression/gene amplification' since non-overexpressed levels of the HER2 protein may be present in these cases. <br><br>
 Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).”
 </p>
-
+<br><br>
 <p align="center">
 <a href=".\cap\fmolb-09-834651-g001.jpg" target="_blank"><img src=".\cap\fmolb-09-834651-g001.jpg" alt="HER2 IHC" width="600"></a>
 <br>
@@ -589,9 +516,7 @@ From <a href="https://doi.org/10.3389/fmolb.2022.834651"  target="_blank">Veneti
 
 <p>
 HER2-low<br>
-HER2 IHC 2+ AND HER2 DISH negative<br>
-OR<br>
-HER2 IHC 1+<br>
+HER2 IHC 2+ AND HER2 DISH negative OR HER2 IHC 1+<br>
 Tarantino P et al. 2020<br><br>
 </p>
 
@@ -599,154 +524,6 @@ Tarantino P et al. 2020<br><br>
 HER2 Ultra-low<br>
 It is immunohistochemically characterized by faint/barely perceptible and incomplete staining in =<10% of tumor cells without amplification on FISH. <br>
 </p>
-
-<!--
-<p>
-<a href=".\cap\lowHER2.png" target="_blank"><img src=".\cap\lowHER2.png" alt="HER2 IHC" width="600"></a>
-<br>
-From Roche website<br>
-<br>
-</p>
--->
-
-<!--
-<p>
-<fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> HER2 gene amplification : </label></legend>
-
-<p>
-<table border="1">
-<col width="40%">
-
-<tr>
-<td rowspan="2" valign="top">
-<label class="description">- HER2/neu oncoprotein IHC :</label></td>
-	<td><select class="element select large"  ID="A07">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative for over-expression">Negative for over-expression</option>
-		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
-		<option value="Positive for over-expression">Positive for over-expression</option>
-	</select></td>
-</tr>
-
-<tr><td align="right">
-<label>- Score :</label>
-	<select class="element select small"  ID="A08">
-		<option value=""></option>
-		<option value="0 (no staining or incomplete faint membrane staining within < or = 10% of invasive tumour cells) (i.e. negative)">0 (no staining or incomplete faint membrane staining within < or = 10% of invasive tumour cells) (i.e. negative)</option>
-		<option value="1 (incomplete, faint membrane staining within >10% of invasive tumour cells) (i.e. negative)">1 (incomplete, faint membrane staining within >10% of invasive tumour cells) (i.e. negative)</option>
-		<option value="2 (incomplete circumferential and/or weak/moderate staining within >10% of invasive tumour cells) (i.e. equivocal)">2 (incomplete circumferential and/or weak/moderate staining within >10% of invasive tumour cells) (i.e. equivocal)</option>
-		<option value="3 (circumferential, complete and intense membrane staining within >10% of invasive tumour cells) (i.e. positive)">3 (circumferential, complete and intense membrane staining within >10% of invasive tumour cells) (i.e. positive)</option>
-	</select></td>
-</tr>
-
-<tr><td rowspan="7" valign="top">
-<label class="description">- HER2/neu oncoprotein DISH :</label></td>
-	<td><select class="element select large"  ID="A09">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative for HER2 amplification">Negative for HER2 amplification</option>
-		<option value="Equivocal for HER2 amplification">Equivocal for over-expression</option>
-		<option value="Positive for HER2 amplification">Positive for HER2 amplification</option>
-	</select></td>
-</tr>
-
-<tr><td align="right">
-- Number of tumor cells counted :
-<input type="text" class="element text small" ID="A10" size="10"></td>
-</tr>
-
-<tr><td align="right">
-- Average HER2 signals (black) per cell :
-<input type="text" class="element text small" ID="A11" size="10"></td>
-</tr>
-
-<tr><td align="right">
-- Averagen CEP17 signals (red) per cell :
-<input type="text" class="element text small" ID="A12" size="10"></td>
-</tr>
-
-<tr><td align="right">
-- HER2/CEP17 ratio :
-<input type="text" class="element text small" ID="A13" size="10"></td>
-</tr>
-
-<tr>
-<td>- Other ISH abnormalities:<br>
-	<input class="element checkbox" type="checkbox" id="A14" value="    - Aneusomy"><label ">Aneusomy</label><br>
-	<input class="element checkbox" type="checkbox" id="A15" value="    - Heterogeneous signals"><label>Heterogeneous signals</label><br>
-<br>
-</td>
-</tr>
-</table>
-
-</p>
-
-<!--
-<p>
-<fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Other biomarkers : </label></legend>
-<p>
-<table border="1">
-<col width="40%">
-<tr>
-<td>
-<label class="description">- Ki67 Proliferation index % :</label>
-</td>
-<td>
-<input type="text" ID="A16" class="element text large" size="40">
-</td>
-<tr>
-
-<tr>	
-<td rowspan="4" valign="top">
-<label class="description">- PD-L1 assessment :</label>
-- for triple negative tumors
-</td>
-<td>
-<select class="element select large"  ID="A20">
-	<option value=""></option>
-	<option value="Cannot be determined">Cannot be determined</option>
-	<option value="Negative (<1% positive cells)">Negative (<1% positive cells)</option>
-	<option value="Positive (> or = 1% immune cells positive)">Positive (> or = 1% immune cells positive)</option>
-	<option value="Positive (combined positive score CPS > or = 1)">Positive (combined positive score CPS > or = 1)</option>
-</select>
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label>- Antibody (anti-CD274) :</label>
-	<select class="element select small"  ID="A21">
-		<option value=""></option>
-		<option value="22C3 (Dako)">22C3 (Dako)</option>
-		<option value="28-8 (Dako)">28-8 (Dako)</option>
-		<option value="SP263 (Roche)">SP263 (Roche)</option>
-		<option value="SP142 (Roche)">SP142 (Roche)</option>
-		<option value="E1L3N (Cell Signaling)">E1L3N (Cell Signaling)</option>
-		<option value="Other, specify:">Other, specify:</option>
-	</select>
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label>- Positive tumor cells (TC% or TPS) :</label>
-<input type="text" class="element text small" ID="A22" size="35">
-</td>
-</tr>
-
-<tr>
-<td align="right"><label>- Positive immune cells (IC%) :</label>
-<input type="text" class="element text small" ID="A23" size="35"></td>
-</tr>
-
-</table>
-</p>
-</fieldset>
-</p>
--->
 
 <p>
 <label class="description">- Additional notes :</label>
@@ -770,7 +547,7 @@ From Roche website<br>
 <br>
 
 <div id="footer">
-Last upated 15-Oct-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.1 Mar-2023</a>.<br>
+Last upated 18-Oct-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.1 Mar-2023</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
