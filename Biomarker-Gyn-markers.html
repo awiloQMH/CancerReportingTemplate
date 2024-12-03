@@ -14,11 +14,11 @@ function updateDescription (frm)
 
 if (frm.A01.value !== ""){
 	Template += "- Estrogen receptor: " + frm.A01.value + "\n";
-};
+}
 
 if (frm.A02.value !== ""){
 	Template += "  - Average Intensity: " + frm.A02.value + "\n";
-};
+}
 
 if (frm.A04.value !== ""){
 	Template += "- Progesterone receptor: " + frm.A04.value + "\n";
@@ -161,28 +161,67 @@ if (frm.A19.value !== ""){
 }
 
 if (frm.A01.value + frm.A04.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system.";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system." +  "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for HER2, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system.";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for HER2, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system." +  "\n";
 };
 
 if (frm.A09.value !== ""){
-	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by a pathologist under light microscopy.";
+	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by a pathologist under light microscopy." +  "\n";
 }
 
 if (frm.IHC.value !== ""){
-Template += "\n"+ "Antibodies for MLH1, MSH2, MSH6 and PMS2 are G168-15, FE11, 44/MSH6 and A16-4, respectively.";
+Template += "\n"+ "Antibodies for MLH1, MSH2, MSH6 and PMS2 are G168-15, FE11, 44/MSH6 and A16-4, respectively." +  "\n";
 }
 
 if (frm.MSI.value !== ""){
-	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. The MSI test is under evaluation and is not in the CAP-acredited list.";
+	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. The MSI test is under evaluation and is not in the CAP-acredited list." +  "\n";
 } 
 
 if (frm.A20.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for PD-L1, using the antibody " + frm.A21.value + ". " ;
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for PD-L1, using the antibody " + frm.A21.value + ". " +  "\n";
 }   
+if (frm.A28.value !== ""){
+	Template += "\n" + "- Cold ischemia time : " + frm.A28.value + " min";
+} else {
+		Template += "\n" + "- Cold ischemic time is uncertain." ;
+}
+
+if (frm.A28.value <= 60 && frm.A28.value !== ""){
+		Template += "\n" + "  - Optimal (<= 60 min)." ;
+}
+
+if (frm.A28.value > 60  && frm.A28.value !== ""){
+		Template += "\n" + "  - Prolonged intervals (> 60 min)." ;
+}
+
+if (frm.A29.value !== ""){
+	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A29.value + " hours";
+}else {
+		Template += "\n" + "- Formalin fixation time is uncertain." ;
+}
+
+if (frm.A29.value < 6  && frm.A29.value !== ""){
+		Template += "\n" + "  - Inadequate fixation (<6 hours)." ;
+}
+
+if (frm.A29.value >= 6 && frm.A29.value <= 72 && frm.A29.value !== ""){
+		Template += "\n" + "  - Optimal fixation (6-72 hours)." ;
+}
+
+if (frm.A29.value > 72  && frm.A29.value !== ""){
+		Template += "\n" + "  - Prolonged intervals (>72 hours)." ;
+}
+
+if (frm.A28.value !== "" && frm.A28.value <= 60 && frm.A29.value >= 6 && frm.A29.value <= 72){
+	Template += "\n" + "- Meet requirements specified in the latest version of the ASCO/CAP guidelines." + "\n"  ;
+} else if (frm.A28.value == "" || frm.A29.value == ""){
+	Template += "\n" + "- Given the uncertain cold ischaemia time and/or uncertain fixation time, please interpret the above results with caution." + "\n" ;
+} else if (frm.A28.value > 60 || frm.A29.value < 6 || frm.A29.value > 72){
+	Template += "\n" + "- Given the suboptimal cold ischaemia time and/or suboptimal formalin fixation time, please interpret the above results with caution." + "\n" ;
+}
 
 frm.holdtext.value = Template;
 }
@@ -593,9 +632,35 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 <td align="right"><label>- Combined Positive Score (CPS) :</label>
 <input type="text" class="element text small" ID="A23" size="35"></td>
 </tr>
+</table>
+</p>
+
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Cold ischemia time (min) :</label>
+</td>
+<td>
+<input type="text" class="element text small" ID="A28" size="3">
+min
+</td>
+
+<tr>
+<td>
+<label class="description">- Fixation time in buffered formalin :</label>
+</td>
+<td>
+<input type="text" class="element text small" ID="A29" size="3">
+hours
+</td>
+</tr>
 
 </table>
 </p>
+
 </fieldset>
 </p>
 <p>
@@ -642,7 +707,7 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 <br>
 
 <div id="footer">
-Last upated 16-Aug-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.1.0.0.REL_CAPCP.pdf" target="_blank"> Gynecologic Biomarkers 1.1.0.0 Mar-2023</a>.<br>
+Last upated 03-Dec-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.1.0.0.REL_CAPCP.pdf" target="_blank"> Gynecologic Biomarkers 1.1.0.0 Mar-2023</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

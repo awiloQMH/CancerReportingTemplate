@@ -12,31 +12,31 @@ function updateDescription (frm)
 
 if (frm.A07.value !== ""){
 	Template += "- HER2 IHC (for excision): " + frm.A07.value + "\n";
-};
+}
 
 if (frm.A08.value !== ""){
 	Template += "  - Score : " + frm.A08.value + "\n";
-};
+}
 
 if (frm.A09.value !== ""){
 	Template += "- HER2 DISH : " + frm.A09.value + "\n";
-};
+}
 
 if (frm.A10.value !== ""){
 	Template += "  - Number of tumor cell counted : " + frm.A10.value + "\n";
-};
+}
 
 if (frm.A11.value !== ""){
 	Template += "  - Average number of HER2 signals (black) per cell : " + frm.A11.value + "\n";
-};
+}
 
 if (frm.A12.value !== ""){
 	Template += "  - Average number of CEP17 signals (red) per cell : " + frm.A12.value + "\n";
-};
+}
 
 if (frm.A13.value !== ""){
 	Template += "  - HER2/CEP17 ratio : " + frm.A13.value + "\n";
-};
+}
 
 if (document.getElementById("A14").checked || document.getElementById("A15").checked){
 	Template += "  - Other ISH abnormalities: "  + "\n";
@@ -50,24 +50,57 @@ if (document.getElementById("A15").checked){
 	Template += frm.A15.value + "\n";
 }
 
-
 if (frm.A19.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
 }
 
-
-if (frm.A18.value !== ""){
-	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A18.value + "\n";
-}
 if (frm.A07.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system.";
-};
-
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system." + "\n" ;
+}
 
 if (frm.A09.value !== ""){
-	Template += "\n" + "Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by pathologist under light microscopy.";
+	Template += "\n" + "Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by pathologist under light microscopy." + "\n" ;
 }
-  
+
+if (frm.A28.value !== ""){
+	Template += "\n" + "- Cold ischemia time : " + frm.A28.value + " min";
+} else {
+		Template += "\n" + "- Cold ischemic time is uncertain." ;
+}
+
+if (frm.A28.value <= 60 && frm.A28.value !== ""){
+		Template += "\n" + "  - Optimal (<= 60 min)." ;
+}
+
+if (frm.A28.value > 60  && frm.A28.value !== ""){
+		Template += "\n" + "  - Prolonged intervals (> 60 min)." ;
+}
+
+if (frm.A27.value !== ""){
+	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A27.value + " hours";
+}else {
+		Template += "\n" + "- Formalin fixation time is uncertain." ;
+}
+
+if (frm.A27.value < 6  && frm.A27.value !== ""){
+		Template += "\n" + "  - Inadequate fixation (<6 hours)." ;
+}
+
+if (frm.A27.value >= 6 && frm.A27.value <= 72 && frm.A27.value !== ""){
+		Template += "\n" + "  - Optimal fixation (6-72 hours)." ;
+}
+
+if (frm.A27.value > 72  && frm.A27.value !== ""){
+		Template += "\n" + "  - Prolonged intervals (>72 hours)." ;
+}
+
+if (frm.A28.value !== "" && frm.A28.value <= 60 && frm.A27.value >= 6 && frm.A27.value <= 72){
+	Template += "\n" + "- Meet requirements specified in the latest version of the ASCO/CAP guidelines." + "\n"  ;
+} else if (frm.A28.value == "" || frm.A27.value == ""){
+	Template += "\n" + "- Given the uncertain cold ischaemia time and/or uncertain fixation time, please interpret the above results with caution." + "\n" ;
+} else if (frm.A28.value > 60 || frm.A27.value < 6 || frm.A27.value > 72){
+	Template += "\n" + "- Given the suboptimal cold ischaemia time and/or suboptimal formalin fixation time, please interpret the above results with caution." + "\n" ;
+}  
 
 frm.holdtext.value = Template;
 }
@@ -185,21 +218,36 @@ All three scoring criteria have been used:<br>
 </td>
 <br>
 </tr>
+</table>
+</p>
+
+
+<p>
+<table border="1">
+<col width="40%">
 
 <tr>
 <td>
-<label>- Fixation time in buffered formalin :</label>
+<label class="description">- Cold ischemia time (min) :</label>
 </td>
 <td>
-<select class="element select large"  ID="A18">
-		<option value=""></option>
-		<option value="Optimal fixation (6-72 hours)">Optimal fixation (6-72 hours)</option>
-		<option value="Prolonged intervals (> 72 hours)">Prolonged intervals (> 72 hours)</option>
-		<option value="Uncertain">Uncertain</option>
-	</select>
+<input type="text" class="element text small" ID="A28" size="3">
+min
 </td>
+
+<tr>
+<td>
+<label class="description">- Fixation time in buffered formalin :</label>
+</td>
+<td>
+<input type="text" class="element text small" ID="A27" size="3">
+hours
+</td>
+</tr>
+
 </table>
 </p>
+
 </fieldset>
 </p>
 <p>
@@ -235,7 +283,7 @@ Lancet Oncol 2016 17(6):738–746.<br>
 <br>
 
 <div id="footer">
-Last upated 23-Oct-2021<br>
+Last upated 03-Dec-2024<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

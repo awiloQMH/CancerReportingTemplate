@@ -163,14 +163,50 @@ if (frm.A31.value !== ""){
 	Template += "  - Total tumor cell positive % : "+ frm.A31.value + "\n";
 }
 
+if (frm.A32.value !== ""){
+	Template += "\n" + "- Cold ischemia time : " + frm.A32.value + " min";
+} else {
+		Template += "\n" + "- Cold ischemic time is uncertain." ;
+}
+
+if (frm.A32.value <= 60 && frm.A32.value !== ""){
+		Template += "\n" + "  - Optimal (<= 60 min)." ;
+}
+
+if (frm.A32.value > 60  && frm.A32.value !== ""){
+		Template += "\n" + "  - Prolonged intervals (> 60 min)." ;
+}
+
+if (frm.A33.value !== ""){
+	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A33.value + " hours";
+}else {
+		Template += "\n" + "- Formalin fixation time is uncertain." ;
+}
+
+if (frm.A33.value < 6  && frm.A33.value !== ""){
+		Template += "\n" + "  - Inadequate fixation (<6 hours)." ;
+}
+
+if (frm.A33.value >= 6 && frm.A33.value <= 72 && frm.A33.value !== ""){
+		Template += "\n" + "  - Optimal fixation (6-72 hours)." ;
+}
+
+if (frm.A33.value > 72  && frm.A33.value !== ""){
+		Template += "\n" + "  - Prolonged intervals (>72 hours)." ;
+}
+
+if (frm.A32.value !== "" && frm.A32.value <= 60 && frm.A33.value >= 6 && frm.A33.value <= 72){
+	Template += "\n" + "- Meet requirements specified in the latest version of the ASCO/CAP guidelines." + "\n"  ;
+} else if (frm.A32.value == "" || frm.A33.value == ""){
+	Template += "\n" + "- Given the uncertain cold ischaemia time and/or uncertain fixation time, please interpret the above results with caution." + "\n" ;
+} else if (frm.A32.value > 60 || frm.A33.value < 6 || frm.A33.value > 72){
+	Template += "\n" + "- Given the suboptimal cold ischaemia time and/or suboptimal formalin fixation time, please interpret the above results with caution." + "\n" ;
+}
 
 if (frm.A19.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
 }
 
-if (frm.A18.value !== ""){
-	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A18.value + "\n";
-}
 if (frm.A05.value + frm.A07.value !== ""){
 	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system.";
 }
@@ -582,18 +618,27 @@ table, th, td {
 <td align="right"><label>- Total tumor cells 2+ & 3+ : :</label>
 <input type="text" class="element text small" ID="A31" size="35"></td>
 </tr>
+
+
 <tr>
 <td>
-<label>- Fixation time in buffered formalin :</label>
+<label class="description">- Cold ischemia time (min) :</label>
 </td>
 <td>
-<select class="element select large"  ID="A18">
-		<option value=""></option>
-		<option value="Optimal fixation (6-72 hours)">Optimal fixation (6-72 hours)</option>
-		<option value="Prolonged intervals (> 72 hours)">Prolonged intervals (> 72 hours)</option>
-		<option value="Uncertain">Uncertain</option>
-	</select>
+<input type="text" class="element text small" ID="A32" size="3">
+min
 </td>
+
+<tr>
+<td>
+<label class="description">- Fixation time in buffered formalin :</label>
+</td>
+<td>
+<input type="text" class="element text small" ID="A33" size="3">
+hours
+</td>
+</tr>
+
 </table>
 </p>
 
@@ -618,7 +663,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated 30-Sep-2024, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated 03-Dec-2024, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
