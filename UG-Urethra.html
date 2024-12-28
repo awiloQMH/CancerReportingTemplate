@@ -76,7 +76,7 @@ if (frm.A24.value !== ""){
 	Template += "- Perinerual invasion: " + frm.A24.value + "\n";
 }
 
-if (document.getElementById("A26").checked || document.getElementById("A27").checked || document.getElementById("A28").checked || document.getElementById("A29").checked || document.getElementById("A30").checked || document.getElementById("A31").checked || document.getElementById("A32").checked || document.getElementById("A33").checked || document.getElementById("A34").checked || document.getElementById("A35").checked){
+if (document.getElementById("A26").checked || document.getElementById("A27").checked || document.getElementById("A28").checked || document.getElementById("A29").checked || document.getElementById("A30").checked || document.getElementById("A31").checked || document.getElementById("A32").checked || document.getElementById("A84").checked ||document.getElementById("A33").checked || document.getElementById("A34").checked || document.getElementById("A35").checked){
 	Template += "- Tumor extension (Male, Urothelial carcinoma of penile and bulbomembranous urethra): " + "\n";
 }
 
@@ -108,6 +108,10 @@ if (document.getElementById("A32").checked){
 	Template += "  " +  frm.A32.value + "\n";
 }
 
+if (document.getElementById("A84").checked){
+	Template += "  " +  frm.A84.value + "\n";
+}
+
 if (document.getElementById("A33").checked){
 	Template += "  " +  frm.A33.value + "\n";
 }
@@ -120,8 +124,12 @@ if (document.getElementById("A35").checked){
 	Template += "  " +  frm.A35.value + "\n";
 }
 
-if (document.getElementById("A37").checked || document.getElementById("A38").checked || document.getElementById("A39").checked || document.getElementById("A40").checked || document.getElementById("A41").checked || document.getElementById("A42").checked || document.getElementById("A43").checked || document.getElementById("A44").checked || document.getElementById("A45").checked){
+if (document.getElementById("A85").checked || document.getElementById("A37").checked || document.getElementById("A38").checked || document.getElementById("A39").checked || document.getElementById("A40").checked || document.getElementById("A41").checked || document.getElementById("A42").checked || document.getElementById("A43").checked || document.getElementById("A86").checked || document.getElementById("A44").checked || document.getElementById("A45").checked){
 	Template += "- Tumor extension (Male, Urothelial carcinoma of the prostatic urethra): " + "\n";
+}
+
+if (document.getElementById("A85").checked){
+	Template += "  " +  frm.A85.value + "\n";
 }
 
 if (document.getElementById("A37").checked){
@@ -146,6 +154,10 @@ if (document.getElementById("A41").checked){
 
 if (document.getElementById("A42").checked){
 	Template += "  " +  frm.A42.value + "\n";
+}
+
+if (document.getElementById("A86").checked){
+	Template += "  " +  frm.A86.value + "\n";
 }
 
 if (document.getElementById("A43").checked){
@@ -305,7 +317,7 @@ if (frm.A71.value !== ""){
 	Template += "  - Distant metastasis: " + "\n" + "    - " + frm.A71.value + "\n";
 }
 
-if (document.getElementById("A73").checked || document.getElementById("A74").checked ||  document.getElementById("A75").checked ||  document.getElementById("A76").checked ||  document.getElementById("A77").checked ||  frm.A78.value !==""){
+if (document.getElementById("A73").checked || document.getElementById("A74").checked || document.getElementById("A87").checked || document.getElementById("A88").checked ||  document.getElementById("A75").checked ||  document.getElementById("A76").checked ||  document.getElementById("A77").checked ||  frm.A78.value !==""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
 }
 
@@ -315,6 +327,14 @@ if (document.getElementById("A73").checked){
 
 if (document.getElementById("A74").checked){
 	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A87").checked){
+	Template += frm.A87.value + "\n";
+}
+
+if (document.getElementById("A88").checked){
+	Template += frm.A88.value + "\n";
 }
 
 if (document.getElementById("A75").checked){
@@ -407,7 +427,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\Urethra_4.2.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2024-12-Update\Genitourinary Protocol Folder\Urethra_4.3.0.0.REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the urethra and periurethral glands
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -417,7 +437,7 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2024-06-Update\Genitourinary Protocol Folder\Urethra.Bx_4.2.0.1.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2024-12-Update\Genitourinary Protocol Folder\Urethra.Bx_4.3.0.0.REL.CAPCP.pdf" target="_blank">biopsy specimen</a>.</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -490,7 +510,8 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra_4.1.0.0.REL_CAPCP.pdf#page=11" target="_blank">Histologic type (WHO 5e)</a>:</label> 
+<label class="description">- Histologic type (WHO 5e):</label>
++ Specify Percentages of Histologic Subtypes and Divergent Differentiations Present (totaling 100%) 
 </td>
 <td>
 <select class="element select large" ID="A05">
@@ -618,19 +639,22 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A30" value="  - Tumor invades adjacent structures, corpus spongiosum"><label  class="choice">Tumor invades adjacent structures, corpus spongiosum</label>
 <input class="element checkbox" type="checkbox"  id="A31" value="  - Tumor invades adjacent structures, periurethral muscle"><label  class="choice">Tumor invades adjacent structures, periurethral muscle</label>
 <input class="element checkbox" type="checkbox"  id="A32" value="  - Tumor invades adjacent structures, corpus cavernosum"><label  class="choice">Tumor invades adjacent structures, corpus cavernosum</label>
-<input class="element checkbox" type="checkbox"  id="A33" value="  - Tumor invades adjacent structures, bladder wall"><label  class="choice">Tumor invades adjacent structures, bladder wall</label>
+<input class="element checkbox" type="checkbox"  id="A84" value="  - Tumor invades adjacent structures, scrutum"><label  class="choice">Tumor invades adjacent structures, scrutum</label>
+<input class="element checkbox" type="checkbox"  id="A33" value="  - Tumor invades adjacent structures, urinary bladder wall"><label  class="choice">Tumor invades adjacent structures, urinary bladder wall</label>
 <input class="element checkbox" type="checkbox"  id="A34" value="  - Tumor invades adjacent structures, rectum"><label  class="choice">Tumor invades adjacent structures, rectum</label>
 <input class="element checkbox" type="checkbox"  id="A35" value="  - Tumor invades adjacent structures, other (specify):"><label  class="choice">Tumor invades adjacent structures, other (specify):</label>
 </p>
 
 <p><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\Urethra_4.1.0.0.REL_CAPCP.pdf#page=13" target="_blank">Tumor extension (Male, Urothelial carcinoma of the prostatic urethra)</a>:</label> 
+<input class="element checkbox" type="checkbox"  id="A85" value="  - Noninvasive papillary carcinoma"><label  class="choice">Noninvasive papillary carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A37" value="  - Carcinoma in situ, involvement of the prostatic urethra"><label  class="choice">Carcinoma in situ, involvement of the prostatic urethra</label>
 <input class="element checkbox" type="checkbox"  id="A38" value="  - Carcinoma in situ, involvement of the prostatic ducts"><label  class="choice">Carcinoma in situ, involvement of the prostatic ducts</label>
 <input class="element checkbox" type="checkbox"  id="A39" value="  - Tumor invades urethral subepithelial connective tissue immediately underlying the urothelium"><label  class="choice">Tumor invades urethral subepithelial connective tissue immediately underlying the urothelium</label>
 <input class="element checkbox" type="checkbox"  id="A40" value="  - Tumor invades the prostatic stroma surrounding ducts either by direct extension from the urothelial surface or by invasion from prostatic ducts"><label  class="choice">Tumor invades the prostatic stroma surrounding ducts either by direct extension from the urothelial surface or by invasion from prostatic ducts</label>
 <input class="element checkbox" type="checkbox"  id="A41" value="  - Tumor invades the periprostatic fat"><label  class="choice">Tumor invades the periprostatic fat</label>
 <input class="element checkbox" type="checkbox"  id="A42" value="  - Tumor invades adjacent structures"><label class="choice" >Tumor invades adjacent structures</label>
-<input class="element checkbox" type="checkbox"  id="A43" value="  - Tumor invades adjacent structures, extraprostatic invasion of the bladder wall"><label  class="choice">Tumor invades adjacent structures, extraprostatic invasion of the bladder wall</label>
+<input class="element checkbox" type="checkbox"  id="A43" value="  - Tumor invades adjacent structures, extraprostatic invasion of the urinary bladder wall"><label  class="choice">Tumor invades adjacent structures, extraprostatic invasion of the urinary bladder wall</label>
+<input class="element checkbox" type="checkbox"  id="A86" value="  - Tumor invades adjacent structures, extraprostatic invasion of seminal vesicle"><label  class="choice">Tumor invades adjacent structures, extraprostatic invasion of seminal vesicle</label>
 <input class="element checkbox" type="checkbox"  id="A44" value="  - Tumor invades adjacent structures, rectum"><label  class="choice">Tumor invades adjacent structures, rectum</label>
 <input class="element checkbox" type="checkbox"  id="A45" value="  - Tumor invades adjacent structures, Other (specify):"><label  class="choice">Tumor invades adjacent structures, Other (specify):</label>
 </p>
@@ -642,7 +666,7 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A50" value="  - Tumor invades adjacent structures"><label class="choice" >Tumor invades adjacent structure</label>
 <input class="element checkbox" type="checkbox"  id="A51" value="  - Tumor invades adjacent structures, periurethral muscle (fibromuscular and adipose tissue)"><label class="choice" >Tumor invades adjacent structures, periurethral muscle (fibromuscular and adipose tissue)</label>
 <input class="element checkbox" type="checkbox"  id="A52" value="  - Tumor invades adjacent structures, anterior vagina"><label  class="choice">Tumor invades adjacent structures, anterior vagina</label>
-<input class="element checkbox" type="checkbox"  id="A53" value="  - Tumor invades adjacent structures, bladder wall"><label  class="choice">Tumor invades adjacent structures, bladder wall</label>
+<input class="element checkbox" type="checkbox"  id="A53" value="  - Tumor invades adjacent structures, urinary bladder wall"><label  class="choice">Tumor invades adjacent structures, urinary bladder wall</label>
 <input class="element checkbox" type="checkbox"  id="A54" value="  - Tumor invades adjacent structures, rectum"><label  class="choice">Tumor invades adjacent structures, rectum</label>
 <input class="element checkbox" type="checkbox"  id="A55" value="  - Tumor invades adjacent structures, other (specify):"><label  class="choice">Tumor invades adjacent structures, other (specify):</label>
 </p>
@@ -809,7 +833,7 @@ table, th, td {
 <label class="description">  - TNM Descriptors:</label>
 </td>
 <td>
-<input class="element checkbox" type="checkbox"  id="A65" value="m (multiple primary tumors) "><label  class="choice">m (multiple primary)</label>
+<input class="element checkbox" type="checkbox"  id="A65" value="m (multiple primary synchronous tumors in a single organ) "><label  class="choice">m (multiple primary synchronous tumors in a single organ)</label>
 <input class="element checkbox" type="checkbox"  id="A66" value="r (recurrent) "><label  class="choice">r (recurrent)</label>
 <input class="element checkbox" type="checkbox"  id="A67" value="y (post treatment) "><label  class="choice">y (post treatment)</label>
 </td>
@@ -901,6 +925,8 @@ table, th, td {
 <p>
 <input class="element checkbox" type="checkbox"  id="A73" value="  - Keratinizing squamous metaplasia"><label  class="choice">Keratinizing squamous metaplasia</label>
 <input class="element checkbox" type="checkbox"  id="A74" value="  - Inflammation/regenerative changes"><label  class="choice">Inflammation/regenerative changes</label>
+<input class="element checkbox" type="checkbox"  id="A87" value="  - Therapy-related changes (specify):"><label  class="choice">Therapy-related changes (specify):</label>
+<input class="element checkbox" type="checkbox"  id="A88" value="  - Cautery artifact"><label  class="choice">Cautery artifact</label>
 <input class="element checkbox" type="checkbox"  id="A75" value="  - Metaplasia (specify type):"><label  class="choice">Metaplasia (specify type):</label>
 <input class="element checkbox" type="checkbox"  id="A76" value="  - Urethritis cystica et glandularis"><label  class="choice">Urethritis cystica et glandularis</label>
 <input class="element checkbox" type="checkbox"  id="A77" value="  - Intestinal metaplasia"><label  class="choice">Intestinal metaplasia</label>
@@ -918,7 +944,7 @@ table, th, td {
 </td>
 <td>
 <input class="element checkbox" type="checkbox"  id="A06" value="  - None identified"><label class="choice" >None identified</label>
-<input class="element checkbox" type="checkbox"  id="A07" value="  - Condyloma"><label  class="choice">Condyloma</label>
+<input class="element checkbox" type="checkbox"  id="A07" value="  - Condyloma acuminata"><label  class="choice">Condyloma acuminata</label>
 <input class="element checkbox" type="checkbox"  id="A08" value="  - Squamous dysplasia (low, intermediate, high grade)"><label  class="choice">Squamous dysplasia (low, intermediate, high grade)</label>
 <input class="element checkbox" type="checkbox"  id="A09" value="  - Urothelial papilloma"><label  class="choice">Urothelial papilloma</label>
 <input class="element checkbox" type="checkbox"  id="A10" value="  - Urothelial papilloma, inverted type"><label  class="choice">Urothelial papilloma, inverted type</label>
@@ -953,9 +979,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 14-Aug-2024,<br>
+Last upated on 23-Dec-2024,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Urethra Resection 4.2.0.0 (Sep-2023), <br>
+Urethra Resection 4.3.0.0 (Dec-2024), <br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

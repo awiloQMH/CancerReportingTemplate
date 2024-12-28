@@ -62,7 +62,7 @@ if (
 	document.getElementById("A15").checked || 
 	document.getElementById("A16").checked || document.getElementById("A17").checked || 
 	document.getElementById("A18").checked || document.getElementById("A19").checked ||
-	document.getElementById("A20").checked){
+	document.getElementById("A81").checked || document.getElementById("A20").checked){
 	Template += "\n" + "- Histologic type (WHO 5e) : " + "\n";
 }
 
@@ -91,11 +91,15 @@ if (document.getElementById("A18").checked){
 }
 
 if (document.getElementById("A19").checked){
-	Template += frm.A10.value + "\n";
+	Template += frm.A19.value + "\n";
+}
+
+if (document.getElementById("A81").checked){
+	Template += frm.A81.value + "\n";
 }
 
 if (document.getElementById("A20").checked){
-	Template += frm.A11.value + "\n";
+	Template += frm.A20.value + "\n";
 }
 
 if (frm.A21.value !== ""){
@@ -225,9 +229,13 @@ if (document.getElementById("A79").checked){
 
 if (document.getElementById("A36").checked || document.getElementById("A37").checked || 
     document.getElementById("A38").checked || frm.A39.value + frm.A40.value + 
-	frm.A41.value + frm.A42.value + frm.A43.value + frm.A44.value + 
-	frm.A45.value + frm.A46.value + frm.A47.value !== ""){
+	frm.A41.value + frm.A42.value + frm.A45.value + frm.A46.value + frm.A47.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A36").checked || document.getElementById("A37").checked || 
+    document.getElementById("A38").checked || frm.A43.value + frm.A44.value !== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 9th edition):" + "\n";
 }
 
 if (document.getElementById("A36").checked || document.getElementById("A37").checked || 
@@ -410,7 +418,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Neck Protocol Folder\HN.Pharynx_4.3.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2024-12-Update\Head and Neck Protocol Folder\HN.Pharynx_5.0.0.0.REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Cancers of the pharynx (oropharynx, hypopharynx and nasopharynx)
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -531,13 +539,13 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=16" target="_blank">Oropharynx and hypopharynx CA</a>:</label> 
+<label class="description">- Oropharynx and hypopharynx CA:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A11">
 		<option value=""></option>
 		<option value="Human papillomavirus (HPV)mediated (positive) squamous cell carcinoma (oropharynx only)">Human papillomavirus (HPV)mediated (positive) squamous cell carcinoma (oropharynx only)</option>
-		<option value="HPV-unrelated (negative) squamous cell carcinoma (oropharynx)">HPV-unrelated (negative) squamous cell carcinoma (oropharynx)</option>
+		<option value="HPV-independent squamous cell carcinoma (oropharynx)">HPV-independent squamous cell carcinoma (oropharynx)</option>
 		<option value="Oropharyngeal squamous cell carcinoma, HPV status unknown">Oropharyngeal squamous cell carcinoma, HPV status unknown</option>
 		<option value="Hypopharyngeal squamous cell carcinoma">Hypopharyngeal squamous cell carcinoma</option>
 	</select>
@@ -546,7 +554,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=16" target="_blank">SCC and variants (WHO 5e)</a> :</label> 
+<label class="description">- SCC and variants (WHO 5e) :</label> 
 </td>
 <td>
 <input class="element checkbox" type="checkbox"  id="A12" value="  - Squamous cell carcinoma, conventional (keratinizing)"><label  class="choice">Squamous cell carcinoma, conventional (keratinizing)</label>
@@ -556,20 +564,21 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 <input class="element checkbox" type="checkbox"  id="A17" value="  - Papillary squamous cell carcinoma"><label  class="choice">Papillary squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A18" value="  - Spindle cell squamous cell carcinoma"><label  class="choice">Spindle cell squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A19" value="  - Verrucous squamous cell carcinoma"><label  class="choice">Verrucous squamous cell carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A81" value="  - Carcinoma cuniculatum"><label  class="choice">Carcinoma cuniculatum</label>
 <input class="element checkbox" type="checkbox"  id="A20" value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label  class="choice">Lymphoepithelial carcinoma (non-NP)</label>
 </td>
 </tr>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=16" target="_blank">Nasopharynx CA</a>:</label> 
+<label class="description">- Nasopharynx CA:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A21">
 		<option value=""></option>
 		<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
-		<option value="Squamous cell carcinoma, keratinizing">Squamous cell carcinoma, keratinizing</option>
-		<option value="Squamous cell carcinoma, nonkeratinizing">Squamous cell carcinoma, nonkeratinizing</option>
+		<option value="Squamous cell carcinoma, keratinizing, NOS">Squamous cell carcinoma, keratinizing, NOS</option>
+		<option value="Squamous cell carcinoma, non-keratinizing, NOS">Squamous cell carcinoma, non-keratinizing, NOS</option>
 		<option value="Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>
 		<option value="Low-grade nasopharyngeal papillary adenocarcinoma">Low-grade nasopharyngeal papillary adenocarcinoma</option>
 	</select>
@@ -578,12 +587,12 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=16" target="_blank">Minor salivary glands CA</a>:</label> 
+<label class="description">- Minor salivary glands CA:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A22">
 		<option value=""></option>
-		<option value=""></option>
+		<option value="Carcinoma ex pleomorphic adenoma">Carcinoma ex pleomorphic adenoma</option>
 		<option value="Carcinoma ex pleomorphic adenoma, minimally invasive + malignant component">Carcinoma ex pleomorphic adenoma, minimally invasive + malignant component</option>
 		<option value="Carcinoma ex pleomorphic adenoma, invasive + malignant component">Carcinoma ex pleomorphic adenoma, invasive + malignant component</option>
 		<option value="Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive) + malignant component">Carcinoma ex pleomorphic adenoma, intracapsular (noninvasive) + malignant component</option>
@@ -619,7 +628,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=17" target="_blank">Neuroendocrine carcinoma (WHO 5e)</a>:</label> 
+<label class="description">- Neuroendocrine carcinoma (WHO 5e):</label> 
 </td>
 <td>
 	<select class="element select large" ID="A23">
@@ -639,11 +648,12 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=13" target="_blank">Other histologic type</a>:</label> 
+<label class="description">- Other histologic type:</label> 
 </td>
 <td>
 	<select class="element select large" ID="A24">
 		<option value=""></option>
+		<option value="Combined histology"><label >Combined histology</label></option>
 		<option value="Mucosal melanoma"><label >Mucosal melanoma</label></option>
 		<option value="Carcinoma, type cannot be determined"><label >Carcinoma, type cannot be determined</label></option>
 		<option value="Other histologic type not listed (specify):"><label >Other histologic type not listed (specify):</label></option>
@@ -653,7 +663,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=17" target="_blank">Histologic grade</a>:</label>
+<label class="description">- Histologic grade:</label>
 </td>
 <td>
 <select class="element select large" ID="A25">
@@ -669,7 +679,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Head and Neck Protocol Folder\HN.Oral_4.2.0.0.REL_CAPCP.pdf#page=19" target="_blank">Grade/Intrinsic biologic potential</a>:</label>
+<label class="description">- Grade/Intrinsic biologic potential:</label>
 </td>
 <td>
 <select class="element select large" ID="A80">
@@ -708,7 +718,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=19" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A28">
@@ -772,7 +782,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=20" target="_blank">Surgical margins</a>: </label></legend>
+<legend><label class="description">Surgical margins: </label></legend>
 <p>
 <label class="description">- Surgical margins:</label>
 <select class="element select medium" ID="A29">
@@ -791,7 +801,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=20" target="_blank">Lymph nodes examination</a>: </label></legend>
+	<legend> <label class="description"> Lymph nodes examination: </label></legend>
 <p>
 <table border="1">
 <col width="60%">
@@ -885,7 +895,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-11-Update\HN.Pharynx_4.1.1.0.REL_CAPCP.pdf#page=25" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e & 9e):</label></legend>
 	
 <p>
 <table border="1">
@@ -903,7 +913,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td valign="top" rowspan="2">
-<label class="description">- HPV +ve oropharynx carcinoma</label>
+<label class="description">- HPV-associated squamous cell carcinoma of the oropharynx or unknown primary (8e)</label>
 </td>
 <td align="right">
 - Primary tumor (pT):
@@ -935,7 +945,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td valign="top" rowspan="2">
-<label class="description">- HPV -ve oropharynx carcinoma</label>
+<label class="description">- HPV-independent oropharynx carcinoma (8e)</label>
 </td>
 <td align="right">
   - Primary tumor (pT):
@@ -949,6 +959,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 	<option value="    - pT3: Tumor > 4 cm or extension to lingual surface of epiglottis">pT3: Tumor > 4 cm or extension to lingual surface of epiglottis</option>
 	<option value="    - pT4a: Moderately advanced local disease. Tumor invades the larynx, extrinsic muscle of tongue, medial pterygoid, hard palate, or mandible">pT4a: Moderately advanced local disease. Tumor invades the larynx, extrinsic muscle of tongue, medial pterygoid, hard palate, or mandible</option>
 	<option value="    - pT4b: Very advanced local disease. Tumor invades lateral pterygoid muscle, pterygoid plates, lateral nasopharynx, or skull base or encases carotid artery">pT4b: Very advanced local disease. Tumor invades lateral pterygoid muscle, pterygoid plates, lateral nasopharynx, or skull base or encases carotid artery</option>
+	<option value="    - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)</option>
 </select>
 </td>
 </tr>
@@ -966,10 +977,12 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 	<option value="    - pN2a: Metastasis in a single ipsilateral node > 3 cm but < or = 6 cm and ENE(−)">pN2a: Metastasis in a single ipsilateral node > 3 cm but < or = 6 cm and ENE(−)</option>
 	<option value="    - pN2b: Metastases in multiple ipsilateral nodes, < or = 6 cm and ENE(−)">pN2b: Metastases in multiple ipsilateral nodes, < or = 6 cm and ENE(−)</option>
 	<option value="    - pN2c: Metastases in bilateral or contralateral lymph node(s), < or = 6 cm and ENE(−)">pN2c: Metastases in bilateral or contralateral lymph node(s), < or = 6 cm and ENE(−)</option>
+	<option value="    - pN2 (subcategory cannot be determined)">pN2 (subcategory cannot be determined)</option>
 	<option value="    - pN3a: Metastasis in a lymph node > 6 cm and ENE(−)">pN3a: Metastasis in a lymph node > 6 cm and ENE(−)</option>
 	<option value="    - pN3b: Metastasis in a single ipsilateral node > 3 cm and ENE(+)">pN3b: Metastasis in a single ipsilateral node > 3 cm and ENE(+)</option>
 	<option value="    - pN3b: Metastasis in multiple ipsilateral, contralateral or bilateral nodes, any with ENE(+)">pN3b: Metastasis in multiple ipsilateral, contralateral or bilateral nodes, any with ENE(+)</option>
 	<option value="    - pN3b: Metastasis in a single contralateral node of any size and ENE(+)">pN3b: Metastasis in a single contralateral node of any size and ENE(+)</option>
+	<option value="    - pN3 (subcategory cannot be determined)">pN3 (subcategory cannot be determined)</option>
 </select>
 </td>
 </tr>
@@ -977,7 +990,7 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 
 <tr>
 <td valign="top" rowspan="2">
-<label class="description">- Nasopharynx carcinoma</label>
+<label class="description">- Nasopharynx carcinoma (9e)</label>
 </td>
 <td align="right">
   - Primary tumor (pT):
@@ -985,10 +998,11 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 	<option value=""></option>
 	<option value="    - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
-	<option value="    - pT1: Tumor confined to nasopharynx, or extension to oropharynx and/or nasal cavity without parapharyngeal involvement">pT1: Tumor confined to nasopharynx, or extension to oropharynx and/or nasal cavity without parapharyngeal involvement</option>
-	<option value="    - pT2: Tumor with extension to parapharyngeal space, and/or adjacent soft tissue involvement (medial pterygoid, lateral pterygoid, prevertebral muscles)">pT2: Tumor with extension to parapharyngeal space, and/or adjacent soft tissue involvement (medial pterygoid, lateral pterygoid, prevertebral muscles)</option>
-	<option value="    - pT3: Tumor with infiltration of bony structures at skull base, cervical vertebra, pterygoid structures, and/or paranasal sinuses">pT3: Tumor with infiltration of bony structures at skull base, cervical vertebra, pterygoid structures, and/or paranasal sinuses</option>
-	<option value="    - pT4: Tumor with intracranial extension, involvement of cranial nerves, hypopharynx, orbit, parotid gland, and/or extensive soft tissue infiltration beyond the lateral surface of the lateral pterygoid muscle">pT4: Tumor with intracranial extension, involvement of cranial nerves, hypopharynx, orbit, parotid gland, and/or extensive soft tissue infiltration beyond the lateral surface of the lateral pterygoid muscle</option>
+	<option value="    - pTis: Carcinoma in situ">pTis: Carcinoma in situ</option>
+	<option value="    - pT1: Tumor confined to nasopharynx; OR tumor with extension to any of the following without parapharyngeal involvement: oropharynx or nasal cavity">pT1: Tumor confined to nasopharynx; OR tumor with extension to any of the following without parapharyngeal involvement: oropharynx or nasal cavity</option>
+	<option value="    - pT2: Tumor with extension to any of the following: Parapharyngeal space; or Adjacent soft tissue involvement of medial pterygoid, lateral pterygoid, prevertebral muscles">pT2: Tumor with extension to any of the following: Parapharyngeal space; or Adjacent soft tissue involvement of medial pterygoid, lateral pterygoid, prevertebral muscles</option>
+	<option value="    - pT3: Tumor with unequivocal infiltration into any of the following bony structures: Skull base (including pterygoid structures); or Paranasal sinuses; or Cervical vertebraes">pT3: Tumor with unequivocal infiltration into any of the following bony structures: Skull base (including pterygoid structures); or Paranasal sinuses; or Cervical vertebrae</option>
+	<option value="    - pT4: Tumor with any of the following: intracranial extension; or Unequivocal radiological and / or clinical involvement of cranial nerves; or Involvement of hypopharynx; or Involvement of orbit (including inferior orbital fissure); or Involvement of parotid gland; or Extensive soft tissue infiltration beyond the anterolateral surface of the lateral pterygoid muscle">pT4: Tumor with any of the following: intracranial extension; or Unequivocal radiological and / or clinical involvement of cranial nerves; or Involvement of hypopharynx; or Involvement of orbit (including inferior orbital fissure); or Involvement of parotid gland; or Extensive soft tissue infiltration beyond the anterolateral surface of the lateral pterygoid muscle</option>
 </select>
 </td>
 </tr>
@@ -1001,16 +1015,16 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
 	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
-	<option value="    - pN1: Unilateral metastasis in cervical lymph node(s) and/or unilateral or bilateral metastasis in retropharyngeal lymph node(s), < or = 6 cm, above the caudal border of cricoid cartilage">pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)</option>
-	<option value="    - pN2: Bilateral metastasis in cervical lymph node(s), < or = 6 cm, above the caudal border of cricoid cartilage">pN2: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)</option>
-	<option value="    - pN3: Unilateral or bilateral metastasis in cervical lymph node(s), larger than 6 cm in greatest dimension, and/or extension below the caudal border of cricoid cartilage">pN3: Unilateral or bilateral metastasis in cervical lymph node(s), larger than 6 cm in greatest dimension, and/or extension below the caudal border of cricoid cartilage</option>
+	<option value="    - pN1: Tumor involvement of any of the following: Unilateral cervical lymph node(s) or Unilateral / bilateral retropharyngeal lymph node(s); AND all of the following: Less than or equal to 6 cm in greatest dimension; and above the caudal border of cricoid cartilage; and without advanced extranodal extension">pN1: Tumor involvement of any of the following: Unilateral cervical lymph node(s) or Unilateral / bilateral retropharyngeal lymph node(s); AND all of the following: Less than or equal to 6 cm in greatest dimension; and above the caudal border of cricoid cartilage; and without advanced extranodal extension</option>
+	<option value="    - pN2: Tumor involvement of bilateral cervical lymph nodes AND all of the following: Less than or equal to 6 cm in greatest dimension; and above the caudal border of cricoid cartilage; and without advanced extranodal extension">pN2: Tumor involvement of bilateral cervical lymph nodes AND all of the following: Less than or equal to 6 cm in greatest dimension; and above the caudal border of cricoid cartilage; and without advanced extranodal extension</option>
+	<option value="    - pN3: Tumor involvement of unilateral or bilateral cervical lymph node(s); AND any of the following: Greater than 6 cm in greatest dimension; or Extension below the caudal border of cricoid cartilage; or Advanced radiologic or clinical extranodal extension with involvement of adjacent muscles, skin, and / or neurovascular bundle">pN3:Tumor involvement of unilateral or bilateral cervical lymph node(s); AND any of the following: Greater than 6 cm in greatest dimension; or Extension below the caudal border of cricoid cartilage; or Advanced radiologic or clinical extranodal extension with involvement of adjacent muscles, skin, and / or neurovascular bundle</option>
 </select>
 </td>
 </tr>
 
 <tr>
 <td valign="top" rowspan="2">
-<label class="description">- Hypopharynx carcinoma</label>
+<label class="description">- Hypopharynx carcinoma (8e)</label>
 </td>
 <td align="right">
   - Primary tumor (pT):
@@ -1024,6 +1038,8 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 	<option value="    - pT3: Tumor measures > 4 cm or with fixation of hemilarynx or extension to esophageal mucosa">pT3: Tumor measures > 4 cm or with fixation of hemilarynx or extension to esophageal mucosa</option>
 	<option value="    - pT4a: Moderately advanced local disease. Tumor invades thyroid/cricoid cartilage, hyoid bone, thyroid gland, esophageal muscle or central compartment soft tissue">pT4a: Moderately advanced local disease. Tumor invades thyroid/cricoid cartilage, hyoid bone, thyroid gland, esophageal muscle or central compartment soft tissue</option>
 	<option value="    - pT4b: Very advanced local disease. Tumor invades prevertebral fascia, encases carotid artery, or involves mediastinal structures">pT4b: Very advanced local disease. Tumor invades prevertebral fascia, encases carotid artery, or involves mediastinal structures</option>
+	<option value="    - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)</option>
+
 </select>
 </td>
 </tr>
@@ -1042,10 +1058,13 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 	<option value="    - pN2a: Metastasis in a single ipsilateral node > 3 cm but < or = 6 cm and ENE(−)">pN2a: Metastasis in a single ipsilateral node > 3 cm but < or = 6 cm and ENE(−)</option>
 	<option value="    - pN2b: Metastases in multiple ipsilateral nodes, < or = 6 cm and ENE(−)">pN2b: Metastases in multiple ipsilateral nodes, < or = 6 cm and ENE(−)</option>
 	<option value="    - pN2c: Metastases in bilateral or contralateral lymph node(s), < or = 6 cm and ENE(−)">pN2c: Metastases in bilateral or contralateral lymph node(s), < or = 6 cm and ENE(−)</option>
+	<option value="    - pN2 (subcategory cannot be determined)">pN2 (subcategory cannot be determined)</option>
 	<option value="    - pN3a: Metastasis in a lymph node > 6 cm and ENE(−)">pN3a: Metastasis in a lymph node > 6 cm and ENE(−)</option>
 	<option value="    - pN3b: Metastasis in a single ipsilateral node > 3 cm and ENE(+)">pN3b: Metastasis in a single ipsilateral node > 3 cm and ENE(+)</option>
 	<option value="    - pN3b: Metastasis in multiple ipsilateral, contralateral or bilateral nodes, any with ENE(+)">pN3b: Metastasis in multiple ipsilateral, contralateral or bilateral nodes, any with ENE(+)</option>
 	<option value="    - pN3b: Metastasis in a single contralateral node of any size and ENE(+)">pN3b: Metastasis in a single contralateral node of any size and ENE(+)</option>
+	<option value="    - pN3 (subcategory cannot be determined)">pN3 (subcategory cannot be determined)</option>
+
 </select>
 </td>
 </tr>
@@ -1059,6 +1078,9 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 	<option value=""></option>
 	<option value="    - Not applicable - pM cannot be determined from the submitted specimen(s) ">Not applicable - pM cannot be determined from the submitted specimen(s) </option>
 	<option value="    - pM1: Distant metastasis">pM1:Distant metastasis</option>
+	<option value="    - pM1a: Microscopic confirmation of less than or equal to 3 metastatic lesions in one or more organs/ sites">for NPC, pM1a: Microscopic confirmation of less than or equal to 3 metastatic lesions in one or more organs/ sites</option>
+	<option value="    - pM1b: Microscopic confirmation of greater than 3 metastatic lesions in one or more organs / sites">for NPC, pM1b: Microscopic confirmation of greater than 3 metastatic lesions in one or more organs / sites</option>
+	<option value="    - pM1 (subgroup cannot be determined)">pM1 (subgroup cannot be determined)</option>	
 </select>
 </td>
 </tr>
@@ -1191,9 +1213,9 @@ Please also refer to <a href=".\cap\Cancer-Protocols-2023-09-Update\Head and Nec
 <br>
 
 <div id="footer">
-Last upated on 01-Oct-2023,<br>
+Last upated on 27-Dec-2024,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Pharynx 4.3.0.0 (Sep-2023)<br>
+Pharynx 5.0.0.0 (Dec-2024)<br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

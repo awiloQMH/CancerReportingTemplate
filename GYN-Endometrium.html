@@ -150,11 +150,40 @@ if (frm.A29.value !== ""){
 if (frm.A30.value !== ""){
 	Template += "- Histologic grade: " + frm.A30.value + "\n";
 }
-
+/*
 if (frm.A91.value !== ""){
 	Template += "- Two-Tier Grading System (for endometrioid carcinomas only): " + frm.A91.value + "\n";
 }
+*/
 
+if (frm.A104.value + frm.A105.value + frm.A106.value + frm.A107.value !== ""){
+	Template += "\n" + "- Molecular Type:" + "\n";
+}
+
+if (frm.A104.value !== ""){
+	Template += "  - MMR status: " + frm.A104.value + "\n";
+}
+
+if (frm.A105.value !== ""){
+	Template += "  - MSI status: " + frm.A105.value + "\n";
+}
+
+if (frm.A106.value !== ""){
+	Template += "  - p53: " + frm.A106.value + "\n";
+}
+
+if (frm.A107.value !== ""){
+	Template += "  - POLE status: " + frm.A107.value + "\n";
+}
+/*
+if (frm.A108.value !== ""){
+	Template += "  - ProMisE Classification: " + frm.A108.value + "\n";
+}
+
+if (frm.A109.value !== ""){
+	Template += "  - TCGA Classification: " + frm.A109.value + "\n";
+}
+*/	
 if (frm.A31.value !== ""){
 	Template += "- Myometrial invasion: " + frm.A31.value + "\n";
 }
@@ -523,8 +552,8 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2023-12-Update\Gynecologic Protocol Folder\Uterus_5.0.0.0.REL_CAPCP.pdf" target="_blank">
-		<div class="tooltip">Carcinoma and carcinosarcoma of the endometrium
+		<h2><a href=".\cap\Cancer-Protocols-2024-12-Update\Gynecologic Protocol Folder\Uterus_5.1.0.0.REL.CAPCP.pdf" target="_blank">
+		<div class="tooltip">Carcinoma of the endometrium
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
 		</a></h2>
@@ -615,29 +644,22 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=16" target="_blank">Histologic type (WHO 5e)</a>:</label> 
+<label class="description">- Histologic type (WHO 5e):</label> 
 </td>
 <td>
 	<select class="element select large" ID="A29">
 		<option value=""></option>
-		<option value="Endometrioid carcinoma, NOS">Endometrioid carcinoma, NOS</option>
-		<option value="Endometrioid carcinoma, POLE-ultramutated endometrioid carcinoma">Endometrioid carcinoma, POLE-ultramutated endometrioid carcinoma</option>
-		<option value="Endometrioid carcinoma, Mismatch repair–deficient endometrioid carcinoma">Endometrioid carcinoma, Mismatch repair–deficient endometrioid carcinoma</option>
-		<option value="Endometrioid carcinoma, p53-mutant endometrioid carcinoma">Endometrioid carcinoma, p53-mutant endometrioid carcinoma</option>	
-		<option value="Endometrioid carcinoma, no specific molecular profile (NSMP) endometrioid carcinoma">Endometrioid carcinoma, no specific molecular profile (NSMP) endometrioid carcinoma</option>
-		<option value="Serous endometrial intraepithelial carcinoma">Serous endometrial intraepithelial carcinoma</option>
+		<option value="Endometrioid carcinoma, NOS">Endometrioid carcinoma</option>
 		<option value="Serous carcinoma">Serous carcinoma</option>
-		<option value="Carcinosarcoma (malignant mixed Mullerian tumor)">Carcinosarcoma (malignant mixed Mullerian tumor)</option>
-		<option value="Mucinous carcinoma, intestinal type">Mucinous carcinoma, intestinal type</option>	
 		<option value="Clear cell carcinoma">Clear cell carcinoma</option>
+		<option value="Dedifferentiated carcinoma">Dedifferentiated carcinoma</option>
+		<option value="Carcinosarcoma (malignant mixed Mullerian tumor)">Carcinosarcoma (malignant mixed Mullerian tumor)</option>
+		<option value="Mesonephric-like adenocarcinoma">Mesonephric-like adenocarcinoma</option>
+		<option value="Squamous cell carcinoma, NOS">Squamous cell carcinoma, NOS</option>	
+		<option value="Gastric (gastrointestinal)-type carcinoma">Gastric (gastrointestinal)-type carcinoma</option>
+		<option value="Mixed cell carcinoma (specify types and percentages):">Mixed cell carcinoma (specify types and percentages):</option>
 		<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
 		<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-		<option value="Mixed cell carcinoma (specify types and percentages):">Mixed cell carcinoma (specify types and percentages):</option>
-		<option value="Dedifferentiated carcinoma">Dedifferentiated carcinoma</option>
-		<option value="Undifferentiated carcinoma, NOS">Undifferentiated carcinoma, NOS</option>	
-		<option value="Mesonephric adenocarcinoma">Mesonephric adenocarcinoma</option>	
-		<option value="Squamous cell carcinoma, NOS">Squamous cell carcinoma, NOS</option>	
-		<option value="Mesonephric-like adenocarcinoma">Mesonephric-like adenocarcinoma</option>	
 		<option value="Other (specify):">Other (specify):</option>
 	</select>
 </td>
@@ -645,29 +667,15 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=18" target="_blank">Histologic grade</a>:</label>
+<label class="description">- Histologic grade:</label>
 </td>
 <td>
 	<select class="element select large" ID="A30">
 		<option value=""></option>
-		<option value="FIGO grade 1">FIGO grade 1</option>
-		<option value="FIGO grade 2">FIGO grade 2</option>
-		<option value="FIGO grade 3">FIGO grade 3</option>
-		<option value="Other (specify):">Other (specify):</option>
-		<option value="Cannot be assessed">Cannot be assessed</option>	
-	</select>
-</td>
-</tr>
-
-<tr>
-<td>
-<label class="">+ <a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=18" target="_blank">Two-Tier Grading System</a>:</label>
-</td>
-<td>
-	<select class="element select large" ID="A91">
-		<option value=""></option>
-		<option value="Low grade (encompassing FIGO 1 and 2)">Low grade (encompassing FIGO 1 and 2)</option>
-		<option value="High grade (FIGO 3)">High grade (FIGO 3)</option>
+		<option value="FIGO grade 1">FIGO grade 1 (endometrioid carcinoma)</option>
+		<option value="FIGO grade 2">FIGO grade 2 (endometrioid carcinoma)</option>
+		<option value="FIGO grade 3">FIGO grade 3 (endometrioid carcinoma)</option>
+		<option value="High-grade">High-grade (non-endometrioid carcinoma)</option>
 		<option value="Other (specify):">Other (specify):</option>
 		<option value="Cannot be assessed">Cannot be assessed</option>	
 	</select>
@@ -676,7 +684,123 @@ table, th, td {
 
 <tr>
 <td rowspan="4" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=19" target="_blank">Myometrial invasion</a>:</label>
+<label class="">+ Molecular Type:</label>
+</td>
+<td align="right">+ MMR IHC :
+	<select class="element select medium" ID="A104">
+		<option value=""></option>
+		<option value="Not performed">Not performed</option>
+		<option value="Intact nuclear expression of MLH1, PMS2, MSH2 and MSH6">Intact nuclear expression of MLH1, PMS2, MSH2 and MSH6</option>
+		<option value="Loss of nuclear MMR protein expression (specify):">Loss of nuclear MMR protein expression (specify):</option>
+		<option value="Subclonal loss of nuclear MMR protein expression (specify):">Subclonal loss of nuclear MMR protein expression (specify):</option>		
+		<option value="Cannot be assessed (explain):">Cannot be assessed (explain):</option>	
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">+ MSI test :
+	<select class="element select medium" ID="A105">
+		<option value=""></option>
+		<option value="Not performed">Not performed</option>
+		<option value="MSI-Stable (MSS)">MSI-Stable (MSS)</option>
+		<option value="MSI-Low (MSI-L)">MSI-Low (MSI-L)</option>
+		<option value="MSI-High (MSI-H)">MSI-High (MSI-H)</option>		
+		<option value="Cannot be assessed (explain):">Cannot be assessed (explain):</option>	
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">+ p53 status :
+	<select class="element select medium" ID="A106">
+		<option value=""></option>
+		<option value="Normal (wild type) expression.">Normal (wild type) expression.</option>
+		<option value="Abnormal (mutated) expression">Abnormal (mutated) expression.</option>
+		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
+		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression, internal positive control present)">Abnormal, Null (lack of nuclear or cytoplasmic expression, internal positive control present)</option>
+		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+		<option value="Subclonal abnormal (mutated)">Subclonal abnormal (mutated)</option>
+		<option value="Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
+		<option value="Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression, internal positive control present)">Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression, internal positive control present)</option>
+		<option value="Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)">Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+		<option value="Other (specify):">Other (specify):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">+ POLE status:
+	<select class="element select medium" ID="A107">
+		<option value=""></option>
+		<option value="Not performed">Not performed</option>
+		<option value="Wild-type">Wild-type</option>
+		<option value="Mutated (specify):">Mutated (specify):</option>
+		<option value="Cannot be assessed (explain):">Cannot be assessed (explain):</option>	
+	</select>
+</td>
+</tr>
+
+<!--
+<tr>
+<td align="right">+ ProMisE Classification:
+	<select class="element select medium" ID="A108">
+		<option value=""></option>
+		<option value="POLE-mutated carcinoma">POLE-mutated carcinoma</option>
+		<option value="Mismatch repair-deficient carcinoma">Mismatch repair-deficient carcinoma</option>
+		<option value="p53-abnormal carcinoma">p53-abnormal carcinoma</option>
+		<option value="No specific molecular profile (NSMP)">No specific molecular profile (NSMP)</option>	
+		<option value="Double classifier (explain):">Double classifier (explain):/option>	
+		<option value="Testing pending (explain):">Testing pending (explain):</option>	
+		<option value="Cannot be assessed (explain):">Cannot be assessed (explain):</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">+ TCGA Classification:
+	<select class="element select medium" ID="A109">
+		<option value=""></option>
+		<option value="POLE-mutated (ultramutated) carcinoma">POLE-mutated (ultramutated) carcinoma</option>
+		<option value="Microsatellite instability high (hypermutated) carcinoma">Microsatellite instability high (hypermutated) carcinoma</option>
+		<option value="Copy number low carcinoma">Copy number low carcinoma</option>
+		<option value="Copy number high carcinoma">Copy number high carcinoma</option>	
+		<option value="Double classifier (explain):">Double classifier (explain):/option>	
+		<option value="Testing pending (explain):">Testing pending (explain):</option>	
+		<option value="Cannot be assessed (explain):">Cannot be assessed (explain):</option>
+	</select>
+</td>
+</tr>
+-->
+</table>
+</p>
+
+<p>
+
+<b>ProMisE Classification</b><br>
+1. POLE-mutated carcinoma<br>
+2. Mismatch repair-deficient carcinoma<br>
+3. p53-abnormal carcinoma<br>
+4. No specific molecular profile (NSMP)<br>
+5. Double classifier (explain):<br><br><br>
+
+<b>TCGA Classification</b><br>
+1. POLE-mutated (ultramutated) carcinoma<br>
+2. Microsatellite instability high (hypermutated) carcinoma<br>
+3. Copy number low carcinoma<br>
+4. Copy number high carcinoma<br>
+5. Double classifier (explain):<br><br><br>
+
+</p>
+
+<p>
+<table border="1">
+<col width="50%">
+
+<tr>
+<td rowspan="4" valign="top">
+<label class="description">- Myometrial invasion:</label>
 </td>
 <td>
 	<select class="element select large" ID="A31">
@@ -737,7 +861,7 @@ table, th, td {
 
 <tr>
 <td>
-<label >- + <a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=20" target="_blank">Lower uterine segment involvement</a>: </label>
+<label >+ Lower uterine segment involvement: </label>
 </td>
 <td>
 	<select class="element select large" ID="A37">
@@ -752,13 +876,14 @@ table, th, td {
 
 <tr>
 <td valign="top" rowspan="3">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=20" target="_blank">Cervical stromal involvement</a>: </label>
+<label class="description">- Cervical involvement: </label>
 </td>
 <td>
 	<select class="element select large" ID="A38">
 		<option value=""></option>
 		<option value="Not identified">Not identified</option>
-		<option value="Present">Present</option>
+		<option value="Cervical stromal invasion">Cervical stromal invasion</option>
+		<option value="Endocervical glandular involvement only">Endocervical glandular involvement only</option>
 		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
 </td>
@@ -780,7 +905,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=21" target="_blank">Lymphatic and / or vascular invasion</a>: </label>
+<label class="description">- Lymphatic and / or vascular invasion: </label>
 </td>
 <td>
 	<select class="element select large" ID="A59">
@@ -813,7 +938,7 @@ possible):</option>
 
 <tr>
 <td>
-<label > + <a href=".\cap\Cancer-Protocols-2023-12-Update\Gynecologic Protocol Folder\Uterus_5.0.0.0.REL_CAPCP.pdf#page=22" target="_blank">Peritoneal/ascitic fluid (TIS)</a>: </label>
+<label > + Peritoneal/ascitic fluid: </label>
 </td>
 <td>
 	<select class="element select large" ID="A61">
@@ -846,20 +971,21 @@ possible):</option>
 <input class="element checkbox" type="checkbox"  id="A49" value="  - Left parametrium"><label  class="choice">Left parametrium</label>
 <input class="element checkbox" type="checkbox"  id="A50" value="  - Parametrium (side not specified)"><label  class="choice">Parametrium (side not specified)</label>
 <input class="element checkbox" type="checkbox"  id="A51" value="  - Pelvic wall"><label  class="choice">Pelvic wall</label>
-<input class="element checkbox" type="checkbox"  id="A52" value="  - Bladder wall"><label  class="choice">Bladder wall</label>
-<input class="element checkbox" type="checkbox"  id="A53" value="  - Bladder mucosa"><label  class="choice">Bladder mucosa</label>
-<input class="element checkbox" type="checkbox"  id="A54" value="  - Rectal wall"><label  class="choice">Rectal wall</label>
-<input class="element checkbox" type="checkbox"  id="A55" value="  - Bowel mucosa"><label  class="choice">Bowel mucosa</label>
+<input class="element checkbox" type="checkbox"  id="A52" value="  - Bladder wall without mucosal involvement"><label  class="choice">Bladder wall without mucosal involvement</label>
+<input class="element checkbox" type="checkbox"  id="A53" value="  - Bladder wall with mucosal involvement"><label  class="choice">Bladder wall with mucosal involvement</label>
+<input class="element checkbox" type="checkbox"  id="A54" value="  - Bowel wall without mucosal involvement"><label  class="choice">Bowel wall without mucosal involvement</label>
+<input class="element checkbox" type="checkbox"  id="A55" value="  - Bowel wall with mucosal involvement"><label  class="choice">Bowel wall with mucosal involvement</label>
 <input class="element checkbox" type="checkbox"  id="A56" value="  - Omentum"><label  class="choice">Omentum</label>
 <input class="element checkbox" type="checkbox"  id="A57" value="  - Other organs/tissue (specify):"><label  class="choice">Other organs/tissue (specify):</label>
 <input class="element checkbox" type="checkbox"  id="A58" value="  - Cannot be determined (explain):"><label  class="choice">Cannot be determined (explain):</label>
 </p>
+
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-12-Update\Gynecologic Protocol Folder\Uterus_4.4.0.0.REL_CAPCP.pdf#page=21" target="_blank">Surgical margins of excision specimen</a>: </label></legend>
+<legend><label class="description">Surgical margins of excision specimen: </label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -1098,14 +1224,26 @@ possible):</option>
 </p>
 
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Endometrial_cancer_2023.pdf" target="_blank">FIGO Stage (2023 FIGO Cancer Report):</a></label></legend>
-<!--
-<a href=".\cap\GYN_UterusCA.pdf" target="_blank">
-<img src=".\cap\GYN_UterusCA.JPG" alt="FIGO2018" >
-</a>
-<br>
-Click the table for the original reference.
--->
+	<legend> <label class="description"> FIGO 2009 Staging / 2018 FIGO Cancer Report:</label></legend>
+<p>
+I: Tumor confined to the corpus uteri<br>
+IA: No or less than half myometrial invasion<br>
+IB: Invasion equal to or more than half of the myometrium<br>
+III: Local and / or regional spread of the tumor<br>
+IIIA: Tumor invades the serosa of the corpus uteri and / or adnexae<br>
+IIIB: Vaginal and / or parametrial involvement<br>
+IIIC: Metastases to pelvic and / or para-aortic lymph nodes<br>
+IIIC1: Positive pelvic nodes<br>
+IIIC2: Positive para-aortic nodes with or without positive pelvic lymph nodes<br>
+IV: Tumor invades bladder and / or bowel mucosa, and / or distant metastases<br>
+IVA: Tumor invasion of bladder and / or bowel mucosa<br>
+</p>
+
+</fieldset>
+</p>
+
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> FIGO 2023 Staging for Cancer of the Endometrium:</label></legend>
 <p>
 I: Confined to the uterine corpus and ovary<br>
 IA: Disease limited to the endometrium OR non-aggressive histological type, i.e., low-grade endometrioid, with invasion of less than half of the myometrium with no or focal lymphovascular space involvement (LVSI) OR good prognosis disease<br>
@@ -1145,125 +1283,10 @@ IVA: Invasion of the bladder mucosa and / or intestine / bowel mucosa<br>
 IVB: Abdominal peritoneal metastasis beyond the pelvis<br>
 IVC: Distant metastasis, including metastasis to any extra- or intra-abdominal lymph nodes above the renal vessels, lungs, liver, brain or bone<br>
 </p>
-<p>
-+FIGO Modified Classification<br>
-- Not performed<br>
-- mPOLEmut (POLE mutation)<br>
-- mMMRd (mismatch repair deficiency)<br>
-- mNSMP (no specific molecular profile)<br>
-- mp53abn (p53 abnormal)<br>
-</p>
-<!--
-<p>
-	<select class="element select medium" ID="A85">
-		<option value=""></option>
-		<option value="  - I: Tumor confined to the corpus uteri">I: Tumor confined to the corpus uteri</option>
-		<option value="  - IA: No or less than half myometrial invasion">IA: Tumor limited to endometrium/endocervix with no myometrial invasion or less than half myometrial invasion</option>
-		<option value="  - IB: Invasion equal to or more than half of the myometrium">IB: Invasion equal to or more than half of the myometrium</option>
-		<option value="  - II: Tumor invades cervical stroma, but does not extend beyond the uterus">II: Tumor invades cervical stroma, but does not extend beyond the uterus</option>
-		<option value="  - III: Local and/or regional spread of the tumor">III: Local and/or regional spread of the tumor</option>
-		<option value="  - IIIA: Tumor invades the serosa of the corpus uteri and/or adnexae">IIIA: Tumor invades the serosa of the corpus uteri and/or adnexae</option>
-		<option value="  - IIIB: Vaginal involvement and/ or parametrial involvement">IIIB: Vaginal involvement and/ or parametrial involvement</option>
-		<option value="  - IIIC: Metastases to pelvic and/or para-aortic lymph nodes">IIIC: Metastases to pelvic and/or para-aortic lymph nodes</option>
-		<option value="  - IIIC1: Positive pelvic nodes">IIIC1: Positive pelvic nodes</option>
-		<option value="  - IIIC2: Positive para-aortic nodes with or without positive pelvic lymph nodes">IIIC2: Positive para-aortic nodes with or without positive pelvic lymph nodes</option>
-		<option value="  - IV: Tumor invades bladder and/or bowel mucosa, and/or distant metastases">IV: Tumor invades bladder and/or bowel mucosa, and/or distant metastases</option>
-		<option value="  - IVA: Tumor invades bladder and/or bowel mucosa, and/or distant metastases">IVA: Tumor invades bladder and/or bowel mucosa, and/or distant metastases</option>
-		<option value="  - IVB: Distant metastasis, including intraabdominal metastases and/or inguinal nodes">IVB: Distant metastasis, including intraabdominal metastases and/or inguinal nodes</option>
-	</select>
-</p>
--->
+
 </fieldset>
 </p>
-<!--
-<fieldset style="border-color:#e6e6ff;">
-	<legend> <label> Pathologic Stage Classification (AJCC 8e):</label></legend>
-<p>
-<table border="1">
-<col width="40%">
-<tr>
-<td valign="top">
-  - TNM Descriptors:
-</td>
-<td>
-<input class="element checkbox" type="checkbox"  id="A78" value=" r (recurrent) "><label >r (recurrent)</label><br>
-<input class="element checkbox" type="checkbox"  id="A79" value=" y (post treatment) "><label >y (post treatment)</label><br>
-</td>
-</tr>
 
-<tr>
-<td>
-  - Primary tumor:
-</td>
-<td>
-	<select class="element select large" ID="A80">
-		<option value=""></option>
-		<option value="  - pTX: Primary tumor cannot be assessed">pTX: Primary tumor cannot be assessed</option>
-		<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
-		<option value="  - pT1: TTumor confined to the corpus uteri, including endocervical glandular involvement">pT1: Tumor confined to the corpus uteri, including endocervical glandular involvement</option>
-		<option value="  - pT1a: Tumor limited to endometrium or invading less than half of the myometrium">pT1a: Tumor limited to endometrium or invading less than half of the myometrium</option>
-		<option value="  - pT1b: Tumor invading one-half or more of the myometrium">pT1b: Tumor invading one-half or more of the myometrium</option>
-		<option value="  - pT2: Tumor invading the stromal connective tissue of the cervix but not extending beyond the uterus. This does NOT include endocervical glandular involvement">pT2: Tumor invading the stromal connective tissue of the cervix but not extending beyond the uterus. This does NOT include endocervical glandular involvement</option>
-		<option value="  - pT3: Tumor involving serosa, adnexa, vagina, or parametrium">pT3: Tumor involving serosa, adnexa, vagina, or parametrium</option>
-		<option value="  - pT3a: Tumor involves serosa and/or adnexa (direct extension or metastasis)">pT3a: Tumor involves serosa and/or adnexa (direct extension or metastasis)</option>
-		<option value="  - pT3b: Vaginal involvement (direct extension or metastasis) or parametrial involvement">pT3b: Vaginal involvement (direct extension or metastasis) or parametrial involvement</option>
-		<option value="  - pT4: Tumor invading the bladder mucosa and/or bowel mucosa (bullous edema is not sufficient to classify a tumor as T4)">pT4: Tumor invading the bladder mucosa and/or bowel mucosa (bullous edema is not sufficient to classify a tumor as T4)</option>
-	</select>
-</td>
-</tr>
-
-<tr>
-<td>
-  - Lymph node Descriptors:
-</td>
-<td>
-<input class="element checkbox" type="checkbox"  id="A81" value=" sn (sentinel) "><label >sn (sentinel)</label><br>
-</td>
-</tr>
-
-<tr>
-<td>
-  - Regional lymph nodes (pN): 
-</td>
-<td>
-	<select class="element select large" ID="A82">
-		<option value=""></option>
-		<option value="  - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
-		<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
-		<option value="  - pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm">pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm</option>
-		<option value="  - pN1: Regional lymph node metastasis to pelvic lymph nodes">pN1: Regional lymph node metastasis to pelvic lymph nodes</option>
-		<option value="  - pN1mi: Regional lymph node micrometastasis to pelvic lymph nodes">pN1mi: Regional lymph node micrometastasis to pelvic lymph nodes</option>
-		<option value="  - pN1a: Regional lymph node mecroametastasis to pelvic lymph nodes">pN1a: Regional lymph node mecroametastasis to pelvic lymph nodes</option>
-		<option value="  - pN2: Regional lymph node metastasis to para-aortic lymph nodes, with or without positive pelvic lymph nodes">pN2: Regional lymph node metastasis to para-aortic lymph nodes, with or without positive pelvic lymph nodes</option>
-		<option value="  - pN2mi: Regional lymph node micrometastasis to para-aortic lymph nodes, with or without positive pelvic lymph nodes">pN2mi: Regional lymph node micrometastasis to para-aortic lymph nodes, with or without positive pelvic lymph nodes</option>
-		<option value="  - pN2a: Regional lymph node macrometastasis to para-aortic lymph nodes, with or without positive pelvic lymph nodes">pN2a: Regional lymph node macrometastasis to para-aortic lymph nodes, with or without positive pelvic lymph nodes</option>
-	</select>
-</td>
-</tr>
-
-<tr>
-<td valign="top" rowspan="2">
-  - Distant metastasis (pM):
-</td>
-<td>
-	<select class="element select large" ID="A83">
-		<option value=""></option>
-		<option value="  - pM1: Distant metastasis (includes metastasis to inguinal lymph nodes, intraperitoneal disease, lung, liver, or bone. It excludes metastasis to pelvic or para-aortic lymph nodes, vagina, uterine serosa, or adnexa)">pM1: Distant metastasis (includes metastasis to inguinal lymph nodes, intraperitoneal disease, lung, liver, or bone. It excludes metastasis to pelvic or para-aortic lymph nodes, vagina, uterine serosa, or adnexa)</option>
-	</select>
-</td>
-</tr>
-
-<tr>
-<td>
-    - Specify site(s), if known:
-<input type="text" class="element text small" ID="A84" size="35">
-</td>
-</tr>
-</table>
-</p>
-</fieldset>
-</p>
--->
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label > + Additional pathologic findings: </label></legend>
@@ -1299,9 +1322,9 @@ IVC: Distant metastasis, including metastasis to any extra- or intra-abdominal l
 <br>
 
 <div id="footer">
-Last upated on 19-Dec-2023,<br>
+Last upated on 24-Dec-2024,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Carcinoma and Carcinosarcoma of the Endometrium 5.0.0.0 (Dec-2023) <br>
+Carcinoma and Carcinosarcoma of the Endometrium 5.1.0.0 (Dec-2024) <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

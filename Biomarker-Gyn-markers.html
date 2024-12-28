@@ -92,6 +92,10 @@ if (frm.PMS2.value !== ""){
 Template += "  - PMS2 (PMS1 homolog 2): " + frm.PMS2.value + "\n";
 }
 
+if (document.getElementById("A30").checked){
+	Template += frm.A30.value + "\n";
+}
+
 if (frm.MSI.value !== ""){
 Template += "\n" + "- Microsatellite instability status: " + "\n" + "  - " + frm.MSI.value + "\n";
 }
@@ -148,12 +152,16 @@ if (frm.A20.value !== ""){
 	Template += "- PD-L1 : "+ frm.A20.value + "\n";
 }
 
-if (frm.A22.value !== ""){
-	Template += "  - Positive tumor cells TC% or TPS : "+ frm.A22.value + "\n";
-}
-
 if (frm.A23.value !== ""){
 	Template += "  - Combined Positive Score CPS : "+ frm.A23.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "- Folate Receptor Alpha Status : " + frm.A31.value + "\n";
+}
+
+if (frm.A32.value !== ""){
+	Template += "- Test type : " + frm.A32.value + "\n";
 }
 
 if (frm.A19.value !== ""){
@@ -255,7 +263,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2023-03-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.1.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2024-12-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.2.0.0. REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">Gynecologic biomarkers testing
 		<span class="tooltiptext">click to access further explanations in the original CAP template</span>
 		</div>
@@ -265,12 +273,10 @@ table, th, td {
 <form>
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Biomarkers assessments : </label></legend>
+	<legend> <label class="description"> Hormonal receptors : </label></legend>
 
 <p>
 - For ER/PR, POSITIVE is >= 1%<br>
-- For HER2, no consensus yet, use MODIFIED CA breast criteria. <br>
-- For PD-L1, CPS = Total positive cells / (Positive cells + Negative tumor cells). CPS >=1 is POSITIVE.<br>
 </p>
 
 <p>
@@ -332,7 +338,17 @@ table, th, td {
 		<option value="Strong staining (3)">Strong staining (3)</option>
 	</select></td>
 </tr>
+</table>
+</fieldset>
+</p>
 
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> HER2 status : </label></legend>
+	
+<p>
+<table border="1">
+<col width="40%">
 <tr>
 <td rowspan="2" valign="top">
 <label class="description">- HER2/neu oncoprotein IHC :</label>
@@ -350,18 +366,60 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 
 <tr>
 <td align="right">
-<label>- Score :</label>
+<label>- Score (see below) :</label>
 	<select class="element select medium"  ID="A08">
 		<option value=""></option>
-		<option value="0 (No staining observed)">0 (No staining observed)</option>
-		<option value="1 (Faint/Barely perceptible, incomplete membrane staining in any proportion, or weak complete staining in less than 10% of tumor cells)">1 (Faint/Barely perceptible, incomplete membrane staining in any proportion, or weak complete staining in less than 10% of tumor cells). </option>
-		<option value="2 (Strong complete or basolateral/lateral membrane staining in less than or equal to 30%, or weak to moderate staining in greater than or equal to 10% of tumor cells)">2 (Strong complete or basolateral/lateral membrane staining in less than or equal to 30%, or weak to moderate staining in greater than or equal to 10% of tumor cells)</option>
-		<option value="3 (Strong complete or basolateral / lateral membrane staining in greater than 30% of tumor cells)">3 (Strong complete or basolateral / lateral membrane staining in greater than 30% of tumor cells)</option>
+		<option value="0 ">0 </option>
+		<option value="1 ">1 </option>
+		<option value="2 ">2 </option>
+		<option value="3 ">3 </option>
 	</select>
 </td>
 </tr>
+</table>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description">HER2 Scoring System : </label></legend>
+Based on the enrollment criteria for Trastuzumab in the randomized phase II clinical trial NCT01367002 for endometrial carcinoma HER2 Status for Trastuzumab Use <br>
+<br>
+<b>Negative (score 0) for protein overexpression</b><br>
+No staining in tumor cells<br><br>
+
+<b>Negative (score 1+) for protein overexpression</b><br>
+Faint / barely perceptible, incomplete membrane staining in any proportion, or weak complete staining in less than 10% of tumor cells<br><br>
+
+<b>Equivocal (score 2+) for protein overexpression</b><br>
+Strong complete or basolateral / lateral membrane staining in less than or equal to 30%, or weak to moderate staining in greater than or equal to 10% of tumor cells<br><br>
+
+<b>Positive (3+) for protein overexpression</b><br>
+Strong complete or basolateral / lateral membrane staining in greater than 30% of tumor cells<br><br><br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description">HER2 Status for Trastuzumab-deruxtecan Use : </label></legend>
+<b>Negative (score 0) for protein overexpression</b><br>
+<b>Biopsy</b>: No staining in any tumor cells;<br>
+<b>Surgical specimen</b>: No staining or membrane staining in less than 10% of tumor cells<br><br>
+<b>Negative (score 1+) for protein overexpression</b><br>
+<b>Biopsy</b>: Tumor cell cluster (5 or more tumor cells) with a faint / barely perceptible membrane staining irrespective of percentage of positive tumor cells;<br>
+<b>Surgical specimen</b>: Faint / barely perceptible incomplete membrane staining in greater than or equal to 10% tumor cells<br><br>
+<b>Equivocal (score 2+) for protein overexpression</b><br>
+<b>Biopsy</b>: Tumor cell cluster (5 or more tumor cells) with a weak to moderate, complete, basolateral or lateral membrane staining irrespective of percentage of positive tumor cells;<br>
+<b>Surgical specimen</b>: Weak to moderate, complete, basolateral or lateral membrane staining in greater than or equal to 10% of tumor cells<br><br>
+<b>Positive (3+) for protein overexpression</b><br>
+<b>Biopsy</b>: Tumor cell cluster (5 or more tumor cells) with a strong, complete, basolateral or lateral membrane staining irrespective of percentage of positive tumor cells;<br>
+<b>Surgical specimen</b>: Strong, complete, basolateral or lateral membrane staining in greater than or equal to 10% of tumor cells<br><br><br>
+</fieldset>
+</p>
 
 
+<p>
+<table border="1">
+<col width="40%">
 <tr><td rowspan="6" valign="top">
 <label">+ HER2/neu oncoprotein DISH :</label>
 <br><a href=".\Biomarker-DISH-calculator.html" target="_blank">HER2 DISH calculator</a>
@@ -404,29 +462,20 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 	<input class="element checkbox" type="checkbox" id="A15" value="    - Heterogeneous signals"><label class="choice">Heterogeneous signals</label>
 </td>
 </tr>
+</table>
+</p>
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> DNA mismatch repair status : </label></legend>
+<table border="1">
+<col width="40%">
 
 <tr>
-<td>
-<label class="description">- p53 IHC:</label>
-</td>
-<td>
-	<select class="element select large" ID="A27">
-		<option value=""></option>
-		<option value="Normal (wild type)">Normal (wild type)</option>
-		<option value="Abnormal (mutated)">Abnormal (mutated)</option>
-		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
-		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression))">Abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
-		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
-		<option value="Subclonal abnormal (mutated)">Subclonal abnormal (mutated)</option>
-		<option value="Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
-		<option value="Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression))">Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression)</option>
-		<option value="Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)">Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)</option>
-	</select>
-</td>
-</tr>
-
-<tr>
-<td rowspan="5" valign="top">
+<td rowspan="6" valign="top">
 <label class="description">- MMR IHC:</label>
 </td>
 <td>
@@ -434,6 +483,12 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 	<option value=""></option>
 	<option value="No loss of nuclear signals of all 4 proteins: Not defective in DNA mismatch repair (non-dMMR or MMRp) and low probability of microsatellite instability-high (MSI-H).">No loss of nuclear signals of all 4 proteins: Not defective in DNA mismatch repair (non-dMMR or MMRp) and low probability of microsatellite instability-high (MSI-H).</option>
 	<option value="Loss of nuclear signals of 1 or more proteins: Defective DNA mismatch repair within the tumor (dMMR). Causes could be somatic mutation or DNA methylation (sporadic), or germline alteration (Lynch syndrome).">Loss of nuclear signals of 1 or more proteins: Defective DNA mismatch repair within the tumor (dMMR). </option>
+	<option value="Loss of nuclear expression of MLH1 and PMS2: testing for methylation of the MLH1 promoter is indicated (the presence of MLH1 methylation suggests that the tumor is sporadic and germline evaluation is probably not indicated; absence of MLH1 promoter methylation suggests the possibility of Lynch syndrome, and sequencing and / or large deletion / duplication testing of germline MLH1 is indicated)">Loss of nuclear expression of MLH1 and PMS2: testing for methylation of the MLH1 promoter is indicated (the presence of MLH1 methylation suggests that the tumor is sporadic and germline evaluation is probably not indicated; absence of MLH1 promoter methylation suggests the possibility of Lynch syndrome, and sequencing and / or large deletion / duplication testing of germline MLH1 is indicated).</option>	
+	<option value="Loss of nuclear expression of MSH2 and MSH6: high probability of Lynch syndrome, genetic counseling is recommended.">Loss of nuclear expression of MSH2 and MSH6: high probability of Lynch syndrome, genetic counseling is recommended. </option>
+	<option value="Loss of nuclear expression of MSH6 only: high probability of Lynch syndrome, genetic counseling is recommended.">Loss of nuclear expression of MSH6 only: high probability of Lynch syndrome, genetic counseling is recommended. </option>
+	<option value="Loss of nuclear expression of PMS2 only: high probability of Lynch syndrome, genetic counseling is recommended.">Loss of nuclear expression of PMS2 only: high probability of Lynch syndrome, genetic counseling is recommended.</option>
+	<option value="Subclonal loss of nuclear expression of MMR protein(s) (specify):">Subclonal loss of nuclear expression of MMR protein(s) (specify):</option>
+	<option value="Other (specify):">Other (specify):</option>
 	<option value="MMR status cannot be determined by IHC.">MMR status cannot be determined by IHC.</option>
 </select>
 </td>
@@ -446,29 +501,9 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 	<option value=""></option>
 	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
 	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Subclonal loss in the tumor cells">Subclonal loss in the tumor cells</option>	
 	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
-	<option value="Cannot be determined:">Cannot be determined:</option>
-</select></td >
-</tr>
-
-<tr>
-<td  align="right"><label class="">- MSH2 (mutS homolog 2):</label>
-<select class="element select medium"  ID="MSH2">
-	<option value=""></option>
-	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
-	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
-	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
-	<option value="Cannot be determined:">Cannot be determined:</option>
-</select></td >
-</tr>
-
-<tr>
-<td  align="right"><label class="">- MSH6 (mutS homolog 6):</label>
-<select class="element select medium"  ID="MSH6">
-	<option value=""></option>
-	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
-	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
-	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
+	<option value="Other (specify):">Other (specify):</option>
 	<option value="Cannot be determined:">Cannot be determined:</option>
 </select></td >
 </tr>
@@ -479,9 +514,41 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 	<option value=""></option>
 	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
 	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Subclonal loss in the tumor cells">Subclonal loss in the tumor cells</option>	
 	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
+	<option value="Other (specify):">Other (specify):</option>
 	<option value="Cannot be determined:">Cannot be determined:</option>
 </select></td >
+</tr>
+
+<tr>
+<td  align="right"><label class="">- MSH2 (mutS homolog 2):</label>
+<select class="element select medium"  ID="MSH2">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Subclonal loss in the tumor cells">Subclonal loss in the tumor cells</option>	
+	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select></td >
+</tr>
+
+<tr>
+<td  align="right"><label class="">- MSH6 (mutS homolog 6):</label>
+<select class="element select medium"  ID="MSH6">
+	<option value=""></option>
+	<option value="Intact nuclear expression in tumor cells">Intact nuclear expression in tumor cells</option>
+	<option value="Loss of nuclear expression in tumor cells">Loss of nuclear expression in tumor cells</option>
+	<option value="Subclonal loss in the tumor cells">Subclonal loss in the tumor cells</option>	
+	<option value="Attenuated nuclear expression in tumor cells">Attenuated nuclear expression in tumor cells</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined:">Cannot be determined:</option>
+</select></td >
+</tr>
+
+<tr>
+<td><input class="element checkbox" type="checkbox" id="A30" value="  - Background non-neoplastic tissue / internal control shows intact nuclear expression"><label  class="choice">+ Background non-neoplastic tissue / internal control shows intact nuclear expression.</label></td>
 </tr>
 
 <tr>
@@ -590,11 +657,46 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 	<option value="Not performed">Not performed</option>
 </select>
 </td ></tr>
+</table>
+</fieldset>
+</p>
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- p53 IHC:</label>
+</td>
+<td>
+	<select class="element select large" ID="A27">
+		<option value=""></option>
+		<option value="Normal (wild type) expression.">Normal (wild type) expression.</option>
+		<option value="Abnormal (mutated) expression">Abnormal (mutated) expression.</option>
+		<option value="Abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
+		<option value="Abnormal, Null (lack of nuclear or cytoplasmic expression, internal positive control present)">Abnormal, Null (lack of nuclear or cytoplasmic expression, internal positive control present)</option>
+		<option value="Abnormal, Cytoplasmic only (lacks nuclear expression)">Abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+		<option value="Subclonal abnormal (mutated)">Subclonal abnormal (mutated)</option>
+		<option value="Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression)">Subclonal abnormal, Overexpression (strong, diffuse basilar nuclear expression, >90%)</option>
+		<option value="Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression, internal positive control present)">Subclonal abnormal, Null (lack of nuclear or cytoplasmic expression, internal positive control present)</option>
+		<option value="Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)">Subclonal abnormal, Cytoplasmic only (lacks nuclear expression)</option>
+		<option value="Other (specify):">Other (specify):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+</td>
+</tr>
 
 <tr>	
-<td rowspan="4" valign="top">
-<label class="">+ PD-L1 assessment :</label><br>
-<a href=".\Biomarker-PDL1-calculator.html" target="_blank">PD-L1 calculator</a>
+<td rowspan="3" valign="top">
+<label class="">+ <a href=".\cap\PD-L1 Interpretation Guide.pdf" target="_blank">PD-L1 assessment</a> :</label><br>
+<a href=".\Biomarker-PDL1-calculator.html" target="_blank">PD-L1 calculator</a><br>
+Please specify if alternate scoring system was used.<br>
+CPS = Total positive cells / (Positive cells + Negative tumor cells). CPS >=1 is POSITIVE.<br>
 </td>
 <td>
 <select class="element select large"  ID="A20">
@@ -602,6 +704,7 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 	<option value="Cannot be determined">Cannot be determined</option>
 	<option value="Negative (<1% positive cells)">Negative (combined positive score CPS < 1)</option>
 	<option value="Positive (combined positive score CPS > or = 1)">Positive (combined positive score CPS > or = 1)</option>
+	<option value="Other (specify):">Other (specify):</option>
 </select>
 </td>
 </tr>
@@ -612,9 +715,6 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 	<select class="element select small"  ID="A21">
 		<option value=""></option>
 		<option value="22C3 (Dako)">22C3 (Dako)</option>
-		<option value="28-8 (Dako)">28-8 (Dako)</option>
-		<option value="SP263 (Roche)">SP263 (Roche)</option>
-		<option value="SP142 (Roche)">SP142 (Roche)</option>
 		<option value="E1L3N (Cell Signaling)">E1L3N (Cell Signaling)</option>
 		<option value="Other, specify:">Other, specify:</option>
 	</select>
@@ -622,29 +722,41 @@ Low-power, observed within a homogeneous and contiguous population of invasive t
 </tr>
 
 <tr>
-<td align="right">
-<label>- Positive tumor cells (TPS, %) :</label>
-<input type="text" class="element text small" ID="A22" size="35">
+<td align="right"><label>- Combined Positive Score (CPS) :</label>
+<input type="text" class="element text small" ID="A23" size="35"></td>
+</tr>
+
+<tr>
+<td>
 </td>
 </tr>
 
 <tr>
-<td align="right"><label>- Combined Positive Score (CPS) :</label>
-<input type="text" class="element text small" ID="A23" size="35"></td>
+<td>
+<label class="">+ Folate receptor alpha status:</label>
+</td>
+<td>
+	<select class="element select large" ID="A31">
+		<option value=""></option>
+		<option value="Positive (greater than or equal to 75% viable tumor cells with moderate to strong membrane staining).">Positive (greater than or equal to 75% viable tumor cells with moderate to strong membrane staining).</option>
+		<option value="Negative (less than 75% of viable tumor cells with moderate to strong membrane staining, weak staining in any proportion of tumor cells or no staining)">Negative (less than 75% of viable tumor cells with moderate to strong membrane staining, weak staining in any proportion of tumor cells or no staining)</option>
+		<option value="Cannot be evaluated (artifacts precluding interpretation):">Cannot be evaluated (artifacts precluding interpretation):</option>
+		<option value="Other (specify):">Other (specify):</option>
+	</select>
+</td>
 </tr>
-</table>
-</p>
 
-<p>
-<table border="1">
-<col width="40%">
+<tr>
+<td>
+</td>
+</tr>
 
 <tr>
 <td>
 <label class="description">- Cold ischemia time (min) :</label>
 </td>
 <td>
-<input type="text" class="element text small" ID="A28" size="3">
+<input type="text" class="element text small" ID="A28" size="1">
 min
 </td>
 
@@ -653,21 +765,39 @@ min
 <label class="description">- Fixation time in buffered formalin :</label>
 </td>
 <td>
-<input type="text" class="element text small" ID="A29" size="3">
+<input type="text" class="element text small" ID="A29" size="1">
 hours
 </td>
 </tr>
 
+
+<tr>
+<td>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="">+ Test type :</label>
+</td>
+<td>
+	<select class="element select large" ID="A32">
+		<option value=""></option>
+		<option value="Food and Drug Administration (FDA) cleared (specify test / vendor):">Food and Drug Administration (FDA) cleared (specify test / vendor):</option>
+		<option value="Laboratory-developed test (QMH, HK).">Laboratory-developed test.</option>
+		<option value="Other (specify):">Other (specify):</option>
+	</select>
+</td>
+
+
 </table>
 </p>
 
-</fieldset>
-</p>
+
 <p>
 + Ancillary studies include <a href="Biomarker-NGS.html" target="_blank">BRCA1 and BRCA2 germline and somatic mutation testings</a> and <a href="Biomarker-PCR.html" target="_blank">POLE hot spot mutations</a>
 </p>
-</fieldset>
-</p>
+
 
 <p align="center" >
 <!--
@@ -707,7 +837,7 @@ hours
 <br>
 
 <div id="footer">
-Last upated 03-Dec-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.1.0.0.REL_CAPCP.pdf" target="_blank"> Gynecologic Biomarkers 1.1.0.0 Mar-2023</a>.<br>
+Last upated 28-Dec-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.1.0.0.REL_CAPCP.pdf" target="_blank"> Gynecologic Biomarkers 1.2.0.0 Dec-2024</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
