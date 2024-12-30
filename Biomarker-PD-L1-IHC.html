@@ -14,12 +14,12 @@ function updateDescription (frm)
 
 if (frm.A10.value + frm.A12.value !== ""){
 	Template += "- Tumor Proportion Score (TPS)  : " + frm.A10.value + "\n" 
-	+ "   - " + frm.A12.value  + "\n" ;
+	+ "  - " + frm.A12.value  + "\n" ;
 }
 
 if (frm.A11.value + frm.A13.value !== ""){
 	Template += "- Combined positive score (CPS) : " + frm.A11.value + "\n"
- 	+ "   - " + frm.A13.value  + "\n" ;
+ 	+ "  - " + frm.A13.value  + "\n" ;
 }
 
 if (frm.A04.value !== ""){
@@ -114,7 +114,7 @@ Lung Cancers</td>
 <td>CPS>=1</td>
 <tr>
 <td>Esophagus/EGJ carcinoma</td>
-<td>CPS>=1</td>
+<td>CPS>=10</td>
 </tr>
 <tr>
 <td>Cervical Cancers</td> 
@@ -238,6 +238,7 @@ Lung Cancers</td>
 	<td><select class="element select large"  ID="A13">
 		<option value=""></option> 
 		<option value="Negative (<1)">Negative (<1)</option>
+		<option value="Negative (<10)">Negative (<10)</option>
 		<option value="Positive (>=1)">Positive (>=1)</option>
 		<option value="Positive (>=10)">Positive (>=10)</option>
 		<option value="Consensus undefined">Consensus undefined</option>
@@ -249,11 +250,16 @@ Lung Cancers</td>
 
 <p>
 <a href="https://www.keytrudahcp.com/biomarker-testing/" target="_blank">
-<img src=".\cap\PD-L1 TPS CPS.jpg" alt="Risk assessment" width="600">
+<img src=".\cap\PD-L1 TPS CPS.jpg" alt="TPS CPS for Keytruda" width="600">
 (from Keytruda website, 14-Aug-2024)
 </a>
 </p>
 </fieldset>
+
+<p>
+<img src=".\cap\PD-L1_percentage_estimation.png" alt="Positive percentage" width="600"><br>
+(from Roche document SP263 manual)
+</p>
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -271,7 +277,7 @@ Lung Cancers</td>
 <br>
 
 <div id="footer">
-			Last upated 14-Aug-2024. <br>
+			Last upated 30-Dec-2024. <br>
 			Form and cascade style sheet are based on <a href="https://www.phpform.org" target="_blank">pform.org</a>. <br>
 			Codes and Javascripts are modified from <a href="https://www.w3schools.com/" target="_blank">W3 School tutorials</a> and <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>. <br><br>
 			Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
