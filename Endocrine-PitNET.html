@@ -1,0 +1,956 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PitNET</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor integrity: " + frm.A02.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Tumor histology: " + "\n" + "  - " + frm.A04.value + "\n";
+}
+
+if (frm.A05.value !== ""){
+	Template += "\n" + "- Tumor Number: " + frm.A05.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor size: " + frm.A03.value + "\n";
+}
+
+if (document.getElementById("A06").checked || document.getElementById("A07").checked ||
+	document.getElementById("A08").checked || document.getElementById("A09").checked || 
+	document.getElementById("A10").checked || document.getElementById("A11").checked || 
+	document.getElementById("A12").checked || document.getElementById("A13").checked || 
+	document.getElementById("A14").checked || document.getElementById("A15").checked || 
+	document.getElementById("A16").checked || document.getElementById("A17").checked || 
+	document.getElementById("A18").checked || document.getElementById("A19").checked || 
+	document.getElementById("A20").checked || document.getElementById("A21").checked || 
+	document.getElementById("A22").checked || document.getElementById("A23").checked ||
+	document.getElementById("A24").checked || document.getElementById("A25").checked || 
+	document.getElementById("A26").checked){
+	Template += "- Tumor Types and Subtypes:" + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += frm.A11.value + "\n";
+}
+
+if (document.getElementById("A12").checked){
+	Template += frm.A12.value + "\n";
+}
+
+if (document.getElementById("A13").checked){
+	Template += frm.A13.value + "\n";
+}
+
+if (document.getElementById("A14").checked){
+	Template += frm.A14.value + "\n";
+}
+
+if (document.getElementById("A15").checked){
+	Template += frm.A15.value + "\n";
+}
+
+if (document.getElementById("A16").checked){
+	Template += frm.A16.value + "\n";
+}
+
+if (document.getElementById("A17").checked){
+	Template += frm.A17.value + "\n";
+}
+
+if (document.getElementById("A18").checked){
+	Template += frm.A18.value + "\n";
+}
+
+if (document.getElementById("A19").checked){
+	Template += frm.A19.value + "\n";
+}
+
+if (document.getElementById("A20").checked){
+	Template += frm.A20.value + "\n";
+}
+
+if (document.getElementById("A21").checked){
+	Template += frm.A21.value + "\n";
+}
+
+if (document.getElementById("A22").checked){
+	Template += frm.A22.value + "\n";
+}
+
+if (document.getElementById("A23").checked){
+	Template += frm.A23.value + "\n";
+}
+
+if (document.getElementById("A24").checked){
+	Template += frm.A24.value + "\n";
+}
+
+if (document.getElementById("A25").checked){
+	Template += frm.A25.value + "\n";
+}
+
+if (document.getElementById("A26").checked){
+	Template += frm.A26.value + "\n";
+}
+
+if (frm.A27.value + frm.A28.value !== ""){
+	Template += "- Tumor Proliferation Activity: " + "\n";
+}
+
+if (frm.A27.value!== ""){
+	Template += "  - Ki67 index: " + frm.A27.value + "%" + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "  - Mitotic count: " + frm.A28.value + " per 2 mm2" + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "- Histologically Confirmed Invasion: " + frm.A29.value + "\n";
+}
+
+if (frm.A30.value + frm.A31.value !== ""){
+	Template += "- Histochemical stains: " + "\n";
+}
+
+if (frm.A30.value!== ""){
+	Template += "  - Reticulin Histochemistry: " + frm.A30.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "  - PAS Histochemistry " + frm.A31.value + "\n";
+}
+
+if (frm.A32.value + frm.A33.value + frm.A34.value +
+	frm.A35.value + frm.A36.value + frm.A37.value +
+	frm.A38.value + frm.A39.value + frm.A40.value +
+	frm.A41.value + frm.A42.value + frm.A43.value +
+	frm.A44.value + frm.A45.value + frm.A46.value +
+	frm.A47.value !== ""){
+	Template += "- Immunohistochemical studies:" + "\n";
+}
+
+if (frm.A32.value !== ""){
+	Template += "  - TPIT: " + frm.A32.value + "\n";
+}
+
+if (frm.A33.value !== ""){
+	Template += "  - PIT1: " + frm.A33.value + "\n";
+}
+
+if (frm.A34.value !== ""){
+	Template += "  - SF1: " + frm.A34.value + "\n";
+}
+
+if (frm.A35.value !== ""){
+	Template += "  - GATA3: " + frm.A35.value + "\n";
+}
+
+if (frm.A36.value !== ""){
+	Template += "  - ER-alpha: " + frm.A36.value + "\n";
+}
+
+if (frm.A37.value !== ""){
+	Template += "  - alpha-subunit: " + frm.A37.value + "\n";
+}
+
+if (frm.A38.value !== ""){
+	Template += "  - ACTH: " + frm.A38.value + "\n";
+}
+
+if (frm.A39.value !== ""){
+	Template += "  - GH: " + frm.A39.value + "\n";
+}
+
+if (frm.A40.value !== ""){
+	Template += "  - PRL: " + frm.A40.value + "\n";
+}
+
+if (frm.A41.value !== ""){
+	Template += "  - beta-TSH: " + frm.A41.value + "\n";
+}
+
+if (frm.A42.value !== ""){
+	Template += "  - beta-FSH: " + frm.A42.value + "\n";
+}
+
+if (frm.A43.value !== ""){
+	Template += "  - p27: " + frm.A44.value + "\n";
+}
+
+if (frm.A44.value !== ""){
+	Template += "  - ATRAX: " + frm.A44.value + "\n";
+}
+
+if (frm.A45.value !== ""){
+	Template += "  - p53: " + frm.A45.value + "\n";
+}
+
+if (frm.A46.value !== ""){
+	Template += "  - Low Molecular Weight Keratins: " + frm.A46.value + "\n";
+}
+
+if (frm.A47.value !== ""){
+	Template += "    - Extent of Reactivity: " + frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked ||
+	document.getElementById("A49").checked || document.getElementById("A50").checked || 
+	document.getElementById("A51").checked || document.getElementById("A52").checked || 
+	document.getElementById("A53").checked || document.getElementById("A54").checked){
+	Template += "    - Pattern of Reactivity:" + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
+if (document.getElementById("A55").checked ||
+	document.getElementById("A56").checked || document.getElementById("A57").checked || 
+	document.getElementById("A58").checked || document.getElementById("A59").checked || 
+	document.getElementById("A60").checked || document.getElementById("A61").checked){
+	Template += "- Metastasis:" + "\n";
+}
+
+if (document.getElementById("A55").checked){
+	Template += frm.A55.value + "\n";
+}
+
+if (document.getElementById("A56").checked){
+	Template += frm.A56.value + "\n";
+}
+
+if (document.getElementById("A57").checked){
+	Template += frm.A57.value + "\n";
+}
+
+if (document.getElementById("A58").checked){
+	Template += frm.A58.value + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += frm.A59.value + "\n";
+}
+
+if (document.getElementById("A60").checked){
+	Template += frm.A60.value + "\n";
+}
+
+if (document.getElementById("A61").checked){
+	Template += frm.A61.value + "\n";
+}
+
+if (document.getElementById("A62").checked || document.getElementById("A63").checked ||
+	document.getElementById("A64").checked || document.getElementById("A65").checked || 
+	document.getElementById("A66").checked || document.getElementById("A67").checked ||
+	document.getElementById("A68").checked || document.getElementById("A69").checked){
+	Template += "- Non-tumorous Pituitary Gland Findings:" + "\n";
+}
+
+if (document.getElementById("A62").checked){
+	Template += frm.A62.value + "\n";
+}
+
+if (document.getElementById("A63").checked){
+	Template += frm.A63.value + "\n";
+}
+
+if (document.getElementById("A64").checked){
+	Template += frm.A64.value + "\n";
+}
+
+if (document.getElementById("A65").checked){
+	Template += frm.A65.value + "\n";
+}
+
+if (document.getElementById("A66").checked){
+	Template += frm.A66.value + "\n";
+}
+
+if (document.getElementById("A67").checked){
+	Template += frm.A67.value + "\n";
+}
+
+if (document.getElementById("A68").checked){
+	Template += frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template += frm.A69.value + "\n";
+}
+
+if (document.getElementById("A70").checked || document.getElementById("A71").checked ||
+	document.getElementById("A72").checked || document.getElementById("A73").checked ||
+	document.getElementById("A74").checked || document.getElementById("A75").checked || 
+	document.getElementById("A76").checked){
+	Template += "- Additional Pathologic Findings:" + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += frm.A70.value + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
+if (frm.A77.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A77.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>
+		<a href=".\cap\Cancer-Protocols-2025-03-Update\Endocrine Protocol Folder\Pituitary.NET_1.0.0.0.REL.CAPCP.pdf" target="_blank">
+		<div class="tooltip">
+		Pituitary Neuroendocrine Tumor
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		<a>
+		</h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+<p>
+Information useful to be included from the case notes:<br>
+1. Clinical history <br>
+2. Functional status <br>
+3. Tumor sizes from imaging<br>
+4. Tumor extent or invasive growth from imaging<br>
+</p>
+<p>
+<table border="1">
+<col width="55%">
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
+	<option value=""></option>
+	<option value="  - Transsphenoidal pituitary tumor resection specimen">Transsphenoidal pituitary tumor resection specimen</option> 
+	<option value="  - Transcranial pituitary tumor resection specimen">Transcranial pituitary tumor resection specimen</option>
+	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="  - Not specified">Not specified</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumor integrity:</label> 
+</td>
+<td>
+<select class="element select large" ID="A02">
+	<option value=""></option>
+	<option value="  - Intact">Intact</option> 
+	<option value="  - Fragmented">Fragmented</option> 
+	<option value="  - Other (specify):">Other (specify):</option>
+	<option value="  - Not specified">Not specified</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumor size:</label> 
+</td>
+<td>
+<select class="element select large" ID="A03">
+	<option value=""></option>
+	<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+	<option value="  - Cannot be determined (explain): ">Cannot be determined (explain):</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+	
+<p>
+<label class="description">- Tumor histology: </label>
+ <textarea ID="A04" class="element textarea medium"></textarea>
+</p>
+
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="description" > - Tumor Number: </label>
+</td>
+<td valign="top">
+<select class="element select large" ID="A05">
+	<option value=""></option>
+	<option value="Single pituitary neuroendocrine tumor">Single pituitary neuroendocrine tumor</option>
+	<option value="Multiple pituitary neuroendocrine tumors">Multiple pituitary neuroendocrine tumors</option>
+	<option value="Other (specify):">Other (specify):</option>
+</select>
+For multiple pituitary neuroendocrine tumors, repeat the following <b>5</b> elements for each distinct pituitary neuroendocrine tumor:<br><br>
+
+<b>
+ 1. Tumor Types and Subtypes,<br> 
+ 2. Tumor Proliferative Activity, <br>
+ 3. Histologically Confirmed Invasion, <br>
+ 4. Histochemical Features, and <br>
+ 5. Immunohistochemical Features</b>.<br> 
+ <br>
+This section can be repeated up to 10 times.
+</td>
+</tr>
+<tr>
+
+</tr>
+<tr>
+<td rowspan="5" valign="top">
+<label class="description">1. Tumor Types and Subtypes:</label>
+</td>
+
+<tr>
+<td>
+<label class="description">TPIT-lineage pituitary neuroendocrine tumor (corticotroph tumor)</label>
+<input class="element checkbox" type="checkbox"  id="A06" value="  - TPIT-lineage pituitary neuroendocrine tumor (corticotroph tumor), Densely granulated corticotroph tumor"><label  class="choice">Densely granulated corticotroph tumor</label>
+<input class="element checkbox" type="checkbox"  id="A07" value="  - TPIT-lineage pituitary neuroendocrine tumor (corticotroph tumor), Sparsely granulated corticotroph tumor"><label  class="choice">Sparsely granulated corticotroph tumor</label>
+<input class="element checkbox" type="checkbox"  id="A08" value="  - TPIT-lineage pituitary neuroendocrine tumor (corticotroph tumor), Crooke cell tumor"><label  class="choice">TPIT-lineage pituitary neuroendocrine tumor (corticotroph tumor), Crooke cell tumor</label>
+<input class="element checkbox" type="checkbox"  id="A09" value="  - TPIT-lineage pituitary neuroendocrine tumor (corticotroph tumor), Other (specify):"><label  class="choice">TPIT-lineage pituitary neuroendocrine tumor (corticotroph tumor), Other (specify):</label>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">PIT1-lineage pituitary neuroendocrine tumor</label>
+<input class="element checkbox" type="checkbox"  id="A10" value="  - PIT1-lineage pituitary neuroendocrine tumor, Somatotroph tumor, densely granulated"><label  class="choice">Somatotroph tumor, densely granulated</label>
+<input class="element checkbox" type="checkbox"  id="A11" value="  - PIT1-lineage pituitary neuroendocrine tumor, Somatotroph tumor, sparsely granulated"><label  class="choice">Somatotroph tumor, sparsely granulated</label>
+<input class="element checkbox" type="checkbox"  id="A12" value="  - PIT1-lineage pituitary neuroendocrine tumor, Lactotroph tumor, densely granulated"><label  class="choice">Lactotroph tumor, densely granulated</label>
+<input class="element checkbox" type="checkbox"  id="A13" value="  - PIT1-lineage pituitary neuroendocrine tumor, Lactotroph tumor, sparsely granulated"><label  class="choice">Lactotroph tumor, sparsely granulated</label>
+<input class="element checkbox" type="checkbox"  id="A14" value="  - PIT1-lineage pituitary neuroendocrine tumor, Thyrotroph tumor"><label  class="choice">Thyrotroph tumor</label>
+<input class="element checkbox" type="checkbox"  id="A15" value="  - PIT1-lineage pituitary neuroendocrine tumor, Mammosomatotroph tumor"><label  class="choice">Mammosomatotroph tumor</label>
+<input class="element checkbox" type="checkbox"  id="A16" value="  - PIT1-lineage pituitary neuroendocrine tumor, Mature PIT1-lineage plurihormonal tumor"><label  class="choice">Mature PIT1-lineage plurihormonal tumor</label>
+<input class="element checkbox" type="checkbox"  id="A17" value="  - PIT1-lineage pituitary neuroendocrine tumor, Immature PIT1-lineage tumor"><label  class="choice">Immature PIT1-lineage tumor</label>
+<input class="element checkbox" type="checkbox"  id="A18" value="  - PIT1-lineage pituitary neuroendocrine tumor, Acidophil stem cell tumor"><label  class="choice">Acidophil stem cell tumor</label>
+<input class="element checkbox" type="checkbox"  id="A19" value="  - PIT1-lineage pituitary neuroendocrine tumor, Mixed somatotroph and lactotroph tumor (specify subtype)"><label  class="choice">Mixed somatotroph and lactotroph tumor (specify subtype)</label>
+<input class="element checkbox" type="checkbox"  id="A20" value="  - PIT1-lineage pituitary neuroendocrine tumor, Other (specify):"><label  class="choice">Other (specify):</label>
+</td>
+</tr>
+
+<tr>
+<td >
+<label class="description">SF1-lineage pituitary neuroendocrine tumor</label>
+<input class="element checkbox" type="checkbox"  id="A21" value="  - SF1-lineage pituitary neuroendocrine tumor, Gonadotroph tumor"><label  class="choice">Gonadotroph tumor</label>
+<input class="element checkbox" type="checkbox"  id="A22" value="  - SF1-lineage pituitary neuroendocrine tumor, Other (specify):"><label  class="choice">Other (specify):</label>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">Pituitary neuroendocrine tumor of no distinct cell lineage</label>
+<input class="element checkbox" type="checkbox"  id="A23" value="  - Pituitary neuroendocrine tumor of no distinct cell lineage, Null cell tumor"><label  class="choice">Null cell tumor</label>
+<input class="element checkbox" type="checkbox"  id="A24" value="  - Pituitary neuroendocrine tumor of no distinct cell lineage, Unusual plurihormonal (multilineage) pituitary neuroendocrine tumors (specify)"><label  class="choice">Unusual plurihormonal (multilineage) pituitary neuroendocrine tumors (specify)</label>
+<input class="element checkbox" type="checkbox"  id="A25" value="  - Pituitary neuroendocrine tumor, NOS"><label  class="choice">Pituitary neuroendocrine tumor, NOS</label>
+<input class="element checkbox" type="checkbox"  id="A26" value="  - Other (specify):"><label  class="choice">Other (specify):</label>
+</td>
+</tr>
+
+<tr>
+<td rowspan="3" valign="top">
+<label class="description">2. Tumor Proliferative Activity:</label>
+</td>
+</tr>
+<tr>
+<td >
+<label class=""><b>- Ki-67 Labeling Index:</b></label>
+<input type="text" class="element text Medium" ID="A27" size="15">
+<p>Selecting multiple small hot spots (at least 500 tumor cells) from different hot spot regions of the tumor rather than a single larger area of the same tumor are recommended.</p>
+</td>
+</tr>
+<tr>
+<td >
+<label class="">+ Mitotic Count (per 2 mm<sup>2</sup>):</label>
+<input type="text" class="element text Medium" ID="A28" size="15">
+<p>Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 fields (equals 10 mm<sup>2</sup>), divide by 5 to get mitotic count for 2 mm<sup>2</sup></p>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">3. Histologically Confirmed Invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A29">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present (specify):">Present (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td rowspan="4" valign="top">
+<label class="">4. + Histochemical stains:</label>
+</td>
+<tr>
+
+<tr>
+<td align="right">
+<label class="">+ Reticulin Histochemistry</label>
+<select class="element select medium" ID="A30">
+	<option value=""></option>
+	<option value="Not performed">Not performed</option>
+	<option value="Disrupted">Disrupted</option>
+	<option value="Expanded acini">Expanded acini</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</td>
+</tr>
+
+<tr>
+<td  align="right">
+<label class="">+ PAS Histochemistry</label>
+<select class="element select medium" ID="A31">
+	<option value=""></option>
+	<option value="Not performed">Not performed</option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td rowspan="16" valign="top">
+<label class="description">5. Immunohistochemical studies</label>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">- <b>TPIT</b></label>
+<select class="element select medium" ID="A32">
+	<option value=""></option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">- <b>PIT1</b></label>
+<select class="element select medium" ID="A33">
+	<option value=""></option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">- <b>SF1</b></label>
+<select class="element select medium" ID="A34">
+	<option value=""></option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ GATA3</label>
+<select class="element select medium" ID="A35">
+	<option value=""></option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ ER-alpha</label>
+<select class="element select medium" ID="A36">
+	<option value=""></option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ alpha-subunit</label>
+<select class="element select medium" ID="A37">
+	<option value=""></option>
+	<option value="Not available">Not available</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">- <b>ACTH (TPIT-tumors)</b></label>
+<select class="element select medium" ID="A38">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">- <b>GH (PIT1-tumors)</b></label>
+<select class="element select medium" ID="A39">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">- <b>PRL (PIT1-tumors)</b></label>
+<select class="element select medium" ID="A40">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">- <b>beta-TSH (PIT1-tumors)</b></label>
+<select class="element select medium" ID="A41">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Not available">Not available</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ beta-FSH</label>
+<select class="element select medium" ID="A42">
+	<option value=""></option>
+	<option value="Positive, diffuse">Positive, diffuse</option>
+	<option value="Positive, focal">Positive, focal</option>
+	<option value="Negative">Negative</option>
+	<option value="Not available">Not available</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ p27</label>
+<select class="element select medium" ID="A43">
+	<option value=""></option>
+	<option value="Not available">Not available</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ ATRX</label>
+<select class="element select medium" ID="A43">
+	<option value=""></option>
+	<option value="Intact">Intact</option>
+	<option value="Loss">Loss</option>
+	<option value="Not available">Not available</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ p53</label>
+<select class="element select medium" ID="A45">
+	<option value=""></option>
+	<option value="Abnormal">Abnormal</option>
+	<option value="Wild-type">Wild-type</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label class="">- <b>Low Molecular Weight Keratins</b></label>
+<select class="element select small" ID="A46">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select><br><br>
+Extent of Reactivity:
+<select class="element select medium" ID="A47">
+	<option value=""></option>
+	<option value="Diffuse">Diffuse</option>
+	<option value="Focal (non-diffuse)">Focal (non-diffuse)</option>
+	<option value="Other (specify):">Other (specify):</option>
+</select><br><br>
+Pattern of Reactivity:
+<input class="element checkbox" type="checkbox"  id="A48" value="      - Fibrous bodies (accounting for greater than 70% of the tumor)"><label  class="choice">Fibrous bodies (accounting for greater than 70% of the tumor)</label>
+<input class="element checkbox" type="checkbox"  id="A49" value="      - Fibrous bodies (variable / scattered, accounting for less than 70% of the tumor)"><label  class="choice">Fibrous bodies (variable / scattered, accounting for less than 70% of the tumor)</label>
+<input class="element checkbox" type="checkbox"  id="A50" value="      - Perinuclear cytoplasmic"><label  class="choice">Perinuclear cytoplasmic</label>
+<input class="element checkbox" type="checkbox"  id="A51" value="      - Diffuse dense cytoplasmic"><label  class="choice">Diffuse dense cytoplasmic</label>
+<input class="element checkbox" type="checkbox"  id="A52" value="      - Ring-like cytoplasmic"><label  class="choice">Ring-like cytoplasmic</label>
+<input class="element checkbox" type="checkbox"  id="A53" value="      - Membranous"><label  class="choice">Membranous</label>
+<input class="element checkbox" type="checkbox"  id="A54" value="      - Other (specify):"><label  class="choice">Other (specify):</label>
+</td>
+</tr>
+
+</table>
+</p>
+</fieldset>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description">Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A55"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A56"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A57"  value="  - Cerebrospinal (specify site(s)):"><label class="choice" >Cerebrospinal (specify site(s)):</label>
+<input class="element checkbox" type="checkbox" id="A58"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A59"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A60"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A61"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description">Non-tumorous Pituitary Site(s): </label></legend>
+
+<p>
+<input class="element checkbox" type="checkbox" id="A62"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A63"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A64" value="  - Adenohypophysis identified"><label  class="choice">Adenohypophysis identified</label>
+<input class="element checkbox" type="checkbox" id="A65" value="  - Adenohypophysis identified, Crooke’s Hyaline Change of the Non-tumorous Corticotrophs (required for all corticotroph tumors)"><label class="choice" >Adenohypophysis identified, Crooke’s Hyaline Change of the Non-tumorous Corticotrophs (required for all corticotroph tumors)</label>
+<input class="element checkbox" type="checkbox" id="A66" value="  - Adenohypophysis identified, + Pituitary Hyperplasia"><label class="choice" >Adenohypophysis identified, + Pituitary Hyperplasia</label>
+<input class="element checkbox" type="checkbox" id="A67" value="  - Neurohypophysis identified"><label class="choice" >Neurohypophysis identified</label>
+<input class="element checkbox" type="checkbox" id="A68" value="  - Cannot be determined (explain):"><label class="choice" >Cannot be determined (explain):</label>
+<input class="element checkbox" type="checkbox" id="A69"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label > + Additional pathologic findings: </label></legend>
+
+<p>
+<input class="element checkbox" type="checkbox" id="A70"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A71"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A72" value="  - Hypophysitis (specify):"><label  class="choice">Hypophysitis (specify):</label>
+<input class="element checkbox" type="checkbox" id="A73" value="  - Craniopharyngioma (specify type):"><label class="choice" >Craniopharyngioma (specify type):</label>
+<input class="element checkbox" type="checkbox" id="A74" value="  - Rathke’s cleft cyst (specify):"><label class="choice" >Rathke’s cleft cyst (specify):</label>
+<input class="element checkbox" type="checkbox" id="A75" value="  - Acute hemorrhagic necrosis (apoplexy)"><label class="choice" >Acute hemorrhagic necrosis (apoplexy)</label>
+<input class="element checkbox" type="checkbox" id="A76"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+</p>
+</fieldset>
+</p>
+
+<p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A77" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 08-Apr-2025,<br>
+based on 
+<a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Pituitary Neuroendocrine Tumor 1.0.0.0 Mar-2025.<br>
+html form was created on <a href="https://www.phpform.org"  target="_blank">pForm</a>, <a href="https://www.w3schools.com/"  target="_blank">W3 School</a>, 
+<a href="https://stackoverflow.com/"  target="_blank">StackOverflow</a>, and 
+<a href="https://icons8.com" target="_blank">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

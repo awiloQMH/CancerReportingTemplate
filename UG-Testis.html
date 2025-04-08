@@ -178,13 +178,19 @@ if (document.getElementById("A35").checked){
 	Template += frm.A35.value + "\n";
 }
 
-if (frm.A36.value !== "" || frm.A37.value !== ""){
+if (frm.A36.value !== "" || frm.A37.value !== "" || frm.A66.value !== ""){
 	Template += "\n" + "- Resection margins: " +"\n" ;
 }
 
 if (frm.A36.value !== ""){
 	Template +=  "  - Spermatic cord margin: "  +  frm.A36.value + "\n" ;
 }
+
+
+if (frm.A66.value !== ""){
+	Template +=  "  - Testicular parenchyma margin: " +  frm.A66.value + "\n" ;
+}
+
 
 if (frm.A37.value !== ""){
 	Template +=  "  - Other margin(s) (specify): " +  frm.A37.value + "\n" ;
@@ -400,7 +406,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2024-06-Update\Genitourinary Protocol Folder\Testis_4.2.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2025-03-Update\Genitourinary Protocol Folder\Testis_4.3.0.0.REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Malignant germ cell and sex cord-stromal tumos of the testis
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -434,7 +440,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Specimen focality:</label>
+<label class="description">- Specimen focality :</label>
 </td>
 <td>
 <select class="element select large" ID="A02">
@@ -527,7 +533,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description">Histologic type (WHO 5e):</label></legend>
+<legend><label class="description">Histologic type (WHO 2022 5e):</label></legend>
 <p>
 <table border="1">
 <col width="75%">
@@ -682,6 +688,20 @@ table, th, td {
 </td>
 <td>
 <select class="element select large" ID="A36">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by tumor">Involved by tumor</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">-  Testicular parenchyma margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A66">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
@@ -979,9 +999,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 28-Aug-2024,<br>
+Last upated on 31-Mar-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Testis Radical Orchiectomy 4.2.0.0 (Sep 2023) and Testis Lymphadenectomy 4.2.1.0 (Jun 2024), <br>
+Testis Radical Orchiectomy 4.3.0.0 (Mar-2025) and Testis Lymphadenectomy 4.2.1.0 (Jun-2024), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

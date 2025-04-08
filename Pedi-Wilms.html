@@ -62,24 +62,28 @@ if (frm.A19.value !== ""){
 	Template += "- Nephrogenic rests:  " + frm.A19.value + "\n";
 }
 
+if (frm.A11.value + frm.A12.value + frm.A13.value + frm.A14.value + frm.A15.value  !== ""){
+	Template += "- Tumor extent:" + "\n";
+}
+
 if (frm.A11.value !== ""){
-	Template += "- Tumor Disruption: " + frm.A11.value + "\n";
+	Template += "  - Tumor Disruption: " + frm.A11.value + "\n";
 }
 
 if (frm.A12.value !== ""){
-	Template += "- Renal Sinus Involvement: " + frm.A12.value + "\n";
+	Template += "  - Renal Sinus Involvement: " + frm.A12.value + "\n";
 }
 
 if (frm.A13.value !== ""){
-	Template += "- Renal Vein Involvement: " + frm.A13.value + "\n";
+	Template += "  - Extra-renal Vascular Involvement (renal vein, renal sinus, perinephric soft tissue, other) " + frm.A13.value + "\n";
 }
 
 if (frm.A14.value !== ""){
-	Template += "- Extension Beyond Renal Capsule: " + frm.A14.value + "\n";
+	Template += "  - Extension Beyond Renal Capsule: " + frm.A14.value + "\n";
 }
 
 if (frm.A15.value !== ""){
-	Template += "- Direct Extension into Adjacent Organs: " + frm.A15.value + "\n";
+	Template += "  - Direct Extension into Adjacent Organs: " + frm.A15.value + "\n";
 }
 
 if (frm.A16.value !== ""){
@@ -91,11 +95,34 @@ if (frm.A17.value !== ""){
 }
 
 if (frm.A18.value !== ""){
-	Template += "- Post therapy histologic classification:  " + frm.A18.value + "\n";
+	Template += "- Post therapy histologic classification (COG):  " + frm.A18.value + "\n";
+}
+
+if (frm.A53.value !== ""){
+	Template += "- Post therapy histologic classification (SIOP):  " + frm.A53.value + "\n";
+}
+
+if (frm.A20.value !== "" || frm.A54.value !== "" || frm.A55.value !== "" || frm.A56.value !== ""){
+	Template += "\n" + "- Resection margins: " +"\n" ;
 }
 
 if (frm.A20.value !== ""){
-	Template += "\n" + "- Surgical margins: " + frm.A20.value + "\n";
+	Template +=  "  - Vascular margin: "  +  frm.A20.value + "\n" ;
+}
+
+
+if (frm.A54.value !== ""){
+	Template +=  "  - Ureteral margin: " +  frm.A54.value + "\n" ;
+}
+
+
+if (frm.A55.value !== ""){
+	Template +=  "  - Perinephric soft tissue margin: " +  frm.A55.value + "\n" ;
+}
+
+
+if (frm.A56.value !== ""){
+	Template += "  - Other margin(s) (specify): " + frm.A56.value + "\n";
 }
 
 if (frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value + frm.A25.value!== ""){
@@ -165,7 +192,7 @@ if (document.getElementById("A26").checked || document.getElementById("A27").che
 	document.getElementById("A36").checked || document.getElementById("A37").checked ||
 	document.getElementById("A38").checked || document.getElementById("A39").checked ||
 	document.getElementById("A40").checked || document.getElementById("A41").checked ||
-	document.getElementById("A42").checked ){
+	document.getElementById("A42").checked || frm.A41.value !== "" || frm.A42.value !== ""){
 	Template += "\n" + "- Children’s Oncology Group Staging System (2005):" + "\n";
 }
 
@@ -191,7 +218,7 @@ if (document.getElementById("A29").checked){
 }
 
 if (document.getElementById("A30").checked || document.getElementById("A31").checked || 
-	document.getElementById("A32").checked || document.getElementById("A33").checked){
+	document.getElementById("A32").checked || document.getElementById("A57").checked || document.getElementById("A33").checked){
 	Template += "  - Local Stage II: Tumor extends beyond kidney but is completely resected" + "\n";
 }
 
@@ -207,12 +234,20 @@ if (document.getElementById("A32").checked){
 	Template += "    - " +  frm.A32.value + "\n";
 }
 
+
+if (document.getElementById("A57").checked){
+	Template += "    - " +  frm.A57.value + "\n";
+}
+
 if (document.getElementById("A33").checked){
 	Template += "    - " +  frm.A33.value + "\n";
 }
 
 if (document.getElementById("A34").checked || document.getElementById("A35").checked || 
-	document.getElementById("A36").checked || document.getElementById("A37").checked ||document.getElementById("A38").checked || document.getElementById("A39").checked){ 	Template += "  - Local Stage III: Residual tumor is suspected" + "\n";
+	document.getElementById("A36").checked || document.getElementById("A37").checked ||
+	document.getElementById("A38").checked || document.getElementById("A39").checked ||
+	document.getElementById("A58").checked){
+ 	Template += "  - Local Stage III: Residual tumor is suspected" + "\n";
 }
 
 if (document.getElementById("A34").checked){
@@ -239,20 +274,136 @@ if (document.getElementById("A39").checked){
 	Template += "    - " +  frm.A39.value + "\n";
 }
 
+if (document.getElementById("A58").checked){
+	Template += "    - " +  frm.A58.value + "\n";
+}
+
 if (document.getElementById("A40").checked){
 	Template += "  - Stage IV: Metastatic disease: " + "\n" + "    - " +  frm.A40.value + "\n";
 }
 
-if (document.getElementById("A41").checked || document.getElementById("A42").checked ){
+if (frm.A41.value + frm.A42.value !== ""){
 	Template += "  - Stage V: Bilateral renal involvement at diagnosis" + "\n";
 }
 
-if (document.getElementById("A41").checked){
+if (frm.A41.value !== ""){
 	Template += "    - " +  frm.A41.value + "\n";
 }
 
-if (document.getElementById("A42").checked){
+if (frm.A42.value !== ""){
 	Template += "    - " +  frm.A42.value + "\n";
+}
+
+if (document.getElementById("A59").checked || document.getElementById("A60").checked || 
+	document.getElementById("A61").checked || document.getElementById("A62").checked ||
+	document.getElementById("A63").checked || document.getElementById("A64").checked ||
+	document.getElementById("A65").checked || document.getElementById("A66").checked ||
+	document.getElementById("A67").checked || document.getElementById("A68").checked ||
+	document.getElementById("A69").checked || document.getElementById("A70").checked ||
+	document.getElementById("A71").checked || document.getElementById("A72").checked ||
+	document.getElementById("A73").checked || document.getElementById("A74").checked ||
+	document.getElementById("A75").checked || frm.A76.value !== "" || frm.A77.value !== ""){
+	Template += "\n" + "- International Society of Pediatric Oncology Staging for Wilms Tumor Treated with Preoperative Chemotherapy (SIOP):" + "\n";
+}
+
+if (document.getElementById("A59").checked || document.getElementById("A60").checked || 
+	document.getElementById("A61").checked ){
+	Template += "  - Stage I: Tumor is limited to the kidney and is completely resected" + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += "    - " +  frm.A59.value + "\n";
+}
+
+if (document.getElementById("A60").checked){
+	Template += "    - " +  frm.A60.value + "\n";
+}
+
+if (document.getElementById("A61").checked){
+	Template += "    - " +  frm.A61.value + "\n";
+}
+
+if (document.getElementById("A62").checked || document.getElementById("A63").checked || 
+	document.getElementById("A64").checked || document.getElementById("A65").checked){
+	Template += "  - Stage II: Tumor infiltrates locally but is completely excised with negative surgical margins and negative regional lymph nodes" + "\n";
+}
+
+if (document.getElementById("A62").checked){
+	Template += "    - " +  frm.A62.value + "\n";
+}
+
+if (document.getElementById("A63").checked){
+	Template += "    - " +  frm.A63.value + "\n";
+}
+
+if (document.getElementById("A64").checked){
+	Template += "    - " +  frm.A64.value + "\n";
+}
+
+if (document.getElementById("A65").checked){
+	Template += "    - " +  frm.A65.value + "\n";
+}
+
+if (document.getElementById("A66").checked || document.getElementById("A67").checked || 
+	document.getElementById("A68").checked || document.getElementById("A69").checked ||
+	document.getElementById("A70").checked || document.getElementById("A71").checked ||
+	document.getElementById("A72").checked || document.getElementById("A73").checked){
+ 	Template += "  - Stage III: Tumor shows residual disease intraabdominally" + "\n";
+}
+
+if (document.getElementById("A66").checked){
+	Template += "    - " +  frm.A66.value + "\n";
+}
+
+if (document.getElementById("A67").checked){
+	Template += "    - " +  frm.A67.value + "\n";
+}
+
+if (document.getElementById("A68").checked){
+	Template += "    - " +  frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template += "    - " +  frm.A69.value + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += "    - " +  frm.A70.value + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += "    - " +  frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += "    - " +  frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += "    - " +  frm.A73.value + "\n";
+}
+if (document.getElementById("A74").checked || document.getElementById("A75").checked){
+ 	Template += "  - Stage IV: Tumor shows distant metastases" + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += "    - " +  frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += "    - " +  frm.A75.value + "\n";
+}
+
+if (frm.A76.value + frm.A77.value !== ""){
+	Template += "  - Stage V: Bilateral renal involvement at diagnosis" + "\n";
+}
+
+if (frm.A76.value !== ""){
+	Template += "    - " +  frm.A76.value + "\n";
+}
+
+if (frm.A77.value !== ""){
+	Template += "    - " +  frm.A77.value + "\n";
 }
 /**
 if (frm.A43.value + frm.A44.value !== ""){
@@ -301,7 +452,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2023-09-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.1.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2025-03-Update\Pediatric Protocol Folder\Kidney.Wilms_4.4.0.0.REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Wilms and Other Pediatric Renal Tumor
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -351,7 +502,7 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 </tr>
 
 <tr>
-<td><label class="description">- Tumor focality:</label></td>
+<td><label class="description">- Tumor focality (in Specimen or Submitted from One Kidney):</label></td>
 <td><select class="element select large" ID="A04">
 		<option value=""></option>
 		<option value="Unifocal">Unifocal</option>
@@ -399,7 +550,7 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 </td>
 <td><select class="element select large" ID="A10">
 	<option value=""></option>
-	<option value="Wilms tumor, favorable histology">Wilms tumor, favorable histology</option>
+	<option value="Wilms tumor, favorable / non-anaplastic histology">Wilms tumor, favorable / non-anaplastic histology</option>
 	<option value="Wilms tumor, focal anaplasia">Wilms tumor, focal anaplasia</option>
 	<option value="Wilms tumor, diffuse anaplasia">Wilms tumor, diffuse anaplasia</option>
 	<option value="Congenital mesoblastic nephroma (cellular, classic, or mixed)">Congenital mesoblastic nephroma (cellular, classic, or mixed)</option>
@@ -425,7 +576,7 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 </tr>
 
 <tr>
-<td><label class="description">- Tumor Disruption (pre-op or intra-op):</label></td>
+<td><label class="description">- Gross or Microscopic Tumor Disruption (pre-op or intra-op):</label></td>
 <td><select class="element select large" ID="A11">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
@@ -435,43 +586,44 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 </tr>
 
 <tr>
-<td><label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=17" target="_blank">Renal Sinus Involved by Viable Tumor</a>:</label></td>
+<td><label class="description">- Renal Sinus Involved by Viable Tumor:</label></td>
 <td><select class="element select large" ID="A12">
 	<option value=""></option>
-	<option value="NNot identified">Not identified</option>
+	<option value="Not identified">Not identified</option>
 	<option value="Minimal extension into renal sinus soft tissue (a single focus less than 5 mm in greatest dimension located greater than 5 mm from the nearest margin)">Minimal extension into renal sinus soft tissue (a single focus less than 5 mm in greatest dimension located greater than 5 mm from the nearest margin)</option>
 	<option value="More than minimal extension into renal sinus soft tissue">More than minimal extension into renal sinus soft tissue</option>
-	<option value="Involvement of renal sinus lymphovascular spaces">Involvement of renal sinus lymphovascular spaces</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
 
 <tr>
-<td><label class="description">- <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=18" target="_blank">Renal Vein Involvement by Viable Tumor</a>:</label></td>
+<td><label class="description">- Extra-renal Vascular Involvement (renal vein, renal sinus, perinephric soft tissue, other):</label></td>
 <td><select class="element select large" ID="A13">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
-	<option value="Identified">Identified</option>
+	<option value="Present">Present</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
 
 <tr>
-<td><label class="description">- Extension Beyond Renal Capsule:</label></td>
+<td><label class="description">- Extension Beyond Renal Capsule by Viable Tumor:</label></td>
 <td><select class="element select large" ID="A14">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
-	<option value="Identified">Identified</option>
+	<option value="Present">Present</option>
+	<option value="Present but contained within pseudocapsule (SIOP only)">Present but contained within pseudocapsule (SIOP only)</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
 
 <tr>
-<td><label class="description">- Direct Extension into Adjacent Organs:</label></td>
+<td><label class="description">- Direct Extension into Adjacent Organs by Viable Tumor:</label></td>
 <td><select class="element select large" ID="A15">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
-	<option value="Presnt (specify):">Presnt (specify):</option>
+	<option value="Present in adrenal gland only AND with pseudocapsule (SIOP only)">Present in adrenal gland only AND with pseudocapsule (SIOP only)</option>
+	<option value="Presnt">Presnt</option>
 	<option value="Cannot be determined (explain)">Cannot be determined (explain)</option>
 </select></td>
 </tr>
@@ -497,18 +649,36 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 </tr>
 
 <tr>
-<td><label class="">+ <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=17" target="_blank">Post therapy histologic classification</a>: </label></td>
+<td><label class="description">- Post therapy histologic classification (COG): </label></td>
 <td><select class="element select large" ID="A18">
 	<option value=""></option>
-	<option value="No known preoperative therapy (not applicable)">No known preoperative therapy (not applicable)</option>
+	<option value="Not applicable (no known preoperative therapy)">Not applicable (no known preoperative therapy)</option>
 	<option value="Low risk (no viable Wilms tumor present other than scattered nephroblastic tubules that may represent residual nephrogenic rest)">Low risk (no viable Wilms tumor present other than scattered nephroblastic tubules that may represent residual nephrogenic rest)</option>
-	<option value="Intermediate risk, viable tumor present comprising less than 33% of mass, regardless of histology">Intermediate risk, viable tumor present comprising less than 33% of mass, regardless of histology</option>
-	<option value="Intermediate risk, viable tumor present comprising greater than 33% of mass, with blastemal histology present in less than 6% of viable tumor">Intermediate risk, viable tumor present comprising greater than 33% of mass, with blastemal histology present in less than 6% of viable tumor</option>
-	<option value="High risk (viable tumor more than 33% of mass with blastemal histology present in more than 66% of viable tumor)">High risk (viable tumor more than 33% of mass with blastemal histology present in more than 66% of viable tumor)</option>
-	<option value="Not applicable">Not applicable</option>
+	<option value="Intermediate risk, with viable tumor present comprising less than 33% of mass, regardless of histology">Intermediate risk, with viable tumor present comprising less than 33% of mass, regardless of histology</option>
+	<option value="Intermediate risk, with viable tumor present comprising greater than 33% of mass and blastemal histology present in less than 66% of viable tumor">Intermediate risk, with viable tumor present comprising greater than 33% of mass and blastemal histology present in less than 66% of viable tumor</option>
+	<option value="Intermediate risk, NOS">Intermediate risk, NOS</option>
+	<option value="High risk (viable tumor greater than 33% of mass with blastemal histology present in greater than 66% of viable tumor)">High risk (viable tumor greater than 33% of mass with blastemal histology present in greater than 66% of viable tumor)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
 </select></td>
 </tr>
 
+<tr>
+<td><label class="description">- Post therapy histologic classification (SIOP): </label></td>
+<td><select class="element select large" ID="A53">
+	<option value=""></option>
+	<option value="Not applicable (no known preoperative therapy)">Not applicable (no known preoperative therapy)</option>
+	<option value="Low risk (no viable Wilms tumor present other than scattered nephroblastic tubules that may represent residual nephrogenic rest)">Low risk (no viable Wilms tumor present other than scattered nephroblastic tubules that may represent residual nephrogenic rest)</option>
+	<option value="Intermediate risk, with viable tumor present comprising less than 33% of mass, regardless of histology">Intermediate risk, with viable tumor present comprising less than 33% of mass, regardless of histology</option>
+	<option value="Intermediate risk epithelial, with viable tumor present comprising greater than 33% of mass and epithelial histology present in greater than 66% of viable tumor">Intermediate risk epithelial, with viable tumor present comprising greater than 33% of mass and epithelial histology present in greater than 66% of viable tumor</option>
+	<option value="Intermediate risk stromal, with viable tumor present comprising greater than 33% of mass and stromal histology present in greater than 66% of viable tumor">Intermediate risk stromal, with viable tumor present comprising greater than 33% of mass and stromal histology present in greater than 66% of viable tumor</option>
+	<option value="Intermediate risk mixed, with viable tumor present comprising greater than 33% of mass and no component greater than 66% of viable tumor unless epithelial histology or stromal histology, which is greater than 66% of viable tumor, is associated with greater than 10% blastemal histology">Intermediate risk mixed, with viable tumor present comprising greater than 33% of mass and no component greater than 66% of viable tumor unless epithelial histology or stromal histology, which is greater than 66% of viable tumor, is associated with greater than 10% blastemal histology</option>
+	<option value="Intermediate risk, NOS">Intermediate risk, NOS</option>
+	<option value="High risk (viable tumor greater than 33% of mass with blastemal histology present in greater than 66% of viable tumor)">High risk (viable tumor greater than 33% of mass with blastemal histology present in greater than 66% of viable tumor)</option>
+	<option value="Intermediate risk with focal anaplasia (not blastemal predominant)">Intermediate risk with focal anaplasia (not blastemal predominant)</option>
+	<option value="High risk with diffuse anaplasia">High risk with diffuse anaplasia</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select></td>
+</tr>
 <!--
 <tr>
 <td rowspan="2" valign="top"><label class="description">- Distant metastasis:</label></td>
@@ -527,7 +697,10 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 </tr>
 -->
 </table>
-<br>
+<p>
+Complete either the COG or SIOP classification based on treatment protocols.
+</p>
+
 </fieldset>
 </p>
 
@@ -535,22 +708,79 @@ OPTIONAL: Expert Consultation before completion of the reporting.
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins: </label></legend>
 <p>
-<select class="element select medium" ID="A20">
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- Vascular margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A20">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by viable tumor">Involved by viable tumor</option>
+	<option value="Involved by non-viable tumor">Involved by non-viable tumor</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">-  Ureteral margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A54">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by viable tumor">Involved by viable tumor</option>
+	<option value="Involved by non-viable tumor">Involved by non-viable tumor</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">-  Perinephric soft tissue margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A55">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by viable tumor">Involved by viable tumor</option>
+	<option value="Involved by non-viable tumor">Involved by non-viable tumor</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">-  Other margin(s) (specify):</label>
+</td>
+<td>
+<select class="element select large" ID="A56">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by tumor, closest soft tissue margin, specify distance (mm):">Uninvolved by tumor, closest soft tissue margin, specify distance (mm):</option>
-	<option value="Uninvolved by tumor, closest margin, specify distance and locations (mm):">Uninvolved by tumor, closest margin, specify distance and locations (mm):</option>
-	<option value="Involved by tumor, specify margins: ">Involved by invasive carcinoma, specify margins: </option>
+	<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+	<option value="Involved by viable tumor">Involved by viable tumor</option>
+	<option value="Involved by non-viable tumor">Involved by non-viable tumor</option>
 </select>
+</td>
+</tr>
+</table>
 </p>
-Specifically, comments on Vascular, Ureteral and Soft tissue margins.
-<br>
+* Specify exact distance, greater than, at least, less than or less than 0.1 cm, etc.<br>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+	<legend> <label class="description"> Regional (abdominoplevic) lymph nodes: </label></legend>
 
 <table border="1">
 <col width="75%">
@@ -625,7 +855,7 @@ Specifically, comments on Vascular, Ureteral and Soft tissue margins.
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-12-Update\Pediatric Protocol Folder\Kidney.Wilms_4.3.0.0.REL_CAPCP.pdf#page=18" target="_blank">Children’s Oncology Group Staging System (2005)</a>: </label></legend>
+	<legend> <label class="description">Children’s Oncology Group Staging System (2005): </label></legend>
 
 <p>
 <label class="description">- Not applicable</label> 
@@ -641,20 +871,22 @@ Specifically, comments on Vascular, Ureteral and Soft tissue margins.
 
 <p>
 <label class="description">- Local Stage II: Tumor extends beyond kidney but is completely resected</label> 
-<input class="element checkbox" type="checkbox"  id="A30" value="Tumor extends through the renal capsule"><label class="choice" >Tumor extends through the renal capsule</label>
-<input class="element checkbox" type="checkbox"  id="A31" value="Tumor involvement of extrarenal or renal sinus lymph-vascular spaces present"><label  class="choice">Tumor involvement of extrarenal or renal sinus lymph-vascular spaces present</label>
-<input class="element checkbox" type="checkbox"  id="A32" value="Tumor involves renal vein, but has not been transected and is not attached to vein wall at resection margin"><label  class="choice">Tumor involves renal vein, but has not been transected and is not attached to vein wall at resection margin</label>
-<input class="element checkbox" type="checkbox"  id="A33" value="Tumor more than minimally involves the renal sinus soft tissue"><label  class="choice">Tumor more than minimally involves the renal sinus soft tissue</label>
+<input class="element checkbox" type="checkbox"  id="A30" value="Tumor (viable) extends through the renal capsule or involves the perirenal fat or adrenal gland"><label class="choice" >Tumor (viable) extends through the renal capsule or involves the perirenal fat or adrenal gland</label>
+<input class="element checkbox" type="checkbox"  id="A31" value="Tumor (viable) involvement of extrarenal or renal sinus lymph-vascular spaces present"><label  class="choice">Tumor (viable) involvement of extrarenal or renal sinus lymph-vascular spaces present</label>
+<input class="element checkbox" type="checkbox"  id="A32" value="Tumor (viable) involves renal vein but has not been transected and is not attached to vein wall at resection margin"><label  class="choice">Tumor (viable) involves renal vein but has not been transected and is not attached to vein wall at resection margin</label>
+<input class="element checkbox" type="checkbox"  id="A57" value="Tumor (viable) infiltrates the wall of the renal pelvis or the ureter"><label  class="choice">Tumor (viable) infiltrates the wall of the renal pelvis or the ureter</label>
+<input class="element checkbox" type="checkbox"  id="A33" value="Tumor (viable) more than minimally involves the renal sinus soft tissue"><label  class="choice">Tumor (viable) more than minimally involves the renal sinus soft tissue</label>
 </p>
 
 <p>
 <label class="description">- Local Stage III:  Residual tumor is suspected</label> 
-<input class="element checkbox" type="checkbox"  id="A34" value="Tumor present at margin(s) of resection"><label  class="choice">Tumor present at margin(s) of resection</label>
-<input class="element checkbox" type="checkbox"  id="A35" value="Tumor rupture identified"><label  class="choice">Tumor rupture identified</label>
-<input class="element checkbox" type="checkbox"  id="A36" value="Tumor spill before or during surgery identified"><label  class="choice">Tumor spill before or during surgery identified</label>
+<input class="element checkbox" type="checkbox"  id="A34" value="Tumor (viable or non-viable) present at margin(s) of resection"><label  class="choice">Tumor (viable or non-viable) present at margin(s) of resection</label>
+<input class="element checkbox" type="checkbox"  id="A35" value="Tumor (viable or non-viable) rupture identified"><label  class="choice">Tumor (viable or non-viable) rupture identified</label>
+<input class="element checkbox" type="checkbox"  id="A36" value="Tumor spill (viable or non-viable) before or during surgery identified"><label  class="choice">Tumor spill (viable or non-viable) before or during surgery identified</label>
 <input class="element checkbox" type="checkbox"  id="A37" value="Piecemeal excision of tumor (removal of tumor in more than 1 piece)"><label  class="choice">Piecemeal excision of tumor (removal of tumor in more than 1 piece)</label>
 <input class="element checkbox" type="checkbox"  id="A38" value="Metastatic tumor in regional lymph nodes identified"><label  class="choice">Metastatic tumor in regional lymph nodes identified</label>
 <input class="element checkbox" type="checkbox"  id="A39" value="History of renal tumor biopsy before definitive surgery"><label  class="choice">History of renal tumor biopsy before definitive surgery</label>
+<input class="element checkbox" type="checkbox"  id="A58" value="Peritoneal tumor implants (viable or non-viable) present anywhere in the abdomen or pelvis"><label  class="choice">Peritoneal tumor implants (viable or non-viable) present anywhere in the abdomen or pelvis</label>
 </p>
 
 <p>
@@ -664,9 +896,92 @@ Specifically, comments on Vascular, Ureteral and Soft tissue margins.
 
 <p>
 <label class="description">- Stage V:  Bilateral renal involvement at diagnosis</label> 
-<input class="element checkbox" type="checkbox"  id="A41" value="Right kidney stage: "><label  class="choice">Right kidney stage: </label>
-<input class="element checkbox" type="checkbox"  id="A42" value="Left kidney stage: "><label  class="choice">Left kidney stage: </label>
+<label class="">- Right Kidney Stage:</label>
+<select class="element select medium" ID="A41">
+	<option value=""></option>
+	<option value="Right Kidney Stage : Not applicable">Not applicable</option>
+	<option value="Right Kidney Stage : Cannot be assessed">Cannot be assessed</option>
+	<option value="Right Kidney Stage : I">I</option>
+	<option value="Right Kidney Stage : II">II</option>
+	<option value="Right Kidney Stage : III">III</option>
+	<option value="Right Kidney Stage : IV">IV</option>
+	</select>
+<br><br>
+<label class="">- Left Kidney Stage:</label>
+<select class="element select medium" ID="A42">
+	<option value=""></option>
+	<option value="Left Kidney Stage : Not applicable">Not applicable</option>
+	<option value="Left Kidney Stage : Cannot be assessed">Cannot be assessed</option>
+	<option value="Left Kidney Stage : I">I</option>
+	<option value="Left Kidney Stage : II">II</option>
+	<option value="Left Kidney Stage : III">III</option>
+	<option value="Left Kidney Stage : IV">IV</option>
+	</select>
+
+</fieldset>
 </p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description">International Society of Pediatric Oncology Staging for Wilms Tumor Treated with Preoperative
+Chemotherapy (SIOP): </label></legend>
+
+<p>
+<label class="description">- Stage I: Tumor is limited to the kidney and is completely resected</label> 
+<input class="element checkbox" type="checkbox"  id="A59" value="No penetration of renal capsule"><label  class="choice">No penetration of renal capsule</label>
+<input class="element checkbox" type="checkbox"  id="A60" value="No tumor involvement of extrarenal or renal sinus lymph-vascular spaces identified"><label  class="choice">No tumor involvement of extrarenal or renal sinus lymph-vascular spaces identifie</label>
+<input class="element checkbox" type="checkbox"  id="A61" value="No tumor metastasis to lymph nodes"><label class="choice" >No tumor metastasis to lymph nodes</label>
+</p>
+
+<p>
+<label class="description">- Stage II: Tumor infiltrates locally but is completely excised with negative surgical margins and negative regional lymph nodes</label> 
+<input class="element checkbox" type="checkbox"  id="A62" value="Viable tumor infiltrates the renal sinus or blood and / or lymphatic vessels outside the renal parenchyma"><label class="choice" >Viable tumor infiltrates the renal sinus or blood and / or lymphatic vessels outside the renal parenchyma</label>
+<input class="element checkbox" type="checkbox"  id="A63" value="Viable tumor infiltrates the vena cava or adjacent organs (except for encapsulated adrenal gland invasion, which is stage I if the tumor is encapsulated)"><label  class="choice">Viable tumor infiltrates the vena cava or adjacent organs (except for encapsulated adrenal gland invasion, which is stage I if the tumor is encapsulated)</label>
+<input class="element checkbox" type="checkbox"  id="A64" value="Viable tumor within perirenal fat (not surrounded by a pseudocapsule and is completely excised)"><label  class="choice">Viable tumor within perirenal fat (not surrounded by a pseudocapsule and is completely excised)</label>
+<input class="element checkbox" type="checkbox"  id="A65" value="Viable tumor infiltrates the wall of the renal pelvis or the ureter"><label  class="choice">Viable tumor infiltrates the wall of the renal pelvis or the ureter</label>
+</p>
+
+<p>
+<label class="description">- Stage III: Tumor shows residual disease intraabdominally</label> 
+<input class="element checkbox" type="checkbox"  id="A66" value="Viable tumor is present at a perinephric resection margin (non-viable tumor or chemotherapy-induced change present at perinephric resection margins is not regarded as stage III)"><label  class="choice">Viable tumor is present at a perinephric resection margin (non-viable tumor or chemotherapy-induced change present at perinephric resection margins is not regarded as stage III)</label>
+<input class="element checkbox" type="checkbox"  id="A67" value="Abdominal lymph nodes contain viable or non-viable tumor"><label  class="choice">Abdominal lymph nodes contain viable or non-viable tumor</label>
+<input class="element checkbox" type="checkbox"  id="A68" value="Preoperative or intraoperative tumor rupture, if confirmed by microscopic examination (viable tumor at the surface of the specimen in the area of the rupture)"><label  class="choice">Preoperative or intraoperative tumor rupture, if confirmed by microscopic examination (viable tumor at the surface of the specimen in the area of the rupture)</label>
+<input class="element checkbox" type="checkbox"  id="A69" value="Viable or non-viable tumor thrombus is present at resection margins of the ureter, renal vein, or inferior vena cava"><label  class="choice">Viable or non-viable tumor thrombus is present at resection margins of the ureter, renal vein, or inferior vena cava</label>
+<input class="element checkbox" type="checkbox"  id="A70" value="Viable or non-viable tumor thrombus that is attached to the inferior vena cava wall is removed piecemeal by the surgeon"><label  class="choice">Viable or non-viable tumor thrombus that is attached to the inferior vena cava wall is removed piecemeal by the surgeon</label>
+<input class="element checkbox" type="checkbox"  id="A71" value="Wedge / open tumor biopsy prior to preoperative chemotherapy or surgery (needle core biopsy does not upstage to SIOP stage III)"><label  class="choice">Wedge / open tumor biopsy prior to preoperative chemotherapy or surgery (needle core biopsy does not upstage to SIOP stage III)</label>
+<input class="element checkbox" type="checkbox"  id="A72" value="Tumor implants (viable or non-viable) are found anywhere in the abdomen"><label  class="choice">Tumor implants (viable or non-viable) are found anywhere in the abdomen</label>
+<input class="element checkbox" type="checkbox"  id="A73" value="Tumor (viable or non-viable) has penetrated through the peritoneal surface"><label  class="choice">Tumor (viable or non-viable) has penetrated through the peritoneal surface</label>
+</p>
+
+<p>
+<label class="description">- Stage IV: Tumor shows distant metastases</label> 
+<input class="element checkbox" type="checkbox"  id="A74" value="Hematogenous metastases (lung, liver, bone, brain, or other)"><label  class="choice">Hematogenous metastases (lung, liver, bone, brain, or other)</label>
+<input class="element checkbox" type="checkbox"  id="A75" value="Lymph node metastases outside the abdominopelvic region"><label  class="choice">Lymph node metastases outside the abdominopelvic region</label>
+</p>
+
+<p>
+<label class="description">- Stage V: Bilateral renal involvement at diagnosis</label> 
+<label class="">- Right Kidney Stage:</label>
+<select class="element select medium" ID="A76">
+	<option value=""></option>
+	<option value="Right Kidney Stage : Not applicable">Not applicable</option>
+	<option value="Right Kidney Stage : Cannot be assessed">Cannot be assessed</option>
+	<option value="Right Kidney Stage : I">I</option>
+	<option value="Right Kidney Stage : II">II</option>
+	<option value="Right Kidney Stage : III">III</option>
+	<option value="Right Kidney Stage : IV">IV</option>
+	</select>
+<br><br>
+<label class="">- Left Kidney Stage:</label>
+<select class="element select medium" ID="A77">
+	<option value=""></option>
+	<option value="Left Kidney Stage : Not applicable">Not applicable</option>
+	<option value="Left Kidney Stage : Cannot be assessed">Cannot be assessed</option>
+	<option value="Left Kidney Stage : I">I</option>
+	<option value="Left Kidney Stage : II">II</option>
+	<option value="Left Kidney Stage : III">III</option>
+	<option value="Left Kidney Stage : IV">IV</option>
+	</select>
 
 </fieldset>
 </p>
@@ -691,9 +1006,9 @@ Specifically, comments on Vascular, Ureteral and Soft tissue margins.
 <br>
 
 <div id="footer">
-Last upated on 02-Oct-2023,<br>
+Last upated on 01-Apr-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Wilms Tumor Resection 4.3.0.1 (Sep-2023), <br>
+Wilms Tumor Resection 4.4.0.0 (Mar 2025), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

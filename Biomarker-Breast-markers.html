@@ -45,7 +45,7 @@ if (frm.A08.value !== ""){
 }
 
 if (frm.A25.value !== ""){
-	Template += "  - Percentage of Cells with Uniform Intense Staining : " + frm.A25.value + "\n";
+	Template += "  - Clustered Heterogeneity : " + frm.A25.value + "\n";
 }
 
 if (frm.A09.value !== ""){
@@ -134,21 +134,52 @@ if (frm.A19.value !== ""){
 }
 
 if (frm.A01.value + frm.A04.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system.";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system." + "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for HER2, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system.";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for HER2, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system." + "\n";
 }
 
 if (frm.A09.value !== ""){
-	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on an automated system, and was examined by a pathologist under light microscopy."
+	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on an automated system, and was examined by a pathologist under light microscopy." + "\n";
 }
 
-if (frm.A09.value + frm.A07.value !== ""){
-	Template += "\n" + "\n" + "- Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways." + "\n" +  "- Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered ’HER2-negative for protein overexpression/gene amplification’ since non-overexpressed levels of the HER2 protein may be present in these cases." + "\n" + "- Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).";
+if (frm.A01.value == "Negative, Internal control cells absent"){
+	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of ER status." + "\n";
 }
 
+if (frm.A01.value == "Low Positive (1-10% positive nuclei)"){
+	Template += "\n" +  "The cancer in this sample has a low level (1-10%) of ER expression by IHC. There are limited data on the overall benefit of endocrine therapies for patients with low level (1-10%) ER expression, but they currently suggest possible benefit, so patients are considered eligible for endocrine treatment. There are data that suggest invasive cancers with these results are heterogeneous in both behavior and biology and often have gene expression profiles more similar to ER negative cancers." + "\n";
+}
+
+if (frm.A07.value == "Positive for over-expression" ||
+	frm.A09.value == "Positive (HER2 gene is amplified)" ||
+    frm.A09.value == "Positive (amplified, Group 1 result in greater than 10% of cell population)" ||
+	frm.A09.value == "Positive, Group 2 ISH result (with IHC 3+)" ||
+    frm.A09.value == "Positive, Group 3 ISH result (with IHC 2-3+)" ||
+	frm.A09.value == "Positive, Group 4 ISH result (with IHC 3+)"){
+	Template += "\n" +  "Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways."+ "\n";
+}
+
+if (frm.A07.value == "Negative for over-expression" ||
+    frm.A07.value == "Equivocal for over-expression" ||
+    frm.A07.value == "HER2-low (IHC 1+ or IHC 2+ & DISH-)" ||
+	frm.A07.value == "HER2-ultra-low (faint/barely perceptible and incomplete staining in <10% of tumor cells without amplification on FISH)" ){
+	Template += "\n" +  "Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered 'HER2-negative for protein overexpression/gene amplification' since non-overexpressed levels of the HER2 protein may be present in these cases." + "\n" + "\n" + "Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently)."+ "\n";
+}
+
+if (frm.A09.value == "Negative, Group 2 ISH result (with IHC 0-2+)" || frm.A09.value == "Positive, Group 2 ISH result (with IHC 3+)"){
+	Template += "\n" +  "This sample has a Group 2 HER2 ISH result (ratio greater than or equal to 2.0; less than 4.0 HER2 signals / cell). Evidence is limited on the efficacy of HER2-targeted therapy in the small subset of cases with HER2 / CEP17 ratio greater than or equal to 2.0 and an average HER2 copy number less than 4.0 / cell. In the first generation of adjuvant trastuzumab trials, patients in this subgroup who were randomized to the trastuzumab arm did not appear to derive an improvement in disease free or overall survival, but there were too few such cases to draw definitive conclusions. IHC expression for HER2 should be used to complement ISH and define HER2 status. If IHC result is not 3+ positive, it is recommended that the specimen be considered HER2 negative because of the low HER2 copy number by ISH and lack of protein overexpression."+ "\n";
+}
+
+if (frm.A09.value == "Negative, Group 3 ISH result (with IHC 0-1+)" || frm.A09.value == "Positive, Group 3 ISH result (with IHC 2-3+)"){
+	Template += "\n" +  "This sample has a Group 3 HER2 ISH result (ratio less than 2.0; greater than or equal to 6.0 HER2 signals / cell). There are insufficient data on the efficacy of HER2-targeted therapy in cases with HER2 ratio less than 2.0 in the absence of protein overexpression because such patients were not eligible for the first generation of adjuvant trastuzumab clinical trials. When concurrent IHC results are negative (0 or 1+), it is recommended that the specimen be considered HER2 negative."+ "\n";
+}
+
+if (frm.A09.value == "Negative, Group 4 ISH result (with IHC 0-2+)" || frm.A09.value == "Positive, Group 4 ISH result (with IHC 3+)"){
+	Template += "\n" +  "This sample has a Group 4 result (ratio less than 2.0; greater than or equal to 4.0 and less than 6.0 HER2 signals / cell). It is uncertain whether patients with greater than or equal to 4.0 and less than 6.0 average HER2 signals / cell and HER2 / CEP17 ratio less than 2.0 benefit from HER2 targeted therapy in the absence of protein overexpression (IHC 3+). If the specimen test result is close to the ISH ratio threshold for positive, there is a high likelihood that repeat testing will result in different results by chance alone. Therefore, when IHC results are not 3+ positive, it is recommended that the sample be considered HER2 negative without additional testing on the same specimen."+ "\n";
+}
 frm.holdtext.value = Template;
 }
 
@@ -181,7 +212,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2025-03-Update\Breast Protocol Folder\Breast.Bmk_1.6.0.0.REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">Breast biomarkers testing
 		<span class="tooltiptext">click to access further explanations in the original CAP template</span>
 		</div>
@@ -193,13 +224,8 @@ table, th, td {
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Biomarkers assessments : </label></legend>
 
-<p>
-- Per review after 2024 CAP site inspection <br>
-- Please fill in/estimate the cold ischemic time (in minutes) and formalin-fixation time (in hours).<br>
-- Optimal cold ishemic time <= 60 min <br>
-- Optimal formalin-fixation time 6-72 hours.
-</p>
 
+<!--
 <p>
 - For ER/PR, use Allred scoring for routine service.
 <br>
@@ -217,31 +243,26 @@ table, th, td {
 </tr>
 </table>
 </p>
+-->
 
-<p>
-- For HER2, see <a href=".\cap\her2_breast_update_sor_2023.pdf" target="_blank">2023 ASCO guidelines</a>. <br>
-- Do not report "HER2-Low" or "HER2 Ultra-Low" until further notice.<br>
-- Reference for <a href=".\cap\PATHWAY anti-HER-2_neu (4B5) Rabbit Monoclonal Primary Antibody Interpretation Guide for Breast Cancer.pdf" target="_blank">4B5 antibody</a><br>
-</p>
-<p>
-- Coming soon: BRCA1/BRCA2 genes germline variant test for patients with breast cancer (note: NOT somatic variant test).
-</p>
 <p>
 <table border="1">
 <col width="40%">
 
 <tr>
 <td rowspan="3" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=9" target="_blank">Estrogen recepter (ER) IHC</a> :</label>
+<label class="description">- Estrogen recepter (ER) IHC :</label>
 </td>
 <td>
 	<select class="element select large"  ID="A01">
 		<option value=""></option>
 		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative">Negative</option>
+		<option value="Positive (Allred score >2)">Positive (Allred score >2)</option>
+		<option value=""></option>
 		<option value="Negative, Internal control cells present and stain as expected">Negative, Internal control cells present and stain as expected</option>
 		<option value="Negative, Internal control cells absent">Negative, Internal control cells absent</option>
 		<option value="Negative, other (specify):">Negative, other (specify):</option>
-		<option value="Positive (Allred score >2)">Positive (Allred score >2)</option>
 		<option value="Positive (>10% positive nuclei)">Positive (>10% positive nuclei)</option>
 		<option value="Low Positive (1-10% positive nuclei)">Low Positive (1-10% positive nuclei)</option>
 	</select>
@@ -276,16 +297,18 @@ table, th, td {
 
 <tr>
 <td  rowspan="3" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=9" target="_blank">Progesterone recepter (PR) IHC</a> :</label>
+<label class="description">- Progesterone recepter (PR) IHC :</label>
 </td>
 <td>
 	<select class="element select large"  ID="A04">
 		<option value=""></option>
 		<option value="Cannot be determined">Cannot be determined</option>
+		<option value="Negative">Negative</option>
+		<option value="Positive (Allred score >2)">Positive (Allred score >2)</option>
+		<option value=""></option>
 		<option value="Negative, Internal control cells present and stain as expected">Negative, Internal control cells present and stain as expected</option>
 		<option value="Negative, Internal control cells absent">Negative, Internal control cells absent</option>
 		<option value="Negative, other (specify):">Negative, other (specify):</option>
-		<option value="Positive (Allred score >2)">Positive (Allred score >2)</option>
 		<option value="Positive (>10% positive nuclei)">Positive (>10% positive nuclei)</option>
 	</select>
 </td>
@@ -320,7 +343,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=17" target="_blank">Ki67 Proliferation index %</a> :</label>
+<label class="description">- Ki67 Proliferation index % :</label>
 </td>
 <td>
 <input type="text" ID="A16" class="element text large" size="40">
@@ -329,8 +352,7 @@ table, th, td {
 
 <tr>
 <td rowspan="3" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=13" target="_blank">HER2/neu oncoprotein IHC</a> :</label>
-Do not report "HER2-Low" or "HER2 Ultra-Low" at this moment.
+<label class="description">- <a href=".\cap\PATHWAY anti-HER-2_neu (4B5) Rabbit Monoclonal Primary Antibody Interpretation Guide for Breast Cancer.pdf" target="_blank">HER2/neu oncoprotein IHC</a>:</label>
 </td>
 	<td><select class="element select large"  ID="A07">
 		<option value=""></option>
@@ -338,6 +360,7 @@ Do not report "HER2-Low" or "HER2 Ultra-Low" at this moment.
 		<option value="Negative for over-expression">Negative for over-expression</option>
 		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
 		<option value="Positive for over-expression">Positive for over-expression</option>
+		<option value=""></option>
 		<option value="HER2-low (IHC 1+ or IHC 2+ & DISH-)">HER2-low (IHC 1+ or IHC 2+ & DISH-)</option>
 		<option value="HER2-ultra-low (faint/barely perceptible and incomplete staining in <10% of tumor cells without amplification on FISH)">HER2-ultra-low (faint/barely perceptible and incomplete staining in <10% of tumor cells without amplification on FISH)</option>
 	</select></td>
@@ -348,26 +371,24 @@ Do not report "HER2-Low" or "HER2 Ultra-Low" at this moment.
 <label>- Score :</label>
 	<select class="element select medium"  ID="A08">
 		<option value=""></option>
-		<option value="0 (No staining observed) (i.e. negative)">0 (No staining observed) (i.e. negative)</option>
-		<option value="0 (Membrane stating that is incomplete and is faint/barely perceptible and within <= 10% of
-tumor cells) (i.e. negative)">0 (Membrane stating that is incomplete and is faint/barely perceptible and within <= 10% of
-tumor cells) (i.e. negative)</option>
-		<option value="1 (Incomplete membrane staining that is faint/barely perceptible and within >10% of tumor
-cells) (i.e. negative)">1 (Incomplete membrane staining that is faint/barely perceptible and within >10% of tumor
-cells) (i.e. negative)</option>
-		<option value="2 (Weak to moderate staining within >10% of invasive tumour cells OR Complete membrane staining that is intense but within <=10% of tumor cells) (i.e. equivocal)">2 (Weak to moderate staining within >10% of invasive tumour cells OR Complete membrane staining that is intense but within <=10% of tumor cells) (i.e. equivocal)</option>
-		<option value="3 (Complete membrane staining that is intense and >10% of tumor cells) (i.e. positive)">3 (Complete membrane staining that is intense and >10% of tumor cells) (i.e. positive)</option>
+		<option value="No membrane staining detected (0 / absent membrane staining)">No membrane staining detected (0 / absent membrane staining)</option>
+		<option value="Membrane staining that is incomplete and is faint / barely perceptible and in less than or equal to 10% of tumor cells (0+ / with membrane staining)">Membrane staining that is incomplete and is faint / barely perceptible and in less than or equal to 10% of tumor cells (0+ / with membrane staining)</option>
+		<option value="Incomplete membrane staining that is faint / barely perceptible and in greater than 10% of tumor cells (Score 1+)">Incomplete membrane staining that is faint / barely perceptible and in greater than 10% of tumor cells (Score 1+)</option>
+		<option value="Weak to moderate complete membrane staining observed in greater than 10% of tumor cells (Score 2+)">Weak to moderate complete membrane staining observed in greater than 10% of tumor cells (Score 2+)</option>
+		<option value="Less than or equal to 10% of the cancer has circumferential staining that is complete and intense (3+) (heterogeneous, but very limited in extent; consider results of additional samples) (Score 2+)">Less than or equal to 10% of the cancer has circumferential staining that is complete and intense (3+) (heterogeneous, but very limited in extent; consider results of additional samples) (Score 2+)</option>
+		<option value="Abundant cytoplasmic staining present, obscuring evaluation of membrane stain intensity (Score 2+)">Abundant cytoplasmic staining present, obscuring evaluation of membrane stain intensity (Score 2+)</option>
+		<option value="Circumferential membrane staining that is complete, intense, and in greater than 10% of tumor cells (Score 3+)">Circumferential membrane staining that is complete, intense, and in greater than 10% of tumor cells (Score 3+)</option>
 	</select></td>
 </tr>
 
 <tr>
 <td align="right">
-- Cells with Intense Complete Stain (%):
+- Clustered Heterogeneity :
 <input type="text" class="element text small" ID="A25" size="3"></td>
 </tr>
 
 <tr><td rowspan="7" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=15" target="_blank">HER2/neu oncoprotein DISH</a> :</label>
+<label class="description">- <a href=".\cap\wolff-et-al-2023-human-epidermal-growth-factor-receptor-2-testing-in-breast-cancer-asco-college-of-american.pdf" target="_blank">HER2/neu oncoprotein DISH</a> :</label>
 <a href=".\Biomarker-DISH-calculator.html" target="_blank">HER2 DISH calculator</a>
 <!--
 <br>
@@ -377,9 +398,17 @@ cells) (i.e. negative)</option>
 	<td><select class="element select large"  ID="A09">
 		<option value=""></option>
 		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative for HER2 amplification">Negative for HER2 amplification</option>
-		<option value="Equivocal for HER2 amplification">Equivocal for over-expression</option>
-		<option value="Positive for HER2 amplification">Positive for HER2 amplification</option>
+		<option value="Negative (HER2 gene is not amplified)">Negative (HER2 gene is not amplified)</option>
+		<option value="Positive (HER2 gene is amplified)">Positive (HER2 gene is amplified)</option>
+		<option value=""></option>
+		<option value="Negative (not amplified, Group 5 result)">Negative (not amplified, Group 5 result)</option>
+		<option value="Negative, Group 2 ISH result (with IHC 0-2+)">Negative, Group 2 ISH result (with IHC 0-2+)</option>
+		<option value="Negative, Group 3 ISH result (with IHC 0-1+)">Negative, Group 3 ISH result (with IHC 0-1+)</option>
+		<option value="Negative, Group 4 ISH result (with IHC 0-2+)">Negative, Group 4 ISH result (with IHC 0-2+)</option>
+		<option value="Positive (amplified, Group 1 result in greater than 10% of cell population)">Positive (amplified, Group 1 result in greater than 10% of cell population)</option>
+		<option value="Positive, Group 2 ISH result (with IHC 3+)">Positive, Group 2 ISH result (with IHC 3+)</option>
+		<option value="Positive, Group 3 ISH result (with IHC 2-3+)">Positive, Group 3 ISH result (with IHC 2-3+)</option>
+		<option value="Positive, Group 4 ISH result (with IHC 3+)">Positive, Group 4 ISH result (with IHC 3+)</option>
 	</select></td>
 </tr>
 
@@ -450,6 +479,12 @@ hours
 
 </table>
 </p>
+<p>
+- Per review after 2024 CAP site inspection <br>
+- Please fill in/estimate the cold ischemic time (in minutes) and formalin-fixation time (in hours).<br>
+- Optimal cold ishemic time less than or equal to 60 min <br>
+- Optimal formalin-fixation time 6-72 hours.
+</p>
 </fieldset>
 </p>
 
@@ -474,11 +509,11 @@ hours
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\her2_breast_update_algorithms_2023.pdf" target="_blank">Dual probe ISH interpretation </a>: </label></legend>
-- Group 1 = HER2/CEP17 ratio > or = 2.0;  > or = 4.0 HER2 signals/cell<br>
-- Group 2 = HER2/CEP17 ratio > or = 2.0;  < 4.0 HER2 signals/cell <br>
-- Group 3 = HER2/CEP17 ratio < 2.0;  > or = 6.0 HER2 signals/cell <br>
-- Group 4 = HER2/CEP17 ratio < 2.0;  > or = 4.0 and < 6.0 HER2 signals/cell <br>
-- Group 5 = HER2/CEP17 ratio < 2.0;  < 4.0 HER2 signals/cell<br>
+- Group 1 = Ratio greater than or equal to 2.0 and greater than or equal to 4.0 HER2 signals / cell<br>
+- Group 2 = Ratio greater than or equal to 2.0 and less than 4.0 HER2 signals / cell =<br>
+- Group 3 = Ratio less than 2.0 and greater than or equal to 6.0 HER2 signals / cell <br>
+- Group 4 = Ratio less than 2.0 and greater than or equal to 4.0 and less than 6.0 HER2 signals / cell<br>
+- Group 5 = Ratio less than 2.0 and less than 4.0 HER2 signals / cell<br>
 <br>
 
 <fieldset style="border-color:#e6e6ff;">
@@ -501,26 +536,19 @@ hours
 </fieldset>
 </fieldset>
 </p>
-<p>
-Comments added in <a href=".\cap\wolff-et-al-2023-human-epidermal-growth-factor-receptor-2-testing-in-breast-cancer-asco-college-of-american.pdf" target="_blank">2023 guidelines</a>:<br><br>
-Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways. <br><br>
-Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered 'HER2-negative for protein overexpression/gene amplification' since non-overexpressed levels of the HER2 protein may be present in these cases. <br><br>
-Patients with breast cancers that are HER2 IHC 1+ or IHC 2+/ISH not-amplified may be eligible for a treatment that targets non-amplified/non-overexpressed levels of HER2 expression for cytotoxic drug delivery (IHC 0 results do not result in eligibility currently).”
-</p>
-<br><br>
+
 <p align="center">
 <a href=".\cap\fmolb-09-834651-g001.jpg" target="_blank"><img src=".\cap\fmolb-09-834651-g001.jpg" alt="HER2 IHC" width="600"></a>
 <br>
 From <a href="https://doi.org/10.3389/fmolb.2022.834651"  target="_blank">Venetis et al Front. Mol. Biosci. 2022.</a>
 </p>
-
+<p>
+In the DESTINY-Breast 04 and 06 trials, “HER2 low” was considered IHC Score 1+ or 2+ / ISH negative, and “HER2 ultralow” was HER2 IHC Score of 0 (pattern 0+) with membrane staining that is incomplete and faint / barely perceptible in less than or equal to 10% of tumor cells. Breast cancers with these staining patterns may be eligible for treatment with trastuzumab-deruxtecan in the metastatic setting (but those with no staining, IHC 0, are currently excluded)
+</p>
 <p>
 HER2-low<br>
 HER2 IHC 2+ AND HER2 DISH negative OR HER2 IHC 1+<br>
 Tarantino P et al. 2020<br><br>
-</p>
-
-<p>
 HER2 Ultra-low<br>
 It is immunohistochemically characterized by faint/barely perceptible and incomplete staining in =<10% of tumor cells without amplification on FISH. <br>
 </p>
@@ -547,7 +575,7 @@ It is immunohistochemically characterized by faint/barely perceptible and incomp
 <br>
 
 <div id="footer">
-Last upated 18-Oct-2024, based on <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank"> Breast Biomarkers 1.5.0.1 Mar-2023</a>.<br>
+Last upated 03-Apr-2025, based on Breast Biomarkers 1.6.0.0 Mar-2025</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -8,7 +8,7 @@
 <script type="text/javascript" src="view.js"></script>
 <style>
 .dropbtn {
-    background-color: #b3e6b3;
+    background-color: #ffe6ff;
     color: #4d2600;
     padding: 16px;
 	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
@@ -38,14 +38,14 @@
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #b3e6b3;}
+.dropdown-content a:hover {background-color: #ffe6ff;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #ffcc99;}
 
 .accordion {
-    background-color: #b3e6b3;
+    background-color: #ffe6ff;
     color: #4d2600;
     cursor: pointer;
     padding: 18px;
@@ -109,6 +109,7 @@
 	<div class="dropdown-content">
 		<a href="CNS-Common_gliomas_and_ependymomas.html" target="_blank">WHO 2021</a>
 		<a href="CNS-Meningioma.html" target="_blank">Meningioma</a>
+		<a href="Endocrine-PitNET.html" target="_blank">Pituitary NET</a>
 	</div>
 </div></td>
 
@@ -200,6 +201,8 @@
 		<a href="Endocrine-Duodenum and Ampulla-NET.html" target="_blank">Duodenum and ampulla NET</a>
 		<a href="Endocrine-Jejunum-Ileum-NET.html" target="_blank">Jejunum-ileum NET</a>
 		<a href="Endocrine-Pancreas-NET.html" target="_blank">Pancreas endocrine tumor</a>
+		<a href="Endocrine-Pheochromocytoma.html" target="_blank">Pheochromocytoma</a>
+		<a href="Endocrine-PitNET.html" target="_blank">Pituitary NET</a>
 		<a href="Endocrine-Stomach-NET.html" target="_blank">Stomach NET</a>
 		<a href="Endocrine-Thyroid.html" target="_blank">Thyroid</a>
 		</div>
@@ -263,7 +266,8 @@
 	<img src="data:image/png;base64,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" alt="external-genome-biology-and-science-ddara-lineal-color-ddara">
 	<br>Genes</button>
 	<div class="dropdown-content">
-		<a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC/DISH</a>
+		<a href="Biomarker-Breast-markers.html" target="_blank">Breast biomarkers</a>
+		<a href="Biomarker-Colon-HER2.html" target="_blank">Colon HER2 test</a>
 		<a href="Biomarker-Gyn-markers.html" target="_blank">GYN biomarkers</a>
 		<a href="Biomarker-MMR-IHC.html" target="_blank">MMR/MSI test</a>
 		<a href="Biomarker-PD-L1-IHC.html" target="_blank">PD-L1 IHC test</a>
@@ -280,7 +284,7 @@
 </table>
 </p>
 <p align="center">
-UPDATED to <a href=".\cap\Cancer-Protocols-2024-12-Update\2024-December-Cancer-Protocol-Summary-of-Changes.pdf" target="_blank">Dec-2024 version</a>
+UPDATED to <a href=".\cap\Cancer-Protocols-2025-03-Update\Cancer-Protocol-Summary-of-Changes-March-2025.pdf" target="_blank">Mar-2025 version</a>
 </p>
 <p align="center">
 A web version can be found at <a href="https://awiloqmh.github.io/CancerReportingTemplate/" target="_blank">Github</a>
@@ -367,6 +371,8 @@ A web version can be found at <a href="https://awiloqmh.github.io/CancerReportin
   <li><a href="Endocrine-Duodenum and Ampulla-NET.html" target="_blank">Duodenum and ampulla NET</a></li>
   <li><a href="Endocrine-Jejunum-Ileum-NET.html" target="_blank">Jejunum-ileum NET</a></li>
   <li><a href="Endocrine-Pancreas-NET.html" target="_blank">Pancreas endocrine tumor</a></li>
+  <li><a href="Endocrine-Pheochromocytoma.html" target="_blank">Pheochromocytoma</a></li>
+  <li><a href="Endocrine-PitNET.html" target="_blank">Pituitary NET</a></li>
   <li><a href="Endocrine-Stomach-NET.html" target="_blank">Stomach NET</a></li>
   <li><a href="Endocrine-Thyroid.html" target="_blank">Thyroid gland</a></li>
   </p>
@@ -420,7 +426,7 @@ A web version can be found at <a href="https://awiloqmh.github.io/CancerReportin
 <button class="accordion">Molecular Pathology</button>
 <div class="panel">
 <p>
-  <li><a href="Biomarker-Breast-markers.html" target="_blank">Breast IHC & DISH tests</a></li>
+  <li><a href="Biomarker-Breast-markers.html" target="_blank">Breast biomarkers</a></li>
   <li><a href="Biomarker-Colon-HER2.html" target="_blank">Colon HER2 test</a></li>
   <li><a href="Biomarker-Gyn-markers.html" target="_blank">Gyn biomarkers</a></li>
   <li><a href="Biomarker-MMR-IHC.html" target="_blank">MMR/MSI test</a></li>
@@ -461,7 +467,7 @@ for (i = 0; i < acc.length; i++) {
 </script>
 
 <div id = "footer">
-Last upated on 28-Dec-2024,<br>
+Last upated on 08-Apr-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">College of American Pathologists Cancer Protocol Templates</a> (Dec-2024 version).<br>
 The html form and cascade style sheet were created on <a href="http://www.phpform.org" target="_blank">pForm</a>,<br>
 with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a>,<br>

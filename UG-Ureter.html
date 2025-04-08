@@ -123,7 +123,7 @@ if (document.getElementById("A31").checked){
 	Template += frm.A31.value + "\n";
 }
 
-if (frm.A32.value !== "" || frm.A33.value !== "" || frm.A34.value !== "" || frm.A35.value !== ""){
+if (frm.A32.value !== "" || frm.A33.value !== "" || frm.A34.value !== "" || frm.A35.value !== "" || frm.A60.value !== ""){
 	Template += "\n" + "- Resection margins: " +"\n" ;
 }
 
@@ -136,8 +136,14 @@ if (frm.A33.value !== ""){
 	Template +=  "  - Distal mucosal margin: "  +  frm.A33.value + "\n" ;
 }
 
+
+if (frm.A60.value !== ""){
+	Template +=  "  - Bladder cuff: "  +  frm.A60.value + "\n" ;
+}
+
+
 if (frm.A34.value !== ""){
-	Template +=  "  - Deep soft tissue margin: "  +  frm.A34.value + "\n" ;
+	Template +=  "  - Soft tissue margin: "  +  frm.A34.value + "\n" ;
 }
 
 if (frm.A35.value !== ""){
@@ -363,7 +369,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\UreterRenalPelvis_2.3.0.0.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2025-03-Update\Genitourinary Protocol Folder\UreterRenalPelvis.Res_2.4.0.0.REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the ureter and renal pelvis
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -375,7 +381,7 @@ table, th, td {
 <form>
 
 <p>
-There is different protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\Genitourinary Protocol Folder\UreterRenalPelvis.Bx_2.3.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a> for biopsy specimens.
+There is different protocol for <a href=".\cap\Cancer-Protocols-2025-03-Update\Genitourinary Protocol Folder\UreterRenalPelvis.Bx_2.4.0.0.REL.CAPCP.pdf" target="_blank">biopsy specimen</a> for biopsy specimens.
 </p>
 
 <p>
@@ -462,7 +468,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\G
 <col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type (WHO 5e)</a>:</label> 
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Histologic type (WHO 2022 5e)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A06">
@@ -497,7 +503,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\G
 	<option value="Endometrioid carcinoma">Endometrioid carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma (with %)">Small cell neuroendocrine carcinoma (with %)</option>
 	<option value="Large cell neuroendocrine carcinoma (with %)">Large cell neuroendocrine carcinoma (with %)</option>
-	<option value="Well differentiated neuroendocrine carcinoma (with %)">Well differentiated neuroendocrine carcinoma (with %)</option>
+	<option value="Well differentiated neuroendocrine tumor">Well differentiated neuroendocrine tumor</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
 </td>
@@ -551,7 +557,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\G
 
 <tr>
 <td>
-<label class="">+ <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label>
+<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=14" target="_blank">Lymphatic and / or Vascular Invasion</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A22">
@@ -580,7 +586,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\G
 </p>
 
 <p><label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Genitourinary-Protocol-Folder\UreterRenalPelvis_2.2.0.0.REL_CAPCP.pdf#page=13" target="_blank">Tumor extension </a>:</label> 
-<input class="element checkbox" type="checkbox"  id="A25" value="  - Noninvasive papillary carcinoma"><label  class="choice">Noninvasive papillary carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A25" value="  - Papillary noninvasive carcinoma"><label  class="choice">Papillary noninvasive carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A26" value="  - Carcinoma in situ"><label class="choice" >Carcinoma in situ</label>
 <input class="element checkbox" type="checkbox"  id="A27" value="  - Tumor invades subepithelial connective tissue"><label  class="choice">Tumor invades subepithelial connective tissue</label>
 <input class="element checkbox" type="checkbox"  id="A28" value="  - Tumor invades muscularis"><label  class="choice">Tumor invades muscularis</label>
@@ -634,7 +640,24 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\G
 
 <tr>
 <td>
-<label class="description">- Deep soft tissue margin:</label>
+<label class="description">- Bladder cuff margin:</label>
+</td>
+<td>
+<select class="element select large" ID="A60">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma">Uninvolved by invasive carcinoma</option>
+	<option value="Uninvolved by invasive carcinoma and carcinoma in situ/ noninvasive urothelial carcinoma, specify distance:">Uninvolved by invasive carcinoma and carcinoma in situ/ noninvasive urothelial carcinoma, specify distance:</option>
+	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+	<option value="Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma">Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma</option>
+	<option value="Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia">Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Soft tissue margin:</label>
 </td>
 <td>
 <select class="element select large" ID="A34">
@@ -897,9 +920,9 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-09-Update\G
 <br>
 
 <div id="footer">
-Last upated on 01-Oct-2023,<br>
+Last upated on 31-Mar-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Ureter and Renal Pelvis Resection 2.3.0.0 (Sep-2023), <br>
+Ureter and Renal Pelvis Resection 2.4.0.0 (Mar-2025), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

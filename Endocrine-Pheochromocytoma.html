@@ -1,0 +1,964 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Paraganglioma and Pheochromocytoma</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Tumor integrity: " + frm.A02.value + "\n";
+}
+
+if (frm.A03.value !== ""){
+	Template += "- Tumor number: " + frm.A03.value + "\n";
+}
+
+if (frm.A04.value !== ""){
+	Template += "- Tumor location: " + frm.A04.value + "\n";
+}
+
+if (frm.A05.value !== ""){
+	Template += "- Tumor size: " + frm.A05.value + "\n";
+}
+
+if (frm.A06.value !== ""){
+	Template += "- Tumor histology: " + "\n" + "  - " + frm.A06.value + "\n";
+}
+
+if (frm.A07.value !== ""){
+	Template += "\n" + "- Histologic type: " + frm.A07.value + "\n";
+}
+
+if (frm.A08.value + frm.A09.value !== ""){
+	Template += "- Tumor Proliferation Activity: " + "\n";
+}
+
+if (frm.A08.value!== ""){
+	Template += "  - Ki67 index: " + frm.A08.value + "%" + "\n";
+}
+
+if (frm.A09.value !== ""){
+	Template += "  - Mitotic count: " + frm.A09.value + " per 2 mm2" + "\n";
+}
+
+if (frm.A10.value !== ""){
+	Template += "- Tumor necrosis: " + frm.A10.value + "\n";
+}
+
+if (frm.A11.value !== ""){
+	Template += "- Angioinvasion: " + frm.A11.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "- Lymphatic invasion: " + frm.A12.value + "\n";
+}
+
+if (frm.A13.value !== ""){
+	Template += "- Perineural invasion: " + frm.A13.value + "\n";
+}
+
+if (document.getElementById("A14").checked || document.getElementById("A15").checked ||
+	document.getElementById("A16").checked || document.getElementById("A17").checked || 
+	document.getElementById("A18").checked || document.getElementById("A19").checked || 
+	document.getElementById("A20").checked){
+	Template += "- Tumor extent:" + "\n";
+}
+
+if (document.getElementById("A14").checked){
+	Template += frm.A14.value + "\n";
+}
+
+if (document.getElementById("A15").checked){
+	Template += frm.A15.value + "\n";
+}
+
+if (document.getElementById("A16").checked){
+	Template += frm.A16.value + "\n";
+}
+
+if (document.getElementById("A17").checked){
+	Template += frm.A17.value + "\n";
+}
+
+if (document.getElementById("A18").checked){
+	Template += frm.A18.value + "\n";
+}
+
+if (document.getElementById("A19").checked){
+	Template += frm.A19.value + "\n";
+}
+
+if (document.getElementById("A20").checked){
+	Template += frm.A20.value + "\n";
+}
+
+if (frm.A21.value + frm.A22.value + frm.A23.value +
+	frm.A24.value + frm.A25.value + frm.A26.value +
+	frm.A27.value + frm.A31.value !== ""){
+	Template += "- Immunohistochemical studies:" + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "  - Keratins: " + frm.A21.value + "\n";
+}
+
+if (frm.A22.value !== ""){
+	Template += "  - Chromogranin-A: " + frm.A22.value + "\n";
+}
+
+if (frm.A23.value !== ""){
+	Template += "  - Tyrosine Hydroxylase: " + frm.A23.value + "\n";
+}
+
+if (frm.A24.value !== ""){
+	Template += "  - GATA3: " + frm.A24.value + "\n";
+}
+
+if (frm.A25.value !== ""){
+	Template += "  - S100 and / or SOX10-positive Sustentacular Cell Network: " + frm.A25.value + "\n";
+}
+
+if (frm.A26.value !== ""){
+	Template += "  - SDHB: " + frm.A26.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "  - Alpha-inhibin: " + frm.A27.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "  - CAIX: " + frm.A28.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template += "  - FH: " + frm.A29.value + "\n";
+}
+
+if (frm.A30.value !== ""){
+	Template += "  - 2-SC: " + frm.A30.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "  - ATRX: " + frm.A31.value + "\n";
+}
+
+if (frm.A32.value + frm.A33.value !== ""){
+	Template += "\n" + "- Surgical margins: " + "\n";
+}	
+
+if (frm.A32.value !== ""){
+	Template += "  - All surgical margins are clear: "  + frm.A32.value + "\n" ;
+}
+
+if (frm.A33.value !== ""){
+	Template += "  - Surgical margins are involved: "  + frm.A33.value + "\n" ;
+}
+
+if (frm.A34.value + frm.A35.value + frm.A36.value + frm.A37.value + frm.A38.value !== ""){
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
+}	
+
+if (frm.A34.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A34.value + "\n";
+}
+
+if (frm.A35.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A35.value + "\n";
+}
+
+if (frm.A36.value !== ""){
+	Template += "  - Extranodal extension (ENE) : " + frm.A36.value + "\n";
+}
+
+if (frm.A37.value !== ""){
+	Template += "  - Size of largest metastatic deposit: " + frm.A37.value + " mm" + "\n";
+}
+
+if (frm.A38.value !== ""){
+	Template += "  - Size of largest lymph node involved: " + frm.A28.value + " mm" + "\n";
+}
+
+if (document.getElementById("A39").checked ||
+	document.getElementById("A40").checked || document.getElementById("A41").checked ||
+	document.getElementById("A42").checked || document.getElementById("A43").checked ||
+	document.getElementById("A44").checked || 
+	document.getElementById("A45").checked ){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A39").checked){
+	Template += frm.A39.value + "\n";
+}
+
+if (document.getElementById("A40").checked){
+	Template += frm.A40.value + "\n";
+}
+
+if (document.getElementById("A41").checked){
+	Template += frm.A41.value + "\n";
+}
+
+if (document.getElementById("A42").checked){
+	Template += frm.A42.value + "\n";
+}
+
+if (document.getElementById("A43").checked){
+	Template += frm.A43.value + "\n";
+}
+
+if (document.getElementById("A44").checked){
+	Template += frm.A44.value + "\n";
+}
+
+if (document.getElementById("A45").checked){
+	Template += frm.A45.value + "\n";
+}
+
+if (document.getElementById("A46").checked || document.getElementById("A47").checked ||
+	document.getElementById("A48").checked || frm.A49.value + frm.A50.value + frm.A51.value
+	!== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A46").checked || document.getElementById("A47").checked ||
+	document.getElementById("A48").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A46").checked){
+	Template += "    " + frm.A46.value + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += "    " + frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += "    " +frm.A48.value + "\n";
+}
+
+if (frm.A49.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A49.value + "\n";
+}
+
+if (frm.A50.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "  " + frm.A50.value + "\n";
+}
+
+if (frm.A51.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A51.value + "\n";
+}
+
+if (document.getElementById("A53").checked || document.getElementById("A54").checked ||
+	document.getElementById("A55").checked || frm.A52.value !==""){
+	Template += "\n" + "- Additional pathologic findings:" + "\n";
+}
+
+if (frm.A52.value !== ""){
+	Template += "  - Adrenal Medullary Hyperplasia: " +  frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
+if (document.getElementById("A55").checked){
+	Template += frm.A55.value + "\n";
+}
+
+if (frm.A56.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A56.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>
+		<a href=".\cap\Cancer-Protocols-2025-03-Update\Endocrine Protocol Folder\Paragang_Pheochrom_1.0.0.0.REL.CAPCP.pdf" target="_blank">
+		<div class="tooltip">
+		Paraganglioma and Pheochromocytoma
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		<a>
+		</h2>
+	</div>
+	
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+	
+<p>
+Information useful to be included from the case notes:<br>
+1. Clinical history <br>
+2. Functional status <br>
+--- Biochemically functioning<br>
+----- Metanephrine and / or adrenaline<br>
+----- Normetanephrine and / or noradrenaline<br>
+----- 3-Methoxytyramine and / or dopamine<br>
+--- Nonfunctional (biochemically non-functioning)<br>
+3. Tumor Scintigraphy or PET Avidity<br>
+- DOTATATE or DOTATOC PET<br>
+- 123I-metaiodobenzylguanidine (MIBG) scintigraphy<br> 
+4. Anatomical location from imaging<br>
+5. Tumor sizes from imaging<br>
+</p>
+<p>
+<table border="1">
+<col width="55%">
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+<select class="element select large" ID="A01">
+	<option value=""></option>
+	<option value="Right adrenalectomy">Right adrenalectomy</option> 
+	<option value="Left adrenalectomy">Left adrenalectomy</option>
+	<option value="Bilateral adrenalectomy">Bilateral adrenalectomy</option>
+	<option value="Adrenalectomy, NOS">Adrenalectomy, NOS</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Not specified">Not specified</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumor integrity:</label> 
+</td>
+<td>
+<select class="element select large" ID="A02">
+	<option value=""></option>
+	<option value="Intact">Intact</option> 
+	<option value="Fragmented">Fragmented</option> 
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Not specified">Not specified</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description" > - Tumor Number: </label>
+</td>
+<td>
+<select class="element select large" ID="A03">
+	<option value=""></option>
+	<option value="Unifocal">Unifocal</option>
+	<option value="Multifocal">Multifocal</option>
+	<option value="Multifocal, Specify Number of Tumors:">Multifocal, Specify Number of Tumors:</option>
+	<option value="Other (specify):">Other (specify):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumor Location:</label> 
+</td>
+<td>
+<select class="element select large" ID="A04">
+	<option value=""></option>
+	<option value="Intra-adrenal">Intra-adrenal</option> 
+	<option value="Extra-adrenal (specify):">Extra-adrenal (specify):</option> 
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Not specified">Not specified</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumor size:</label> 
+</td>
+<td>
+<select class="element select large" ID="A05">
+	<option value=""></option>
+	<option value="Greatest dimension (mm): ">Greatest dimension (mm): </option>
+	<option value="ll dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+	<option value="Greatest Dimension of Second Dominant Tumor: ">Greatest Dimension of Second Dominant Tumor</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Not specified">Not specified</option>
+	<option value="Cannot be determined (explain): ">Cannot be determined (explain):</option>
+</select>
+</td>
+</tr>
+
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<p><label class="description">- Tumor histology: </label>
+ <textarea ID="A06" class="element textarea medium"></textarea>
+</p>
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Histologic type:</label> 
+</td>
+<td>
+<select class="element select large" ID="A07">
+	<option value=""></option>
+	<option value="Paraganglioma">Paraganglioma</option>
+	<option value="Pheochromocytoma (adrenal paraganglioma)">Pheochromocytoma (adrenal paraganglioma)</option>
+	<option value="Micro-pheochromocytoma (subcentimeter adrenal paraganglioma)">Micro-pheochromocytoma (subcentimeter adrenal paraganglioma)</option>	
+	<option value="Composite paraganglioma">Composite paraganglioma</option>
+	<option value="Composite paraganglioma, Paraganglioma and ganglioneuroma, mature">Composite paraganglioma, Paraganglioma and ganglioneuroma, mature</option>
+	<option value="Composite paraganglioma, Paraganglioma and ganglioneuroma, maturing">Composite paraganglioma, Paraganglioma and ganglioneuroma, maturing</option>
+	<option value="Composite paraganglioma, Paraganglioma and ganglioneuroblastoma, intermixed type">Composite paraganglioma, Paraganglioma and ganglioneuroblastoma, intermixed type</option>
+	<option value="Composite paraganglioma, Paraganglioma and ganglioneuroblastoma, nodular type">Composite paraganglioma, Paraganglioma and ganglioneuroblastoma, nodular type</option>
+	<option value="Composite paraganglioma, Paraganglioma and neuroblastoma, undifferentiated type">Composite paraganglioma, Paraganglioma and neuroblastoma, undifferentiated type</option>
+	<option value="Composite paraganglioma, Paraganglioma and neuroblastoma, poorly differentiated type">Composite paraganglioma, Paraganglioma and neuroblastoma, poorly differentiated type</option>
+	<option value="Composite paraganglioma, Paraganglioma and neuroblastoma, differentiating type">Composite paraganglioma, Paraganglioma and neuroblastoma, differentiating type</option>
+	<option value="Composite paraganglioma, Paraganglioma and neuroblastic tumor, NOS">Composite paraganglioma Paraganglioma, and neuroblastic tumor, NOS</option>
+	<option value="Composite paraganglioma, Paraganglioma and malignant peripheral nerve sheath tumor">Composite paraganglioma, Paraganglioma and malignant peripheral nerve sheath tumor</option>
+	<option value="Composite paraganglioma, Other (specify):">Composite paraganglioma, Other (specify):</option>
+	<option value="Composite pheochromocytoma">Composite pheochromocytoma</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and ganglioneuroma, mature">Composite pheochromocytoma, pheochromocytoma and ganglioneuroma, mature</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and ganglioneuroma, maturing">Composite pheochromocytoma, pheochromocytoma and ganglioneuroma, maturing</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and ganglioneuroblastoma, intermixed type">Composite pheochromocytoma, pheochromocytoma and ganglioneuroblastoma, intermixed type</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and ganglioneuroblastoma, nodular type">Composite pheochromocytoma, pheochromocytoma and ganglioneuroblastoma, nodular type</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and neuroblastoma, undifferentiated type">Composite pheochromocytoma, pheochromocytoma and neuroblastoma, undifferentiated type</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and neuroblastoma, poorly differentiated type">Composite pheochromocytoma, pheochromocytoma and neuroblastoma, poorly differentiated type</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and neuroblastoma, differentiating type">Composite pheochromocytoma, pheochromocytoma and neuroblastoma, differentiating type</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and neuroblastic tumor, NOS">Composite pheochromocytoma, pheochromocytoma, and neuroblastic tumor, NOS</option>
+	<option value="Composite pheochromocytoma, pheochromocytoma and malignant peripheral nerve sheath tumor">Composite pheochromocytoma, pheochromocytoma and malignant peripheral nerve sheath tumor</option>
+	<option value="Composite pheochromocytoma, Other (specify):">Composite pheochromocytoma, Other (specify):</option>
+	<option value="Other histologic subtype not listed (specify):">Other histologic subtype not listed (specify):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td rowspan="3" valign="top">
+<label class="description">- Tumor Proliferative Activity:</label>
+</td>
+</tr>
+<tr>
+<td >
+<label class=""><b>- Ki-67 Labeling Index:</b></label>
+<input type="text" class="element text Medium" ID="A08" size="15">
+<p>Selecting multiple small hot spots (at least 500 tumor cells) from different hot spot regions of the tumor rather than a single larger area of the same tumor are recommended.</p>
+</td>
+</tr>
+<tr>
+<td >
+<label class="">+ Mitotic Count (per 2 mm<sup>2</sup>):</label>
+<input type="text" class="element text Medium" ID="A09" size="15">
+<p>Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 fields (equals 10 mm<sup>2</sup>), divide by 5 to get mitotic count for 2 mm<sup>2</sup></p>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description"> - Tumor Necrosis: </label>
+</td>
+<td>
+<select class="element select large" ID="A10">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description"> - Angioinvasion (vascular invasion): </label>
+</td>
+<td>
+<select class="element select large" ID="A11">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description"> - Lymphatic invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A12">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label > + Perineural invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A13">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">
+<label class="description">- Tumor Extent:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"   id="A14" value="  - Not applicable"><label  class="choice">Not applicable</label>
+<input class="element checkbox" type="checkbox"   id="A15" value="  - Tumor confined to adrenal with no adrenal capsule invasion or no peritumoral soft tissue invasion"><label  class="choice">Tumor confined to adrenal with no adrenal capsule invasion or no peritumoral soft tissue invasion</label>
+<input class="element checkbox" type="checkbox"   id="A16" value="  - Adrenal capsule invasion without extra-adrenal tumor spread"><label  class="choice">Adrenal capsule invasion without extra-adrenal tumor spread</label>
+<input class="element checkbox" type="checkbox"   id="A17" value="  - Peri-adrenal or peri-tumoral soft tissue invasion"><label  class="choice">Peri-adrenal or peri-tumoral soft tissue invasion</label>
+<input class="element checkbox" type="checkbox"   id="A18" value="  - Adjacent organ / tissue invasion (e.g., liver, pancreas, spleen, kidney) (specify):"><label  class="choice">Adjacent organ / tissue invasion (e.g., liver, pancreas, spleen, kidney) (specify):</label>
+<input class="element checkbox" type="checkbox"   id="A19" value="  - Other (specify):"><label  class="choice">Other (specify):</label>
+<input class="element checkbox" type="checkbox"   id="A20" value="  - Cannot be determined: "><label  class="choice">Cannot be determined: </label>
+</td>
+</tr>
+
+<tr>
+<td rowspan="12" valign="top">
+<label class="">+ Immunohistochemical studies</label>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ Keratins</label>
+<select class="element select medium" ID="A21">
+	<option value=""></option>
+	<option value="Positive">Positive, specify clone:</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ Chromogranin-A</label>
+<select class="element select medium" ID="A22">
+	<option value=""></option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right">
+<label class="">+ Tyrosine Hydroxylase</label>
+<select class="element select medium" ID="A23">
+	<option value=""></option>
+	<option value="Not available">Not available</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right">
+<label class="">+ GATA3</label>
+<select class="element select medium" ID="A24">
+	<option value=""></option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right">
+<label class="">+ S100 and / or SOX10-positive Sustentacular Cell Network</label>
+<select class="element select medium" ID="A25">
+	<option value=""></option>
+	<option value="Positive">Present</option>
+	<option value="Negative">Not identified</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right">
+<label class="">+ SDHB</label>
+<select class="element select medium" ID="A26">
+	<option value=""></option>
+	<option value="Loss (deficient)">Loss (deficient)</option>
+	<option value="Retained (normal staining)">Retained (normal staining)</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right">
+<label class="">+ Alpha-inhibin</label>
+<select class="element select medium" ID="A27">
+	<option value=""></option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right">
+<label class="">+ CAIX</label>
+<select class="element select medium" ID="A28">
+	<option value=""></option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right">
+<label class="">+ FH</label>
+<select class="element select medium" ID="A29">
+	<option value=""></option>
+	<option value="Loss (deficient)">Loss (deficient)</option>
+	<option value="Retained (normal staining)">Retained (normal staining)</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label class="">+ 2-SC</label>
+<select class="element select medium" ID="A30">
+	<option value=""></option>
+	<option value="Not available">Not available</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right">
+<label class="">+ ATRX</label>
+<select class="element select medium" ID="A31">
+	<option value=""></option>
+	<option value="Loss (deficient)">Loss (deficient)</option>
+	<option value="Retained (normal staining)">Retained (normal staining)</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+</table>
+</p>
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of excision specimen:</label></legend>
+<p>
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Surgical margins are all clear:</label> 
+</td>
+<td>
+<select class="element select large" ID="A32">
+	<option value=""></option>
+	<option value="Specify location and distance (mm):">Specify location and distance (mm):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Surgical margins are involved:</label> 
+</td>
+<td>
+<select class="element select large" ID="A33">
+	<option value=""></option>
+	<option value="Specify location:">Specify location:</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>
+</select>
+</td>
+</tr>
+</table>
+
+</p>
+</fieldset>
+</p>
+
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
+
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A34" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved (specify locations):</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A35" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+<label> + Extranodal extension:</label>
+</td>
+<td>
+<select class="element select large" ID="A36">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label> + Size of largest metastatic deposit:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A37" size="15">
+</td>
+</tr>
+
+<tr>
+<td>
+<label> + Size of largest lymph node involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A38" size="15">
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+<input class="element checkbox" type="checkbox" id="A39"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A40"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A41"  value="  - Bone"><label class="choice" >Bone</label>
+<input class="element checkbox" type="checkbox" id="A42"  value="  - Lung"><label class="choice" >Lung</label>
+<input class="element checkbox" type="checkbox" id="A43"  value="  - Liver"><label class="choice" >Liver</label>
+<input class="element checkbox" type="checkbox" id="A44"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A45"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description">Pathologic Stage Classification (AJCC 8e): </label> </legend>
+<p>
+Applied to all sympathetic paragangliomas and pheochromocytomas. Currently there is no defined TNM Classification for parasympathetic paragangliomas and composite paragangliomas / pheochromocytomas but users can apply the TNM staging below (based on the tumor size cutoff of 5 cm and the status of invasion) to facilitate uniform data collection.
+</p>
+
+<p>	
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="description">  - TNM Descriptors:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox" id="A46" value=" m (multiple primary synchronous tumors in a single organ) "><label  class="choice">m (multiple primary synchronous tumors in a single organ)</label>
+<input class="element checkbox" type="checkbox" id="A47" value=" r (recurrence) "><label  class="choice">r (recurrence)</label>
+<input class="element checkbox" type="checkbox" id="A48" value=" y (post-neoadjuvant therapy) "><label  class="choice">y (post-neoadjuvant therapy)</label>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">  - Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A49">
+	<option value=""></option>
+	<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
+	<option value="  - pT1: Pheochromocytoma less than 5 cm in greatest dimension, no extra-adrenal invasion">pT1: Pheochromocytoma less than 5 cm in greatest dimension, no extra-adrenal invasion</option>
+	<option value="  - pT2: Pheochromocytoma greater than or equal to 5 cm or paraganglioma-sympathetic of any size, no extra-adrenal invasion">pT2: Pheochromocytoma greater than or equal to 5 cm or paraganglioma-sympathetic of any size, no extra-adrenal invasion</option>
+	<option value="  - pT3: Tumor any size with invasion into surrounding organs / tissues (e.g., liver, pancreas, spleen, kidneys)">pT3: Tumor any size with invasion into surrounding organs / tissues (e.g., liver, pancreas, spleen, kidneys)</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">  - Regional lymph nodes (pN):</label>
+</td>
+<td>
+<select class="element select large" ID="A50">
+	<option value=""></option>
+	<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="  - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
+	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="  - pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td >
+<label class="description">  - Distant metastasis (pM):</label>
+</td>
+<td>
+<select class="element select large" ID="A51">
+	<option value=""></option>
+	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
+	<option value="  - pM1a: Distant metastasis to only bone">pM1a: Distant metastasis to only bone</option>
+	<option value="  - pM1b: Distant metastasis to only distant lymph nodes / liver or lung">pM1b: Distant metastasis to only distant lymph nodes / liver or lung</option>
+	<option value="  - pM1c: Distant metastasis to bone plus multiple other sites">pM1c: Distant metastasis to bone plus multiple other sites</option>
+	<option value="  - pM1 (subcategory cannot be determined)">pM1 (subcategory cannot be determined)</option>
+</select>
+</td>
+</tr>
+
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Additional pathologic findings: </label></legend>
+<p>
+<label class="description">- Adrenal Medullary Hyperplasia (required for all adrenalectomy specimens):</label>
+<select class="element select medium" ID="A52">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Present">Present</option>
+	<option value="Absent">Absent</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</p>
+
+<p>
+<input class="element checkbox" type="checkbox" id="A53" value="  - None identified"><label  class="choice">None identified</label>
+<input class="element checkbox" type="checkbox" id="A54" value="  - Other tumors (specify):"><label class="choice" >Other tumors (specify):</label>
+<input class="element checkbox" type="checkbox" id="A55" value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+</p>
+</fieldset>
+</p>
+
+<p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A56" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 08-Apr-2025,<br>
+based on 
+<a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Paraganglioma and Pheochromocytoma 1.0.0.0 (Mar 2025).<br>
+html form was created on <a href="https://www.phpform.org"  target="_blank">pForm</a>, <a href="https://www.w3schools.com/"  target="_blank">W3 School</a>, 
+<a href="https://stackoverflow.com/"  target="_blank">StackOverflow</a>, and 
+<a href="https://icons8.com" target="_blank">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>

@@ -82,6 +82,10 @@ if (frm.A16.value !== ""){
 	Template += "- Ulceration: " + frm.A16.value + "\n";
 }
 
+if (frm.A54.value !== ""){
+	Template += "- Microsatellite(s): " + frm.A54.value + "\n";
+}
+
 if (frm.A17.value !== ""){
 	Template += "- Microsatellite(s): " + frm.A17.value + "\n";
 }
@@ -106,7 +110,7 @@ if (frm.A22.value !== ""){
 	Template +=  "- Tumor regression: "  + frm.A22.value + "\n" ;
 }
 
-if (frm.A23.value + frm.A24.value !== ""){
+if (frm.A23.value + frm.A24.value + frm.A55.value + frm.A56.value !== ""){
 	Template += "\n" + "- Surgical margins: " + "\n";
 }	
 
@@ -118,8 +122,16 @@ if (frm.A24.value !== ""){
 	Template +=  "  - Deep margin: " + frm.A24.value + "\n" ;
 }
 
+if (frm.A55.value !== ""){
+	Template +=  "  - Margin Involvement by Satellite(s): " + frm.A55.value + "\n" ;
+}
+
+if (frm.A56.value !== ""){
+	Template +=  "  - Margin Involvement by Tumor Regression: " + frm.A56.value + "\n" ;
+}
+
 if (frm.A25.value + frm.A26.value + frm.A27.value + frm.A28.value + frm.A29.value +
-	frm.A30.value + frm.A31.value + frm.A32.value!== ""){
+	frm.A30.value + frm.A31.value + frm.A32.value + frm.A57.value + frm.A58.value!== ""!== ""){
 	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
 
@@ -152,11 +164,19 @@ if (frm.A30.value !== ""){
 }
 
 if (frm.A31.value !== ""){
-	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A31.value + "\n";
+	Template += "  - Size of largest metastatic deposit in sentinel LN: " + frm.A31.value + "\n";
 }
 
 if (frm.A32.value !== ""){
-	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A32.value + "\n";
+	Template += "  - Size of largest lymph node involved in sentinel LN: " + frm.A32.value + "\n";
+}
+
+if (frm.A57.value !== ""){
+	Template += "  - Size of largest metastatic deposit in non-sentinel LN: " + frm.A57.value + "\n";
+}
+
+if (frm.A58.value !== ""){
+	Template += "  - Size of largest lymph node involved in non-sentinel LN: " + frm.A58.value + "\n";
 }
 
 if (document.getElementById("A43").checked || document.getElementById("A44").checked ||
@@ -289,7 +309,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2024-12-Update\Skin Protocol Folder\Skin.Inv_Melanoma_1.1.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2025-03-Update\Skin Protocol Folder\Skin.Inv_Melanoma.Res_1.2.0.0.REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Malignant melanoma of the skin
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -299,7 +319,7 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocols for <a href=".\cap\Cancer-Protocols-2023-12-Update\Skin Protocol Folder\Skin.Inv_Melanoma.Bx_1.0.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a> and <a href=".\cap\cp-skin-melanoma-15biomarker-1002.pdf" target="_blank">biomarkers</a>.</p>
+<p> This is additional protocols for <a href=".\cap\Cancer-Protocols-2025-03-Update\Skin Protocol Folder\Skin.Inv_Melanoma.Bx_1.1.0.0.REL.CAPCP.pdf" target="_blank">biopsy specimen</a> and <a href=".\cap\cp-skin-melanoma-15biomarker-1002.pdf" target="_blank">biomarkers</a>.</p>
 <!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -481,6 +501,21 @@ table, th, td {
 
 <tr>
 <td>
+<label class="description">- Macrosatellite(s): </label>
+</td>
+<td>
+<select class="element select large" ID="A54">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
 <label class="description">- Microsatellite(s): </label>
 </td>
 <td>
@@ -488,7 +523,6 @@ table, th, td {
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
-	<option value="Present">Present, involved at margin (specify):</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -555,16 +589,15 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Tumor regression: </label>
+<label class="">+ Tumor regression: </label>
 </td>
 <td>
 <select class="element select large" ID="A22">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
-	<option value="Present, involving < 75% of lesion">Present, involving < 75% of lesion</option>
-	<option value="Present, involving > or = 75%">Present, involving > or = 75%</option>
-	<option value="Present, involving peripheral margin:">Present, involving peripheral margin:</option>
-	<option value="Present, involving deep margin:">Present, involving deep margin</option>
+	<option value="Present, Focal (less than or equal to 75%)">Present, Focal (less than or equal to 75%)</option>
+	<option value="Present, Extensive (greater than 75%)">Present, Extensive (greater than 75%)</option>
+	<option value="Present, Cannot be determined (explain):">Present, Cannot be determined (explain):</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -614,6 +647,36 @@ table, th, td {
 </select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label class="description">- Margin Involvement by Satellite(s):</label>
+</td>
+<td>
+<select class="element select large" ID="A55">
+	<option value=""></option>
+	<option value="Not applicable (satellite(s) absent)">Not applicable (satellite(s) absent)</option>
+	<option value="Peripheral">Peripheral</option>
+	<option value="Deep">Deep</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Margin Involvement by Tumor Regression:</label>
+</td>
+<td>
+<select class="element select large" ID="A56">
+	<option value=""></option>
+	<option value="Not applicable (tumor regression absent)">Not applicable (tumor regression absent)</option>
+	<option value="Peripheral">Peripheral</option>
+	<option value="Deep">Deep</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+</select>
+</td>
+</tr>
 </table>
 </p>
 </fieldset>
@@ -623,6 +686,10 @@ table, th, td {
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2024-06-Update\Skin Protocol Folder\Skin.Inv_Melanoma_1.1.0.0.REL_CAPCP.pdf#page=21" target="_blank">Regional ymph nodes</a>: </label></legend>
+<p>
+Please specify whether the LN metastasis is detected in H&E or in IHC.<br>
+Report involved LN in exact number or "at least ..."
+</p>
 <p>
 <table border="1">
 <col width="80%">
@@ -700,7 +767,7 @@ table, th, td {
 </td>
 <tr>
 <td>
-<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+<label class="description">- Size of largest metastatic deposit in sentinel LN:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A31" size="5">
@@ -708,14 +775,31 @@ table, th, td {
 </tr>
 <tr>
 <td>
-<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+<label class="description">- Size of largest lymph node involved in sentinel LN:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A32" size="5">
 </td>
 </tr>
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit in non-sentinel LN:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A57" size="5">
+</td>
+</tr>
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved in non-sentinel LN:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A58" size="5">
+</td>
+</tr>
 </table>
 </p>
+
 </fieldset>
 </p>
 
@@ -779,21 +863,20 @@ table, th, td {
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pTis: Melanoma in situ (ie, not an invasive tumor: anatomic level I)">pTis: Melanoma in situ (ie, not an invasive tumor: anatomic level I)</option>
 	<option value="  - pT1: 1.0 mm or less in thickness, ulceration status unknown or unspecified">T1: 1.0 mm or less in thickness, ulceration status unknown or unspecified</option>
-	<option value="  - pT1a: < 0.8 mm in thickness, no ulceration">pT1a: < 0.8 mm in thickness, no ulceration</option>
-	<option value="  - pT1b: < 0.8 mm in thickness with ulceration">pT1b: < 0.8 mm in thickness with ulceration</option>
-	<option value="  - pT1b: 0.8 to 1.0 mm in thickness with or without ulceration">pT1b: 0.8 to 1.0 mm in thickness with or without ulceration</option>
+	<option value="  - pT1a: Melanoma less than 0.8 mm in thickness, without ulceration">pT1a: Melanoma less than 0.8 mm in thickness, without ulceration</option>
+	<option value="  - pT1b: Melanoma less than 0.8 mm in thickness with ulceration; or Melanoma equal to or greater than 0.8 mm and less than or equal to 1.0 mm in thickness with or without ulceration">pT1b: Melanoma less than 0.8 mm in thickness with ulceration; or Melanoma equal to or greater than 0.8 mm and less than or equal to 1.0 mm in thickness with or without ulceration</option>
 	<option value="  - pT1 (subcategory cannot be determined)">pT1 (subcategory cannot be determined)	
-	<option value="  - pT2: > 1.0 to 2.0 mm in thickness, ulceration status unknown or unspecified">pT2: > 1.0 to 2.0 mm in thickness, ulceration status unknown or unspecified</option>
-	<option value="  - pT2a: > 1.0 to 2.0 mm in thickness, no ulceration">pT2a: > 1.0 to 2.0 mm in thickness, no ulceration</option>
-	<option value="  - pT2b: > 1.0 to 2.0 mm in thickness, with ulceration">pT2b: > 1.0 to 2.0 mm in thickness, with ulceration</option>
+	<option value="  - pT2: Melanoma greater than 1.0 to 2.0 mm in thickness, ulceration status unknown or unspecified">pT2: Melanoma greater than 1.0 to 2.0 mm in thickness, ulceration status unknown or unspecified</option>
+	<option value="  - pT2a: Melanoma greater than 1.0 mm and less than or equal to 2.0 mm in thickness, without ulceration">pT2a: Melanoma greater than 1.0 mm and less than or equal to 2.0 mm in thickness, without ulceration</option>
+	<option value="  - pT2b: Melanoma greater than 1.0 mm and less than or equal to 2.0 mm in thickness, with ulceration">pT2b: Melanoma greater than 1.0 mm and less than or equal to 2.0 mm in thickness, with ulceration</option>
 	<option value="  - pT2 (subcategory cannot be determined)">pT2 (subcategory cannot be determined)	
-	<option value="  - pT3: > 2.0 to 4.0 mm in thickness, ulceration status unknown or unspecified">pT3: > 2.0 to 4.0 mm in thickness, ulceration status unknown or unspecified</option>
-	<option value="  - pT3a: > 2.0 to 4.0 mm in thickness, no ulceration">pT3a: > 2.0 to 4.0 mm in thickness, no ulceration</option>
-	<option value="  - pT3b: > 2.0 to 4.0 mm in thickness, with ulceration">pT3b: > 2.0 to 4.0 mm in thickness, with ulceration</option>
+	<option value="  - pT3: Melanoma greater than 2.0 to 4.0 mm in thickness, ulceration status unknown or unspecified">pT3: Melanoma greater than 2.0 to 4.0 mm in thickness, ulceration status unknown or unspecified</option>
+	<option value="  - pT3a: Melanoma greater than 2.0 mm and less than or equal to 4.0 mm in thickness, without ulceration">pT3a: Melanoma greater than 2.0 mm and less than or equal to 4.0 mm in thickness, without ulceration</option>
+	<option value="  - pT3b: Melanoma greater than 2.0 mm and less than or equal to 4.0 mm in thickness, with ulceration">pT3b: Melanoma greater than 2.0 mm and less than or equal to 4.0 mm in thickness, with ulceration</option>
 	<option value="  - pT3 (subcategory cannot be determined)">pT3 (subcategory cannot be determined)	
-	<option value="  - pT4: > 4.0 mm in thickness, ulceration status unknown or unspecified">pT4: > 4.0 mm in thickness, ulceration status unknown or unspecified</option>
-	<option value="  - pT4a: > 4.0 mm in thickness, no ulceration">pT4a: > 4.0 mm in thickness, no ulceration</option>
-	<option value="  - pT4b: > 4.0 mm in thickness, with ulceration">pT4b: > 4.0 mm in thickness, with ulceration</option>
+	<option value="  - pT4: Melanoma greater than 4.0 mm in thickness, ulceration status unknown or unspecified">pT4:Melanoma greater than 4.0 mm in thickness, ulceration status unknown or unspecified</option>
+	<option value="  - pT4a: Melanoma greater than 4.0 mm in thickness, without ulceration">pT4a:Melanoma greater than 4.0 mm in thickness, without ulceration</option>
+	<option value="  - pT4b: Melanoma greater than 4.0 mm in thickness, with ulceration">pT4b: Melanoma greater than 4.0 mm in thickness, with ulceration</option>
 	<option value="  - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)	
 </select>
 </td>
@@ -815,14 +898,14 @@ table, th, td {
 	<option value="  - pN1c: No regional lymph node disease with presence of in-transit, satellite and / or microsatellite metastases">pN1c: No regional lymph node disease with presence of in-transit, satellite and / or microsatellite metastases</option>
 	<option value="  - pN1 (subcategory cannot be determined)">pN1 (subcategory cannot be determined)	
 	<option value="  - pN2: Metastasis in two to three regional nodes or in-transit, satellite, and/or microsatellite with one tumor-involved node">pN2: Metastasis in two to three regional nodes or in-transit, satellite, and/or microsatellite with one tumor-involved node</option>
-	<option value="  - pN2a: 2-3 clinically occult tumor-involved node (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases">pN2a: 2-3 clinically occult tumor-involved node (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases</option>
-	<option value="  - pN2b: 2-3 tumor-involved nodes at least one of which was clinically detected with no in-transit, satellite and/or microsatellite metastases">pN2b: 2-3 tumor-involved nodes at least one of which was clinically detected with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN2a: Two or three clinically occult tumor-involved node (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases">pN2a: Two or three clinically occult tumor-involved node (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN2b: Two or three tumor-involved nodes at least one of which was clinically detected with no in-transit, satellite and/or microsatellite metastases">pN2b: Two or three tumor-involved nodes at least one of which was clinically detected with no in-transit, satellite and/or microsatellite metastases</option>
 	<option value="  - pN2c: One clinically occult or clinically apparent tumor-involved node with presence of in-transit, satellite and/or microsatellite metastases">pN2c: One clinically occult or clinically apparent tumor-involved node with presence of in-transit, satellite and/or microsatellite metastases</option>
 	<option value="  - pN2 (subcategory cannot be determined)">pN2 (subcategory cannot be determined)	
 	<option value="  - pN3: Metastasis in four or more regional lymph nodes, or in-transit, satellite or microsatellite metastases with two or more tumor-involved nodes or any number of matted nodes without or with in-transit, satellite or microsatellite metastases">pN3: Metastasis in four or more regional lymph nodes, or in-transit, satellite or microsatellite metastases with two or more tumor-involved nodes or any number of matted nodes without or with in-transit, satellite or microsatellite metastases</option>
-	<option value="  - pN3a: > or = 4 clinically occult tumor-involved nodes (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases">pN3a: > or = 4 clinically occult tumor-involved nodes (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases</option>
-	<option value="  - pN3b: > or = 4 tumor-involved nodes, at least 1 of which was clinically detected, with no in-transit, satellite and/or microsatellite metastases">pN3b: > or = 4 tumor-involved nodes, at least 1 of which was clinically detected, with no in-transit, satellite and/or microsatellite metastases</option>
-	<option value="  - pN3c: > or = 2 clinically occult or clinically detected tumor-involved nodes with in-transit, satellite and/or microsatellite metastases and/or any number of matted nodes with in-transit, satellite and/or microsatellite metastases">pN3c: > or = 2 clinically occult or clinically detected tumor-involved nodes with in-transit, satellite and/or microsatellite metastases and/or any number of matted nodes with in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN3a: Four or more clinically occult tumor-involved nodes (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases">pN3a: Four or more clinically occult tumor-involved nodes (ie, detected by sentinel node biopsy) with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN3b: Four or more tumor-involved nodes, at least 1 of which was clinically detected, with no in-transit, satellite and/or microsatellite metastases">pN3b: Four or more tumor-involved nodes, at least 1 of which was clinically detected, with no in-transit, satellite and/or microsatellite metastases</option>
+	<option value="  - pN3c: Two or more clinically occult or clinically detected tumor-involved nodes with in-transit, satellite and/or microsatellite metastases and/or any number of matted nodes with in-transit, satellite and/or microsatellite metastases">pN3c: Two or more clinically occult or clinically detected tumor-involved nodes with in-transit, satellite and/or microsatellite metastases and/or any number of matted nodes with in-transit, satellite and/or microsatellite metastases</option>
 	<option value="  - pN3 (subcategory cannot be determined)">pN3 (subcategory cannot be determined)	
 
 </select>
@@ -838,7 +921,7 @@ table, th, td {
 	<option value=""></option>
 	<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
 	<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
-	<option value="  - pM1a: Distant metastasis in skin, subcutaneous tissues, soft tissues including muscle and/or nonregional lymph nodes">pM1a: Distant metastasis in skin, subcutaneous tissues, soft tissues including muscle and/or nonregional lymph nodes</option>
+	<option value="  - pM1a: Distant metastasis in skin (including subcutaneous tissues), soft tissues including muscle and / or non-regional lymph node(s)">pM1a: Distant metastasis in skin (including subcutaneous tissues), soft tissues including muscle and / or non-regional lymph node(s)</option>
 	<option value="  - pM1b: Distant metastasis to lung with or without M1a sites of disease">pM1b: Distant metastasis to lung with or without M1a sites of disease</option>
 	<option value="  - pM1c: Distant metastasis to non-CNS visceral sites with or without M1a or M1b sites of disease">pM1c: Distant metastasis to non-CNS visceral sites with or without M1a or M1b sites of disease</option>
 	<option value="  - pM1d: Distant metastasis to CNS with or without M1a, M1b or M1c sites of disease">pM1d: Distant metastasis to CNS with or without M1a, M1b or M1c sites of disease</option>
@@ -894,9 +977,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 28-Dec-2024,<br>
+Last upated on 02-Apr-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Invasive Melanoma of the Skin 1.1.0.0 (Jun 2024), <br>
+Invasive Melanoma of the Skin 1.2.0.0 (Mar 2025), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
