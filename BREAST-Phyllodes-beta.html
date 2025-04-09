@@ -1,0 +1,1372 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Breast Phyllodes Tumor</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+/*
+if (frm.A01.value !== ""){
+	Template += "- Procedure: " + "\n" + frm.A01.value + "\n";
+}
+
+if (frm.A02.value !== ""){
+	Template += "- Laterality: " + "\n" + frm.A02.value + "\n";
+}
+
+if (document.getElementById("A03").checked || document.getElementById("A04").checked || 
+    document.getElementById("A05").checked || document.getElementById("A06").checked || 
+	document.getElementById("A07").checked || document.getElementById("A08").checked || 
+	document.getElementById("A09").checked || document.getElementById("A10").checked || 
+	document.getElementById("A11").checked){
+	Template += "- Tumor site: " + "\n";
+}
+
+if (document.getElementById("A03").checked){
+	Template += frm.A03.value + "\n";
+}
+
+if (document.getElementById("A04").checked){
+	Template += frm.A04.value + "\n";
+}
+
+if (document.getElementById("A05").checked){
+	Template += frm.A05.value + "\n";
+}
+
+if (document.getElementById("A06").checked){
+	Template += frm.A06.value + "\n";
+}
+
+if (document.getElementById("A07").checked){
+	Template += frm.A07.value + "\n";
+}
+
+if (document.getElementById("A08").checked){
+	Template += frm.A08.value + "\n";
+}
+
+if (document.getElementById("A09").checked){
+	Template += frm.A09.value + "\n";
+}
+
+if (document.getElementById("A10").checked){
+	Template += frm.A10.value + "\n";
+}
+
+if (document.getElementById("A11").checked){
+	Template += frm.A11.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "- Tumor size: " + "\n" + frm.A12.value + "\n";
+}
+*/
+if (frm.A13.value !== ""){
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A13.value + "\n";
+}
+
+if (frm.A14.value !== ""){
+	Template += "\n" + "- Histologic type: " + frm.A14.value + "\n";
+}
+
+if (frm.A15.value !== ""){
+	Template += "- Stromal Cellularity: " + frm.A15.value + "\n";
+}
+
+if (frm.A16.value !== ""){
+	Template += "- Stromal Atypia: " + frm.A16.value + "\n";
+}
+
+if (frm.A17.value !== ""){
+	Template += "- Stromal Overgrowth: " + frm.A17.value + "\n";
+}
+
+if (frm.A18.value !== "") {
+    if (frm.A18.value === "Mitoses per 10 high power fields" || frm.A18.value === "Mitoses per square millimeter (mm)") {
+        var mitosisCount = document.getElementById("mitosis_input").value;
+        if (mitosisCount !== "") {
+            Template += "- Mitotic Rate: " + mitosisCount + " " + frm.A18.value + "\n";
+        }
+    } else {
+        Template += "- Mitotic Rate: " + frm.A18.value + "\n";
+    }
+}
+
+if (frm.A19.value !== ""){
+	Template += "- Histological Tumor Border: " + frm.A19.value + "\n";
+}
+
+if (frm.A20.value !== ""){
+	Template += "- Malignant Heterologous Elements: " + frm.A20.value + "\n";
+}
+
+if (frm.A37.value !== ""){
+	Template += "- Lymphovascular invasion: " + frm.A37.value + "\n";
+}
+
+if (frm.A39.value !== ""){
+	Template += "- Perineural invasion: " + frm.A39.value + "\n";
+}
+
+if (frm.A42.value + frm.A43.value + frm.A44.value + frm.A45.value + frm.A46.value + 
+    frm.A47.value + frm.A48.value !== ""){
+	Template += "\n" + "- Surgical margin: " + "\n";
+}
+if (frm.A42.value !== "") {
+  Template += "\n" + "- Surgical margin for tumor:" + "\n" + "  - Anterior: " + frm.A42.value;
+  
+  if (frm.A42.value.includes("Uninvolved by tumor")) {
+    var clearance = document.getElementById("margin_input_A42").value;
+    var marginType = document.getElementById("margin_type_A42").value;
+    if (clearance !== "") {
+      Template += ", Clear by " + clearance + " mm";
+      if (marginType === "Macroscopic") {
+        Template += " (macroscopic)";
+      } else if (marginType === "Microscopic") {
+        var block = document.getElementById("block_input_A42").value;
+        if (block !== "") {
+          Template += " (block " + block + ")";
+        } else {
+          Template += " (microscopic)";
+        }
+      }
+    }
+  } else if (frm.A42.value.includes("Involved by tumor")) {
+    var involvedBlock = document.getElementById("block_involved_A42").value;
+    if (involvedBlock !== "") {
+      Template += " (block " + involvedBlock + ")";
+    }
+  }
+}
+
+if (frm.A43.value !== "") {
+    Template += "\n" + "  - Posterior: " + frm.A43.value;
+
+    if (frm.A43.value.includes("Uninvolved by tumor")) {
+      var clearance = document.getElementById("margin_input_A43").value;
+      var marginType = document.getElementById("margin_type_A43").value;
+      if (clearance !== "") {
+        Template += ", Clear by " + clearance + " mm";
+        if (marginType === "Macroscopic") {
+          Template += " (macroscopic)";
+        } else if (marginType === "Microscopic") {
+          var block = document.getElementById("block_input_A43").value;
+          if (block !== "") {
+            Template += " (block " + block + ")";
+          } else {
+            Template += " (microscopic)";
+          }
+        }
+      }
+    } else if (frm.A43.value.includes("Involved by tumor")) {
+      var involvedBlock = document.getElementById("block_involved_A43").value;
+    if (involvedBlock !== "") {
+      Template += " (block " + involvedBlock + ")";
+    }
+  }
+}
+
+if (frm.A44.value !== "") {
+  Template += "\n" + "  - Superior: " + frm.A44.value;
+
+  if (frm.A44.value.includes("Uninvolved by tumor")) {
+    var clearance = document.getElementById("margin_input_A44").value;
+    var marginType = document.getElementById("margin_type_A44").value;
+    if (clearance !== "") {
+      Template += ", Clear by " + clearance + " mm";
+      if (marginType === "Macroscopic") {
+        Template += " (macroscopic)";
+      } else if (marginType === "Microscopic") {
+        var block = document.getElementById("block_input_A44").value;
+        if (block !== "") {
+          Template += " (block " + block + ")";
+        } else {
+          Template += " (microscopic)";
+        }
+      }
+    }
+  } else if (frm.A44.value.includes("Involved by tumor")) {
+    var involvedBlock = document.getElementById("block_involved_A44").value;
+    if (involvedBlock !== "") {
+      Template += " (block " + involvedBlock + ")";
+    }
+  }
+}
+
+if (frm.A45.value !== "") {
+  Template += "\n" + "  - Inferior: " + frm.A45.value;
+
+  if (frm.A45.value.includes("Uninvolved by tumor")) {
+    var clearance = document.getElementById("margin_input_A45").value;
+    var marginType = document.getElementById("margin_type_A45").value;
+    if (clearance !== "") {
+      Template += ", Clear by " + clearance + " mm";
+      if (marginType === "Macroscopic") {
+        Template += " (macroscopic)";
+      } else if (marginType === "Microscopic") {
+        var block = document.getElementById("block_input_A45").value;
+        if (block !== "") {
+          Template += " (block " + block + ")";
+        } else {
+          Template += " (microscopic)";
+        }
+      }
+    }
+  } else if (frm.A45.value.includes("Involved by tumor")) {
+    var involvedBlock = document.getElementById("block_involved_A45").value;
+    if (involvedBlock !== "") {
+      Template += " (block " + involvedBlock + ")";
+    }
+  }
+}
+
+if (frm.A46.value !== "") {
+  Template += "\n" + "  - Medial: " + frm.A46.value;
+
+  if (frm.A46.value.includes("Uninvolved by tumor")) {
+    var clearance = document.getElementById("margin_input_A46").value;
+    var marginType = document.getElementById("margin_type_A46").value;
+    if (clearance !== "") {
+      Template += ", Clear by " + clearance + " mm";
+      if (marginType === "Macroscopic") {
+        Template += " (macroscopic)";
+      } else if (marginType === "Microscopic") {
+        var block = document.getElementById("block_input_A46").value;
+        if (block !== "") {
+          Template += " (block " + block + ")";
+        } else {
+          Template += " (microscopic)";
+        }
+      }
+    }
+  } else if (frm.A46.value.includes("Involved by tumor")) {
+    var involvedBlock = document.getElementById("block_involved_A46").value;
+    if (involvedBlock !== "") {
+      Template += " (block " + involvedBlock + ")";
+    }
+  }
+}
+
+if (frm.A47.value !== "") {
+  Template += "\n" + "  - Lateral: " + frm.A47.value;
+
+  if (frm.A47.value.includes("Uninvolved by tumor")) {
+    var clearance = document.getElementById("margin_input_A47").value;
+    var marginType = document.getElementById("margin_type_A47").value;
+    if (clearance !== "") {
+      Template += ", Clear by " + clearance + " mm";
+      if (marginType === "Macroscopic") {
+        Template += " (macroscopic)";
+      } else if (marginType === "Microscopic") {
+        var block = document.getElementById("block_input_A47").value;
+        if (block !== "") {
+          Template += " (block " + block + ")";
+        } else {
+          Template += " (microscopic)";
+        }
+      }
+    }
+  } else if (frm.A47.value.includes("Involved by tumor")) {
+    var involvedBlock = document.getElementById("block_involved_A47").value;
+    if (involvedBlock !== "") {
+      Template += " (block " + involvedBlock + ")";
+    }
+  }
+}
+
+if (frm.A48.value !== ""){
+	Template += "  - Other (specify): " + frm.A48.value + "\n";
+}
+
+Template += "\n";
+
+if (frm.A49.value + frm.A51.value + frm.A54.value + frm.A55.value + frm.A56.value !== ""){
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
+}	
+
+if (frm.A49.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A49.value + "\n";
+}
+
+if (frm.A51.value !== ""){
+	Template += "  - Number of involved lymph nodes: " + frm.A51.value + "\n";
+}
+
+if (frm.A54.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A54.value + "\n";
+}
+
+if (frm.A55.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A55.value + "\n";
+}
+
+if (frm.A56.value !== ""){
+	Template += "  - Extranodal extension (ENE) : " + frm.A56.value + "\n";
+}
+
+if (document.getElementById("A72").checked || document.getElementById("A73").checked ||
+    document.getElementById("A79").checked || document.getElementById("A80").checked){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A79").checked){
+	Template += frm.A79.value + "\n";
+}
+
+if (document.getElementById("A80").checked){
+	Template += frm.A80.value + "\n";
+}
+
+if (document.getElementById("A57").checked || document.getElementById("A58").checked ||
+    document.getElementById("A59").checked || frm.A60.value + frm.A63.value + frm.A64.value){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
+}
+
+if (document.getElementById("A57").checked || document.getElementById("A58").checked ||
+    document.getElementById("A59").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}
+
+if (document.getElementById("A57").checked){
+	Template += "    " + frm.A57.value + "\n";
+}
+
+if (document.getElementById("A58").checked){
+	Template += "    " + frm.A58.value + "\n";
+}
+
+if (document.getElementById("A59").checked){
+	Template += "    " +frm.A59.value + "\n";
+}
+
+if (frm.A60.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A60.value + "\n";
+}
+
+if (frm.A63.value !== ""){
+	Template += "  - Regional lymph nodes (pN): " + "\n" + "  " + frm.A63.value + "\n";
+}
+
+if (frm.A64.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + "  " + frm.A64.value + "\n";
+}
+
+if (document.getElementById("A81").checked || document.getElementById("A82").checked ||
+	document.getElementById("A83").checked || frm.A84.value !==""){
+	Template += "\n" + "- Additional pathologic findings:" + "\n";
+}
+
+if (document.getElementById("A81").checked){
+	Template += frm.A81.value + "\n";
+}
+
+if (document.getElementById("A82").checked){
+	Template += frm.A82.value + "\n";
+}
+
+if (document.getElementById("A83").checked){
+	Template += frm.A83.value + "\n";
+}
+
+if (frm.A84.value !== ""){
+	Template += "  - Others (specify): " +  frm.A84.value + "\n";
+}
+
+if (frm.A66.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" +  frm.A66.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2><a href=".\cap\Cancer-Protocols-2022-09-Update\Breast Protocol Folder\Breast.Phyllodes_1.1.0.1.REL_CAPCP.pdf" target="_blank">
+		<div class="tooltip">Phyllodes Tumor of the breast
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a></h2>
+	</div>
+	
+<form>
+
+<!--
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Gross descriptions:</label></legend>
+
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td>
+<label class="description">- Procedure:</label>
+</td>
+<td>
+	<select class="element select large" ID="A01">
+		<option value=""></option>
+		<option value="  - Excision (less than total mastectomy)">Excision (less than total mastectomy)</option> 
+		<option value="  - Total mastectomy (including nipple-sparing and skin-sparing mastectomy)">Total mastectomy (including nipple-sparing and skin-sparing mastectomy)</option>
+		<option value="  - Other (specify):">Other (specify):</option>
+		<option value="  - Not specified">Not specified</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Specimen laterality:</label>
+</td>
+<td>
+	<select class="element select large" ID="A02">
+		<option value=""></option>
+		<option value="  - Right">Right</option> 
+		<option value="  - Left">Left</option>
+		<option value="  - Not specified">Not specified</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">- Tumor site:</label> 
+</td>
+<td>
+	<input class="element checkbox" type="checkbox" id="A03" value="  - Upper outer quadrant"><label>Upper outer quadrant</label><br>
+	<input class="element checkbox" type="checkbox" id="A04" value="  - Lower outer quadrant"><label>Lower outer quadrant</label><br>
+	<input class="element checkbox" type="checkbox" id="A05" value="  - Upper inner quadrant"><label>Upper inner quadrant</label><br>
+	<input class="element checkbox" type="checkbox" id="A06" value="  - Lower inner quadrant"><label>Lower inner quadrant</label><br>
+	<input class="element checkbox" type="checkbox" id="A07" value="  - Central"><label>Central</label><br>
+	<input class="element checkbox" type="checkbox" id="A08" value="  - Nipple"><label>Nipple</label><br>
+	<input class="element checkbox" type="checkbox" id="A09" value="  - Position (specify): o’clock"><label>Position (specify): o’clock</label><br>
+	<input class="element checkbox" type="checkbox" id="A10" value="  - Other (specify):"><label>Other (specify):</label><br>
+	<input class="element checkbox" type="checkbox" id="A11" value="  - Not specified"><label>Not specified</label><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumor size:</label> 
+</td>
+<td>
+	<select class="element select large" ID="A12">
+		<option value=""></option>
+		<option value="  - Microinvasion only (< or = 1 mm)">Microinvasion only (< or = 1 mm)</option>
+		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="  - No residual carcinoma">No residual carcinoma</option>
+		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+-->
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<p>
+<label class="description">- Tumor histology and immunohistochemical studies: </label>
+	<textarea ID="A13" class="element textarea medium"></textarea>
+</p>
+
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+    <td>
+      <label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=8" target="_blank">Histologic type</a>:</label>
+    </td>
+    <td>
+      <select class="element select large" id="A14" onchange="showReminder()">
+        <option value=""></option>
+        <option value="No tumor">No tumor</option>
+        <option value="Phyllodes tumor, benign">Phyllodes tumor, benign</option>
+        <option value="Phyllodes tumor, borderline">Phyllodes tumor, borderline</option>
+        <option value="Phyllodes tumor, malignant">Phyllodes tumor, malignant</option>
+      </select>
+      <div id="reminder" style="display:none; color: red; margin-top: 5px;">
+        Reminder: Only malignant Phyllodes tumor requires TNM staging.
+      </div>
+    </td>
+  </tr>
+  
+  <script>
+    function showReminder() {
+      var histologicType = document.getElementById("A14").value;
+      var reminder = document.getElementById("reminder");
+  
+      if (histologicType === "Phyllodes tumor, benign" || histologicType === "Phyllodes tumor, borderline") {
+        reminder.style.display = "block";
+      } else {
+        reminder.style.display = "none";
+      }
+    }
+  </script>
+
+<tr>
+<td>
+<label class="description"> - <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=8" target="_blank">Stromal Cellularity</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A15">
+		<option value=""></option>
+		<option value="Mild (stromal nuclei are non-overlapping)">Mild (stromal nuclei are non-overlapping)</option> 
+		<option value="Moderate (some overlapping stromal nuclei)">Moderate (some overlapping stromal nuclei)</option>
+		<option value="Marked (many overlapping stromal nuclei)">Marked (many overlapping stromal nuclei)</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description"> - <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=8" target="_blank">Stromal Atypia</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A16">
+		<option value=""></option>
+		<option value="None">None</option>
+		<option value="Mild (minimal variation in nuclear size, even chromatin, and smooth nuclear contours)">Mild (minimal variation in nuclear size, even chromatin, and smooth nuclear contours)</option> 
+		<option value="Moderate (more variation in nuclear size and irregular nuclear membranes)">Moderate (more variation in nuclear size and irregular nuclear membranes)</option>
+		<option value="Marked (marked nuclear pleomorphism, hyperchromasia, and irregular nuclear contours)">Marked (marked nuclear pleomorphism, hyperchromasia, and irregular nuclear contours)</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description"> - <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=8" target="_blank">Stromal Overgrowth</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A17">
+		<option value=""></option>
+		<option value="Absent">Absent</option> 
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+  <td>
+    <label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=8" target="_blank">Mitotic Rate</a>:</label>
+  </td>
+  <td>
+    <select class="element select large" id="A18" onchange="toggleMitosisInput()">
+      <option value=""></option>
+      <option value="None identified">None identified</option> 
+      <option value="Mitoses per 10 high power fields">Mitoses per 10 high power fields</option>
+      <option value="Mitoses per square Millimeter (mm)">Mitoses per square Millimeter (mm)</option>
+      <option value="Cannot be determined">Cannot be determined</option>
+    </select>
+    <input type="number" id="mitosis_input" class="element text small" size="10" style="display:none;" placeholder="Enter no. of mitosis">
+  </td>
+</tr>
+
+<script>
+  function toggleMitosisInput() {
+    var mitoticRate = document.getElementById("A18").value;
+    var mitosisInput = document.getElementById("mitosis_input");
+
+    if (mitoticRate === "Mitoses per 10 high power fields" || mitoticRate === "Mitoses per square Millimeter (mm)") {
+      mitosisInput.style.display = "inline-block";
+    } else {
+      mitosisInput.style.display = "none";
+      mitosisInput.value = "";
+    }
+  }
+</script>
+
+<tr>
+<td>
+<label class="description"> - <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=8" target="_blank">Histologic Tumor Border</a>:</label>
+</td>
+<td>
+	<select class="element select large" ID="A19">
+		<option value=""></option>
+		<option value="Circumscribed (well-defined; pushing)">Circumscribed (well-defined; pushing)</option> 
+		<option value="Infiltrative (permeative), Focal">Infiltrative (permeative), Focal</option>
+		<option value="Infiltrative (permeative), Extensive">Infiltrative (permeative), Extensive</option>
+		<option value="Cannot be determined">Cannot be determined</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+  <td>
+    <label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=10" target="_blank">Malignant Heterologous Elements</a>:</label>
+  </td>
+  <td>
+    <select class="element select large" id="A20" onchange="showMalignantReminder()">
+      <option value=""></option>
+      <option value="Not identified">Not identified</option>
+      <option value="Liposarcoma (excluding well-differentiated liposarcoma)">Liposarcoma (excluding well-differentiated liposarcoma)</option>
+      <option value="Osteosarcoma">Osteosarcoma</option>
+      <option value="Chondrosarcoma">Chondrosarcoma</option>
+      <option value="Other (specify):">Other (specify):</option>
+    </select>
+    <div id="malignantReminder" style="display:none; color: red; margin-top: 5px;">
+      Reminder: Malignant heterologous differentiation other than well-differentiated liposarcoma alone will qualify a Phyllodes tumor as malignant.
+    </div>
+  </td>
+</tr>
+
+<script>
+  function showMalignantReminder() {
+    var selectedValue = document.getElementById("A20").value;
+    var reminder = document.getElementById("malignantReminder");
+
+    if (selectedValue === "Liposarcoma (excluding well-differentiated liposarcoma)" || 
+        selectedValue === "Osteosarcoma" || 
+        selectedValue === "Chondrosarcoma" || 
+        selectedValue === "Other (specify):") {
+      reminder.style.display = "block";
+    } else {
+      reminder.style.display = "none";
+    }
+  }
+</script>
+
+<tr>
+<td>
+<label class="">+ Lymphovascular invasion</a>: </label>
+</td>
+<td>
+	<select class="element select large" ID="A37">
+		<option value=""></option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="">+ Perineural invasion: </label>
+</td>
+<td>
+	<select class="element select large" ID="A39">
+		<option value=""></option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present">Present</option>
+		<option value="Cannot be determined">Cannot be determined</option>
+	</select>
+</td>
+</tr>
+
+</table>
+</p>
+
+</fieldset>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins: </label></legend>
+
+<p>
+<table border="1">
+<col width="60%">
+
+<tr>
+	<td>
+	  <label class="description">- Anterior margin:</label>
+	</td>
+	<td>
+	  <select class="element select large" id="A42" onchange="toggleMarginInputA42(this)">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by tumor">Uninvolved by tumor</option>
+		<option value="Involved by tumor">Involved by tumor</option>
+	  </select>
+	  
+	  <!-- Inputs for "Uninvolved by tumor" -->
+	  <input type="number" id="margin_input_A42" class="element text small" size="15" style="display:none;" placeholder="Enter mm">
+	  <select id="margin_type_A42" class="element select small" style="display:none;" onchange="toggleBlockInputA42(this, 'block_input_A42')">
+		<option value=""></option>
+		<option value="Macroscopic">Macroscopic</option>
+		<option value="Microscopic">Microscopic</option>
+	  </select>
+	  <input type="text" id="block_input_A42" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+	  
+	  <!-- New input for "Involved by tumor" -->
+	  <input type="text" id="block_involved_A42" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+	</td>
+  </tr>
+
+  <script>
+	function toggleMarginInputA42(selectElement) {
+	  var marginInput = document.getElementById("margin_input_A42");
+	  var marginType = document.getElementById("margin_type_A42");
+	  var blockInput = document.getElementById("block_input_A42");
+	  var blockInvolvedInput = document.getElementById("block_involved_A42");
+	
+	  if (selectElement.value.includes("Uninvolved by tumor")) {
+		// Show clearance and margin type inputs
+		marginInput.style.display = "inline-block";
+		marginType.style.display = "inline-block";
+		// Hide any block inputs not needed here
+		blockInput.style.display = "none";
+		blockInput.value = "";
+		blockInvolvedInput.style.display = "none";
+		blockInvolvedInput.value = "";
+	  } else if (selectElement.value.includes("Involved by tumor")) {
+		// Hide clearance and margin type inputs and show the involved block input
+		marginInput.style.display = "none";
+		marginInput.value = "";
+		marginType.style.display = "none";
+		marginType.value = "";
+		blockInput.style.display = "none";
+		blockInput.value = "";
+		blockInvolvedInput.style.display = "inline-block";
+	  } else {
+		// If no valid option is selected, hide all additional inputs.
+		marginInput.style.display = "none";
+		marginInput.value = "";
+		marginType.style.display = "none";
+		marginType.value = "";
+		blockInput.style.display = "none";
+		blockInput.value = "";
+		blockInvolvedInput.style.display = "none";
+		blockInvolvedInput.value = "";
+	  }
+	}
+	
+	function toggleBlockInputA42(selectElement, blockInputId) {
+	  var blockInput = document.getElementById(blockInputId);
+	  if (selectElement.value === "Microscopic") {
+		blockInput.style.display = "inline-block";
+	  } else {
+		blockInput.style.display = "none";
+		blockInput.value = "";
+	  }
+	}
+	</script>
+
+<tr>
+    <td>
+      <label class="description">- Posterior margin:</label>
+    </td>
+    <td>
+      <select class="element select large" id="A43" onchange="toggleMarginInputA43(this)">
+        <option value=""></option>
+        <option value="Cannot be assessed">Cannot be assessed</option>
+        <option value="Uninvolved by tumor">Uninvolved by tumor</option>
+        <option value="Involved by tumor">Involved by tumor</option>
+      </select>
+      
+      <input type="number" id="margin_input_A43" class="element text small" size="15" style="display:none;" placeholder="Enter mm">
+      <select id="margin_type_A43" class="element select small" style="display:none;" onchange="toggleBlockInputA43(this, 'block_input_A43')">
+        <option value=""></option>
+        <option value="Macroscopic">Macroscopic</option>
+        <option value="Microscopic">Microscopic</option>
+      </select>
+      <input type="text" id="block_input_A43" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+      
+      <input type="text" id="block_involved_A43" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+    </td>
+  </tr>
+
+  <script>
+    function toggleMarginInputA43(selectElement) {
+      var marginInput = document.getElementById("margin_input_A43");
+      var marginType = document.getElementById("margin_type_A43");
+      var blockInput = document.getElementById("block_input_A43");
+      var blockInvolvedInput = document.getElementById("block_involved_A43");
+    
+      if (selectElement.value.includes("Uninvolved by tumor")) {
+        // Show clearance and margin type inputs
+        marginInput.style.display = "inline-block";
+        marginType.style.display = "inline-block";
+        // Hide any block inputs not needed here
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      } else if (selectElement.value.includes("Involved by tumor")) {
+        // Hide clearance and margin type inputs and show the involved block input
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "inline-block";
+      } else {
+        // If no valid option is selected, hide all additional inputs.
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      }
+    }
+    
+    function toggleBlockInputA43(selectElement, blockInputId) {
+      var blockInput = document.getElementById(blockInputId);
+      if (selectElement.value === "Microscopic") {
+        blockInput.style.display = "inline-block";
+      } else {
+        blockInput.style.display = "none";
+        blockInput.value = "";
+      }
+    }
+    </script>
+
+<tr>
+    <td>
+      <label class="description">- Superior margin:</label>
+    </td>
+    <td>
+      <select class="element select large" id="A44" onchange="toggleMarginInputA44(this)">
+        <option value=""></option>
+        <option value="Cannot be assessed">Cannot be assessed</option>
+        <option value="Uninvolved by tumor">Uninvolved by tumor</option>
+        <option value="Involved by tumor">Involved by tumor</option>
+      </select>
+      <input type="number" id="margin_input_A44" class="element text small" size="15" style="display:none;" placeholder="Enter mm">
+      <select id="margin_type_A44" class="element select small" style="display:none;" onchange="toggleBlockInputA44(this, 'block_input_A44')">
+        <option value=""></option>
+        <option value="Macroscopic">Macroscopic</option>
+        <option value="Microscopic">Microscopic</option>
+      </select>
+      <input type="text" id="block_input_A44" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+      <input type="text" id="block_involved_A44" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+    </td>
+  </tr>
+  
+  <script>
+    function toggleMarginInputA44(selectElement) {
+      var marginInput = document.getElementById("margin_input_A44");
+      var marginType = document.getElementById("margin_type_A44");
+      var blockInput = document.getElementById("block_input_A44");
+      var blockInvolvedInput = document.getElementById("block_involved_A44");
+    
+      if (selectElement.value.includes("Uninvolved by tumor")) {
+        // Show clearance and margin type inputs
+        marginInput.style.display = "inline-block";
+        marginType.style.display = "inline-block";
+        // Hide any block inputs not needed here
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      } else if (selectElement.value.includes("Involved by tumor")) {
+        // Hide clearance and margin type inputs and show the involved block input
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "inline-block";
+      } else {
+        // If no valid option is selected, hide all additional inputs.
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      }
+    }
+    
+    function toggleBlockInputA44(selectElement, blockInputId) {
+      var blockInput = document.getElementById(blockInputId);
+      if (selectElement.value === "Microscopic") {
+        blockInput.style.display = "inline-block";
+      } else {
+        blockInput.style.display = "none";
+        blockInput.value = "";
+      }
+    }
+    </script>
+
+<tr>
+    <td>
+      <label class="description">- Inferior margin:</label>
+    </td>
+    <td>
+      <select class="element select large" id="A45" onchange="toggleMarginInputA45(this)">
+        <option value=""></option>
+        <option value="Cannot be assessed">Cannot be assessed</option>
+        <option value="Uninvolved by tumor">Uninvolved by tumor</option>
+        <option value="Involved by tumor">Involved by tumor</option>
+      </select>
+      <input type="number" id="margin_input_A45" class="element text small" size="15" style="display:none;" placeholder="Enter mm">
+      <select id="margin_type_A45" class="element select small" style="display:none;" onchange="toggleBlockInputA45(this, 'block_input_A45')">
+        <option value=""></option>
+        <option value="Macroscopic">Macroscopic</option>
+        <option value="Microscopic">Microscopic</option>
+      </select>
+      <input type="text" id="block_input_A45" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+      <input type="text" id="block_involved_A45" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+    </td>
+  </tr>
+
+  <script>
+    function toggleMarginInputA45(selectElement) {
+      var marginInput = document.getElementById("margin_input_A45");
+      var marginType = document.getElementById("margin_type_A45");
+      var blockInput = document.getElementById("block_input_A45");
+      var blockInvolvedInput = document.getElementById("block_involved_A45");
+
+      if (selectElement.value.includes("Uninvolved by tumor")) {
+        // Show clearance and margin type inputs
+        marginInput.style.display = "inline-block";
+        marginType.style.display = "inline-block";
+        // Hide any block inputs not needed here
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      } else if (selectElement.value.includes("Involved by tumor")) {
+        // Hide clearance and margin type inputs and show the involved block input
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "inline-block";
+      } else {
+        // If no valid option is selected, hide all additional inputs.
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      }
+    }
+
+    function toggleBlockInputA45(selectElement, blockInputId) {
+      var blockInput = document.getElementById(blockInputId);
+      if (selectElement.value === "Microscopic") {
+        blockInput.style.display = "inline-block";
+      } else {
+        blockInput.style.display = "none";
+        blockInput.value = "";
+      }
+    }
+    </script>
+
+<tr>
+    <td>
+      <label class="description">- Medial margin:</label>
+    </td>
+    <td>
+      <select class="element select large" id="A46" onchange="toggleMarginInputA46(this)">
+        <option value=""></option>
+        <option value="Cannot be assessed">Cannot be assessed</option>
+        <option value="Uninvolved by tumor">Uninvolved by tumor</option>
+        <option value="Involved by tumor">Involved by tumor</option>
+      </select>
+      <input type="number" id="margin_input_A46" class="element text small" size="15" style="display:none;" placeholder="Enter mm">
+      <select id="margin_type_A46" class="element select small" style="display:none;" onchange="toggleBlockInputA46(this, 'block_input_A46')">
+        <option value=""></option>
+        <option value="Macroscopic">Macroscopic</option>
+        <option value="Microscopic">Microscopic</option>
+      </select>
+      <input type="text" id="block_input_A46" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+      <input type="text" id="block_involved_A46" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+    </td>
+  </tr>
+
+  <script>
+    function toggleMarginInputA46(selectElement) {
+      var marginInput = document.getElementById("margin_input_A46");
+      var marginType = document.getElementById("margin_type_A46");
+      var blockInput = document.getElementById("block_input_A46");
+      var blockInvolvedInput = document.getElementById("block_involved_A46");
+
+      if (selectElement.value.includes("Uninvolved by tumor")) {
+        // Show clearance and margin type inputs
+        marginInput.style.display = "inline-block";
+        marginType.style.display = "inline-block";
+        // Hide any block inputs not needed here
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      } else if (selectElement.value.includes("Involved by tumor")) {
+        // Hide clearance and margin type inputs and show the involved block input
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "inline-block";
+      } else {
+        // If no valid option is selected, hide all additional inputs.
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      }
+    }
+
+    function toggleBlockInputA46(selectElement, blockInputId) {
+      var blockInput = document.getElementById(blockInputId);
+      if (selectElement.value === "Microscopic") {
+        blockInput.style.display = "inline-block";
+      } else {
+        blockInput.style.display = "none";
+        blockInput.value = "";
+      }
+    }
+    </script>
+
+<tr>
+    <td>
+      <label class="description">- Lateral margin:</label>
+    </td>
+    <td>
+      <select class="element select large" id="A47" onchange="toggleMarginInputA47(this)">
+        <option value=""></option>
+        <option value="Cannot be assessed">Cannot be assessed</option>
+        <option value="Uninvolved by tumor">Uninvolved by tumor</option>
+        <option value="Involved by tumor">Involved by tumor</option>
+      </select>
+      <input type="number" id="margin_input_A47" class="element text small" size="15" style="display:none;" placeholder="Enter mm">
+      <select id="margin_type_A47" class="element select small" style="display:none;" onchange="toggleBlockInputA47(this, 'block_input_A47')">
+        <option value=""></option>
+        <option value="Macroscopic">Macroscopic</option>
+        <option value="Microscopic">Microscopic</option>
+      </select>
+      <input type="text" id="block_input_A47" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+      <input type="text" id="block_involved_A47" class="element text small" size="15" style="display:none;" placeholder="Enter block">
+    </td>
+  </tr>
+
+  <script>
+    function toggleMarginInputA47(selectElement) {
+      var marginInput = document.getElementById("margin_input_A47");
+      var marginType = document.getElementById("margin_type_A47");
+      var blockInput = document.getElementById("block_input_A47");
+      var blockInvolvedInput = document.getElementById("block_involved_A47");
+
+      if (selectElement.value.includes("Uninvolved by tumor")) {
+        // Show clearance and margin type inputs
+        marginInput.style.display = "inline-block";
+        marginType.style.display = "inline-block";
+        // Hide any block inputs not needed here
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      } else if (selectElement.value.includes("Involved by tumor")) {
+        // Hide clearance and margin type inputs and show the involved block input
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "inline-block";
+      } else {
+        // If no valid option is selected, hide all additional inputs.
+        marginInput.style.display = "none";
+        marginInput.value = "";
+        marginType.style.display = "none";
+        marginType.value = "";
+        blockInput.style.display = "none";
+        blockInput.value = "";
+        blockInvolvedInput.style.display = "none";
+        blockInvolvedInput.value = "";
+      }
+    }
+
+    function toggleBlockInputA47(selectElement, blockInputId) {
+      var blockInput = document.getElementById(blockInputId);
+      if (selectElement.value === "Microscopic") {
+        blockInput.style.display = "inline-block";
+      } else {
+        blockInput.style.display = "none";
+        blockInput.value = "";
+      }
+    }
+    </script>
+
+<tr>
+<td>
+<label>- Other margins (specify):</label>
+</td>
+<td>
+	<select class="element select large" ID="A48">
+		<option value=""></option>
+		<option value="Cannot be assessed">Cannot be assessed</option>
+		<option value="Uninvolved by tumor, closest distance:">Uninvolved by tumor, closest distance:</option>
+		<option value="Involved by tumor">Involved by tumor</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=11" target="_blank">Regional lymph nodes</a>: </label></legend>
+
+<p>
+<table border="1">
+<col width="75%">
+
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" ID="A49" class="element text large" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Number of involved lymph nodes:</label>
+</td>
+<td>
+<input type="text" ID="A51" class="element text large" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" ID="A54" class="element text large" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" ID="A55" class="element text large" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extranodal extension:</label>
+</td>
+<td>
+	<select class="element select large" ID="A56">
+		<option value=""></option>
+		<option value="  - Not identified">Not identified</option>
+		<option value="  - Present">Present</option>
+		<option value="  - Present, extent of ENE, no. < or = 2 mm, no > 2 mm">Present, extent of ENE, no. < or = 2 mm, no > 2 mm</option>
+		<option value="  - Cannot be determined">Cannot be determined</option>
+	</select>
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A72"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A73"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A79"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A80"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Phyllodes_1.0.0.0.REL_CAPCP.pdf#page=11" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	
+<p>
+<table border="1">
+<col width="40%">
+
+<tr>
+<td  valign="top">
+<label class="description">- TNM Descriptors:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox" id="A57"  value=" m (multiple foci of invasive carcinoma) "><label class="choice" >m (multiple foci of invasive carcinoma)</label>
+<input class="element checkbox" type="checkbox" id="A58"  value=" r (recurrent) "><label class="choice" >r (recurrent)</label>
+<input class="element checkbox" type="checkbox" id="A59"  value=" y (post treatment) "><label class="choice" >y (post treatment)</label>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+	<select class="element select large" ID="A60">
+		<option value=""></option>
+		<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
+		<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
+		<option value="  - pT1: Tumor 5 cm or less in greatest dimension">pT1: Tumor 5 cm or less in greatest dimension</option>
+		<option value="  - pT2: Tumor more than 5 cm but not more than 10 cm">pT2: Tumor more than 5 cm but not more than 10 cm</option>
+		<option value="  - pT3: Tumor more than 10 cm but not more than 15 cm">pT3: Tumor more than 10 cm but not more than 15 cm</option>
+		<option value="  - pT4: Tumor more than 15 cm in greatest dimension">pT4: Tumor more than 15 cm in greatest dimension</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">
+  - Regional lymph nodes (pN): </label>
+</td>
+<td>
+	<select class="element select large" ID="A63">
+		<option value=""></option>
+		<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+		<option value="  - pN not assigned (cannot be determined based on available pathological information)"> pN not assigned (cannot be determined based on available pathological information)</option>
+		<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+		<option value="  - pN1: Regional lymph node metastasis">pN1: Regional lymph node metastasis</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td >
+<label class="description">- Distant metastasis (pM): </label>
+</td>
+<td>
+	<select class="element select large" ID="A64">
+		<option value=""></option>
+		<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
+		<option value="  - pM1: Distant metastasis">pM1: Distant metastasis</option>
+	</select>
+</td>
+</tr>
+
+<!--?--
+<tr>
+<td>
+    <label>- Specify site(s), if known:</label>
+<input type="text" class="element text medium" ID="A65" size="35">
+</td>
+</tr>
+-->
+
+</table>
+</p>
+</fieldset>
+</p>
+
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label > + Additional pathologic findings: </label></legend>
+
+<p>
+<input class="element checkbox" type="checkbox" id="A81" value="  - Fibroepithelial proliferation (coexisting fibroadenoma or fibroadenomatoid change in the tissue surrounding the phyllodes tumor)"><label  class="choice">Fibroepithelial proliferation (coexisting fibroadenoma or fibroadenomatoid change in the tissue surrounding the phyllodes tumor)</label>
+<input class="element checkbox" type="checkbox" id="A82" value="  - Atypical ductal hyperplasia"><label class="choice" >Atypical ductal hyperplasia</label>
+<input class="element checkbox" type="checkbox" id="A83" value="  - Atypical lobular hyperplasia"><label class="choice" >Atypical lobular hyperplasia</label>
+</p>
+<p>
+- Other (specify):
+<input type="text" class = "element text medium" ID="A84" size="35">
+</p>
+<br>
+</fieldset>
+</p>
+
+<p>
+<label class="description">- Additional notes:</label>
+<textarea ID="A66" class = "element textarea medium" style="border-color:darkStaleblue;"></textarea>
+</p>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 23-Sep-2022,<br>
+based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Phyllodes Tumor of the Breast Resection 1.2.0.1 (Sep 2022).<br>
+html form was created on 
+<a href="https://www.phpform.org">pForm</a>, 
+<a href="https://www.w3schools.com/">W3 School</a>, 
+<a href="https://stackoverflow.com/">StackOverflow</a>,
+ and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>
