@@ -87,6 +87,15 @@ if (frm.A17.value !== ""){
 	Template += "- Tumor extension : " + frm.A17.value + "\n";
 }
 
+if (frm.A68.value !== ""){
+	Template += "- For pT1, Depth of Sub-mucosal Invasion: " + frm.A68.value + "\n";
+}
+
+if (frm.A69.value !== ""){
+	Template += "- For pT1, Extent of Sub-mucosal Invasion: " + frm.A69.value + "\n";
+}
+
+
 if (frm.A18.value !== ""){
 	Template += "- Lymphovascular invasion : " + frm.A18.value + "\n";
 }
@@ -478,6 +487,29 @@ table, th, td {
 	<option value="  - Cannot be assessed">Cannot be assessed</option>	
 </select>
 </td>
+</tr>
+
+<tr>
+<td rowspan="2" valign="top"> <label class="description"> - Sub-mucosal Invasion (pT1 only): </label></td> 
+<td>Depth of Sub-mucosal Invasion<br>
+    <select class="element select large" ID="A68">
+		<option value=""></option>
+		<option value="Less than 1 mm">Less than 0.5 mm</option>
+		<option value="Greater than or equal to 0.5 mm and less than 1 mm">Greater than or equal to 0.5 mm and less than 1 mm</option>
+		<option value="Greater than 2 mm">Greater than 1 mm</option>
+		<option value="Exact depth in mm">Exact depth in mm</option>
+		<option value="Cannot be determined">Cannot be determined</option>
+	</select> </td> 
+</tr>
+<tr>
+<td>Extent of Sub-mucosal Invasion<br>
+		<select class="element select large" ID="A69">
+			<option value=""></option>
+			<option value="SM1: Lesions limited to the superficial submucosal layer (within the first 0.5 mm)">SM1: Lesions limited to the superficial submucosal layer (within the first 0.5 mm)</option>
+			<option value="SM2: Lesions extending to the middle submucosal layer (0.5-1 mm)">SM2: Lesions extending to the middle submucosal layer (0.5-1 mm)</option>
+			<option value="SM3: Lesions extending to the deeper third of the submucosal layer (> 1 mm)">SM3: Lesions extending to the deeper third of the submucosal layer (> 1 mm)</option>
+			<option value="Cannot be determined">Cannot be determined</option>
+		</select></td> 
 </tr>
 
 <tr>
@@ -888,7 +920,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 24-Jun-2022,<br>
+Last upated on 03-Jun-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Esophagus 4.2.0.1 (Jun 2022), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
