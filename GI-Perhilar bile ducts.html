@@ -79,6 +79,10 @@ if (frm.A14.value !== ""){
 	Template += "- Perineural invasion: " + frm.A14.value + "\n";
 }
 
+if (frm.A73.value !== ""){
+	Template += "- Treatment effect: " + frm.A73.value + "\n";
+}
+
 if (document.getElementById("A15").checked || document.getElementById("A16").checked ||
 	document.getElementById("A17").checked || document.getElementById("A18").checked ||
 	document.getElementById("A19").checked || document.getElementById("A20").checked ||
@@ -549,6 +553,27 @@ table, th, td {
 </select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label class="description">- Treatment effect: </label>
+</td>
+<td>
+<select class="element select large" ID="A73">
+	<option value=""></option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Present, with no viable cancer cells (complete response, score 0)">Present, with no viable cancer cells (complete response, score 0)</option>
+	<option value="Present, with single cells or rare small groups of cancer cells (near complete response, score 1)">Present, with single cells or rare small groups of cancer cells (near complete response, score 1)</option>
+	<option value="Present, with residual cancer showing evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response, score 2)">Present, with residual cancer showing evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response, score 2)</option>
+	<option value="Present, NOS">Present, NOS</option>
+	<option value="Absent, with extensive residual cancer and no evident tumor regression (poor or no response, score
+3)">Absent, with extensive residual cancer and no evident tumor regression (poor or no response, score
+3)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
 </table>
 </p>
 
