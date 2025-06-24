@@ -58,8 +58,12 @@ if (frm.A10.value !== ""){
 	Template += "- Histologic grade: " + frm.A10.value + "\n";
 }
 
+if (frm.A60.value !== ""){
+	Template += "- Tumor size (Aggregate Size of all Invasive Foci) : " + frm.A60.value + "\n" + "  - " + frm.A61.value + "\n"  ;
+}
+
 if (frm.A11.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A11.value + "\n";
+	Template += "- Lymphic and Vascular invasion: " + frm.A11.value + "\n";
 }
 
 if (frm.A12.value !== ""){
@@ -127,6 +131,10 @@ if (frm.A25.value !== ""){
 	Template += "- Depth of tumor invasion: " + frm.A25.value + "\n";
 }
 
+if (frm.A71.value !== ""){
+	Template += "- Treatment effect: " + frm.A71.value + "\n";
+}
+
 if (frm.A26.value + frm.A27.value + frm.A28.value + frm.A29.value + frm.A30.value +
 	frm.A31.value + frm.A32.value + frm.A33.value + frm.A34.value + frm.A35.value!== ""){
 	Template += "\n" + "- Surgical margins: " +"\n";
@@ -170,6 +178,50 @@ if (frm.A34.value !== ""){
 
 if (frm.A35.value !== ""){
 	Template +=  "  - Other margin(s), specify : " + frm.A35.value + "\n" ;
+}
+
+if (frm.A62.value !== ""){
+	Template +=  "- Margin Status for High-Grade Intraepithelial Neoplasia / High-Grade Dysplasia: " + "\n" 
+	             + "  - " + frm.A62.value + "\n" ;
+}
+
+if (document.getElementById("A63").checked || document.getElementById("A64").checked ||
+	document.getElementById("A65").checked || document.getElementById("A66").checked ||
+	document.getElementById("A67").checked || document.getElementById("A68").checked ||
+	document.getElementById("A69").checked || document.getElementById("A70").checked ){
+	Template +=  "  - Margin involved : " + "\n" ;
+}
+
+if (document.getElementById("A63").checked){
+	Template += frm.A63.value + "\n";
+}
+
+if (document.getElementById("A64").checked){
+	Template += frm.A64.value + "\n";
+}
+
+if (document.getElementById("A65").checked){
+	Template += frm.A65.value + "\n";
+}
+
+if (document.getElementById("A66").checked){
+	Template += frm.A66.value + "\n";
+}
+
+if (document.getElementById("A67").checked){
+	Template += frm.A67.value + "\n";
+}
+
+if (document.getElementById("A68").checked){
+	Template += frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template +=  frm.A69.value + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += frm.A70.value + "\n";
 }
 
 if (frm.A36.value + frm.A37.value + frm.A38.value + frm.A39.value + frm.A40.value !== ""){
@@ -402,7 +454,7 @@ table, th, td {
 <col width="40%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type (WHO 2019)</a>:</label> 
+<label class="description">- Histologic type (WHO 2019):</label> 
 </td>
 <td>
 <select class="element select large" ID="A09">
@@ -416,10 +468,12 @@ table, th, td {
 	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
 	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
 	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
-	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>	
+	<option value="Undifferentiated carcinoma, NOS">Undifferentiated carcinoma, NOS</option>	
+	<option value="Intraductal papillary neoplasm with associated invasive carcinoma">Intraductal papillary neoplasm with associated invasive carcinoma</option>	
+	<option value="Intraductal tubulopapillary neoplasm with associated invasive carcinoma">Intraductal tubulopapillary neoplasm with associated invasive carcinoma</option>	
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="Mixed neuroendocrine-non-neuroendocrine tumor (Mixed adenoneuroendocrine carcinoma)">Mixed neuroendocrine-non-neuroendocrine tumor (Mixed adenoneuroendocrine carcinoma)</option>
+	<option value="Mixed neuroendocrine-non-neuroendocrine tumor (MiNEM)(specify components):">Mixed neuroendocrine-non-neuroendocrine tumor (MiNEM)(specify components):</option>
 	<option value="Other (specify):">Other (specify):</option>
 	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
 </select>
@@ -428,7 +482,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic grade</a>:</label>
+<label class="description">- Histologic grade:</label>
 </td>
 <td>
 <select class="element select large" ID="A10">
@@ -443,8 +497,30 @@ table, th, td {
 </tr>
 
 <tr>
+<td rowspan="3" valign="top">
+<label class="description">- Tumor Size</a>:</label>
+</td>
+<tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- Aggregate Size of all Invasive Foci (cm):</label>
+<input type="text" class="element text large" ID="A60" size="small">
+</td>
+</tr>
+<tr>
+<td>
+<select class="element select large" ID="A61">
+	<option value=""></option>
+	<option value="Unifocal invasive carcinoma, Greatest dimension (cm):">Unifocal invasive carcinoma, Greatest dimension (cm):</option>
+	<option value="Multifocal invasive carcinoma in association with intraductal neoplasms, Largest focus (cm):">Multifocal invasive carcinoma in association with intraductal neoplasms, Largest focus (cm):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>	
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Lymphatic and/on Vascular invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A11">
@@ -458,7 +534,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -485,6 +561,26 @@ table, th, td {
 </select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label class="description">- Treatment effect: </label>
+</td>
+<td>
+<select class="element select large" ID="A71">
+	<option value=""></option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Present, with no viable cancer cells (complete response, score 0)">Present, with no viable cancer cells (complete response, score 0)</option>
+	<option value="Present, with single cells or rare small groups of cancer cells (near complete response, score 1)">Present, with single cells or rare small groups of cancer cells (near complete response, score 1)</option>
+	<option value="Present, with residual cancer showing evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response, score 2)">Present, with residual cancer showing evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response, score 2)</option>
+	<option value="Present, NOS">Present, NOS</option>
+	<option value="Absent, with extensive residual cancer and no evident tumor regression (poor or no response, score
+3)">Absent, with extensive residual cancer and no evident tumor regression (poor or no response, score
+3)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
 </table>
 </p>
 <p>
@@ -502,13 +598,14 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A23" value="  - Tumor directly invades adjacent organs other than the gallbladder, specify (duodenum, amplulla, stomach, gallbladder, omentum, celiac azis, superior mesenteric artery, common hepatic artery, etc.): "><label class="choice">Tumor directly invades adjacent organs other than the gallbladder, specify (duodenum, amplulla, stomach, gallbladder, omentum, celiac azis, superior mesenteric artery, common hepatic artery, etc.):</label>
 <input class="element checkbox" type="checkbox"  id="A24" value="  - Cannot be assessed"><label class="choice" >Cannot be assessed</label>
 </p>
+
 </fieldset>
 </p>
+* Please consider ancillary tests: MMR/MSI, HER2, etc.
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend><label class="description">Surgical margins of segmental excision:</label></legend>
-
 <p>
 <table border="1">
 <col width="40%">
@@ -520,10 +617,8 @@ table, th, td {
 <select class="element select large" ID="A26">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
 	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
-	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
 </select>
 </td>
 </tr>
@@ -536,10 +631,8 @@ table, th, td {
 <select class="element select large" ID="A27">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
 	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
-	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
 </select>
 </td>
 </tr>
@@ -578,7 +671,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description">Surgical margins of pancreaticoduodectomy:</label></legend>
+	<legend><label class="description">For pancreaticoduodenal resection specimens: </label></legend>
 <p>
 <table border="1">
 <col width="70%">
@@ -590,10 +683,8 @@ table, th, td {
 <select class="element select large" ID="A30">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by invasive carcinoma and high-grade dysplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade dysplasia, specify distance (mm):</option>
 	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
-	<option value="Involved by high-grade dysplasia">Involved by high-grade dysplasia</option>
 </select>
 </td>
 </tr>
@@ -606,10 +697,8 @@ table, th, td {
 <select class="element select large" ID="A31">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by invasive carcinoma and high-grade dysplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade dysplasia, specify distance (mm):</option>
 	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
-	<option value="Involved by high-grade dysplasia">Involved by high-grade dysplasia</option>
 </select>
 </td>
 </tr>
@@ -636,10 +725,9 @@ table, th, td {
 <select class="element select large" ID="A33">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and high-grade intraepithelial neoplasia, specify distance (mm):</option>
 	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
-	<option value="Involved by high-grade intraepithelial neoplasia">Involved by high-grade intraepithelial neoplasia</option>
+
 </select>
 </td>
 </tr>
@@ -652,17 +740,15 @@ table, th, td {
 <select class="element select large" ID="A34">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by invasive carcinoma and pancreatic high-grade intraepithelial neoplasia, specify distance (mm):">Uninvolved by invasive carcinoma and pancreatic high-grade intraepithelial neoplasia, specify distance (mm):</option>
 	<option value="Uninvolved by invasive carcinoma, specify distance (mm):">Uninvolved by invasive carcinoma, specify distance (mm):</option>
 	<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
-	<option value="Involved by pancreatic high-grade intraepithelial neoplasia">Involved by pancreatic high-grade intraepithelial neoplasia</option>
 </select>
 </td>
 </tr>
 
 <tr>
 <td>
-<label>- Other margin(s), specify :</label>
+<label>- Other margin(s), specify :
 </td>
 <td>
 <select class="element select large" ID="A35">
@@ -673,6 +759,50 @@ table, th, td {
 </select>
 </td>
 </tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of High-Grade Intraepithelial Neoplasia / High-Grade Dysplasia:</label></legend>
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Margin status:</label>
+</td>
+<td>
+<select class="element select large" ID="A62">
+	<option value=""></option>
+	<option value="All margins negative for high-grade intraepithelial neoplasia / high-grade dysplasia">All margins negative for high-grade intraepithelial neoplasia / high-grade dysplasia</option>
+	<option value="High-grade intraepithelial neoplasia / high-grade dysplasia present at margin">High-grade intraepithelial neoplasia / high-grade dysplasia present at margin</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Margins involved:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A63" value="    - Proximal bile duct:"><label  class="choice">Proximal bile duct:</label>
+<input class="element checkbox" type="checkbox"  id="A64" value="    - Distal bile duct:"><label  class="choice">Distal bile duct:</label>
+<input class="element checkbox" type="checkbox"  id="A65" value="    - Bile duct:"><label  class="choice">Bile duct:</label>
+<input class="element checkbox" type="checkbox"  id="A66" value="    - Pancreatic neck / parenchymal:"><label  class="choice">Pancreatic neck / parenchymal:</label>
+<input class="element checkbox" type="checkbox"  id="A67" value="    - Proximal (gastric or duodenal):"><label  class="choice">Proximal (gastric or duodenal):</label>
+<input class="element checkbox" type="checkbox"  id="A68" value="    - Distal (duodenal or jejunal):"><label  class="choice">Distal (duodenal or jejunal):</label>
+<input class="element checkbox" type="checkbox"  id="A69" value="    - Other (specify):"><label class="choice">Other (specify):</label>
+<input class="element checkbox" type="checkbox"  id="A70" value="    - Cannot be assessed"><label class="choice" >Cannot be assessed</label>
+</td>
+</tr>
+
 </table>
 </p>
 </fieldset>
@@ -768,7 +898,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=6" target="_blank">Primary tumor (pT)</a>:</label>
+<label class="description">- Primary tumor (pT):</label>
 </td>
 <td>
 <select class="element select large" ID="A44">
@@ -786,7 +916,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Regional lymph nodes (pN)</a>:</label>
+<label class="description">- Regional lymph nodes (pN):</label>
 </td>
 <td>
 <select class="element select large" ID="A45">
@@ -863,9 +993,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 20-Jul-2021,<br>
+Last upated on 23-Jun-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-BileDuctDE 4.2.0.0	(June 2021), <br>
+BileDuctDE 4.3.0.0	(June 2025), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

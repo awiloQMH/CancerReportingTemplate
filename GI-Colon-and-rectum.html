@@ -101,6 +101,10 @@ if (frm.A20.value !== ""){
 	Template += "- Histologic grade: " + frm.A20.value + "\n";
 }
 
+if (frm.A68.value !== ""){
+	Template += "- Multiple tumor sites: " + frm.A68.value + "\n";
+}
+
 if (frm.A21.value !== ""){
 	Template += "- Tumor extension: " + frm.A21.value + "\n";
 }
@@ -349,7 +353,7 @@ table, th, td {
 <div id="form_container">
 
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2024-06-Update\Gastrointestinal Protocol Folder\ColoRectal_4.3.1.0.REL.CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2025-06-Update\Gastrointestinal Protocol Folder\ColoRectal_4.4.0.0.REL.CAPCP.pdf" target="_blank">
 		Cancers of the colon and rectum
 		</a></h2>
 	</div>
@@ -474,16 +478,17 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 	<option value=""></option>
 	<option value="Adenocarcinoma">Adenocarcinoma</option>
 	<option value="Mucinous adenocarcinoma">Mucinous adenocarcinoma</option>
-	<option value="Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
+	<option value="Poorly cohesive carcinoma (Signet-ring cell carcinoma)">Poorly cohesive carcinoma (Signet-ring cell carcinoma)</option>
 	<option value="Medullary carcinoma">Medullary carcinoma</option>
 	<option value="Serrated adenocarcinoma">Serrated adenocarcinoma</option>	
 	<option value="Micropapillary carcinoma">Micropapillary carcinoma</option>
+	<option value="Adenoma-like adenocarcinoma">Adenoma-like adenocarcinoma</option>
 	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Undifferentiated carcinoma, NOS">Undifferentiated carcinoma, NOS</option>
 	<option value="Carcinoma with sarcomatoid component">Carcinoma with sarcomatoid component</option>
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm (specify components):">Mixed neuroendocrine-non-neuroendocrine neoplasm (specify components):</option>
+	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)(specify components):">Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)(specify components):</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>	
 </select></td> 
@@ -501,6 +506,16 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 	<option value="G4: Undifferentiated">G4: Undifferentiated</option>	
 	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
 	<option value="Other (specify):">Other (specify):</option>
+</select></td> 
+</tr>
+
+<tr>
+<td> <label class="description">- Multiple Primary Sites:</label></td> 
+<td> <select class="element select large" ID="A68">
+	<option value=""></option>
+	<option value="Not applicable (no additional primary site(s) present)">Not applicable (no additional primary site(s) present)</option>
+	<option value="Present(specify):">Present(specify):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
 </select></td> 
 </tr>
 
@@ -579,7 +594,7 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 
 
 <tr>
-<td rowspan="2"> <label class=""> + <a href=".\cap\Cancer-Protocols-2024-06-Update\Gastrointestinal Protocol Folder\ColoRectal_4.3.1.0.REL.CAPCP.pdf#page=20" target="_blank">Tumor budding (ITBCC 2016)</a>: </label> Number of tumor buds in one hot spot (0.785 mm2) (count buds in one x20 field, 22 mm eye-piece, divided by 1.21)</td> 
+<td rowspan="2"> <label class="description">- <a href=".\cap\Cancer-Protocols-2024-06-Update\Gastrointestinal Protocol Folder\ColoRectal_4.3.1.0.REL.CAPCP.pdf#page=20" target="_blank">Tumor budding (ITBCC 2016)</a>: </label> Number of tumor buds in one hot spot (0.785 mm2) (count buds in one x20 field, 22 mm eye-piece, divided by 1.21)</td> 
 <td><input type="text" ID="A24" class = "element text large" size="10"></td> 
 </tr>
 <tr>
@@ -928,9 +943,9 @@ There is a protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastroint
 <br>
 
 <div id="footer">
-Last upated on 03-Jun-2025,<br>
+Last upated on 23-Jun-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Colon and Rectum Resection 4.3.1.0 (Jun 2024).<br>
+Colon and Rectum Resection 4.4.0.0 (Jun 2025).<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

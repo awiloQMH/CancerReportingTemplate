@@ -78,13 +78,20 @@ if (frm.A15.value !== ""){
 	Template += "- Histologic grade: " + frm.A15.value + "\n";
 }
 
+if (frm.A70.value !== ""){
+	Template += "- Tumor size (Aggregate Size of all Invasive Foci) : " + frm.A70.value + "\n" + "  - " + frm.A71.value + "\n"  ;
+}
+
 if (document.getElementById("A16").checked || document.getElementById("A17").checked || 
 	document.getElementById("A18").checked || document.getElementById("A19").checked || 
 	document.getElementById("A20").checked || document.getElementById("A21").checked || 
 	document.getElementById("A22").checked || document.getElementById("A23").checked ||
 	document.getElementById("A24").checked || document.getElementById("A25").checked ||
 	document.getElementById("A25").checked || document.getElementById("A27").checked ||
-	document.getElementById("A28").checked || document.getElementById("A29").checked ){
+	document.getElementById("A28").checked || document.getElementById("A29").checked ||
+	document.getElementById("A82").checked || document.getElementById("A83").checked ||
+	document.getElementById("A84").checked || document.getElementById("A85").checked ||
+	document.getElementById("A86").checked || document.getElementById("A87").checked ){
 	Template += "- Tumor extension: " + "\n";
 }
 
@@ -140,12 +147,36 @@ if (document.getElementById("A28").checked){
 	Template += frm.A28.value + "\n";
 }
 
+if (document.getElementById("A82").checked){
+	Template += frm.A82.value + "\n";
+}
+
+if (document.getElementById("A83").checked){
+	Template += frm.A83.value + "\n";
+}
+
+if (document.getElementById("A84").checked){
+	Template += frm.A84.value + "\n";
+}
+
+if (document.getElementById("A85").checked){
+	Template += frm.A85.value + "\n";
+}
+
+if (document.getElementById("A86").checked){
+	Template += frm.A86.value + "\n";
+}
+
+if (document.getElementById("A87").checked){
+	Template += frm.A87.value + "\n";
+}
+
 if (document.getElementById("A29").checked){
 	Template += frm.A29.value + "\n";
 }
 
 if (frm.A30.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A30.value + "\n";
+	Template += "- Lymphatic and/or vascular invasion: " + frm.A30.value + "\n";
 }
 
 if (frm.A31.value !== ""){
@@ -204,6 +235,55 @@ if (frm.A44.value !== ""){
 
 if (frm.A45.value + frm.A46.value !== ""){
 	Template += "  - Other margin(s) (specify: " + frm.A45.value + "): " + frm.A46.value + "\n";
+}
+
+if (frm.A72.value !== ""){
+	Template +=  "- Margin Status for High-Grade Intraepithelial Neoplasia / High-Grade Dysplasia: " + "\n" 
+	             + "  - " + frm.A72.value + "\n" ;
+}
+
+if (document.getElementById("A73").checked || document.getElementById("A74").checked ||
+	document.getElementById("A75").checked || document.getElementById("A76").checked ||
+	document.getElementById("A77").checked || document.getElementById("A78").checked ||
+	document.getElementById("A79").checked || document.getElementById("A80").checked ||
+	document.getElementById("A81").checked ){
+	Template +=  "  - Margin involved : " + "\n" ;
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
+if (document.getElementById("A77").checked){
+	Template += frm.A77.value + "\n";
+}
+
+if (document.getElementById("A78").checked){
+	Template += frm.A78.value + "\n";
+}
+
+if (document.getElementById("A79").checked){
+	Template +=  frm.A79.value + "\n";
+}
+
+if (document.getElementById("A80").checked){
+	Template += frm.A80.value + "\n";
+}
+
+if (document.getElementById("A81").checked){
+	Template += frm.A81.value + "\n";
 }
 
 if (frm.A47.value + frm.A48.value + frm.A49.value + frm.A50.value + frm.A51.value!== ""){
@@ -353,7 +433,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2021-11-Update\Panc.Exo_4.2.0.2.REL_CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2025-06-Update\Gastrointestinal Protocol Folder\Panc.Exo_4.3.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of pancreas
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -436,39 +516,37 @@ table, th, td {
 </p>
 <p>
 <table border="1">
-<col width="40%">
+<col width="50%">
 <tr>
 <td rowspan="2" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Panc.Exo_4.2.0.2.REL_CAPCP.pdf#page=10" target="_blank">Histologic type (2019)</a>:</label> 
+<label class="description">- Histologic type (2019):</label> 
 </td>
 <td>
 <select class="element select large" ID="A12">
 	<option value=""></option>
 	<option value="Ductal adenocarcinoma (NOS)">Ductal adenocarcinoma (NOS)</option>
 	<option value="Colloid carcinoma (mucinous noncystic carcinoma)">Colloid carcinoma (mucinous noncystic carcinoma)</option>
+	<option value="Poorly cohesive carcinoma">Poorly cohesive carcinoma</option>
 	<option value="Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
 	<option value="Intraductal papillary-mucinous neoplasm with an associated invasive carcinoma">Intraductal papillary-mucinous neoplasm with an associated invasive carcinoma</option>
 	<option value="Intraductal oncocytic papillary neoplasm with associated invasive carcinoma">Intraductal oncocytic papillary neoplasm with associated invasive carcinoma</option>
-	<option value="Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>
+	<option value="Intraductal tubulopapillary neoplasm with associated invasive carcinoma">Intraductal tubulopapillary neoplasm with associated invasive carcinoma</option>
 	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
 	<option value="Medullary carcinoma">Medullary carcinoma</option>
 	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
 	<option value="Hepatoid carcinoma">Hepatoid carcinoma</option>
 	<option value="Large cell carcinoma with rhabdoid phenotype">Large cell carcinoma with rhabdoid phenotype</option>
-	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Undifferentiated carcinoma, NOS">Undifferentiated carcinoma, NOS</option>
 	<option value="Undifferentiated carcinoma with osteoclast-like giant cells">Undifferentiated carcinoma with osteoclast-like giant cells</option>
 	<option value="Acinar cell carcinoma (NOS)">Acinar cell carcinoma (NOS)</option>
 	<option value="Acinar cell cystadenocarcinoma">Acinar cell cystadenocarcinoma0</option>
-	<option value="Mixed acinar-neuroendocrine carcinoma">Mixed acinar-neuroendocrine carcinoma</option>
-	<option value="Mixed ductal-neuroendocrine carcinoma">Mixed ductal-neuroendocrine carcinoma</option>
-	<option value="Mixed acinar-endocrine-ductal carcinoma">Mixed acinar-endocrine-ductal carcinoma</option>
 	<option value="Mixed acinar-ductal carcinoma">Mixed acinar-ductal carcinoma</option>
 	<option value="Pancreatoblastoma">Pancreatoblastoma</option>
 	<option value="Solid-pseudopapillary neoplasm">Solid-pseudopapillary neoplasm</option>
 	<option value="Solid-pseudopapillary neoplasm with high grade carcinoma">Solid-pseudopapillary neoplasm with high grade carcinoma</option>
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm">Mixed neuroendocrine-non-neuroendocrine neoplasm</option>
+	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN) (specify components):">Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN) (specify components):</option>
 	<option value="Other histologic type not listed (specify):">Other histologic type not listed (specify):</option>
 </select>
 </td>
@@ -482,7 +560,7 @@ table, th, td {
 
 <tr>
 <td rowspan="2" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Panc.Exo_4.2.0.2.REL_CAPCP.pdf#page=11" target="_blank">Histologic grade</a>:</label> 
+<label class="description">- Histologic grade:</label> 
 </td>
 <td>
 <select class="element select large" ID="A14">
@@ -502,8 +580,30 @@ table, th, td {
 </tr>
 
 <tr>
+<td rowspan="3" valign="top">
+<label class="description">- Tumor Size</a>:</label>
+</td>
+<tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Panc.Exo_4.2.0.2.REL_CAPCP.pdf#page=12" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- Aggregate Size of all Invasive Foci (cm):</label>
+<input type="text" class="element text large" ID="A70" size="small">
+</td>
+</tr>
+<tr>
+<td>
+<select class="element select large" ID="A71">
+	<option value=""></option>
+	<option value="Unifocal invasive carcinoma, Greatest dimension (cm):">Unifocal invasive carcinoma, Greatest dimension (cm):</option>
+	<option value="Multifocal invasive carcinoma in association with intraductal neoplasms, Largest focus (cm):">Multifocal invasive carcinoma in association with intraductal neoplasms, Largest focus (cm):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>	
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Lymphatic and/or Vascular invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A30">
@@ -517,7 +617,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Panc.Exo_4.2.0.2.REL_CAPCP.pdf#page=12" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A31">
@@ -531,7 +631,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-11-Update\Panc.Exo_4.2.0.2.REL_CAPCP.pdf#page=11" target="_blank">Treatment effect</a>: </label>
+<label class="description">- Treatment effect: </label>
 </td>
 <td>
 <select class="element select large" ID="A32">
@@ -550,27 +650,34 @@ table, th, td {
 </p>
 <p>
 <label class="description">- Tumor extension:</label> 
-<input class="element checkbox" type="checkbox" id="A17" value="  - Tumor is confined to the pancreas"><label  class="choice">Tumor is confined to the pancreas</label>
-<input class="element checkbox" type="checkbox" id="A26" value="  - Tumor is confined to the pancreas + posterior surface of pancreas"><label  class="choice">Tumor is confined to the pancreas + posterior surface of pancreas</label>
-<input class="element checkbox" type="checkbox" id="A27" value="  - Tumor is confined to the pancreas + anterior surface of pancreas"><label  class="choice">Tumor is confined to the pancreas + anterior surface of pancreas</label>
-<input class="element checkbox" type="checkbox" id="A28" value="  - Tumor is confined to the pancreas + vascular bed/groove (corresponding to superior mesenteric vein/portal vein)"><label  class="choice">Tumor is confined to the pancreas + vascular bed/groove (corresponding to superior mesenteric vein/portal vein)</label>
-<input class="element checkbox" type="checkbox" id="A18" value="  - Tumor invades the ampulla of Vater or sphincter of Oddi"><label  class="choice">Tumor invades the ampulla of Vater or sphincter of Oddi</label>
-<input class="element checkbox" type="checkbox" id="A19" value="  - Tumor invades the duodenal wall"><label  class="choice">Tumor invades the duodenal wall</label>
-<input class="element checkbox" type="checkbox" id="A20" value="  - Tumor invades peripancreatic soft tissues"><label  class="choice">Tumor invades peripancreatic soft tissues</label>
-<input class="element checkbox" type="checkbox" id="A21" value="  - Tumor invades peripancreatic soft tissues + retroperitoneal soft tissue"><label  class="choice">Tumor invades peripancreatic soft tissues + retroperitoneal soft tissue</label>
-<input class="element checkbox" type="checkbox" id="A22" value="  - Tumor invades peripancreatic soft tissues + mesenteric adipose tissue"><label  class="choice">Tumor invades peripancreatic soft tissues + mesenteric adipose tissue</label>
-<input class="element checkbox" type="checkbox" id="A23" value="  - Tumor invades peripancreatic soft tissues + mesocolon"><label  class="choice">Tumor invades peripancreatic soft tissues + mesocolon</label>
-<input class="element checkbox" type="checkbox" id="A24" value="  - Tumor invades peripancreatic soft tissues + extrapancreatic common bile duct, "><label class="choice" >Tumor invades peripancreatic soft tissues + extrapancreatic common bile duct</label>
-<input class="element checkbox" type="checkbox" id="A25" value="  - Tumor invades adjacent organs or structures (specify: stomach, superior mesenteric vein, portal vein, celac acis, superior mesenteric artery, common hepatic artery, etc.)"><label  class="choice">Tumor invades adjacent organs or structures (specify: stomach, superior mesenteric vein, portal vein, celac acis, superior mesenteric artery, common hepatic artery, etc.)</label>
+<input class="element checkbox" type="checkbox" id="A17" value="  - No invasion (carcinoma in situ / high-grade dysplasia)"><label  class="choice">No invasion (carcinoma in situ / high-grade dysplasia)</label>
+<input class="element checkbox" type="checkbox" id="A26" value="  - Confined to pancreas"><label  class="choice">Confined to pancreas</label>
+<input class="element checkbox" type="checkbox" id="A27" value="  - Vascular bed / groove (corresponding to superior mesenteric vein / portal vein)"><label  class="choice">Vascular bed / groove (corresponding to superior mesenteric vein / portal vein)</label>
+<input class="element checkbox" type="checkbox" id="A28" value="  - Ampulla of Vater or sphincter of Oddi"><label  class="choice">Ampulla of Vater or sphincter of Oddi</label>
+<input class="element checkbox" type="checkbox" id="A18" value="  - Duodenal wall"><label  class="choice">Duodenal wall</label>
+<input class="element checkbox" type="checkbox" id="A19" value="  - Peripancreatic soft tissues"><label  class="choice">Peripancreatic soft tissues</label>
+<input class="element checkbox" type="checkbox" id="A20" value="  - Peripancreatic soft tissues, Retroperitoneal soft tissue"><label  class="choice">Peripancreatic soft tissues, Retroperitoneal soft tissue</label>
+<input class="element checkbox" type="checkbox" id="A21" value="  - Peripancreatic soft tissues, Mesenteric adipose tissue"><label  class="choice">Peripancreatic soft tissues, Mesenteric adipose tissue</label>
+<input class="element checkbox" type="checkbox" id="A22" value="  - Peripancreatic soft tissues, Mesocolon"><label  class="choice">Peripancreatic soft tissues,  Mesocolon</label>
+<input class="element checkbox" type="checkbox" id="A23" value="  - Peripancreatic soft tissues, Other peripancreatic soft tissue (specify):"><label  class="choice">Peripancreatic soft tissues, Other peripancreatic soft tissue (specify):</label>
+<input class="element checkbox" type="checkbox" id="A24" value="  - Extrapancreatic common bile duct"><label class="choice" >Extrapancreatic common bile duct</label>
+<input class="element checkbox" type="checkbox" id="A25" value="  - Stomach"><label  class="choice">Stomach</label>
+<input class="element checkbox" type="checkbox" id="A82" value="  - Superior mesenteric vein"><label  class="choice">Superior mesenteric vein</label>
+<input class="element checkbox" type="checkbox" id="A83" value="  - Portal vein"><label  class="choice">Portal vein</label>
+<input class="element checkbox" type="checkbox" id="A84" value="  - Celiac axis"><label  class="choice">Celiac axis</label>
+<input class="element checkbox" type="checkbox" id="A85" value="  - Superior mesenteric artery"><label  class="choice">Superior mesenteric artery</label>
+<input class="element checkbox" type="checkbox" id="A86" value="  - Common hepatic artery"><label  class="choice">Common hepatic artery</label>
+<input class="element checkbox" type="checkbox" id="A87" value="  - Other adjacent organ(s) or structure(s) (specify):"><label  class="choice">Other adjacent organ(s) or structure(s) (specify):</label>
 <input class="element checkbox" type="checkbox" id="A29" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
 <input class="element checkbox" type="checkbox" id="A16" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </p>
+* Please consider performing MMR/MSI and HER2 tests.
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description"><a href=".\cap\Cancer-Protocols-2021-11-Update\Panc.Exo_4.2.0.2.REL_CAPCP.pdf#page=12" target="_blank">For pancreaticoduodenal resection specimens</a>: </label></legend>
+	<legend><label class="description">For pancreaticoduodenal resection specimens: </label></legend>
 <p>
 <table border="1">
 <col width="70%">
@@ -668,6 +775,7 @@ table, th, td {
 </tr>
 </table>
 </p>
+* If there is margin involvement, try also specifiy the status of the surfaces of the pancreas (anterior, posterior and vascular groove).
 </fieldset>
 </p>
 
@@ -771,6 +879,51 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of High-Grade Intraepithelial Neoplasia / High-Grade Dysplasia:</label></legend>
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Margin status:</label>
+</td>
+<td>
+<select class="element select large" ID="A72">
+	<option value=""></option>
+	<option value="All margins negative for high-grade intraepithelial neoplasia / high-grade dysplasia">All margins negative for high-grade intraepithelial neoplasia / high-grade dysplasia</option>
+	<option value="High-grade intraepithelial neoplasia / high-grade dysplasia present at margin">High-grade intraepithelial neoplasia / high-grade dysplasia present at margin</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Margins involved:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A73" value="    - Pancreatic neck / parenchymal:"><label  class="choice">Pancreatic neck / parenchymal:</label>
+<input class="element checkbox" type="checkbox"  id="A74" value="    - Bile duct:"><label  class="choice">Bile duct:</label>
+<input class="element checkbox" type="checkbox"  id="A75" value="    - Proximal (gastric or duodenal):"><label  class="choice">Proximal (gastric or duodenal):</label>
+<input class="element checkbox" type="checkbox"  id="A76" value="    - Distal (duodenal or jejunal):"><label  class="choice">Distal (duodenal or jejunal):</label>
+<input class="element checkbox" type="checkbox"  id="A77" value="    - Anterior surface:"><label  class="choice">Proximal (gastric or duodenal):</label>
+<input class="element checkbox" type="checkbox"  id="A78" value="    - Posterior surface:"><label  class="choice">Posterior surface:</label>
+<input class="element checkbox" type="checkbox"  id="A79" value="    - Vascular groove:"><label  class="choice">Vascular groove:</label>
+<input class="element checkbox" type="checkbox"  id="A80" value="    - Other (specify):"><label class="choice">Other (specify):</label>
+<input class="element checkbox" type="checkbox"  id="A81" value="    - Cannot be assessed"><label class="choice" >Cannot be assessed</label>
+</td>
+</tr>
+
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 <p>
 <table border="1">
@@ -845,7 +998,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-11-Update\Panc.Exo_4.2.0.2.REL_CAPCP.pdf#page=14" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>: </label></legend>
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e): </label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -870,12 +1023,13 @@ table, th, td {
 	<option value="pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 	<option value="pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="pTis: Carcinoma in situ (including any types of high-grade dysplasia)">pTis: Carcinoma in situ (including any types of high-grade dysplasia)</option>
-	<option value="pT1: Tumor < or = 2 cm in greatest danimension">pT1: Tumor < or = 2 cm in greatest dimension</option>
-	<option value="pT1a: Tumor < or = 0.5 cm in greatest dimension">pT1a: Tumor < or = 0.5 cm in greatest dimension</option>
-	<option value="pT1b: Tumor > 0.5 cm and < 1 cm in greatest dimension">pT1b: Tumor > 0.5 cm and < 1 cm in greatest dimension</option>
+	<option value="pT1: Tumor less than or equal to 2 cm in greatest dimension">pT1: Tumor less than or equal to 2 cm in greatest dimension</option>
+	<option value="pT1a: Tumor less than or equal to 0.5 cm in greatest dimension">pT1a: Tumor less than or equal to 0.5 cm in greatest dimension</option>
+	<option value="pT1b: Tumor greater than 0.5 cm and less than 1 cm in greatest dimension">pT1b: Tumor greater than 0.5 cm and less than 1 cm in greatest dimension</option>
 	<option value="pT1c: Tumor 1–2 cm in greatest dimension">pT1c: Tumor 1–2 cm in greatest dimension</option>
-	<option value="pT2: Tumor > 2 cm and < or = 4 cm in greatest dimension">pT2: Tumor > 2 cm and < or = 4 cm in greatest dimension</option>
-	<option value="pT3: Tumor > 4 cm in greatest dimension">pT3: Tumor > 4 cm in greatest dimension</option>
+	<option value="pT1 (subcategory cannot be determined)">pT1 (subcategory cannot be determined)</option>
+	<option value="pT2: Tumor greater than 2 cm and less than or equal to 4 cm in greatest dimension">pT2: Tumor greater than 2 cm and less than or equal to 4 cm in greatest dimension</option>
+	<option value="pT3: Tumor greater than 4 cm in greatest dimension">pT3: Tumor greater than 4 cm in greatest dimension</option>
 	<option value="pT4: Tumor involves the celiac axis, superior mesenteric artery, and/or common hepatic artery">pT4: Tumor involves the celiac axis, superior mesenteric artery, and/or common hepatic artery</option>
 </select>
 </td>
@@ -957,9 +1111,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 14-Nov-2021,<br>
+Last upated on 24-Jun-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-PancreasExocrine 4.2.0.2 (Nov 2021), <br>
+PancreasExocrine 4.3.0.0 (Jun-2025), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

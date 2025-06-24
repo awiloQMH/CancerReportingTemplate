@@ -129,6 +129,10 @@ if (frm.A28.value !== "" && frm.A28.value <= 60 && frm.A27.value >= 6 && frm.A27
 	Template += "\n" + "- Given the suboptimal cold ischaemia time and/or suboptimal formalin fixation time, please interpret the above results with caution." + "\n" ;
 } 
 
+if (frm.A29.value !== ""){
+	Template += "- Test type : " + frm.A29.value + "\n";
+}
+
 if (frm.A19.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
 }
@@ -212,7 +216,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2025-03-Update\Breast Protocol Folder\Breast.Bmk_1.6.0.0.REL.CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2025-06-Update\Breast Protocol Folder\Breast.Bmk_1.6.1.0.REL.CAPCP.pdf" target="_blank">
 		<div class="tooltip">Breast biomarkers testing
 		<span class="tooltiptext">click to access further explanations in the original CAP template</span>
 		</div>
@@ -477,6 +481,27 @@ hours
 
 </tr>
 
+<tr>
+<td>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="">+ Test type :</label>
+</td>
+<td>
+	<select class="element select large" ID="A29">
+		<option value=""></option>
+		<option value="Laboratory-developed test (QMH, HK).">Laboratory-developed test (QMH, HK).</option>
+		<option value="Food and Drug Administration (FDA) cleared (specify test / vendor):">Food and Drug Administration (FDA) cleared (specify test / vendor):</option>
+		<option value="Laboratory-developed test (Non-U.S.-based health systems).">Laboratory-developed test, Non-U.S.-based health systems.</option>
+		<option value="Laboratory-developed test (Health Canada Approved (specify test / vendor:).">Laboratory-developed test, Health Canada Approved (specify test / vendor):</option>
+		<option value="Other (specify):">Other (specify):</option>
+	</select>
+</td>
+</tr>
+
 </table>
 </p>
 <p>
@@ -575,7 +600,7 @@ It is immunohistochemically characterized by faint/barely perceptible and incomp
 <br>
 
 <div id="footer">
-Last upated 16-Apr-2025, based on Breast Biomarkers 1.6.0.0 Mar-2025</a>.<br>
+Last upated 23-Jun-2025, based on Breast Biomarkers 1.6.1.0 Jun-2025</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

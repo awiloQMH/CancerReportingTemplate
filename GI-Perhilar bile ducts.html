@@ -67,8 +67,12 @@ if (frm.A12.value !== ""){
 	Template += "- Histologic grade: " + frm.A12.value + "\n";
 }
 
+if (frm.A65.value !== ""){
+	Template += "- Tumor size (Aggregate Size of all Invasive Foci) : " + frm.A65.value + "\n" + "  - " + frm.A66.value + "\n"  ;
+}
+
 if (frm.A13.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A13.value + "\n";
+	Template += "- Lymphatic and/or vascular invasion: " + frm.A13.value + "\n";
 }
 
 if (frm.A14.value !== ""){
@@ -188,6 +192,36 @@ if (frm.A58.value !== ""){
 
 if (frm.A38.value !== ""){
 	Template +=  "  " + "- Other margin(s), specify : " + frm.A38.value + "\n" ;
+}
+if (frm.A67.value !== ""){
+	Template +=  "- Margin Status for High-Grade Intraepithelial Neoplasia / High-Grade Dysplasia: " + "\n" 
+	             + "  - " + frm.A67.value + "\n" ;
+}
+
+if (document.getElementById("A68").checked || document.getElementById("A69").checked ||
+	document.getElementById("A70").checked || document.getElementById("A71").checked ||
+	document.getElementById("A72").checked ){
+	Template +=  "  - Margin involved : " + "\n" ;
+}
+
+if (document.getElementById("A68").checked){
+	Template += frm.A68.value + "\n";
+}
+
+if (document.getElementById("A69").checked){
+	Template += frm.A69.value + "\n";
+}
+
+if (document.getElementById("A70").checked){
+	Template += frm.A70.value + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
 }
 
 if (frm.A39.value + frm.A40.value + frm.A41.value + frm.A42.value + frm.A43.value !== ""){
@@ -344,7 +378,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctPH_4.2.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2025-06-Update\Gastrointestinal Protocol Folder\BileDuctPH_4.3.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the Perihilar Bile Ducts
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -420,27 +454,30 @@ table, th, td {
 </p>
 <p>
 <table border="1">
-<col width="40%">
+<col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctPH_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic type (WHO 2019)</a>:</label> 
+<label class="description">- Histologic type (WHO 2019):</label> 
 </td>
 <td>
 <select class="element select large" ID="A11">
 	<option value=""></option>
 	<option value="Adenocarcinoma">Adenocarcinoma</option>
-	<option value="Adenocarcinoma, biliary type">Adenocarcinoma, biliary type</option>	
+	<option value="Adenocarcinoma, biliary type (extrahepatic cholangiocarcinoma)">Adenocarcinoma, biliary type (extrahepatic cholangiocarcinoma)</option>	
 	<option value="Adenocarcinoma, intestinal type">Adenocarcinoma, intestinal type</option>
 	<option value="Mucinous adenocarcinoma">Mucinous adenocarcinoma</option>
 	<option value="Clear cell adenocarcinoma">Clear cell adenocarcinoma</option>
-	<option value="Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
+	<option value="Poorly cohesive carcinoma">Poorly cohesive carcinoma</option>
+	<option value="Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>
 	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
 	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
+	<option value="Intraductal papillary neoplasm of bile duct with associated invasive carcinoma">Intraductal papillary neoplasm of bile duct with associated invasive carcinoma</option>
+	<option value="Intraductal tubulopapillary neoplasm of bile duct with associated invasive carcinoma">Intraductal tubulopapillary neoplasm of bile duct with associated invasive carcinoma</option>
 	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
 	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>	
-	<option value="Mixed neuroendocrine-non-neuroendocrine tumor (Mixed adenoneuroendocrine carcinoma)">Mixed neuroendocrine-non-neuroendocrine tumor (Mixed adenoneuroendocrine carcinoma)</option>
+	<option value="Mixed neuroendocrine-non-neuroendocrine tumor (MiNEN) (specify components):">Mixed neuroendocrine-non-neuroendocrine tumor (MiNEN) (specify components):</option>
 	<option value="Other (specify):">Other (specify):</option>
 	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
 </select>
@@ -449,7 +486,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctPH_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic grade</a>:</label>
+<label class="description">- Histologic grade:</label>
 </td>
 <td>
 <select class="element select large" ID="A12">
@@ -464,8 +501,30 @@ table, th, td {
 </tr>
 
 <tr>
+<td rowspan="3" valign="top">
+<label class="description">- Tumor Size</a>:</label>
+</td>
+<tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctPH_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Lymphovascular invasion</a>: </label>
+<label class="description">- Aggregate Size of all Invasive Foci (cm):</label>
+<input type="text" class="element text large" ID="A65" size="small">
+</td>
+</tr>
+<tr>
+<td>
+<select class="element select large" ID="A66">
+	<option value=""></option>
+	<option value="Unifocal invasive carcinoma, Greatest dimension (cm):">Unifocal invasive carcinoma, Greatest dimension (cm):</option>
+	<option value="Multifocal invasive carcinoma in association with intraductal neoplasms, Largest focus (cm):">Multifocal invasive carcinoma in association with intraductal neoplasms, Largest focus (cm):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>	
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Lymphatic and/on Vascular invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A13">
@@ -479,7 +538,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctPH_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A14">
@@ -495,22 +554,22 @@ table, th, td {
 
 <p>
 <label class="description">- Tumor extension:</label>
-<input class="element checkbox" type="checkbox" id="A16" value="  - No invasion (carcinoma in situ/high-grade dysplasia)"><label  class="choice">No invasion (carcinoma in situ/high-grade dysplasia)</label>
-<input class="element checkbox" type="checkbox" id="A17" value="  - Tumor confined to the bile duct histologically"><label  class="choice">Tumor confined to the bile duct histologically</label>
-<input class="element checkbox" type="checkbox" id="A18" value="  - Tumor invades beyond the wall of the bile duct into surrounding connective tissue"><label  class="choice">Tumor invades beyond the wall of the bile duct into surrounding connective tissue</label>
-<input class="element checkbox" type="checkbox" id="A19" value="  - Tumor invades the adjacent liver parenchyma"><label class="choice" >Tumor invades the adjacent liver parenchyma</label>
-<input class="element checkbox" type="checkbox" id="A20" value="  - Tumor invades the gallbladder"><label  class="choice">Tumor invades gallbladder</label>
-<input class="element checkbox" type="checkbox" id="A21" value="  - Tumor invades the unilateral branches of the portal vein (right or left)"><label  class="choice">Tumor directly invades adjacent organs other than the gallbladder, specify:</label>
-<input class="element checkbox" type="checkbox" id="A22" value="  - Tumor invades the unilateral branches of the hepatic artery (right or left)"><label  class="choice">Tumor invades the pancreas</label>
-<input class="element checkbox" type="checkbox" id="A23" value="  - Tumor invades main portal vein or its branches bilaterally"><label  class="choice">Tumor invades the pancreas, involves posterior surface of pancreas</label>
-<input class="element checkbox" type="checkbox" id="A24" value="  - Tumor invades common hepatic artery"><label class="choice" >Tumor invades the pancreas, involves anterior surface of pancreas</label>
-<input class="element checkbox" type="checkbox" id="A25" value="  - Tumor invades second-order biliary radicals, unilateral"><label  class="choice">Tumor invades the pancreas, involves vascular bed/groove (corresponding to superior mesenteric vein/portal vein)</label>
-<input class="element checkbox" type="checkbox" id="A26" value="  - Tumor invades second-order biliary radicals, bilateral"><label  class="choice">Tumor invades gallbladder</label>
-<input class="element checkbox" type="checkbox" id="A27" value="  - Tumor directly invades adjacent organs other than the gallbladder, specify: "><label  class="choice">Tumor directly invades adjacent organs other than the gallbladder, specify:</label>
+<input class="element checkbox" type="checkbox" id="A16" value="  - No invasion (carcinoma in situ / high-grade dysplasia including intraductal papillary neoplasm of bile duct with high-grade dysplasia, intraductal tubulopapillary neoplasm of bile duct with high-grade dysplasia)"><label  class="choice">No invasion (carcinoma in situ / high-grade dysplasia including intraductal papillary neoplasm of bile duct with high-grade dysplasia, intraductal tubulopapillary neoplasm of bile duct with high-grade dysplasia)</label>
+<input class="element checkbox" type="checkbox" id="A17" value="  - Confined to bile duct"><label  class="choice">Confined to bile duct</label>
+<input class="element checkbox" type="checkbox" id="A18" value="  - Invades connective tissue surrounding wall of bile duct"><label  class="choice">Invades connective tissue surrounding wall of bile duct</label>
+<input class="element checkbox" type="checkbox" id="A19" value="  - Invades adjacent liver parenchyma"><label class="choice" >Invades adjacent liver parenchyma</label>
+<input class="element checkbox" type="checkbox" id="A20" value="  - Invades gallbladder"><label  class="choice">Invades gallbladder</label>
+<input class="element checkbox" type="checkbox" id="A21" value="  - Invades unilateral branches of portal vein (right or left)"><label  class="choice">Invades unilateral branches of portal vein (right or left)</label>
+<input class="element checkbox" type="checkbox" id="A22" value="  - Invades unilateral branches of hepatic artery (right or left)"><label  class="choice">Invades unilateral branches of hepatic artery (right or left)</label>
+<input class="element checkbox" type="checkbox" id="A23" value="  - Invades main portal vein or its branches bilaterally"><label  class="choice">Invades main portal vein or its branches bilaterally</label>
+<input class="element checkbox" type="checkbox" id="A24" value="  - Invades common hepatic artery"><label class="choice" >Invades common hepatic artery</label>
+<input class="element checkbox" type="checkbox" id="A25" value="  - Invades second-order biliary radicals unilaterally"><label  class="choice">Invades second-order biliary radicals unilaterally</label>
+<input class="element checkbox" type="checkbox" id="A26" value="  - Invades second-order biliary radicals bilaterally"><label  class="choice">Invades second-order biliary radicals bilaterally</label>
+<input class="element checkbox" type="checkbox" id="A27" value="  - Other (specify):"><label  class="choice">Other (specify):</label>
 <input class="element checkbox" type="checkbox" id="A28" value="  - Cannot be assessed"><label  class="choice">Cannot be assessed</label>
 <input class="element checkbox" type="checkbox" id="A15" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
 </p>
-
+* Please consider performing MMR/MSI and HER2 tests.
 </fieldset>
 </p>
 
@@ -581,8 +640,6 @@ table, th, td {
 </tr>
 </table>
 </p>
-
-<br>
 </fieldset>
 </p>
 
@@ -707,10 +764,50 @@ table, th, td {
 </p>
 </fieldset>
 
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Surgical margins of High-Grade Intraepithelial Neoplasia / High-Grade Dysplasia:</label></legend>
+
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td>
+<label class="description">- Margin status:</label>
+</td>
+<td>
+<select class="element select large" ID="A67">
+	<option value=""></option>
+	<option value="All margins negative for high-grade intraepithelial neoplasia / high-grade dysplasia">All margins negative for high-grade intraepithelial neoplasia / high-grade dysplasia</option>
+	<option value="High-grade intraepithelial neoplasia / high-grade dysplasia present at margin">High-grade intraepithelial neoplasia / high-grade dysplasia present at margin</option>
+	<option value="Other (specify):">Other (specify):</option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Not applicable">Not applicable</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Margins involved:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A68" value="    - Proximal:"><label  class="choice">Proximal:</label>
+<input class="element checkbox" type="checkbox"  id="A69" value="    - Distal:"><label  class="choice">Distal:</label>
+<input class="element checkbox" type="checkbox"  id="A70" value="    - Bile duct:"><label  class="choice">Bile duct:</label>
+<input class="element checkbox" type="checkbox"  id="A71" value="    - Other (specify):"><label class="choice">Other (specify):</label>
+<input class="element checkbox" type="checkbox"  id="A72" value="    - Cannot be assessed"><label class="choice" >Cannot be assessed</label>
+</td>
+</tr>
+
+</table>
+</p>
+</fieldset>
+</p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Regional ymph nodes: </label></legend>
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
 <p>
 <table border="1">
@@ -800,7 +897,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctPH_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Primary tumor (pT)</a>:</label>
+<label class="description">- Primary tumor (pT):</label>
 </td>
 <td>
 <select class="element select large" ID="A47">
@@ -812,6 +909,7 @@ table, th, td {
 	<option value="  - pT2: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue, or tumor invades adjacent hepatic parenchyma">pT2: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue, or tumor invades adjacent hepatic parenchyma</option>
 	<option value="  - pT2a: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue">pT2a: Tumor invades beyond the wall of the bile duct to surrounding adipose tissue</option>
 	<option value="  - pT2b: Tumor invades adjacent hepatic parenchyma">pT2b: Tumor invades adjacent hepatic parenchyma</option>
+	<option value="  - pT2 (subcategory cannot be determined)">pT2 (subcategory cannot be determined)</option>
 	<option value="  - pT3: Tumor invades unilateral branches of the portal vein or hepatic artery">pT3: Tumor invades unilateral branches of the portal vein or hepatic artery</option>
 	<option value="  - pT4: Tumor invades the main portal vein or its branches bilaterally, or the common hepatic artery; or unilateral second-order biliary radicals with contralateral portal vein or hepatic artery involvement">pT4: Tumor invades the main portal vein or its branches bilaterally, or the common hepatic artery; or unilateral second-order biliary radicals with contralateral portal vein or hepatic artery involvement</option>
 </select>
@@ -820,7 +918,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctPH_4.2.0.0.REL_CAPCP.pdf#page=13" target="_blank">Regional lymph nodes (pN)</a>:</label>
+<label class="description">- Regional lymph nodes (pN):</label>
 </td>
 <td>
 <select class="element select large" ID="A48">
@@ -897,9 +995,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 20-Jul-2021,<br>
+Last upated on 24-Jun-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-PerihilarBileDuct 4.2.0.0 (June 2021), <br>
+PerihilarBileDuct 4.3.0.0 (June 2025), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

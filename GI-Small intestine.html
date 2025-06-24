@@ -40,12 +40,20 @@ if (frm.A07.value !== ""){
 	Template += "- Histologic grade (WHO 2019) : " + frm.A07.value + "\n";
 }
 
+if (frm.A57.value !== ""){
+	Template += "- Macroscopic tumor perforation: " + frm.A57.value + "\n";
+}
+
 if (frm.A08.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A08.value + "\n";
+	Template += "- Lymphatic and/on Vascular invasion: " + frm.A08.value + "\n";
 }
 
 if (frm.A09.value !== ""){
 	Template += "- Perineural invasion: " + frm.A09.value + "\n";
+}
+
+if (frm.A45.value !== ""){
+	Template += "- Treatment effect: " + frm.A45.value + "\n";
 }
 
 if (frm.A10.value !== ""){
@@ -95,6 +103,59 @@ if (frm.A19.value !== ""){
 
 if (frm.A20.value !== ""){
 	Template +=  "  " + "- Other margin(s), specify : " + frm.A20.value + "\n" ;
+}
+
+if (document.getElementById("A46").checked || document.getElementById("A47").checked ||
+	document.getElementById("A48").checked || document.getElementById("A49").checked ||
+	document.getElementById("A50").checked || document.getElementById("A51").checked ||
+	document.getElementById("A52").checked || document.getElementById("A53").checked ||
+	document.getElementById("A54").checked || document.getElementById("A55").checked ||
+	document.getElementById("A56").checked){
+	Template += "\n" +  "- Margin Status for Non-Invasive Tumor: " + "\n";
+}
+
+if (document.getElementById("A46").checked){
+	Template += frm.A46.value + "\n";
+}
+
+if (document.getElementById("A47").checked){
+	Template += frm.A47.value + "\n";
+}
+
+if (document.getElementById("A48").checked){
+	Template += frm.A48.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
+}
+
+if (document.getElementById("A50").checked){
+	Template += frm.A50.value + "\n";
+}
+
+if (document.getElementById("A51").checked){
+	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A52").checked){
+	Template += frm.A52.value + "\n";
+}
+
+if (document.getElementById("A53").checked){
+	Template += frm.A53.value + "\n";
+}
+
+if (document.getElementById("A54").checked){
+	Template += frm.A54.value + "\n";
+}
+
+if (document.getElementById("A55").checked){
+	Template += frm.A55.value + "\n";
+}
+
+if (document.getElementById("A56").checked){
+	Template += frm.A56.value + "\n";
 }
 
 if (frm.A21.value + frm.A22.value + frm.A23.value + frm.A24.value + frm.A25.value !== ""){
@@ -251,7 +312,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Small_Int_4.2.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2025-06-Update\Gastrointestinal Protocol Folder\Small_Int_4.3.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the small intestine
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -342,25 +403,26 @@ table, th, td {
 </p>
 <p>
 <table border="1">
-<col width="40%">
+<col width="50%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Small_Int_4.2.0.0.REL_CAPCP.pdf#page=8" target="_blank">Histologic type (WHO 2019)</a>:</label> 
+<label class="description">- Histologic type (WHO 2019):</label> 
 </td>
 <td>
 <select class="element select large" ID="A06">
 	<option value=""></option>
-	<option value="Adenocarcinoma (not otherwise characterized)">Adenocarcinoma (not otherwise characterized)</option>
+	<option value="Adenocarcinoma, NOS">Adenocarcinoma, NOS</option>
 	<option value="Mucinous adenocarcinoma (greater than 50% mucinous)">Mucinous adenocarcinoma (greater than 50% mucinous)</option>
-	<option value="Poorly cohesive cell carcinoma with or without signet-ring cells">Poorly cohesive cell carcinoma with or without signet-ring cells</option>	
+	<option value="Poorly cohesive cell carcinoma">Poorly cohesive cell carcinoma</option>	
+	<option value="Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>	
 	<option value="Medullary carcinoma">Medullary carcinoma</option>
 	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
 	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
 	<option value="Neuroendocrine carcinoma (poorly differentiated)">Neuroendocrine carcinoma (poorly differentiated)</option>
-	<option value="Mixed adenoneuroendocrine carcinoma">Mixed adenoneuroendocrine carcinoma</option>
-	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Mixed adenoneuroendocrine carcinoma (MiNEN) (specify components):">Mixed adenoneuroendocrine carcinoma (MiNEN) (specify components):</option>
+	<option value="Undifferentiated carcinoma, NOS">Undifferentiated carcinoma, NOS</option>
 	<option value="Other (specify):">Other (specify):</option>
 	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
 </select>
@@ -369,7 +431,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Small_Int_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic grade</a>:</label>
+<label class="description">- Histologic grade:</label>
 </td>
 <td>
 <select class="element select large" ID="A07">
@@ -398,6 +460,8 @@ table, th, td {
 	<option value="Tumor invades through the muscularis propria into the subserosa, or extends into nonperitonealized perimuscular tissue (mesentery or retroperitoneum) without serosal penetration">Tumor invades through the muscularis propria into the subserosa, or extends into nonperitonealized perimuscular tissue (mesentery or retroperitoneum) without serosal penetration</option>
 	<option value="Tumor perforates the visceral peritoneum">Tumor perforates the visceral peritoneum</option>
 	<option value="Tumor directly invades other organs/structures (specify: Other loops of small intestine, mesentery of adjacent loops of bowel, abdominal wall-by way of serosa, pancreas, bile duct, etc.)">Tumor directly invades other organs/structures (specify: Other loops of small intestine, mesentery of adjacent loops of bowel, abdominal wall-by way of serosa, pancreas, bile duct, etc.)</option>
+	<option value="Tumor invasdes pancreas">Tumor invasdes pancreas</option>
+	<option value="Tumor invasdes bile duct">Tumor invasdes bile duct</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 	<option value="No evidence of primary tumor">No evidence of primary tumor</option>
 </select>
@@ -406,7 +470,21 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Lymphovascular invasion: </label>
+<label class="description">- Macroscopic Tumor Perforation: </label>
+</td>
+<td>
+<select class="element select large" ID="A57">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Lymphatic and/or Vascular invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A08">
@@ -420,7 +498,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class=""> + Perineural invasion: </label>
+<label class="description"> - Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A09">
@@ -431,9 +509,29 @@ table, th, td {
 </select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label class="description">- Treatment effect: </label>
+</td>
+<td>
+<select class="element select large" ID="A45">
+	<option value=""></option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Present, with no viable cancer cells (complete response, score 0)">Present, with no viable cancer cells (complete response, score 0)</option>
+	<option value="Present, with single cells or rare small groups of cancer cells (near complete response, score 1)">Present, with single cells or rare small groups of cancer cells (near complete response, score 1)</option>
+	<option value="Present, with residual cancer showing evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response, score 2)">Present, with residual cancer showing evident tumor regression, but more than single cells or rare small groups of cancer cells (partial response, score 2)</option>
+	<option value="Present, NOS">Present, NOS</option>
+	<option value="Absent, with extensive residual cancer and no evident tumor regression (poor or no response, score
+3)">Absent, with extensive residual cancer and no evident tumor regression (poor or no response, score
+3)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
 </table>
 </p>
-
+* Please consider performing MMR/MSI and HER2 tests.
 </fieldset>
 </p>
 
@@ -605,6 +703,44 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Margin Status for Non-Invasive Tumor:</label></legend>
+<p>
+<table border="1">
+<col width="70%">
+<tr>
+<td>
+<input class="element checkbox" type="checkbox" id="A46"  value="  - All margins negative for high-grade dysplasia and low-grade dysplasia"><label class="choice" >All margins negative for high-grade dysplasia and low-grade dysplasia</label>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<input class="element checkbox" type="checkbox" id="A47"  value="  - High-grade dysplasia present at margin"><label class="choice" >High-grade dysplasia present at margin</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox" id="A48"  value="    - Proximal(specify):"><label class="choice" >Proximal(specify):</label>
+<input class="element checkbox" type="checkbox" id="A49"  value="    - Distal (specify):"><label class="choice" >Distal (specify):</label>
+<input class="element checkbox" type="checkbox" id="A50"  value="    - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A51"  value="    - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</td>
+</tr>
+<tr>
+<td  valign="top">
+<input class="element checkbox" type="checkbox" id="A52"  value="  - Low-grade dysplasia present at margin"><label class="choice" >Low-grade dysplasia present at margin</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox" id="A53"  value="    - Proximal(specify):"><label class="choice" >Proximal(specify):</label>
+<input class="element checkbox" type="checkbox" id="A54"  value="    - Distal (specify):"><label class="choice" >Distal (specify):</label>
+<input class="element checkbox" type="checkbox" id="A55"  value="    - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A56"  value="    - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+</td>
+</tr>
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Regional ymph nodes: </label></legend>
 <p>
 <table border="1">
@@ -694,7 +830,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Small_Int_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Primary tumor (pT)</a>:</label>
+<label class="description">- Primary tumor (pT):</label>
 </td>
 <td>
 <select class="element select large" ID="A29">
@@ -703,8 +839,9 @@ table, th, td {
 	<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 	<option value="  - pTis: Carcinoma in situ/high-grade dysplasia">pTis: Carcinoma in situ/high-grade dysplasia</option>
 	<option value="  - pT1: Tumor invades the lamina propria or submucosa">pT1: Tumor invades the lamina propria or submucosa</option>
-	<option value="  - pT1a: Tumor invades the lamina propria">pT1a:Tumor invades the lamina propria</option>
-	<option value="  - pT1b: Tumor invades the submucosa">pT1b: umor invades the submucosa</option>
+	<option value="  - pT1a: Tumor invades the lamina propria">pT1a: Tumor invades the lamina propria</option>
+	<option value="  - pT1b: Tumor invades the submucosa">pT1b: Tumor invades the submucosa</option>
+	<option value="  - pT1 (subcategory cannot be determined)">pT1 (subcategory cannot be determined)</option>
 	<option value="  - pT2: Tumor invades the muscularis propria">pT2: Tumor invades the muscularis propria</option>
 	<option value="  - pT3: Tumor invades through the muscularis propria into the subserosa or extends into the nonperitonealized perimuscular tissue (mesentery or retroperitoneum) without serosal penetration">pT3: Tumor invades through the muscularis propria into the subserosa or extends into the nonperitonealized perimuscular tissue (mesentery or retroperitoneum) without serosal penetration</option>
 	<option value="  - pT4: Tumor perforates the visceral peritoneum or directly invades other organs or structures">pT4: Tumor perforates the visceral peritoneum or directly invades other organs or structures</option>
@@ -714,7 +851,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Small_Int_4.2.0.0.REL_CAPCP.pdf#page=13" target="_blank">Regional lymph nodes (pN)</a>:</label>
+<label class="description">- Regional lymph nodes (pN):</label>
 </td>
 <td>
 <select class="element select large" ID="A30">
@@ -791,9 +928,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 20-Jul-2021,<br>
+Last upated on 24-Jun-2025,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Small Intestine 4.2.0.0 (June 2021), <br>
+Small Intestine 4.3.0.0 (June 2025), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
