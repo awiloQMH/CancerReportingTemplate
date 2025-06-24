@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffuse Pleural Mesothelioma Reporting Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .form-table td {
+            padding: 8px;
+            vertical-align: top;
+            border-bottom: 1px solid #eee;
+        }
+        .form-table tr:last-child td {
+            border-bottom: none;
+        }
+        .question {
+            font-weight: bold;
+            width: 50%;
+        }
+        .response {
+            width: 50%;
+        }
+        label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-item {
+            margin-right: 15px;
+            margin-bottom: 5px;
+            white-space: nowrap;
+        }
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .radio-item {
+            margin-right: 15px;
+            margin-bottom: 5px;
+            white-space: nowrap;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #reportOutput {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f5f5f5;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        .required {
+            color: red;
+        }
+        .optional {
+            font-style: italic;
+            color: #666;
+        }
+        .notes {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .inline-input {
+            display: inline-block;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Protocol for the Examination of Specimens from Patients with Diffuse Pleural Mesothelioma</h1>
+    <p><strong>Version:</strong> 5.0.1.0</p>
+    <p><strong>Protocol Posting Date:</strong> June 2025</p>
+    <p><strong>CAP Laboratory Accreditation Program Protocol Required Use Date:</strong> March 2026</p>
+
+    <div class="form-section">
+        <h2>CLINICAL</h2>
+        <table class="form-table">
+            <tr>
+                <td class="question">+Clinical History (select all that apply)</td>
+                <td class="response">
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="neoadjuvant" name="clinicalHistory">
+                            <label for="neoadjuvant">Neoadjuvant therapy performed</label>
+                            <input type="text" id="neoadjuvantType" name="neoadjuvantType" class="inline-input" placeholder="specify type">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="otherClinical" name="clinicalHistory">
+                            <label for="otherClinical">Other</label>
+                            <input type="text" id="otherClinicalSpecify" name="otherClinicalSpecify" class="inline-input" placeholder="specify">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="form-section">
+        <h2>SPECIMEN</h2>
+        <table class="form-table">
+            <tr>
+                <td class="question">Procedure (select all that apply)</td>
+                <td class="response">
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pneumonectomy" name="procedure">
+                            <label for="pneumonectomy">Extrapleural pneumonectomy</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extendedPleurectomy" name="procedure">
+                            <label for="extendedPleurectomy">Extended pleurectomy/decortication</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pleurectomy" name="procedure">
+                            <label for="pleurectomy">Pleurectomy/decortication</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="partialPleurectomy" name="procedure">
+                            <label for="partialPleurectomy">Partial pleurectomy</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="otherProcedure" name="procedure">
+                            <label for="otherProcedure">Other</label>
+                            <input type="text" id="otherProcedureSpecify" name="otherProcedureSpecify" class="inline-input" placeholder="specify">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="procedureNotSpecified" name="procedure">
+                            <label for="procedureNotSpecified">Not specified</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">Specimen Laterality</td>
+                <td class="response">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="lateralityRight" name="laterality" value="Right">
+                            <label for="lateralityRight">Right</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="lateralityLeft" name="laterality" value="Left">
+                            <label for="lateralityLeft">Left</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="lateralityNotSpecified" name="laterality" value="Not specified">
+                            <label for="lateralityNotSpecified">Not specified</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="form-section">
+        <h2>TUMOR</h2>
+        <table class="form-table">
+            <tr>
+                <td class="question">Tumor Focality</td>
+                <td class="response">
+                    <select id="focality" name="focality">
+                        <option value="">-- Select --</option>
+                        <option value="Localized">Localized</option>
+                        <option value="Diffuse">Diffuse</option>
+                        <option value="Cannot be determined">Cannot be determined</option>
+                    </select>
+                    <div id="focalityExplainDiv" style="margin-top: 5px; display: none;">
+                        <input type="text" id="focalityCannotDetermineExplain" name="focalityCannotDetermineExplain" placeholder="explain">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">Tumor Site (select all that apply)</td>
+                <td class="response">
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="parietalPleura" name="tumorSite">
+                            <label for="parietalPleura">Parietal pleura</label>
+                            <input type="text" id="parietalPleuraSpecify" name="parietalPleuraSpecify" class="inline-input" placeholder="specify">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="visceralPleura" name="tumorSite">
+                            <label for="visceralPleura">Visceral pleura</label>
+                            <input type="text" id="visceralPleuraSpecify" name="visceralPleuraSpecify" class="inline-input" placeholder="specify">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="diaphragm" name="tumorSite">
+                            <label for="diaphragm">Diaphragm</label>
+                            <input type="text" id="diaphragmSpecify" name="diaphragmSpecify" class="inline-input" placeholder="specify">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="otherTumorSite" name="tumorSite">
+                            <label for="otherTumorSite">Other</label>
+                            <input type="text" id="otherTumorSiteSpecify" name="otherTumorSiteSpecify" class="inline-input" placeholder="specify">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="tumorSiteNotSpecified" name="tumorSite">
+                            <label for="tumorSiteNotSpecified">Not specified</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">+Tumor Size (for localized tumors only)</td>
+                <td class="response">
+                    <select id="tumorSize" name="tumorSize">
+                        <option value="">-- Select --</option>
+                        <option value="Greatest dimension in Centimeters (cm)">Greatest dimension (cm)</option>
+                        <option value="Cannot be determined">Cannot be determined</option>
+                    </select>
+                    <div id="tumorSizeCmDiv" style="margin-top: 5px; display: none;">
+                        <input type="text" id="tumorSizeCm" name="tumorSizeCm" placeholder="cm">
+                    </div>
+                    <div id="tumorSizeCannotDetermineExplainDiv" style="margin-top: 5px; display: none;">
+                        <input type="text" id="tumorSizeCannotDetermineExplain" name="tumorSizeCannotDetermineExplain" placeholder="explain">
+                    </div>
+                    <div style="margin-top: 5px;">
+                        <label>+Additional Dimension (cm):</label>
+                        <input type="text" id="tumorSizeAdditional1" name="tumorSizeAdditional1" style="width: 50px;"> x 
+                        <input type="text" id="tumorSizeAdditional2" name="tumorSizeAdditional2" style="width: 50px;"> cm
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">Histologic Type</td>
+                <td class="response">
+                    <select id="histologicType" name="histologicType">
+                        <option value="">-- Select --</option>
+                        <option value="Epithelioid mesothelioma">Epithelioid mesothelioma</option>
+                        <option value="Sarcomatoid mesothelioma">Sarcomatoid mesothelioma</option>
+                        <option value="Biphasic mesothelioma">Biphasic mesothelioma</option>
+                        <option value="Other histologic type not listed">Other histologic type not listed</option>
+                        <option value="Cannot be determined">Cannot be determined</option>
+                    </select>
+                    <div id="histologicOtherSpecifyDiv" style="margin-top: 5px; display: none;">
+                        <input type="text" id="histologicOtherSpecify" name="histologicOtherSpecify" placeholder="specify">
+                    </div>
+                    <div id="histologicCannotDetermineExplainDiv" style="margin-top: 5px; display: none;">
+                        <input type="text" id="histologicCannotDetermineExplain" name="histologicCannotDetermineExplain" placeholder="explain">
+                    </div>
+                </td>
+            </tr>
+            <tr id="epithelioidFeaturesRow" style="display: none;">
+                <td class="question">+Epithelioid Features</td>
+                <td class="response">
+                    <div>
+                        <label>Architectural Pattern (percentages must total 100%)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="patternTubulopapillary" name="architecturalPattern">
+                                <label for="patternTubulopapillary">Tubulopapillary:</label>
+                                <input type="text" id="patternTubulopapillaryPct" name="patternTubulopapillaryPct" style="width: 50px;"> %
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="patternTrabecular" name="architecturalPattern">
+                                <label for="patternTrabecular">Trabecular:</label>
+                                <input type="text" id="patternTrabecularPct" name="patternTrabecularPct" style="width: 50px;"> %
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="patternAdenomatoid" name="architecturalPattern">
+                                <label for="patternAdenomatoid">Adenomatoid:</label>
+                                <input type="text" id="patternAdenomatoidPct" name="patternAdenomatoidPct" style="width: 50px;"> %
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="patternSolid" name="architecturalPattern">
+                                <label for="patternSolid">Solid:</label>
+                                <input type="text" id="patternSolidPct" name="patternSolidPct" style="width: 50px;"> %
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="patternMicropapillary" name="architecturalPattern">
+                                <label for="patternMicropapillary">Micropapillary:</label>
+                                <input type="text" id="patternMicropapillaryPct" name="patternMicropapillaryPct" style="width: 50px;"> %
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="patternOther" name="architecturalPattern">
+                                <label for="patternOther">Other:</label>
+                                <input type="text" id="patternOtherSpecify" name="patternOtherSpecify" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <label>Cytological Features</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cytologicalRhabdoid" name="cytologicalFeatures">
+                                <label for="cytologicalRhabdoid">Rhabdoid</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cytologicalDeciduoid" name="cytologicalFeatures">
+                                <label for="cytologicalDeciduoid">Deciduoid</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cytologicalSmallCell" name="cytologicalFeatures">
+                                <label for="cytologicalSmallCell">Small cell</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cytologicalClearCell" name="cytologicalFeatures">
+                                <label for="cytologicalClearCell">Clear cell</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cytologicalSignetRing" name="cytologicalFeatures">
+                                <label for="cytologicalSignetRing">Signet ring</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cytologicalLymphohistiocytoid" name="cytologicalFeatures">
+                                <label for="cytologicalLymphohistiocytoid">Lymphohistiocytoid</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cytologicalPleomorphic" name="cytologicalFeatures">
+                                <label for="cytologicalPleomorphic">Pleomorphic</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cytologicalOther" name="cytologicalFeatures">
+                                <label for="cytologicalOther">Other:</label>
+                                <input type="text" id="cytologicalOtherSpecify" name="cytologicalOtherSpecify" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <label>Stromal Features</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stromalMyxoid" name="stromalFeatures">
+                                <label for="stromalMyxoid">Myxoid predominant</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stromalOther" name="stromalFeatures">
+                                <label for="stromalOther">Other:</label>
+                                <input type="text" id="stromalOtherSpecify" name="stromalOtherSpecify" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr id="sarcomatoidFeaturesRow" style="display: none;">
+                <td class="question">+Sarcomatoid Features</td>
+                <td class="response">
+                    <div>
+                        <label>Cytological Features</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sarcomatoidLymphohistiocytoid" name="sarcomatoidCytological">
+                                <label for="sarcomatoidLymphohistiocytoid">Lymphohistiocytoid</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sarcomatoidTransitional" name="sarcomatoidCytological">
+                                <label for="sarcomatoidTransitional">Transitional</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sarcomatoidPleomorphic" name="sarcomatoidCytological">
+                                <label for="sarcomatoidPleomorphic">Pleomorphic</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sarcomatoidOther" name="sarcomatoidCytological">
+                                <label for="sarcomatoidOther">Other:</label>
+                                <input type="text" id="sarcomatoidOtherSpecify" name="sarcomatoidOtherSpecify" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <label>Stromal Features</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sarcomatoidDesmoplastic" name="sarcomatoidStromal">
+                                <label for="sarcomatoidDesmoplastic">Desmoplastic</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sarcomatoidHeterologous" name="sarcomatoidStromal">
+                                <label for="sarcomatoidHeterologous">With heterologous differentiation</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sarcomatoidStromalOther" name="sarcomatoidStromal">
+                                <label for="sarcomatoidStromalOther">Other:</label>
+                                <input type="text" id="sarcomatoidStromalOtherSpecify" name="sarcomatoidStromalOtherSpecify" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr id="biphasicFeaturesRow" style="display: none;">
+                <td class="question">+Biphasic Features</td>
+                <td class="response">
+                    <div>
+                        <label>Percentage of Sarcomatoid Pattern</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="sarcomatoidPercentageSpecify" name="sarcomatoidPercentage" value="Specify percentage">
+                                <label for="sarcomatoidPercentageSpecify">Specify percentage:</label>
+                                <input type="text" id="sarcomatoidPercentageValue" name="sarcomatoidPercentageValue" style="width: 50px;"> %
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="sarcomatoidPercentageOther" name="sarcomatoidPercentage" value="Other">
+                                <label for="sarcomatoidPercentageOther">Other:</label>
+                                <input type="text" id="sarcomatoidPercentageOtherSpecify" name="sarcomatoidPercentageOtherSpecify" style="width: 100px;">
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="sarcomatoidPercentageCannotDetermine" name="sarcomatoidPercentage" value="Cannot be determined">
+                                <label for="sarcomatoidPercentageCannotDetermine">Cannot be determined</label>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">+Histologic Type Comment</td>
+                <td class="response">
+                    <input type="text" id="histologicTypeComment" name="histologicTypeComment">
+                </td>
+            </tr>
+            <tr>
+                <td class="question">+Nuclear Atypia Score <span class="notes">(for epithelioid mesothelioma)</span></td>
+                <td class="response">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="atypia1" name="nuclearAtypia" value="1 (mild)">
+                            <label for="atypia1">1 (mild)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="atypia2" name="nuclearAtypia" value="2 (moderate)">
+                            <label for="atypia2">2 (moderate)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="atypia3" name="nuclearAtypia" value="3 (severe)">
+                            <label for="atypia3">3 (severe)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="atypiaCannotDetermine" name="nuclearAtypia" value="Cannot be determined">
+                            <label for="atypiaCannotDetermine">Cannot be determined:</label>
+                            <input type="text" id="atypiaCannotDetermineExplain" name="atypiaCannotDetermineExplain" style="width: 150px;">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">+Mitotic Count Score <span class="notes">(for epithelioid mesothelioma)</span></td>
+                <td class="response">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="mitotic1" name="mitoticCount" value="1 (low, up to 1 mitosis per 2 mm2)">
+                            <label for="mitotic1">1 (low, up to 1 mitosis per 2 mm2)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="mitotic2" name="mitoticCount" value="2 (intermediate, 2 to 4 mitoses per 2 mm2)">
+                            <label for="mitotic2">2 (intermediate, 2 to 4 mitoses per 2 mm2)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="mitotic3" name="mitoticCount" value="3 (high, 5 or more mitoses per 2 mm2)">
+                            <label for="mitotic3">3 (high, 5 or more mitoses per 2 mm2)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="mitoticCannotDetermine" name="mitoticCount" value="Cannot be determined">
+                            <label for="mitoticCannotDetermine">Cannot be determined:</label>
+                            <input type="text" id="mitoticCannotDetermineExplain" name="mitoticCannotDetermineExplain" style="width: 150px;">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">+Nuclear Grade <span class="notes">(sum of nuclear atypia and mitotic count scores)</span></td>
+                <td class="response">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="nuclearGrade1" name="nuclearGrade" value="1 (sum score of 2 or 3)">
+                            <label for="nuclearGrade1">1 (sum score of 2 or 3)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="nuclearGrade2" name="nuclearGrade" value="2 (sum score of 4 or 5)">
+                            <label for="nuclearGrade2">2 (sum score of 4 or 5)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="nuclearGrade3" name="nuclearGrade" value="3 (sum score of 6)">
+                            <label for="nuclearGrade3">3 (sum score of 6)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="nuclearGradeCannotDetermine" name="nuclearGrade" value="Cannot be determined">
+                            <label for="nuclearGradeCannotDetermine">Cannot be determined:</label>
+                            <input type="text" id="nuclearGradeCannotDetermineExplain" name="nuclearGradeCannotDetermineExplain" style="width: 150px;">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">+Necrosis</td>
+                <td class="response">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="necrosisNotIdentified" name="necrosis" value="Not identified">
+                            <label for="necrosisNotIdentified">Not identified</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="necrosisPresent" name="necrosis" value="Present">
+                            <label for="necrosisPresent">Present</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="necrosisCannotDetermine" name="necrosis" value="Cannot be determined">
+                            <label for="necrosisCannotDetermine">Cannot be determined:</label>
+                            <input type="text" id="necrosisCannotDetermineExplain" name="necrosisCannotDetermineExplain" style="width: 150px;">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">Histologic Grade <span class="notes">(required only for epithelioid mesothelioma)</span></td>
+                <td class="response">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="gradeNotApplicable" name="histologicGrade" value="Not applicable">
+                            <label for="gradeNotApplicable">Not applicable</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="gradeLow" name="histologicGrade" value="Low grade (nuclear grades 1 and 2 without necrosis)">
+                            <label for="gradeLow">Low grade (nuclear grades 1 and 2 without necrosis)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="gradeHigh" name="histologicGrade" value="High grade (nuclear grade 2 with necrosis, or nuclear grade 3 with or without necrosis)">
+                            <label for="gradeHigh">High grade (nuclear grade 2 with necrosis, or nuclear grade 3 with or without necrosis)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="gradeCannotDetermine" name="histologicGrade" value="Cannot be determined">
+                            <label for="gradeCannotDetermine">Cannot be determined:</label>
+                            <input type="text" id="gradeCannotDetermineExplain" name="gradeCannotDetermineExplain" style="width: 150px;">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">Tumor Extent (select all that apply)</td>
+                <td class="response">
+                    <div class="checkbox-group" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px;">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentLimitedParietal" name="tumorExtent" value="Limited to parietal pleura without involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura">
+                            <label for="extentLimitedParietal">Limited to parietal pleura without involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentLimitedParietalFocal" name="tumorExtent" value="Limited to parietal pleura with focal involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura">
+                            <label for="extentLimitedParietalFocal">Limited to parietal pleura with focal involvement of ipsilateral visceral, mediastinal, or diaphragmatic pleura</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentAllIpsilateral" name="tumorExtent" value="All ipsilateral pleural surfaces (including fissure)">
+                            <label for="extentAllIpsilateral">All ipsilateral pleural surfaces (including fissure)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentDiaphragmaticMuscle" name="tumorExtent" value="Diaphragmatic muscle">
+                            <label for="extentDiaphragmaticMuscle">Diaphragmatic muscle</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentLungParenchyma" name="tumorExtent" value="Lung parenchyma">
+                            <label for="extentLungParenchyma">Lung parenchyma</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentEndothoracicFascia" name="tumorExtent" value="Endothoracic fascia">
+                            <label for="extentEndothoracicFascia">Endothoracic fascia</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentMediastinalFat" name="tumorExtent" value="Mediastinal fat">
+                            <label for="extentMediastinalFat">Mediastinal fat</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentChestWallSolitary" name="tumorExtent" value="Soft tissues of chest wall in a solitary focus">
+                            <label for="extentChestWallSolitary">Soft tissues of chest wall in a solitary focus</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentChestWallDiffuse" name="tumorExtent" value="Soft tissues of chest wall diffusely or in multiple foci">
+                            <label for="extentChestWallDiffuse">Soft tissues of chest wall diffusely or in multiple foci</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentPericardium" name="tumorExtent" value="Into but not through the pericardium">
+                            <label for="extentPericardium">Into but not through the pericardium</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentRibs" name="tumorExtent" value="Rib(s)">
+                            <label for="extentRibs">Rib(s)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentMediastinalOrgans" name="tumorExtent" value="Mediastinal organ(s)">
+                            <label for="extentMediastinalOrgans">Mediastinal organ(s):</label>
+                            <input type="text" id="extentMediastinalOrgansSpecify" name="extentMediastinalOrgansSpecify" style="width: 100px;">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentOther" name="tumorExtent" value="Other">
+                            <label for="extentOther">Other:</label>
+                            <input type="text" id="extentOtherSpecify" name="extentOtherSpecify" style="width: 100px;">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentCannotDetermine" name="tumorExtent" value="Cannot be determined">
+                            <label for="extentCannotDetermine">Cannot be determined:</label>
+                            <input type="text" id="extentCannotDetermineExplain" name="extentCannotDetermineExplain" style="width: 100px;">
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="extentNoEvidence" name="tumorExtent" value="No evidence of primary tumor">
+                            <label for="extentNoEvidence">No evidence of primary tumor</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">Treatment Effect</td>
+                <td class="response">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="treatmentNoKnown" name="treatmentEffect" value="No known presurgical therapy">
+                            <label for="treatmentNoKnown">No known presurgical therapy</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="treatmentNotIdentified" name="treatmentEffect" value="Not identified">
+                            <label for="treatmentNotIdentified">Not identified</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="treatmentPresent" name="treatmentEffect" value="Present">
+                            <label for="treatmentPresent">Present</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">Percentage of Residual Viable Tumor</td>
+                <td class="response">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="residualSpecify" name="residualTumor" value="Specify percentage">
+                            <label for="residualSpecify">Specify percentage:</label>
+                            <input type="text" id="residualPercentage" name="residualPercentage" style="width: 50px;"> %
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="residualOther" name="residualTumor" value="Other">
+                            <label for="residualOther">Other:</label>
+                            <input type="text" id="residualOtherSpecify" name="residualOtherSpecify" style="width: 100px;">
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="residualCannotDetermine" name="residualTumor" value="Cannot be determined">
+                            <label for="residualCannotDetermine">Cannot be determined</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="residualCannotDetermineExplain" name="residualTumor" value="Cannot be determined">
+                            <label for="residualCannotDetermineExplain">Cannot be determined:</label>
+                            <input type="text" id="residualCannotDetermineExplainText" name="residualCannotDetermineExplainText" style="width: 150px;">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="question">+Tumor Comment</td>
+                <td class="response">
+                    <input type="text" id="tumorComment" name="tumorComment">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Continue with other sections (MARGINS, REGIONAL LYMPH NODES, etc.) in the same table format -->
+
+    <button id="generateReport">Generate Report</button>
+    <button id="copyToClipboard">Copy to Clipboard</button>
+    <button id="resetForm">Reset Form</button>
+
+    <h2>Generated Report:</h2>
+    <textarea id="reportOutput" readonly></textarea>
+
+    <script>
+        // Show/hide explanation fields based on selections
+        document.getElementById('focality').addEventListener('change', function() {
+            document.getElementById('focalityExplainDiv').style.display = 
+                this.value === 'Cannot be determined' ? 'block' : 'none';
+        });
+
+        document.getElementById('tumorSize').addEventListener('change', function() {
+            document.getElementById('tumorSizeCmDiv').style.display = 
+                this.value === 'Greatest dimension in Centimeters (cm)' ? 'block' : 'none';
+            document.getElementById('tumorSizeCannotDetermineExplainDiv').style.display = 
+                this.value === 'Cannot be determined' ? 'block' : 'none';
+        });
+
+        document.getElementById('histologicType').addEventListener('change', function() {
+            // Show/hide histologic type specific features
+            document.getElementById('epithelioidFeaturesRow').style.display = 
+                this.value === 'Epithelioid mesothelioma' ? 'table-row' : 'none';
+            document.getElementById('sarcomatoidFeaturesRow').style.display = 
+                this.value === 'Sarcomatoid mesothelioma' ? 'table-row' : 'none';
+            document.getElementById('biphasicFeaturesRow').style.display = 
+                this.value === 'Biphasic mesothelioma' ? 'table-row' : 'none';
+            
+            // Show/hide other specification fields
+            document.getElementById('histologicOtherSpecifyDiv').style.display = 
+                this.value === 'Other histologic type not listed' ? 'block' : 'none';
+            document.getElementById('histologicCannotDetermineExplainDiv').style.display = 
+                this.value === 'Cannot be determined' ? 'block' : 'none';
+        });
+
+        // Generate report function
+        document.getElementById('generateReport').addEventListener('click', function() {
+            let report = "**Protocol for the Examination of Specimens from Patients with Diffuse Pleural Mesothelioma**\n";
+            report += "**Version:** 5.0.1.0\n";
+            report += "**Protocol Posting Date:** June 2025\n\n";
+
+            // CLINICAL
+            report += "**CLINICAL**\n";
+            const clinicalHistory = [];
+            if (document.getElementById('neoadjuvant').checked) {
+                clinicalHistory.push(`Neoadjuvant therapy performed (specify type, if known): ${document.getElementById('neoadjuvantType').value}`);
+            }
+            if (document.getElementById('otherClinical').checked) {
+                clinicalHistory.push(`Other (specify): ${document.getElementById('otherClinicalSpecify').value}`);
+            }
+            if (clinicalHistory.length > 0) {
+                report += `Clinical History: ${clinicalHistory.join('; ')}\n`;
+            }
+
+            // SPECIMEN
+            report += "\n**SPECIMEN**\n";
+            const procedures = [];
+            if (document.getElementById('pneumonectomy').checked) procedures.push("Extrapleural pneumonectomy");
+            if (document.getElementById('extendedPleurectomy').checked) procedures.push("Extended pleurectomy / decortication");
+            if (document.getElementById('pleurectomy').checked) procedures.push("Pleurectomy / decortication");
+            if (document.getElementById('partialPleurectomy').checked) procedures.push("Partial pleurectomy");
+            if (document.getElementById('otherProcedure').checked) procedures.push(`Other (specify): ${document.getElementById('otherProcedureSpecify').value}`);
+            if (document.getElementById('procedureNotSpecified').checked) procedures.push("Not specified");
+            if (procedures.length > 0) {
+                report += `Procedure: ${procedures.join(', ')}\n`;
+            }
+
+            const laterality = document.querySelector('input[name="laterality"]:checked');
+            if (laterality) {
+                report += `Specimen Laterality: ${laterality.value}\n`;
+            }
+
+            // TUMOR
+            report += "\n**TUMOR**\n";
+            const focality = document.getElementById('focality');
+            if (focality.value) {
+                report += `Tumor Focality: ${focality.value}`;
+                if (focality.value === 'Cannot be determined' && document.getElementById('focalityCannotDetermineExplain').value) {
+                    report += `: ${document.getElementById('focalityCannotDetermineExplain').value}`;
+                }
+                report += '\n';
+            }
+
+            // Continue with other sections...
+
+            document.getElementById('reportOutput').value = report;
+        });
+
+        document.getElementById('copyToClipboard').addEventListener('click', function() {
+            const reportOutput = document.getElementById('reportOutput');
+            reportOutput.select();
+            document.execCommand('copy');
+            alert('Report copied to clipboard!');
+        });
+
+        document.getElementById('resetForm').addEventListener('click', function() {
+            if (confirm('Are you sure you want to reset the form?')) {
+                document.querySelectorAll('input[type="text"], textarea').forEach(element => {
+                    element.value = '';
+                });
+                document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(element => {
+                    element.checked = false;
+                });
+                document.querySelectorAll('select').forEach(element => {
+                    element.selectedIndex = 0;
+                });
+                document.getElementById('reportOutput').value = '';
+                
+                // Hide all conditional fields
+                document.querySelectorAll('[id$="Div"]').forEach(div => {
+                    div.style.display = 'none';
+                });
+                document.getElementById('epithelioidFeaturesRow').style.display = 'none';
+                document.getElementById('sarcomatoidFeaturesRow').style.display = 'none';
+                document.getElementById('biphasicFeaturesRow').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
