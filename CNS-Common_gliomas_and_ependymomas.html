@@ -99,7 +99,7 @@ if (frm.A03.value !== ""){
 	Template += "- WHO Grade: " + frm.A03.value + "\n" + "\n";
 }
 
-if (frm.A04.value + frm.A05.value + frm.A06.value + frm.A30.value + frm.A08.value + frm.A31.value + frm.A32.value + frm.A10.value + frm.A33.value + frm.A34.value + frm.A35.value + frm.A36.value + frm.A37.value + frm.A38.value + frm.A39.value + frm.A40.value !== ""){
+if (frm.A04.value + frm.A05.value + frm.A06.value + frm.A30.value + frm.A08.value + frm.A31.value + frm.A32.value + frm.A10.value + frm.A33.value + frm.A34.value + frm.A36.value + frm.A37.value + frm.A38.value + frm.A39.value + frm.A40.value !== ""){
 	Template += "- Biomarker studies for gliomas : " + "\n";
 }
 
@@ -139,13 +139,13 @@ if (frm.A33.value !== ""){
 }
 
 if (frm.A34.value !== ""){
-	Template += "  - Histone H3 K27M expression (immunohistochemistry): " + frm.A34.value + "\n";
+	Template += "  - Histone H3 trimethylated K27 (immunohistochemistry): " + frm.A34.value + "\n";
 }
-
+/*
 if (frm.A35.value !== ""){
 	Template += "  - Histone H3 G34W expression (immunohistochemistry): " + frm.A35.value + "\n" ;
 }
-
+*/
 if (frm.A36.value !== ""){
 	Template += "  - Histone H3 mutation (by Sanger sequencing): " + frm.A36.value  + "\n" + "    - see report: MB#" + "\n";
 }
@@ -362,7 +362,7 @@ Layer 4: Molecular Information<br>
 	</TD>
   </TR>
   <TR>
-    <TD>- Histone H3 K27M (IHC):</TD>
+    <TD>- Histone H3 trimethylated K27 (IHC):</TD>
     <TD><select class="element select large" ID="A34">
 			<option value=""></option>
 			<option value="Cannot be determined">Cannot be determined</option>
@@ -371,6 +371,7 @@ Layer 4: Molecular Information<br>
 		</select>
 	</TD>
   </TR>
+<!--
   <TR>
     <TD>- Histone H3 G34W (IHC):</TD>
     <TD><select class="element select large" ID="A35">
@@ -381,6 +382,7 @@ Layer 4: Molecular Information<br>
 		</select>
 	</TD>
   </TR>
+-->
   <TR>     
 	 <TD>- Histone H3 mutation (sequencing):</TD>
     <TD><select class="element select large" ID="A36">
@@ -443,7 +445,7 @@ Layer 4: Molecular Information<br>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Integrated diagnosis (WHO 2021)</a>:</label></legend>
+<legend><label class="description">Integrated diagnosis (WHO 2021):</label></legend>
 <p>
 <table border="1">
 <col width="50%">
@@ -768,7 +770,7 @@ Layer 4: Molecular Information<br>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histological type</a>:</label>
+<label class="description">- Histological type:</label>
 </td>
 <td>
 <select class="element select large" ID="A01">
@@ -801,7 +803,7 @@ Layer 4: Molecular Information<br>
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=14" target="_blank">CNS WHO Grade</a>:</label> 
+<label class="description">- CNS WHO Grade:</label> 
 </td>
 <td>
 <select class="element select large" ID="A03">
@@ -820,7 +822,7 @@ Layer 4: Molecular Information<br>
 
 <tr>
 <td>
-<label class="">+ <a href=".\cap\Cancer-Protocols-2022-09-Update\Central Nervous System Protocol Folder\CentralNervousSystem.Bx.Res_1.0.0.0.REL_CAPCP.pdf#page=17" target="_blank">Treatment effect</a>:</label> 
+<label class="">+ Treatment effect:</label> 
 </td>
 <td>
 <select class="element select large" ID="A13">
@@ -859,7 +861,7 @@ Layer 4: Molecular Information<br>
 <br>
 <br>
 <div id="footer">
-Last upated on 17-Feb-2024, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 21-Aug-2025, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Tumors of the Brain and Spinal Cord 1.0.0.0 (Sep 2022 version)<br>
 html form created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
