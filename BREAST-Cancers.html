@@ -184,11 +184,15 @@ if (frm.A39.value !== ""){
 }
 
 if (frm.A40.value !== ""){
-	Template += "- Treatment effect in the breast: " + frm.A40.value + "\n";
+	Template += "- Treatment Effect in the breast: " + frm.A40.value + "\n";
 }
 
 if (frm.A41.value !== ""){
-	Template += "- Treatment effect in the lymph nodes: " + frm.A41.value + "\n";
+	Template += "- Treatment Effect in the lymph nodes: " + frm.A41.value + "\n";
+}
+
+if (frm.A95.value !== ""){
+	Template += "- Grading of Treatment Effect (Miller and Payne system) : " + frm.A95.value + "\n";
 }
 
 if (frm.A88.value + frm.A89.value + frm.A90.value + frm.A91.value + frm.A92.value + 
@@ -472,6 +476,44 @@ table, th, td {
   border-collapse: collapse;
   padding: 4px;
 }
+
+.accordion {
+    background-color: #e6f9ff;
+    color: #4d2600;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid #4d2600;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+}
+
+.active, .accordion:hover {
+    background-color: #ffcc99;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #e0e0d1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
 </style>
 </head>
 
@@ -584,7 +626,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=20" target="_blank">Histologic type (2019)</a>:</label> 
+<label class="description">- Histologic type (2019):</label> 
 </td>
 <td>
 	<select class="element select large" ID="A14">
@@ -616,7 +658,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=25" target="_blank">Tumor focality</a>:</label>
+<label class=""> + Tumor focality:</label>
 </td>
 <td>
 	<select class="element select large" ID="A15">
@@ -630,7 +672,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td rowspan="4" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=21" target="_blank">Histologic grade (Nottingham)</a> :</label>
+<label class="description">- Histologic grade (Nottingham):</label>
 </td>
 <td>
 	<select class="element select large" ID="A19">
@@ -692,7 +734,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td rowspan="4" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=30" target="_blank">Tumor extension</a>:</label>
+<label class="description">- Tumor extension:</label>
 </td>
 </tr>
 <tr>
@@ -737,7 +779,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\Breast.Invasive_4.9.0.0.REL_CAPCP.pdf#page=34" target="_blank">Lymphatic and/or vascular invasion</a>: </label>
+<label class="description">- Lymphatic and/or vascular invasion: </label>
 </td>
 <td>
 	<select class="element select large" ID="A37">
@@ -781,7 +823,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=33" target="_blank">Treatment effect in the breast</a>: </label>
+<label class="description">- Breast Treatment Effect: </label>
 </td>
 <td>
 	<select class="element select large" ID="A40">
@@ -796,7 +838,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=37" target="_blank">Treatment effect in LN</a>: </label>
+<label class="description">- LN Treatment Effect: </label>
 </td>
 <td>
 	<select class="element select large" ID="A41">
@@ -811,75 +853,25 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 </tr>
 
 <tr>
-<td rowspan="8" valign="top">
-<label>+ <a href=".\cap\Cancer-Protocols-2024-06-Update\Breast Protocol Folder\Breast.Invasive_4.10.0.0.REL.CAPCP.pdf#page=35" target="_blank">Residual Cancer Burden</a>: </label>
-<br>
-<a href="http://www3.mdanderson.org/app/medcalc/index.cfm?pagename=jsconvert3" target="blank">MD Anderson Calculator</a><br>
-1. Primary tumor bed area<br>
-2. Lymph node<br>
-<a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\PLM_protocol_RCB_calculators_BRO.pdf" target="_blank">Protocol</a><br>
-<a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\jco.2007.10.6823.pdf" target="_blank">Symmans et al. 2007</a>
+<td>
+<label class="">+ Grading of Treatment Effects :<br>- (<a href=".\cap\1-s2.0-S0960977603001061-main.pdf" target="_blank">Miller and Payne system</a>) </label>
 </td>
-</tr>
-
-<tr>
-<td align="right">
-<label> RCB:</label>
-<input type="text" ID="A88" class="element text medium" size="20">
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label> Class:</label>
-	<select class="element select medium" ID="A89">
+<td>
+	<select class="element select large" ID="A95">
 		<option value=""></option>
-		<option value="RCB-0 (pCR)">RCB-0 (pCR)</option>
-		<option value="RCB-I">RCB-I</option>
-		<option value="RCB-II">RCB-II</option>
-		<option value="RCB-III">RCB-III</option>
+		<option value="No known presurgical therapy">No known presurgical therapy</option>
+		<option value="Grade 1: No change or some alteration to individual malignant cells but no reduction in overall cellularity.">Grade 1: No change or some alteration to individual malignant cells but no reduction in overall cellularity.</option>
+		<option value="Grade 2: A minor loss of tumour cells but overall cellularity still high; up to 30% loss.">Grade 2: A minor loss of tumour cells but overall cellularity still high; up to 30% loss.</option>
+		<option value="Grade 3: Between an estimated 30% and 90% reduction in tumour cells.">Grade 3: Between an estimated 30% and 90% reduction in tumour cells.</option>
+		<option value="Grade 4: A marked disappearance of tumour cells such that only small clusters or widely dispersed individual cells remain; more than 90% loss of tumour cells.">Grade 4: A marked disappearance of tumour cells such that only small clusters or widely dispersed individual cells remain; more than 90% loss of tumour cells.</option>
+		<option value="Grade 5: No malignant cells identifiable in sections from the site of the tumour; only vascular fibroelastotic stroma remains often containing macrophages. However, ductal carcinoma in situ (DCIS) may be present.">Grade 5: No malignant cells identifiable in sections from the site of the tumour; only vascular fibroelastotic stroma remains often containing macrophages. However, ductal carcinoma in situ (DCIS) may be present.</option>
 	</select>
 </td>
 </tr>
 
 <tr>
-<td align="right">
-<label>Primary tumor bed area (mm x mm) :</label> 
-<input type="text" ID="A90" class="element text small" size="20">
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label>Overall cancer cellularity (area%) :</label> 
-<input type="text" ID="A91" class="element text small" size="20">
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label>in situ (area%) :</label> 
-<input type="text" ID="A92" class="element text small" size="20">
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label>No. of positive LN :</label> 
-<input type="text" ID="A93" class="element text small" size="20">
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label>Largest LN metastasis (mm) :</label> 
-<input type="text" ID="A94" class="element text small" size="20">
-</td>
-</tr>
-
-<tr>
 <td rowspan="8" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=27" target="_blank">Ductal carcinoma in situ</a>: </label>
+<label class="description">- Ductal carcinoma in situ: </label>
 </td>
 <td>
 	<select class="element select large" ID="A20">
@@ -965,7 +957,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td valign="top">
-<label class="">+ <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=32" target="_blank">Microcalcifications</a>:</label>
+<label class="">+ Microcalcifications:</label>
 </td>
 <td>
 	<input class="element checkbox" class="element checkbox" type="checkbox" id="A67"  value="  - Not identified"><label class="choice" >Not identified</label>
@@ -1096,7 +1088,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=34" target="_blank">Surgical margins for DCIS</a>: </label></legend>
+<legend><label class="description">Surgical margins for DCIS: </label></legend>
 * Please try to measure all relevant margins. There are differences in management between margins that are directly involved, <2 mm and >= 2mm.
 <p>
 <table border="1">
@@ -1206,7 +1198,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\Breast.Invasive_4.9.0.0.REL_CAPCP.pdf#page=38" target="_blank">Regional lymph nodes</a>: </label></legend>
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
 <p>
 <table border="1">
@@ -1316,7 +1308,7 @@ Approximately 1000 tumor cells are contained in a 3-dimensional 0.2-mm cluster. 
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=38" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
 <p>
 <table border="1">
@@ -1425,14 +1417,86 @@ Approximately 1000 tumor cells are contained in a 3-dimensional 0.2-mm cluster. 
 
 <p>
 <label class="description">- Additional notes:</label>
+<p style="color:silver;">
+<table border="1"><tr>
+<col width="40%"><td rowspan="8" valign="top">
+NON ESSENTIAL DATA<br>
+<br>
+<label>+ Residual Cancer Burden: </label>
+<br>
+<a href="http://www3.mdanderson.org/app/medcalc/index.cfm?pagename=jsconvert3" target="blank">MD Anderson Calculator</a><br>
+1. Primary tumor bed area<br>
+2. Lymph node<br>
+<a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\PLM_protocol_RCB_calculators_BRO.pdf" target="_blank">Protocol</a><br>
+<a href=".\cap\Cancer-Protocols-2023-06-Update\Breast Protocol Folder\jco.2007.10.6823.pdf" target="_blank">Symmans et al. 2007</a>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label> RCB:</label>
+<input type="text" ID="A88" class="element text medium" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label> Class:</label>
+	<select class="element select medium" ID="A89">
+		<option value=""></option>
+		<option value="RCB-0 (pCR)">RCB-0 (pCR)</option>
+		<option value="RCB-I">RCB-I</option>
+		<option value="RCB-II">RCB-II</option>
+		<option value="RCB-III">RCB-III</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Primary tumor bed area (mm x mm) :</label> 
+<input type="text" ID="A90" class="element text small" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Overall cancer cellularity (area%) :</label> 
+<input type="text" ID="A91" class="element text small" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>in situ (area%) :</label> 
+<input type="text" ID="A92" class="element text small" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>No. of positive LN :</label> 
+<input type="text" ID="A93" class="element text small" size="20">
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Largest LN metastasis (mm) :</label> 
+<input type="text" ID="A94" class="element text small" size="20">
+</td>
+</tr>
+
+</table>
+</p>
 <textarea ID="A66" class = "element textarea medium" style="border-color:darkStaleblue;"></textarea>
 </p>
+
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
 <br>
 <TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
-
 <br><br>
 <!-- The button used to copy the text -->
 <button onclick="CopyToClipboard()">Copy text to Clipboard</button>
@@ -1443,7 +1507,7 @@ Approximately 1000 tumor cells are contained in a 3-dimensional 0.2-mm cluster. 
 <br>
 
 <div id="footer">
-Last upated on 29-May-2025,<br>
+Last upated on 10-Feb-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
 Breast Invasive Resection 4.10.0.0 (Jun 2024).<br>
 html form was created on 
