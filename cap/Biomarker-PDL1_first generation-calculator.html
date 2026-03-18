@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PD-L1 Calculator</title>
+
+<style type="text/css">
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #container {
+    width: 350px;
+    background: #ccd9ff;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #a3bced;
+    border-radius: 5px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f2f6ff;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  input[type="text"] {
+    width: 80px;
+    padding: 4px;
+  }
+  .btn-container {
+    text-align: center;
+    margin: 15px 0;
+  }
+  .btn-container input {
+    padding: 5px 15px;
+    font-weight: bold;
+  }
+  .footer-text {
+    font-size: 0.85em;
+    text-align: center;
+    margin-top: 15px;
+  }
+</style>
+
+<script type="text/javascript">
+function calculateScores() {
+  // Retrieve input values using IDs for absolute accuracy
+  var tpsInput = parseFloat(document.getElementById('in_tps').value);
+  var icRatioInput = parseFloat(document.getElementById('in_ic_ratio').value);
+  var icPosPctInput = parseFloat(document.getElementById('in_ic_pos').value);
+  
+  // Validation for empty or non-numeric inputs
+  if(isNaN(tpsInput) || isNaN(icRatioInput) || isNaN(icPosPctInput)) {
+    alert("Please fill in the tumor cell %, immune cell % in tumor, and +ve immune cells %.");
+    return;
+  }
+
+  // Clinical calculation based on a denominator of 100 viable tumor cells
+  var posTumorCells = tpsInput; 
+  var totalImmuneCells = icRatioInput; 
+  var posImmuneCells = totalImmuneCells * (icPosPctInput / 100);
+
+  // Score Calculations
+  var tps = posTumorCells;
+  var rawCps = posTumorCells + posImmuneCells;
+  var icScore = posImmuneCells; // IC score is positive immune cells per 100 tumor cells
+  var totalPosPct = ((posTumorCells + posImmuneCells) / (100 + totalImmuneCells)) * 100;
+
+  // Output the values, capping CPS at a maximum of 100
+  document.getElementById('out_tps').value = tps.toFixed(2);
+  document.getElementById('out_cps').value = Math.min(rawCps, 100).toFixed(2);
+  document.getElementById('out_ic').value = icScore.toFixed(2);
+  document.getElementById('out_total').value = totalPosPct.toFixed(2);
+}
+
+function resetForm() {
+  document.getElementById('pdl1-form').reset();
+  document.getElementById('in_tps').focus();
+}
+</script>
+
+</head>
+<body onload="document.getElementById('in_tps').focus()">
+
+<div id="container">
+  <form id="pdl1-form" action="#">
+    <table border="1">
+      <caption><strong>PD-L1 Calculator</strong></caption>
+      <tr>
+        <th style="width: 65%;">Descriptions</th>
+        <th>Percentage</th>
+      </tr>
+      <tr>
+        <td>tumor cell %</td>
+        <td><input type="text" id="in_tps" /></td>
+      </tr>
+      <tr>
+        <td>immune cell % in tumor</td>
+        <td><input type="text" id="in_ic_ratio" /></td>
+      </tr>
+      <tr>
+        <td>+ve immune cells % (among immune cells)</td>
+        <td><input type="text" id="in_ic_pos" /></td>
+      </tr>
+    </table>
+    
+    <div class="btn-container">
+      <input type="button" value="Calculate" onclick="calculateScores()" />
+    </div>
+    
+    <table border="1">
+      <tr>
+        <td style="width: 65%;">TPS or TC%</td>
+        <td><input type="text" id="out_tps" readonly /></td>
+      </tr>
+      <tr>
+        <td>CPS</td>
+        <td><input type="text" id="out_cps" readonly style="background-color: #e6f2ff; font-weight: bold;"/></td>
+      </tr>
+      <tr>
+        <td>IC%</td>
+        <td><input type="text" id="out_ic" readonly /></td>
+      </tr>
+      <tr>
+        <td>Total +ve cells%</td>
+        <td><input type="text" id="out_total" readonly /></td>
+      </tr>
+    </table>
+
+    <div class="btn-container">
+      <input type="button" value="Reset" onclick="resetForm()" />
+    </div>
+
+    <div class="footer-text">
+      Last updated: March 2026<br>
+      Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
