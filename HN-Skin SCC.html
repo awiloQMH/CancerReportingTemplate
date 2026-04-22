@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>HN Skin SCC</title>
+<title>Cutaneous carcinoma</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
 <script type="text/javascript" src="view.js"></script>
 <script>
@@ -87,7 +87,7 @@ if (frm.A20.value !== ""){
 	Template += "- Perineural invasion: " + frm.A20.value + "\n";
 }
 
-if (frm.A23.value + frm.A24.value !== ""){
+if (frm.A23.value + frm.A24.value + frm.A60.value !== ""){
 	Template += "\n" + "- Surgical margins: " + "\n";
 }	
 
@@ -97,6 +97,10 @@ if (frm.A23.value !== ""){
 
 if (frm.A24.value !== ""){
 	Template +=  "  - Margin Status for Noninvasive Tumor: " + frm.A24.value + "\n" ;
+}
+
+if (frm.A60.value !== ""){
+	Template +=  "  - Tumor bed margin: " +  frm.A60.value + "\n" ;
 }
 
 if (frm.A25.value + frm.A26.value + frm.A53.value + frm.A29.value +
@@ -173,13 +177,9 @@ if (document.getElementById("A33").checked || document.getElementById("A34").che
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
-if (document.getElementById("A33").checked || document.getElementById("A34").checked ||
+if (document.getElementById("A34").checked ||
 	document.getElementById("A35").checked){
-	Template += "  - TNM Descriptors:" + "\n";
-}
-
-if (document.getElementById("A33").checked){
-	Template += "    " + frm.A33.value + "\n";
+	Template += "  - Modified classification:" + "\n";
 }
 
 if (document.getElementById("A34").checked){
@@ -192,6 +192,10 @@ if (document.getElementById("A35").checked){
 
 if (frm.A36.value !== ""){
 	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A36.value + "\n";
+}
+
+if (document.getElementById("A33").checked){
+	Template += "      - T suffix: " + frm.A33.value + "\n";
 }
 
 if (frm.A37.value !== ""){
@@ -222,7 +226,7 @@ if (document.getElementById("A56").checked){
 if (document.getElementById("A57").checked){
 	Template += frm.A57.value + "\n";
 }
-
+/*
 if (document.getElementById("A40").checked || frm.A41.value !== ""){
 	Template += "\n" + "- Additional pathologic findings: " + "\n";
 }
@@ -234,7 +238,7 @@ if (document.getElementById("A40").checked){
 if (frm.A41.value !== ""){
 	Template += "  - Other (specify): " +  frm.A41.value + "\n";
 }
-
+*/
 if (frm.A42.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A42.value + "\n";
 }
@@ -270,9 +274,9 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2022-09-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.1.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2026-04-Update\Head and Neck Protocol Folder\HN.Skin_Cutaneous_1.2.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
-		Cutaneous SCC of the Head and Neck
+		Cutaneous Carcinoma
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
 		<a>
@@ -375,7 +379,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=12" target="_blank">Histologic type</a>:</label> 
+<label class="description">- Histologic type:</label> 
 </td>
 <td>
 <select class="element select large" ID="A13">
@@ -398,7 +402,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=13" target="_blank">Histologic Grade</a>:</label>
+<label class="description">- Histologic Grade:</label>
 </td>
 <td>
 <select class="element select large" ID="A14">
@@ -416,7 +420,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=14" target="_blank">Tumor Depth of Invasion (DOI)</a>:</label>
+<label class="description">- Tumor Depth of Invasion (DOI):</label>
 </td>
 <td>
 <select class="element select large" ID="A52">
@@ -432,7 +436,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="">+ <a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=14" target="_blank">Anatomic level:</a> </label>
+<label class="">+ Anatomic level: </label>
 </td>
 <td>
 <select class="element select large" ID="A15">
@@ -449,7 +453,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Lymphovascular invasion: </label>
+<label class="description">- Lymphatic and / or Vascular Invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A19">
@@ -463,7 +467,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=14" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- Perineural invasion: </label>
 Location of the involved nerve deep to the dermis serves as a surrogate for this size cut-off and qualifies as greater than or equal to 0.1 mm.
 </td>
 <td>
@@ -487,13 +491,13 @@ Location of the involved nerve deep to the dermis serves as a surrogate for this
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=15" target="_blank">Surgical margins of excision specimen:</a></label></legend>
+	<legend><label class="description">Surgical margins of excision specimen:</label></legend>
 <p>
 <table border="1">
 <col width="40%">
 <tr>
 <td>
-<label class="description">- Margin Status for Invasive Tumor:</label>
+<label class="description">- Invasive Tumor:</label>
 </td>
 <td>
 <select class="element select large" ID="A23">
@@ -507,30 +511,48 @@ Location of the involved nerve deep to the dermis serves as a surrogate for this
 
 <tr>
 <td>
-<label class="description">- Margin Status for Noninvasive Tumor:</label>
+<label class="description">- Noninvasive Tumor:</label>
 </td>
 <td>
 <select class="element select large" ID="A24">
 	<option value=""></option>
 	<option value="Not applicable">Not applicable</option>
-	<option value="All margins negative for in situ disease, specify:">All margins negative for in situ disease, specify:</option>
+	<option value="All margins negative for in situ disease, specify:">All margins negative for Noninvasive Tumor, specify:</option>
 	<option value="Margin(s) Involved by Noninvasive Tumor, specify:">Margin(s) Involved by Noninvasive Tumor, specify:</option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
 </select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label class="description">- Tumor bed margin :</label>
+</td>
+<td>
+<select class="element select large" ID="A60">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+	<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
+	<option value="Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:">Uninvolved by non-invasive tumor, specify location and closest distance:</option>
+	<option value="Involved by high grade dysplasia/ in situ disease, specify location:">Involved by non-invasive tumor, specify location:</option>
+</select>
+</td>
+</tr>
+
 </table>
 </p>
+** Please also refer to additional specimens and frozen sections for margin status.
 </fieldset>
 </p>
 
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=16" target="_blank">Regional ymph nodes</a>: </label></legend>
+	<legend> <label class="description"> Regional ymph nodes: </label></legend>
 <p>
 <table border="1">
-<col width="80%">
+<col width="60%">
 <tr>
 <td>
 <label class="description">- Number of lymph nodes examined:</label>
@@ -612,19 +634,18 @@ Location of the involved nerve deep to the dermis serves as a surrogate for this
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=16" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
 <p>
 <table border="1">
 <col width="40%">
 <tr>
 <td valign="top">
-<label class="description">  - TNM Descriptors:</label>
+<label class="">  + Modified classication:</label>
 </td>
 <td>
-<input class="element checkbox" type="checkbox" id="A33" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
 <input class="element checkbox" type="checkbox" id="A34" value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
-<input class="element checkbox" type="checkbox" id="A35" value=" y (post treatment) "><label class="choice">y (post treatment)</label>
+<input class="element checkbox" type="checkbox" id="A35" value=" y (post-neoadjuvant therapy) "><label class="choice">y (post-neoadjuvant therapy)</label>
 </td>
 </tr>
 
@@ -649,6 +670,15 @@ Location of the involved nerve deep to the dermis serves as a surrogate for this
 
 <tr>
 <td>
+<label class="">  + T suffix:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox" id="A33" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
+</td>
+</tr>
+
+<tr>
+<td>
 <label class="description">  - Regional lymph nodes (pN): </label>
 </td>
 <td>
@@ -657,13 +687,16 @@ Location of the involved nerve deep to the dermis serves as a surrogate for this
 	<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found) </option>
 	<option value="  - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="  - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
-	<option value="  - pN1: Metastasis in a single ipsilateral lymph node, 3 cm or smaller in greatest dimension and ENE(-)">pN1: Metastasis in a single ipsilateral lymph node, <=3 cm and ENE(-)</option>
-	<option value="  - pN2a: Metastasis in single ipsilateral node 3 cm or smaller in greatest dimension and ENE(+); or a single ipsilateral node larger than 3 cm but not larger than 6 cm in greatest dimension and ENE(-)">pN2a: Metastasis in single ipsilateral node <= 3 cm and ENE(+); or a single ipsilateral node > 3 cm but <= 6 cm and ENE(-)</option>
-	<option value="  - pN2b: Metastases in multiple ipsilateral nodes, none larger than 6 cm in greatest dimension and ENE(-)">pN2b: Metastases in multiple ipsilateral nodes, <= 6 cm and ENE(-)</option>
-	<option value="  - pN2c: Metastases in bilateral or contralateral lymph node(s), none larger than 6 cm in greatest dimension and ENE(-)">pN2c: Metastases in bilateral or contralateral lymph node(s), <= 6 cm and ENE(-)</option>
+	<option value="  - pN1: Metastasis in a single ipsilateral lymph node, 3 cm or smaller in greatest dimension and ENE(-)">pN1: Metastasis in a single ipsilateral lymph node, 3 cm or smaller in greatest dimension and ENE(-)</option>
+	<option value="  - pN2a: Metastasis in single ipsilateral node 3 cm or smaller in greatest dimension and ENE(+)">pN2a: Metastasis in single ipsilateral node 3 cm or smaller in greatest dimension and ENE(+)</option>
+	<option value="  - pN2a: Metastasis in a single ipsilateral node larger than 3 cm but not larger than 6 cm in greatest dimension and ENE(-)">pN2a: Metastasis in a single ipsilateral node larger than 3 cm but not larger than 6 cm in greatest dimension and ENE(-)</option>
+	<option value="  - pN2b: Metastases in multiple ipsilateral nodes, none larger than 6 cm in greatest dimension and ENE(-)">pN2b: Metastases in multiple ipsilateral nodes, none larger than 6 cm in greatest dimension and ENE(-)</option>
+	<option value="  - pN2c: Metastases in bilateral or contralateral lymph node(s), none larger than 6 cm in greatest dimension and ENE(-)">pN2c: Metastases in bilateral or contralateral lymph node(s), none larger than 6 cm in greatest dimension and ENE(-)</option>
 	<option value="  - pN2 (subcategory cannot be determined)">pN2 (subcategory cannot be determined)</option>
-	<option value="  - pN3a: Metastasis in a lymph node larger than 6 cm in greatest dimension and ENE(-)">pN3a: Metastasis in a lymph node > 6 cm and ENE(-)</option>
-	<option value="  - pN3b: Metastasis in a single ipsilateral node larger than 3 cm in greatest dimension and ENE(+); or multiple ipsilateral, contralateral, or bilateral nodes, any with ENE(+); or a single contralateral node of any size and ENE(+)">pN3b: Metastasis in a single ipsilateral node > 3 cm and ENE(+); or multiple ipsilateral, contralateral, or bilateral nodes, any with ENE(+); or a single contralateral node of any size and ENE(+)</option>
+	<option value="  - pN3a: Metastasis in a lymph node larger than 6 cm in greatest dimension and ENE(-)">pN3a: Metastasis in a lymph node larger than 6 cm in greatest dimension and ENE(-)</option>
+	<option value="  - pN3b: Metastasis in a single ipsilateral node larger than 3 cm in greatest dimension and ENE(+)">pN3b: Metastasis in a single ipsilateral node larger than 3 cm and ENE(+)</option>
+	<option value="  - pN3b: Metastasis in multiple ipsilateral, contralateral, or bilateral nodes, any with ENE(+)">pN3b: Metastasis in multiple ipsilateral, contralateral, or bilateral nodes, any with ENE(+)</option>
+	<option value="  - pN3b: Metastasis in a single contralateral node of any size and ENE(+)">pN3b: Metastasis in a single contralateral node of any size and ENE(+)</option>
 	<option value="  - pN3 (subcategory cannot be determined)">pN3 (subcategory cannot be determined)</option>
 </select>
 </td>
@@ -705,7 +738,7 @@ pN3: Metastasis in a lymph node larger than 6 cm in greatest dimension and ENE(-
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="">+ <a href=".\cap\Cancer-Protocols-2022-06-Update\Head and Neck Protocol Folder\HN.SCC_1.0.0.0.REL_CAPCP.pdf#page=17" target="_blank">Brigham and Women's (BWH) Tumor Classification System:</a> </label></legend>
+	<legend> + Brigham and Women's (BWH) Tumor Classification System: </legend>
 <p>
 + High risk factors:
 </p>
@@ -728,7 +761,7 @@ pN3: Metastasis in a lymph node larger than 6 cm in greatest dimension and ENE(-
 </p>
 </fieldset>
 </p>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
@@ -743,7 +776,7 @@ pN3: Metastasis in a lymph node larger than 6 cm in greatest dimension and ENE(-
 <br>
 </fieldset>
 </p>
-
+-->
 <p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A42" class = "element textarea medium" style="border-color:Grey;"></textarea> 
@@ -764,9 +797,9 @@ pN3: Metastasis in a lymph node larger than 6 cm in greatest dimension and ENE(-
 <br>
 
 <div id="footer">
-Last upated on 23-Sep-2022,<br>
+Last upated on 21-Apr-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Cutaneous SCC HN 1.0.0.1 (Sep 2022), <br>
+Cutaneous Carcinoma (Apr-2026), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CA larynx</title>
+<title>Mucosal Melanoma</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
 <script type="text/javascript" src="view.js"></script>
 <script>
@@ -58,10 +58,9 @@ if (frm.A10.value !== ""){
 }
 
 if (document.getElementById("A11").checked || document.getElementById("A12").checked ||  
-	document.getElementById("A14").checked || document.getElementById("A15").checked || 
-	document.getElementById("A16").checked || document.getElementById("A17").checked || 
-	document.getElementById("A18").checked || document.getElementById("A19").checked || document.getElementById("A70").checked){
-	Template += "\n" + "- Histologic type: " + "\n" ;
+	document.getElementById("A14").checked || document.getElementById("A15").checked ||  
+	document.getElementById("A16").checked){
+	Template += "\n" + "- Histologic type: Malignant melanoma" + "\n" ;
 }
 
 if (document.getElementById("A11").checked){
@@ -83,7 +82,7 @@ if (document.getElementById("A15").checked){
 if (document.getElementById("A16").checked){
 	Template += frm.A16.value + "\n";
 }
-
+/*
 if (document.getElementById("A17").checked){
 	Template += frm.A17.value + "\n";
 }
@@ -99,11 +98,10 @@ if (document.getElementById("A70").checked){
 	Template += frm.A70.value + "\n";
 }
 
-/*
 if (frm.A20.value !== ""){ 
 	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A20.value + "\n";
 }
-*/
+
 
 if (frm.A21.value !== ""){
 	Template += "\n" + "- Histologic type (WHO 5e): " + frm.A21.value + "\n";
@@ -117,14 +115,90 @@ if (frm.A23.value !== ""){
 	Template += "- Histologic grade: " + frm.A23.value + "\n";
 }
 
-/*
+
 if (frm.A69.value !== ""){
 	Template += "- Grade / Intrinsic Biologic Potential: " + frm.A69.value + "\n";
 }
 */
 
+if (frm.A73.value !== ""){
+	Template += "- Necrosis: " + frm.A73.value + "\n";
+}
+
+/*
 if (frm.A24.value !== ""){
 	Template += "- Tumor extension: " + frm.A24.value + "\n";
+}
+*/
+if (document.getElementById("A75").checked || document.getElementById("A76").checked ||  
+	document.getElementById("A77").checked || document.getElementById("A78").checked ||  
+	document.getElementById("A79").checked || document.getElementById("A80").checked ||  
+    document.getElementById("A81").checked || document.getElementById("A82").checked ||  
+	document.getElementById("A83").checked || document.getElementById("A84").checked ||  
+	document.getElementById("A85").checked || document.getElementById("A86").checked ||
+	document.getElementById("A87").checked || document.getElementById("A88").checked ||
+	document.getElementById("A89").checked ){
+	Template += "\n" + "- Tumor extent: " + "\n" ;
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
+if (document.getElementById("A77").checked){
+	Template += frm.A77.value + "\n";
+}
+
+if (document.getElementById("A78").checked){
+	Template += frm.A78.value + "\n";
+}
+
+if (document.getElementById("A79").checked){
+	Template += frm.A79.value + "\n";
+}
+
+if (document.getElementById("A80").checked){
+	Template += frm.A80.value + "\n";
+}
+
+if (document.getElementById("A81").checked){
+	Template += frm.A81.value + "\n";
+}
+
+if (document.getElementById("A82").checked){
+	Template += frm.A82.value + "\n";
+}
+
+if (document.getElementById("A83").checked){
+	Template += frm.A83.value + "\n";
+}
+
+if (document.getElementById("A84").checked){
+	Template += frm.A84.value + "\n";
+}
+
+if (document.getElementById("A85").checked){
+	Template += frm.A85.value + "\n";
+}
+
+if (document.getElementById("A86").checked){
+	Template += frm.A86.value + "\n";
+}
+
+if (document.getElementById("A87").checked){
+	Template += frm.A87.value + "\n";
+}
+
+if (document.getElementById("A88").checked){
+	Template += frm.A88.value + "\n";
+}
+
+if (document.getElementById("A89").checked){
+	Template += frm.A89.value + "\n";
 }
 
 if (frm.A25.value !== ""){
@@ -135,12 +209,16 @@ if (frm.A26.value !== ""){
 	Template += "- Perineural invasion: " + frm.A26.value + "\n";
 }
 
+if (frm.A74.value !== ""){
+	Template += "- Post therapy effects: " + frm.A74.value + "\n";
+}
+
 if (frm.A27.value !== ""){
-	Template +=  "- Surgical margins of invasive tumor: " +  frm.A27.value + "\n" ;
+	Template +=  "- Surgical margins of invasive Melanoma: " +  frm.A27.value + "\n" ;
 }
 
 if (frm.A71.value !== ""){
-	Template +=  "- Surgical margins of high grade dysplasia: " +  frm.A71.value + "\n" ;
+	Template +=  "- Surgical margins of Melanoma in situ: " +  frm.A71.value + "\n" ;
 }
 
 if (frm.A72.value !== ""){
@@ -148,21 +226,32 @@ if (frm.A72.value !== ""){
 }
 
 
-if (frm.A28.value + frm.A29.value + frm.A30.value + frm.A31.value + 
-frm.A32.value + frm.A33.value !== ""){
+if (frm.A92.value + frm.A93.value + frm.A28.value + frm.A29.value + frm.A30.value + frm.A31.value + frm.A32.value !== ""){
 	Template += "\n" + "- Lymph nodes examination: " + "\n";
 }	
+
+if (frm.A92.value !== ""){
+	Template += "  - Number of sentinel lymph nodes examined: " + frm.A92.value + "\n";
+}
+
+if (frm.A93.value !== ""){
+	Template += "  - Number of sentinel lymph nodes involved: " + frm.A93.value + "\n";
+}
 
 if (frm.A28.value !== ""){
 	Template += "  - Number of regional lymph nodes examined: " + frm.A28.value + "\n";
 }
 
 if (frm.A29.value !== ""){
-	Template += "  - Number of lymph nodes involved: " + frm.A29.value + "\n";
+	Template += "  - Number of regional lymph nodes involved: " + frm.A29.value + "\n";
 }
 
 if (frm.A30.value !== ""){
 	Template += "  - Extranodal extension (ENE) : " + frm.A30.value + "\n";
+}
+
+if (frm.A94.value !== ""){
+	Template += "  - Matted nodes : " + frm.A94.value + "\n";
 }
 
 if (frm.A31.value !== ""){
@@ -172,11 +261,11 @@ if (frm.A31.value !== ""){
 if (frm.A32.value !== ""){
 	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A32.value + "\n";
 }
-
+/*
 if (frm.A33.value !== ""){
 	Template += "  - Laterality: "  + frm.A33.value + "\n";
 }
-
+*/
 if (document.getElementById("A60").checked || document.getElementById("A61").checked ||
 	document.getElementById("A62").checked || document.getElementById("A63").checked ||
 	document.getElementById("A64").checked || document.getElementById("A65").checked ||
@@ -220,15 +309,20 @@ if (document.getElementById("A67").checked){
 if (document.getElementById("A68").checked){
 	Template += frm.A68.value + "\n";
 }
-
+/*
 if (document.getElementById("A34").checked || document.getElementById("A35").checked || 
     document.getElementById("A36").checked || frm.A37.value + frm.A38.value + 
 	frm.A39.value + frm.A40.value + frm.A41.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
-if (document.getElementById("A35").checked || document.getElementById("A36").checked){
-	Template += "  - Modified classification:" + "\n";
+if (document.getElementById("A34").checked || document.getElementById("A35").checked || 
+    document.getElementById("A36").checked){
+	Template += "  - TNM Descriptors:" + "\n";
+}37
+
+if (document.getElementById("A34").checked){
+	Template += "    " + frm.A34.value + "\n";
 }
 
 if (document.getElementById("A35").checked){
@@ -251,10 +345,6 @@ if (frm.A39.value !== ""){
 	Template += "  - Primary tumor (pT) : " + "\n" + frm.A39.value + "\n";
 }
 
-if (document.getElementById("A34").checked){
-	Template += "      - T suffix: " + frm.A34.value + "\n";
-}
-
 if (frm.A40.value !== ""){
 	Template += "  - Regional lymph nodes (pN): " + "\n" + frm.A40.value + "\n";
 }
@@ -262,20 +352,16 @@ if (frm.A40.value !== ""){
 if (frm.A41.value !== ""){
 	Template += "  - Distant metastasis (pM): " + "\n" + frm.A41.value + "\n";
 }
+*/
 
-/*
 if (document.getElementById("A43").checked || document.getElementById("A44").checked || 
     document.getElementById("A45").checked || frm.A46.value + frm.A47.value + frm.A48.value	 !== ""){
 	Template += "\n" + "- Pathologic Stage Classification (AJCC 8e) for mucosal melanoma::" + "\n";
 }
 
-if (document.getElementById("A43").checked || document.getElementById("A44").checked || 
+if (document.getElementById("A44").checked || 
     document.getElementById("A45").checked){
-	Template += "  - TNM Descriptors:" + "\n";
-}
-
-if (document.getElementById("A43").checked){
-	Template += "    " + frm.A43.value + "\n";
+	Template += "  - Modified classification: " + "\n";
 }
 
 if (document.getElementById("A44").checked){
@@ -283,21 +369,33 @@ if (document.getElementById("A44").checked){
 }
 
 if (document.getElementById("A45").checked){
-	Template += "    " +frm.A45.value + "\n";
+	Template += "    " + frm.A45.value + "\n";
 }
 
 if (frm.A46.value !== ""){
 	Template += "  - Primary tumor (pT): " + "\n" + frm.A46.value + "\n";
 }
 
+if (document.getElementById("A43").checked){
+	Template += "      - T suffix: " + frm.A43.value + "\n";
+}
+
 if (frm.A47.value !== ""){
 	Template += "  - Regional lymph nodes (pN): " + "\n" + frm.A47.value + "\n";
+}
+
+if (document.getElementById("A90").checked){
+	Template += "      - N suffix: " + frm.A90.value + "\n";
+}
+
+if (document.getElementById("A91").checked){
+	Template += "      - N suffix: " + frm.A91.value + "\n";
 }
 
 if (frm.A48.value !== ""){
 	Template += "  - Distant metastasis (pM): " + "\n" + frm.A48.value + "\n";
 }
-*/
+
 /*
 if (document.getElementById("A50").checked || document.getElementById("A51").checked ||
     document.getElementById("A52").checked || document.getElementById("A53").checked ||  
@@ -378,19 +476,19 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2026-04-Update\Head and Neck Protocol Folder\HN.Larynx_4.3.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2026-04-Update\Head and Neck Protocol Folder\HN.MucosalMelanoma.RES_1.0.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
-		Cancers of the larynx
+		Mucosal Melanoma
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
 		</a>
 		</h2>
 	</div>
-
+<!--
 <p>
-** Please also refer to <a href=".\cap\Cancer-Protocols-2026-04-Update\Head and Neck Protocol Folder\HN.Bmk_2.3.0.0.REL_CAPCP.pdf" target="_blank">H&N biomarker protocol (HeadNeckBiomarkers 2.3.0.0, Apr-2026)</a> for possible ancillary testings.
+Please also refer to <a href=".\cap\Cancer-Protocols-2026-04-Update\HN.Bmk_2.3.0.0.REL_CAPCP.pdf" target="_blank">H&N biomarker protocol (HeadNeckBiomarkers 2.3.0.0, Apr-2026)</a> for possible ancillary testings.
 </p>
-	
+-->	
 <form>
 <!--
 <p>
@@ -514,21 +612,24 @@ table, th, td {
 
 <p>
 <table border="1">
-<col width="40%">
+<col width="45%">
 <tr>
 <td valign="top">
-<label class="description">- SCC and variants (WHO 5e, 2022) :</label> 
+<label class="description">- Histologic Subtype (WHO 5e, 2022) :</label> 
 </td>
 <td>
-<input class="element checkbox" type="checkbox"  id="A11" value="  - Squamous cell carcinoma, conventional (keratinizing)"><label  class="choice">Squamous cell carcinoma, conventional (keratinizing)</label>
-<input class="element checkbox" type="checkbox"  id="A12" value="  - Squamous cell carcinoma, nonkeratinizing"><label  class="choice">Squamous cell carcinoma, nonkeratinizing</label>
-<input class="element checkbox" type="checkbox"  id="A14" value="  - Adenosquamous carcinoma"><label  class="choice">Adenosquamous carcinoma</label>
-<input class="element checkbox" type="checkbox"  id="A15" value="  - Basaloid squamous cell carcinoma"><label  class="choice">Basaloid squamous cell carcinoma</label>
+<input class="element checkbox" type="checkbox"  id="A16" value="  - Not specified"><label  class="choice">Not specified</label>
+<input class="element checkbox" type="checkbox"  id="A11" value="  - Desmoplastic"><label  class="choice">Desmoplastic</label>
+<input class="element checkbox" type="checkbox"  id="A12" value="  - Lentiginous"><label  class="choice">Lentiginous</label>
+<input class="element checkbox" type="checkbox"  id="A14" value="  - Nodular"><label  class="choice">Nodular</label>
+<input class="element checkbox" type="checkbox"  id="A15" value="  - Other (specify):"><label  class="choice">Other (specify):</label>
+<!--
 <input class="element checkbox" type="checkbox"  id="A16" value="  - Papillary squamous cell carcinoma"><label  class="choice">Papillary squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A17" value="  - Spindle cell [sarcomatoid] squamous carcinoma"><label  class="choice">Spindle cell [sarcomatoid] squamous carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A18" value="  - Verrucous squamous cell carcinoma"><label  class="choice">Verrucous squamous cell carcinoma</label>
 <input class="element checkbox" type="checkbox"  id="A70" value="  - Carcinoma cuniculatum"><label  class="choice">Carcinoma cuniculatum</label>
 <input class="element checkbox" type="checkbox"  id="A19" value="  - Lymphoepithelial carcinoma (non-nasopharyngeal)"><label  class="choice">Lymphoepithelial carcinoma (non-nasopharyngeal)</label>
+-->
 </td>
 </tr>
 <!--
@@ -571,7 +672,7 @@ table, th, td {
 	</select>
 </td>
 <tr>
--->
+
 <tr>
 <td valign="top">
 <label class="description">- Neuroendocrine carcinoma :</label> 
@@ -621,7 +722,7 @@ table, th, td {
 </select>
 </td>
 </tr>
-
+-->
 <!--
 <tr>
 <td>
@@ -642,10 +743,42 @@ table, th, td {
 
 <tr>
 <td>
+<label class="">+ Necrosis:</label>
+</td>
+<td>
+<select class="element select large" ID="A73">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td  valign="top">
 <label class="description">- Tumor extent:</label>
 </td>
 <td>
-<input type="text" class="element text large" ID="A24" size="45">
+pT3:
+<input class="element checkbox" type="checkbox"  id="A75" value="  - Limited to mucosa and / or submucosa (pT3)"><label  class="choice">Limited to mucosa and / or submucosa</label>
+pT4a:
+<input class="element checkbox" type="checkbox"  id="A76" value="  - Deep soft tissues or muscle (pT4a)"><label  class="choice">Deep soft tissues or muscle</label>
+<input class="element checkbox" type="checkbox"  id="A77" value="  - Cartilage (pT4a)"><label  class="choice">Cartilage</label>
+<input class="element checkbox" type="checkbox"  id="A78" value="  - Bone (pT4a)"><label  class="choice">Bone</label>
+<input class="element checkbox" type="checkbox"  id="A79" value="  - Overlying Skin (pT4a)"><label  class="choice">Overlying Skin</label>
+pT4b:
+<input class="element checkbox" type="checkbox"  id="A80" value="  - Brain (pT4b)"><label  class="choice">Brain</label>
+<input class="element checkbox" type="checkbox"  id="A81" value="  - Dura (pT4b)"><label  class="choice">Dura</label>
+<input class="element checkbox" type="checkbox"  id="A82" value="  - Skull base (pT4b)"><label  class="choice">Skull base</label>
+<input class="element checkbox" type="checkbox"  id="A83" value="  - Any lower cranial nerves (IX, X, XI, XII) (pT4b)"><label  class="choice">Any lower cranial nerves (IX, X, XI, XII)</label>
+<input class="element checkbox" type="checkbox"  id="A84" value="  - Masticator space (pT4b)"><label  class="choice">Masticator space</label>
+<input class="element checkbox" type="checkbox"  id="A85" value="  - Carotid artery encasement (pT4b)"><label  class="choice">Carotid artery encasement</label>
+<input class="element checkbox" type="checkbox"  id="A86" value="  - Prevertebral space (pT4b)"><label  class="choice">Prevertebral space</label>
+<input class="element checkbox" type="checkbox"  id="A87" value="  - Mediastinal structures (pT4b)"><label  class="choice">Mediastinal structures</label>
+Other:
+<input class="element checkbox" type="checkbox"  id="A88" value="  - Other (specify):"><label  class="choice">Other (specify):</label>
+<input class="element checkbox" type="checkbox"  id="A89" value="  - Cannot be determined:"><label  class="choice">Cannot be determined:</label>
 </td>
 </tr>
 
@@ -676,6 +809,21 @@ table, th, td {
 </select>
 </td>
 </tr>
+
+<tr>
+<td>
+<label class="">+ Post therapy Changes: </label>
+</td>
+<td>
+<select class="element select large" ID="A74">
+	<option value=""></option>
+	<option value="No known presurgical therapy">No known presurgical therapy</option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, specify:">Present, specify:</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
 </table>
 </p>
 </fieldset>
@@ -689,44 +837,41 @@ table, th, td {
 <col width="40%">
 <tr>
 <td>
-<label class="description">- Invasive components:</label>
+<label class="description">- Invasive Melanoma:</label>
 </td>
 <td>
 <select class="element select large" ID="A27">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
-	<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
+	<option value="Uninvolved by invasive melanoma, specify location and closest distance:">Uninvolved by invasive melanoma, specify location and closest distance:</option>
+	<option value="Involved by invasive melanoma, specify location:">Involved by invasive melanoma, specify location:</option>
 </select>
 </td>
 </tr>
 
-<tr>
 <td>
-<label class="description">- High grade dysplasia:</label>
+<label class="description">- Melanoma in situ:</label>
 </td>
 <td>
 <select class="element select large" ID="A71">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
-	<option value="Involved by high grade dysplasia/ in situ disease, specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
+	<option value="Uninvolved by Melanoma in situ, specify location and closest distance:">Uninvolved by Melanoma in situ, specify location and closest distance:</option>
+	<option value="Involved by Melanoma in situ, specify location:">Involved by Melanoma in situ, specify location:</option>
 </select>
 </td>
 </tr>
 
-<tr>
-<td>
-<label class="description">- Tumor bed margin :</label>
+<td><label class="description">- Tumor bed margin :</label>
 </td>
 <td>
 <select class="element select large" ID="A72">
 	<option value=""></option>
 	<option value="Cannot be assessed">Cannot be assessed</option>
-	<option value="Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
-	<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
-	<option value="Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:">Uninvolved by high grade dysplasia/ in situ disease, specify location and closest distance:</option>
-	<option value="Involved by high grade dysplasia/ in situ disease, specify location:">Involved by high grade dysplasia/ in situ disease, specify location:</option>
+	<option value="Uninvolved by invasive Melanoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+	<option value="Involved by invasive Melanoma, specify location:">Involved by invasive carcinoma, specify location:</option>
+	<option value="Uninvolved by Melanoma in situ, specify location and closest distance:">Uninvolved by Melanoma in situ, specify location and closest distance:</option>
+	<option value="Involved by Melanoma in situ, specify location:">Involved by Melanoma in situ, specify location:</option>
 </select>
 </td>
 </tr>
@@ -745,6 +890,25 @@ table, th, td {
 <p>
 <table border="1">
 <col width="60%">
+
+<tr>
+<td>
+<label class="description">- Number of sentinel lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A92" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Number of sentinel lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A93" size="10">
+</td>
+</tr>
+
 <tr>
 <td>
 <label class="description">- Number of regional lymph nodes examined:</label>
@@ -756,7 +920,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Number of lymph nodes involved:</label>
+<label class="description">- Number of regional lymph nodes involved:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A29" size="10">
@@ -771,9 +935,7 @@ table, th, td {
 <select class="element select large" ID="A30">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
-	<option value="Present, distance from capsule (mm):   (> 2 mm, major ENE)">Present, distance from capsule (mm):   (> 2 mm)</option>
-	<option value="Present, distance from capsule (mm):   (< or = 2 mm, minor ENE)">Present, distance from capsule (mm):   (< or = 2 mm)</option>
-	<option value="Present, distance from capsule (mm):   (< 1 mm, minor ENE)">Present, distance from capsule (mm):   (< 1 mm)</option>
+	<option value="Present">Present</option>
 	<option value="Cannot be determined">Cannot be determined</option>
 </select>
 </td>
@@ -781,7 +943,21 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+<label class="description">- Matted nodes :</label>
+</td>
+<td>
+<select class="element select large" ID="A94">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="">+ Size of largest metastatic deposit (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A31" size="20">
@@ -790,13 +966,13 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+<label class="">+ Size of largest lymph node involved (mm), specify site:</label>
 </td>
 <td>
 <input type="text" class="element text large" ID="A32" size="20">
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
 <label class="description">- Laterality:</label> 
@@ -811,6 +987,7 @@ table, th, td {
 </select>
 </td>
 </tr>
+-->
 </table>
 
 
@@ -835,21 +1012,22 @@ table, th, td {
 
 </fieldset>
 </p>
-
+<!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
+	<legend> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
 <p>
 <table border="1">
 <col width="50%">
 <tr>
 <td valign="top">
- <label class="">+ Modified classification:</label>
+ <label class="description">- TNM Descriptors:</label>
 </td>
 <td>
+<input class="element checkbox" type="checkbox"  id="A34" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
 <input class="element checkbox" type="checkbox"  id="A35" value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
-<input class="element checkbox" type="checkbox"  id="A36" value=" y (post-neoadjuvant therapy) "><label  class="choice">y (post-neoadjuvant therapy)</label>
+<input class="element checkbox" type="checkbox"  id="A36" value=" y (post treatment) "><label  class="choice">y (post treatment)</label>
 </td>
 </tr>
 
@@ -914,15 +1092,6 @@ table, th, td {
 
 <tr>
 <td>
- <label class="">+ T suffix:</label>
-</td>
-<td>
-<input class="element checkbox" type="checkbox"  id="A34" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
-
-</tr>
-
-<tr>
-<td>
   <label class="description">- Regional lymph nodes (pN):</label>
 </td>
 <td>
@@ -931,13 +1100,13 @@ table, th, td {
 	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
 	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
-	<option value="    - pN1: Metastasis in a single ipsilateral lymph node, 3 cm or smaller in greatest dimension and ENE(-)">pN1: Metastasis in a single ipsilateral lymph node, 3 cm or smaller in greatest dimension and ENE(-)</option>
+	<option value="    - pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)">pN1: Metastasis in a single ipsilateral lymph node, < or = 3 cm and ENE(-)</option>
 	<option value="    - pN2a: Metastasis in single ipsilateral node < or = 3 cm and  ENE(+)">pN2a: Metastasis in single ipsilateral node < or = 3 cm and ENE(+)</option>
-	<option value="    - pN2a: Metastasis in a single ipsilateral lymph node, 3 cm or smaller in greatest dimension and ENE(-)">pN2a: Metastasis in a single ipsilateral lymph node, 3 cm or smaller in greatest dimension and ENE(-)</option>
-	<option value="    - pN2b: Metastases in multiple ipsilateral nodes, none larger than 6 cm in greatest dimension and ENE(-)">pN2b: Metastases in multiple ipsilateral nodes, none larger than 6 cm in greatest dimension and ENE(-)</option>
-	<option value="    - pN2c: Metastases in bilateral or contralateral lymph node(s), none larger than 6 cm in greatest dimension and ENE(-)">pN2c: Metastases in bilateral or contralateral lymph node(s), none larger than 6 cm in greatest dimension and ENE(-)</option>
+	<option value="    - pN2a: Metastasis in a single ipsilateral node > 3 cm but < or = 6 cm and ENE(-)">pN2a: Metastasis in a single ipsilateral node > 3 cm but < or = 6 cm and ENE(−)</option>
+	<option value="    - pN2b: Metastases in multiple ipsilateral nodes, < or = 6 cm and ENE(-)">pN2b: Metastases in multiple ipsilateral nodes, < or = 6 cm and ENE(−)</option>
+	<option value="    - pN2c: Metastases in bilateral or contralateral lymph node(s), < or = 6 cm and ENE(-)">pN2c: Metastases in bilateral or contralateral lymph node(s), < or = 6 cm and ENE(−)</option>
 	<option value="    - pN2 (subgroup cannot be determined)">pN2 (subgroup cannot be determined)</option>
-	<option value="    - pN3a: Metastasis in a single ipsilateral node, larger than 3 cm in greatest dimension and ENE(+)">pN3a: Metastasis in a single ipsilateral node, larger than 3 cm in greatest dimension and ENE(+)</option>
+	<option value="    - pN3a: Metastasis in a lymph node > 6 cm and ENE(−)">pN3a: Metastasis in a lymph node > 6 cm and ENE(−)</option>
 	<option value="    - pN3b: Metastasis in a single ipsilateral node > 3 cm and ENE(+)">pN3b: Metastasis in a single ipsilateral node > 3 cm and ENE(+)</option>
 	<option value="    - pN3b: Metastasis in multiple ipsilateral, contralateral or bilateral nodes, any with  ENE(+)">pN3b: Metastasis in multiple ipsilateral, contralateral or bilateral nodes, any with ENE(+)</option>
 	<option value="    - pN3b: Metastasis in a single contralateral node of any size and ENE(+)">pN3b: Metastasis in a single contralateral node of any size and ENE(+)</option>
@@ -965,27 +1134,26 @@ table, th, td {
 <input type="text" class="element text small" ID="A42" size="35">
 </td>
 </tr>
--->
+
 </table>
 </p>
 </fieldset>
 </p>
-<!--
+-->
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e) for mucosal melanoma:</label></legend>
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
 <p>
 <table border="1">
 <col width="40%">
 <tr>
 <td valign="top">
-  <label class="description">- TNM Descriptors:</label>
+  <label class="">+ Modified classification:</label>
 </td>
 <td>
-<input class="element checkbox" type="checkbox"  id="A43" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
 <input class="element checkbox" type="checkbox"  id="A44" value=" r (recurrent) "><label  class="choice">r (recurrent</label>
-<input class="element checkbox" type="checkbox"  id="A45" value=" y (post treatment) "><label class="choice" >y (post treatment)</label>
+<input class="element checkbox" type="checkbox"  id="A45" value=" y (post-neoadjuvant therapy) "><label class="choice" >y (post-neoadjuvant therapy)</label>
 </td>
 </tr>
 
@@ -997,13 +1165,21 @@ table, th, td {
 <select class="element select large" ID="A46">
 	<option value=""></option>
 	<option value="    - pT3: Tumors limited to the mucosa and immediately underlying soft tissue, regardless of thickness or greatest dimension; for example, polypoid nasal disease, pigmented or nonpigmented lesions of the oral cavity, pharynx, or larynx">pT3: Tumors limited to the mucosa and immediately underlying soft tissue, regardless of thickness or greatest dimension; for example, polypoid nasal disease, pigmented or nonpigmented lesions of the oral cavity, pharynx, or larynx</option>
-	<option value="    - pT4: Moderately advanced or very advanced disease">pT4: Moderately advanced or very advanced disease</option>
 	<option value="    - pT4a: Moderately advanced disease: Tumor involving deep soft tissue, cartilage, bone, or overlying skin">pT4a: Moderately advanced disease: Tumor involving deep soft tissue, cartilage, bone, or overlying skin</option>
 	<option value="    - pT4b: Very advanced disease: Tumor involving brain, dura, skull base, lower cranial nerves (IX, X, XI, XII), masticator space, carotid artery, prevertebral space, or mediastinal structures">pT4b: Very advanced disease. Tumor involving brain, dura, skull base, lower cranial nerves (IX, X, XI, XII), masticator space, carotid artery, prevertebral space, or mediastinal structures</option>
+    <option value="    - pT4 (subgroup cannot be determined)">pT4 (subgroup cannot be determined)</option>
 </select>
 </td>
 </tr>
 
+<tr>
+<td valign="top">
+  <label class="">+ T suffix:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A43" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
+</td>
+</tr>
 
 <tr>
 <td>
@@ -1012,10 +1188,21 @@ table, th, td {
 <td>
 <select class="element select large" ID="A47">
 	<option value=""></option>
-	<option value="    - pNX: Regional lymph nodes cannot be assessed">pNX: Regional lymph nodes cannot be assessed</option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
 	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
 	<option value="    - pN1: Regional lymph node metastases present">pN1: Regional lymph node metastases present</option>
 </select>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+  <label class="">+ N suffix:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A90" value=" (sn) Sentinel node procedure"><label  class="choice">(sn) Sentinel node procedure</label>
+<input class="element checkbox" type="checkbox"  id="A91" value=" (f) FNA or core needle biopsy"><label  class="choice">(f) FNA or core needle biopsy</label>
 </td>
 </tr>
 
@@ -1031,19 +1218,12 @@ table, th, td {
 </select>
 </td>
 </tr>
-<!--
-<tr>
-<td>
-    - Specify site(s), if known:
-<input type="text" class="element text small" ID="A49" size="35">
-</td>
-</tr>
 
 </table>
 </p>
 </fieldset>
 </p>
--->
+
 <!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -1066,6 +1246,7 @@ table, th, td {
 </fieldset>
 </p>
 -->
+
 <p>
 <label class="description">- Additional notes:</label>
  <textarea ID="A59" class = "element textarea medium" style="border-color:Grey;"></textarea> 
@@ -1086,9 +1267,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 21-Apr-2026,<br>
+Last upated on 18-Apr-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Larynx 4.3.0.0 (Apr-2026), <br>
+MUcosal Melanoma 1.0.0.0 (Apr-2026), <br>
 html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

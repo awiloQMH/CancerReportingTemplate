@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CA Nasopharynx</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script>
+function updateDescription (frm) 
+{
+    var Template = "";
+	
+
+if (frm.A09.value !== ""){
+	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A09.value + "\n";
+}
+
+if (frm.A21.value !== ""){
+	Template += "\n" + "- Histologic type (WHO 5e) : " + frm.A21.value + "\n";
+}
+
+if (frm.A23.value !== ""){
+	Template += "\n" + "- Histologic type (WHO 5e) : " + frm.A23.value + "\n";
+}
+
+if (frm.A24.value !== ""){
+	Template += "\n" + "- Histologic type : " + frm.A24.value + "\n";
+}
+
+if (frm.A25.value !== ""){
+	Template += "\n" + "- Histologic grade: " + frm.A25.value + "\n";
+}
+
+if (frm.A26.value !== ""){
+	Template += "- Tumor extent: " + frm.A26.value + "\n";
+}
+
+if (frm.A27.value !== ""){
+	Template += "- Lymphatic and/on vascular invasion: " + frm.A27.value + "\n";
+}
+
+if (frm.A28.value !== ""){
+	Template += "- Perineural invasion: " + frm.A28.value + "\n";
+}
+
+if (frm.A10.value !== ""){
+	Template += "- HPV status by p16 IHC: " + frm.A10.value + "\n";
+}
+
+if (frm.A69.value !== ""){
+	Template += "- HPV by sequencing: " + frm.A69.value + "\n";
+}
+
+if (frm.A70.value !== ""){
+	Template += "- EBV (EBER ISH): " + frm.A70.value + "\n";
+}
+
+if (frm.A29.value !== ""){
+	Template +=  "\n" + "- Surgical margins: "  +  frm.A29.value + "\n" ;
+}
+
+if (frm.A30.value + frm.A31.value + frm.A32.value + frm.A33.value + 
+	frm.A34.value + frm.A35.value !== ""){
+	Template += "\n" + "- Lymph nodes examination: " + "\n";
+}	
+
+if (frm.A30.value !== ""){
+	Template += "  - Number of regional lymph nodes examined: " + frm.A30.value + "\n";
+}
+
+if (frm.A31.value !== ""){
+	Template += "  - Number of lymph nodes involved: " + frm.A31.value + "\n";
+}
+
+if (frm.A32.value !== ""){
+	Template += "  - Extranodal extension (ENE) : " + frm.A32.value + "\n";
+}
+
+if (frm.A33.value !== ""){
+	Template += "  - Size of largest metastatic deposit (mm), specify site: " + frm.A33.value + "\n";
+}
+
+if (frm.A34.value !== ""){
+	Template += "  - Size of largest lymph node involved (mm), specify site: " + frm.A34.value + "\n";
+}
+
+if (frm.A35.value !== ""){
+	Template += "  - Laterality: "  + frm.A35.value + "\n";
+}
+
+if (document.getElementById("A71").checked || document.getElementById("A72").checked ||
+	document.getElementById("A73").checked || document.getElementById("A74").checked ||
+	document.getElementById("A75").checked || document.getElementById("A76").checked ||
+	document.getElementById("A77").checked || document.getElementById("A78").checked ||
+	document.getElementById("A79").checked){
+	Template += "\n" + "- Distant metastasis:" + "\n";
+}
+
+if (document.getElementById("A71").checked){
+	Template += frm.A71.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
+}
+
+if (document.getElementById("A76").checked){
+	Template += frm.A76.value + "\n";
+}
+
+if (document.getElementById("A77").checked){
+	Template += frm.A77.value + "\n";
+}
+
+if (document.getElementById("A78").checked){
+	Template += frm.A78.value + "\n";
+}
+
+if (document.getElementById("A79").checked){
+	Template += frm.A79.value + "\n";
+}
+
+if (document.getElementById("A36").checked || document.getElementById("A37").checked || 
+    document.getElementById("A38").checked || frm.A43.value + frm.A44.value !== ""){
+	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 9th edition):" + "\n";
+}
+
+if (document.getElementById("A37").checked || 
+    document.getElementById("A38").checked){
+	Template += "  - Modified classification:" + "\n";
+}
+
+if (document.getElementById("A37").checked){
+	Template += "    " + frm.A37.value + "\n";
+}
+
+if (document.getElementById("A38").checked){
+	Template += "    " +frm.A38.value + "\n";
+}
+
+if (frm.A43.value !== ""){
+	Template += "  - Primary tumor (pT): " + "\n" + frm.A43.value + "\n";
+}
+
+if (document.getElementById("A36").checked){
+	Template += "      - T-suffix: " + frm.A36.value + "\n";
+}
+
+if (frm.A44.value !== ""){
+	Template += "  - Regional lymph nodes: " + "\n" + frm.A44.value + "\n";
+}
+
+if (frm.A47.value !== ""){
+	Template += "  - Distant metastasis: " + "\n" + frm.A47.value + "\n";
+}
+
+if (frm.A68.value !== ""){
+	Template += "\n" + "- Additional notes: " + "\n" + "  - " +  frm.A68.value + "\n";
+}
+
+frm.holdtext.value = Template;
+}
+
+function CopyToClipboard() {
+  /* Get the text field */
+  var copyText = document.getElementById("holdtext");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Report copied to clipboard");
+}
+</script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+}
+</style>
+</head>
+
+<body>
+<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	<div class="form_description">
+		<h2>
+		<a href=".\cap\Cancer-Protocols-2024-12-Update\Head and Neck Protocol Folder\HN.Pharynx_5.0.0.0.REL.CAPCP.pdf" target="_blank">
+		<div class="tooltip">
+		Cancers of the nasopharynx
+		<span class="tooltiptext">click to access explanations in the original CAP template</span>
+		</div>
+		</a>
+		</h2>
+	</div>
+
+<p>
+** Please also refer to <a href=".\cap\Cancer-Protocols-2026-04-Update\Head and Neck Protocol Folder\HN.Bmk_2.3.0.0.REL_CAPCP.pdf" target="_blank">H&N biomarker protocol (HeadNeckBiomarkers 2.3.0.0, Apr-2026)</a> for possible ancillary testings.
+</p>
+
+<form>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend><label class="description">Microscopic descriptions:</label></legend>
+<p>
+<label class="description">- Tumor histology and immunohistochemical studies: </label>
+ <textarea ID="A09" class="element textarea medium"></textarea>
+</p>
+
+<p>
+<table border="1">
+<col width="45%">
+
+<tr>
+<td>
+<label class="description">- Nasopharynx CA:</label> 
+</td>
+<td>
+	<select class="element select large" ID="A21">
+		<option value=""></option>
+		<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+		<option value="Squamous cell carcinoma, keratinizing, NOS">Squamous cell carcinoma, keratinizing, NOS</option>
+		<option value="Squamous cell carcinoma, non-keratinizing, NOS">Squamous cell carcinoma, non-keratinizing, NOS</option>
+		<option value="Basaloid squamous cell carcinoma">Basaloid squamous cell carcinoma</option>
+		<option value="Low-grade nasopharyngeal papillary adenocarcinoma">Low-grade nasopharyngeal papillary adenocarcinoma</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Neuroendocrine carcinoma (WHO 5e):</label> 
+</td>
+<td>
+	<select class="element select large" ID="A23">
+		<option value=""></option>
+		<option value="Neuroendocrine tumor, grade 1"><label >Neuroendocrine tumor, grade 1</label></option>
+		<option value="Neuroendocrine tumor, grade 2"><label >Neuroendocrine tumor, grade 2</label></option>
+		<option value="Neuroendocrine tumor, grade 3"><label >Neuroendocrine tumor, grade 3</label></option>
+		<option value="Neuroendocrine carcinoma, small cell type, not otherwise specified"><label >Neuroendocrine carcinoma, small cell type</label></option>
+		<option value="Neuroendocrine carcinoma, large cell type"><label >Neuroendocrine carcinoma, large cell type</label></option>
+		<option value="Combined (or composite) neuroendocrine carcinoma with (specify types):"><label >Combined (or composite) neuroendocrine carcinoma with (specify types):</label></option>
+
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Other histologic type:</label> 
+</td>
+<td>
+	<select class="element select large" ID="A24">
+		<option value=""></option>
+		<option value="Combined histology"><label >Combined histology</label></option>
+		<option value="Carcinoma, type cannot be determined"><label >Carcinoma, type cannot be determined</label></option>
+		<option value="Other histologic type not listed (specify):"><label >Other histologic type not listed (specify):</label></option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Histologic grade:</label>
+</td>
+<td>
+<select class="element select large" ID="A25">
+	<option value=""></option>
+	<option value="Not applicable">Not applicable</option>
+	<option value="G1: Well differentiated">G1: Well differentiated</option>
+	<option value="G2: Moderately differentiated">G2: Moderately differentiated</option>
+	<option value="G3: Poorly differentiated">G3: Poorly differentiated</option>
+	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
+	<option value="Other (specify):">Other (specify):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description"> - Tumor extension:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A26" size="45">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Lymphatic and/or vascular invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A27">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Perineural invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A28">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Present, intratumoral">Present, intratumoral</option>
+	<option value="Present, extratumoral">Present, extratumoral</option>
+	<option value="Present, intraneural, size of nerve">Present, intraneural, size of nerve</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- HPV status by p16 IHC: </label>
+</td>
+<td>
+<select class="element select large" ID="A10">
+	<option value=""></option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- HPV PCR-sequencing: </label>
+</td>
+<td>
+<select class="element select large" ID="A69">
+	<option value=""></option>
+	<option value="Positive, specify:">Positive, specify:</option>
+	<option value="Negative">Negative</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- EBV (EBER ISH): </label>
+</td>
+<td>
+<select class="element select large" ID="A70">
+	<option value=""></option>
+	<option value="Positive">Positive</option>
+	<option value="Negative">Negative</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+</table>
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+<legend><label class="description">Surgical margins: </label></legend>
+<p>
+<label class="description">- Surgical margins:</label>
+<select class="element select medium" ID="A29">
+	<option value=""></option>
+	<option value="Cannot be assessed">Cannot be assessed</option>
+	<option value="Uninvolved by invasive carcinoma, specify location and closest distance:">Uninvolved by invasive carcinoma, specify location and closest distance:</option>
+	<option value="Involved by invasive carcinoma, specify location:">Involved by invasive carcinoma, specify location:</option>
+</select>
+</p>
+** Please also refer to additional specimens and frozen sections for margin status.
+<br>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Lymph nodes examination: </label></legend>
+<p>
+<table border="1">
+<col width="60%">
+<tr>
+<td>
+<label class="description">- Number of regional lymph nodes examined:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A30" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Number of lymph nodes involved:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A31" size="10">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Extranodal extension (ENE) :</label>
+</td>
+<td>
+<select class="element select large" ID="A32">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present, distance from capsule (mm):   (> 2 mm, major ENE)">Present, distance from capsule (mm):   (> 2 mm)</option>
+	<option value="Present, distance from capsule (mm):   (< or = 2 mm, minor ENE)">Present, distance from capsule (mm):   (< or = 2 mm)</option>
+	<option value="Present, distance from capsule (mm):   (< 1 mm)">Present, distance from capsule (mm):   (< 1 mm)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest metastatic deposit (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A33" size="20">
+</td>
+<tr>
+
+<tr>
+<td>
+<label class="description">- Size of largest lymph node involved (mm), specify site:</label>
+</td>
+<td>
+<input type="text" class="element text large" ID="A34" size="20">
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Laterality:</label> 
+</td>
+<td>
+<select class="element select large" ID="A35">
+	<option value=""></option>
+	<option value="Ipsilateral (including midline)">Ipsilateral (including midline)</option>
+	<option value="Contralateral">Contralateral</option>
+	<option value="Bilateral">Bilateral</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
+** Please include also intraparotid and periparotid lymph nodes, in addition to the lymph nodes of the neck dissections.
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Distant Metastasis: </label></legend>
+
+<input class="element checkbox" type="checkbox" id="A71"  value="  - Not applicable"><label class="choice" >Not applicable</label>
+<input class="element checkbox" type="checkbox" id="A72"  value="  - Not identified"><label class="choice" >Not identified</label>
+<input class="element checkbox" type="checkbox" id="A73"  value="  - Non-regional lymph node(s) (specify):"><label class="choice" >Non-regional lymph node(s) (specify):</label>
+<input class="element checkbox" type="checkbox" id="A74"  value="  - Lung (specify):"><label class="choice" >Lung (specify):</label>
+<input class="element checkbox" type="checkbox" id="A75"  value="  - Liver (specify):"><label class="choice" >Liver (specify):</label>
+<input class="element checkbox" type="checkbox" id="A76"  value="  - Bone (specify):"><label class="choice" >Bone (specify):</label>
+<input class="element checkbox" type="checkbox" id="A77"  value="  - Brain (specify):"><label class="choice" >Brain (specify):</label>
+<input class="element checkbox" type="checkbox" id="A78"  value="  - Other (specify):"><label class="choice" >Other (specify):</label>
+<input class="element checkbox" type="checkbox" id="A79"  value="  - Cannot be determined: "><label class="choice" >Cannot be determined: </label> 
+
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 9e):</label></legend>
+	
+<p>
+<table border="1">
+<col width="40%">
+<tr>
+<td valign="top">
+<label class="">  + Modified classification:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A37" value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
+<input class="element checkbox" type="checkbox"  id="A38" value=" y (post-neoadjuvant therapy) "><label  class="choice">y (post-neoadjuvant therapy)</label>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Primary tumor (pT):</label>
+</td>
+<td>
+<select class="element select large" ID="A43">
+	<option value=""></option>
+	<option value="    - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
+	<option value="    - pT0: No evidence of primary tumor, but EBV-positive cervical node(s) involvement">pT0: No evidence of primary tumor, but EBV-positive cervical node(s) involvement</option>
+	<option value="    - pTis: Carcinoma in situ">pTis: Carcinoma in situ</option>
+	<option value="    - pT1: Tumor confined to nasopharynx; OR tumor with extension to any of the following without parapharyngeal involvement: oropharynx or nasal cavity">pT1</option>
+	<option value="    - pT2: Tumor with extension to any of the following: Parapharyngeal space; or Adjacent soft tissue involvement of medial pterygoid, lateral pterygoid, prevertebral muscles">pT2</option>
+	<option value="    - pT3: Tumor with unequivocal infiltration into any of the following bony structures: Skull base (including pterygoid structures); or Paranasal sinuses; or Cervical vertebraes">pT3</option>
+	<option value="    - pT4: Tumor with any of the following: intracranial extension; or Unequivocal radiological and / or clinical involvement of cranial nerves; or Involvement of hypopharynx; or Involvement of orbit (including inferior orbital fissure); or Involvement of parotid gland; or Extensive soft tissue infiltration beyond the anterolateral surface of the lateral pterygoid muscle">pT4</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td >
+<label class="">  + T-suffix: </label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox"  id="A36" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Regional lymph nodes (pN):</label>
+</td>
+<td>
+  
+<select class="element select large" ID="A44">
+	<option value=""></option>
+	<option value="    - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
+	<option value="    - pN not assigned (cannot be determined based on available pathological information)">pN not assigned (cannot be determined based on available pathological information)</option>
+	<option value="    - pN0: No regional lymph node metastasis">pN0: No regional lymph node metastasis</option>
+	<option value="    - pN1: Tumor involvement of any of the following: Unilateral cervical lymph node(s) or Unilateral / bilateral retropharyngeal lymph node(s); AND all of the following: Less than or equal to 6 cm in greatest dimension; and above the caudal border of cricoid cartilage; and without advanced extranodal extension">pN1</option>
+	<option value="    - pN2: Tumor involvement of bilateral cervical lymph nodes AND all of the following: Less than or equal to 6 cm in greatest dimension; and above the caudal border of cricoid cartilage; and without advanced extranodal extension">pN2</option>
+	<option value="    - pN3: Tumor involvement of unilateral or bilateral cervical lymph node(s); AND any of the following: Greater than 6 cm in greatest dimension; or Extension below the caudal border of cricoid cartilage; or Advanced radiologic or clinical extranodal extension with involvement of adjacent muscles, skin, and / or neurovascular bundle">pN3</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td valign="top" rowspan="2">
+<label class="description">  - Distant metastasis (pM): </label>
+</td>
+<td>
+<select class="element select large" ID="A47">
+	<option value=""></option>
+	<option value="    - Not applicable - pM cannot be determined from the submitted specimen(s) ">Not applicable - pM cannot be determined from the submitted specimen(s) </option>
+	<option value="    - pM1: Distant metastasis">pM1:Distant metastasis</option>
+	<option value="    - pM1a: Microscopic confirmation of less than or equal to 3 metastatic lesions in one or more organs/ sites">pM1a: Microscopic confirmation of less than or equal to 3 metastatic lesions in one or more organs/ sites</option>
+	<option value="    - pM1b: Microscopic confirmation of greater than 3 metastatic lesions in one or more organs / sites">pM1b: Microscopic confirmation of greater than 3 metastatic lesions in one or more organs / sites</option>
+	<option value="    - pM1 (subgroup cannot be determined)">pM1 (subgroup cannot be determined)</option>	
+</select>
+</td>
+</tr>
+</table>
+</p>
+pT0: No evidence of primary tumor, but EBV-positive cervical node(s) involvement <br>
+pTis: Carcinoma in situ<br>
+pT1: Tumor confined to nasopharynx; OR Tumor with extension to any of the following without parapharyngeal involvement: oropharynx or nasal cavity<br>
+pT2: Tumor with extension to any of the following: Parapharyngeal space; or adjacent soft tissue involvement of medial pterygoid, lateral pterygoid, prevertebral muscles<br>
+pT3: Tumor with unequivocal infiltration into any of the following bony structures: Skull base (including pterygoid structures); or paranasal sinuses; or cervical vertebrae<br>
+pT4: Tumor with any of the following: Intracranial extension; or unequivocal radiological and / or clinical involvement of cranial nerves; or involvement of hypopharynx; or involvement of orbit (including inferior orbital fissure); or involvement of parotid gland; or extensive soft tissue infiltration beyond the anterolateral surface of the lateral pterygoid muscle<br><br>
+pN1: Tumor involvement of any of the following: Unilateral cervical lymph node(s) or unilateral or bilateral retropharyngeal lymph node(s); AND all of the following: Less than or equal to 6 cm in greatest dimension; and above the caudal border of cricoid cartilage; and without advanced
+extranodal extension<br>
+pN2: Tumor involvement of bilateral cervical lymph nodes AND all of the following: Less than or equal to 6 cm in greatest dimension; and above the caudal border of cricoid cartilage; and without advanced extranodal extension<br>
+pN3: Tumor involvement of unilateral or bilateral cervical lymph node(s); AND any of the following: Greater than 6 cm in greatest dimension; or extension below the caudal border of cricoid cartilage; or advanced radiologic extranodal extension with involvement of adjacent muscles, skin, and / or neurovascular bundle<br><br>
+pM1a: Microscopic confirmation of less than or equal to 3 metastatic lesions in one or more organs / sites <br>
+pM1b: Microscopic confirmation of greater than 3 metastatic lesions in one or more organs / sites<br>
+</fieldset>
+</p>
+
+<p>
+<label class="description">- Additional notes:</label>
+ <textarea ID="A68" class = "element textarea medium" style="border-color:Grey;"></textarea> 
+</p>
+
+<br><br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<!-- The button used to copy the text -->
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+
+<input type="reset" value="Reset Form" name="reset" style="float: right;">
+</form>
+<br>
+<br>
+
+<div id="footer">
+Last upated on 22-Apr-2026,<br>
+based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
+Nasopharynx 1.0.0.0 (Apr-2026)<br>
+html form and CSS were created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
+</div>
+
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>
