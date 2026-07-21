@@ -104,7 +104,11 @@ if (frm.A71.value !== ""){
 }
 
 if (frm.A18.value !== ""){
-	Template += "- Lymphovascular invasion : " + frm.A18.value + "\n";
+	Template += "- Lymphatic invasion : " + frm.A18.value + "\n";
+}
+
+if (frm.A56.value !== ""){
+	Template += "- Venous invasion : " + frm.A56.value + "\n";
 }
 
 if (frm.A19.value !== ""){
@@ -544,10 +548,24 @@ Please also seen notes on <a href=".\cap\JES guideline 12th edition_2024.pdf" ta
 
 <tr>
 <td>
-<label class="description">- Lymphovascular invasion: </label>
+<label class="description">- Lymphatic invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A18">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Venous invasion: </label>
+</td>
+<td>
+<select class="element select large" ID="A56">
 	<option value=""></option>
 	<option value="Not identified">Not identified</option>
 	<option value="Present">Present</option>
@@ -950,8 +968,8 @@ Please also seen notes on <a href=".\cap\JES guideline 12th edition_2024.pdf" ta
 <br>
 
 <div id="footer">
-Last upated on 24-Jun-2026,<br>
-based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated on 20-Jul-2026,<br>
+based on <a href=https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Esophagus 4.2.0.1 (Jun 2022), incorporating Japanese classification of Esophageal Cancer 12e (2024)<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.

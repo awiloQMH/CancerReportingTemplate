@@ -120,6 +120,10 @@ if (frm.A23.value !== ""){
 	Template += "- Histologic grade: " + frm.A23.value + "\n";
 }
 
+if (frm.A70.value !== ""){
+	Template += "- Histologic grade (JCGC 15e): " + frm.A70.value + "\n";
+}
+
 if (frm.A24.value !== ""){
 	Template += "- Tumor extension: " + frm.A24.value + "\n";
 }
@@ -133,7 +137,11 @@ if (frm.A63.value !== ""){
 }
 
 if (frm.A25.value !== ""){
-	Template += "- Lymphovascular invasion: " + frm.A25.value + "\n";
+	Template += "- Lymphatic invasion (Ly): " + frm.A25.value + "\n";
+}
+
+if (frm.A64.value !== ""){
+	Template += "- Venous invasion (V): " + frm.A64.value + "\n";
 }
 
 if (frm.A26.value !== ""){
@@ -169,11 +177,11 @@ if (frm.A32.value + frm.A33.value + frm.A34.value !== ""){
 }
 
 if (frm.A32.value !== ""){
-	Template +=  "  - Mucosal margins: "  + frm.A32.value + "\n" ;
+	Template +=  "  - Mucosal margins (HM): "  + frm.A32.value + "\n" ;
 }
 
 if (frm.A33.value !== ""){
-	Template +=  "  - Deep margins: "  +  frm.A33.value + "\n" ;
+	Template +=  "  - Deep margins (VM): "  +  frm.A33.value + "\n" ;
 }
 
 if (frm.A34.value !== ""){
@@ -273,6 +281,33 @@ if (frm.A46.value !== ""){
 	Template += "    - Specify site(s): " + frm.A46.value + "\n";
 }
 **/
+
+
+if (frm.A65.value + frm.A66.value + frm.A67.value + frm.A68.value + frm.A69.value !== ""){
+	Template += "\n" + "- Endoscopic Curability eCura: " + "\n";
+}	
+
+if (frm.A65.value !== ""){
+	Template += "  - Lymphatic invasion Ly: " + frm.A65.value + "\n";
+}
+
+if (frm.A66.value !== ""){
+	Template += "  - Tumor size >30 mm: " + frm.A66.value + "\n";
+}
+
+if (frm.A67.value !== ""){
+	Template += "  - Positive vertical margin VM: " + frm.A67.value + "\n";
+}
+
+if (frm.A68.value !== ""){
+	Template += "  - Venous invsion V: " + frm.A68.value + "\n";
+}
+
+if (frm.A69.value !== ""){
+	Template += "  - Submucosal invasion ≥500 μm SM2: " + frm.A69.value + "\n";
+}
+
+
 if (document.getElementById("A47").checked || document.getElementById("A48").checked ||
 	document.getElementById("A49").checked || document.getElementById("A50").checked ||
 	document.getElementById("A51").checked || document.getElementById("A52").checked ||
@@ -350,7 +385,8 @@ table, th, td {
 		</a>
 		</h2>
 	</div>
-	
+Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_blank">Japanese Gastric Cancer Treatment Guidelines 7th edition (2025)</a>.
+
 <form>
 <!--
 <p>
@@ -430,7 +466,7 @@ table, th, td {
 <col width="45%">
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=12" target="_blank">Adenocarcinoma (WHO 2019)</a>:</label> 
+<label class="description">- Adenocarcinoma (WHO 2019)</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A21">
@@ -461,7 +497,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=13" target="_blank">Other histologic types</a>:</label> 
+<label class="description">- Other histologic types</a>:</label> 
 </td>
 <td>
 <select class="element select large" ID="A22">
@@ -486,7 +522,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=14" target="_blank">Histologic grade</a>:</label>
+<label class="description">- Histologic grade</a>:</label>
 </td>
 <td>
 <select class="element select large" ID="A23">
@@ -496,6 +532,19 @@ table, th, td {
 	<option value="G3: Poorly differentiated, undifferentiated">G3: Poorly differentiated, undifferentiated</option>
 	<option value="GX: Cannot be assessed">GX: Cannot be assessed</option>	
 	<option value="Other (specify):">Other (specify):</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="">+ Histologic grade (JCGC 15e)</a>:</label>
+</td>
+<td>
+<select class="element select large" ID="A70">
+	<option value=""></option>
+	<option value="Differentiated Type">Differentiated Type</option>
+	<option value="Undifferentiated Type">Undifferentiated Type</option>
 </select>
 </td>
 </tr>
@@ -522,7 +571,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td rowspan="2" valign="top"> <label class="description"> - Sub-mucosal Invasion (pT1 only): </label></td> 
+<td rowspan="2" valign="top"> <label class="description"> - Sub-mucosal Invasion (pT1 only): <br>- please use <a href=".\cap\eCURA.pdf" target="_blank">Japanese guidelines</a></label></td> 
 <td>Depth of Sub-mucosal Invasion<br>
     <select class="element select large" ID="A62">
 		<option value=""></option>
@@ -546,7 +595,21 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=15" target="_blank">Lymphatic and/on vascular invasion</a>: </label>
+<label class="">+ Ulceration (UL)</a>: </label>
+</td>
+<td>
+<select class="element select large" ID="A25">
+	<option value=""></option>
+	<option value="Not identified (UL0)">Not identified (UL0)</option>
+	<option value="Present (UL1)">Present (UL1)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Lymphatic invasion (Ly)</a>: </label>
 </td>
 <td>
 <select class="element select large" ID="A25">
@@ -560,7 +623,21 @@ table, th, td {
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=15" target="_blank">Perineural invasion</a>: </label>
+<label class="description">- Venous invasion (V)</a>: </label>
+</td>
+<td>
+<select class="element select large" ID="A64">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present">Present</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class=""> + Perineural invasion: </label>
 </td>
 <td>
 <select class="element select large" ID="A26">
@@ -574,7 +651,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=14" target="_blank">Treatment effect</a>: </label>
+<label class="description">- Treatment effect: </label>
 </td>
 <td>
 <select class="element select large" ID="A27">
@@ -590,6 +667,9 @@ table, th, td {
 </td>
 </tr>
 </table>
+</p>
+<p>
+<a href=".\cap\JCGC15e.pdf" target="_blank">Japanese Classication of Gastric Cancers 15e (2017)</a>:<br><br>The tumor biopsy specimens and endoscopically resected tumors are classified histologically into either the differentiated type or the undifferentiated type. The former includes malignant epithelial tumor, general type, of papillary adenocarcinoma (pap) and tubular adenocarcinoma (tub1, tub2), and the latter includes that of poorly differentiated adenocarcinoma (por1, por2) and signet ring cell carcinoma (sig) according to the Japanese Classification of Gastric Carcinoma 15th edition. When mucinous adenocarcinoma (muc) is found at the submucosal layer, the resected specimen is handled as undifferentiated type, regardless of whether it is considered to derive from the differentiated or undifferentiated type.
 </p>
 </fieldset>
 </p>
@@ -672,10 +752,10 @@ table, th, td {
 	<legend><label class="description">Surgical margins for endoscopic resection:</label></legend>
 <p>
 <table border="1">
-<col width="40%">
+<col width="60%">
 <tr>
 <td>
-<label class="description">- Mucosal margin:</label>
+<label class="description">- Mucosal margin (horizontal margin HM):</label>
 </td>
 <td>
 <select class="element select large" ID="A32">
@@ -692,7 +772,7 @@ table, th, td {
 
 <tr>
 <td>
-<label class="description">- Deep margin:</label>
+<label class="description">- Deep margin (Vertical margin VM):</label>
 </td>
 <td>
 <select class="element select large" ID="A33">
@@ -724,7 +804,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=16" target="_blank">Regional lymph nodes</a>: </label></legend>
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 <p>
 <table border="1">
 <col width="75%">
@@ -798,7 +878,7 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach_4.2.1.0.REL_CAPCP.pdf#page=17" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 <p>
 <table border="1">
 <col width="40%">
@@ -881,6 +961,96 @@ table, th, td {
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
+	<legend> <label class="description"> <a href=".\cap\eCURA.pdf" target="_blank">Curability of endoscopic resection eCura</a>: </label></legend>
+<p>
+Based on the cumulative points, patients are divided into three risk categories for lymph node metastasis (LMN) that guide post-ESD management:<br><br>
+- Low Risk (0--2 points): ≈ 2.5% LNM risk. Additional surgery may be unnecessary; close endoscopic follow-up is generally acceptable.<br><br>
+- Intermediate Risk (3--4 points): ≈ 6.7% LNM risk. Treatment requires case-by-case evaluation.<br><br>
+- High Risk (5--7 points): ≈ 23% LNM risk. Additional radical/salvage surgery is strongly recommended.<br><br>
+</p>
+Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_blank">Japanese Gastric Cancer Treatment Guidelines 7th edition (2025)</a>
+<p>
+<table border="1">
+<col width="75%">
+<tr>
+<td>
+<label class="description">- Lymphatic invasion (Ly):</label>
+</td>
+<td>
+<select class="element select large" ID="A65">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present (3 points)">Present (3 points)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Tumor size more than 30 mm:</label>
+</td>
+<td>
+<select class="element select large" ID="A66">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present (1 point)">Present (1 point)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Positive vertical margin (VM):</label>
+</td>
+<td>
+<select class="element select large" ID="A67">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present (1 point)">Present (1 point)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Venous invasion (V):</label>
+</td>
+<td>
+<select class="element select large" ID="A68">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present (1 point)">Present (1 point)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label class="description">- Submucosal invasion more than or equal to 500 μm (SM2):</label>
+</td>
+<td>
+<select class="element select large" ID="A69">
+	<option value=""></option>
+	<option value="Not identified">Not identified</option>
+	<option value="Present (1 point)">Present (1 point)</option>
+	<option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+</table>
+</p>
+<p>
+<img src=".\cap\eCura_Algorithm.jpg" alt="eCURA" width="600">
+</p>
+</fieldset>
+</p>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 <p>
 <input class="element checkbox" type="checkbox" id="A47" value="  - Intestinal metaplasia"><label  class="choice">Intestinal metaplasia</label>
@@ -917,7 +1087,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 03-Jun-2025,<br>
+Last upated on 21-Jul-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 Stomach 4.4.0.0	(Mar 2023), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
