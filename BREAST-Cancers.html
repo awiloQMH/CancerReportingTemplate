@@ -64,16 +64,13 @@ if (document.getElementById("A11").checked){
 	Template += frm.A11.value + "\n";
 }
 
-if (frm.A12.value !== ""){
-	Template += "- Tumor size: " + "\n" + frm.A12.value + "\n";
-}
 */
 if (frm.A13.value !== ""){
 	Template += "- Tumor histology and immunohistochemical studies: " + "\n" + "  - " + frm.A13.value + "\n";
 }
 
 if (frm.A14.value !== ""){
-	Template += "\n" + "- Histologic type (WHO 2019): " + frm.A14.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 2026): " + frm.A14.value + "\n";
 }
 
 if (frm.A15.value !== ""){
@@ -85,7 +82,7 @@ if (frm.A19.value !== ""){
 }
 
 if (frm.A16.value !== ""){
-	Template += "  - Glandular (acinar)/tubular differentiation: " + frm.A16.value + "\n";
+	Template += "  - Tubule formation: " + frm.A16.value + "\n";
 }
 
 if (frm.A17.value !== ""){
@@ -93,7 +90,11 @@ if (frm.A17.value !== ""){
 }
 
 if (frm.A18.value !== ""){
-	Template += "  - Mitotic rate (adjusted to 22 mm eyepiece, 40x objective): " + frm.A18.value + "\n";
+	Template += "  - Mitotic rate: " + frm.A18.value + "\n";
+}
+
+if (frm.A12.value !== ""){
+	Template += "- Tumor size: " + "\n" + frm.A12.value + "\n";
 }
 
 if (frm.A20.value !== ""){
@@ -115,16 +116,13 @@ if (frm.A23.value !== ""){
 if (document.getElementById("A24").checked || document.getElementById("A25").checked || 
     document.getElementById("A26").checked || document.getElementById("A27").checked || 
 	document.getElementById("A28").checked || document.getElementById("A29").checked || 
-	document.getElementById("A30").checked){
+	document.getElementById("A30").checked || document.getElementById("A97").checked ||
+	document.getElementById("A98").checked){
 	Template += "  - Architectural patterns of ductal carcinoma in situ: " + "\n";
 }
 
 if (document.getElementById("A24").checked){
 	Template += "  " + frm.A24.value + "\n";
-}
-
-if (document.getElementById("A25").checked){
-	Template += "  " + frm.A25.value + "\n";
 }
 
 if (document.getElementById("A26").checked){
@@ -143,6 +141,18 @@ if (document.getElementById("A29").checked){
 	Template += "  " + frm.A29.value + "\n";
 }
 
+if (document.getElementById("A97").checked){
+	Template += "  " + frm.A97.value + "\n";
+}
+
+if (document.getElementById("A98").checked){
+	Template += "  " + frm.A98.value + "\n";
+}
+
+if (document.getElementById("A25").checked){
+	Template += "  " + frm.A25.value + "\n";
+}
+
 if (document.getElementById("A30").checked){
 	Template += "  " + frm.A30.value + "\n";
 }
@@ -156,15 +166,19 @@ if (frm.A32.value !== ""){
 }
 
 if (frm.A33.value !== ""){
-	Template += "- Lobular carcinoma in situ: " + frm.A33.value + "\n";
+	Template += "- Additional lesion: " + frm.A33.value + "\n";
+}
+
+if (frm.A35.value !== ""){
+	Template += "- Tumor extension, nipple: " + frm.A35.value + "\n";
 }
 
 if (frm.A34.value !== ""){
 	Template += "- Tumor extension, skin: " + frm.A34.value + "\n";
 }
 
-if (frm.A35.value !== ""){
-	Template += "- Tumor extension, nipple: " + frm.A35.value + "\n";
+if (frm.A96.value !== ""){
+	Template += "- Tumor extension, macroscopic skin satellite foci : " + frm.A96.value + "\n";
 }
 
 if (frm.A36.value !== ""){
@@ -521,7 +535,7 @@ table, th, td {
 <img id="top" src="top.png" alt="">
 	<div id="form_container">
 	<div class="form_description">
-		<h2><a href=".\cap\Cancer-Protocols-2024-06-Update\Breast Protocol Folder\Breast.Invasive_4.10.0.0.REL.CAPCP.pdf" target="_blank">
+		<h2><a href=".\cap\Cancer-Protocols-2026-06-Update\Breast Protocol Folder\Breast.Invasive.Res_4.11.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">Invasive carcinoma of the breast
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
 		</div>
@@ -530,11 +544,7 @@ table, th, td {
 	
 <form>
 <p>
-There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Invasive.Bx_1.2.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>
-</p>
-
-<p>
-<a href=".\cap\Cancer-Protocols-2023-03-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.1.REL_CAPCP.pdf" target="_blank">Biomarker notes</a> are updated.
+There is different protocol for <a href=".\cap\Cancer-Protocols-2026-06-Update\Breast Protocol Folder\Breast.Invasive.Bx_1.3.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen</a>. <a href=".\cap\Cancer-Protocols-2026-06-Update\Breast Protocol Folder\Breast.Bmk_1.6.1.0. REL_CAPCP.pdf" target="_blank">Biomarker notes</a> are updated.
 </p>
 
 <!--
@@ -619,37 +629,49 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 <label class="description">- Tumor histology and immunohistochemical studies: </label>
 	<textarea ID="A13" class="element textarea medium"></textarea>
 </p>
-
+<!--
+<p>
+The latest WHO Breast Tumours criteria should be used to classify histologic type. Pure special type favorable carcinomas (e.g., pure tubular, mucinous, and cribriform) should be at least 90% special type histology (or classified as Mixed). Invasive cancers with histology that is considered a “specific morphologic pattern” of invasive breast cancer no special type / ductal include: invasive carcinoma with neuroendocrine differentiation, medullary pattern, and other rare patterns such as osteoclast-like stromal giant cell rich. For carcinomas with some features of a specific type that are not definitive, or rare tumors not otherwise listed, use “Other histologic type” and specify/describe.
+</p>
+<p>
+The size of the invasive carcinoma should take into consideration the gross and imaging findings correlated with the microscopic examination and be based on the tissue sampling strategy and cassette map. The size does not include adjacent ductal carcinoma in situ (DCIS) or separate satellites of invasion (greater than 5 mm apart). If multifocal, use the largest contiguous focus for pT category. If there has been a prior core needle biopsy or incisional biopsy showing a larger area of invasion than in the excisional specimen, the largest dimension of the invasive carcinoma in the prior specimen, if known, should be used for determining the T category. This also applies if the entire tumor has been removed by prior biopsy. The
+size of the largest foci in the two specimens should not be added together. If there has been prior neoadjuvant treatment and no invasive carcinoma is present, the cancer is classified as ypTis if there is residual DCIS and ypT0 if there is no remaining carcinoma. A cancer protocol is recommended
+(but not required) in this scenario.
+</p>
+-->
 <p>
 <table border="1">
 <col width="40%">
 
 <tr>
 <td>
-<label class="description">- Histologic type (2019):</label> 
+<label class="description">- Histologic type (2026, WHO 5e):</label> 
 </td>
 <td>
 	<select class="element select large" ID="A14">
 		<option value=""></option>
 		<option value="No residual invasive carcinoma">No residual invasive carcinoma</option>
 		<option value="Invasive carcinoma of no special type (ductal)">Invasive carcinoma of no special type (ductal)</option>
-		<option value="Micro-invasive carcinoma">Micro-invasive carcinoma</option>
-		<option value="Invasive lobular carcinoma">Invasive lobular carcinoma</option>
-		<option value="Invasive carcinoma with ductal and lobular features (mixed type carcinoma)">Invasive carcinoma with ductal and lobular features (mixed type carcinoma)</option>
-		<option value="Invasive breast carcinoma with medullary pattern">Invasive breast carcinoma with medullary pattern</option>
-		<option value="Invasive carcinoma with features of (specify): ">Invasive carcinoma with features of (specify): </option>
-		<option value="Tubular carcinoma">Tubular carcinoma</option>
-		<option value="Invasive cribriform carcinoma">Invasive cribriform carcinoma</option>
-		<option value="Mucinous carcinoma">Mucinous carcinoma</option>
-		<option value="Invasive micropapillary carcinoma">Invasive micropapillary carcinoma</option>
-		<option value="Apocrine adenocarcinoma">Apocrine adenocarcinoma</option>
-		<option value="Metaplastic carcinoma">Metaplastic carcinoma</option>
-		<option value="Encapsulated papillary carcinoma with invasion">Encapsulated papillary carcinoma with invasion</option>	
-		<option value="Solid papillary carcinoma with invasiona">Solid papillary carcinoma with invasion</option>	
-		<option value="Intraductal papillary adenocarcinoma with invasion">Intraductal papillary adenocarcinoma with invasion</option>
+		<option value="Invasive carcinoma of no special type (ductal) with specific morphologic pattern">Invasive carcinoma of no special type (ductal) with specific morphologic pattern</option>
+		<option value="Invasive lobular carcinoma, classic">Invasive lobular carcinoma, classic</option>
+		<option value="Invasive lobular carcinoma, variant pattern">Invasive lobular carcinoma, variant pattern</option>
+		<option value="Mixed histologic types (specify types and percentages):">Mixed histologic types (specify types and percentages):</option>
+		<option value="Tubular carcinoma, pure or greater than 90%">Tubular carcinoma, pure or greater than 90%</option>
+		<option value="Invasive cribriform carcinoma, pure or greater than 90%">Invasive cribriform carcinoma, pure or greater than 90%</option>
+		<option value="Mucinous carcinoma, pure or greater than 90%">Mucinous carcinoma, pure or greater than 90%</option>
+		<option value="Invasive micropapillary carcinoma, pure or greater than 90%">Invasive micropapillary carcinoma, pure or greater than 90%</option>
+		<option value="Invasive apocrine carcinoma">Invasive apocrine carcinoma</option>
+		<option value="Metaplastic carcinoma, spindle cell">Metaplastic carcinoma, spindle cell</option>
+		<option value="Metaplastic carcinoma, with heterologous differentiation / matrix productionl">Metaplastic carcinoma, with heterologous differentiation / matrix production</option>
+		<option value="Metaplastic carcinoma, squamous cell">Metaplastic carcinoma, squamous cell</option>
+		<option value="Metaplastic carcinoma, mixed (specify types and percentages):">Metaplastic carcinoma, mixed (specify types and percentages):</option>
+		<option value="Metaplastic carcinoma, favorable type, low-grade adenosquamous">Metaplastic carcinoma, favorable type, low-grade adenosquamous</option>
+		<option value="Metaplastic carcinoma, favorable type, low-grade fibromatosis-like">Metaplastic carcinoma, favorable type, low-grade fibromatosis-like</option>
+		<option value="Metaplastic carcinoma, other type (specify):">Metaplastic carcinoma, other type (specify):</option>
+		<option value="Invasive solid papillary carcinoma">Invasive solid papillary carcinoma</option>	
+		<option value="Adenoid cystic carcinoma, classic">Adenoid cystic carcinoma, classic</option>	
+		<option value="Secretory carcinoma">Secretory carcinoma</option>
 		<option value="Adenoid cystic carcinoma">Adenoid cystic carcinoma</option>
-		<option value="Neuroendocrine tumor">Neuroendocrine tumor</option>
-		<option value="Neuroendocrine carcinoma">Neuroendocrine carcinoma</option>
 		<option value="Invasive carcinoma, type cannot be determined">Invasive carcinoma, type cannot be determined</option>
 		<option value="Other (specify):">Other (specify):</option>
 	</select>
@@ -658,7 +680,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label class=""> + Tumor focality:</label>
+<label class="description">- Tumor focality:</label>
 </td>
 <td>
 	<select class="element select large" ID="A15">
@@ -681,7 +703,6 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 		<option value="Grade 2 (scores of 6 or 7)">Grade 2 (scores of 6 or 7)</option>
 		<option value="Grade 3 (scores of 8 or 9)">Grade 3 (scores of 8 or 9)</option>
 		<option value="Only microinvasion present (not graded)">Only microinvasion present (not graded)</option>
-		<option value="No residual invasive carcinoma">No residual invasive carcinoma</option>
 		<option value="Score cannot be determined">Score cannot be determined</option>
 	</select>
 </td>
@@ -689,14 +710,13 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td align="right">
-<label>- Glandular (acinar)/tubular differentiation :</label>
+<label>- Tubule Formation :</label>
 	<select class="element select small" ID="A16">
 		<option value=""></option>
-		<option value="Score 1 (>75% of tumor area forming glandular/tubular structures)">Score 1 (>75% of tumor area forming glandular/tubular structures)</option>
+		<option value="Score 1 (greater than 75% of tumor area forming glandular / tubular structures)">Score 1 (greater than 75% of tumor area forming glandular / tubular structures)</option>
 		<option value="Score 2 (10% to 75% of tumor area forming glandular/tubular structures)">Score 2 (10% to 75% of tumor area forming glandular/tubular structures)</option>
-		<option value="Score 3 (<10% of tumor area forming glandular/tubular structures)">Score 3 (<10% of tumor area forming glandular/tubular structures)</option>
+		<option value="Score 3 (less than 10% of tumor area forming glandular / tubular structures)">Score 3 (less than 10% of tumor area forming glandular / tubular structures)</option>
 		<option value="Only microinvasion present (not graded)">Only microinvasion present (not graded)</option>
-		<option value="No residual invasive carcinoma">No residual invasive carcinoma</option>
 		<option value="Score cannot be determined">Score cannot be determined</option>
 	</select>
 </td>
@@ -707,11 +727,10 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 <label>- Nuclear pleomorphism :</label>
 	<select class="element select small" ID="A17">
 		<option value=""></option>
-		<option value="Score 1 (nuclei small with little increase in size in comparison with normal breast epithelial cells, regular outlines, uniform nuclear chromatin, little variation in size)">Score 1 (nuclei small with little increase in size in comparison with normal breast epithelial cells, regular outlines, uniform nuclear chromatin, little variation in size)</option>
-		<option value="Score 2 (cells larger than normal with open vesicular nuclei, visible nucleoli, and moderate variability in both size and shape)">Score 2 (cells larger than normal with open vesicular nuclei, visible nucleoli, and moderate variability in both size and shape)</option>
-		<option value="Score 3 (vesicular nuclei, often with prominent nucleoli, exhibiting marked variation in size and shape, occasionally with very large and bizarre forms)">Score 3 (vesicular nuclei, often with prominent nucleoli, exhibiting marked variation in size and shape, occasionally with very large and bizarre forms)</option>
+		<option value="Score 1 (similar / less than 1.5 times the size of benign epithelial cell nuclei, minimal pleomorphism, even chromatin pattern, nucleoli either not visible or very inconspicuous)">Score 1 (similar / less than 1.5 times the size of benign epithelial cell nuclei, minimal pleomorphism, even chromatin pattern, nucleoli either not visible or very inconspicuous)</option>
+		<option value="Score 2 (larger / 1.5-2 times the size of benign epithelial cell nuclei, mild to moderate pleomorphism and visible but small and inconspicuous nucleoli)">Score 2 (larger / 1.5-2 times the size of benign epithelial cell nuclei, mild to moderate pleomorphism and visible but small and inconspicuous nucleoli)</option>
+		<option value="Score 3 (larger / greater than 2 times the size of benign epithelial cell nuclei, vesicular chromatin, marked variation in size and shape of nuclei, often prominent nucleoli)">Score 3 (larger / greater than 2 times the size of benign epithelial cell nuclei, vesicular chromatin, marked variation in size and shape of nuclei, often prominent nucleoli)</option>
 		<option value="Only microinvasion present (not graded)">Only microinvasion present (not graded)</option>
-		<option value="No residual invasive carcinoma">No residual invasive carcinoma</option>
 		<option value="Score cannot be determined">Score cannot be determined</option>
 	</select>
 </td>
@@ -726,39 +745,73 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 		<option value="Score 2 (9-17 mitoses per 10 hpf), specify:">Score 2 (9-17 mitoses per 10 hpf)</option>
 		<option value="Score 3 (> or = 18 mitoses per 10 hpf), specify:">Score 3 (> or = 18 mitoses per 10 hpf)</option>
 		<option value="Only microinvasion present (not graded)">Only microinvasion present (not graded)</option>
-		<option value="No residual invasive carcinoma">No residual invasive carcinoma</option>
 		<option value="Score cannot be determined">Score cannot be determined</option>
 	</select>
 </td>
 </tr>
 
 <tr>
-<td rowspan="4" valign="top">
+<td>
+<label class="description">- Tumor size:</label> 
+</td>
+<td>
+	<select class="element select large" ID="A12">
+		<option value=""></option>
+		<option value="  - Microinvasion only (< or = 1 mm)">Microinvasion only (< or = 1 mm)</option>
+		<option value="  - Greatest dimension (mm): ">Greatest dimension (mm): </option>
+		<option value="  - All dimensions (mm x mm x mm): ">All dimensions (mm x mm x mm):</option>
+		<option value="  - No residual carcinoma">No residual carcinoma</option>
+		<option value="  - Cannot be determined (explain):">Cannot be determined (explain):</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td rowspan="5" valign="top">
 <label class="description">- Tumor extension:</label>
 </td>
 </tr>
+
+
 <tr>
 <td align="right">
-<label>- Skin :</label>
-	<select class="element select medium" ID="A34">
+<label>- Nipple status :</label>
+	<select class="element select medium" ID="A35">
 		<option value=""></option>
-		<option value="Skin is not present">Skin is not present</option>
-		<option value="Skin is present and uninvolved">Skin is present and uninvolved</option>
-		<option value="Invasive carcinoma directly invades into the dermis or epidermis without skin ulceration (this does not change the T stage)">Invasive carcinoma directly invades into the dermis or epidermis without skin ulceration (this does not change the T stage)</option>
-		<option value="Invasive carcinoma directly invades into the dermis or epidermis with skin ulceration (classified as T4b)">Invasive carcinoma directly invades into the dermis or epidermis with skin ulceration (classified as T4b)</option>
-		<option value="Satellite skin foci of invasive carcinoma are present (ie, not contiguous with the invasive carcinoma in the breast) (classified as T4b)">Satellite skin foci of invasive carcinoma are present (ie, not contiguous with the invasive carcinoma in the breast) (classified as T4b)</option>
+		<option value="Not present in specimen">Not present in specimen</option>
+		<option value="Present and not involved">Present and not involved</option>
+		<option value="Paget's disease present">Paget's disease present</option>
+		<option value="Involved by invasive carcinoma">Involved by invasive carcinoma</option>
+		<option value="DCIS in major lactiferous ducts present">DCIS in major lactiferous ducts present</option>
+		<option value="Other (specify):">Other (specify):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 	</select>
 </td>
 </tr>
 
 <tr>
 <td align="right">
-<label>- Nipple :</label>
-	<select class="element select medium" ID="A35">
+<label>- Skin status:</label>
+	<select class="element select medium" ID="A34">
 		<option value=""></option>
-		<option value="Nipple is not present">Nipple is not present</option>
-		<option value="DCIS does not involve the nipple epidermis">DCIS does not involve the nipple epidermis </option>
-		<option value="DCIS involves nipple epidermis (Paget disease of the nipple)">DCIS involves nipple epidermis (Paget disease of the nipple)</option>
+		<option value="Not present in specimen">Not present in specimen</option>
+		<option value="Present and not involved">Present and not involved</option>
+		<option value="Carcinoma directly invades into the dermis or epidermis without macroscopic skin ulceration (this does not change the T classification)">Carcinoma directly invades into the dermis or epidermis without macroscopic skin ulceration (this does not change the T classification)</option>
+		<option value="Carcinoma directly invades into the dermis or epidermis with macroscopic skin ulceration (classified as T4b)">Carcinoma directly invades into the dermis or epidermis with macroscopic skin ulceration (classified as T4b)</option>
+		<option value="Other (specify):">Other (specify):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>- Skin Satellite Foci:</label>
+	<select class="element select medium" ID="A96">
+		<option value=""></option>
+		<option value="Not identified">Not identified</option>
+		<option value="Present (T4b)">Macroscopic Foci Present (T4b)</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 	</select>
 </td>
 </tr>
@@ -768,14 +821,15 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 <label>- Skeletal muscle :</label>
 	<select class="element select medium" ID="A36">
 		<option value=""></option>
-		<option value="Skeletal muscle is not present">Skeletal muscle is not present</option>
-		<option value="Skeletal muscle is present and uninvolved">Skeletal muscle is present and uninvolved</option>
+		<option value="Not present in specimen">Not present in specimen</option>
+		<option value="Present and not involved">Present and not involved</option>
 		<option value="Carcinoma invades skeletal muscle">Carcinoma invades skeletal muscle</option>
-		<option value="Carcinoma invades into skeletal muscle and into the chest wall (classified as T4a)">Carcinoma invades into skeletal muscle and into the chest wall (classified as T4a)</option>
+		<option value="Carcinoma invades into the chest wall deep to pectoralis muscle (classified as T4a)">Carcinoma invades into the chest wall deep to pectoralis muscle (classified as T4a)</option>
+		<option value="Other (specify):">Other (specify):</option>
+		<option value="Cannot be determined (explain):">Cannot be determined (explain):</option>
 	</select>
 </td>
 </tr>
-
 
 <tr>
 <td>
@@ -786,8 +840,9 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 		<option value=""></option>
 		<option value="Not identified">Not identified</option>
 		<option value="Present">Present</option>
-		<option value="Present, Focal (LVI in one block only)">Present, Focal (LVI in one block only)</option>
-		<option value="Present, Extensive (LVI in two or more blocks)">Present, Extensive (LVI in two or more blocks)</option>
+		<option value="Present, focal (limited to one to two vessels in one block)">Present, focal (limited to one to two vessels in one block)</option>
+		<option value="Present, extensive (greater than two vessels in one block or present in two or more blocks)">Present, extensive (greater than two vessels in one block or present in two or more blocks)</option>
+		<option value="Other (specify):">Other (specify):</option>
 		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
 </td>
@@ -795,13 +850,15 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label class="">+ Dermal lymphatic and/or vascular invasion: </label>
+<label class="description">- Dermal lymphatic and/or vascular invasion: </label>
 </td>
 <td>
 	<select class="element select large" ID="A38">
 		<option value=""></option>
+		<option value="Not applicable (no skin present)">Not applicable (no skin present)</option>
 		<option value="Not identified">Not identified</option>
 		<option value="Present">Present</option>
+		<option value="Other (specify):">Other (specify):</option>
 		<option value="Cannot be determined">Cannot be determined</option>
 	</select>
 </td>
@@ -843,10 +900,11 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 <td>
 	<select class="element select large" ID="A41">
 		<option value=""></option>
+		<option value="Not applicable">Not applicable</option>
 		<option value="No known presurgical therapy">No known presurgical therapy</option>
 		<option value="No definite response to presurgical therapy in metastatic carcinoma">No definite response to presurgical therapy in metastatic carcinoma</option>
-		<option value="Probable or definite response to presurgical therapy in metastatic carcinoma">Probable or definite response to presurgical therapy in metastatic carcinoma</option>
-		<option value="No lymph node metastases. Fibrous scarring or histiocytic aggregates, possibly related to prior lymph node metastases with pathologic complete response">No lymph node metastases. FFibrous scarring or histiocytic aggregates, possibly related to prior lymph node metastases with pathologic complete response</option>
+		<option value="Metastatic carcinoma present with evidence of response to presurgical therapy (specify in Treatment Effect in Lymph Node(s) Comment if need to clarify extent of response)">Metastatic carcinoma present with evidence of response to presurgical therapy (specify in Treatment Effect in Lymph Node(s) Comment if need to clarify extent of response)</option>
+		<option value="No lymph node metastases. Fibrous scarring or histiocytic aggregates, possibly related to prior lymph node metastases with pathologic complete response">No lymph node metastases. Fibrous scarring or histiocytic aggregates, possibly related to prior lymph node metastases with pathologic complete response</option>
 		<option value="No lymph node metastases and no fibrous scarring or histiocytic aggregates in the nodes">No lymph node metastases and no fibrous scarring or histiocytic aggregates in the nodes</option>
 	</select>
 </td>
@@ -934,11 +992,13 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 <td valign="top">
 <label>+ Architectural patterns of ductal carcinoma in situ:</label><br>
 	<input class="element checkbox" type="checkbox" id="A24"  value="  - Comedo"><label class="choice" >Comedo</label>
-	<input class="element checkbox" class="element checkbox" type="checkbox" id="A25"  value="  - Paget disease (DCIS involving nipple skin)"><label class="choice" >Paget disease</label>
 	<input class="element checkbox" class="element checkbox" type="checkbox" id="A26"  value="  - Cribriform"><label class="choice" >Cribriform</label>
 	<input class="element checkbox" type="checkbox" id="A27"  value="  - Micropapillary"><label class="choice" >Micropapillary</label>
 	<input class="element checkbox" class="element checkbox" type="checkbox" id="A28"  value="  - Papillary"><label class="choice" >Papillary</label>
 	<input class="element checkbox" class="element checkbox" type="checkbox" id="A29"  value="  - Solid"><label class="choice" >Solid</label>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A97"  value="  - Solid papillary carcinoma in situ"><label class="choice" >Solid papillary carcinoma in situ</label>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A98"  value="  - Encapsulated papillary carcinoma in situ"><label class="choice" >Encapsulated papillary carcinoma in situ</label>
+	<input class="element checkbox" class="element checkbox" type="checkbox" id="A25"  value="  - Paget disease (DCIS involving nipple skin)"><label class="choice" >Paget disease</label>
 	<input class="element checkbox" class="element checkbox" type="checkbox" id="A30"  value="  - Other, specify:"><label class="choice" >Other, specify:</label>
 
 </td>
@@ -946,11 +1006,16 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 
 <tr>
 <td>
-<label>+ Lobular carcinoma in situ:</label>
+<label>+ Additional lesions:</label>
 	<select class="element select medium" ID="A33">
 		<option value=""></option>
-		<option value="No LCIS in specimen">No LCIS in specimen</option>
-		<option value="Present">Present</option>
+		<option value="Not identified">Not identified</option>
+		<option value="Lobular carcinoma in situ, classic">Lobular carcinoma in situ, classic</option>
+		<option value="Lobular carcinoma in situ, pleomorphic">Lobular carcinoma in situ, pleomorphic</option>
+		<option value="Lobular carcinoma in situ (specify):">Lobular carcinoma in situ (specify):</option>
+		<option value="Atypical lobular hyperplasia">Atypical lobular hyperplasia</option>
+		<option value="Flat epithelial atypia">Flat epithelial atypia</option>
+		<option value="Other (specify):">Other (specify):</option>
 	</select>
 </td>
 </tr>
@@ -971,14 +1036,14 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 </p>
 
 <p>
-+ <a href="Biomarker-Breast-markers.html" target="_blank">Anxillary tests</a> for reporting of ER, PR, Ki-67, HER2 IHC, HER2 DISH and PD-L1.
++ <a href="Biomarker-Breast-markers.html" target="_blank">Anxillary tests</a> for reporting of ER, PR, Ki-67, HER2 IHC, HER2 DISH and PD-L1 (E1L3N). Germline BRCA1/2 genetic test is available to all breast cancer patients. Prior genetic counselling and a consent is needed for ordering. <br><br>Specify Prior Biomarkers on Additional Foci of Invasion (if relevant; i.e., if foci differ in histologic type, grade, or biomarker status; specify tumor identifier for each; may repeat up to 10x).
 </p>
 </fieldset>
 </p>
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-<legend><label class="description"><a href=".\cap\Cancer-Protocols-2022-03-Update\Breast Protocol Folder\Breast.Invasive_4.6.0.0.REL_CAPCP.pdf#page=34" target="_blank">Surgical margins for invasive tumor</a>: </label></legend>
+<legend><label class="description">Surgical margins for invasive tumor: </label></legend>
 * Please try to measure all relevant margins. 
 <p>
 <table border="1">
@@ -1276,7 +1341,7 @@ There is different protocol for <a href=".\cap\Cancer-Protocols-2023-03-Update\B
 		<option value=""></option>
 		<option value="  - Not identified">Not identified</option>
 		<option value="  - Present">Present</option>
-		<option value="  - Present, extent of ENE, no. < or = 2 mm, no > 2 mm">Present, extent of ENE, no. < or = 2 mm, no > 2 mm</option>
+		<option value="Present, extent of ENE, no. < or = 2 mm, no > 2 mm">Present, extent of ENE, number less than or equal 2 mm, number greater than 2 mm</option>
 		<option value="  - Cannot be determined">Cannot be determined</option>
 	</select>
 </td>
@@ -1332,22 +1397,22 @@ Approximately 1000 tumor cells are contained in a 3-dimensional 0.2-mm cluster. 
 <td>
 	<select class="element select large" ID="A60">
 		<option value=""></option>
-		<option value="  - pTX:Primary tumor cannot be assessed">pTX:Primary tumor cannot be assessed</option>
+		<option value="  - pT not assigned (cannot be determined based on available pathological information)">pT not assigned (cannot be determined based on available pathological information)</option>
 		<option value="  - pT0: No evidence of primary tumor">pT0: No evidence of primary tumor</option>
 		<option value="  - pTis(DCIS): Ductal carcinoma in situ">pTis(DCIS): Ductal carcinoma in situ</option>
 		<option value="  - pTis (Paget): Paget disease of the nipple not associated with invasive carcinoma and/or DCIS in the underlying breast parenchyma">pTis (Paget): Paget disease of the nipple not associated with invasive carcinoma and/or DCIS in the underlying breast parenchyma</option>
-		<option value="  - pT1: Tumor < or = 20 mm in greatest dimension">pT1: Tumor < or = 20 mm in greatest dimension</option>
 		<option value="  - pT1mi: Tumor < or = 1 mm in greatest dimension">pT1mi: Tumor < or = 1 mm in greatest dimension</option>
-		<option value="  - pT1a: Tumor > 1 mm but < or = 5 mm in greatest dimension">pT1a: Tumor > 1 mm but < or = 5 mm in greatest dimension</option>
-		<option value="  - pT1b: Tumor > 5 mm but < or = 10 mm in greatest dimension">pT1b: Tumor > 5 mm but < or = 10 mm in greatest dimension</option>
-		<option value="  - pT1c: Tumor > 10 mm but < or = 20 mm in greatest dimension">pT1c: Tumor > 10 mm but < or = 20 mm in greatest dimension</option>
-		<option value="  - pT2: Tumor > 20 mm but < or = 50 mm in greatest dimension">pT2: Tumor > 20 mm but < or = 50 mm in greatest dimension</option>
-		<option value="  - pT3: Tumor > 50 mm in greatest dimension">pT3: Tumor > 50 mm in greatest dimension</option>
-		<option value="  - pT4: Tumor of any size with direct extension to the chest wall and/or to the skin (ulceration or skin nodules)">pT4: Tumor of any size with direct extension to the chest wall and/or to the skin (ulceration or skin nodules)</option>
+		<option value="  - pT1a: Tumor greater than 1 mm but less than or equal to 5 mm in greatest dimension">pT1a: Tumor greater than 1 mm but less than or equal to 5 mm in greatest dimension</option>
+		<option value="  - pT1b: Tumor greater than 5 mm but less than or equal to 10 mm in greatest dimension">pT1b: Tumor greater than 5 mm but less than or equal to 10 mm in greatest dimension</option>
+		<option value="  - pT1c: Tumor greater than 10 mm but less than or equal to 20 mm in greatest dimension">pT1c: Tumor greater than 10 mm but less than or equal to 20 mm in greatest dimension</option>
+		<option value="  - pT1 (subcategory cannot be determined)">pT1 (subcategory cannot be determined)</option>
+		<option value="  - pT2: Tumor greater than 20 mm but less than or equal to 50 mm in greatest dimension">pT2: Tumor greater than 20 mm but less than or equal to 50 mm in greatest dimension</option>
+		<option value="  - pT3: Tumor greater than 50 mm in greatest dimension">pT3: Tumor greater than 50 mm in greatest dimension</option>
 		<option value="  - pT4a: Extension to the chest wall; invasion or adherence to pectoralis muscle in the absence of invasion of chest wall structures does not qualify as T4">pT4a: Extension to the chest wall; invasion or adherence to pectoralis muscle in the absence of invasion of chest wall structures does not qualify as T4</option>
 		<option value="  - pT4b: Ulceration and/or ipsilateral macroscopic satellite nodules and/or edema (including peau d’orange) of the skin that does not meet the criteria for inflammatory carcinoma">pT4b: Ulceration and/or ipsilateral macroscopic satellite nodules and/or edema (including peau d’orange) of the skin that does not meet the criteria for inflammatory carcinoma</option>
 		<option value="  - pT4c: Both T4a and T4b are present">pT4c: Both T4a and T4b are present</option>
 		<option value="  - pT4d: Inflammatory carcinoma">pT4d: Inflammatory carcinoma</option>
+		<option value="  - pT4 (subcategory cannot be determined)">pT4 (subcategory cannot be determined)</option>
 	</select>
 </td>
 </tr>
@@ -1373,15 +1438,15 @@ Approximately 1000 tumor cells are contained in a 3-dimensional 0.2-mm cluster. 
 		<option value="  - pN not assigned (no nodes submitted or found)">pN not assigned (no nodes submitted or found)</option>
 		<option value="  - pN not assigned (cannot be determined based on available pathological information)"> pN not assigned (cannot be determined based on available pathological information)</option>
 		<option value="  - pN0: No regional lymph node metastasis or ITCs only">pN0: No regional lymph node metastasis or ITCs only</option>
-		<option value="  - pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm">pN0(i+): Isolated tumor cells in regional lymph node(s) < or = 0.2 mm</option>
+		<option value="  - pN0(i+): ITCs only (malignant cell clusters no larger than 0.2 mm) in regional lymph node(s)">pN0(i+): ITCs only (malignant cell clusters no larger than 0.2 mm) in regional lymph node(s)</option>
 		<option value="  - pN0(mol+): Positive molecular findings (RT-PCR), but no ITCs detected">pN0(mol+): Positive molecular findings (RT-PCR), but no ITCs detected</option>
-		<option value="  - pN1mi: Micrometastases (approximately 200 cells, > 0.2 mm to < or = 2.0 mm)">pN1mi: Micrometastases (approximately 200 cells, > 0.2 mm to < or = 2.0 mm)</option>
-		<option value="  - pN1a: Metastases in 1 to 3 axillary lymph nodes, at least 1 metastasis > 2.0 mm">pN1a: Metastases in 1 to 3 axillary lymph nodes, at least 1 metastasis > 2.0 mm</option>
+		<option value="  - pN1mi: Micrometastases (approximately 200 cells, larger than 0.2 mm, but none larger than 2.0 mm)">pN1mi: Micrometastases (approximately 200 cells, larger than 0.2 mm, but none larger than 2.0 mm)</option>
+		<option value="  - pN1a: Metastases in 1-3 axillary lymph nodes, at least one metastasis larger than 2.0 mm">pN1a: Metastases in 1-3 axillary lymph nodes, at least one metastasis larger than 2.0 mm</option>
 		<option value="  - pN1b: Metastases in ipsilateral internal mammary sentinel nodes, excluding ITCs">pN1b: Metastases in ipsilateral internal mammary sentinel nodes, excluding ITCs</option>
 		<option value="  - pN1c: pN1a and pN1b combined">pN1c: pN1a and pN1b combined</option>
-		<option value="  - pN2a: Metastases in 4 to 9 axillary lymph nodes (at least 1 tumor deposit > 2.0 mm)">pN2a: Metastases in 4 to 9 axillary lymph nodes (at least 1 tumor deposit > 2.0 mm)</option>
+		<option value="  - pN2a: Metastases in 4-9 axillary lymph nodes (at least one tumor deposit larger than 2.0 mm)">pN2a: Metastases in 4-9 axillary lymph nodes (at least one tumor deposit larger than 2.0 mm)</option>
 		<option value="  - pN2b: Metastases in clinically detected internal mammary lymph nodes with or without microscopic confirmation; with pathologically negative axillary nodes">pN2b: Metastases in clinically detected internal mammary lymph nodes with or without microscopic confirmation; with pathologically negative axillary nodes</option>
-		<option value="  - pN3a: Metastases in 10 or more axillary lymph nodes (at least 1 tumor deposit > 2.0 mm) or metastases to the infraclavicular (Level III axillary lymph) nodes">pN3a:	Metastases in 10 or more axillary lymph nodes (at least 1 tumor deposit > 2.0 mm) or metastases to the infraclavicular (Level III axillary lymph) nodes</option>
+		<option value="  - pN3a: Metastases in 10 or more axillary lymph nodes (at least one tumor deposit larger than 2.0 mm); or metastases to the infraclavicular (Level III axillary lymph) nodes">pN3a: Metastases in 10 or more axillary lymph nodes (at least one tumor deposit larger than 2.0 mm); or metastases to the infraclavicular (Level III axillary lymph) nodes</option>
 		<option value="  - pN3b: pN1a or pN2a in the presence of cN2b (positive internal mammary nodes by imaging); or pN2a in the presence of pN1b">pN3b: pN1a or pN2a in the presence of cN2b (positive internal mammary nodes by imaging); or pN2a in the presence of pN1b</option>
 		<option value="  - pN3c: Metastases in ipsilateral supraclavicular lymph nodes">pN3c: Metastases in ipsilateral supraclavicular lymph nodes</option>
 	</select>
@@ -1396,7 +1461,7 @@ Approximately 1000 tumor cells are contained in a 3-dimensional 0.2-mm cluster. 
 	<select class="element select large" ID="A64">
 		<option value=""></option>
 		<option value="  - Not applicable - pM cannot be determined from the submitted specimen(s)">Not applicable - pM cannot be determined from the submitted specimen(s)</option>
-		<option value="  - pM1: Histologically proven metastases larger than 0.2 mm">pM1: Histologically proven metastases larger than 0.2 mm</option>
+		<option value="  - pM1: Histologically proven metastases larger than 0.2 mm, specify Case Number(s) with Metastasis (if from a previous procedure):">pM1: Histologically proven metastases larger than 0.2 mm, specify Case Number(s) with Metastasis (if from a previous procedure):</option>
 	</select>
 </td>
 </tr>
@@ -1507,9 +1572,9 @@ NON ESSENTIAL DATA<br>
 <br>
 
 <div id="footer">
-Last upated on 10-Feb-2026,<br>
+Last upated on 27-Jul-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>,<br>
-Breast Invasive Resection 4.10.0.0 (Jun 2024).<br>
+Breast Invasive Resection 4.11.0.0 (Jun 2026).<br>
 html form was created on 
 <a href="https://www.phpform.org">pForm</a>, 
 <a href="https://www.w3schools.com/">W3 School</a>, 
