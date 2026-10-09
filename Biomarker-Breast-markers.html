@@ -153,7 +153,7 @@ if (frm.A01.value == "Negative (Allred score <2), Internal control cells absent"
 	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of ER status." + "\n";
 }
 
-if (frm.A01.value == "Negative (ASCO/CAP <1%), Internal control cells absent"){
+if (frm.A01.value == "Negative (ASCO/CAP less than 1%), Internal control cells absent"){
 	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of ER status." + "\n";
 }
 
@@ -165,7 +165,7 @@ if (frm.A04.value == "Negative (Allred score <2), Internal control cells absent"
 	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of PR status." + "\n";
 }
 
-if (frm.A04.value == "Negative (ASCO/CAP <1%), Internal control cells absent"){
+if (frm.A04.value == "Negative (ASCO/CAP less than 1%), Internal control cells absent"){
 	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of PR status." + "\n";
 }
 
@@ -283,9 +283,9 @@ from CAP template.
 		<option value="Negative (Allred score <2), Internal control cells absent">Negative (Allred score <2), Internal control cells absent</option>
 		<option value="Positive (Allred score >=2)">Positive (Allred score >=2)</option>
 		<option value=""></option>
-		<option value="Negative (ASCO/CAP <1%), Internal control cells present and stain as expected">Negative (ASCO/CAP <1%), Internal control cells present and stain as expected</option>
-		<option value="Negative (ASCO/CAP <1%), Internal control cells absent">Negative (ASCO/CAP <1%), Internal control cells absent</option>
- 		<option value="Positive (ASCO/CAP >10% positive nuclei)">Positive (ASCO/CAP >10% positive nuclei)</option>
+		<option value="Negative (ASCO/CAP less than 1%), Internal control cells present and stain as expected">Negative (ASCO/CAP less than 1%), Internal control cells present and stain as expected</option>
+		<option value="Negative (ASCO/CAP less than 1%), Internal control cells absent">Negative (ASCO/CAP less than 1%), Internal control cells absent</option>
+ 		<option value="Positive (ASCO/CAP greater than 10% positive nuclei)">Positive (ASCO/CAP greater than 10% positive nuclei)</option>
 		<option value="Low Positive (ASCO/CAP 1-10% positive nuclei)">Low Positive (ASCO/CAP 1-10% positive nuclei)</option>
 	</select>
 </td>
@@ -329,9 +329,9 @@ from CAP template.
 		<option value="Negative (Allred score <2), Internal control cells absent">Negative (Allred score <2), Internal control cells absent</option>
 		<option value="Positive (Allred score >=2)">Positive (Allred score >=2)</option>
 		<option value=""></option>
-		<option value="Negative (ASCO/CAP <1%), Internal control cells present and stain as expected">Negative (ASCO/CAP <1%), Internal control cells present and stain as expected</option>
-		<option value="Negative (ASCO/CAP <1%), Internal control cells absent">Negative (ASCO/CAP <1%), Internal control cells absent</option>
- 		<option value="Positive (ASCO/CAP >10% positive nuclei)">Positive (ASCO/CAP  >10% positive nuclei)</option>
+		<option value="Negative (ASCO/CAP less than 1%), Internal control cells present and stain as expected">Negative (ASCO/CAP less than 1%), Internal control cells present and stain as expected</option>
+		<option value="Negative (ASCO/CAP less than 1%), Internal control cells absent">Negative (ASCO/CAP less than 1%), Internal control cells absent</option>
+ 		<option value="Positive (ASCO/CAPgreater or equal to 1% positive nuclei)">Positive (ASCO/CAP greater or equal to 1% positive nuclei)</option>
 	</select>
 </td>
 </tr>
