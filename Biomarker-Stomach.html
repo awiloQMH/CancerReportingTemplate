@@ -208,19 +208,19 @@ if (frm.A19.value !== ""){
 }
 
 if (frm.A05.value + frm.A07.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system.";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system. This is a laboratory-developed test (QMH, HK).";
 }
 
 if (frm.A09.value !== ""){
-	Template += "\n" + "Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by pathologist under light microscopy.";
+	Template += "\n" + "Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and was examined by a pathologist under light microscopy. The test is Food and Drug Administration (FDA) cleared.";
 }
 
 if (frm.IHC.value !== ""){
-Template += "\n"+ "Formalin-fixed paraffin embedded sections were assessed by IHC technique for MLH1, MSH2, MSH6 and PMS2, using the antibodies G168-15, FE11, 44/MSH6 and A16-4, respectively.";
+Template += "\n"+ "Formalin-fixed paraffin embedded sections were assessed by IHC technique for MLH1, MSH2, MSH6 and PMS2, using the antibodies G168-15, FE11, 44/MSH6 and A16-4, respectively. This is a laboratory-developed test (QMH, HK).";
 }
 
 if (frm.MSI.value !== ""){
-	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. The MSI test is under evaluation and is not in the CAP-acredited list.";
+	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. This is a laboratory-developed test (QMH, HK) and is not in the CAP-acredited list.";
 } 
 
 if (frm.A20.value !== ""){
@@ -228,7 +228,7 @@ if (frm.A20.value !== ""){
 } 
 
 if (frm.A28.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for Claudin 18.2, using the antibody 43-14A (Abcam)";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for Claudin 18.2, using the antibody 43-14A (Abcam). This is a laboratory-developed test (QMH, HK).";
 }
 
 frm.holdtext.value = Template;
@@ -557,8 +557,8 @@ table, th, td {
 <select class="element select large"  ID="A20">
 	<option value=""></option>
 	<option value="Cannot be determined">Cannot be determined</option>
-	<option value="Negative (CPS<10)">Negative (combined positive score CPS < 10)</option>
-	<option value="Positive (combined positive score CPS > or = 10)">Positive (combined positive score CPS >= 10)</option>
+	<option value="Negative (CPS<1)">Negative (combined positive score CPS < 1)</option>
+	<option value="Positive (combined positive score CPS > or = 1)">Positive (combined positive score CPS >= 1)</option>
 </select>
 </td>
 </tr>
@@ -568,8 +568,8 @@ table, th, td {
 <label>- Antibody (anti-CD274) :</label>
 	<select class="element select small"  ID="A21">
 		<option value=""></option>
-		<option value="22C3 (Dako)">22C3 (Dako)</option>
-		<option value="E1L3N (Cell Signaling)">E1L3N (Cell Signaling)</option>
+		<option value="22C3 (Dako, FDA cleared)">22C3 (Dako)</option>
+		<option value="E1L3N (Cell Signaling, QMH laboratory-developed test)">E1L3N (Cell Signaling)</option>
 		<option value="Other, specify:">Other, specify:</option>
 	</select>
 </td>
@@ -660,7 +660,7 @@ hours
 <br>
 
 <div id="footer">
-Last upated 11-Apr-2025, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
+Last upated 09-Oct-2026, based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>

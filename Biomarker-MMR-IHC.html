@@ -29,7 +29,7 @@ Template += "- PMS2 (PMS1 homolog 2): " + frm.PMS2.value + "\n";
 
 if (frm.IHC.value !== ""){
 Template += "\n" + "- IHC Interpretation for tumor: " +  "\n" + "  - " + frm.IHC.value + "\n"+ "\n"+
-"Antibodies for MLH1, MSH2, MSH6 and PMS2 are G168-15, FE11, 44/MSH6 and A16-4, respectively."+
+"Antibodies for MLH1, MSH2, MSH6 and PMS2 are G168-15, FE11, 44/MSH6 and A16-4, respectively. This is a laboratory-developed test (QMH, HK)."+
 "\n";
 }
 
@@ -86,7 +86,7 @@ Template += "\n" + "- Microsatellite instability status: " + "\n" + "  - " + frm
 }
 
 if (frm.MSI.value !== ""){
-	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. " + "\n" + "\n" + "The MSI test is under evaluation and is not in the CAP-acredited list.";
+	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. " + "\n" + "\n" + "The MSI test is a laboratory-developed test (QMH, HK), and is not in the CAP-acredited list.";
 }
 
 frm.holdtext.value = Template;
@@ -368,7 +368,7 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated 27-Mar-2023,<br>
+Last upated 09-Oct-2026,<br>
 modified from <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
 html form and cascade style sheet were created basing on <a href="http://www.phpform.org">pForm</a>,<br>
 with codes modified from <a href="https://www.w3schools.com/">W3 School tutorials</a> and <a href="https://stackoverflow.com/">Stack Overflow</a>.<br><br>

@@ -159,37 +159,37 @@ if (frm.A23.value !== ""){
 if (frm.A31.value !== ""){
 	Template += "- Folate Receptor Alpha Status : " + frm.A31.value + "\n";
 }
-
+/*
 if (frm.A32.value !== ""){
 	Template += "- Test type : " + frm.A32.value + "\n";
 }
-
+*/
 if (frm.A19.value !== ""){
 	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
 }
 
 if (frm.A01.value + frm.A04.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system." +  "\n";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system. This is a laboratory-developed test (QMH, HK)." +  "\n";
 }
 
 if (frm.A07.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for HER2, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system." +  "\n";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for HER2, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system. This is a laboratory-developed test (QMH, HK)." +  "\n";
 };
 
 if (frm.A09.value !== ""){
-	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and examined by a pathologist under light microscopy." +  "\n";
+	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and was examined by a pathologist under light microscopy. The test is Food and Drug Administration (FDA) cleared." +  "\n";
 }
 
 if (frm.IHC.value !== ""){
-Template += "\n"+ "Antibodies for MLH1, MSH2, MSH6 and PMS2 are G168-15, FE11, 44/MSH6 and A16-4, respectively." +  "\n";
+Template += "\n"+ "Antibodies for MLH1, MSH2, MSH6 and PMS2 are G168-15, FE11, 44/MSH6 and A16-4, respectively. This is a laboratory-developed test (QMH, HK)." +  "\n";
 }
 
 if (frm.MSI.value !== ""){
-	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. The MSI test is under evaluation and is not in the CAP-acredited list." +  "\n";
+	Template += "\n" + "DNA was extracted from the tumor tissue and the normal tissue, following microdissection of formalin-fixed paraffin-embedded tissue sections. MSI was assessed using a laboratory developed method by comparing the differences in patterns of PCR products of 5 mononucleotide repeats and 3 dinucleotide repeats markers of the tumor tissue and those of the normal tissue. This is a laboratory-developed test (QMH, HK), and is not in the CAP-acredited list." +  "\n";
 } 
 
 if (frm.A20.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for PD-L1, using the antibody " + frm.A21.value + ". " +  "\n";
+	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for PD-L1, using the antibody " + frm.A21.value + ". " +  " This is a laboratory-developed test (QMH, HK)." + "\n";
 }   
 if (frm.A28.value !== ""){
 	Template += "\n" + "- Cold ischemia time : " + frm.A28.value + " min";
@@ -714,8 +714,8 @@ CPS = Total positive cells / (Positive cells + Negative tumor cells). CPS >=1 is
 <label>- Antibody (anti-CD274) :</label>
 	<select class="element select small"  ID="A21">
 		<option value=""></option>
-		<option value="22C3 (Dako)">22C3 (Dako)</option>
-		<option value="E1L3N (Cell Signaling)">E1L3N (Cell Signaling)</option>
+		<option value="22C3 (Dako, FDA cleared)">22C3 (Dako)</option>
+		<option value="E1L3N (Cell Signaling, QMH Laboratory-developed test)">E1L3N (Cell Signaling)</option>
 		<option value="Other, specify:">Other, specify:</option>
 	</select>
 </td>
@@ -776,7 +776,7 @@ hours
 <td>
 </td>
 </tr>
-
+<!--
 <tr>
 <td>
 <label class="">+ Test type :</label>
@@ -792,7 +792,7 @@ hours
 	</select>
 </td>
 </tr>
-
+-->
 
 </table>
 </p>
@@ -845,7 +845,7 @@ hours
 <br>
 
 <div id="footer">
-Last upated 06-Oct-2025, based on <a href=".\cap\Cancer-Protocols-2025-09-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.3.0.0.REL_CAPCP.pdf" target="_blank"> Gynecologic Biomarkers 1.3.0.0 (Sep-2025 version)</a>.<br>
+Last upated 09-Oct-2026, based on <a href=".\cap\Cancer-Protocols-2025-09-Update\Gynecologic Protocol Folder\Gynecologic.Bmk_1.3.0.0.REL_CAPCP.pdf" target="_blank"> Gynecologic Biomarkers 1.3.0.0 (Sep-2025 version)</a>.<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
