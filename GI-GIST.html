@@ -137,8 +137,8 @@ if (document.getElementById("A35").checked){
 }
 
 if (document.getElementById("A22").checked || document.getElementById("A23").checked || 
-	document.getElementById("A24").checked || frm.A25.value + frm.A26.value + frm.A27.value
-	!== ""){
+	document.getElementById("A24").checked || document.getElementById("A37").checked || document.getElementById("A38").checked ||
+	frm.A25.value + frm.A26.value + frm.A27.value !== ""){
 	Template += "\n" + "- Pathologic stage classification (pTNM, AJCC 8th edition):" + "\n";
 }
 
@@ -161,6 +161,18 @@ if (document.getElementById("A24").checked){
 
 if (frm.A25.value !== ""){
 	Template += "  - Primary tumor (pT): " + "\n" + "  " + frm.A25.value + "\n";
+}
+
+if (document.getElementById("A37").checked || document.getElementById("A38").checked){
+	Template += "  - N Suffix:" + "\n";
+}
+
+if (document.getElementById("A37").checked){
+	Template += "    " + frm.A37.value + "\n";
+}
+
+if (document.getElementById("A38").checked){
+	Template += "    " + frm.A38.value + "\n";
 }
 
 if (frm.A26.value !== ""){
@@ -210,7 +222,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2022-12-Update\Gastrointestinal Protocol Folder\Stomach.GIST_4.3.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2026-09-Update\Gastrointestinal Protocol Folder\GIST_4.4.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Gastrointestinal stromal tumor
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -220,8 +232,8 @@ table, th, td {
 	</div>
 	
 <form>
-<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach.GIST.Bx_4.2.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen of GIST</a>.</p>
-<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2022-12-Update\Gastrointestinal Protocol Folder\Stomach.GIST.Bmk_1.1.0.0.REL_CAPCP.pdf" target="_blank">biomarkers of GIST</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2026-09-Update\Gastrointestinal Protocol Folder\GIST.Bx_4.4.0.0.REL_CAPCP.pdf" target="_blank">biopsy specimen of GIST</a>.</p>
+<p> This is additional protocol for <a href=".\cap\Cancer-Protocols-2026-09-Update\Gastrointestinal Protocol Folder\GIST.Bmk_1.2.0.0.REL_CAPCP.pdf" target="_blank">biomarkers of GIST</a>.</p>
 <!--
 <p>
 <fieldset style="border-color:#e6e6ff;">
@@ -321,7 +333,7 @@ table, th, td {
 
 <tr>
 <td rowspan="2" valign="top">
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach.GIST_4.2.0.0.REL_CAPCP.pdf#page=9" target="_blank">Histologic grade</a>:</label>
+<label class="description">- Histologic grade:</label>
 Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 fields (equals 10 mm<sup>2</sup>), divide by 2 to get mitotic count for 5 mm<sup>2</sup>
 </td>
 <td>
@@ -363,7 +375,7 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\Cancer-Protocols-2022-12-Update\Gastrointestinal Protocol Folder\Stomach.GIST_4.3.0.0.REL_CAPCP.pdf#page=15" target="_blank">KIT (CD117) IHC</a>: </label>
+<label class=""> + KIT (CD117) IHC: </label>
 </td>
 <td>
 <select class="element select large" ID="A10">
@@ -377,7 +389,7 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\Cancer-Protocols-2022-12-Update\Gastrointestinal Protocol Folder\Stomach.GIST_4.3.0.0.REL_CAPCP.pdf#page=15" target="_blank">DOG1 IHC</a>: </label>
+<label class=""> + DOG1 IHC: </label>
 </td>
 <td>
 <select class="element select large" ID="A11">
@@ -391,7 +403,7 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 
 <tr>
 <td>
-<label class=""> + <a href=".\cap\Cancer-Protocols-2022-12-Update\Gastrointestinal Protocol Folder\Stomach.GIST_4.3.0.0.REL_CAPCP.pdf#page=15" target="_blank">SDHB IHC</a>: </label>
+<label class=""> + SDHB IHC: </label>
 </td>
 <td>
 <select class="element select large" ID="A36">
@@ -433,7 +445,7 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 
 <tr>
 <td>
-<label class="description">- <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach.GIST_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank">Risk assessment (Miettinen and Lasota 2006)</a>: </label>
+<label class="description">- Risk assessment (Miettinen and Lasota 2006): </label>
 </td>
 <td>
 <select class="element select large" ID="A13">
@@ -484,10 +496,10 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 </p>
 
  <p>
- + <a href=".\cap\Cancer-Protocols-2022-12-Update\Gastrointestinal Protocol Folder\Stomach.GIST_4.3.0.0.REL_CAPCP.pdf#page=16" target="_blank">Molecular studies</a> for hot spot mutations of KIT, PDGFRA, RAS or BRAF genes</a> are available in our AP molecular pathology lab. Other possible molecular analysis includes SDHA/B/C/D, NF1 and FGFR1 fusion (not available).</p>
+ + Molecular studies for hot spot mutations of KIT (exons 9, 11, 13, 14 & 17), PDGFRA  (exons 12, 14, 18 & 23), RAS or BRAF genes and NTRK fusions are available in our AP molecular pathology lab. Other possible molecular analyses include SDHA/B/C/D, NF1 and FGFR1 fusion (not routinely available).</p>
 
 <p>
-<a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach.GIST_4.2.0.0.REL_CAPCP.pdf#page=10" target="_blank"><img src=".\cap\GI-gist-risk-assessment.jpg" alt="Risk assessment" width="600"></a>
+<a href=".\cap\GI-gist-risk-assessment.jpg" target="_blank"><img src=".\cap\GI-gist-risk-assessment.jpg" alt="Risk assessment" width="600"></a>
 </p>
 
 </fieldset>
@@ -511,7 +523,7 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach.GIST_4.2.0.0.REL_CAPCP.pdf#page=11" target="_blank">Regional lymph nodes</a>: </label></legend>
+	<legend> <label class="description"> Regional lymph nodes: </label></legend>
 
 <p>
 <table border="1">
@@ -587,7 +599,7 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\Stomach.GIST_4.2.0.0.REL_CAPCP.pdf#page=12" target="_blank">Pathologic Stage Classification (AJCC 8e)</a>:</label></legend>
+	<legend> <label class="description"> Pathologic Stage Classification (AJCC 8e):</label></legend>
 	
 <p>
 <table border="1">
@@ -598,9 +610,9 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 <label class="description">- TNM Descriptors:</label>
 </td>
 <td>
-<input class="element checkbox" type="checkbox" id="A22" value=" m (multiple primary tumors) "><label  class="choice">m (multiple primary tumors)</label>
-<input class="element checkbox" type="checkbox" id="A23" value=" r (recurrent) "><label  class="choice">r (recurrent)</label>
-<input class="element checkbox" type="checkbox" id="A24" value=" y (post treatment) "><label  class="choice">y (post treatment)</label>
+<input class="element checkbox" type="checkbox" id="A22" value=" m (Multiple primary synchronous tumors in a single organ) "><label  class="choice">m (Multiple primary synchronous tumors in a single organ)</label>
+<input class="element checkbox" type="checkbox" id="A23" value=" r (recurrence) "><label  class="choice">r (recurrence)</label>
+<input class="element checkbox" type="checkbox" id="A24" value=" y (post-neoadjuvant therapy) "><label  class="choice">y (post-neoadjuvant therapy)</label>
 </td>
 </tr>
 
@@ -618,6 +630,16 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 	<option value="  - pT3: Tumor more than 5 cm but not more than 10 cm">pT3: Tumor more than 5 cm but not more than 10 cm</option>
 	<option value="  - pT4: Tumor more than 10 cm in greatest dimension">pT4: Tumor more than 10 cm in greatest dimension</option>
 </select>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<label class="description">- N Suffix:</label>
+</td>
+<td>
+<input class="element checkbox" type="checkbox" id="A37" value=" (sn) Sentinel node procedure"><label  class="choice">(sn) Sentinel node procedure</label>
+<input class="element checkbox" type="checkbox" id="A38" value=" (f) FNA or core needle biopsy"><label  class="choice">(f) FNA or core needle biopsy</label>
 </td>
 </tr>
 
@@ -681,9 +703,9 @@ Using 22 mm eyepiece at 40x objective, count active proliferative areas for 42 f
 <br>
 
 <div id="footer">
-Last upated on 14-Jan-2023,<br>
+Last upated on 09-Oct-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-GIST Resection 4.3.0.0	(Dec 2022),<br>
+GIST Resection 4.4.0.0	(Sep 2026),<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
