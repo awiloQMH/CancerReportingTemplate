@@ -323,6 +323,7 @@ if (frm.A50.value !== ""){
 **/
 if (document.getElementById("A51").checked || document.getElementById("A52").checked ||
 	document.getElementById("A53").checked || document.getElementById("A54").checked ||
+	document.getElementById("A74").checked || document.getElementById("A75").checked ||
 	frm.A55.value !==""){
 	Template += "\n" +  "- Additional pathologic findings: " + "\n";
 }
@@ -341,6 +342,14 @@ if (document.getElementById("A53").checked){
 
 if (document.getElementById("A54").checked){
 	Template += frm.A54.value + "\n";
+}
+
+if (document.getElementById("A74").checked){
+	Template += frm.A74.value + "\n";
+}
+
+if (document.getElementById("A75").checked){
+	Template += frm.A75.value + "\n";
 }
 
 if (frm.A55.value !== ""){
@@ -474,14 +483,23 @@ table, th, td {
 	<option value="Poorly cohesive carcinoma">Poorly cohesive carcinoma</option>
 	<option value="Signet-ring cell carcinoma">Signet-ring cell carcinoma</option>
 	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
-	<option value="Intraductal papillary neoplasm of bile duct with associated invasive carcinoma">Intraductal papillary neoplasm of bile duct with associated invasive carcinoma</option>
-	<option value="Intraductal tubulopapillary neoplasm of bile duct with associated invasive carcinoma">Intraductal tubulopapillary neoplasm of bile duct with associated invasive carcinoma</option>
 	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="Enteroblastic carcinoma">Enteroblastic carcinoma</option>
+	<option value="Hepatoid carcinoma">Hepatoid carcinoma</option>
+	<option value="Micropapillary cholangiocarcinoma">Micropapillary cholangiocarcinoma</option>
+	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
 	<option value="Undifferentiated carcinoma">Undifferentiated carcinoma</option>
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma</option>	
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Gastric subtype">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Gastric subtype</option>	
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Pancreatobiliary subtype">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Pancreatobiliary subtype</option>	
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Intestinal Subtype">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Intestinal Subtype</option>	
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Mixed (specify components)">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Mixed (specify components)</option>	
+	<option value="Intraductal tubulopapillary neoplasm with associated invasive carcinoma">Intraductal tubulopapillary neoplasmwith associated invasive carcinoma</option>	
+	<option value="Intraductal oncocytic papillary neoplasm with associated invasive carcinoma">Intraductal oncocytic papillary neoplasm with associated invasive carcinoma</option>	
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
-	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>	
-	<option value="Mixed neuroendocrine-non-neuroendocrine tumor (MiNEN) (specify components):">Mixed neuroendocrine-non-neuroendocrine tumor (MiNEN) (specify components):</option>
+	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+	<option value="High-grade neuroendocrine carcinoma">High-grade neuroendocrine carcinoma</option>
+	<option value="Mixed neuroendocrine-non-neuroendocrine tumor (MiNEM)(specify components):">Mixed neuroendocrine-non-neuroendocrine tumor (MiNEM)(specify components):</option>
 	<option value="Other (specify):">Other (specify):</option>
 	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
 </select>
@@ -991,7 +1009,8 @@ table, th, td {
 <input class="element checkbox" type="checkbox" id="A52" value="  - Dysplasia"><label  class="choice">Dysplasia</label>
 <input class="element checkbox" type="checkbox" id="A53" value="  - Primary sclerosing cholangitis"><label  class="choice">Primary sclerosing cholangitis</label>
 <input class="element checkbox" type="checkbox" id="A54" value="  - Biliary stones"><label  class="choice">Biliary stones</label>
-</p>
+<input class="element checkbox" type="checkbox"  id="A74" value="  - Pancreatobiliary maljunction"><label  class="choice">Pancreatobiliary maljunction</label>
+<input class="element checkbox" type="checkbox"  id="A75" value="  - Low union of common hepatic and cystic duct"><label  class="choice">Low union of common hepatic and cystic duct</label></p>
 <p>
 - Other (specify):
 <input type="text" class = "element text medium" ID="A55" size="35">

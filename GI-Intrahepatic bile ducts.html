@@ -25,7 +25,7 @@ if (frm.A04.value !== ""){
 }
 
 if (frm.A05.value !== ""){
-	Template += "\n" + "- Histologic type (WHO 2019): " + frm.A05.value + "\n";
+	Template += "\n" + "- Histologic type (WHO 6e): " + frm.A05.value + "\n";
 }
 
 if (frm.A06.value !== ""){
@@ -206,7 +206,7 @@ if (frm.A31.value !== ""){
 **/
 if (document.getElementById("A32").checked || document.getElementById("A33").checked ||
 	document.getElementById("A34").checked || document.getElementById("A35").checked ||
-	document.getElementById("A36").checked || frm.A37.value !==""){
+	document.getElementById("A36").checked || document.getElementById("A49").checked || frm.A37.value !==""){
 	Template += "\n" +  "- Additional pathologic findings: " + "\n";
 }
 
@@ -228,6 +228,10 @@ if (document.getElementById("A35").checked){
 
 if (document.getElementById("A36").checked){
 	Template += frm.A36.value + "\n";
+}
+
+if (document.getElementById("A49").checked){
+	Template += frm.A49.value + "\n";
 }
 
 if (frm.A37.value !== ""){
@@ -269,7 +273,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2025-06-Update\Gastrointestinal Protocol Folder\BileDuctIH_4.3.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2026-09-Update\Gastrointestinal Protocol Folder\BileDuctIH_4.4.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the intrahepatic bile ducts
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -334,23 +338,38 @@ table, th, td {
 <col width="50%">
 <tr>
 <td>
-<label class="description">- Histologic type (WHO 2019):</label> 
+<label class="description">- Histologic type (WHO 6e):</label> 
 </td>
 <td>
 <select class="element select large" ID="A05">
 	<option value=""></option>
-	<option value="Large duct intrahepatic cholangiocarcinoma">Large duct intrahepatic cholangiocarcinoma</option>
-	<option value="Small duct intrahepatic cholangiocarcinoma">Small duct intrahepatic cholangiocarcinoma</option>
+	<option value="Intrahepatic cholangiocarcinoma, large duct, NOS">Intrahepatic cholangiocarcinoma, large duct, NOS</option>
+	<option value="Intrahepatic cholangiocarcinoma, large duct, adenosquamous">Intrahepatic cholangiocarcinoma, large duct, adenosquamous</option>
+	<option value="Intrahepatic cholangiocarcinoma, large duct, mucinous / colloid">Intrahepatic cholangiocarcinoma, large duct, mucinous / colloid</option>
+	<option value="Intrahepatic cholangiocarcinoma, large duct, mucoepidermoid">Intrahepatic cholangiocarcinoma, large duct, mucoepidermoid</option>
+	<option value="Intrahepatic cholangiocarcinoma, large duct, enteroblastic">Intrahepatic cholangiocarcinoma, large duct, enteroblastic</option>
+	<option value="Intrahepatic cholangiocarcinoma, small duct, NOS">Intrahepatic cholangiocarcinoma, small duct, NOS</option>
+	<option value="Intrahepatic cholangiocarcinoma, small duct, cholangiolocellular">Intrahepatic cholangiocarcinoma, small duct, cholangiolocellular</option>
+	<option value="Intrahepatic cholangiocarcinoma, small duct, ductal plate malformation-type">Intrahepatic cholangiocarcinoma, small duct, ductal plate malformation-type</option>
+	<option value="Intrahepatic cholangiocarcinoma, small duct, solid-tubulocystic-type">Intrahepatic cholangiocarcinoma, small duct, solid-tubulocystic-type</option>
+	<option value="Intrahepatic cholangiocarcinoma, small duct, lymphoepithelioma-like">Intrahepatic cholangiocarcinoma, small duct, lymphoepithelioma-like</option>
 	<option value=" Cholangiocarcinoma, NOS"> Cholangiocarcinoma, NOS</option>
+	<option value=" Squamous carcinoma"> Squamous carcinoma</option>
 	<option value="Combined hepatocellular-cholangiocarcinoma">Combined hepatocellular-cholangiocarcinoma</option>
-	<option value="Intraductal papillary neoplasm with an associated invasive carcinoma">Intraductal papillary neoplasm with an associated invasive carcinoma</option>	
-	<option value="Intraductal tubulopapillary neoplasm with associated invasive carcinoma">Intraductal tubulopapillary neoplasm with associated invasive carcinoma</option>
 	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
-	<option value="Undifferentiated carcinoma, NOS">Undifferentiated carcinoma, NOS</option>
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma</option>	
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Gastric subtype">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Gastric subtype</option>	
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Pancreatobiliary subtype">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Pancreatobiliary subtype</option>	
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Intestinal Subtype">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Intestinal Subtype</option>	
+	<option value="Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Mixed (specify components)">Intraductal papillary neoplasm (IPN) with associated invasive carcinoma, Mixed (specify components)</option>	
+	<option value="Intraductal tubulopapillary neoplasm with associated invasive carcinoma">Intraductal tubulopapillary neoplasmwith associated invasive carcinoma</option>	
+	<option value="Intraductal oncocytic papillary neoplasm with associated invasive carcinoma">Intraductal oncocytic papillary neoplasm with associated invasive carcinoma</option>	
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
-	<option value="Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)(specify component):">Mixed neuroendocrine-non-neuroendocrine neoplasm (MiNEN)(specify component):</option>
+	<option value="High-grade neuroendocrine carcinoma">High-grade neuroendocrine carcinoma</option>
+	<option value="Mixed neuroendocrine-non-neuroendocrine tumor (MiNEM)(specify components):">Mixed neuroendocrine-non-neuroendocrine tumor (MiNEM)(specify components):</option>
 	<option value="Other (specify):">Other (specify):</option>
+	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
 </select>
 </td>
 </tr>
@@ -709,11 +728,12 @@ table, th, td {
 	<legend> <label class=""> + Additional pathologic findings: </label></legend>
 
 <p>
-<input class="element checkbox" type="checkbox" id="A32" value="  - Fibrosis (specify scheme and scale, and extent)"><label  class="choice">Fibrosis (specify scheme and scale, and extent)</label>
+<input class="element checkbox" type="checkbox" id="A32" value="  - Hepatic fibrosis (specify scheme and scale, and extent)"><label  class="choice">Hepatic fibrosis (specify scheme and scale, and extent)</label>
 <input class="element checkbox" type="checkbox" id="A33" value="  - Cirrhosis"><label  class="choice">Cirrhosis</label>
 <input class="element checkbox" type="checkbox" id="A34" value="  - Primary sclerosing cholangitis"><label  class="choice">Primary sclerosing cholangitis</label>
 <input class="element checkbox" type="checkbox" id="A35" value="  - Biliary stones"><label  class="choice">Biliary stones</label>
 <input class="element checkbox" type="checkbox" id="A36" value="  - Chronic hepatitis (specify type):"><label  class="choice">Chronic hepatitis (specify type):</label>
+<input class="element checkbox" type="checkbox" id="A49" value="  - Steatosis:"><label  class="choice">Steatosis:</label>
 </p>
 <p>
 - Other (specify):
@@ -743,9 +763,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 24-Jun-2025,<br>
+Last upated on 09-Oct-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-IntrahepaticBileDuct 4.3.0.0 (June 2025), <br>
+IntrahepaticBileDuct 4.4.0.0 (Sep 2026), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
