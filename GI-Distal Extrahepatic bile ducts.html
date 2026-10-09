@@ -319,6 +319,7 @@ if (frm.A47.value !== ""){
 **/
 if (document.getElementById("A48").checked || document.getElementById("A49").checked ||
 	document.getElementById("A50").checked || document.getElementById("A51").checked ||
+	document.getElementById("A72").checked || document.getElementById("A73").checked ||
 	frm.A52.value !==""){
 	Template += "\n" +  "- Additional pathologic findings: " + "\n";
 }
@@ -337,6 +338,14 @@ if (document.getElementById("A50").checked){
 
 if (document.getElementById("A51").checked){
 	Template += frm.A51.value + "\n";
+}
+
+if (document.getElementById("A72").checked){
+	Template += frm.A72.value + "\n";
+}
+
+if (document.getElementById("A73").checked){
+	Template += frm.A73.value + "\n";
 }
 
 if (frm.A52.value !== ""){
@@ -378,7 +387,7 @@ table, th, td {
 	<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2021-06-Update\Gastrointestinal-Protocol-Folder\BileDuctDE_4.2.0.0.REL_CAPCP.pdf" target="_blank">
+		<a href=".\cap\Cancer-Protocols-2026-09-Update\Gastrointestinal Protocol Folder\BileDuctDE_4.4.0.0.REL_CAPCP.pdf" target="_blank">
 		<div class="tooltip">
 		Carcinoma of the distal extrahepatic bile ducts
 		<span class="tooltiptext">click to access explanations in the original CAP template</span>
@@ -454,25 +463,34 @@ table, th, td {
 <col width="40%">
 <tr>
 <td>
-<label class="description">- Histologic type (WHO 2019):</label> 
+<label class="description">- Histologic type (WHO 6e):</label> 
 </td>
 <td>
 <select class="element select large" ID="A09">
 	<option value=""></option>
-	<option value="Adenocarcinoma">Adenocarcinoma</option>
 	<option value="Adenocarcinoma, biliary type (extrahepatic cholangiocarcinoma)">Adenocarcinoma, biliary type (extrahepatic cholangiocarcinoma)</option>	
 	<option value="Adenocarcinoma, intestinal type">Adenocarcinoma, intestinal type</option>
 	<option value="Mucinous adenocarcinoma">Mucinous adenocarcinoma</option>
 	<option value="Clear cell adenocarcinoma">Clear cell adenocarcinoma</option>
-	<option value="Signet-ring cell carcinoma (poorly cohesive carcinoma)">Signet-ring cell carcinoma (poorly cohesive carcinoma)</option>
+	<option value="Adenocarcinoma">Adenocarcinoma</option>
+	<option value="Poorly cohesive carcinoma">Poorly cohesive carcinoma</option>
 	<option value="Adenosquamous carcinoma">Adenosquamous carcinoma</option>
-	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
 	<option value="Squamous cell carcinoma">Squamous cell carcinoma</option>
+	<option value="Enteroblastic carcinoma">Enteroblastic carcinoma</option>
+	<option value="Hepatoid carcinoma">Hepatoid carcinoma</option>
+	<option value="Micropapillary cholangiocarcinoma">Micropapillary cholangiocarcinoma</option>
+	<option value="Mucinous cystic neoplasm with an associated invasive carcinoma">Mucinous cystic neoplasm with an associated invasive carcinoma</option>
 	<option value="Undifferentiated carcinoma, NOS">Undifferentiated carcinoma, NOS</option>	
 	<option value="Intraductal papillary neoplasm with associated invasive carcinoma">Intraductal papillary neoplasm with associated invasive carcinoma</option>	
+	<option value="Intraductal papillary neoplasm with associated invasive carcinoma, Gastric subtype">Intraductal papillary neoplasm with associated invasive carcinoma, Gastric subtype</option>	
+	<option value="Intraductal papillary neoplasm with associated invasive carcinoma, Pancreatobiliary subtype">Intraductal papillary neoplasm with associated invasive carcinoma, Pancreatobiliary subtype</option>	
+	<option value="Intraductal papillary neoplasm with associated invasive carcinoma, Intestinal Subtype">Intraductal papillary neoplasm with associated invasive carcinoma, Intestinal Subtype</option>	
+	<option value="Intraductal papillary neoplasm with associated invasive carcinoma, Mixed (specify components)">Intraductal papillary neoplasm with associated invasive carcinoma, Mixed (specify components)</option>	
 	<option value="Intraductal tubulopapillary neoplasm with associated invasive carcinoma">Intraductal tubulopapillary neoplasm with associated invasive carcinoma</option>	
+	<option value="Intraductal oncocytic papillary neoplasm with associated invasive carcinoma">Intraductal oncocytic papillary neoplasm with associated invasive carcinoma</option>	
 	<option value="Large cell neuroendocrine carcinoma">Large cell neuroendocrine carcinoma</option>
 	<option value="Small cell neuroendocrine carcinoma">Small cell neuroendocrine carcinoma</option>
+	<option value="High-grade neuroendocrine carcinoma">High-grade neuroendocrine carcinoma</option>
 	<option value="Mixed neuroendocrine-non-neuroendocrine tumor (MiNEM)(specify components):">Mixed neuroendocrine-non-neuroendocrine tumor (MiNEM)(specify components):</option>
 	<option value="Other (specify):">Other (specify):</option>
 	<option value="Carcinoma, type cannot be determined">Carcinoma, type cannot be determined</option>
@@ -586,7 +604,7 @@ table, th, td {
 <p>
 <label class="description">- Tumor extension:</label>
 <input class="element checkbox" type="checkbox"  id="A13" value="  - No evidence of primary tumor"><label  class="choice">No evidence of primary tumor</label>
-<input class="element checkbox" type="checkbox"  id="A14" value="  - No invasion (carcinoma in situ/high-grade dysplasia)"><label  class="choice">No invasion (carcinoma in situ/high-grade dysplasia)</label>
+<input class="element checkbox" type="checkbox"  id="A14" value="  - No invasion (carcinoma in situ / high-grade dysplasia, including intraductal papillary neoplasm with high-grade dysplasia, and intraductal tubulopapillary neoplasm with high-grade dysplasia)"><label  class="choice">No invasion (carcinoma in situ / high-grade dysplasia, including intraductal papillary neoplasm with high-grade dysplasia, and intraductal tubulopapillary neoplasm with high-grade dysplasia)</label>
 <input class="element checkbox" type="checkbox"  id="A15" value="  - Tumor confined to the bile duct histologically"><label  class="choice">Tumor confined to the bile duct histologically</label>
 <input class="element checkbox" type="checkbox"  id="A16" value="  - Tumor invades beyond the wall of the bile duct"><label  class="choice">Tumor invades beyond the wall of the bile duct</label>
 <input class="element checkbox" type="checkbox"  id="A17" value="  - Tumor invades the duodenum"><label  class="choice">Tumor invades the duodenum</label>
@@ -964,6 +982,8 @@ table, th, td {
 <input class="element checkbox" type="checkbox"  id="A49" value="  - Dysplasia"><label  class="choice">Dysplasia</label>
 <input class="element checkbox" type="checkbox"  id="A50" value="  - Primary sclerosing cholangitis"><label  class="choice">Primary sclerosing cholangitis</label>
 <input class="element checkbox" type="checkbox"  id="A51" value="  - Biliary stones"><label  class="choice">Biliary stones</label>
+<input class="element checkbox" type="checkbox"  id="A72" value="  - Pancreatobiliary maljunction"><label  class="choice">Pancreatobiliary maljunction</label>
+<input class="element checkbox" type="checkbox"  id="A73" value="  - Low union of common hepatic and cystic duct"><label  class="choice">Low union of common hepatic and cystic duct</label>
 </p>
 <p>
 - Other (specify):
@@ -993,9 +1013,9 @@ table, th, td {
 <br>
 
 <div id="footer">
-Last upated on 23-Jun-2025,<br>
+Last upated on 09-Oct-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-BileDuctDE 4.3.0.0	(June 2025), <br>
+BileDuctDE 4.4.0.0	(Sep-2026), <br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
