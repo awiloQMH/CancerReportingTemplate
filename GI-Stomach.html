@@ -136,6 +136,10 @@ if (frm.A63.value !== ""){
 	Template += "- For pT1, Extent of Sub-mucosal Invasion: " + frm.A63.value + "\n";
 }
 
+if (frm.A71.value !== ""){
+	Template += "- Ulceration (UL): " + frm.A71.value + "\n";
+}
+
 if (frm.A25.value !== ""){
 	Template += "- Lymphatic invasion (Ly): " + frm.A25.value + "\n";
 }
@@ -385,7 +389,7 @@ table, th, td {
 		</a>
 		</h2>
 	</div>
-Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_blank">Japanese Gastric Cancer Treatment Guidelines 7th edition (2025)</a>.
+Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_blank">Japanese Gastric Cancer Treatment Guidelines 7e (2025)</a>.
 
 <form>
 <!--
@@ -595,10 +599,10 @@ Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_bl
 
 <tr>
 <td>
-<label class="">+ Ulceration (UL)</a>: </label>
+<label class="">+ Ulceration (UL): </label>
 </td>
 <td>
-<select class="element select large" ID="A25">
+<select class="element select large" ID="A71">
 	<option value=""></option>
 	<option value="Not identified (UL0)">Not identified (UL0)</option>
 	<option value="Present (UL1)">Present (UL1)</option>
@@ -609,7 +613,7 @@ Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_bl
 
 <tr>
 <td>
-<label class="description">- Lymphatic invasion (Ly)</a>: </label>
+<label class="description">- Lymphatic invasion (Ly): </label>
 </td>
 <td>
 <select class="element select large" ID="A25">
@@ -623,7 +627,7 @@ Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_bl
 
 <tr>
 <td>
-<label class="description">- Venous invasion (V)</a>: </label>
+<label class="description">- Venous invasion (V): </label>
 </td>
 <td>
 <select class="element select large" ID="A64">
@@ -968,7 +972,7 @@ Based on the cumulative points, patients are divided into three risk categories 
 - Intermediate Risk (3--4 points): ≈ 6.7% LNM risk. Treatment requires case-by-case evaluation.<br><br>
 - High Risk (5--7 points): ≈ 23% LNM risk. Additional radical/salvage surgery is strongly recommended.<br><br>
 </p>
-Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_blank">Japanese Gastric Cancer Treatment Guidelines 7th edition (2025)</a>
+Please also see notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_blank">Japanese Gastric Cancer Treatment Guidelines 7e (2025)</a>
 <p>
 <table border="1">
 <col width="75%">
@@ -1087,9 +1091,9 @@ Please also seen notes on <a href=".\cap\JapanGastricCancer2025.pdf" target="_bl
 <br>
 
 <div id="footer">
-Last upated on 21-Jul-2026,<br>
+Last upated on 23-Oct-2026,<br>
 based on <a href="https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates" target="_blank">US CAP cancer protocol templates</a>.<br>
-Stomach 4.4.0.0	(Mar 2023), <br>
+Stomach 4.4.0.0	(Mar 2023), incorporating Japanese Gastric Cancer Treatment Guidelines 7e (2025)<br>
 html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
