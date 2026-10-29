@@ -1,249 +1,533 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Colon HER2</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
 <script type="text/javascript">
-function updateDescription (frm) 
-{
-    var Template = ""
 
-if (frm.A07.value !== ""){
-	Template += "- HER2 IHC (for excision): " + frm.A07.value + "\n";
+// 1. Auto-assign hidden A05 value based on Biopsy Score selection (A06)
+function evaluateHer2BiopsyScore() {
+  var a06 = document.getElementById("A06");
+  var a05 = document.getElementById("A05");
+  if (!a06 || !a05) return;
+
+  var scoreText = a06.value;
+  if (!scoreText) {
+    a05.value = "";
+  } else if (scoreText.indexOf("0 Negative") !== -1 || scoreText.indexOf("1 Negative") !== -1) {
+    a05.value = "NEGATIVE for over-expression";
+  } else if (scoreText.indexOf("2 Equivocal") !== -1) {
+    a05.value = "EQUIVOCAL for over-expression";
+  } else if (scoreText.indexOf("3 Positive") !== -1) {
+    a05.value = "POSITIVE for over-expression";
+  }
 }
 
-if (frm.A08.value !== ""){
-	Template += "  - Score : " + frm.A08.value + "\n";
+// 2. Auto-assign hidden A07 value based on Excision Score selection (A08)
+function evaluateHer2ExcisionScore() {
+  var a08 = document.getElementById("A08");
+  var a07 = document.getElementById("A07");
+  if (!a08 || !a07) return;
+
+  var scoreText = a08.value;
+  if (!scoreText) {
+    a07.value = "";
+  } else if (scoreText.indexOf("0 Negative") !== -1 || scoreText.indexOf("1 Negative") !== -1) {
+    a07.value = "NEGATIVE for over-expression";
+  } else if (scoreText.indexOf("2 Equivocal") !== -1) {
+    a07.value = "EQUIVOCAL for over-expression";
+  } else if (scoreText.indexOf("3 Positive") !== -1) {
+    a07.value = "POSITIVE for over-expression";
+  }
 }
 
-if (frm.A09.value !== ""){
-	Template += "- HER2 DISH : " + frm.A09.value + "\n";
+// 3. Auto-assign hidden A09 value based on DISH parameters (A11, A12, A13)
+function evaluateHer2Dish() {
+  var a09 = document.getElementById("A09");
+  var a11Val = parseFloat(document.getElementById("A11") ? document.getElementById("A11").value : "");
+  var a12Val = parseFloat(document.getElementById("A12") ? document.getElementById("A12").value : "");
+  var a13Val = parseFloat(document.getElementById("A13") ? document.getElementById("A13").value : "");
+
+  if (!a09) return;
+
+  // Auto-calculate ratio if HER2 and CEP17 signals are entered but ratio is blank
+  if (!isNaN(a11Val) && !isNaN(a12Val) && a12Val > 0 && isNaN(a13Val)) {
+    a13Val = parseFloat((a11Val / a12Val).toFixed(2));
+    if (document.getElementById("A13")) {
+      document.getElementById("A13").value = a13Val;
+    }
+  }
+
+  if (isNaN(a13Val)) {
+    a09.value = "";
+    return;
+  }
+
+  // HERACLES DISH Criteria: Ratio >= 2.0 in >= 50% cells
+  if (a13Val >= 2.0) {
+    a09.value = "POSITIVE for HER2 amplification (ratio >= 2 in 50% cells)";
+  } else {
+    a09.value = "NEGATIVE for HER2 amplification";
+  }
 }
 
-if (frm.A10.value !== ""){
-	Template += "  - Number of tumor cell counted : " + frm.A10.value + "\n";
+// Integrated DISH real-time live summation function
+function calculateIntegratedDishLive() {
+  var totalHer2 = 0;
+  var totalCep17 = 0;
+  var validCount = 0;
+
+  for (var i = 1; i <= 20; i++) {
+    var her2Elem = document.getElementById("dish_h" + i);
+    var cepElem  = document.getElementById("dish_c" + i);
+
+    if (her2Elem && cepElem && her2Elem.value.trim() !== "" && cepElem.value.trim() !== "") {
+      var hVal = parseFloat(her2Elem.value);
+      var cVal = parseFloat(cepElem.value);
+
+      if (!isNaN(hVal) && !isNaN(cVal)) {
+        totalHer2 += hVal;
+        totalCep17 += cVal;
+        validCount++;
+      }
+    }
+  }
+
+  if (validCount > 0) {
+    var avgHer2 = (totalHer2 / validCount).toFixed(2);
+    var avgCep17 = (totalCep17 / validCount).toFixed(2);
+    var ratio = (avgCep17 > 0) ? (avgHer2 / avgCep17).toFixed(2) : "";
+
+    document.getElementById("A10").value = validCount;
+    document.getElementById("A11").value = avgHer2;
+    document.getElementById("A12").value = avgCep17;
+    document.getElementById("A13").value = ratio;
+  } else {
+    document.getElementById("A10").value = "";
+    document.getElementById("A11").value = "";
+    document.getElementById("A12").value = "";
+    document.getElementById("A13").value = "";
+  }
+
+  evaluateHer2Dish();
 }
 
-if (frm.A11.value !== ""){
-	Template += "  - Average number of HER2 signals (black) per cell : " + frm.A11.value + "\n";
+// Keyboard navigation function for the DISH calculator grid
+function handleDishNav(e, type, num) {
+  var key = e.key;
+  var targetId = null;
+
+  if (key === "Enter" || (key === "Tab" && !e.shiftKey)) {
+    e.preventDefault();
+    if (type === 'h') {
+      targetId = "dish_c" + num;
+    } else if (type === 'c') {
+      if (num < 20) {
+        targetId = "dish_h" + (num + 1);
+      }
+    }
+  } else if (key === "ArrowDown") {
+    e.preventDefault();
+    if (num < 20) targetId = "dish_" + type + (num + 1);
+  } else if (key === "ArrowUp") {
+    e.preventDefault();
+    if (num > 1) targetId = "dish_" + type + (num - 1);
+  } else if (key === "ArrowRight") {
+    if (type === 'h') targetId = "dish_c" + num;
+  } else if (key === "ArrowLeft") {
+    if (type === 'c') targetId = "dish_h" + num;
+  }
+
+  if (targetId) {
+    var targetElem = document.getElementById(targetId);
+    if (targetElem) {
+      targetElem.focus();
+      targetElem.select();
+    }
+  }
 }
 
-if (frm.A12.value !== ""){
-	Template += "  - Average number of CEP17 signals (red) per cell : " + frm.A12.value + "\n";
+function toggleDishCalculator() {
+  var calcDiv = document.getElementById("dish_calculator_panel");
+  var toggleBtn = document.getElementById("dish_toggle_btn");
+  if (calcDiv.style.display === "none") {
+    calcDiv.style.display = "block";
+    toggleBtn.innerText = "- Hide DISH Calculator";
+    var firstInput = document.getElementById("dish_h1");
+    if (firstInput) {
+      firstInput.focus();
+      firstInput.select();
+    }
+  } else {
+    calcDiv.style.display = "none";
+    toggleBtn.innerText = "+ Open DISH Calculator";
+  }
 }
 
-if (frm.A13.value !== ""){
-	Template += "  - HER2/CEP17 ratio : " + frm.A13.value + "\n";
+function updateDescription(frm) {
+  evaluateHer2BiopsyScore();
+  evaluateHer2ExcisionScore();
+  evaluateHer2Dish();
+
+  var Template = "";
+
+  var a05Val = document.getElementById("A05") ? document.getElementById("A05").value : "";
+  var a07Val = document.getElementById("A07") ? document.getElementById("A07").value : "";
+  var a09Val = document.getElementById("A09") ? document.getElementById("A09").value : "";
+
+  // Auto-Summary logic according to HERACLES / Ventana consensus criteria
+  var ihc3Pos = (a07Val.indexOf("POSITIVE") !== -1 || a05Val.indexOf("POSITIVE") !== -1);
+  var ihc2Eq  = (a07Val.indexOf("EQUIVOCAL") !== -1 || a05Val.indexOf("EQUIVOCAL") !== -1);
+  var dishPos = (a09Val.indexOf("POSITIVE") !== -1);
+
+  if (a05Val !== "") {
+    Template += "- HER2 IHC (for biopsy): " + a05Val + "\n";
+  }
+  if (frm.A06 && frm.A06.value !== "") {
+    Template += "  - Score : " + frm.A06.value + "\n";
+  }
+
+  if (a07Val !== "") {
+    Template += "- HER2 IHC (for excision): " + a07Val + "\n";
+  }
+  if (frm.A08 && frm.A08.value !== "") {
+    Template += "  - Score : " + frm.A08.value + "\n";
+  }
+
+  if (a09Val !== "") {
+    Template += "- HER2 DISH : " + a09Val + "\n";
+  }
+  if (frm.A10 && frm.A10.value !== "") {
+    Template += "  - Number of tumor cells counted : " + frm.A10.value + "\n";
+  }
+  if (frm.A11 && frm.A11.value !== "") {
+    Template += "  - Average number of HER2 signals (black) per cell : " + frm.A11.value + "\n";
+  }
+  if (frm.A12 && frm.A12.value !== "") {
+    Template += "  - Average number of CEP17 signals (red) per cell : " + frm.A12.value + "\n";
+  }
+  if (frm.A13 && frm.A13.value !== "") {
+    Template += "  - HER2/CEP17 ratio : " + frm.A13.value + "\n";
+  }
+
+  var a14 = document.getElementById("A14");
+  var a15 = document.getElementById("A15");
+  if ((a14 && a14.checked) || (a15 && a15.checked)) {
+    Template += "  - Other ISH abnormalities:\n";
+  }
+  if (a14 && a14.checked) Template += frm.A14.value + "\n";
+  if (a15 && a15.checked) Template += frm.A15.value + "\n";
+
+  if (frm.A19 && frm.A19.value !== "") {
+    Template += "\n- Additional notes:\n  - " + frm.A19.value + "\n";
+  }
+
+  if (a05Val !== "" || a07Val !== "") {
+    Template += "\nFormalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system. This is a laboratory-developed test (QMH, HK).\n";
+  }
+
+  if (a09Val !== "") {
+    Template += "\nDual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and was examined by a pathologist under light microscopy. The test is Food and Drug Administration (FDA) cleared.\n";
+  }
+
+  // Pre-analytical Details
+  var coldTime = frm.A28 ? frm.A28.value : "";
+  var fixTime  = frm.A27 ? frm.A27.value : "";
+
+  if (coldTime !== "") {
+    Template += "\n- Cold ischemia time : " + coldTime + " min";
+    Template += (parseFloat(coldTime) <= 60) ? " (Optimal: <= 60 min)." : " (Prolonged: > 60 min).";
+  } else {
+    Template += "\n- Cold ischemic time is uncertain.";
+  }
+
+  if (fixTime !== "") {
+    Template += "\n- Fixation time in buffered formalin : " + fixTime + " hours";
+    var fixNum = parseFloat(fixTime);
+    if (fixNum < 6) {
+      Template += " (Inadequate, < 6 hours).";
+    } else if (fixNum >= 6 && fixNum <= 72) {
+      Template += " (Optimal: 6-72 hours).";
+    } else {
+      Template += " (Prolonged: > 72 hours).";
+    }
+  } else {
+    Template += "\n- Formalin fixation time is uncertain.";
+  }
+
+  if (coldTime !== "" && parseFloat(coldTime) <= 60 && parseFloat(fixTime) >= 6 && parseFloat(fixTime) <= 72) {
+    Template += "\n- Meets requirements specified in the latest version of the ASCO/CAP guidelines.\n";
+  } else if (coldTime === "" || fixTime === "") {
+    Template += "\n- Given the uncertain cold ischemia time and/or uncertain fixation time, please interpret the above results with caution.\n";
+  } else {
+    Template += "\n- Given the suboptimal cold ischemia time and/or suboptimal formalin fixation time, please interpret the above results with caution.\n";
+  }
+
+  var holdTextElem = document.getElementById("holdtext");
+  if (holdTextElem) {
+    holdTextElem.value = Template;
+  }
 }
-
-if (document.getElementById("A14").checked || document.getElementById("A15").checked){
-	Template += "  - Other ISH abnormalities: "  + "\n";
-}
-
-if (document.getElementById("A14").checked){
-	Template += frm.A14.value + "\n";
-}
-
-if (document.getElementById("A15").checked){
-	Template += frm.A15.value + "\n";
-}
-
-if (frm.A19.value !== ""){
-	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
-}
-
-if (frm.A07.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system. This is a laboratory-developed test (QMH, HK)." + "\n" ;
-}
-
-if (frm.A09.value !== ""){
-	Template += "\n" + "Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on automated system, and was examined by a pathologist under light microscopy. The test is Food and Drug Administration (FDA) cleared." + "\n" ;
-}
-
-if (frm.A28.value !== ""){
-	Template += "\n" + "- Cold ischemia time : " + frm.A28.value + " min";
-} else {
-		Template += "\n" + "- Cold ischemic time is uncertain." ;
-}
-
-if (frm.A28.value <= 60 && frm.A28.value !== ""){
-		Template += "\n" + "  - Optimal (<= 60 min)." ;
-}
-
-if (frm.A28.value > 60  && frm.A28.value !== ""){
-		Template += "\n" + "  - Prolonged intervals (> 60 min)." ;
-}
-
-if (frm.A27.value !== ""){
-	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A27.value + " hours";
-}else {
-		Template += "\n" + "- Formalin fixation time is uncertain." ;
-}
-
-if (frm.A27.value < 6  && frm.A27.value !== ""){
-		Template += "\n" + "  - Inadequate fixation (<6 hours)." ;
-}
-
-if (frm.A27.value >= 6 && frm.A27.value <= 72 && frm.A27.value !== ""){
-		Template += "\n" + "  - Optimal fixation (6-72 hours)." ;
-}
-
-if (frm.A27.value > 72  && frm.A27.value !== ""){
-		Template += "\n" + "  - Prolonged intervals (>72 hours)." ;
-}
-
-if (frm.A28.value !== "" && frm.A28.value <= 60 && frm.A27.value >= 6 && frm.A27.value <= 72){
-	Template += "\n" + "- Meet requirements specified in the latest version of the ASCO/CAP guidelines." + "\n"  ;
-} else if (frm.A28.value == "" || frm.A27.value == ""){
-	Template += "\n" + "- Given the uncertain cold ischaemia time and/or uncertain fixation time, please interpret the above results with caution." + "\n" ;
-} else if (frm.A28.value > 60 || frm.A27.value < 6 || frm.A27.value > 72){
-	Template += "\n" + "- Given the suboptimal cold ischaemia time and/or suboptimal formalin fixation time, please interpret the above results with caution." + "\n" ;
-}  
-
-frm.holdtext.value = Template;
-}
-
 
 function CopyToClipboard() {
-  /* Get the text field */
   var copyText = document.getElementById("holdtext");
+  if (copyText) {
+    copyText.select();
+    document.execCommand("copy");
+    alert("Report copied to clipboard");
+  }
+}
 
-  /* Select the text field */
-  copyText.select();
+function resetFormCustom() {
+  document.getElementById('A05').value = '';
+  document.getElementById('A07').value = '';
+  document.getElementById('A09').value = '';
 
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
+  var holdTextElem = document.getElementById("holdtext");
+  if (holdTextElem) holdTextElem.value = '';
 
-  /* Alert the copied text */
-  alert("Report copied to clipboard");
+  for (var i = 1; i <= 20; i++) {
+    var h = document.getElementById("dish_h" + i);
+    var c = document.getElementById("dish_c" + i);
+    if (h) h.value = '';
+    if (c) c.value = '';
+  }
 }
 </script>
-<script type="text/javascript" src="view.js"></script>
+
 <style>
 table, th, td {
   border: 1px solid silver;
   border-collapse: collapse;
   padding: 4px;
 }
+.dish-calc-table {
+  table-layout: fixed;
+  width: auto;
+  max-width: 100%;
+}
+.dish-calc-table th, .dish-calc-table td {
+  padding: 2px 3px;
+  text-align: center;
+}
+.dish-calc-table input {
+  width: 25px;
+  text-align: center;
+  padding: 1px;
+  box-sizing: border-box;
+}
+.dish-calc-container {
+  background-color: #fff0f6;
+  border: 1px dashed #ff99cc;
+  padding: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  max-width: 240px;
+  box-sizing: border-box;
+}
 </style>
 </head>
 
 <body>
 <img id="top" src="top.png" alt="">
-	<div id="form_container">
+<div id="form_container">
 	<div class="form_description">
-		<h2>
-		Colon HER2 test
-		</h2>
+		<h2>Colon HER2 test</h2>
 	</div>
 
-	<form>
+<form>
+<!-- Hidden elements for overall test results calculated dynamically -->
+<input type="hidden" id="A05" name="A05">
+<input type="hidden" id="A07" name="A07">
+<input type="hidden" id="A09" name="A09">
 
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description">HER2 gene amplification : </label></legend>
 <p>
 All three scoring criteria have been used:<br>
-- <a href="Biomarker-Breast-markers.html" target="_blank">ASCO / CAP HER2 Breast Cancer 2024</a><br>
-- <a href="Biomarker-Stomach.html" target="_blank">CAP / ASCP / ASCO HER2 Gastroesophageal Adenocarcinoma 2016 (aka Ventana)</a><br>
-- HERACLES (listed in this protocol, Lancet Oncol 2016 17(6):738–746.)<br>
-<br>
-Additional interpreation of HER2 in <a href="Biomarker-Gyn-markers.html" target="_blank">gynecological specimen</a> is also available.
+- <a href="Biomarker-Breast-markers.html" target="_blank">ASCO/CAP HER2 Breast Cancer 2024</a><br>
+- <a href="Biomarker-Stomach.html" target="_blank">CAP/ASCP/ASCO HER2 Stomach/GEJ Adenocarcinoma 2016 (aka Ventana)</a><br>
+- HERACLES, Lancet Oncol 2016 17(6):738–746.<br>
+--- 3+ HER2 IHC score in more than 50% of the tumor cells -- OR<br>
+--- 3+ HER2 IHC score in 10~50% of the tumor cells by IHC + FISH/DISH positive -- OR<br>
+--- 2+ HER2 IHC score in more than 50% of the tumor cells by IHC + FISH/DISH positive
 </p>
+
 <p>
 <table border="1">
 <col width="40%">
+
 <tr>	
-<td rowspan="2" valign="top"><label class="description">- HER2 IHC, excision </a> : </label>
+<td valign="top">
+  <label class="description">- HER2 IHC, biopsy (Ventana) :</label>
 </td>
-	<td><select class="element select large"  ID="A07">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative for over-expression">Negative for over-expression</option>
-		<option value="Equivocal for over-expression">Equivocal for over-expression</option>
-		<option value="Positive for over-expression">Positive for over-expression</option>
-	</select></td>
-</tr>
-
-<tr>
-<td align="right"><label>- Score:</label>
-	<select class="element select medium"  ID="A08">
-		<option value=""></option>
-		<option value="0 Negative (No reactivity or membranous reactivity in cancer cells)">0 Negative (No reactivity or membranous reactivity in cancer cells)</option>
-		<option value="1 Negative (Faint or barely perceptible membranous react ivity in > or = 50% of cancer cells OR intense signals in <10% tumor cells)">1 Negative (Faint or barely perceptible membranous react ivity in > or = 50% of cancer cells OR intense signals in <10% tumor cells)</option>
-		<option value="2 Equivocal (Weak to moderate complete, basolateral or lateral membranous reactivity in > or = 50% tumor cells OR intense signals in < 50% tumor cells)">2 Equivocal (Weak to moderate complete, basolateral or lateral membranous reactivity in > or = 50% tumor cells OR intense signals in < 50% tumor cells)</option>
-		<option value="3 Positive (Strong complete, basolateral or lateral membranous reactivity in > or = 50% tumor cells)">3 Positive (Strong complete, basolateral or lateral membranous reactivity in > or = 50% tumor cells)</option>
-	</select></td>
-</tr>
-
-<tr>
-<td rowspan="6" valign="top"><label class="description">- HER2/neu oncoprotein DISH : </label>
-<a href=".\Biomarker-DISH-calculator.html" target="_blank">HER2 DISH calculator</a>
-<br>
-<a href=".\cap\her2_dish.xlsx" target="_blank">DOWNLOAD AN EXCEL FILE</a>
+<td align="right">
+  <label>- Score:</label>
+  <select class="element select medium" id="A06" onchange="evaluateHer2BiopsyScore()">
+    <option value=""></option>
+    <option value="0 Negative (No reactivity or no membranous reactivity in any cancer cell)">0 Negative (No reactivity or no membranous reactivity in any cancer cell)</option>
+    <option value="1 Negative (Cancer cell cluster, >= 5 cells, with a faint or barely perceptible membranous reactivity irrespective of percentage of cancer cells positive)">1 Negative (Cancer cell cluster, >= 5 cells, with a faint or barely perceptible membranous reactivity irrespective of percentage of cancer cells positive)</option>
+    <option value="2 Equivocal (Cancer cell cluster, >= 5 cells, with a weak to moderate complete, basolateral, or lateral membranous reactivity irrespective of percentage of cancer cells positive)">2 Equivocal (Cancer cell cluster, >= 5 cells, with a weak to moderate complete, basolateral, or lateral membranous reactivity irrespective of percentage of cancer cells positive)</option>
+    <option value="3 Positive (Cancer cell cluster, >= 5 cells, with a strong complete basolateral, or lateral membranous reactivity irrespective of percentage of cancer cells positive)">3 Positive (Cancer cell cluster, >= 5 cells, with a strong complete basolateral, or lateral membranous reactivity irrespective of percentage of cancer cells positive)</option>
+  </select>
 </td>
-	<td><select class="element select large"  ID="A09">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative for HER2 amplification">Negative for HER2 amplification</option>
-		<option value="Positive for HER2 amplification (ratio >= 2 in 50% cells)">Positive for HER2 amplification (ratio >= 2 in 50% cells)</option>
-	</select></td>
+</tr>
+
+<tr>	
+<td valign="top">
+  <label class="description">- HER2 IHC, excision (HERACLES) :</label>
+</td>
+<td align="right">
+  <label>- Score:</label>
+  <select class="element select medium" id="A08" onchange="evaluateHer2ExcisionScore()">
+    <option value=""></option>
+    <option value="0 Negative (No reactivity or membranous reactivity in cancer cells)">0 Negative (No reactivity or membranous reactivity in cancer cells)</option>
+    <option value="1 Negative (Faint or barely perceptible membranous reactivity in >= 50% of cancer cells OR intense signals in <10% tumor cells)">1 Negative (Faint or barely perceptible membranous reactivity in >= 50% of cancer cells OR intense signals in <10% tumor cells)</option>
+    <option value="2 Equivocal (Weak to moderate complete, basolateral or lateral membranous reactivity in >= 50% tumor cells OR intense signals in < 50% tumor cells)">2 Equivocal (Weak to moderate complete, basolateral or lateral membranous reactivity in >= 50% tumor cells OR intense signals in < 50% tumor cells)</option>
+    <option value="3 Positive (Strong complete, basolateral or lateral membranous reactivity in >= 50% tumor cells)">3 Positive (Strong complete, basolateral or lateral membranous reactivity in >= 50% tumor cells)</option>
+  </select>
+</td>
 </tr>
 
 <tr>
-<td align="right">- Number of tumor cell counted :
-<input type="text" ID="A10" class="element text small" size="10"></td>
+<td rowspan="5" valign="top">
+  <label class="description">- HER2 DISH (HERACLES):</label><br><br>
+  <button type="button" id="dish_toggle_btn" onclick="toggleDishCalculator()" style="font-size: 11px; padding: 2px 6px;">+ Open DISH Calculator</button>
+
+  <div id="dish_calculator_panel" class="dish-calc-container" style="display: none;">
+    <strong>HER2 DISH calculator</strong><br>
+    <table class="dish-calc-table" border="1" style="margin-top: 5px; background: #fff;">
+      <tr>
+        <th>#</th><th>HER2</th><th>CEP17</th>
+        <th>#</th><th>HER2</th><th>CEP17</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td><input type="text" id="dish_h1" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 1)"></td>
+        <td><input type="text" id="dish_c1" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 1)"></td>
+        <td>11</td>
+        <td><input type="text" id="dish_h11" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 11)"></td>
+        <td><input type="text" id="dish_c11" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 11)"></td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><input type="text" id="dish_h2" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 2)"></td>
+        <td><input type="text" id="dish_c2" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 2)"></td>
+        <td>12</td>
+        <td><input type="text" id="dish_h12" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 12)"></td>
+        <td><input type="text" id="dish_c12" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 12)"></td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><input type="text" id="dish_h3" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 3)"></td>
+        <td><input type="text" id="dish_c3" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 3)"></td>
+        <td>13</td>
+        <td><input type="text" id="dish_h13" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 13)"></td>
+        <td><input type="text" id="dish_c13" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 13)"></td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><input type="text" id="dish_h4" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 4)"></td>
+        <td><input type="text" id="dish_c4" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 4)"></td>
+        <td>14</td>
+        <td><input type="text" id="dish_h14" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 14)"></td>
+        <td><input type="text" id="dish_c14" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 14)"></td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td><input type="text" id="dish_h5" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 5)"></td>
+        <td><input type="text" id="dish_c5" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 5)"></td>
+        <td>15</td>
+        <td><input type="text" id="dish_h15" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 15)"></td>
+        <td><input type="text" id="dish_c15" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 15)"></td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td><input type="text" id="dish_h6" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 6)"></td>
+        <td><input type="text" id="dish_c6" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 6)"></td>
+        <td>16</td>
+        <td><input type="text" id="dish_h16" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 16)"></td>
+        <td><input type="text" id="dish_c16" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 16)"></td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td><input type="text" id="dish_h7" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 7)"></td>
+        <td><input type="text" id="dish_c7" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 7)"></td>
+        <td>17</td>
+        <td><input type="text" id="dish_h17" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 17)"></td>
+        <td><input type="text" id="dish_c17" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 17)"></td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td><input type="text" id="dish_h8" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 8)"></td>
+        <td><input type="text" id="dish_c8" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 8)"></td>
+        <td>18</td>
+        <td><input type="text" id="dish_h18" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 18)"></td>
+        <td><input type="text" id="dish_c18" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 18)"></td>
+      </tr>
+      <tr>
+        <td>09</td>
+        <td><input type="text" id="dish_h9" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 9)"></td>
+        <td><input type="text" id="dish_c9" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 9)"></td>
+        <td>19</td>
+        <td><input type="text" id="dish_h19" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 19)"></td>
+        <td><input type="text" id="dish_c19" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 19)"></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><input type="text" id="dish_h10" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 10)"></td>
+        <td><input type="text" id="dish_c10" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 10)"></td>
+        <td>20</td>
+        <td><input type="text" id="dish_h20" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 20)"></td>
+        <td><input type="text" id="dish_c20" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 20)"></td>
+      </tr>
+    </table>
+  </div>
+</td>
+<td align="right">- Number of tumor cells counted :
+<input type="text" id="A10" class="element text small" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
 
 <tr>
-<td align="right">- HER2 signals (black) per cell :
-<input type="text" ID="A11" class="element text small" size="10"></td>
+<td align="right">- Average HER2 signals (black) per cell :
+<input type="text" id="A11" class="element text small" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
 
 <tr>
-<td align="right">- CEP17 signals (red) per cell :
-<input type="text" ID="A12" class="element text small" size="10"></td>
+<td align="right">- Average CEP17 signals (red) per cell :
+<input type="text" id="A12" class="element text small" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
 
 <tr>
 <td align="right">- HER2/CEP17 ratio :
-<input type="text" ID="A13" class="element text small" size="10"></td>
+<input type="text" id="A13" class="element text small" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
 
 <tr>
 <td>- Other ISH abnormalities:<br>
-<input type="checkbox" id="A14" value="    - Aneusomy"><label>Aneusomy</label><br>
-	<input type="checkbox" id="A15" value="    - Heterogeneous signals"><label >Heterogeneous signals</label><br>
-<br>
+	<input type="checkbox" id="A14" value="    - Aneusomy"><label for="A14">Aneusomy</label><br>
+	<input type="checkbox" id="A15" value="    - Heterogeneous signals"><label for="A15">Heterogeneous signals</label>
 </td>
-<br>
 </tr>
-</table>
-</p>
-
-
-<p>
-<table border="1">
-<col width="40%">
 
 <tr>
 <td>
 <label class="description">- Cold ischemia time (min) :</label>
 </td>
 <td>
-<input type="text" class="element text small" ID="A28" size="3">
-min
+<input type="text" class="element text small" id="A28" size="3"> min (Optimal time: &lt;= 60 min)
 </td>
+</tr>
 
 <tr>
 <td>
 <label class="description">- Fixation time in buffered formalin :</label>
 </td>
 <td>
-<input type="text" class="element text small" ID="A27" size="3">
-hours
+<input type="text" class="element text small" id="A27" size="3"> hours (Optimal time: 6-72 hr)
 </td>
 </tr>
 
@@ -252,45 +536,29 @@ hours
 
 </fieldset>
 </p>
-<p>
-The HERACLES criteria of HER2 POSITIVE:<br>
-<br>
-3+ HER2 IHC score in more than 50% of the tumor cells<br>
-OR<br>
-3+ HER2 IHC score in 10~50% of the tumor cells by IHC + FISH/DISH positive<br>
-OR<br>
-2+ HER2 IHC score in more than 50% of the tumor cells by IHC + FISH/DISH positive<br>
-<br>
-Lancet Oncol 2016 17(6):738–746.<br>
-</p>
 
 <p>
 <label class="description">- Additional notes:</label>
- <textarea ID="A19" class = "element textarea medium" style="border-color:grey;"></textarea> 
+<textarea id="A19" class="element textarea medium" style="border-color:grey;"></textarea> 
 </p>
-
 
 <br><br>
 <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
 <br>
-<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+<TEXTAREA id="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
 
 <br><br>
-<!-- The button used to copy the text -->
-<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
-
-<input type="reset" value="Reset Form" name="reset" style="float: right;">
+<button type="button" onclick="CopyToClipboard()">Copy text to Clipboard</button>
+<input type="reset" value="Reset Form" name="reset" style="float: right;" onclick="resetFormCustom()">
 </form>
-<br>
-<br>
+<br><br>
 
 <div id="footer">
-Last upated 09-Oct-2026<br>
-html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Last updated 29-Oct-2026<br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>. Vibe coded in Gemini.<br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
 </div>
 <img id="bottom" src="bottom.png" alt="">
 </body>
 </html>
-
