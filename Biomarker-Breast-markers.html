@@ -1,670 +1,872 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Breast IHC and DISH</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
 <script type="text/javascript" src="view.js"></script>
 <script>
-function updateDescription (frm) 
-{
-    var Template = ""
+// Global function to auto-assign hidden A07 value based on A08 selection
+function evaluateHer2Score() {
+  var a08 = document.getElementById("A08");
+  var a07 = document.getElementById("A07");
+  if (!a08 || !a07) return;
 
+  var scoreText = a08.value;
+  if (!scoreText) {
+    a07.value = "";
+  } else if (scoreText.indexOf("(0 / absent") !== -1) {
+    a07.value = "NEGATIVE (Score 0)";
+  } else if (scoreText.indexOf("(0+ / with membrane") !== -1) {
+    a07.value = "NEGATIVE (Score 0+)";
+  } else if (scoreText.indexOf("(Score 1+)") !== -1) {
+    a07.value = "NEGATIVE (Score 1+)";
+  } else if (scoreText.indexOf("(Score 2+)") !== -1) {
+    a07.value = "EQUIVOCAL (Score 2+)";
+  } else if (scoreText.indexOf("(Score 3+)") !== -1) {
+    a07.value = "POSITIVE (Score 3+)";
+  }
 
-if (frm.A01.value !== ""){
-	Template += "- Estrogen receptor: " + frm.A01.value + "\n";
+  // Re-evaluate DISH as DISH status depends on concurrent IHC score for Groups 2, 3, and 4
+  evaluateHer2Dish();
 }
 
-if (frm.A02.value !== ""){
-	Template += "  - Intensity: " + frm.A02.value + "\n";
+// Global function to auto-assign hidden A09 value based on A11, A12, A13, and IHC (A07)
+function evaluateHer2Dish() {
+  var a09 = document.getElementById("A09");
+  var a11Val = parseFloat(document.getElementById("A11") ? document.getElementById("A11").value : "");
+  var a12Val = parseFloat(document.getElementById("A12") ? document.getElementById("A12").value : "");
+  var a13Val = parseFloat(document.getElementById("A13") ? document.getElementById("A13").value : "");
+  var a07Val = document.getElementById("A07") ? document.getElementById("A07").value : "";
+
+  if (!a09) return;
+
+  // Auto-calculate ratio if HER2 and CEP17 signals are entered but ratio is blank
+  if (!isNaN(a11Val) && !isNaN(a12Val) && a12Val > 0 && isNaN(a13Val)) {
+    a13Val = parseFloat((a11Val / a12Val).toFixed(2));
+    if (document.getElementById("A13")) {
+      document.getElementById("A13").value = a13Val;
+    }
+  }
+
+  if (isNaN(a11Val) || isNaN(a13Val)) {
+    a09.value = "";
+    return;
+  }
+
+  var isIhc3 = (a07Val.indexOf("Score 3+") !== -1);
+  var isIhc2 = (a07Val.indexOf("Score 2+") !== -1);
+
+  // ASCO/CAP 2023 Criteria Logic
+  if (a13Val >= 2.0) {
+    if (a11Val >= 4.0) {
+      // Group 1
+      a09.value = "POSITIVE (amplified, Group 1 result in greater than 10% of cell population)";
+    } else {
+      // Group 2
+      if (isIhc3) {
+        a09.value = "POSITIVE, Group 2 ISH result (with IHC 3+)";
+      } else {
+        a09.value = "NEGATIVE, Group 2 ISH result (with IHC 0-2+)";
+      }
+    }
+  } else {
+    // Ratio < 2.0
+    if (a11Val >= 6.0) {
+      // Group 3
+      if (isIhc2 || isIhc3) {
+        a09.value = "POSITIVE, Group 3 ISH result (with IHC 2-3+)";
+      } else {
+        a09.value = "NEGATIVE, Group 3 ISH result (with IHC 0-1+)";
+      }
+    } else if (a11Val >= 4.0) {
+      // Group 4
+      if (isIhc3) {
+        a09.value = "POSITIVE, Group 4 ISH result (with IHC 3+)";
+      } else {
+        a09.value = "NEGATIVE, Group 4 ISH result (with IHC 0-2+)";
+      }
+    } else {
+      // Group 5
+      a09.value = "NEGATIVE (not amplified, Group 5 result)";
+    }
+  }
 }
 
-if (frm.A03.value !== ""){
-	Template += "  - Positive nuclei(%) : " + frm.A03.value + "\n";
+// Integrated DISH real-time live summation function
+function calculateIntegratedDishLive() {
+  var totalHer2 = 0;
+  var totalCep17 = 0;
+  var validCount = 0;
+
+  for (var i = 1; i <= 20; i++) {
+    var her2Elem = document.getElementById("dish_h" + i);
+    var cepElem  = document.getElementById("dish_c" + i);
+
+    if (her2Elem && cepElem && her2Elem.value.trim() !== "" && cepElem.value.trim() !== "") {
+      var hVal = parseFloat(her2Elem.value);
+      var cVal = parseFloat(cepElem.value);
+
+      if (!isNaN(hVal) && !isNaN(cVal)) {
+        totalHer2 += hVal;
+        totalCep17 += cVal;
+        validCount++;
+      }
+    }
+  }
+
+  if (validCount > 0) {
+    var avgHer2 = (totalHer2 / validCount).toFixed(2);
+    var avgCep17 = (totalCep17 / validCount).toFixed(2);
+    var ratio = (avgCep17 > 0) ? (avgHer2 / avgCep17).toFixed(2) : "";
+
+    document.getElementById("A10").value = validCount;
+    document.getElementById("A11").value = avgHer2;
+    document.getElementById("A12").value = avgCep17;
+    document.getElementById("A13").value = ratio;
+  } else {
+    document.getElementById("A10").value = "";
+    document.getElementById("A11").value = "";
+    document.getElementById("A12").value = "";
+    document.getElementById("A13").value = "";
+  }
+
+  evaluateHer2Dish();
 }
 
-if (frm.A04.value !== ""){
-	Template += "- Progesterone receptor: " + frm.A04.value + "\n";
+// Keyboard navigation function for the 20-nucleus table
+function handleDishNav(e, type, num) {
+  var key = e.key;
+  var targetId = null;
+
+  if (key === "Enter" || (key === "Tab" && !e.shiftKey)) {
+    e.preventDefault();
+    if (type === 'h') {
+      targetId = "dish_c" + num;
+    } else if (type === 'c') {
+      if (num < 20) {
+        targetId = "dish_h" + (num + 1);
+      }
+    }
+  } else if (key === "ArrowDown") {
+    e.preventDefault();
+    if (num < 20) targetId = "dish_" + type + (num + 1);
+  } else if (key === "ArrowUp") {
+    e.preventDefault();
+    if (num > 1) targetId = "dish_" + type + (num - 1);
+  } else if (key === "ArrowRight") {
+    if (type === 'h') targetId = "dish_c" + num;
+  } else if (key === "ArrowLeft") {
+    if (type === 'c') targetId = "dish_h" + num;
+  }
+
+  if (targetId) {
+    var targetElem = document.getElementById(targetId);
+    if (targetElem) {
+      targetElem.focus();
+      targetElem.select();
+    }
+  }
 }
 
-if (frm.A05.value !== ""){
-	Template += "  - Intensity: " + frm.A05.value + "\n";
+function toggleDishCalculator() {
+  var calcDiv = document.getElementById("dish_calculator_panel");
+  var toggleBtn = document.getElementById("dish_toggle_btn");
+  if (calcDiv.style.display === "none") {
+    calcDiv.style.display = "block";
+    toggleBtn.innerText = "- Hide DISH Calculator";
+    var firstInput = document.getElementById("dish_h1");
+    if (firstInput) {
+      firstInput.focus();
+      firstInput.select();
+    }
+  } else {
+    calcDiv.style.display = "none";
+    toggleBtn.innerText = "+ Open DISH Calculator";
+  }
 }
 
-if (frm.A06.value !== ""){
-	Template += "  - Positive nuclei(%) : " + frm.A06.value + "\n";
-}
+function updateDescription(frm) {
+  evaluateHer2Score();
+  evaluateHer2Dish();
 
-if (frm.A07.value !== ""){
-	Template += "- HER2/neu oncoprotein IHC: " + frm.A07.value + "\n";
-}
+  var Template = "";
 
-if (frm.A08.value !== ""){
-	Template += "  - Score : " + frm.A08.value + "\n";
-}
+  // ==========================================
+  // 1. Estrogen Receptor (ER) IHC Section
+  // ==========================================
+  var erCtrlElem = document.getElementById("A01_ctrl");
+  var erIntElem  = document.getElementById("A02");
+  var erPropElem = document.getElementById("A03");
 
-if (frm.A25.value !== ""){
-	Template += "  - Clustered Heterogeneity : " + frm.A25.value + "\n";
-}
+  var erCtrl = erCtrlElem ? erCtrlElem.value : "";
+  var erIntVal = erIntElem ? erIntElem.value : "";
+  var erPropVal = erPropElem ? erPropElem.value : "";
 
-if (frm.A09.value !== ""){
-	Template += "- HER2 DISH : " + frm.A09.value + "\n";
-}
+  var hasErData = false;
 
-if (frm.A10.value !== ""){
-	Template += "  - Number of tumor cell counted : " + frm.A10.value + "\n";
-}
+  if (erIntVal !== "" && erPropVal !== "") {
+    var erIntensity = parseInt(erIntVal, 10);
+    var erProportion = parseInt(erPropVal, 10);
 
-if (frm.A11.value !== ""){
-	Template += "  - Average number of HER2 signals (black) per cell : " + frm.A11.value + "\n";
-}
+    if ((erIntensity > 0 && erProportion === 0) || (erIntensity === 0 && erProportion > 0)) {
+      Template += "- Estrogen receptor (ER) IHC: Cannot be determined\n";
+    } else {
+      hasErData = true;
+      var erAllredScore = erIntensity + erProportion;
+      var erAllredStatus = (erAllredScore >= 3) ? "POSITIVE" : "NEGATIVE";
 
-if (frm.A12.value !== ""){
-	Template += "  - Average number of CEP17 signals (red) per cell : " + frm.A12.value + "\n";
-}
+      var erAscoCapStatus = "";
+      if (erProportion === 0 || erProportion === 1) {
+        erAscoCapStatus = "Negative (<1% positive nuclei)";
+      } else if (erProportion === 2) {
+        erAscoCapStatus = "Low Positive (1-10% positive nuclei)";
+      } else {
+        erAscoCapStatus = "Positive (>10% positive nuclei)";
+      }
 
-if (frm.A13.value !== ""){
-	Template += "  - HER2/CEP17 ratio : " + frm.A13.value + "\n";
-}
+      var erIntensityText = ["Negative (0)", "Weak staining (1)", "Moderate staining (2)", "Strong staining (3)"][erIntensity];
+      var erProportionText = ["None (0)", "<1% (1)", "1-10% (2)", "11-20% (3)", "34-65% (4)", "66-100% (5)"][erProportion];
 
-if (frm.A26.value !== ""){
-	Template += "  - Percentage of Cells with Amplified HER2 Signals : " + frm.A26.value + "\n";
-}
+      Template += "- Estrogen receptor (ER) IHC: ";
+      Template += erAllredStatus + " (Allred Score: " + erAllredScore + "/8)\n";
+      Template += "  - Intensity: " + erIntensityText + "\n";
+      Template += "  - Positive nuclei (%): " + erProportionText + "\n";
+      Template += "  - " + erAscoCapStatus + " (ASCO/CAP Scoring Criteria)\n";
+	  
+      if (erCtrl === "absent") {
+        Template += "  - Note: Internal control cells absent; external controls stain as expected.\n";
+      }
+    }
+  } else if (erCtrl === "undetermined") {
+    Template += "- Estrogen receptor (ER) IHC: Cannot be determined\n";
+  }
 
-if (document.getElementById("A14").checked || document.getElementById("A15").checked){
-	Template += "  - Other ISH abnormalities: "  + "\n";
-}
+  // ==========================================
+  // 2. Progesterone Receptor (PR) IHC Section
+  // ==========================================
+  var prCtrlElem = document.getElementById("A04_ctrl");
+  var prIntElem  = document.getElementById("A05");
+  var prPropElem = document.getElementById("A06");
 
-if (document.getElementById("A14").checked){
-	Template += frm.A14.value + "\n";
-}
+  var prCtrl = prCtrlElem ? prCtrlElem.value : "";
+  var prIntVal = prIntElem ? prIntElem.value : "";
+  var prPropVal = prPropElem ? prPropElem.value : "";
 
-if (document.getElementById("A15").checked){
-	Template += frm.A15.value + "\n";
-}
+  var hasPrData = false;
 
-if (frm.A16.value !== ""){
-	Template += "- Proliferation index Ki67 (%) : "+ frm.A16.value + "\n";
-}
+  if (prIntVal !== "" && prPropVal !== "") {
+    var prIntensity = parseInt(prIntVal, 10);
+    var prProportion = parseInt(prPropVal, 10);
 
+    if ((prIntensity > 0 && prProportion === 0) || (prIntensity === 0 && prProportion > 0)) {
+      Template += "- Progesterone receptor (PR) IHC: Cannot be determined\n";
+    } else {
+      hasPrData = true;
+      var prAllredScore = prIntensity + prProportion;
+      var prAllredStatus = (prAllredScore >= 3) ? "POSITIVE" : "NEGATIVE";
 
-if (frm.A28.value !== ""){
-	Template += "\n" + "- Cold ischemia time : " + frm.A28.value + " min";
-} else {
-		Template += "\n" + "- Cold ischemic time is uncertain." ;
-}
+      var prAscoCapStatus = "";
+      if (prProportion === 0 || prProportion === 1) {
+        prAscoCapStatus = "Negative (<1% positive nuclei)";
+      } else {
+        prAscoCapStatus = "Positive (>=1% positive nuclei)";
+      }
 
-if (frm.A28.value <= 60 && frm.A28.value !== ""){
-		Template += "\n" + "  - Optimal (<= 60 min)." ;
-}
+      var prIntensityText = ["Negative (0)", "Weak staining (1)", "Moderate staining (2)", "Strong staining (3)"][prIntensity];
+      var prProportionText = ["None (0)", "<1% (1)", "1-10% (2)", "11-20% (3)", "34-65% (4)", "66-100% (5)"][prProportion];
 
-if (frm.A28.value > 60  && frm.A28.value !== ""){
-		Template += "\n" + "  - Prolonged intervals (> 60 min)." ;
-}
+      Template += "- Progesterone receptor (PR) IHC: ";
+      Template += prAllredStatus + " (Allred Score: " + prAllredScore + "/8)\n";
+      Template += "  - Intensity: " + prIntensityText + "\n";
+      Template += "  - Positive nuclei (%): " + prProportionText + "\n";
+      Template += "  - " + prAscoCapStatus + " (ASCO/CAP Scoring Criteria)\n";
 
-if (frm.A27.value !== ""){
-	Template += "\n" + "- Fixation time in buffered formalin : " + frm.A27.value + " hours";
-}else {
-		Template += "\n" + "- Formalin fixation time is uncertain." ;
-}
+      if (prCtrl === "absent") {
+        Template += "  - Note: Internal control cells absent; external controls stain as expected.\n";
+      }
+    }
+  } else if (prCtrl === "undetermined") {
+    Template += "- Progesterone receptor (PR) IHC: Cannot be determined\n";
+  }
 
-if (frm.A27.value < 6  && frm.A27.value !== ""){
-		Template += "\n" + "  - Inadequate fixation (<6 hours)." ;
-}
+  // ==========================================
+  // 3. HER2 IHC Section
+  // ==========================================
+  var her2IhcVal = document.getElementById("A07") ? document.getElementById("A07").value : "";
+  if (her2IhcVal !== "") {
+    Template += "- HER2 IHC: " + her2IhcVal + "\n";
+  }
+  if (frm.A08 && frm.A08.value !== "") {
+    Template += "  - Score: " + frm.A08.value + "\n";
+  }
+  if (frm.A25 && frm.A25.value !== "") {
+    Template += "  - Clustered Heterogeneity: " + frm.A25.value + "\n";
+  }
 
-if (frm.A27.value >= 6 && frm.A27.value <= 72 && frm.A27.value !== ""){
-		Template += "\n" + "  - Optimal fixation (6-72 hours)." ;
-}
+  // ==========================================
+  // 4. HER2 DISH Section
+  // ==========================================
+  var her2DishVal = document.getElementById("A09") ? document.getElementById("A09").value : "";
+  if (her2DishVal !== "") {
+    Template += "- HER2 DISH: " + her2DishVal + "\n";
+  }
+  if (frm.A10 && frm.A10.value !== "") {
+    Template += "  - Number of tumor cells counted: " + frm.A10.value + "\n";
+  }
+  if (frm.A11 && frm.A11.value !== "") {
+    Template += "  - Average number of HER2 signals (black) per cell: " + frm.A11.value + "\n";
+  }
+  if (frm.A12 && frm.A12.value !== "") {
+    Template += "  - Average number of CEP17 signals (red) per cell: " + frm.A12.value + "\n";
+  }
+  if (frm.A13 && frm.A13.value !== "") {
+    Template += "  - HER2/CEP17 ratio: " + frm.A13.value + "\n";
+  }
+  if (frm.A26 && frm.A26.value !== "") {
+    Template += "  - Percentage of cells with amplified HER2 signals: " + frm.A26.value + "\n";
+  }
 
-if (frm.A27.value > 72  && frm.A27.value !== ""){
-		Template += "\n" + "  - Prolonged intervals (>72 hours)." ;
-}
+  var a14 = document.getElementById("A14");
+  var a15 = document.getElementById("A15");
+  if ((a14 && a14.checked) || (a15 && a15.checked)) {
+    Template += "  - Other ISH abnormalities:\n";
+  }
+  if (a14 && a14.checked) Template += a14.value + "\n";
+  if (a15 && a15.checked) Template += a15.value + "\n";
 
-if (frm.A28.value !== "" && frm.A28.value <= 60 && frm.A27.value >= 6 && frm.A27.value <= 72){
-	Template += "\n" + "- Meet requirements specified in the latest version of the ASCO/CAP guidelines." + "\n"  ;
-} else if (frm.A28.value == "" || frm.A27.value == ""){
-	Template += "\n" + "- Given the uncertain cold ischaemia time and/or uncertain fixation time, please interpret the above results with caution." + "\n" ;
-} else if (frm.A28.value > 60 || frm.A27.value < 6 || frm.A27.value > 72){
-	Template += "\n" + "- Given the suboptimal cold ischaemia time and/or suboptimal formalin fixation time, please interpret the above results with caution." + "\n" ;
-} 
-/*
-if (frm.A29.value !== ""){
-	Template += "- Test type : " + frm.A29.value + "\n";
-}
-*/
-if (frm.A19.value !== ""){
-	Template += "\n" + "- Additional notes: " + "\n" + "  - " + frm.A19.value + "\n";
-}
+  if (frm.A16 && frm.A16.value !== "") {
+    Template += "- Proliferation index Ki67 (%): " + frm.A16.value + "\n";
+  }
 
-if (frm.A01.value + frm.A04.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system. Allred scores are used for assessment in general. ASCO/CAP criteria are used when specified (Allison KH, et al., Arch Pathol Lab Med. 2020 May;144(5):545-563). This is a laboratory-developed test (QMH, HK)." + "\n";
-}
+  // ==========================================
+  // 5. Pre-analytical Details
+  // ==========================================
+  var coldTime = frm.A28 ? frm.A28.value : "";
+  var fixTime  = frm.A27 ? frm.A27.value : "";
 
-if (frm.A07.value !== ""){
-	Template += "\n" + "Formalin-fixed paraffin embedded sections were assessed by IHC technique for HER2, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system. ASCO/CAP scoring criteria are used (Wolff AC, et al., Arch Pathol Lab Med. 2023 Sep 1;147(9):993-1000). This is a laboratory-developed test (QMH, HK)." + "\n";
-}
+  if (coldTime !== "") {
+    Template += "\n- Cold ischemia time: " + coldTime + " min";
+    Template += (coldTime <= 60) ? " (Optimal, <= 60 min)." : " (Prolonged, > 60 min).";
+  } else {
+    Template += "\n- Cold ischemic time is uncertain.";
+  }
 
-if (frm.A09.value !== ""){
-	Template += "\n" + "HER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on an automated system, and was examined by a pathologist under light microscopy. ASCO/CAP scoring criteria are used (Wolff AC, et al., Arch Pathol Lab Med. 2023 Sep 1;147(9):993-1000). The test is Food and Drug Administration (FDA) cleared." + "\n";
-}
+  if (fixTime !== "") {
+    Template += "\n- Fixation time in buffered formalin: " + fixTime + " hours";
+    if (fixTime < 6) {
+      Template += " (Inadequate, < 6 hours).";
+    } else if (fixTime >= 6 && fixTime <= 72) {
+      Template += " (Optimal, 6-72 hours).";
+    } else {
+      Template += " (Prolonged, > 72 hours).";
+    }
+  } else {
+    Template += "\n- Formalin fixation time is uncertain.";
+  }
 
-if (frm.A01.value == "Negative (Allred score <2), Internal control cells absent"){
-	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of ER status." + "\n";
-}
+  if (coldTime !== "" && coldTime <= 60 && fixTime >= 6 && fixTime <= 72) {
+    Template += "\n- Meets pre-analytical requirements specified in the ASCO/CAP guidelines.\n";
+  } else if (coldTime === "" || fixTime === "") {
+    Template += "\n- Given the uncertain cold ischemia/fixation time, please interpret results with caution.\n";
+  } else {
+    Template += "\n- Given the suboptimal cold ischemia/fixation time, please interpret results with caution.\n";
+  }
 
-if (frm.A01.value == "Negative (ASCO/CAP less than 1%), Internal control cells absent"){
-	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of ER status." + "\n";
-}
+  if (frm.A19 && frm.A19.value !== "") {
+    Template += "\n- Additional notes:\n  - " + frm.A19.value + "\n";
+  }
 
-if (frm.A01.value == "Low Positive (1-10% positive nuclei)"){
-	Template += "\n" +  "The cancer in this sample has a low level (1-10%) of ER expression by IHC. There are limited data on the overall benefit of endocrine therapies for patients with low level (1-10%) ER expression, but they currently suggest possible benefit, so patients are considered eligible for endocrine treatment. There are data that suggest invasive cancers with these results are heterogeneous in both behavior and biology and often have gene expression profiles more similar to ER negative cancers." + "\n";
-}
+  // ==========================================
+  // 6. Methodology & Clinical Footnotes
+  // ==========================================
+  if (hasErData || hasPrData) {
+    Template += "\nFormalin-fixed paraffin embedded sections were assessed by IHC technique for ER and PR, using Novocastra ER (clone: 6F11) and Dako PR (clone: PgR636) with the Bond polymer refined detection system. Allred scores are used in clinical management. ASCO/CAP scoring criteria are included for comparison [Allison KH, et al., Arch Pathol Lab Med. 2020 May;144(5):545-563]. This is a laboratory-developed test (QMH, HK).\n";
+  }
 
-if (frm.A04.value == "Negative (Allred score <2), Internal control cells absent"){
-	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of PR status." + "\n";
-}
+  if (her2IhcVal !== "" && her2IhcVal !== "Cannot be determined") {
+    Template += "\nFormalin-fixed paraffin embedded sections were assessed by IHC technique for HER2, using Ventana monoclonal HER2/neu (4B5) with Ventana BenchMark ULTRA multimer detection system. ASCO/CAP scoring criteria are used [Wolff AC, et al., Arch Pathol Lab Med. 2023 Sep 1;147(9):993-1000]. This is a laboratory-developed test (QMH, HK).\n";
+  }
 
-if (frm.A04.value == "Negative (ASCO/CAP less than 1%), Internal control cells absent"){
-	Template += "\n" +  "No internal controls are present, but external controls are appropriately positive. If needed, testing another specimen that contains internal controls may be warranted for confirmation of PR status." + "\n";
-}
+  if (her2DishVal !== "" && her2DishVal !== "Cannot be determined") {
+    Template += "\nHER2 Dual ISH was performed on formalin-fixed paraffin embedded section with the Ventana INFORM HER2 Dual ISH DNA Probe Cocktail Assay on an automated system, and was examined by a pathologist under light microscopy. ASCO/CAP scoring criteria are used [Wolff AC, et al., Arch Pathol Lab Med. 2023 Sep 1;147(9):993-1000]. The test is FDA cleared.\n";
+  }
 
-if (frm.A07.value == "Positive (Score 3+)" ||
-	frm.A07.value == "HER2 Positive (IHC 3+)" ||
-	frm.A09.value == "Positive (HER2 gene is amplified)" ||
-    frm.A09.value == "Positive (amplified, Group 1 result in greater than 10% of cell population)" ||
-	frm.A09.value == "Positive, Group 2 ISH result (with IHC 3+)" ||
-    frm.A09.value == "Positive, Group 3 ISH result (with IHC 2-3+)" ||
-	frm.A09.value == "Positive, Group 4 ISH result (with IHC 3+)"){
-	Template += "\n" +  "Patients with breast cancers that are HER2 IHC 3+ or IHC 2+/ISH amplified may be eligible for several therapies that disrupt HER2 signaling pathways."+ "\n";
-}
+  // Internal Control Warnings
+  if (hasErData && erCtrl === "absent") {
+    Template += "\nNo internal controls are present for ER, but external controls are appropriately positive. Testing another specimen containing internal controls may be warranted if clinically indicated.\n";
+  }
+  if (hasErData && erPropVal === "2") { // Low Positive (1-10%)
+    Template += "\nThe cancer in this sample has a low level (1-10%) of ER expression by IHC. There are limited data on the overall benefit of endocrine therapies for patients with low level ER expression, but patients remain eligible for endocrine treatment. Cancers with low ER level are heterogeneous and often show gene expression profiles similar to ER-negative cancers.\n";
+  }
+  if (hasPrData && prCtrl === "absent") {
+    Template += "\nNo internal controls are present for PR, but external controls are appropriately positive. Testing another specimen containing internal controls may be warranted if clinically indicated.\n";
+  }
 
-if (frm.A07.value == "Negative (Score 0)" ||
-    frm.A07.value == "Negative (Score 0+)" ||
-    frm.A07.value == "Negative (Score 1+)" ||
-    frm.A07.value == "Equivocal (Score 2+)" ||
-    frm.A07.value == "HER2 Null (IHC 0)" ||
-    frm.A07.value == "HER2 Ultralow (IHC 0+)" ||
-    frm.A07.value == "HER2 Low (IHC 1+ or IHC 2+ & DISH-)" ||
-	frm.A07.value == "HER2 Equivocal (IHC 2+)" ){
-	Template += "\n" +  "Invasive breast cancers that test 'HER2-negative' (IHC 0, 1+ or 2+/ISH not-amplified) are more specifically considered 'HER2-negative for protein overexpression/gene amplification' since non-overexpressed levels of the HER2 protein may be present in these cases." + "\n" + "\n" + "In the DESTINY-Breast 04 and 06 trials, 'HER2 low' was considered IHC Score 1+ or 2+/ISH negative, and 'HER2 ultralow' was HER2 IHC Score of 0 (pattern 0+) with membrane staining that is incomplete and faint/barely perceptible in less than or equal to 10% of tumor cells. Breast cancers with these staining patterns may be eligible for treatment with trastuzumab-deruxtecan in the metastatic setting (but those with no staining, IHC 0, are currently excluded)" + "\n";
-}
+  // HER2 Therapy / Diagnostic Guidance Footnotes
+  if (her2IhcVal.indexOf("POSITIVE") !== -1 || her2DishVal.indexOf("POSITIVE") !== -1) {
+    Template += "\nPatients with breast cancers that are HER2 IHC 3+ or ISH amplified are eligible for HER2-targeted anti-cancer therapies.\n";
+  } else if (her2IhcVal.indexOf("NEGATIVE") !== -1 || her2IhcVal.indexOf("EQUIVOCAL") !== -1) {
+    Template += "\nInvasive breast cancers testing HER2-negative (IHC 0, 1+, or 2+/ISH non-amplified) are considered negative for protein overexpression/gene amplification since non-overexpressed levels of the HER2 protein may be present in these cases.\n\nIn the DESTINY-Breast 04 and 06 trials, 'HER2 low' was considered IHC Score 1+ or 2+/ISH negative, and 'HER2 ultralow' was HER2 IHC Score of 0 (pattern 0+) with membrane staining that is incomplete and faint/barely perceptible in less than or equal to 10% of tumor cells. Breast cancers with these staining patterns may be eligible for treatment with trastuzumab-deruxtecan in the metastatic setting (but those with no staining, IHC 0, are currently excluded).\n";
+  }
 
-if (frm.A09.value == "Negative, Group 2 ISH result (with IHC 0-2+)" || frm.A09.value == "Positive, Group 2 ISH result (with IHC 3+)"){
-	Template += "\n" +  "This sample has a Group 2 HER2 ISH result (ratio greater than or equal to 2.0; less than 4.0 HER2 signals/cell). Evidence is limited on the efficacy of HER2-targeted therapy in the small subset of cases with HER2/CEP17 ratio greater than or equal to 2.0 and an average HER2 copy number less than 4.0/cell. In the first generation of adjuvant trastuzumab trials, patients in this subgroup who were randomized to the trastuzumab arm did not appear to derive an improvement in disease free or overall survival, but there were too few such cases to draw definitive conclusions. IHC expression for HER2 should be used to complement ISH and define HER2 status. If IHC result is not 3+ positive, it is recommended that the specimen be considered HER2 negative because of the low HER2 copy number by ISH and lack of protein overexpression."+ "\n";
-}
+  // ISH Group Specific Conditional Comments
+  if (her2DishVal.indexOf("Group 2") !== -1) {
+    if (her2IhcVal.indexOf("Score 3+") !== -1) {
+      Template += "\nThis sample exhibits a Group 2 HER2 ISH result (ratio >= 2.0; < 4.0 signals/cell). When concurrent IHC is 3+, the specimen is considered HER2-positive.\n";
+    } else {
+      Template += "\nThis sample exhibits a Group 2 HER2 ISH result (ratio >= 2.0; < 4.0 signals/cell). Concurrent IHC should guide interpretation; if IHC is not 3+, the sample is recommended to be considered HER2-negative due to low HER2 copy number.\n";
+    }
+  } else if (her2DishVal.indexOf("Group 3") !== -1) {
+    if (her2IhcVal.indexOf("Score 2+") !== -1 || her2IhcVal.indexOf("Score 3+") !== -1) {
+      Template += "\nThis sample exhibits a Group 3 HER2 ISH result (ratio < 2.0; >= 6.0 signals/cell). When concurrent IHC is 2+ or 3+, the specimen is considered HER2-positive.\n";
+    } else {
+      Template += "\nThis sample exhibits a Group 3 HER2 ISH result (ratio < 2.0; >= 6.0 signals/cell). When concurrent IHC is negative (0 or 1+), the specimen is recommended to be considered HER2-negative.\n";
+    }
+  } else if (her2DishVal.indexOf("Group 4") !== -1) {
+    if (her2IhcVal.indexOf("Score 3+") !== -1) {
+      Template += "\nThis sample exhibits a Group 4 HER2 ISH result (ratio < 2.0; >= 4.0 and < 6.0 signals/cell). When concurrent IHC is 3+, the specimen is considered HER2-positive.\n";
+    } else {
+      Template += "\nThis sample exhibits a Group 4 HER2 ISH result (ratio < 2.0; >= 4.0 and < 6.0 signals/cell). When concurrent IHC is not 3+, the specimen is recommended to be considered HER2-negative.\n";
+    }
+  }
 
-if (frm.A09.value == "Negative, Group 3 ISH result (with IHC 0-1+)" || frm.A09.value == "Positive, Group 3 ISH result (with IHC 2-3+)"){
-	Template += "\n" +  "This sample has a Group 3 HER2 ISH result (ratio less than 2.0; greater than or equal to 6.0 HER2 signals/cell). There are insufficient data on the efficacy of HER2-targeted therapy in cases with HER2 ratio less than 2.0 in the absence of protein overexpression because such patients were not eligible for the first generation of adjuvant trastuzumab clinical trials. When concurrent IHC results are negative (0 or 1+), it is recommended that the specimen be considered HER2 negative."+ "\n";
+  // Set final text box output
+  var holdTextElem = document.getElementById("holdtext");
+  if (holdTextElem) {
+    holdTextElem.value = Template;
+  }
 }
-
-if (frm.A09.value == "Negative, Group 4 ISH result (with IHC 0-2+)" || frm.A09.value == "Positive, Group 4 ISH result (with IHC 3+)"){
-	Template += "\n" +  "This sample has a Group 4 result (ratio less than 2.0; greater than or equal to 4.0 and less than 6.0 HER2 signals/cell). It is uncertain whether patients with greater than or equal to 4.0 and less than 6.0 average HER2 signals/cell and HER2/CEP17 ratio less than 2.0 benefit from HER2 targeted therapy in the absence of protein overexpression (IHC 3+). If the specimen test result is close to the ISH ratio threshold for positive, there is a high likelihood that repeat testing will result in different results by chance alone. Therefore, when IHC results are not 3+ positive, it is recommended that the sample be considered HER2 negative without additional testing on the same specimen."+ "\n";
-}
-frm.holdtext.value = Template;
-}
-
 
 function CopyToClipboard() {
-  /* Get the text field */
   var copyText = document.getElementById("holdtext");
+  if (copyText) {
+    copyText.select();
+    document.execCommand("copy");
+    alert("Report copied to clipboard");
+  }
+}
 
-  /* Select the text field */
-  copyText.select();
+function resetFormCustom() {
+  document.getElementById('A07').value = '';
+  document.getElementById('A09').value = '';
+  var holdTextElem = document.getElementById("holdtext");
+  if (holdTextElem) holdTextElem.value = '';
 
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Report copied to clipboard");
+  for (var i = 1; i <= 20; i++) {
+    var h = document.getElementById("dish_h" + i);
+    var c = document.getElementById("dish_c" + i);
+    if (h) h.value = '';
+    if (c) c.value = '';
+  }
 }
 </script>
+
 <style>
 table, th, td {
   border: 1px solid silver;
   border-collapse: collapse;
   padding: 4px;
 }
+.dish-calc-table {
+  table-layout: fixed;
+  width: auto;
+  max-width: 100%;
+}
+.dish-calc-table th, .dish-calc-table td {
+  padding: 2px 3px;
+  text-align: center;
+}
+.dish-calc-table input {
+  width: 25px;
+  text-align: center;
+  padding: 1px;
+  box-sizing: border-box;
+}
+.dish-calc-container {
+  background-color: #fff0f6;
+  border: 1px dashed #ff99cc;
+  padding: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  max-width: 240px;
+  box-sizing: border-box;
+}
 </style>
 </head>
 
 <body>
 <img id="top" src="top.png" alt="">
-	<div id="form_container">
+<div id="form_container">
 	<div class="form_description">
 		<h2>
-		<a href=".\cap\Cancer-Protocols-2026-09-Update\Breast Protocol Folder\Breast.Bmk_1.6.2.0.REL_CAPCP.pdf" target="_blank">
-		<div class="tooltip">Breast biomarkers testing
-		<span class="tooltiptext">click to access further explanations in the original CAP template</span>
-		</div>
-		</a></h2>
+		<a href=".\cap\Cancer-Protocols-2026-09-Update\Breast Protocol Folder\Breast.Bmk_1.6.2.0.REL_CAPCP.pdf" target="_blank">Breast biomarkers testing</a>
+		</h2>
 	</div>
 	
 <form>
+<!-- Hidden variables automatically populated -->
+<input type="hidden" id="A07" name="A07">
+<input type="hidden" id="A09" name="A09">
+
 <p>
 <fieldset style="border-color:#e6e6ff;">
 	<legend> <label class="description"> Biomarkers assessments : </label></legend>
-
-
-<!--
-<p>
-- For ER/PR, use Allred scoring for routine service.
-<br>
-<table>
-<caption> CAP protocol (June-2021 updated):</caption>
-<tr>
-<td>ER assessment:</td>
-<td>NEGATIVE: < 1% </td>
-<td>POSITIVE: >10%; "LOW POSITIVE": 1-10% </td>
-</tr>
-<tr>
-<td>PR assessment:</td>
-<td>NEGATIVE: < 1% </td>
-<td>POSITIVE: >10% </td>
-</tr>
-</table>
-</p>
--->
-<a href=".\cap\IHC scoring.png" target="_blank"><img src=".\cap\IHC scoring.png" alt="IHC score" width="600"></a>
+<p align="center">
+<a href=".\cap\IHC scoring.png" target="_blank"><img src=".\cap\IHC scoring.png" alt="IHC score" width="600"></a><br>
 from the notes of CAP Breast Biomarker Template version 1.6.2.0.
-<p>
-<table border="1">
-<col width="40%">
-
-<tr>
-<td rowspan="3" valign="top">
-<label class="description">- Estrogen recepter (ER) IHC :</label>
-</td>
-<td>
-	<select class="element select large"  ID="A01">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative (Allred score <2), Internal control cells present and stain as expected">Negative (Allred score <2), Internal control cells present and stain as expected</option>
-		<option value="Negative (Allred score <2), Internal control cells absent">Negative (Allred score <2), Internal control cells absent</option>
-		<option value="Positive (Allred score >=2)">Positive (Allred score >=2)</option>
-		<option value=""></option>
-		<option value="Negative (ASCO/CAP less than 1%), Internal control cells present and stain as expected">Negative (ASCO/CAP less than 1%), Internal control cells present and stain as expected</option>
-		<option value="Negative (ASCO/CAP less than 1%), Internal control cells absent">Negative (ASCO/CAP less than 1%), Internal control cells absent</option>
- 		<option value="Positive (ASCO/CAP greater than 10% positive nuclei)">Positive (ASCO/CAP greater than 10% positive nuclei)</option>
-		<option value="Low Positive (ASCO/CAP 1-10% positive nuclei)">Low Positive (ASCO/CAP 1-10% positive nuclei)</option>
-	</select>
-</td>
-</tr>
-<tr>
-<td align="right">
-<label>- Intensity :</label>
-	<select class="element select medium"  ID="A02">
-		<option value=""></option>
-		<option value="Negative (0)">Negative (0)</option>
-		<option value="Weak staining (1)">Weak staining (1)</option>
-		<option value="Moderate staining (2)">Moderate staining (2)</option>
-		<option value="Strong staining (3)">Strong staining (3)</option>
-	</select>
-</td>
-</tr>
-<tr>
-<td align="right">
-<label>- Positive nuclei (%) :</label>
-	<select class="element select medium"  ID="A03">
-		<option value=""></option>
-		<option value="Allred None (0)">Allred None       (0)</option>
-		<option value="Allred less than 1% (1)">Allred less than 1%       (1)</option>
-		<option value="Allred 1-10% (2)">Allred 1-10%     (2)</option>
-		<option value="Allred 11-20% (3)">Allred 11-20%   (3)</option>
-		<option value="Allred 34-65% (4)">Allred 34-65%   (4)</option>
-		<option value="Allred 66-100% (5)">Allred 66-100% (5)</option>
-		<option value=""></option>
-		<option value="ASCO/CAP None">ASCO/CAP None</option>
-		<option value="ASCO/CAP less than 1%">ASCO/CAP less than 1%</option>
-		<option value="ASCO/CAP  1-10%">ASCO/CAP   1-10%</option>
-		<option value="ASCO/CAP 11-20%">ASCO/CAP  11-20%</option>
-		<option value="ASCO/CAP 21-30%">ASCO/CAP  21-30%</option>
-		<option value="ASCO/CAP 31-40%">ASCO/CAP  31-40%</option>
-		<option value="ASCO/CAP  1-10%">ASCO/CAP  41-50%</option>
-		<option value="ASCO/CAP 11-20%">ASCO/CAP  51-60%</option>
-		<option value="ASCO/CAP 21-30%">ASCO/CAP  61-70%</option>
-		<option value="ASCO/CAP 31-40%">ASCO/CAP  71-80%</option>
-		<option value="ASCO/CAP 21-30%">ASCO/CAP  81-90%</option>
-		<option value="ASCO/CAP 31-40%">ASCO/CAP 91-100%</option>
-</select>
-</td>
-</tr>
-
-<tr>
-<td  rowspan="3" valign="top">
-<label class="description">- Progesterone recepter (PR) IHC :</label>
-</td>
-<td>
-	<select class="element select large"  ID="A04">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative (Allred score <2), Internal control cells present and stain as expected">Negative (Allred score <2), Internal control cells present and stain as expected</option>
-		<option value="Negative (Allred score <2), Internal control cells absent">Negative (Allred score <2), Internal control cells absent</option>
-		<option value="Positive (Allred score >=2)">Positive (Allred score >=2)</option>
-		<option value=""></option>
-		<option value="Negative (ASCO/CAP less than 1%), Internal control cells present and stain as expected">Negative (ASCO/CAP less than 1%), Internal control cells present and stain as expected</option>
-		<option value="Negative (ASCO/CAP less than 1%), Internal control cells absent">Negative (ASCO/CAP less than 1%), Internal control cells absent</option>
- 		<option value="Positive (ASCO/CAPgreater or equal to 1% positive nuclei)">Positive (ASCO/CAP greater or equal to 1% positive nuclei)</option>
-	</select>
-</td>
-</tr>
-
-<tr>
-<td align="right">
-<label>- Intensity :</label>
-	<select class="element select medium"  ID="A05">
-		<option value=""></option>
-		<option value="Negative (0)">Negative (0)</option>
-		<option value="Weak staining (1)">Weak staining (1)</option>
-		<option value="Moderate staining (2)">Moderate staining (2)</option>
-		<option value="Strong staining (3)">Strong staining (3)</option>
-	</select></td>
-</tr>
-
-<tr>
-<td align="right">
-<label>- Positive nuclei (%) :</label>
-<select class="element select medium"  ID="A06">
-		<option value=""></option>
-		<option value="Allred None (0)">Allred None       (0)</option>
-		<option value="Allred less than 1% (1)">Allred less than 1%       (1)</option>
-		<option value="Allred 1-10% (2)">Allred 1-10%     (2)</option>
-		<option value="Allred 11-20% (3)">Allred 11-20%   (3)</option>
-		<option value="Allred 34-65% (4)">Allred 34-65%   (4)</option>
-		<option value="Allred 66-100% (5)">Allred 66-100% (5)</option>
-		<option value=""></option>
-		<option value="ASCO/CAP None">ASCO/CAP None</option>
-		<option value="ASCO/CAP less than 1%">ASCO/CAP less than 1%</option>
-		<option value="ASCO/CAP  1-10%">ASCO/CAP   1-10%</option>
-		<option value="ASCO/CAP 11-20%">ASCO/CAP  11-20%</option>
-		<option value="ASCO/CAP 21-30%">ASCO/CAP  21-30%</option>
-		<option value="ASCO/CAP 31-40%">ASCO/CAP  31-40%</option>
-		<option value="ASCO/CAP  1-10%">ASCO/CAP  41-50%</option>
-		<option value="ASCO/CAP 11-20%">ASCO/CAP  51-60%</option>
-		<option value="ASCO/CAP 21-30%">ASCO/CAP  61-70%</option>
-		<option value="ASCO/CAP 31-40%">ASCO/CAP  71-80%</option>
-		<option value="ASCO/CAP 21-30%">ASCO/CAP  81-90%</option>
-		<option value="ASCO/CAP 31-40%">ASCO/CAP 91-100%</option>
-</select>
-</td>
-</tr>
-
-<tr>
-<td>
-<label class="description">- Ki67 Proliferation index % :</label>
-</td>
-<td>
-<input type="text" ID="A16" class="element text large" size="40">
-</td>
-</tr>
-</table>
 </p>
 
-<a href=".\cap\HER2_score_table2.png" target="_blank"><img src=".\cap\HER2_score_table2.png" alt="HER2 score Emad A. Rakha et al. / Mod Pathol 39 (2026) 100925" width="600"></a>
-From <a href=".\cap\PIIS0893395225002236.pdf"  target="_blank">Rakha et al 2026 Mod Pathol 39:100925 </a>
-
 <p>
 <table border="1">
 <col width="40%">
-<tr>
-<td rowspan="3" valign="top">
-<label class="description">- <a href=".\cap\PATHWAY anti-HER-2_neu (4B5) Rabbit Monoclonal Primary Antibody Interpretation Guide for Breast Cancer.pdf" target="_blank">HER2/neu oncoprotein IHC</a>:</label>
-** Reporting of HER2 Low and Ultralow are not required by CAP<br>
-* unusual staining pattern not addressed by CAP
 
-</td>
-	<td><select class="element select large"  ID="A07">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative (Score 0)">Negative (Score 0)</option>
-		<option value="Negative (Score 0+)">Negative (Score 0+)</option>
-		<option value="Negative (Score 1+)">Negative (Score 1+)</option>		
-		<option value="Equivocal (Score 2+)">Equivocal (Score 2+)</option>
-		<option value="Positive (Score 3+)">Positive (Score 3+)</option>
-		<option value=""></option>
-		<option value="HER2 Null (IHC 0)">** HER2 Null (IHC 0)</option>
-		<option value="HER2 Ultralow (IHC 0+)">** HER2 Ultralow (IHC 0+)</option>
-		<option value="HER2 Low (IHC 1+ or IHC 2+ & DISH-)">** HER2 Low (IHC 1+ or IHC 2+ & DISH-)</option>
-		<option value="HER2 Equivocal (IHC 2+)">** HER2 Equivocal (IHC 2+)</option>
-		<option value="HER2 Positive (IHC 3+)">** HER2 Positive (IHC 3+)</option>	</select></td>
+<tr>
+  <td rowspan="3" valign="top">
+    <label class="description">- Estrogen receptor (ER) IHC :</label>
+	Allred score
+  </td>
+  <td align="right">
+    <label>- Intensity :</label>
+    <select class="element select medium" id="A02">
+      <option value=""></option>
+      <option value="0">Negative (0)</option>
+      <option value="1">Weak staining (1)</option>
+      <option value="2">Moderate staining (2)</option>
+      <option value="3">Strong staining (3)</option>
+    </select>
+  </td>
 </tr>
-
 <tr>
+  <td align="right">
+    <label>- Positive nuclei (%) :</label>
+    <select class="element select medium" id="A03">
+      <option value=""></option>
+      <option value="0">None (0)</option>
+      <option value="1">less than 1% (1)</option>
+      <option value="2">1-10% (2)</option>
+      <option value="3">11-20% (3)</option>
+      <option value="4">34-65% (4)</option>
+      <option value="5">66-100% (5)</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+    <label>- Control :</label>
+    <select class="element select medium" id="A01_ctrl">
+      <option value=""></option>
+      <option value="present">Internal control cells present and stain as expected</option>
+      <option value="absent">Internal control cells absent</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td rowspan="3" valign="top">
+    <label class="description">- Progesterone receptor (PR) IHC :</label>
+		Allred score
+  </td>
+  <td align="right">
+	<label>- Intensity :</label>
+    <select class="element select medium" id="A05">
+      <option value=""></option>
+      <option value="0">Negative (0)</option>
+      <option value="1">Weak staining (1)</option>
+      <option value="2">Moderate staining (2)</option>
+      <option value="3">Strong staining (3)</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+    <label>- Positive nuclei (%) :</label>
+    <select class="element select medium" id="A06">
+      <option value=""></option>
+      <option value="0">None (0)</option>
+      <option value="1">less than 1% (1)</option>
+      <option value="2">1-10% (2)</option>
+      <option value="3">11-20% (3)</option>
+      <option value="4">34-65% (4)</option>
+      <option value="5">66-100% (5)</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+    <label>- Control :</label>
+    <select class="element select medium" id="A04_ctrl">
+      <option value=""></option>
+      <option value="present">Internal control cells present and stain as expected</option>
+      <option value="absent">Internal control cells absent</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>
+  </td>
+</tr>
+<tr>
+<td>
+<label class="description">- Ki67 Proliferation index :</label>
+</td>
+<td align="right">
+    <label>- Percentage (%) :</label>
+<select class="element select medium" ID="A16">
+		<option value=""></option>
+		<option value="0-5%">0-5%</option>
+		<option value="6-10%">6-10%</option>
+		<option value="11-15%">11-15%</option>
+		<option value="16-20%">16-20%</option>
+		<option value="21-30%">21-30%</option>
+		<option value="31-40%">31-40%</option>
+		<option value="41-50%">41-50%</option>
+		<option value="51-60%">51-60%</option>
+		<option value="61-70%">61-70%</option>
+		<option value="71-80%">71-80%</option>
+		<option value="81-90%">81-90%</option>
+		<option value="91-100%">91-100%</option>
+        <option value="Cannot be determined">Cannot be determined</option>
+</select>
+</td>
+</tr>
+<tr>
+  <td>
+  </td>
+</tr>
+<tr>
+<td rowspan="2" valign="top">
+<label class="description">- <a href=".\cap\PATHWAY anti-HER-2_neu (4B5) Rabbit Monoclonal Primary Antibody Interpretation Guide for Breast Cancer.pdf" target="_blank">HER2 IHC</a>:</label>
+* unusual staining patterns
+</td>
 <td align="right">
 <label>- Score :</label>
-	<select class="element select medium"  ID="A08">
+	<select class="element select medium" ID="A08" onchange="evaluateHer2Score()">
 		<option value=""></option>
 		<option value="No membrane staining detected (0 / absent membrane staining)">No membrane staining detected (0 / absent membrane staining)</option>
+		<option value=""></option>
 		<option value="Membrane staining that is incomplete and is faint / barely perceptible and in less than or equal to 10% of tumor cells (0+ / with membrane staining)">Membrane staining that is incomplete and is faint / barely perceptible and in less than or equal to 10% of tumor cells (0+ / with membrane staining)</option>
 		<option value="Faint/barely perceptible membrane staining in less than or equal to 10% of invasive tumor cells, regardless of the circumferential nature of membrane staining (0+ / with membrane staining)">* Faint/barely perceptible membrane staining in less than or equal to 10% of invasive tumor cells, regardless of the circumferential nature of membrane staining (0+ / with membrane staining)</option>
 		<option value="Weak, incomplete, membrane staining in less than or equal to 10% of invasive tumor cells (0+ / with membrane staining)">* Weak, incomplete, membrane staining in less than or equal to 10% of invasive tumor cells (0+ / with membrane staining)</option>
+		<option value=""></option>
 		<option value="Incomplete membrane staining that is faint / barely perceptible and in greater than 10% of tumor cells (Score 1+)">Incomplete membrane staining that is faint / barely perceptible and in greater than 10% of tumor cells (Score 1+)</option>
 		<option value="Weak, complete, membrane staining in less than or equal to 10% of invasive tumor cells (Score 1+)">* Weak, complete, membrane staining in less than or equal to 10% of invasive tumor cells (Score 1+)</option>
 		<option value="Weak, incomplete, membrane staining in greater than 10% of invasive tumor cells (Score 1+)">* Weak, incomplete, membrane staining in greater than 10% of invasive tumor cells (Score 1+)</option>
 		<option value="Moderate, incomplete, membrane staining in less than or equal to 10% of invasive tumor cells (Score 1+)">* Moderate, incomplete, membrane staining in less than or equal to 10% of invasive tumor cells (Score 1+)</option>
+		<option value=""></option>
 		<option value="Weak to moderate complete membrane staining observed in greater than 10% of tumor cells (Score 2+)">Weak to moderate complete membrane staining observed in greater than 10% of tumor cells (Score 2+)</option>
 		<option value="Less than or equal to 10% of the cancer has circumferential staining that is complete and intense (3+) (heterogeneous, but very limited in extent; consider results of additional samples) (Score 2+)">Less than or equal to 10% of the cancer has circumferential staining that is complete and intense (3+) (heterogeneous, but very limited in extent; consider results of additional samples) (Score 2+)</option>
 		<option value="Abundant cytoplasmic staining present, obscuring evaluation of membrane stain intensity (Score 2+)">Abundant cytoplasmic staining present, obscuring evaluation of membrane stain intensity (Score 2+)</option>
 		<option value="Moderate, complete, membrane staining in any percentage of invasive tumor cells (Score 2+)">* Moderate, complete, membrane staining in any percentage of invasive tumor cells (Score 2+)</option>
 		<option value="Moderate to strong, incomplete, membrane staining in greater than 10% of invasive tumor cells (Score 2+)">* Moderate to strong, incomplete, membrane staining in greater than 10% of invasive tumor cells (Score 2+)</option>
+		<option value=""></option>
 		<option value="Circumferential membrane staining that is complete, intense, and in greater than 10% of tumor cells (Score 3+)">Circumferential membrane staining that is complete, intense, and in greater than 10% of tumor cells (Score 3+)</option>
-	</select></td>
+	</select>
+</td>
 </tr>
 
 <tr>
 <td align="right">
-- Clustered Heterogeneity :
+- Clustered Heterogeneity (%) :
 <input type="text" class="element text small" ID="A25" size="3"></td>
 </tr>
-
-<tr><td rowspan="7" valign="top">
-<label class="description">- <a href=".\cap\her2_breast_update_algorithms_2023.pdf" target="_blank">HER2/neu oncoprotein DISH</a> :</label>
-Please use <a href=".\cap\wolff-et-al-2023-human-epidermal-growth-factor-receptor-2-testing-in-breast-cancer-asco-college-of-american.pdf" target="_blank">ASCO/CAP 2023 criteria</a><br><br><br>
-<a href=".\Biomarker-DISH-calculator.html" target="_blank">HER2 DISH calculator</a>
-<!--
-<br>
-<a href=".\cap\her2_dish.xlsx" target="_blank">DOWNLOAD AN EXCEL FILE</a>
--->
-</td>
-	<td><select class="element select large"  ID="A09">
-		<option value=""></option>
-		<option value="Cannot be determined">Cannot be determined</option>
-		<option value="Negative (not amplified, Group 5 result)">Negative (not amplified, Group 5 result)</option>
-		<option value="Negative, Group 2 ISH result (with IHC 0-2+)">Negative, Group 2 ISH result (with IHC 0-2+)</option>
-		<option value="Negative, Group 3 ISH result (with IHC 0-1+)">Negative, Group 3 ISH result (with IHC 0-1+)</option>
-		<option value="Negative, Group 4 ISH result (with IHC 0-2+)">Negative, Group 4 ISH result (with IHC 0-2+)</option>
-		<option value="Positive (amplified, Group 1 result in greater than 10% of cell population)">Positive (amplified, Group 1 result in greater than 10% of cell population)</option>
-		<option value="Positive, Group 2 ISH result (with IHC 3+)">Positive, Group 2 ISH result (with IHC 3+)</option>
-		<option value="Positive, Group 3 ISH result (with IHC 2-3+)">Positive, Group 3 ISH result (with IHC 2-3+)</option>
-		<option value="Positive, Group 4 ISH result (with IHC 3+)">Positive, Group 4 ISH result (with IHC 3+)</option>
-		<option value=""></option>		
-		<option value="Negative (HER2 gene is not amplified)">Negative (HER2 gene is not amplified)</option>
-		<option value="Positive (HER2 gene is amplified)">Positive (HER2 gene is amplified)</option>
-	</select></td>
+<tr>
+  <td>
+  </td>
 </tr>
+<tr><td rowspan="6" valign="top">
+<label class="description">- <a href=".\cap\her2_breast_update_algorithms_2023.pdf" target="_blank">HER2 DISH</a> :</label>
+Please use <a href=".\cap\wolff-et-al-2023-human-epidermal-growth-factor-receptor-2-testing-in-breast-cancer-asco-college-of-american.pdf" target="_blank">ASCO/CAP 2023 criteria</a><br><br>
 
-<tr><td align="right">
+<button type="button" id="dish_toggle_btn" onclick="toggleDishCalculator()" style="font-size: 11px; padding: 2px 6px;">+ Open DISH Calculator</button>
+
+<div id="dish_calculator_panel" class="dish-calc-container" style="display: none;">
+  <strong>HER2 DISH calculator</strong><br>
+  <table class="dish-calc-table" border="1" style="margin-top: 5px; background: #fff;">
+    <tr>
+      <th>#</th><th>HER2</th><th>CEP17</th>
+      <th>#</th><th>HER2</th><th>CEP17</th>
+    </tr>
+    <tr>
+      <td>01</td>
+      <td><input type="text" id="dish_h1" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 1)"></td>
+      <td><input type="text" id="dish_c1" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 1)"></td>
+      <td>11</td>
+      <td><input type="text" id="dish_h11" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 11)"></td>
+      <td><input type="text" id="dish_c11" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 11)"></td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><input type="text" id="dish_h2" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 2)"></td>
+      <td><input type="text" id="dish_c2" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 2)"></td>
+      <td>12</td>
+      <td><input type="text" id="dish_h12" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 12)"></td>
+      <td><input type="text" id="dish_c12" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 12)"></td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><input type="text" id="dish_h3" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 3)"></td>
+      <td><input type="text" id="dish_c3" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 3)"></td>
+      <td>13</td>
+      <td><input type="text" id="dish_h13" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 13)"></td>
+      <td><input type="text" id="dish_c13" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 13)"></td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><input type="text" id="dish_h4" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 4)"></td>
+      <td><input type="text" id="dish_c4" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 4)"></td>
+      <td>14</td>
+      <td><input type="text" id="dish_h14" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 14)"></td>
+      <td><input type="text" id="dish_c14" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 14)"></td>
+    </tr>
+    <tr>
+      <td>05</td>
+      <td><input type="text" id="dish_h5" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 5)"></td>
+      <td><input type="text" id="dish_c5" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 5)"></td>
+      <td>15</td>
+      <td><input type="text" id="dish_h15" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 15)"></td>
+      <td><input type="text" id="dish_c15" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 15)"></td>
+    </tr>
+    <tr>
+      <td>06</td>
+      <td><input type="text" id="dish_h6" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 6)"></td>
+      <td><input type="text" id="dish_c6" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 6)"></td>
+      <td>16</td>
+      <td><input type="text" id="dish_h16" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 16)"></td>
+      <td><input type="text" id="dish_c16" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 16)"></td>
+    </tr>
+    <tr>
+      <td>07</td>
+      <td><input type="text" id="dish_h7" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 7)"></td>
+      <td><input type="text" id="dish_c7" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 7)"></td>
+      <td>17</td>
+      <td><input type="text" id="dish_h17" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 17)"></td>
+      <td><input type="text" id="dish_c17" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 17)"></td>
+    </tr>
+    <tr>
+      <td>08</td>
+      <td><input type="text" id="dish_h8" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 8)"></td>
+      <td><input type="text" id="dish_c8" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 8)"></td>
+      <td>18</td>
+      <td><input type="text" id="dish_h18" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 18)"></td>
+      <td><input type="text" id="dish_c18" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 18)"></td>
+    </tr>
+    <tr>
+      <td>09</td>
+      <td><input type="text" id="dish_h9" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 9)"></td>
+      <td><input type="text" id="dish_c9" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 9)"></td>
+      <td>19</td>
+      <td><input type="text" id="dish_h19" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 19)"></td>
+      <td><input type="text" id="dish_c19" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 19)"></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><input type="text" id="dish_h10" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 10)"></td>
+      <td><input type="text" id="dish_c10" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 10)"></td>
+      <td>20</td>
+      <td><input type="text" id="dish_h20" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'h', 20)"></td>
+      <td><input type="text" id="dish_c20" oninput="calculateIntegratedDishLive()" onkeydown="handleDishNav(event, 'c', 20)"></td>
+    </tr>
+  </table>
+</div>
+
+</td>
+<td align="right">
 - Number of tumor cells counted :
-<input type="text" class="element text small" ID="A10" size="10"></td>
+<input type="text" class="element text small" ID="A10" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
 
 <tr><td align="right">
 - Average HER2 signals (black) per cell :
-<input type="text" class="element text small" ID="A11" size="10"></td>
+<input type="text" class="element text small" ID="A11" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
 
 <tr><td align="right">
 - Average CEP17 signals (red) per cell :
-<input type="text" class="element text small" ID="A12" size="10"></td>
+<input type="text" class="element text small" ID="A12" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
 
 <tr><td align="right">
 - HER2/CEP17 ratio :
-<input type="text" class="element text small" ID="A13" size="10"></td>
+<input type="text" class="element text small" ID="A13" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
+
 <tr>
 <td align="right">
-- Cells with Amplified Signals (%):
-<input type="text" class="element text small" ID="A26" size="10"></td>
+- Cells with Amplified Signals (%) :
+<input type="text" class="element text small" ID="A26" size="10" oninput="evaluateHer2Dish()"></td>
 </tr>
 
 <tr>
 <td>- Other ISH abnormalities:<br>
-	<input class="element checkbox" type="checkbox" id="A14" value="    - Aneusomy"><label  class="choice">Aneusomy</label>
+	<input class="element checkbox" type="checkbox" id="A14" value="    - Aneusomy"><label class="choice">Aneusomy</label>
 	<input class="element checkbox" type="checkbox" id="A15" value="    - Heterogeneous signals"><label class="choice">Heterogeneous signals</label>
 </td>
 </tr>
-
-</table>
-</p>
-
-</fieldset>
-</p>
-
-<p align="center" >
-<!--
-<iframe width="517" height="470" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/4e150ef5229d3792/UQSSN50i9Q4VIIBO_3UAAAAAAFkAjAfw58fM5U4?em=2&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='HER2%20DISH'!C7&Item='HER2%20DISH'!A1%3AH22&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
-<br>
-<a href=".\Biomarker-DISH-calculator.html" target="_blank">HER2 DISH calculator</a><br>
-<a href=".\cap\her2_dish.xlsx" target="_blank">DOWNLOAD THE EXCEL FILE</a>
-</p>
-
-<p align="center" >
-
-<iframe width="453" height="277" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/4e150ef5229d3792/UQSSN50i9Q4VIIBO71IBAAAAADGiu7lwQ89z-xk?em=2&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='Sheet1'!C4&Item='Sheet1'!A1%3AD13&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
-<br>
-<a href=".\Biomarker-PDL1-calculator.html" target="_blank">PD-L1 calculator</a><br>
-<a href=".\cap\PD-L1.xlsx" target="_blank">DOWNLOAD THE EXCEL FILE</a>
-
-</p>
--->
-<p>
-<fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\her2_breast_update_algorithms_2023.pdf" target="_blank">Dual probe ISH interpretation (ASCO/CAP 2023)</a>: </label></legend>
-- Group 1 = Ratio greater than or equal to 2.0 and greater than or equal to 4.0 HER2 signals / cell<br>
-- Group 2 = Ratio greater than or equal to 2.0 and less than 4.0 HER2 signals / cell =<br>
-- Group 3 = Ratio less than 2.0 and greater than or equal to 6.0 HER2 signals / cell <br>
-- Group 4 = Ratio less than 2.0 and greater than or equal to 4.0 and less than 6.0 HER2 signals / cell<br>
-- Group 5 = Ratio less than 2.0 and less than 4.0 HER2 signals / cell<br>
-<br>
-
-<fieldset style="border-color:#e6e6ff;">
-	<legend> Negative :</legend>
-- Group 5;<br>
-- Group 4 and concurrent IHC 0-1+ or 2+;<br>
-- Group 3 and concurrent IHC 0-1+; and <br>
-- Group 2 and concurrent IHC 0-1+ or 2+;<br>
-<br>
-</fieldset>
-<fieldset  style="border-color:#e6e6ff;">
-	<legend> Positive : </legend>
-- Group 1;<br>
-- Group 2 and concurrent IHC 3+;<br>  
-- Group 3 and concurrent IHC 2+ or 3+; and<br>
-- Group 4 and concurrent IHC 3+ <br>	
-<br>
-</fieldset>
-<br>
-</fieldset>
-</fieldset>
-</p>
-
-<p>
-<fieldset style="border-color:#e6e6ff;">
-	<legend> <label class="description"> <a href=".\cap\Cancer-Protocols-2022-06-Update\Breast Protocol Folder\Breast.Bmk_1.5.0.0.REL_CAPCP.pdf#page=8" target="_blank">Analytical details</a> : </label></legend>
-<p>
-<table border="1">
-<col width="40%">
-
+<tr>
+  <td>
+  </td>
+</tr>
 <tr>
 <td>
-<label class="description">- Cold ischemia time (min) :</label>
+<label class="description">- Cold ischemia time :</label>
 </td>
 <td>
-<input type="text" class="element text small" ID="A28" size="3">
-min
+<input type="text" class="element text small" ID="A28" size="3"> min (Optimal: <= 60 min)
 </td>
+</tr>
 
 <tr>
 <td>
 <label class="description">- Fixation time in buffered formalin :</label>
 </td>
 <td>
-<input type="text" class="element text small" ID="A27" size="3">
-hours
-</td>
-
-</tr>
-<!--
-<tr>
-<td>
+<input type="text" class="element text small" ID="A27" size="3"> hours (Optimal: 6-72 hours)
 </td>
 </tr>
-
-<tr>
-<td>
-<label class="description">- Test type :</label>
-</td>
-<td>
-	<select class="element select large" ID="A29">
-		<option value=""></option>
-		<option value="Laboratory-developed test (QMH, HK).">Laboratory-developed test (QMH, HK).</option>
-		<option value="Food and Drug Administration (FDA) cleared (specify test / vendor):">Food and Drug Administration (FDA) cleared (specify test / vendor):</option>
-		<option value="Laboratory-developed test (Non-U.S.-based health systems).">Laboratory-developed test, Non-U.S.-based health systems.</option>
-		<option value="Laboratory-developed test (Health Canada Approved (specify test / vendor:).">Laboratory-developed test, Health Canada Approved (specify test / vendor):</option>
-		<option value="Other (specify):">Other (specify):</option>
-	</select>
-</td>
-</tr>
--->
 </table>
-</p>
-<p>
-- Per review after 2024 CAP site inspection <br>
-- Please fill in/estimate the cold ischemic time (in minutes) and formalin-fixation time (in hours).<br>
-- Optimal cold ishemic time less than or equal to 60 min <br>
-- Optimal formalin-fixation time 6-72 hours.
 </p>
 </fieldset>
 </p>
 
+
+<br>
+<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
+<br><br>
+<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
+
+<br><br>
+<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
+<input type="reset" value="Reset Form" name="reset" style="float: right;" onclick="resetFormCustom()">
+</form>
+<br><br>
+
+
 <p align="center">
-<a href=".\cap\HER2_score_table.png" target="_blank"><img src=".\cap\HER2_score_table.png" alt="HER2 IHC" width="600"></a>
-<br>
-<br>
-<a href=".\cap\HER2_score_table3.png" target="_blank"><img src=".\cap\HER2_score_table3.png" alt="HER2 IHC" width="600"></a>
-<br>
-From <a href=".\cap\PIIS0893395225002236.pdf"  target="_blank">Rakha et al 2026 Mod Pathol 39:100925 </a>
+From <a href=".\cap\PIIS0893395225002236.pdf" target="_blank">Rakha et al 2026 Mod Pathol 39:100925 </a><br>
+** Reporting of HER2 Low and Ultralow are not required by CAP.
+<br><br>
+<a href=".\cap\HER2_score_table.png" target="_blank"><img src=".\cap\HER2_score_table.png" alt="HER2 IHC Emad A. Rakha et al. / Mod Pathol 39 (2026) 100925" width="600"></a>
+<br><br>
+<a href=".\cap\HER2_score_table2.png" target="_blank"><img src=".\cap\HER2_score_table2.png" alt="HER2 score Emad A. Rakha et al. / Mod Pathol 39 (2026) 100925" width="600"></a>
+<br><br>
+<a href=".\cap\HER2_score_table3.png" target="_blank"><img src=".\cap\HER2_score_table3.png" alt="HER2 IHC Emad A. Rakha et al. / Mod Pathol 39 (2026) 100925" width="600"></a>
 </p>
 
 <p>
 <label class="description">- Additional notes :</label>
- <textarea ID="A19" class = "element textarea medium" style="border-color:grey;"></textarea> 
+<textarea ID="A19" class="element textarea medium" style="border-color:grey;"></textarea> 
 </p>
 
-
-
-<br><br>
-<input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
-<br>
-<TEXTAREA ID="holdtext" name="holdtext" class="textarea large" style="border-color:coral;"></TEXTAREA>
-
-<br><br>
-<!-- The button used to copy the text -->
-<button onclick="CopyToClipboard()">Copy text to Clipboard</button>
-
-<input type="reset" value="Reset Form" name="reset" style="float: right;">
-</form>
-<br>
-<br>
-
 <div id="footer">
-Last upated 14-Oct-2026, based on Breast Biomarkers 1.6.2.0 Sep-2026</a>.<br>
-html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>.<br><br>
+Last updated 28-Oct-2026, based on Breast Biomarkers 1.6.2.0 Sep-2026.<br>
+html form was created on <a href="https://www.phpform.org">pForm</a>, <a href="https://www.w3schools.com/">W3 School</a>, <a href="https://stackoverflow.com/">StackOverflow</a>, and <a href="https://icons8.com">Icons8</a>. Vibe coded in Germini. <br><br>
 Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
 </div>
 </div>
 <img id="bottom" src="bottom.png" alt="">
 </body>
 </html>
-
