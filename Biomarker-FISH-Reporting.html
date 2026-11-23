@@ -1,0 +1,1143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FISH Reporting</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<style>
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 4px;
+  font-size: 11px;
+}
+.hidden {
+  display: none !important;
+}
+.result-box {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  line-height: 1.35;
+  width: 98%;
+  height: 420px;
+  border: 1px solid #7c7c7c;
+  padding: 6px;
+  white-space: pre;
+  overflow-x: auto;
+}
+.probe-info-card {
+  background-color: #f9f9f9;
+  border: 1px solid #dcdcdc;
+  border-left: 4px solid #0056b3;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.probe-info-card h4 {
+  margin-top: 0;
+  color: #0056b3;
+  font-size: 14px;
+}
+.probe-info-card img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+}
+.diagram-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+.diagram-box {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 6px;
+  text-align: center;
+}
+.diagram-box .cap-label {
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #222;
+}
+.nucleus-grid-table {
+  table-layout: fixed;
+  width: 100%;
+  background-color: #ffffff;
+}
+.nucleus-grid-table th, .nucleus-grid-table td {
+  padding: 2px 1px;
+  text-align: center;
+}
+.nucleus-grid-table input {
+  width: 22px;
+  text-align: center;
+  padding: 1px;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+.p19-cell-table {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 6px;
+}
+.p19-cell-table th, .p19-cell-table td {
+  padding: 2px 3px;
+  text-align: center;
+}
+.p19-cell-table input {
+  width: 28px;
+  text-align: center;
+  padding: 1px;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+.grid-container {
+  background-color: #f4f7fa;
+  border: 1px dashed #0056b3;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+.grid-toolbar {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+.grid-toolbar button {
+  font-size: 10px;
+  padding: 2px 6px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.p19-summary-box {
+  background-color: #eef4fb;
+  border: 1px solid #b8cce4;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+}
+</style>
+<script type="text/javascript">
+
+var fishDatabase = {
+  "1p19q": {
+    name: "1p/19q co-deletion (Glioma 1p36 / 19q13) (CAP Accredited)",
+    type: "1p19q",
+    gene: "1p/19q",
+    accredited: true,
+    infoHtml: "<p>For glioma (CAP accredited test).<br><b>Chromosome 1:</b> Orange Probe: 1p36 (~435 kb) | Green Probe: 1q25 (~618 kb)<br><b>Chromosome 19:</b> Orange Probe: 19q13 (~380 kb) | Green Probe: 19p13 (~502 kb)</p>" +
+      "<p>Vysis LSI 1p36 SpectrumOrange/1q25 SpectrumGreen Probes and Vysis LSI 19q13 SpectrumOrange/19p13 SpectrumGreen Probes (ASR) are used in 2 separated FISH tests. ZytoLight ® Glioma 1p/19q Probe Set is also available for qualitative detection of deletions involving 1p36.31 and 19q13.32-q13.33.</p>" +
+      "<div class='diagram-grid'>" +
+      "<div class='diagram-box'><div class='cap-label'>1p36 SpectrumOrange (~435 kb)</div><a href='.\\cap\\LSI-1p36-SO_435kb_probemap_mw004.png' target='_blank'><img src='.\\cap\\LSI-1p36-SO_435kb_probemap_mw004.png' alt='1p36 diagram'></a></div>" +
+      "<div class='diagram-box'><div class='cap-label'>1q25 SpectrumGreen (~618 kb)</div><a href='.\\cap\\LSI-1q25-SGn_618kb_probemap_mw004.png' target='_blank'><img src='.\\cap\\LSI-1q25-SGn_618kb_probemap_mw004.png' alt='1q25 diagram'></a></div>" +
+      "<div class='diagram-box'><div class='cap-label'>19q13 SpectrumOrange (~380 kb)</div><a href='.\\cap\\LSI-19q13-SO_380kb_probemap_mw004.png' target='_blank'><img src='.\\cap\\LSI-19q13-SO_380kb_probemap_mw004.png' alt='19q13 diagram'></a></div>" +
+      "<div class='diagram-box'><div class='cap-label'>19p13 SpectrumGreen (~502 kb)</div><a href='.\\cap\\LSI-19p13-SGn_502kb_probemap_mw002.png' target='_blank'><img src='.\\cap\\LSI-19p13-SGn_502kb_probemap_mw002.png' alt='19p13 diagram'></a></div>" +
+      "</div>"
+  },
+  "AKT1": { name: "AKT1 gene-rearrangement", type: "BREAK_APART", gene: "AKT1", locus: "14q32.33", mfg: "Empire Genomics AKT1 Dual Color Break Apart Probe", orange: "centromere side, 3' end of the AKT1 gene", green: "telomere side, 5' end of the AKT1 gene", accredited: false, infoHtml: "<p>Orange Probe: centromere side, AKT1 3' end<br>Green Probe: telomere side, AKT1 5'end<br></p><p>Empire Genomics’ AKT1 Break Apart FISH Probe is designed to flank the AKT1 gene and is typically used for detecting AKT1 rearrangements such as translocations. </p><p><img src=\".\\cap\\AKT1-BA.jpg\" alt=\"AKT1\" width=\"600\"></p>" },
+  "ALK": { name: "ALK gene-rearrangement (CAP Accredited)", type: "BREAK_APART", gene: "ALK", locus: "2p23", mfg: "Vysis ALK Break Apart FISH Probe Kit", orange: "telomere side, 3' of the ALK gene", green: "3' portion of the ALK gene (~442 kb) at 2p23", accredited: true, infoHtml: "<p>For Non-small cell lung carcinoma (CAP accredited test).</p><p>The Vysis ALK Break Apart FISH Probe Kit is a qualitative test to detect rearrangements involving the ALK gene via fluorescence in situ hybridization (FISH) in formalin-fixed paraffin-embedded (FFPE) non-small cell lung cancer (NSCLC) patients. See also \"IASLC Atlas of ALK adn ROS1 testing in lung cancer 2e\". Special note is to be taken if there are solely 5' signals (isolated green signals).<br><br>Orange Probe: Telomere side, 3' end of the ALK gene.<br>Green Probe: 3' end to mid portion of the ALK gene (including the tyrosine kinase domain).</p><p><img src=\".\\cap\\ALK-BA-FISH-pattern.png\" alt=\"IASLC Atlas of ALK adn ROS1 testing in lung cancer 2e\" width=\"300\"></p><p><img src=\".\\cap\\LSI-ALK-SO_300kb_LSI-ALK-SGn_442kb_probemap_mw002-kit.png\" alt=\"ALK\" width=\"600\"></p>" },
+  "BCL2": { name: "BCL2 gene-rearrangement", type: "BREAK_APART", gene: "BCL2", locus: "18q21.33-q22.1", mfg: "ZytoLight SPEC BCL2 Dual Color Break Apart Probe", orange: "telomere side, 5' of BCL2", green: "centromere side, 3' of BCL2", accredited: false, infoHtml: "<p>For B-cell lymphoma, follicular lymphoma.<br>Orange Probe: telomere side, BCL2 5' end<br>Green Probe: centromere side, BCL2 3' end<br></p><p>The ZytoLight ® SPEC BCL2 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 18q21.33 harboring the BCL2 gene. Translocations involving the BCL2 gene are commonly identified in B-cell lymphomas. In particular, the translocation t(14;18)(q32.3;q21.3) has been identified in about 80% of follicular lymphoma.</p><p><img src=\".\\cap\\BCL2partners.jpg\" alt=\"BCL2 partners\" width=\"600\"><br>adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\BCL2-BA.jpg\" alt=\"BCL2\" width=\"450\"></p>" },
+  "BCL6": { name: "BCL6 gene-rearrangement", type: "BREAK_APART", gene: "BCL6", locus: "3q27", mfg: "Vysis LSI BCL6 Break Apart Rearrangement Probe Kit", orange: "telomere side, 5' of BCL6", green: "centromere side, 3' of BCL6", accredited: false, infoHtml: "<p>For double hit, triple hit diffuse large B-cell lymphoma.<br>Orange Probe: telomere side, BCL6 5' end<br>Green Probe: centromere side, BCL6 3' end<br></p><p>Vysis LSI BCL6 (ABR) Dual Color Break Apart DNA probe hybridizes to the band 3q27. The 5’ BCL6 SpectrumOrange probe is ~349 kb in size and flanks the ABR of BCL6. The 3’ BCL6 SpectrumGreen probe is approximately 816kb in size and flanks the MBR region of BCL6. There is an approximate 265 kb gap between the two probes. In interphase nuclei of normal cells, the probe generally appears as two distinct signals (orange and green adjacent, or fused yellow). Probe signals may also appear diffuse or split in interphase nuclei, depending upon the condensation of the DNA.</p><p>In high-grade B-cell lymphomas, the presence of MYC aberrations identifies a patient subset with a very poor prognosis, particularly when there is concomitant rearrangement of BCL2 or BCL6, a condition referred to as \"double hit” DLBCL. In rare cases translocation involves MYC, BCL2 and BCL6, so called “triple hit”. </p><p><img src=\".\\cap\\BCL6partners.jpg\" alt=\"BCL6 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\Vysis-LSI-BCL6-(ABR)-Dual-Color-Break-Apart-Rearrangement-Probe_ProbeMap.jpg\" alt=\"BCL6\" width=\"600\"></p>" },
+  "BCOR": { name: "BCOR gene-rearrangement", type: "BREAK_APART", gene: "BCOR", locus: "Xp11.4", mfg: "GSP BCOR Dual Color Break Apart Probe (Guangzhou LBP)", orange: "centromere side, 3' of BCOR", green: "telomere side, 5' of BCOR", accredited: false, infoHtml: "<p>for Ewing sarcoma-like small blue round cell tumors, endometrial stromal sarcoma.<br><br>Red Probe    : centromere side, 3' of the BCOR gene<br>Green Probe  : telomere side, 5' of the BCOR gene<br></p><p>Fluorescence in situ hybridization (FISH) using GSP BCOR Probe (Guangzhou Lbp Medicine Science & Technology Co., Ltd.) and is typically used for detecting BCOR rearrangements such as translocations in small blue round cell tumors, Ewing sarcoma-like tumors that are negative for EWSR1 translocations.</p><p>Chromosome: CHRX: 39910498-40036582</p><p>Locus: Xp11.4</p><p>BCOR (Xp11.4) / CCNB3 (Xp11.22)<br>BCOR (Xp11.4) / CHCHD7 (8q12.1)<br>BCOR (Xp11.4) / L3MBTL2 (22q13.2)<br>BCOR (Xp11.4) / MAML3 (4q31)<br>BCOR (Xp11.4) / POM121L12 (7p12.1)<br>BCOR (Xp11.4) / RARA (17q21.2)<br>EP300 (22q13.2) / BCOR (Xp11.4)<br>ZC3H7B (22q13.2) / BCOR (Xp11.4)<br></p><p><img src=\".\\cap\\BCOR-BA_GROR.png\" alt=\"BCOR\" width=\"600\"></p>" },
+  "BRAF_AMP": { name: "BRAF amplification", type: "AMPLIFICATION", gene: "BRAF", locus: "7q34", mfg: "ZytoLight SPEC BRAF/CEN 7 Dual Color Probe", orange: "CEN 7 (D7Z1)", green: "covering BRAF gene (~525 kb) at 7q34", accredited: false, infoHtml: "<p>for brain tumomr typing.<br>Orange Probe: CEN7 (D7Z1)<br>Green Probe: BRAF, 7q34, ~525 kb<br></p><p>The ZytoLight ® SPEC BRAF/CEN 7 Dual Color Probe is designed for the detection of amplifications involving the chromosomal region 7q34 harboring the BRAF gene. Activating mutations in BRAF are found in many tumor types, including malignant melanoma, thyroid, colorectal, and ovarian carcinomas, lung adenocarcinoma, as well as in some sarcomas and gliomas.</p><p>BRAF/CEN7 amplification probe might also be used to look for KIAA-BRAF translocation in pilocystic astrocytoma, consisting of complex duplication and translocation events. RT-PCR assay might, sometimes, be more efficient in detecting this particular translocation.</p><p><img src=\".\\cap\\BRAF-CEN7.png\" alt=\"BRAF amplification\" width=\"450\"></p>" },
+  "BRAF_BA": { name: "BRAF gene-rearrangement", type: "BREAK_APART", gene: "BRAF", locus: "7q34", mfg: "ZytoLight SPEC BRAF Dual Color Break Apart Probe", orange: "centromere side, 3' of BRAF", green: "telomere side, 5' of BRAF", accredited: false, infoHtml: "<p>for brain tumomr typing.<br>Orange Probe: centromere side, BRAF 3' end<br>Green Probe: telomere side, BRAF 5'end<br></p><p>The ZytoLight ® SPEC BRAF Dual Color Break Apart Probe is designed for the detection of rearrangements involving the chromosomal region 7q34 harboring the BRAF gene. Various BRAF translocations were observed in melanocytic nevi, pilocytic astrocytomas, malignant melanoma, prostate and gastric cancer. </p><p><img src=\".\\cap\\BRAFpartners.jpg\" alt=\"BRAF partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\BRAF-BA.png\" alt=\"BRAF break apart\" width=\"450\"></p>" },
+  "CCND1": { name: "CCND1 gene-rearrangement", type: "BREAK_APART", gene: "CCND1", locus: "11q13.3", mfg: "ZytoLight SPEC CCND1 Dual Color Break Apart Probe", orange: "telomere side, 3' of CCND1", green: "centromere side, 3' of CCND1", accredited: false, infoHtml: "<p>For mantle cell lymphoma<br>Orange Probe: telomere side, CCND1 3' end<br>Green Probe: centromere side, CCND1 5' end<br><p>The ZytoLight SPEC CCND1 Dual Color Break Apart Probe (PL65) is intended to be used for the qualitative detection of translocations involving the human CCND1 gene at 11q13.3 in formalin-fixed, paraffin-embedded specimens by fluorescence in situ hybridization (FISH).  </p><p><img src=\".\\cap\\CCND1-BA.jpg\" alt=\"CCND1\" width=\"450\"></p>" },
+  "CDK6": { name: "CDK6 gene-rearrangement", type: "BREAK_APART", gene: "CDK6", locus: "7q21.2", mfg: "Empire Genomics CDK6 Dual Color Break Apart Probe", orange: "telomere side, 5' of CDK6", green: "centromere side, 3' of CDK6", accredited: false, infoHtml: "<p>Orange Probe: telomere side, CDK6 5' end<br>Green Probe: centromere side, CDK6 3' end<br></p><p>Empire Genomics’ CDK6 Break Apart FISH Probe is designed to flank the CDK6 gene and is typically used for detecting CDK6 rearrangements such as translocations. </p><p><img src=\".\\cap\\CDK6-BA_GROR.png\" alt=\"CDK6\" width=\"600\"></p>" },
+  "CDKN2A": { name: "CDKN2A deletion", type: "DELETION", gene: "CDKN2A/B", locus: "9p21.3", mfg: "ZytoLight SPEC CDKN2A/CEN 9 Dual Color Probe", orange: "CEN 9 (D9Z3)", green: "covering CDKN2A/B gene (~315 kb) at 9p21.3", accredited: false, infoHtml: "<p>for brain tumor typing.<br>Orange Probe: CEN 9 (D9Z3)<br>Green Probe: CDNK2A, 9p21.3, ~315 kb<br></p><p>The ZytoLight ® SPEC CDKN2A/CEN 9 Dual Color Probe is designed for the detection of CDKN2A deletions frequently observed in most tumor cell lines as well as in primary human malignancies. CDKN2A gene is found in up to 80% of T-cell acute lymphoblastic leukemia cases and is associated with poor prognosis and relapse of the disease. Also, this genetic change might be important in the classification and acts as prognostic indicator for some gliomas, aiming to look at homozygous deletion.</p><p><img src=\".\\cap\\CDKN2A-CEN9.png\" alt=\"CDKN2A deletion\" width=\"450\"></p>" },
+  "CIC": { name: "CIC gene-rearrangement", type: "BREAK_APART", gene: "CIC", locus: "19q13.2", mfg: "ZytoLight SPEC CIC Dual Color Break Apart Probe", orange: "centromere side, 5' of CIC", green: "telomere side, 3' of CIC", accredited: false, infoHtml: "<p>for Ewing sarcoma-like small blue round cell tumors.<br>Orange Probe: centromere side, CIC 5' end<br>Green Probe: telomere side, CIC 3' end<br></p><p>The ZytoLight ® SPEC CIC Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 19q13.2 harboring the CIC gene. Rearrangements involving the CIC gene are frequently found in EWSR1-negative small blue round cell tumors and have been described as aggressive tumors with an inferior overall survival compared to Ewing sarcoma.</p><p><img src=\".\\cap\\CICpartners.jpg\" alt=\"CIC partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\CIC-BA.png\" alt=\"CIC break apart\" width=\"450\"></p>" },
+  "COL1A1_PDGFB": { name: "COL1A1::PDGFB fusion gene-rearrangement", type: "FUSION", gene: "COL1A1::PDGFB", locus: "17q21.33 / 22q13.1", mfg: "ZytoLight SPEC COL1A1/PDGFB Dual Color Dual Fusion Probe", orange: "COL1A1 (~925 kb) at 17q21.33", green: "PDGFB (~1.3 Mb) at 22q13.1", accredited: false, infoHtml: "<p>for dermatofibrosarcoma protuberans (DFSP).<br>Orange Probe: COL1A1, 17q21.33, ~925 kb<br>Green Probe: PDGFB, 22q13.1, ~1.3 Mb<br></p><p>The ZytoLight ® SPEC COL1A1/PDGFB Dual Color Dual Fusion Probe is designed for the detection of the specific translocations involving the chromosomal region 17q21.33 harboring the COL1A1 (a.k.a. OI4) gene, and the chromosomal region 22q13.1, harboring the PDGFB (a.k.a PDGF2, SIS) gene. The reciprocal translocations involving t(17;22)(q21.3;q13.1) are characteristic for dermatofibrosarcoma protuberans (DFSP) patients.</p><p>Local lab data criteria: POSITIVE (>=20%), NEGATIVE (<10%), and further RT-PCR for cases with 10-20% positive nuclei. </p><p><img src=\".\\cap\\COL1A1-PDGFB.jpg\" alt=\"COL1A1-PDGFB fusion probe\" width=\"450\"></p>" },
+  "CSF1": { name: "CSF1 gene-rearrangement", type: "BREAK_APART", gene: "CSF1", locus: "1p13.3", mfg: "CSF1 Dual Color Break Apart Probe (Guangzhou LBP)", orange: "telomere side, 5' of CSF1", green: "centromere side, 3' of CSF1", accredited: false, infoHtml: "<p>for PVNS and TGCT. Probe from \"Guangzhou Lbp Medicine Science & Technology Co., Ltd.\"<br>Orange Probe: telomere side, CSF1 5' end<br>Green Probe: centromere side, CSF1 3' end<br></p><p>CSF1, the ligand of the tyrosine kinase receptor, CSF1R, can be translocated in pigmented villonodular synovitis (PVNS) and tenosynovial giant cell tumor (TGCT). Am J Surg Pathol. 2007 Jun;31(6):970-6.</p><p>ATP5EP2 (13q12.2) / CSF1 (1p13.3)<br>COL6A3 (2q37.3) / CSF1 (1p13.3)<br>CSF1 (1p13.3) / COL6A3 (2q37.3)<br>CSF1 (1p13.3) / S100A10 (1q21.3)<br><p><img src=\".\\cap\\CSF1-BA2.png\" alt=\"CSF1 break apart\" width=\"450\"></p>" },
+  "DDIT3": { name: "DDIT3 gene-rearrangement", type: "BREAK_APART", gene: "DDIT3", locus: "12q13.3", mfg: "Vysis LSI DDIT3 Break Apart Rearrangement Probe Kit", orange: "centromere side, 3' of DDIT3", green: "telomere side, 5' of DDIT3", accredited: false, infoHtml: "<p>for myxoid liposarcoma.<br>Orange Probe: centromere side, DDIT3 3' end<br>Green Probe: telomere side, DDIT3 5' end<br></p><p>Vysis DDIT3 Break Apart FISH Probe Kit and the ZytoLight ® SPEC DDIT3 Dual Color Break Apart Probe are designed to detect translocations involving the chromosomal region 12q13.3 harboring the DDIT3 gene. DDIT3 is consistently rearranged in myxoid liposarcomas.</p><p><img src=\".\\cap\\DDIT3partners.jpg\" alt=\"DDIT3 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\LSI-DDIT3-SO_700kb_SGn_663kb_probemap_mw001-orange.png\" alt=\"DDIT3 break apart\" width=\"600\"><br>Vysis Probe</p><p><img src=\".\\cap\\DDIT3-BA.jpg\" alt=\"DDIT3 break apart\" width=\"450\"><br>ZytoLight Probe</p>" },
+  "EBF1": { name: "EBF1 gene-rearrangement", type: "BREAK_APART", gene: "EBF1", locus: "5q33.3", mfg: "Empire Genomics EBF1 Dual Color Break Apart Probe", orange: "telomere side, 5' of EBF1", green: "centromere side, 3' of EBF1", accredited: false, infoHtml: "<p>Orange Probe: telomere side, EBF1 5' end<br>Green Probe: centromere side, EBF1 3' end<br></p><p>For sarcoma, such as lipomatous neoplasm and lipofibrous neoplasm. Pediatric B-cell precursor acute lymphoblastic leukemia (BCP-ALL)</p><p><img src=\".\\cap\\EBF1_BA.jpg\" alt=\"EBF1 break apart probe\" width=\"600\"></p><p><img src=\".\\cap\\EBF1_partners.jpg\" alt=\"EBF1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p>" },
+  "EGFR": { name: "EGFR amplification", type: "AMPLIFICATION", gene: "EGFR", locus: "7p11.2", mfg: "ZytoLight SPEC EGFR/CEN 7 Dual Color Probe", orange: "CEN 7 (D7Z1)", green: "covering EGFR gene (~635 kb) at 7p11.2", accredited: false, infoHtml: "<p>for brain tumomr typing.<br>Orange Probe: CEN 7 (D7Z1)<br>Green Probe: EGFR, 7p11.2, ~635 kb<br></p><p>The ZytoLight ® SPEC EGFR/CEN 7 Dual Color Probe is designed for the detection of EGFR gene amplification frequently observed in solid neoplasms including non-small-cell lung cancer (NSCLC) and glioblastoma. Overexpression of EGFR has been shown in a number of tumor entities and is associated with poor prognosis. This probe is also used in the diagnostic algorithm of glioma.</p><p>A tumor was considered EGFR amplified when there was focal EGFR gene amplification defined as an EGFR/CEP 7 ratio greater than or equal to 2 in ≥15% recorded cells. Tumors with polysomy for chromosome 7 (excess copies of the entire chromosome) but without focal amplification of the EGFR gene were considered to be EGFR nonamplified. (French et al 2020 Neuro-Oncol)</p><p><img src=\".\\cap\\EGFR-CEN7.png\" alt=\"EGFR amplification\" width=\"450\"></p>" },
+  "ERBB2": { name: "ERBB2 (HER2) amplification", type: "AMPLIFICATION", gene: "ERBB2", locus: "17q12", mfg: "PathVysion HER-2 DNA Probe Kit (Vysis)", orange: "HER-2/neu gene (~190 kb) at 17q12", green: "CEN 17 (D17Z1)", accredited: false, infoHtml: "<p>Please order HER2 DISH for routine breast CA biomarker testing.</p><p>The PathVysion HER-2 DNA Probe Kit (PathVysion Kit) is designed to detect amplification of the HER-2/neu gene via fluorescence in situ hybridization (FISH) in formalin-fixed, paraffin-embedded human breast cancer tissue specimens. We have taken off this test from accreditation. Please order DISH through the desktop little fox for more efficient processing in immuno lab using the automated processor.</p>" },
+  "ERBB3": { name: "ERBB3 amplification", type: "AMPLIFICATION", gene: "ERBB3", locus: "12q13.2", mfg: "ZytoLight SPEC ERBB3/CEN 12 Dual Color Probe", orange: "covering ERBB3 gene (~680 kb) at 12q13.2", green: "CEN 12 (D12Z3)", accredited: false, infoHtml: "<p>Orange Probe: ERBB3, 12q13.2-q13.3, ~680 kb<br>Green Probe: CEN12 (D12Z3)<br><p><p>The ZytoLight ® SPEC ERBB3/CEN 12 Dual Color Probe is designed for the detection of amplifications of the chromosomal regions harboring the ERBB3 gene. It belongs to the epidermal growth factor receptor subgroup of the receptor tyrosine kinase superfamily which is known to be affected by gene amplifications in a number of malignant tumors.</p><p><img src=\".\\cap\\ERBB3.png\" alt=\"ERBB3\" width=\"450\"></p>" },
+  "ERBB4": { name: "ERBB4 amplification", type: "AMPLIFICATION", gene: "ERBB4", locus: "2q34", mfg: "ZytoLight SPEC ERBB4/2q11 Dual Color Probe", orange: "covering ERBB4 gene (~1040 kb) at 2q34", green: "AFF3 reference (~490 kb) at 2q11.2", accredited: false, infoHtml: "<p>Orange Probe: ERBB4, 2q34, ~1040 kb<br>Green Probe: AFF3, 2q11.2, ~490 kb<br></p><p>The ZytoLight ® SPEC ERBB4/2q11 Dual Color Break Apart Probe is designed for the detection of amplifications of the chromosomal regions harboring the ERBB4 gene. There is growing evidence that cooperation of all four members of the ERBB gene family contributes to a more aggressive tumor phenotype and influences therapeutic response.</p><p><img src=\".\\cap\\ERBB4-1.png\" alt=\"ERBB4\" width=\"450\"></p><p><img src=\".\\cap\\ERBB4-2.png\" alt=\"2q11\" width=\"450\"></p>" },
+  "EWSR1": { name: "EWSR1 gene-rearrangement", type: "BREAK_APART", gene: "EWSR1", locus: "22q12.2", mfg: "ZytoLight SPEC EWSR1 Dual Color Break Apart Probe", orange: "centromere side, 5' of EWSR1", green: "telomere side, 3' of EWSR1", accredited: false, infoHtml: "<p>for many different sarcomas including angiomatoid fibrous histiocytoma, Clear cell sarcoma of soft parts, desmoplastic small round cell tumor, extraskeletal myoxoid chondrosarcoma, Ewing sarcoma/PNET, myoepithelial tumor, .....</p><p>Orange Probe: centromere side, EWSR1 5' end<br>Green Probe: telomere side, EWSR1 3' end<br></p><p>The ZytoLight ® SPEC EWSR1 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 22q12.2 harboring the EWSR1 gene (Ewing sarcoma breakpoint region 1). There are many fusion partners for the EWSR1 translocation. Sanger's Catalogue of Somatic Mutations In Cancer (COSMIC) fusion database provides an updated references of the breakpoints for EWSR1.</p><p><img src=\".\\cap\\EWSR1PartnerTum02.jpg\" alt=\"http://atlasgeneticsoncology.org//Genes/EWSR1ID85.html\" width=\"600\"></p><p><img src=\".\\cap\\EWSR1PartnerTum.jpg\" alt=\"http://atlasgeneticsoncology.org//Genes/EWSR1ID85.html\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\EWSR1-BA.png\" alt=\"EWSR1 break apart\" width=\"450\"></p>" },
+  "FGFR1": { name: "FGFR1 amplification", type: "AMPLIFICATION", gene: "FGFR1", locus: "8p11.23", mfg: "ZytoLight SPEC FGFR1/CEN 8 Dual Color Probe", orange: "CEN 8 (D8Z2)", green: "covering FGFR1 gene (~465 kb) at 8p11.23", accredited: false, infoHtml: "<p>Orange Probe: CEN 8 (D8Z2)<br>Green Probe: FGFR1, 8p11.22-p11.23, ~465 kb<br></p><p>The ZytoLight ® SPEC FGFR1/CEN 8 Dual Color Probe is designed for the detection of FGFR1 gene amplification frequently observed in malignant tumors e.g. breast and prostate cancer and oral squamous cell carcinoma (OSCC). FGFR1 is believed to emerge as a potential therapeutic target for lobular breast carcinomas.</p><p><img src=\".\\cap\\FGFR1.png\" alt=\"FGFR1\" width=\"450\"></p>" },
+  "FN1": { name: "FN1 gene-rearrangement", type: "BREAK_APART", gene: "FN1", locus: "2q35", mfg: "FN1 Dual Color Break Apart Probe (Guangzhou LBP)", orange: "telomere side, 5' of FN1", green: "centromere side, 3' of FN1", accredited: false, infoHtml: "<p>for calcifying aponeurotic fibroma (FN1 and EGF fusion)<br>for chondroblastoma (FN1 and FGFR1/FGFR2 fusion)<br>for chondroid and calcified mesenchymal neoplasms (FN1 and FGFR2, FGFR1, MERTK, NTRK1, TEK fusions)<br>for phosphaturic mesenchymal tumor (FN1 and FGFR1/FGF1 fusion)<br>for soft tissue chondromas (FN1 and FGFR2 fusion)<br>for synovial chondromatosis (FN1 and ACVR2 fusions). <br></p><p>Orange Probe: telomere side, FN1 5' end<br>Green Probe: centromere side, FN1 3' end<br></p><p>Fibronectin, coded by the gene FN1, is a large protein that binds to many molecules, such as collagen, fibrin, proteoglycans, and cell-surface receptors.</p><p><img src=\".\\cap\\FN1-BA.jpg\" alt=\"FN1 break apart\" width=\"600\"></p><p><img src=\".\\cap\\FN1-partners.jpg\" alt=\"https://atlasgeneticsoncology.org/gene-fusions/?id=40617?cookies=1\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p>" },
+  "FOXO1": { name: "FOXO1 gene-rearrangement", type: "BREAK_APART", gene: "FOXO1", locus: "13q14.11", mfg: "ZytoLight SPEC FOXO1 Dual Color Break Apart Probe", orange: "telomere side, 5' of FOXO1", green: "centromere side, 3' of FOXO1", accredited: false, infoHtml: "<p>For alveolar rhabdomyosarcoma</p><p>Orange Probe: telomere side, FOXO1 5' end<br>Green Probe: centromere side, FOXO1 3' end<br></p><p>The ZytoLight SPEC FOXO1 Dual Color Break Apart Probe is designed for the detection of specific translocations involving the chromosomal region 13q14.11 harboring the FOXO1 gene characteristic for alveolar rhabdomyosarcoma. </p><p><img src=\".\\cap\\FOXO1partners.jpg\" alt=\"http://atlasgeneticsoncology.org//Genes/EWSR1ID85.html\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\FOXO1-BA.png\" alt=\"FOXO1 break apart probe\" width=\"450\"></p>" },
+  "FUS": { name: "FUS gene-rearrangement", type: "BREAK_APART", gene: "FUS", locus: "16p11.2", mfg: "Vysis LSI FUS Break Apart FISH Probe Kit", orange: "centromere side, 3' of FUS", green: "telomere side, 5' of FUS", accredited: false, infoHtml: "<p>for myxoid liposarcoma.</p><p>Orange Probe: centromere side, FUS, 3' end<br>Green Probe: telomere side, FUS, 5' end<br></p><p>Vysis LSI FUS Break Apart FISH Probe Kit is designed to detect translocations involving the chromosomal region 16p11.2 harboring the FUS gene. FUS gene rearrangements have been shown to be involved in both solid tumors and leukemias, e.g. in over 90% of myxoid liposarcoma.</p><p><img src=\".\\cap\\FUSpartners.jpg\" alt=\"FUS partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\LSI_FUS_SGn_505kb_LSI_FUS_SO_275kb_probemap_mw001.png\" alt=\"FUS break apart\" width=\"600\"></p>" },
+  "IDH1": { name: "IDH1 gene-rearrangement", type: "BREAK_APART", gene: "IDH1", locus: "2q34", mfg: "Empire Genomics IDH1 Dual Color Break Apart Probe", orange: "telomere side, 5' of IDH1", green: "centromere side, 3' of IDH1", accredited: false, infoHtml: "<p>Orange Probe: telomere side, IDH1 5' end<br>Green Probe: cenromere side, IDH1 3' end<br></p><p>Empire Genomics’ IDH1 Break Apart FISH Probe is designed to flank the CDK6 gene and is typically used for detecting IDH1 rearrangements such as translocations. </p><p><img src=\".\\cap\\IDH1-BA-GROR.png\" alt=\"IDH1\" width=\"600\"></p>" },
+  "JAZF1": { name: "JAZF1 gene-rearrangement", type: "BREAK_APART", gene: "JAZF1", locus: "7p15.1-p15.2", mfg: "ZytoLight SPEC JAZF1 Dual Color Break Apart Probe", orange: "centromere side, 5' of JAZF1", green: "telomere side, 3' of JAZF1", accredited: false, infoHtml: "<p>for low grade/high grade endometrial stromal sarcoma.</p><p>Orange Probe: centromere side, JAZF1 5' end<br>Green Probe: telomere side, JAZF1 3' end<br></p><p>The ZytoLight ® SPEC JAZF1 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 7p15.1-p15.2 harboring the JAZF1 gene. In 25-30% of endometrial stromal sarcoma, espectially the low grade ones, the JAZF1 gene is disrupted by another translocation t(6;7) where the first zinc finger domain of JAZF1 is fused to both zinc finger domains of the PHF1 gene at 6p21.32.</p><p><img src=\".\\cap\\JAZF1partners.jpg\" alt=\"JAZF1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\JAZF1-BA.png\" alt=\"JAZF1 break apart\" width=\"450\"></p>" },
+  "KRAS": { name: "KRAS amplification", type: "AMPLIFICATION", gene: "KRAS", locus: "12p12.1", mfg: "ZytoLight SPEC KRAS/CEN 12 Dual Color Probe", orange: "covering KRAS gene (~925 kb) at 12p12.1", green: "CEN 12 (D12Z3)", accredited: false, infoHtml: "<p>Orange Probe: KRAS, 12p12.1, ~925 kb<br>Green Probe: CEN 12 (D12Z3)<br></p><p>The ZytoLight ® SPEC KRAS/CEN 12 Dual Color Probe is designed for the detection of KRAS gene amplifications found e.g. in lung cancer. Mutations of KRAS are frequently found in epithelial malignancies and lead to activation of the downstream mitogen-activated protein kinase resulting in unchecked cellular proliferation and tumor progression.</p><p><img src=\".\\cap\\KRAS.png\" alt=\"KRAS\" width=\"450\"></p>" },
+  "MAML2": { name: "MAML2 gene-rearrangement", type: "BREAK_APART", gene: "MAML2", locus: "11q21", mfg: "ZytoLight SPEC MAML2 Dual Color Break Apart Probe", orange: "centromere side, 3' of MAML2", green: "telomere side, 5' of MAML2", accredited: false, infoHtml: "<p>for mucoepidermoid carcinoma.</p><p>Orange Probe: centromere side, MAML2 3' end<br>Green Probe: telomere side, MAML2 5' end<br></p><p>The ZytoLight ® SPEC MAML2 Dual Color Break Apart Probe is designed to detect the translocation t(11;19)(q21;p13.1) specific for mucoepidermoid carcinomas.</p><p><img src=\".\\cap\\MAML2partners.jpg\" alt=\"MAML2 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\MAML2-BA.png\" alt=\"MAML2 break apart\" width=\"450\"></p>" },
+  "MAP4": { name: "MAP4 gene-rearrangement", type: "BREAK_APART", gene: "MAP4", locus: "3p21.31", mfg: "Empire Genomics MAP4 Dual Color Break Apart Probe", orange: "centromere side, 5' of MAP4", green: "telomere side, 3' of MAP4", accredited: false, infoHtml: "<p>Orange Probe: centromere side, MAP4 5' end<br>Green Probe: telomere side, MAP4 3' end<br></p><p>For the detection of MAP4 re-arrangement (Chr.3p21.31). The protein encoded by this gene is a major non-neuronal microtubule-associated protein. This protein contains a domain similar to the microtubule-binding domains of neuronal microtubule-associated protein (MAP2) and microtubule-associated protein tau (MAPT/TAU). This protein promotes microtubule assembly, and has been shown to counteract destabilization of interphase microtubule catastrophe promotion. Cyclin B was found to interact with this protein, which targets cell division cycle 2 (CDC2) kinase to microtubules. The phosphorylation of this protein affects microtubule properties and cell cycle progression. Multiple transcript variants encoding different isoforms have been found for this gene.</p><p><img src=\".\\cap\\MAP4-BA.png\" alt=\"MAP4 break apart probe\" width=\"600\"></p>" },
+  "MDM2": { name: "MDM2 amplification", type: "AMPLIFICATION", gene: "MDM2", locus: "12q15", mfg: "ZytoLight SPEC MDM2/CEN 12 Dual Color Probe", orange: "CEN 12 (D12Z3)", green: "covering MDM2 gene at 12q15", accredited: false, infoHtml: "<p>for well-differentiated liposarcoma and many others.</p><p>The Vysis MDM2/CEP 12 FISH Probe Kit and the ZytoLight ® SPEC MDM2/CEN 12 Dual Color Probe are designed for the detection of MDM2 gene amplifications. Well-differentiated liposarcomas (WDLPS) are characterized by the amplification of 12q-derived chromosomal material, harboring the MDM2 oncogene while lipomas show balanced translocations involving 12q13-15. <br><br>Please note that Vysis probe and Zytolight probe are of different colors:<br><br>Vysis - MDM2 (red) CEN12 (green)<br>Zytolight - MDM2 (green) CEN12 (red)<br></p><p><img src=\".\\cap\\LSI-MDM2-SO_209kb_probemap-orange.png\" alt=\"MDM2\" width=\"600\"><br>Vysis Probe</p><p><img src=\".\\cap\\MDM2-CEN12.jpg\" alt=\"MDM2 CEN12\" width=\"450\"><br>ZytoLight Probe</p>" },
+  "MEIS1": { name: "MEIS1 gene-rearrangement", type: "BREAK_APART", gene: "MEIS1", locus: "2p14", mfg: "Empire Genomics MEIS1 Dual Color Break Apart Probe", orange: "telomere side, 5' of MEIS1", green: "centromere side, 3' of MEIS1", accredited: false, infoHtml: "<p>Orange Probe: telomere side, MEIS1 5' end<br>Green Probe: centromere side, MEIS1 3' end<br></p><p>Empire Genomics’ MEIS1 Break Apart FISH Probe is designed to flank the MEIS1 gene and is typically used for detecting MEIS1 rearrangements such as translocations. Sarcomas with MEIS1-NCOA2 fusions have been reported in 2 cases each of primitive renal sarcomas and intraosseous pelvic rhabdomyosarcomas. Recurrent MEIS1-NCOA2/1 fusions in a subset of low-grade spindle cell sarcomas frequently involve the genitourinary and gynecologic tracts. The consistent morphology was that of monomorphic spindle to ovoid cells in a storiform, whorling, or solid pattern. Alternating cellularity, myxoid stroma, and microcystic changes were seen.</p><p><img src=\".\\cap\\MEIS1-BA-ORGR.png\" alt=\"MESI1 break apart probe\" width=\"600\"></p>" },
+  "MET": { name: "MET amplification", type: "AMPLIFICATION", gene: "MET", locus: "7q31.2", mfg: "ZytoLight SPEC MET/CEN 7 Dual Color Probe", orange: "CEN 7 (D7Z1)", green: "covering MET gene (~795 kb) at 7q31.2", accredited: false, infoHtml: "<p>for non-small cell lung carcinoma.</p><p>Orange Probe: CEN 7 (D7Z1)<br>Green Probe: MET, 7q31.2, ~795 kb<br></p><p>The ZytoLight ® SPEC MET/CEN 7 Dual Color Probe is designed for the detection of MET gene amplifications found in a variety of human tumors including lung, breast, colorectal, prostate and gastric carcinomas as well as in gliomas,melanomas and some sarcomas. Several inhibitors of the HGF/MET signaling pathway are being studied and developed as potent therapies to inhibit tumor growth.</p><p><img src=\".\\cap\\MET-CEN7.png\" alt=\"MET cen7\" width=\"450\"></p>" },
+  "MYB": { name: "MYB gene-rearrangement", type: "BREAK_APART", gene: "MYB", locus: "6q23.2-q23.3", mfg: "ZytoLight SPEC MYB Dual Color Break Apart Probe", orange: "telomere side, 3' of MYB", green: "centromere side, 5' of MYB", accredited: false, infoHtml: "<p>for adenoid cystic carcinoma.</p><p>Orange Probe: telomere side, MYB 3' end<br>Green Probe: centromere side, MYB 5' end<br></p><p>The ZytoLight ® SPEC MYB Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 6q23.3 harboring the MYB gene. The MYB gene is expressed predominantly in immature progenitor cells of all hematopoietic lineages and is highly expressed in most leukemias and in some solid tumors. Translocations affecting MYB have been detected in T-cell acute lymphoblastic leukemia and adenoid cystic carcinoma. </p><p><img src=\".\\cap\\MYBpartners.jpg\" alt=\"MYB partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\MYB-BA.png\" alt=\"MYB break apart\" width=\"450\"></p>" },
+  "MYBL1": { name: "MYBL1 gene-rearrangement", type: "BREAK_APART", gene: "MYBL1", locus: "8q13.1", mfg: "Empire Genomics MYBL1 Dual Color Break Apart Probe", orange: "telomere side, 5' of MYBL1", green: "centromere side, 3' of MYBL1", accredited: false, infoHtml: "<p>for adenoid cystic carcinoma.</p><p>Orange Probe: telomere side, MYBL1 5' end<br>Green Probe: centromere side, MYBL1 3' end<br></p><p>For adenoid cystic carcinoma, also consider MYB and NFIB break apart FISH tests. MYBL1 is one of those uncommon partners of NFIB.</p><p>Chromosome: CHR8: 67474409-67525480<br>Locus: 8q13.1</p><p><img src=\".\\cap\\MYBLpartners.jpg\" alt=\"MYBL1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\MYBL1-BA_GROR.png\" alt=\"MYBL1 break apart\" width=\"600\"></p>" },
+  "MYC_BA": { name: "MYC gene-rearrangement", type: "BREAK_APART", gene: "MYC", locus: "8q24.21", mfg: "Vysis LSI MYC Break Apart Rearrangement Probe Kit", orange: "centromere side, 5' of MYC", green: "telomere side, 3' of MYC", accredited: false, infoHtml: "<p>for double-hit, triple-hit diffuse large B-cell lymphoma.</p><p>Orange Probe: centromere side, MYC 5' end<br>Green Probe: telomere side, MYC 3' end<br></p><p>Vysis LSI MYC Break Apart Rearrangement Probe Kit is designed to detect translocations involving the chromosomal region 8q24.21 harboring the MYC gene. Translocations involving the MYC gene are considered to be cytogenetic hallmarks for Burkitt Lymphoma but are also found in other types of lymphomas.</p><p>In high-grade B-cell lymphomas, the presence of MYC aberrations identifies a patient subset with a very poor prognosis, particularly when there is concomitant rearrangement of BCL2 or BCL6, a condition referred to as \"double hit” DLBCL. In rare cases translocation involves MYC, BCL2 and BCL6, so called “triple hit”. MYC translocations confer a worse prognosis in patients treated with cyclophosphamide, doxorubicin, vincristine, and prednisone (CHOP), both in combination with and without rituximab.</p><p><img src=\".\\cap\\MYCpartners.jpg\" alt=\"MYC partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\Vysis-LSI-MYC-Dual-Color-Break-Apart-Rearrangement-Probe_ProbeMap-2.jpg\" alt=\"MYC break apart\" width=\"600\"></p>" },
+  "MYC_IGH": { name: "MYC::IGH fusion gene-rearrangement", type: "FUSION", gene: "MYC::IGH", locus: "8q24.21 / 14q32.33", mfg: "ZytoLight SPEC MYC/IGH Dual Color Dual Fusion Probe", orange: "MYC (~1.3 Mb) at 8q24.21", green: "IGH (~1.5 Mb) at 14q32.33", accredited: false, infoHtml: "<p>for lymphoma (Please discussion with the hematology pathologist before ordering this test).<br>Orange Probe: MYC, 8q24.21, ~1.3 Mb<br>Green Probe: IGH, 14q32.33, ~1.5 Mb<br></p><p>The ZytoLight SPEC MYC/IGH Dual Color Dual Fusion Probe (PL62) is intended to be used for the qualitative detection of the translocation t(8;14)(q24.21;q32.3) involving the human IGH and MYC genes in formalin-fixed, paraffin-embedded specimens by fluorescence in situ hybridization (FISH). This hallmark mutation drives rapid cell growth and is found in aggressive B-cell lymphomas like Burkitt lymphoma and high-grade B-cell lymphoma.</p><p><img src=\".\\cap\\MYC-IGH.jpg\" alt=\"MYC::IGH fusion probe\" width=\"450\"></p>" },
+  "MYCN": { name: "MYCN (N-myc) amplification", type: "AMPLIFICATION", gene: "MYCN", locus: "2p24.3", mfg: "Vysis LSI N-MYC SpectrumOrange Probe", orange: "MYCN gene (~200 kb) at 2p24.3", green: "CEN 2 reference locus", accredited: false, infoHtml: "<p>for neuroblastoma.</p><p>Orange Probe: MYCN, 2p24, ~200 kb<br></p><p>Vysis LSI N-MYC SpectrumOrange Probe is designed for the detection of MYCN amplification which represents the most powerful unfavorable prognostic factor for neuroblastoma. Less frequently amplifications are found in retinoblastoma, small cell lung cancer, astrocytoma and other tumors derived from the neuroectoderm. Amplification of the MYCN gene is found in about 25% of primary neuroblastomas and is strongly associated with rapid tumor progression, advanced stages of the disease, and poor prognosis.</p><p><img src=\".\\cap\\LSI-N-MYC-SO_200kb_probemap_mw002.png\" alt=\"NMYC amplification\" width=\"600\"></p>" },
+  "NAB2_STAT6": { name: "NAB2::STAT6 fusion gene-rearrangement", type: "FUSION", gene: "NAB2::STAT6", locus: "12q13.3", mfg: "Empire Genomics NAB2/STAT6 Fusion Probe Set", orange: "NAB2 5' region at 12q13.3", green: "STAT6 5' region at 12q13.3", accredited: false, infoHtml: "<p>For solitary fibrous tumor.<br>Orange Probe: NAB2, 12q13.3, centromeric to 5' NAB2 gene<br>Green Probe: STAT6, 12q13.3, telomeric to 5' STAT6<br></p><p>The Empire Genomics' NAB2/STAT6 Probe Set is designed for the detection of the specific translocations/invasion involving the chromosomal region 12q13.3 harboring the both the NAB2 and the STAT6 genes, found in solitary fibrous tumor.<p><img src=\".\\cap\\NAB2-STAT6.jpg\" alt=\"NAB2-STAT6 fusion probe\" width=\"600\"><img src=\".\\cap\\NAB2-STAT6_02.jpg\" alt=\"NAB2-STAT6 fusion probe\" width=\"600\"></p>" },
+  "NCOA2": { name: "NCOA2 gene-rearrangement", type: "BREAK_APART", gene: "NCOA2", locus: "8q13.3", mfg: "Empire Genomics NCOA2 Dual Color Break Apart Probe", orange: "centromere side, 3' of NCOA2", green: "telomere side, 5' of NCOA2", accredited: false, infoHtml: "<p>Orange Probe: centromere side, NCOA2 3' end<br>Green Probe: telomere side, NCOA2 5' end<br></p><p>for mesenchymal chondrosarcoma (HEY1-NCOA2), soft tissue angiofibroma (AHRR-NCOA2), congenital/infantile spindle cell rhabdomyosarcoma (VGLL2-NCOA2, SRF-NCOA2, TEAD1-NCOA2), biphenotypic sinonasal sarcoma (PAX3-NCOA1/2), PRRXNCOA1/2 rearranged fibroblastic neoplasm, uterine tumor resembling ovarian sex cord tumor (ESR1-NCOA2/3, GREB1-NCOA1/2), MEIS1-NCOA2 sarcoma.</p><p><img src=\".\\cap\\NCOA2partners.jpg\" alt=\"NCOA2 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NCOA2-BA.png\" alt=\"NCOA2 break apart FISH probe\" width=\"600\"></p>" },
+  "NFIB": { name: "NFIB gene-rearrangement", type: "BREAK_APART", gene: "NFIB", locus: "9q23.3", mfg: "Empire Genomics NFIB Dual Color Break Apart Probe", orange: "telomere side, 3' of NFIB", green: "centromere side, 5' of NFIB", accredited: false, infoHtml: "<p>for adenoid cystic carcinoma.</p><p>Orange Probe: telomere side, NFIB 3' end<br>Green Probe: centromere side, NFIB 5' end<br></p><p>The t(6;9)(q22-23;p23-24) translocation in adenoid cystic carcinomas (ACC) of the breast and H&N consistently results in fusions encoding chimeric transcripts predominantly consisting of MYB exon 14 linked to the last coding exon(s) of NFIB. The minimal common part of MYB deleted as the result of fusion was exon 15 including the 3'-UTR, which contains several highly conserved target sites for miR-15a/16 and miR-150 microRNAs. PNAS 2009 106(44):18740-4. </p><p><img src=\".\\cap\\NFIBpartners.jpg\" alt=\"NFIB partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NFIB-BA_ORGR.png\" alt=\"NFIB break apart FISH probe\" width=\"600\"></p>" },
+  "NR4A3": { name: "NR4A3 gene-rearrangement", type: "BREAK_APART", gene: "NR4A3", locus: "9q22.33-q31.1", mfg: "ZytoLight SPEC NR4A3 Dual Color Break Apart Probe", orange: "telomere side, 3' of NR4A3", green: "centromere side, 5' of NR4A3", accredited: false, infoHtml: "<p>for extraskeletal myxoid chondrosarcoma.</p><p>Orange Probe: telomere side, NR4A3 3' end<br>Green Probe: centromere side, NR4A3 5' end<br></p><p>The ZytoLight ® SPEC NR4A3 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 9q22.33-q31.1. The most frequent reciprocal translocation is t(9;22)(q22.3-q31;q12.2) found in about 70% of extraskeletal myxoid chondrosarcoma generating a EWSR1-NR4A3 fusion gene in which the 3’-terminal part of EWSR1 is replaced by the entire NR4A3 gene. Extraskeletal myxoid chondrosarcoma is histologically characterized by a mixture of cellular and myxoid stromal components, making it difficult to distinguish it from other benign or malignant mesenchymal tumors, especially those with myxoid matrix.</p><p><img src=\".\\cap\\NR4A3partners.jpg\" alt=\"NR4A3 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NR4A3-BA.png\" alt=\"NR4A3 break apart\" width=\"450\"></p>" },
+  "NTRK1": { name: "NTRK1 gene-rearrangement", type: "BREAK_APART", gene: "NTRK1", locus: "1q23.1", mfg: "ZytoLight SPEC NTRK1 Dual Color Break Apart Probe", orange: "telomere side, 3' of NTRK1", green: "centromere side, 5' of NTRK1", accredited: false, infoHtml: "<p>for pan cancer biomarkers.</p><p>To detect translocations involving the chromosomal regions 1q23.1 harboring the NTRK1 gene, 9q21.33 harboring the NTRK2 gene, and 15q25.3 harboring the NTRK3 gene, respectively. Tumors presenting NTRK1, NTRK2 and NTRK3 gene fusions can be sensitive to targeted therapies with tyrosine kinase inhibitors. The treatment of patients with NTRK1, 2, or 3 fusion-positive cancers with an NTRK inhibitor, such as the FDA-approved drugs larotrectinib or entrectinib, is associated with high response rates, regardless of NTRK gene, fusion partner, and tumor type.</p><p>Mixed TRK IHC might be used for preliminary screening.</p><p>NTRK1 rearrangements were shown to be involved in many different tumor types in which more than 40 different fusion partners have been described, resulting in an activated chimeric NTRK1 gene. </p><p><img src=\".\\cap\\NTRK1partners.jpg\" alt=\"NTRK1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK1-BA.jpg\" alt=\"NTRK1 break apart\" width=\"450\"></p><p>NTRK2 is a tyrosine kinase and plays a key role in central and peripheral nervous system development as well as in cell survival. Translocations affecting the NTRK2 gene have been reported in several cancer types, including glioblastomas, pilocytic astrocytomes, H&N squamous cell carcinoma, and lung adenocarcinoma. </p><p><img src=\".\\cap\\NTRK2partners.jpg\" alt=\"NTRK2 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK2-BA.jpg\" alt=\"NTRK2 break apart\" width=\"450\"></p><p>Translocations affecting the NTRK3 gene have been reported in several cancer types, including glioblastomas, Philadelphia chromosome-like acute lymphoblastic leukemia, congenital fibrosarcomas, cellular mesoblastic nephromas, acute myeloid leukemia, radiation-associated thyroid cancer, secretory breast carcinoma, and mammary analog secretory carcinoma of the salivary gland. </p><p><img src=\".\\cap\\NTRK3partners.jpg\" alt=\"NTRK3 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK3-BA.jpg\" alt=\"NTRK3 break apart\" width=\"450\"></p>" },
+  "NTRK2": { name: "NTRK2 gene-rearrangement", type: "BREAK_APART", gene: "NTRK2", locus: "9q21.33", mfg: "ZytoLight SPEC NTRK2 Dual Color Break Apart Probe", orange: "telomere side, 3' of NTRK2", green: "centromere side, 5' of NTRK2", accredited: false, infoHtml: "<p>for pan cancer biomarkers.</p><p>To detect translocations involving the chromosomal regions 1q23.1 harboring the NTRK1 gene, 9q21.33 harboring the NTRK2 gene, and 15q25.3 harboring the NTRK3 gene, respectively. Tumors presenting NTRK1, NTRK2 and NTRK3 gene fusions can be sensitive to targeted therapies with tyrosine kinase inhibitors. The treatment of patients with NTRK1, 2, or 3 fusion-positive cancers with an NTRK inhibitor, such as the FDA-approved drugs larotrectinib or entrectinib, is associated with high response rates, regardless of NTRK gene, fusion partner, and tumor type.</p><p>Mixed TRK IHC might be used for preliminary screening.</p><p>NTRK1 rearrangements were shown to be involved in many different tumor types in which more than 40 different fusion partners have been described, resulting in an activated chimeric NTRK1 gene. </p><p><img src=\".\\cap\\NTRK1partners.jpg\" alt=\"NTRK1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK1-BA.jpg\" alt=\"NTRK1 break apart\" width=\"450\"></p><p>NTRK2 is a tyrosine kinase and plays a key role in central and peripheral nervous system development as well as in cell survival. Translocations affecting the NTRK2 gene have been reported in several cancer types, including glioblastomas, pilocytic astrocytomes, H&N squamous cell carcinoma, and lung adenocarcinoma. </p><p><img src=\".\\cap\\NTRK2partners.jpg\" alt=\"NTRK2 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK2-BA.jpg\" alt=\"NTRK2 break apart\" width=\"450\"></p><p>Translocations affecting the NTRK3 gene have been reported in several cancer types, including glioblastomas, Philadelphia chromosome-like acute lymphoblastic leukemia, congenital fibrosarcomas, cellular mesoblastic nephromas, acute myeloid leukemia, radiation-associated thyroid cancer, secretory breast carcinoma, and mammary analog secretory carcinoma of the salivary gland. </p><p><img src=\".\\cap\\NTRK3partners.jpg\" alt=\"NTRK3 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK3-BA.jpg\" alt=\"NTRK3 break apart\" width=\"450\"></p>" },
+  "NTRK3": { name: "NTRK3 gene-rearrangement", type: "BREAK_APART", gene: "NTRK3", locus: "15q25.3", mfg: "ZytoLight SPEC NTRK3 Dual Color Break Apart Probe", orange: "telomere side, 3' of NTRK3", green: "centromere side, 5' of NTRK3", accredited: false, infoHtml: "<p>for pan cancer biomarkers.</p><p>To detect translocations involving the chromosomal regions 1q23.1 harboring the NTRK1 gene, 9q21.33 harboring the NTRK2 gene, and 15q25.3 harboring the NTRK3 gene, respectively. Tumors presenting NTRK1, NTRK2 and NTRK3 gene fusions can be sensitive to targeted therapies with tyrosine kinase inhibitors. The treatment of patients with NTRK1, 2, or 3 fusion-positive cancers with an NTRK inhibitor, such as the FDA-approved drugs larotrectinib or entrectinib, is associated with high response rates, regardless of NTRK gene, fusion partner, and tumor type.</p><p>Mixed TRK IHC might be used for preliminary screening.</p><p>NTRK1 rearrangements were shown to be involved in many different tumor types in which more than 40 different fusion partners have been described, resulting in an activated chimeric NTRK1 gene. </p><p><img src=\".\\cap\\NTRK1partners.jpg\" alt=\"NTRK1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK1-BA.jpg\" alt=\"NTRK1 break apart\" width=\"450\"></p><p>NTRK2 is a tyrosine kinase and plays a key role in central and peripheral nervous system development as well as in cell survival. Translocations affecting the NTRK2 gene have been reported in several cancer types, including glioblastomas, pilocytic astrocytomes, H&N squamous cell carcinoma, and lung adenocarcinoma. </p><p><img src=\".\\cap\\NTRK2partners.jpg\" alt=\"NTRK2 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK2-BA.jpg\" alt=\"NTRK2 break apart\" width=\"450\"></p><p>Translocations affecting the NTRK3 gene have been reported in several cancer types, including glioblastomas, Philadelphia chromosome-like acute lymphoblastic leukemia, congenital fibrosarcomas, cellular mesoblastic nephromas, acute myeloid leukemia, radiation-associated thyroid cancer, secretory breast carcinoma, and mammary analog secretory carcinoma of the salivary gland. </p><p><img src=\".\\cap\\NTRK3partners.jpg\" alt=\"NTRK3 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\NTRK3-BA.jpg\" alt=\"NTRK3 break apart\" width=\"450\"></p>" },
+  "NUTM1": { name: "NUTM1 gene-rearrangement", type: "BREAK_APART", gene: "NUTM1", locus: "15q14", mfg: "ZytoLight SPEC NUTM1 Dual Color Break Apart Probe", orange: "telomere side, 3' of NUTM1", green: "centromere side, 5' of NUTM1", accredited: false, infoHtml: "<p>Orange Probe: telomere side, NUTM1 3' end<br>Green Probe: centromere side, NUTM1 5' end<br></p><p>The ZytoLight ® SPEC NUTM1 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 15q14 harboring the NUTM1 gene. NUT midline carcinoma (NMC) is a rare and aggressive form of squamous cell carcinoma that arises mainly in the head, neck, or mediastinum. NMCs may be indistinguishable from more common squamous cell carcinomas and are thus an underdiagnosed entity. Therefore, the diagnosis of NMC depends on the confirmation of NUTM1 rearrangement.</p><p><img src=\".\\cap\\NUTM1-BA.jpg\" alt=\"NUTM1 break apart\" width=\"450\"></p>" },
+  "OGA": { name: "OGA gene-rearrangement", type: "BREAK_APART", gene: "OGA", locus: "10q24.32", mfg: "OGA Dual Color Break Apart Probe (Guangzhou LBP)", orange: "telomere side, 3' of OGA", green: "centromere side, 5' of OGA", accredited: false, infoHtml: "<p>Orange Probe: telomere side, OGA 3' end<br>Green Probe: centromere side, OGA 5' end<br></p><p>TGFBR3/MGEA5 t(1;10)(p22;q24) might be present in Hemosiderotic Fibrolipomatous Tumour (HFLT), Pleomorphic Hyalinizing Angiectatic Tumor (PHAT) and Myxoinflammatory Fibroblastic Sarcoma (MIFS), etc.</p><p><img src=\".\\cap\\MGEA5-BA.png\" alt=\"MGEA5 break apart\" width=\"600\"><br></p>" },
+  "PHF1": { name: "PHF1 gene-rearrangement", type: "BREAK_APART", gene: "PHF1", locus: "6p21.32", mfg: "ZytoLight SPEC PHF1 Dual Color Break Apart Probe", orange: "telomere side, 5' of PHF1", green: "centromere side, 3' of PHF1", accredited: false, infoHtml: "<p>for low grade endometrial stroma tumor.</p><p>Orange Probe: telomere side, PHF1 5' end<br>Green Probe: centromere side, PHF1 3' end<br></p><p>The ZytoLight ® SPEC PHF1 Dual Color Break Apart Probe is designed for the detection of translocations involving the chromosomal region 6p21.32 harboring the PHF1 gene. Endometrial stromal tumors are the second most common pure mesenchymal tumors of the uterus.</p><p><img src=\".\\cap\\PHF1partners.jpg\" alt=\"PHF1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p>Several rearrangements involving the genes BCOR, JAZF1, PHF1, or YWHAE have been identified in endometrial stromal tumors.</p><p><img src=\".\\cap\\PHF1-BA.png\" alt=\"PHF1 break apart\" width=\"450\"></p>" },
+  "PLAG1": { name: "PLAG1 gene-rearrangement", type: "BREAK_APART", gene: "PLAG1", locus: "8q12.1", mfg: "Empire Genomics PLAG1 Dual Color Break Apart Probe", orange: "telomere side, 5' of PLAG1", green: "centromere side, 3' of PLAG1", accredited: false, infoHtml: "<p>Orange Probe: telomere side, PLAG1 5' end<br>Green Probe: centromere side, PLAG1 3' end<br></p><p>Pleomorphic adenoma gene 1. <br>For pleomorphic adenoma, chondroid syringoma, myoepithelial tumors of skin and soft tissue, lipoblastoma, pediatric fibromyxoid soft tissue tumor, PLAG mesenchymal tumours or “plagomas”, certain uterine leiomyosarcoma, etc. </p><p><img src=\".\\cap\\PLAG-BA_GROR.png\" alt=\"PLAG1 break apart probe\" width=\"600\"></p><p><img src=\".\\cap\\PLAG1_partners.jpg\" alt=\"PLAG1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p>" },
+  "PRKCA": { name: "PRKCA gene-rearrangement", type: "BREAK_APART", gene: "PRKCA", locus: "17q24.2", mfg: "Empire Genomics PRKCA Dual Color Break Apart Probe", orange: "centromere side, 5' of PRKCA", green: "telomere side, 3' of PRKCA", accredited: false, infoHtml: "<p>Orange Probe: centromere side, PRKCA 5' end<br>Green Probe: telomere side, PRKCA 3' end<br></p><p>Mixed neuronal-glial tumors are rare and challenging to subclassify. One recognized variant, papillary glioneuronal tumor (PGNT), is characterized by prominent pseudopapillary structures and glioneuronal elements. The t(9;17)(q31;q24) with the resultant novel fusion oncogene SLC44A1-PRKCA is the defining molecular feature of PGNT that may be responsible for its pathogenesis. Bridge et al Brain Pathol 2013 PMID: 22725730. </p><p>SLC44A1 break apart FISH and RT-PCR for the fusion transcript SLC44A1-PRKCA are also available in the lab.</p><p><img src=\".\\cap\\PRKCA-BA.png\" alt=\"PRKCA break apart probe\" width=\"600\"></p>" },
+  "PTEN": { name: "PTEN deletion", type: "DELETION", gene: "PTEN", locus: "10q23.31", mfg: "ZytoLight SPEC PTEN/CEN 10 Dual Color Probe", orange: "CEN 10 (D10Z1)", green: "covering PTEN gene (~315 kb) at 10q23.31", accredited: false, infoHtml: "<p>for brain tumor typing.</p><p>Orange Probe: CEN 10 (D10Z1)<br>Green Probe: PTEN, 10q23.2-q23.31, ~315 kb<br></p><p>The ZytoLight ® SPEC PTEN/CEN 10 Dual Color Probe or is designed for the detection of PTEN deletions frequently observed in many tumor types, including renal, melanoma, endometrial, breast, prostate, lung, bladder, and thyroid cancer but also in hematological neoplasms. Deletions affecting the long arm of chromosome 10 have been detected in 30 to 50% of early and advanced stage sporadic melanomas and about 40 to 70% of prostate cancers. This probe can also be used for prognostic evaluation and in the diagnostic algorithm of glioma.</p><p><img src=\".\\cap\\PTEN-CEN10.png\" alt=\"PTEN-CEN10\" width=\"450\"></p>" },
+  "RAD51B": { name: "RAD51B gene-rearrangement", type: "BREAK_APART", gene: "RAD51B", locus: "14q24.1", mfg: "Empire Genomics RAD51B Dual Color Break Apart Probe", orange: "centromere side, 5' of RAD51B", green: "telomere side, 3' of RAD51B", accredited: false, infoHtml: "<p>Orange Probe: centromere side, RAD51B 5' end<br>Green Probe: telomere side, RAD51B 3' end<br></p><p>might be uterine leiomyoma and some other sarcomas. <br></p><p><img src=\".\\cap\\RAD51B_BA_FISH.jpg\" alt=\"RAD51B break apart probe\" width=\"600\"></p><p><img src=\".\\cap\\RAD51B_partner.jpg\" alt=\"RAD51B partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p>" },
+  "RAF1": { name: "RAF1 gene-rearrangement", type: "BREAK_APART", gene: "RAF1", locus: "3p25.1", mfg: "Empire Genomics RAF1 Dual Color Break Apart Probe", orange: "telomere side, 3' of RAF1", green: "centromere side, 5' of RAF1", accredited: false, infoHtml: "<p>Orange Probe: telomere side, RAF1 3' end<br>Green Probe: centromere side, RAF1 5' end<br></p><p>A subset of spindle cell tumours have been recently identified to harbor recurrent fusion genes, involving NTRK1/2/3, BRAF, RAF1, and RET. The precise classification of these fusion-positive tumours relies essentially on genomic profiling.</p><p><img src=\".\\cap\\RAF1-BA.png\" alt=\"RAF1 break apart probe\" width=\"600\"></p>" },
+  "RET": { name: "RET gene-rearrangement", type: "BREAK_APART", gene: "RET", locus: "10q11.21", mfg: "ZytoLight SPEC RET Dual Color Break Apart Probe", orange: "centromere side, 5' of RET", green: "telomere side, 3' of RET", accredited: false, infoHtml: "<p>potential pan cancer biomarker.</p><p>Orange Probe: centromere side, RET 5' end<br>Green Probe: telomere side, RET 3' end<br></p><p>The ZytoLight ® SPEC RET Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 10q11.21 harboring the RET gene observed e.g. in lung adenocarcinoma.</p><p>Since in vitro studies showed transforming activity of KIF5B-RET fusions which could be suppressed by a tyrosine kinase inhibitor, it was assumed that the chimeric oncogene might be a promising molecular target for the treatment of lung cancer. The cut off is set as low as 15% tumor nuclei.</p><p><B>RET and 73 translocations/fusion partners</B> <BR> <table><tr><th>Partner Gene</th><th>Chr.</th><th>Location: band (bp)</th><th>Translocation / fusion gene</th><th>Disease</th></tr> <tr><td rowspan=\"2\"><B>TRIM33</B></td><td rowspan=\"3\"><div align=\"center\"><B>1</B></div></td><td rowspan=\"2\" >1p13.2 (114392777)</td><td rowspan=\"2\">t(1;10)(p13;q11) TRIM33/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>RASAL2</B></td><td>1q25.2 (178093729)</td><td>t(1;10)(q25;q11) RASAL2/RET</td><td>Soft tissue sarcoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>EML4</B></td><td rowspan=\"2\"><div align=\"center\"><B>2</B></div></td><td>2p21 (42169338))</td><td>t(2;10)(p21;q11) EML4/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>EML6</B></td><td>2p16.1 (54725012</td><td>t(2;10)(p16;q11) EML6/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>TFG</B></td><td rowspan=\"2\"><div align=\"center\"><B>3</B></div></td><td>3q12.2 (100709331)</td><td>t(3;10)(q12;q11) TFG/RET</td><td>Soft tissues: spindle cell tumors</td></tr> <tr><td><B>TBL1XR1</B></td><td>3q26.32 (177019355)</td><td>t(3;10)(q26;q11) TBL1XR1/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>EPHA5</B></td><td><div align=\"center\"><B>4</B></div></td><td>4q13.1 (65319563)</td><td>t(4;10)(q13;q11) APHA5/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>SQSTM1</B></td><td><div align=\"center\"><B>5</B></div></td><td>5q35.3 (179820842)</td><td>t(5;10)(q35;q11) SQSTM1/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>KIF13A</B></td><td rowspan=\"7\"><div align=\"center\"><B>6</B></div></td><td>6p22.3 (17763693)</td><td>t(6;10)(p22;q11) KIF13A/RET</td><td>Lung: adenocarcinoma</td></tr> <tr><td rowspan=\"3\"><B>TRIM27</B></td><td rowspan=\"3\">6p22.1 (28903002)</td><td rowspan=\"3\">t(6;10)(p22;q11) TRIM27/RET</td><td>Salivary glands: intraductal carcinoma</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td>Neuro-endocrine tumor: multiple endocrine neoplasia</td></tr> <tr><td><B>TBC1D32</B></td><td>6q22.31 (121079494)</td><td>t(6;10)(q22;q11) TBC1D32/RET</td><td>Lung: adenocarcinoma</td></tr> <tr><td><B>PTPRK</B></td><td>6q22.33 (127968779)</td><td>t(6;10)(q22;q11) PTPRK/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>FGFR1OP</B></td><td>6q27 (166,999,317)</td><td>t(6;10)(q27;q11) FGFR1OP/RET</td><td>Chronic myeloproliferative neoplasm</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>CLIP2</B></td><td rowspan=\"5\"><div align=\"center\"><B>7</B></div></td><td>7q11.23 (74289475)</td><td>t(7;10)(q11;q11) CLIP2/RET</td><td>Soft tissues: spindle mesenchymal neoplasm</td></tr> <tr><td><B>CUX1</B></td><td>7q22.1 (101817602)</td><td>t(7;10)(q22,q11) CUX1/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td rowspan=\"2\"><B>TRIM24</B></td><td rowspan=\"2\">7q33 (138460334)</td><td rowspan=\"2\">t(7;10)(q33;q11) TRIM24/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>TAS2R38</B></td><td>7q34 (141972631)</td><td>t(7;10)(q34;q11) TAS2R38/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td rowspan=\"2\"><B>PCM1</B></td><td rowspan=\"4\"><div align=\"center\"><B>8</B></div></td><td rowspan=\"2\">8p22 (17922857)</td><td rowspan=\"2\">t(8;10)(p22;q11) PCM1/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>RBPMS</B></td><td>8p12 (30384501)</td><td>t(8;10)(p12;q11) RBPMS/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>HOOK3</B></td><td>8p11.21 (42896890)</td><td>t(8;10)(p11;q11) HOOK3/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>FKBP15</B></td><td><div align=\"center\"><B>9</B></div></td><td>9q32 (113165520)</td><td>t(9;10)(q32;q11) FKBP15/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>PRKCQ</B></td><td rowspan=\"42\"><div align=\"center\"><B>10</B></div></td><td><a name=\"RANGE!C37\" id=\"RANGE!C37\">10p15.1 (6427143)</a></td><td>t(10;10)(p15;q11) PRKCQ/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>TAF3 </B></td><td>10p14 (7818504)</td><td>t(10;10)(p14;q11) TAF3/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>CCDC3</B></td><td>10p13 (12896625)</td><td>t(10;10)(p13;q11) CCDC3/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>PRPF18</B></td><td>10p13 (13586939)</td><td>t(10;10)(p13;q11) PRPF18/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>FRMD4A</B></td><td>10p13 (13643706)</td><td>t(10;10)(p13;q11) FRMD4A/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td rowspan=\"2\"><B>KIAA1217</B></td><td rowspan=\"2\">10p12.2 (24208791)</td><td rowspan=\"2\">t(10;10)(p12;q11) KIAA1217/RET</td><td>Lung: adenocarcinoma</td></tr> <tr><td>Soft tissues: spindle mesenchymal neoplasm</td></tr> <tr><td><B>ANKRD26</B></td><td>10p12.1 (27004116) </td><td>t(10;10)(p12,q11) ANKRD26/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>ACBD5</B></td><td>10p12.1 (27195214)</td><td>t(10;10)(p12;q11) ACBD5/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>WAC</B></td><td>10p12.1 (28533492)</td><td>t(10;10)(p12;q11) WAC/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>ARHGAP12</B></td><td>10p11.22 (31805398)</td><td>t(10;10)(p11;q11) ARHGAP12/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td rowspan=\"3\"><B>KIF5B</B></td><td rowspan=\"3\">10p11.22 (32009010 )</td><td rowspan=\"3\">t(10;10)(p11;q11) KIF5B/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Skin: melanomas/Spitz tumors</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>PARD3</B></td><td>10p11.22 (34109560)</td><td>t(10;10)(p11;q11) PARD3/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>CCNYL2</B></td><td>10q11.21 (42408174)</td><td>CCNYL2/RET (10q11)</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>RASGEF1A</B></td><td>10q11.21 (43194533)</td><td>RASGEF1A/RET (10q11)</td><td>Breast cancer</td></tr> <tr><td><B>RASSF4</B></td><td>10q11.21 (44959771)</td><td>RASSF4/RET (10q11)</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td rowspan=\"7\"><B>NCOA4</B></td><td rowspan=\"7\">10q11.23 (46005088)</td><td rowspan=\"7\">NCOA4/RET (10q11)</td><td>Breast cancer</td></tr> <tr><td>Colorectal cancer </td></tr> <tr><td>Lung: adenocarcinoma</td></tr> <tr><td>Ovary: Germ cell tumours </td></tr> <tr><td>Salivary glands: intraductal carcinoma</td></tr> <tr><td>Soft tissues: spindle cell tumors</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>PRKG1</B></td><td>10q11.23 (51074474)</td><td>PRKG1/RET (10q11)</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>ANK3</B></td><td>10q21.2 (60026298)</td><td>t(10;10)(q11;q21) ANK3/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>SLC16A9 </B></td><td>10q21.2 (59650764)</td><td>t(10;10))(q11;q21) SLC16A9/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td rowspan=\"3\"><B>CCDC6</B></td><td rowspan=\"3\">10q21.2 (59788748)</td><td rowspan=\"3\">t(10;10)(q11;q21) CCDC6/RET</td><td>Colorectal cancer </td></tr> <tr><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>CTNNA3</B></td><td>10q21.3 (65912518)</td><td>t(10;10)(q11;q21) CTNNA3/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>SIRT1</B></td><td>10q21.3 (67884669)</td><td>t(10;10)(q11;q21) SIRT1/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td rowspan=\"2\"><B>RUFY2</B></td><td rowspan=\"2\">10q21.3 (68343518)</td><td rowspan=\"2\">t(10;10)(q11;q21) RUFY2/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>DYDC1</B></td><td>10q23.1 (80336106)</td><td>t(10;10)(q11;q23) DYDC1/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>SORBS1</B></td><td>10q24 (110005804)</td><td>t(10;10)(q11;q24) SORBS1/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>ADD3</B></td><td>10q25.1 (114161608)</td><td>t(10;10)(q11;q25) ADD3/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>CCDC186</B></td><td>10q25.3 (114294824)</td><td>t(10;10)(q11;q25) CCDC186/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>AFAP1L2</B></td><td>10q25.3 (126905409)</td><td>t(10;10)(q11;q25) AFAP1L2/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>DOCK1</B></td><td>10q26.2 (126905409)</td><td>t(10;10)(q11;q26) DOCK1/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>CLRN3</B></td><td>10q26.2 (127877841)</td><td>t(10;10)(q11;q26) CLRN3/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>PPFIBP2</B></td><td rowspan=\"2\"><div align=\"center\"><B>11</B></div></td><td>11p15.4 (7513765)</td><td>t(10;11)(q11;p15) PPFIBP2/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>PICALM</B></td><td>11q14.2 (85957171)</td><td>t(10;11)(q11;q14) PICALM/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>ETV6</B></td><td rowspan=\"6\"><div align=\"center\"><B>12</B></div></td><td>12p13.2 (11649854)</td><td>t(10;12)(q11;p13) ETV6/RET</td><td>Salivary glands: mammary analog secretory carcinoma</td></tr> <tr><td rowspan=\"3\"><B>ERC1</B></td><td rowspan=\"3\">12q13.33 (991208 )</td><td rowspan=\"3\">t(10;12)(q11;q13) ERC1/RET</td><td>Breast cancer</td></tr> <tr><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>ANKS1B</B></td><td>12q23.1 (98743974)</td><td>t(10;12)(q11;q23) ANKS1B/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>CLIP1</B></td><td>12q24.31 (122271434)</td><td>t(10;12)(q11;q24) CLIP1/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>TSSK4</B></td><td rowspan=\"5\"><div align=\"center\"><B>14</B></div></td><td>14q12 (24205720)</td><td>t(10;14)(q11;q12) TSSK4/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>KTN1</B></td><td>14q22.3 (55580207)</td><td>t(10;14)(q11;q22) KTN1/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>CCDC88C</B></td><td>14q32.11 (91271323)</td><td>t(10;14)(q11;q32) CCDC88C/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td rowspan=\"2\"><B>GOLGA5</B></td><td rowspan=\"2\">14q32.12 (92794231)</td><td rowspan=\"2\">t(10;14)(q11;q32) GOLGA5/RET</td><td>Skin: melanomas/Spitz tumors</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>MYO5C</B></td><td rowspan=\"2\"><div align=\"center\"><B>15</B></div></td><td>15q21.2 (52192318)</td><td>t(10;15)(q11;q21) MYO5C/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td><B>AKAP13</B></td><td>15q25.3 (85380616)</td><td>t(10;15)(q11;q25) AKAP13/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td rowspan=\"2\"><B>MYH10</B></td><td rowspan=\"6\"><div align=\"center\"><B>17</B></div></td><td rowspan=\"2\">17p13.1 (8474205)</td><td rowspan=\"2\">t(10;17)(q11;p13) MYH10/RET</td><td>Soft tissues: Infantile myofibromatosis</td></tr> <tr><td>Soft tissues: spindle mesenchymal neoplasm</td></tr> <tr><td><B>MYH13</B></td><td>17p13.1 (10300866)</td><td>t(10;17)(q11;p13) MYH13/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>MPRIP</B></td><td>17p11.2 (17042760)</td><td>t(10;17)(q11;p11) MPRIP/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td rowspan=\"2\"><B>PRKAR1A</B></td><td rowspan=\"2\">17q24.2 (68512379)</td><td rowspan=\"2\">t(10;17)(q11;q24) PRKAR1A/RET</td><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Neuro-endocrine tumor</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td rowspan=\"3\"><B>RELCH (KIAA1468)</B></td><td rowspan=\"3\"><div align=\"center\"><B>18</B></div></td><td rowspan=\"3\">18q21.33 (62187291)</td><td rowspan=\"3\">t(10;18)(q11;q21) KIAA1468/RET</td><td>Lung: adenocarcinoma</td></tr> <tr><td>Lung: non-small cell lung carcinoma</td></tr> <tr><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>LSM14A</B></td><td><div align=\"center\"><B>19</B></div></td><td>19q13.11 (34172447)</td><td>t(10;19)(q11;q13) LSM14A/RET</td><td>Lung: adenocarcinoma</td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>RRBP1</B></td><td><div align=\"center\"><B>20</B></div></td><td>20p12.1 (17613678)</td><td>t(10;20)(q11;p12) RRBP1/RET</td><td>Colorectal cancer </td></tr> <tr><td></td><td><div align=\"center\"></div></td><td></td><td></td><td></td></tr> <tr><td><B>BCR</B></td><td rowspan=\"3\"><div align=\"center\"><B>22</B></div></td><td>22q11.23 (23180365)</td><td>t(10;22)(q11;q11) BCR/RET </td><td>Chronic myeloproliferative neoplasm</td></tr> <tr><td><B>SPECC1L</B></td><td>22q11.23 (24270817)</td><td>t(10;22)(q11;q11) SPECC1L/RET</td><td>Thyroid: papillary thyroid carcinoma</td></tr> <tr><td><B>TIMP3</B></td><td>22q12.3 (32800816)</td><td>t(10;22)(q11 ;q12) TIMP3/RET</td><td>Soft tissues: Inflammatory myofibroblastic tumor</td></tr></table></TD></TR></TABLE>adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\RET-BA.png\" alt=\"RET break apart\" width=\"450\"></p>" },
+  "ROS1": { name: "ROS1 gene-rearrangement (CAP Accredited)", type: "BREAK_APART", gene: "ROS1", locus: "6q22.1", mfg: "Vysis / ZytoLight SPEC ROS1 Dual Color Break Apart Probe", orange: "telomere side, 5' of ROS1", green: "centromere side, 3' of ROS1", accredited: true, infoHtml: "<p>for non-small cell lung carcinoma (CAP accredited test).</p><p>Orange Probe: telomere side, ROS1 5' end<br>Green Probe: centromere side, ROS1 3' end<br></p><p>The Vysis ROS1 Break Apart FISH Probe Kit or the ZytoLight ® SPEC ROS1 Dual Color Break Apart Probe is designed to detect ROS1 gene rearrangements at 6q22.1 involving the receptor tyrosine kinase (ROS1) gene. Rearrangement of the ROS1 gene occurs in:</p>- 0.2%-2.4% of Colorectal Cancers (CRC),<br>- 1%-2% of Non-Small Cell Lung Cancer (NSCLC) leading to its oncogenic activation<br>- Gastric Adenocarcinoma<br>- Various types of melanoma, inflammatory myofibroblastic tumor, and angiosarcoma<br>- Epithelioid hemangioendothelioma.<br></p><p><img src=\".\\cap\\ROS1-review.png\" alt=\"ROS1 review\" width=\"600\"><br>a) ROS1 fusions have been identified in several cancer types that occur in adults and/or children (shown on a body map). Upstream gene partners of ROS1 fusions found in specific cancer types are listed. Among these, CLIP1, KIF21A, ST13, TRIM24 and SLC6A17 (blue font) were identified within the cBioPortal database but have not been reported in peer-reviewed publications. In terms of the absolute number of patients affected, ROS1 fusions are most often found in non-small-cell lung cancers (NSCLCs) given the substantial global burden of this disease relative to that of other malignancies. According to data from the cBioPortal, 78% of patients found to have a ROS1 fusion in their cancer had lung adenocarcinoma, with other cancers accounting for the remaining 22%. The prevalence of ROS1 fusions is higher among certain rare cancers such as Spitzoid neoplasms and inflammatory myofibroblastic tumours (IMTs), which affect a smaller total number of patients as compared with NSCLC. The reported prevalence of ROS1 fusions is indicated for certain cancers in parentheses in the Figure. b) ROS1 fusion partner frequencies in ROS1-rearranged NSCLCs, adult glioblastomas, IMTs and Spitzoid neoplasms are shown in circular plots (percentages shown). Large-cohort studies are lacking for other cancer types, and frequency data are thus unavailable. See Supplementary Table 1 for data on median or aggregate frequencies for each cancer type. c) The locations of four major intronic breakpoints (within introns 31, 33, 34 or 35) that generate ROS1 fusions are indicated by arrows in the upper panel. The domain organization of recurrent ROS1 fusions in NSCLC, glioblastoma, IMT and Spitz tumours is shown in the lower panel. An intact ROS1 tyrosine kinase domain (KD) and the C-terminal domain (corresponding to exons 36–43) are included in all fusions. However, ROS1 fusions can also include a portion of the last fibronectin type III (FN) motif repeat (exon 32), the transmembrane (TM) domain (exon 33) and/or a portion of the juxtamembrane domain (exons 34 and 35) of ROS1; retention of portions of these domains does not seem to affect oncogenicity. The majority of NSCLC-associated ROS1 fusion partners lack dimerization motifs, suggesting that canonical dimerization might not be required for oncogenic activation. Distinct from the native receptor, ROS1 fusions might be activated simply by conformational changes induced by the removal of most of the extracellular domain and redirection of this activity to novel subcellular locations. d) The subcellular localizations of select ROS1 fusion proteins are depicted. CC, coiled-coil domain; FERM, band 4.1 homology and ezrin–radixin–moesin domain; PDZ, PSD95, Dlg1 and ZO-1 domain. (Drilon et al, 2021, Nature Reviews Clinical Oncology (18), pp.35–55.)</p><p><img src=\".\\cap\\ROS1-FISH.jpg\" alt=\"ROS1 break apart\" width=\"600\"><br>See also \"IASLC Atlas of ALK adn ROS1 testing in lung cancer 2e\".</p><p><img src=\".\\cap\\ROS1partners.jpg\" alt=\"ROS1 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\ROS1_BA_FISH_CE_ProbeMap_557kb_317kb_SOrange_and_SGreen.jpg\" alt=\"ROS1 break apart\" width=\"600\"><br>Vysis Probe</p><p><img src=\".\\cap\\ROS1-BA.jpg\" alt=\"ROS1 break apart\" width=\"450\"><br>ZytoLight Probe</p>" },
+  "SLC44A1": { name: "SLC44A1 gene-rearrangement", type: "BREAK_APART", gene: "SLC44A1", locus: "9q31.2", mfg: "Empire Genomics SLC44A1 Dual Color Break Apart Probe", orange: "centromere side, 5' of SLC44A1", green: "telomere side, 3' of SLC44A1", accredited: false, infoHtml: "<p>Orange Probe: centromere side, SLC44A1 5' end<br>Green Probe: telomere side, SLC44A1 3' end<br></p><p>Mixed neuronal-glial tumors are rare and challenging to subclassify. One recognized variant, papillary glioneuronal tumor (PGNT), is characterized by prominent pseudopapillary structures and glioneuronal elements. The t(9;17)(q31;q24) with the resultant novel fusion oncogene SLC44A1-PRKCA is the defining molecular feature of PGNT that may be responsible for its pathogenesis. Bridge et al Brain Pathol 2013 PMID: 22725730. </p><p>PRKCA break apart FISH and RT-PCR for the fusion transcript SLC44A1-PRKCA are also available in the lab.</p><p><img src=\".\\cap\\SLC44A1-BA.png\" alt=\"SLC44A1 break apart probe\" width=\"600\"></p>" },
+  "SS18": { name: "SS18 gene-rearrangement", type: "BREAK_APART", gene: "SS18", locus: "18q11.2", mfg: "ZytoLight SPEC SS18 Dual Color Break Apart Probe", orange: "telomere side, 5' of SS18", green: "centromere side, 3' of SS18", accredited: false, infoHtml: "<p>for synovial sarcoma.</p><p>Orange Probe: telomere side, SS18 5' end<br>Green Probe: centromere side, SS18 3' end<br></p><p>The ZytoLight ® SPEC SS18 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region 18q11.2 harboring the SS18 gene. Translocations involving the region 18q11.2 are found in over 90% of synovial sarcoma. </p><p><img src=\".\\cap\\SS18partners.jpg\" alt=\"SS18 fusion partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\SS18-BA.png\" alt=\"SS18 break apart\" width=\"450\"></p>" },
+  "TFE3": { name: "TFE3 gene-rearrangement", type: "BREAK_APART", gene: "TFE3", locus: "Xp11.23", mfg: "ZytoLight SPEC TFE3 Dual Color Break Apart Probe", orange: "centromere side, 3' of TFE3", green: "telomere side, 5' of TFE3", accredited: false, infoHtml: "<p>for papillary RCC and alveolar soft part sarcoma.</p><p>Orange Probe: centromere side, TFE3 3' end<br>Green Probe: telomere side, TFE3 5' end<br></p><p>The ZytoLight ® SPEC TFE3 Dual Color Break Apart Probe is designed to detect translocations involving the chromosomal region Xp11.23 harboring the TFE3 gene. Translocations involving the chromosomal region Xp11.2 are frequently detected in some forms of renal cell carcinomas (e.g. papillary RCC), and in alveolar soft part sarcoma.</p><p><img src=\".\\cap\\TFE3partners.jpg\" alt=\"TFE3 fusion partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\TFE3-BA.png\" alt=\"TFE3 break apart\" width=\"450\"></p>" },
+  "TFEB": { name: "TFEB gene-rearrangement", type: "BREAK_APART", gene: "TFEB", locus: "6p21.1", mfg: "Empire Genomics TFEB Dual Color Break Apart Probe", orange: "centromere side, 3' of TFEB", green: "telomere side, 5' of TFEB", accredited: false, infoHtml: "<p>Orange Probe: centromere side, TFEB 3' end<br>Green Probe: telomere side, TFEB 5' end<br></p><p>For RCC typing.</p><p><img src=\".\\cap\\TFEB-BA_ORGR.png\" alt=\"TFEB break apart probe\" width=\"600\"></p>" },
+  "TGFBR3": { name: "TGFBR3 gene-rearrangement", type: "BREAK_APART", gene: "TGFBR3", locus: "1p22.1", mfg: "Empire Genomics TGFBR3 Dual Color Break Apart Probe", orange: "telomere side, 5' of TGFBR3", green: "centromere side, 3' of TGFBR3", accredited: false, infoHtml: "<p>Orange Probe: teloomere side, TGFBR3 5' end<br>Green Probe : centromere side, TGFBR3 3' end<br></p><p>might be many sarcomas, e.g. Myxoinflammatory Fibroblastic Sarcoma and Hemosiderotic Fibrolipomatous Tumor.<br></p><p><img src=\".\\cap\\TBFBR3_BA_FISH.jpg\" alt=\"TGFBR3 break apart probe\" width=\"600\"></p><p><img src=\".\\cap\\TGFBR3_partners.jpg\" alt=\"TGFBR3 partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p>" },
+  "USP6": { name: "USP6 gene-rearrangement", type: "BREAK_APART", gene: "USP6", locus: "17p13.2", mfg: "ZytoLight SPEC USP6 Dual Color Break Apart Probe", orange: "centromere side, 3' of USP6", green: "telomere side, 5' of USP6", accredited: false, infoHtml: "<p>for nodular fasciitis and primary ABC, and the group of USP6-rearranged lesions (giant cell lesion of the small bones, myositis ossificans, fibro-osseous pseudotumor of digits and fibroma of tendon shealth)</p><p>Orange Probe: centromere side, USP6 3' end<br>Green Probe: telomere side, USP6 5' end<br></p><p>The ZytoLight ® SPEC USP6 Dual Color Break Apart Probe is designed to detect translocations involving the USP6 gene, at chromosome location, 17p13.2. Translocations affecting USP6 have been found in primary aneurysmal bone cysts (ABC) and nodular fasciitis (NF).</p><p><img src=\".\\cap\\USP6partners.jpg\" alt=\"USP6 fusion partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\USP6-BA.png\" alt=\"USP6 break apart\" width=\"450\"></p>" },
+  "WWTR1": { name: "WWTR1 gene-rearrangement", type: "BREAK_APART", gene: "WWTR1", locus: "3q25.1", mfg: "ZytoLight SPEC WWTR1 Dual Color Break Apart Probe", orange: "telomere side, 5' of WWTR1", green: "centromere side, 3' of WWTR1", accredited: false, infoHtml: "<p>for epithelioid hemangioendothelioma.</p><p>Orange Probe: telomere side, WWTR1 5' end<br>Green Probe: centromere side, WWTR1 3' end<br></p><p>The ZytoLight ® SPEC WWTR1 Dual Color Break Apart Probe is designed for the detection of translocations involving the chromosomal region 3q25.1 harboring the WWTR1 gene. The recurrent translocation t(1;3)(p36.3;q25.1) was identified in approximately 90% of epithelioid hemangioendothelioma (EHE) cases, but not in other vascular tumors. Another known fusion is YAP1-TFE3, which can co-exist with WWTR1-CAMTA1 translocation.</p><p><img src=\".\\cap\\WWTR1-BA.png\" alt=\"WWTR1 break apart\" width=\"450\"></p>" },
+  "YWHAE": { name: "YWHAE gene-rearrangement", type: "BREAK_APART", gene: "YWHAE", locus: "17p13.3", mfg: "ZytoLight SPEC YWHAE Dual Color Break Apart Probe", orange: "telomere side, 3' of YWHAE", green: "centromere side, 5' of YWHAE", accredited: false, infoHtml: "<p>for high-grade endometrial stromal sarcoma.</p><p>Orange Probe: telomere side, YWHAE 3' end<br>Green Probe: centromere side, YWHAE 5' end<br></p><p>The ZytoLight ® SPEC YWHAE Dual Color Break Apart Probe is designed to detect rearrangements involving the chromosomal region 17p13.3 harboring the YWHAE gene. Altered expression of 14-3-3 family proteins is associated with development and progression of cancer. The fusion between YWHAE and one of the FAM22 family members (FAM22A or FAM22B) caused by a t(10;17)(q22;p13) has been identified in high-grade endometrial stromal sarcoma (ESS) as well as in clear cell sarcoma of the kidney (CCSK).</p><p>Official Full Name: YWHAE tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein epsilon <br>Locus: 17p13.3</p><p><img src=\".\\cap\\YWHAEpartners.jpg\" alt=\"YWHAE fusion partners\" width=\"600\">adapted from \"Atlas of Genetics and Cytogenetics in Oncology and Haematology\"</p><p><img src=\".\\cap\\YWHAE-BA.png\" alt=\"YWHAE break apart\" width=\"450\"></p>" }
+};
+
+function build1p19qSheetGrid(sheetPrefix, numCells) {
+  var html = '<table class="p19-cell-table" border="1"><tr>';
+  for (var col = 0; col < 2; col++) {
+    html += '<th>Cell</th><th>Orange</th><th>Green</th><th>Ref/Tgt</th><th>≥2.0</th>';
+  }
+  html += '</tr>';
+
+  var half = Math.ceil(numCells / 2);
+  for (var r = 1; r <= half; r++) {
+    html += '<tr>';
+    for (var c = 0; c < 2; c++) {
+      var idx = r + c * half;
+      if (idx <= numCells) {
+        var idBase = sheetPrefix + "_c" + idx;
+        html += '<td>' + idx + '</td>';
+        html += '<td><input type="text" id="' + idBase + '_o" oninput="calc1p19qExcel()" onkeydown="handle1p19qNav(event, \'' + sheetPrefix + '\', ' + idx + ', \'o\')"></td>';
+        html += '<td><input type="text" id="' + idBase + '_g" oninput="calc1p19qExcel()" onkeydown="handle1p19qNav(event, \'' + sheetPrefix + '\', ' + idx + ', \'g\')"></td>';
+        html += '<td id="' + idBase + '_rat">-</td>';
+        html += '<td id="' + idBase + '_cat">0</td>';
+      } else {
+        html += '<td colspan="5"></td>';
+      }
+    }
+    html += '</tr>';
+  }
+  html += '</table>';
+  return html;
+}
+
+function handle1p19qNav(e, sheetPrefix, idx, field) {
+  var maxCells = parseInt(document.getElementById("p19CellCount").value, 10) || 100;
+  var targetId = null;
+  if (e.key === "Enter" || (e.key === "Tab" && !e.shiftKey)) {
+    e.preventDefault();
+    if (field === 'o') targetId = sheetPrefix + "_c" + idx + "_g";
+    else if (field === 'g' && idx < maxCells) targetId = sheetPrefix + "_c" + (idx + 1) + "_o";
+  } else if (e.key === "ArrowDown" && idx + 1 <= maxCells) {
+    e.preventDefault();
+    targetId = sheetPrefix + "_c" + (idx + 1) + "_" + field;
+  } else if (e.key === "ArrowUp" && idx > 1) {
+    e.preventDefault();
+    targetId = sheetPrefix + "_c" + (idx - 1) + "_" + field;
+  } else if (e.key === "ArrowRight" && field === 'o') {
+    targetId = sheetPrefix + "_c" + idx + "_g";
+  } else if (e.key === "ArrowLeft" && field === 'g') {
+    targetId = sheetPrefix + "_c" + idx + "_o";
+  }
+  if (targetId) {
+    var el = document.getElementById(targetId);
+    if (el) { el.focus(); el.select(); }
+  }
+}
+
+function toggle1p19qCalculator() {
+  var box = document.getElementById("p19_excel_calc_box");
+  var btn = document.getElementById("p19_calc_toggle_btn");
+  if (!box) return;
+  var isHidden = (box.style.display === "none" || window.getComputedStyle(box).display === "none");
+  if (isHidden) {
+    box.style.display = "block";
+    if (btn) btn.innerText = "- Hide 1p/19q Excel Cell Calculator";
+  } else {
+    box.style.display = "none";
+    if (btn) btn.innerText = "+ Open 1p/19q Excel Cell Calculator";
+  }
+}
+
+function rebuild1p19qGrids() {
+  var n = parseInt(document.getElementById("p19CellCount").value, 10) || 100;
+  document.getElementById("p19_1pq_panel").innerHTML = build1p19qSheetGrid("p1", n);
+  document.getElementById("p19_19pq_panel").innerHTML = build1p19qSheetGrid("p19", n);
+  calc1p19qExcel();
+}
+
+var p1ExcelSample = [[2, 2], [2, 2], [2, 2], [2, 2], [1, 2], [2, 2], [2, 2], [2, 2], [2, 2], [1, 2], [2, 2], [3, 2], [2, 2], [2, 2], [2, 2], [1, 2], [2, 2], [3, 3], [2, 2], [2, 2], [2, 2], [1, 2], [2, 2], [2, 2], [2, 4], [2, 4], [2, 2], [2, 4], [2, 4], [3, 4], [2, 2], [2, 2], [3, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [1, 2], [2, 2], [2, 2], [4, 2], [1, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [3, 2], [2, 2], [2, 2], [2, 2], [1, 2], [2, 2], [2, 2], [2, 3], [2, 2], [3, 2], [3, 2], [2, 2], [2, 2], [2, 2], [1, 2], [2, 2], [1, 2], [1, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [3, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 1], [2, 3], [2, 2], [2, 2], [3, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [3, 3], [2, 2]];
+var p19ExcelSample = [[2, 2], [1, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [1, 2], [2, 2], [2, 2], [2, 2], [3, 2], [2, 2], [2, 2], [2, 2], [3, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [3, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [3, 3], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 3], [2, 2]];
+
+function quickFill1p19q(mode) {
+  var n = parseInt(document.getElementById("p19CellCount").value, 10) || 100;
+  var prefixes = ["p1", "p19"];
+  for (var p = 0; p < prefixes.length; p++) {
+    var pre = prefixes[p];
+    var sampleArr = (pre === "p1") ? p1ExcelSample : p19ExcelSample;
+    for (var i = 1; i <= n; i++) {
+      var oEl = document.getElementById(pre + "_c" + i + "_o");
+      var gEl = document.getElementById(pre + "_c" + i + "_g");
+      if (mode === "clear") {
+        if (oEl) oEl.value = "";
+        if (gEl) gEl.value = "";
+      } else if (mode === "normal") {
+        if (oEl) oEl.value = "2";
+        if (gEl) gEl.value = "2";
+      } else if (mode === "codel") {
+        if (oEl) oEl.value = "1";
+        if (gEl) gEl.value = "2";
+      } else if (mode === "hetero50") {
+        if (i <= Math.floor(n / 2)) {
+          if (oEl) oEl.value = "1";
+          if (gEl) gEl.value = "2";
+        } else {
+          if (oEl) oEl.value = "2";
+          if (gEl) gEl.value = "2";
+        }
+      } else if (mode === "sample") {
+        if (i - 1 < sampleArr.length) {
+          if (oEl) oEl.value = sampleArr[i - 1][0];
+          if (gEl) oEl.value = sampleArr[i - 1][1];
+        }
+      }
+    }
+  }
+  calc1p19qExcel();
+}
+
+function calc1p19qExcel() {
+  var n = parseInt(document.getElementById("p19CellCount").value, 10) || 100;
+  var sheets = [
+    { pre: "p1", ratioField: "ratio1p1q", pctField: "pct1q1p", avgOId: "p1_avg_o", avgGId: "p1_avg_g", cntId: "p1_cnt" },
+    { pre: "p19", ratioField: "ratio19q19p", pctField: "pct19p19q", avgOId: "p19_avg_o", avgGId: "p19_avg_g", cntId: "p19_cnt" }
+  ];
+
+  for (var s = 0; s < sheets.length; s++) {
+    var cfg = sheets[s];
+    var sumO = 0, sumG = 0, sumCat = 0, scored = 0;
+
+    for (var i = 1; i <= n; i++) {
+      var oEl = document.getElementById(cfg.pre + "_c" + i + "_o");
+      var gEl = document.getElementById(cfg.pre + "_c" + i + "_g");
+      var ratCell = document.getElementById(cfg.pre + "_c" + i + "_rat");
+      var catCell = document.getElementById(cfg.pre + "_c" + i + "_cat");
+
+      var oStr = oEl ? oEl.value.trim() : "";
+      var gStr = gEl ? gEl.value.trim() : "";
+      if (oStr !== "" && gStr !== "") {
+        var oVal = parseFloat(oStr);
+        var gVal = parseFloat(gStr);
+        if (!isNaN(oVal) && !isNaN(gVal)) {
+          sumO += oVal;
+          sumG += gVal;
+          scored++;
+          var cellRatio = (oVal > 0) ? (gVal / oVal) : (gVal > 0 ? 2.0 : 0.0);
+          var isGe2 = (cellRatio >= 2.0) ? 1 : 0;
+          sumCat += isGe2;
+          if (ratCell) ratCell.innerText = cellRatio.toFixed(2);
+          if (catCell) catCell.innerText = isGe2;
+          continue;
+        }
+      }
+      if (ratCell) ratCell.innerText = "-";
+      if (catCell) catCell.innerText = "0";
+    }
+
+    var cntEl = document.getElementById(cfg.cntId);
+    if (cntEl) cntEl.innerText = scored;
+
+    if (scored > 0) {
+      var avgO = (sumO / scored).toFixed(2);
+      var avgG = (sumG / scored).toFixed(2);
+      var tgtRefRatio = (sumG > 0) ? (sumO / sumG).toFixed(2) : "0.00";
+      var pctCat = ((sumCat / scored) * 100).toFixed(1);
+
+      var avgOEl = document.getElementById(cfg.avgOId);
+      var avgGEl = document.getElementById(cfg.avgGId);
+      if (avgOEl) avgOEl.innerText = avgO;
+      if (avgGEl) avgGEl.innerText = avgG;
+
+      document.getElementById(cfg.ratioField).value = tgtRefRatio;
+      document.getElementById(cfg.pctField).value = pctCat;
+    }
+  }
+  autoCalc1p19q();
+}
+
+function build50NucleiGrid(prefix) {
+  var html = '<table class="nucleus-grid-table" border="1"><tr>';
+  html += '<th>#</th><th>Tgt</th><th>Ref</th>';
+  html += '<th>#</th><th>Tgt</th><th>Ref</th>';
+  html += '<th>#</th><th>Tgt</th><th>Ref</th>';
+  html += '<th>#</th><th>Tgt</th><th>Ref</th>';
+  html += '<th>#</th><th>Tgt</th><th>Ref</th></tr>';
+
+  for (var row = 1; row <= 10; row++) {
+    html += '<tr>';
+    for (var col = 0; col < 5; col++) {
+      var n = row + col * 10;
+      var numStr = (n < 10 ? '0' : '') + n;
+      html += '<td>' + numStr + '</td>';
+      html += '<td><input type="text" id="' + prefix + '_t' + n + '" oninput="calcGridLive(\'' + prefix + '\')" onkeydown="handleGridNav(event, \'' + prefix + '\', \'t\', ' + n + ')"></td>';
+      html += '<td><input type="text" id="' + prefix + '_r' + n + '" oninput="calcGridLive(\'' + prefix + '\')" onkeydown="handleGridNav(event, \'' + prefix + '\', \'r\', ' + n + ')"></td>';
+    }
+    html += '</tr>';
+  }
+  html += '</table>';
+  return html;
+}
+
+function quickFillGrid(prefix, tgtVal, refVal) {
+  for (var i = 1; i <= 50; i++) {
+    var tElem = document.getElementById(prefix + "_t" + i);
+    var rElem = document.getElementById(prefix + "_r" + i);
+    if (tElem) tElem.value = (tgtVal === null ? "" : tgtVal);
+    if (rElem) rElem.value = (refVal === null ? "" : refVal);
+  }
+  calcGridLive(prefix);
+}
+
+function quickFillHeterogeneous25(prefix, altTgtVal, altRefVal) {
+  for (var i = 1; i <= 50; i++) {
+    var tElem = document.getElementById(prefix + "_t" + i);
+    var rElem = document.getElementById(prefix + "_r" + i);
+    if (i <= 25) {
+      if (tElem) tElem.value = altTgtVal;
+      if (rElem) rElem.value = altRefVal;
+    } else {
+      if (tElem) tElem.value = 2;
+      if (rElem) rElem.value = 2;
+    }
+  }
+  calcGridLive(prefix);
+}
+
+function handleGridNav(e, prefix, type, num) {
+  var key = e.key;
+  var targetId = null;
+
+  if (key === "Enter" || (key === "Tab" && !e.shiftKey)) {
+    e.preventDefault();
+    if (type === 't') {
+      targetId = prefix + "_r" + num;
+    } else if (type === 'r') {
+      if (num < 50) targetId = prefix + "_t" + (num + 1);
+    }
+  } else if (key === "ArrowDown") {
+    e.preventDefault();
+    if (num < 50) targetId = prefix + "_" + type + (num + 1);
+  } else if (key === "ArrowUp") {
+    e.preventDefault();
+    if (num > 1) targetId = prefix + "_" + type + (num - 1);
+  } else if (key === "ArrowRight") {
+    if (type === 't') targetId = prefix + "_r" + num;
+  } else if (key === "ArrowLeft") {
+    if (type === 'r') targetId = prefix + "_t" + num;
+  }
+
+  if (targetId) {
+    var targetElem = document.getElementById(targetId);
+    if (targetElem) {
+      targetElem.focus();
+      targetElem.select();
+    }
+  }
+}
+
+function toggleGrid(prefix) {
+  var container = document.getElementById(prefix + "_grid_container");
+  var btn = document.getElementById(prefix + "_toggle_btn");
+  if (!container) return;
+
+  var isHidden = (container.style.display === "none" || window.getComputedStyle(container).display === "none");
+  if (isHidden) {
+    container.style.display = "block";
+    if (btn) btn.innerText = "- Hide 50-Nuclei Live Grid";
+    var first = document.getElementById(prefix + "_t1");
+    if (first) { first.focus(); first.select(); }
+  } else {
+    container.style.display = "none";
+    if (btn) btn.innerText = "+ Open 50-Nuclei Live Grid";
+  }
+}
+
+function calcGridLive(prefix) {
+  var totalTgt = 0;
+  var totalRef = 0;
+  var count = 0;
+  var count6OrMore = 0;
+  var countHomDel = 0;
+  var countHetDel = 0;
+
+  for (var i = 1; i <= 50; i++) {
+    var tElem = document.getElementById(prefix + "_t" + i);
+    var rElem = document.getElementById(prefix + "_r" + i);
+
+    if (tElem && rElem && tElem.value.trim() !== "" && rElem.value.trim() !== "") {
+      var tVal = parseFloat(tElem.value);
+      var rVal = parseFloat(rElem.value);
+
+      if (!isNaN(tVal) && !isNaN(rVal)) {
+        totalTgt += tVal;
+        totalRef += rVal;
+        count++;
+
+        if (tVal >= 6) count6OrMore++;
+        if (tVal === 0 && rVal >= 2) countHomDel++;
+        if (tVal === 1 && rVal >= 2) countHetDel++;
+      }
+    }
+  }
+
+  if (prefix === "amp") {
+    if (count > 0) {
+      var ratio = (totalRef > 0) ? (totalTgt / totalRef).toFixed(2) : "0.00";
+      var pct6 = ((count6OrMore / count) * 100).toFixed(1);
+      var meanRef = (totalRef / count).toFixed(2);
+
+      document.getElementById("ampRatio").value = ratio;
+      document.getElementById("pct6Signals").value = pct6;
+      document.getElementById("meanCen7").value = meanRef;
+    } else {
+      document.getElementById("ampRatio").value = "1.00";
+      document.getElementById("pct6Signals").value = "0.0";
+      document.getElementById("meanCen7").value = "2.00";
+    }
+    autoCalcAmp();
+  } else if (prefix === "del") {
+    if (count > 0) {
+      var pctHom = ((countHomDel / count) * 100).toFixed(1);
+      var pctHet = ((countHetDel / count) * 100).toFixed(1);
+      var meanRef = (totalRef / count).toFixed(2);
+
+      document.getElementById("homDelPct").value = pctHom;
+      document.getElementById("hetDelPct").value = pctHet;
+      document.getElementById("meanCen10").value = meanRef;
+    } else {
+      document.getElementById("homDelPct").value = "0.0";
+      document.getElementById("hetDelPct").value = "0.0";
+      document.getElementById("meanCen10").value = "2.00";
+    }
+    autoCalcDel();
+  }
+}
+
+function onTestChange() {
+  var testKey = document.getElementById("probeSelect").value;
+  var stdRow = document.getElementById("stdScoringRow");
+  var p19Row = document.getElementById("p19ScoringRow");
+  var delRow = document.getElementById("delScoringRow");
+  var ampRow = document.getElementById("ampScoringRow");
+  var infoCard = document.getElementById("probeInfoCard");
+  var infoContent = document.getElementById("probeInfoContent");
+
+  var test = fishDatabase[testKey];
+
+  if (test && test.infoHtml) {
+    infoContent.innerHTML = "<h4>" + test.name + " (" + (test.locus || "Multi-locus") + ")</h4>" + test.infoHtml;
+    infoCard.className = "probe-info-card";
+  } else {
+    infoCard.className = "hidden";
+  }
+
+  stdRow.className = "hidden";
+  p19Row.className = "hidden";
+  delRow.className = "hidden";
+  ampRow.className = "hidden";
+
+  if (test.type === "1p19q") {
+    p19Row.className = "";
+    autoCalc1p19q();
+  } else if (test.type === "DELETION") {
+    delRow.className = "";
+    autoCalcDel();
+  } else if (test.type === "AMPLIFICATION") {
+    ampRow.className = "";
+    autoCalcAmp();
+  } else {
+    stdRow.className = "";
+    autoCalcStd();
+  }
+}
+
+function autoCalcStd() {
+  var testKey = document.getElementById("probeSelect").value;
+  var test = fishDatabase[testKey];
+  var unpaired = parseFloat(document.getElementById("unpairedCount").value) || 0;
+  var total = parseFloat(document.getElementById("totalCount").value) || 1;
+  var pct = (unpaired / total) * 100;
+
+  var rPos = document.getElementById("vPos");
+  var rNeg = document.getElementById("vNeg");
+  var rEquiv = document.getElementById("vEquiv");
+
+  if (test.type === "FUSION") {
+    if (pct >= 10.0) rPos.checked = true;
+    else if (pct >= 5.0) rEquiv.checked = true;
+    else rNeg.checked = true;
+  } else {
+    if (pct >= 15.0) rPos.checked = true;
+    else if (pct >= 10.0) rEquiv.checked = true;
+    else rNeg.checked = true;
+  }
+}
+
+function autoCalcDel() {
+  var homDelPct = parseFloat(document.getElementById("homDelPct").value) || 0;
+  var hetDelPct = parseFloat(document.getElementById("hetDelPct").value) || 0;
+  var rHom = document.getElementById("vHomDel");
+  var rHet = document.getElementById("vHetDel");
+  var rDelEquiv = document.getElementById("vDelEquiv");
+  var rDelNeg = document.getElementById("vDelNeg");
+
+  if (homDelPct >= 30.0) {
+    rHom.checked = true;
+  } else if (hetDelPct >= 40.0 || (homDelPct + hetDelPct) >= 40.0) {
+    rHet.checked = true;
+  } else if ((homDelPct + hetDelPct) >= 20.0) {
+    rDelEquiv.checked = true;
+  } else {
+    rDelNeg.checked = true;
+  }
+}
+
+function autoCalcAmp() {
+  var ratio = parseFloat(document.getElementById("ampRatio").value) || 1.0;
+  var pct6 = parseFloat(document.getElementById("pct6Signals").value) || 0;
+  var rAmpPos = document.getElementById("vAmpPos");
+  var rAmpEquiv = document.getElementById("vAmpEquiv");
+  var rAmpNeg = document.getElementById("vAmpNeg");
+
+  if (ratio >= 2.0 || pct6 >= 10.0) {
+    rAmpPos.checked = true;
+  } else if (ratio >= 1.8 && ratio < 2.0) {
+    rAmpEquiv.checked = true;
+  } else {
+    rAmpNeg.checked = true;
+  }
+}
+
+function autoCalc1p19q() {
+  var r1 = parseFloat(document.getElementById("ratio1p1q").value) || 0;
+  var p1 = parseFloat(document.getElementById("pct1q1p").value) || 0;
+  var r19 = parseFloat(document.getElementById("ratio19q19p").value) || 0;
+  var p19 = parseFloat(document.getElementById("pct19p19q").value) || 0;
+
+  var is1pDel = (r1 <= 0.9 && p1 >= 20.0);
+  var is19qDel = (r19 <= 0.9 && p19 >= 20.0);
+  var is1pEquiv = (!is1pDel && ((r1 <= 0.95) || (p1 >= 15.0 && p1 < 20.0)));
+  var is19qEquiv = (!is19qDel && ((r19 <= 0.95) || (p19 >= 15.0 && p19 < 20.0)));
+
+  var statusSpan = document.getElementById("p19AutoStatus");
+
+  if (is1pDel && is19qDel) {
+    statusSpan.innerHTML = "<b style='color:green;'>POSITIVE for 1p/19q co-deletion</b>";
+  } else if (is1pDel || is19qDel) {
+    statusSpan.innerHTML = "<b style='color:orange;'>POSITIVE for partial deletion (" + (is1pDel ? "1p" : "19q") + " only)</b>";
+  } else if (is1pEquiv || is19qEquiv) {
+    statusSpan.innerHTML = "<b style='color:purple;'>EQUIVOCAL for 1p/19q deletion</b>";
+  } else {
+    statusSpan.innerHTML = "<b style='color:red;'>NEGATIVE for 1p/19q co-deletion</b>";
+  }
+}
+
+function wrap80Aligned(str) {
+  var lines = str.split("\n");
+  var result = [];
+  var indent12 = "            ";
+
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i];
+    if (line.length <= 80) {
+      result.push(line);
+      continue;
+    }
+
+    var isHeaderLine = line.indexOf(" : ") !== -1;
+    var currentIndent = isHeaderLine ? indent12 : (line.match(/^\s+/) || [""])[0];
+
+    while (line.length > 80) {
+      var spaceIdx = line.lastIndexOf(" ", 80);
+      if (spaceIdx <= currentIndent.length) spaceIdx = 80;
+      result.push(line.substring(0, spaceIdx));
+      line = currentIndent + line.substring(spaceIdx).replace(/^\s+/, "");
+    }
+    result.push(line);
+  }
+  return result.join("\n");
+}
+
+function updateDescription(frm) {
+  var testKey = frm.probeSelect.value;
+  var test = fishDatabase[testKey];
+  var accession = frm.accessionNo.value.trim() || "??BX-??????";
+  var site = frm.specimenSite.value.trim() || "Unspecified tissue";
+  var cellularity = frm.cellularity.value.trim() || "??%";
+  var control = frm.controlStatus.value;
+
+  var template = "";
+  var accCreditText = test.accredited ? "The test is CAP-accredited." : "The test is not CAP-accredited.";
+
+  var eventType = (test.type === "FUSION") ? "fusion gene-rearrangement" :
+                  (test.type === "DELETION") ? "deletion" :
+                  (test.type === "AMPLIFICATION") ? "amplification" : "gene-rearrangement";
+
+  var testNameForFailed = (test.type === "1p19q") ? "1p/19q co-deletion" : test.gene + " " + eventType;
+
+  if (control === "FAILED") {
+    var failedText = "MATERIAL NOT SUITABLE for the " + testNameForFailed + " test.";
+    template += failedText + "\n\n";
+
+    if (test.type === "1p19q") {
+      template += "METHOD    : Fluorescence in situ hybridization (FISH) using Vysis loci-specific identifier (LSI) 1p36 / 1q25 and 19q13 / 19p13 probe sets\n";
+      template += "            Set 1: LSI 1p36 (Orange, 1p target) / LSI 1q25 (Green, 1q ref)\n";
+      template += "            Set 2: LSI 19q13 (Orange, 19q target) / LSI 19p13 (Green, 19p ref)\n";
+    } else {
+      template += "METHOD    : Fluorescence in situ hybridization (FISH) using " + test.mfg + "\n";
+      template += "            Orange Probe : " + test.orange + "\n";
+      template += "            Green Probe  : " + test.green + "\n";
+    }
+
+    template += "MATERIAL  : Tissue section of formalin-fixed paraffin embedded block, " + accession + ".\n";
+    template += "            Neoplastic cellularity " + cellularity + " was noted in the marked area on the slide.\n";
+    template += "CONTROL   : FAILED\n";
+    template += "RESULTS   : Control hybridisation failed or hybridization signals were unsatisfactory for scoring.\n\n";
+    template += site + ", " + accession + ", for " + (test.type === "1p19q" ? "1p/19q co-deletion" : test.gene) + " FISH test:\n";
+    template += "- " + failedText + "\n\n";
+    template += "The test was developed by the laboratory and the performance characteristics were determined by the Molecular Pathology Laboratory, Division of Anatomical Pathology, Queen Mary Hospital, Hong Kong. " + accCreditText;
+
+  } else if (test.type === "1p19q") {
+    var r1 = parseFloat(frm.ratio1p1q.value) || 0;
+    var p1 = parseFloat(frm.pct1q1p.value) || 0;
+    var r19 = parseFloat(frm.ratio19q19p.value) || 0;
+    var p19 = parseFloat(frm.pct19p19q.value) || 0;
+    var nCells = parseInt(document.getElementById("p19CellCount").value, 10) || 100;
+
+    var is1pDel = (r1 <= 0.9 && p1 >= 20.0);
+    var is19qDel = (r19 <= 0.9 && p19 >= 20.0);
+    var is1pEquiv = (!is1pDel && ((r1 <= 0.95) || (p1 >= 15.0 && p1 < 20.0)));
+    var is19qEquiv = (!is19qDel && ((r19 <= 0.95) || (p19 >= 15.0 && p19 < 20.0)));
+
+    var bannerText = (is1pDel && is19qDel) ? "POSITIVE for 1p/19q co-deletion" :
+                     (is1pDel || is19qDel) ? "POSITIVE for 1p/19q partial deletion (" + (is1pDel ? "1p" : "19q") + " only)" :
+                     (is1pEquiv || is19qEquiv) ? "EQUIVOCAL for 1p/19q deletion" : "NEGATIVE for 1p/19q co-deletion";
+
+    var diagText = (is1pDel && is19qDel) ? "POSITIVE for 1p/19q co-deletion." :
+                   (is1pDel || is19qDel) ? "POSITIVE for partial deletion of " + (is1pDel ? "1p" : "19q") + " in the 1p/19q locus." :
+                   (is1pEquiv || is19qEquiv) ? "EQUIVOCAL for 1p/19q deletion in the 1p/19q locus." : "NEGATIVE for 1p/19q co-deletion in the 1p/19q locus.";
+
+    template += bannerText + ".\n\n";
+    template += "METHOD    : Fluorescence in situ hybridization (FISH) using Vysis loci-specific identifier (LSI) 1p36 / 1q25 and 19q13 / 19p13 probe sets\n";
+    template += "            Set 1: LSI 1p36 (Orange, 1p target) / LSI 1q25 (Green, 1q ref)\n";
+    template += "            Set 2: LSI 19q13 (Orange, 19q target) / LSI 19p13 (Green, 19p ref)\n";
+    template += "MATERIAL  : Tissue section of formalin-fixed paraffin embedded block, " + accession + ".\n";
+    template += "            Neoplastic cellularity " + cellularity + " was noted in the marked area on the slide.\n";
+    template += "CONTROL   : PASSED\n";
+    template += "RESULTS   : Total " + (nCells * 2) + " interphase tumor nuclei were examined across multiple areas (" + nCells + " nuclei for 1p/1q and " + nCells + " nuclei for 19q/19p).\n";
+    template += "            - Ratio of 1p to 1q: " + r1.toFixed(2) + "\n";
+    template += "            - Percent of cells with 1q to 1p ratio >= 2.0: " + p1.toFixed(1) + "%\n";
+    template += "            - Ratio of 19q to 19p: " + r19.toFixed(2) + "\n";
+    template += "            - Percent of cells with 19p to 19q ratio >= 2.0: " + p19.toFixed(1) + "%\n\n";
+    template += "Reference range:\n";
+    template += "- No deletion: Ratio of test probe to reference probe > 0.9\n";
+    template += "- Deletion: Ratio of test probe to reference probe <=0.9 AND >=20% of cells showing reference: target ratio of at least 2:1.\n\n";
+    template += site + " (" + accession + "), for 1p/19q co-deletion FISH analysis:\n";
+    template += "- " + diagText + "\n\n";
+    template += "The test was developed by the laboratory and the performance characteristics were determined by the Molecular Pathology Laboratory, Division of Anatomical Pathology, Queen Mary Hospital, Hong Kong. " + accCreditText;
+
+  } else if (test.type === "DELETION") {
+    var homDelPct = parseFloat(frm.homDelPct.value) || 0;
+    var hetDelPct = parseFloat(frm.hetDelPct.value) || 0;
+    var meanCen10 = parseFloat(frm.meanCen10.value) || 2.0;
+
+    var delVerdict = "NEGATIVE";
+    for (var i = 0; i < frm.verdictDel.length; i++) {
+      if (frm.verdictDel[i].checked) { delVerdict = frm.verdictDel[i].value; break; }
+    }
+
+    var bannerText = delVerdict === "HOMOZYGOUS_DEL" ? "POSITIVE for " + test.gene + " homozygous deletion" :
+                     delVerdict === "HETEROZYGOUS_DEL" ? "POSITIVE for " + test.gene + " hemizygous deletion" :
+                     delVerdict === "EQUIVOCAL" ? "EQUIVOCAL for " + test.gene + " deletion" : "NEGATIVE for " + test.gene + " deletion";
+
+    var diagText = delVerdict === "HOMOZYGOUS_DEL" ? "POSITIVE for homozygous deletion in the " + test.gene + " gene." :
+                   delVerdict === "HETEROZYGOUS_DEL" ? "POSITIVE for hemizygous deletion in the " + test.gene + " gene." :
+                   delVerdict === "EQUIVOCAL" ? "EQUIVOCAL for deletion in the " + test.gene + " gene." : "NEGATIVE for deletion in the " + test.gene + " gene.";
+
+    template += bannerText + ".\n\n";
+    template += "METHOD    : Fluorescence in situ hybridization (FISH) using " + test.mfg + "\n";
+    template += "            Orange Probe : " + test.orange + "\n";
+    template += "            Green Probe  : " + test.green + "\n";
+    template += "MATERIAL  : Tissue section of formalin-fixed paraffin embedded block, " + accession + ".\n";
+    template += "            Neoplastic cellularity " + cellularity + " was noted in the marked area on the slide.\n";
+    template += "CONTROL   : PASSED\n";
+    template += "RESULTS   : Total 50 interphase tumor nuclei were enumerated.\n";
+    template += "            - Nuclei showing homozygous deletion (0 target / 2 ref signals): " + homDelPct.toFixed(1) + "%\n";
+    template += "            - Nuclei showing hemizygous deletion (1 target / 2 ref signals): " + hetDelPct.toFixed(1) + "%\n";
+
+    if (testKey === "PTEN") {
+      template += "            - Mean CEN 10 copy number per nucleus: " + meanCen10.toFixed(2) + " (Chromosome 10 loss assessment)\n";
+    }
+
+    template += "\n" + site + ", " + accession + ", for " + test.gene + " deletion FISH test:\n";
+    template += "- " + diagText + "\n\n";
+    template += "The test was developed by the laboratory and the performance characteristics were determined by the Molecular Pathology Laboratory, Division of Anatomical Pathology, Queen Mary Hospital, Hong Kong. " + accCreditText;
+
+  } else if (test.type === "AMPLIFICATION") {
+    var ampRatio = parseFloat(frm.ampRatio.value) || 1.0;
+    var pct6 = parseFloat(frm.pct6Signals.value) || 0;
+    var meanCen7 = parseFloat(frm.meanCen7.value) || 2.0;
+
+    var ampVerdict = "NEGATIVE";
+    for (var i = 0; i < frm.verdictAmp.length; i++) {
+      if (frm.verdictAmp[i].checked) { ampVerdict = frm.verdictAmp[i].value; break; }
+    }
+
+    var bannerText = ampVerdict === "POSITIVE" ? "POSITIVE for " + test.gene + " amplification" :
+                     ampVerdict === "EQUIVOCAL" ? "EQUIVOCAL for " + test.gene + " amplification" : "NEGATIVE for " + test.gene + " amplification";
+
+    var diagText = ampVerdict === "POSITIVE" ? "POSITIVE for amplification in the " + test.gene + " gene." :
+                   ampVerdict === "EQUIVOCAL" ? "EQUIVOCAL for amplification in the " + test.gene + " gene." : "NEGATIVE for amplification in the " + test.gene + " gene.";
+
+    template += bannerText + ".\n\n";
+    template += "METHOD    : Fluorescence in situ hybridization (FISH) using " + test.mfg + "\n";
+    template += "            Orange Probe : " + test.orange + "\n";
+    template += "            Green Probe  : " + test.green + "\n";
+    template += "MATERIAL  : Tissue section of formalin-fixed paraffin embedded block, " + accession + ".\n";
+    template += "            Neoplastic cellularity " + cellularity + " was noted in the marked area on the slide.\n";
+    template += "CONTROL   : PASSED\n";
+    template += "RESULTS   : Total 50 interphase tumor nuclei were enumerated.\n";
+    template += "            - Mean Target to Control Ratio (" + test.gene + " / CEN): " + ampRatio.toFixed(2) + "\n";
+    template += "            - Percentage of nuclei with >= 6 target signals: " + pct6.toFixed(1) + "%\n";
+
+    if (testKey === "EGFR") {
+      template += "            - Mean CEN 7 copy number per nucleus: " + meanCen7.toFixed(2) + " (Chromosome 7 gain assessment)\n";
+    }
+
+    template += "\n" + site + ", " + accession + ", for " + test.gene + " amplification FISH test:\n";
+    template += "- " + diagText + "\n\n";
+    template += "The test was developed by the laboratory and the performance characteristics were determined by the Molecular Pathology Laboratory, Division of Anatomical Pathology, Queen Mary Hospital, Hong Kong. " + accCreditText;
+
+  } else {
+    var totalCount = parseInt(frm.totalCount.value, 10) || 50;
+    var unpairedCount = parseInt(frm.unpairedCount.value, 10) || 0;
+    var pct = ((unpairedCount / totalCount) * 100).toFixed(1);
+
+    var selectedVerdict = "NEGATIVE";
+    for (var i = 0; i < frm.verdict.length; i++) {
+      if (frm.verdict[i].checked) { selectedVerdict = frm.verdict[i].value; break; }
+    }
+
+    var verbStatus = (selectedVerdict === "POSITIVE") ? "suggesting" :
+                     (selectedVerdict === "EQUIVOCAL") ? "demonstrating borderline signals suspicious for" : "indicating no";
+
+    var bannerText = selectedVerdict + " for " + test.gene + " " + eventType;
+    var diagText = selectedVerdict + " for " + eventType + " in the " + test.gene + " gene.";
+
+    template += bannerText + ".\n\n";
+    template += "METHOD    : Fluorescence in situ hybridization (FISH) using " + test.mfg + "\n";
+    template += "            Orange Probe : " + test.orange + "\n";
+    template += "            Green Probe  : " + test.green + "\n";
+    template += "MATERIAL  : Tissue section of formalin-fixed paraffin embedded block, " + accession + ".\n";
+    template += "            Neoplastic cellularity " + cellularity + " was noted in the marked area on the slide.\n";
+    template += "CONTROL   : PASSED\n";
+
+    if (test.type === "BREAK_APART") {
+      template += "RESULTS   : Total " + totalCount + " interphase tumor nuclei were examined. About " + pct + "% of these nuclei showed unpaired signals, " + verbStatus + " gene-rearrangement involving the " + test.gene + " gene, at chromosome location " + test.locus + ".\n\n";
+    } else {
+      template += "RESULTS   : Total " + totalCount + " interphase lesional cells nuclei were examined and over " + pct + "% of these nuclei showed paired green-red/yellow signals, " + verbStatus + " translocation involving fusion of the " + test.gene + " genes.\n\n";
+    }
+
+    template += site + ", " + accession + ", for " + test.gene + " FISH test:\n";
+    template += "- " + diagText + "\n\n";
+    template += "The test was developed by the laboratory and the performance characteristics were determined by the Molecular Pathology Laboratory, Division of Anatomical Pathology, Queen Mary Hospital, Hong Kong. " + accCreditText;
+  }
+
+  frm.holdtext.value = wrap80Aligned(template);
+}
+
+function CopyToClipboard() {
+  var copyText = document.getElementById("holdtext");
+  copyText.select();
+  document.execCommand("copy");
+  alert("Report copied to clipboard");
+}
+
+function initGrids() {
+  document.getElementById("amp_grid_panel").innerHTML = build50NucleiGrid("amp");
+  document.getElementById("del_grid_panel").innerHTML = build50NucleiGrid("del");
+  rebuild1p19qGrids();
+}
+</script>
+</head>
+
+<body onload="initGrids(); onTestChange();">
+<img id="top" src="top.png" alt="">
+<div id="form_container">
+  <div class="form_description">
+    <h2>FISH Reporting</h2>
+    <p>Select a FISH test protocol to view probe design, genomic figures/links, and generate standardized clinical reports with live calculators.</p>
+  </div>
+
+<form id="fishForm">
+<p>
+<fieldset style="border-color:#e6e6ff;">
+  <legend><label class="description">Specimen & Test Selection:</label></legend>
+  <table border="1" width="100%">
+    <col width="40%">
+    <tr>
+      <td><label class="description">- Select FISH Test Protocol:</label></td>
+      <td>
+        <select id="probeSelect" class="element select large" onchange="onTestChange()">
+          <option value="1p19q" selected>1p/19q co-deletion (Glioma 1p36 / 19q13) (CAP Accredited)</option>
+          <option value="AKT1">AKT1 gene-rearrangement</option>
+          <option value="ALK">ALK gene-rearrangement (CAP Accredited)</option>
+          <option value="BCL2">BCL2 gene-rearrangement</option>
+          <option value="BCL6">BCL6 gene-rearrangement</option>
+          <option value="BCOR">BCOR gene-rearrangement</option>
+          <option value="BRAF_AMP">BRAF amplification</option>
+          <option value="BRAF_BA">BRAF gene-rearrangement</option>
+          <option value="CCND1">CCND1 gene-rearrangement</option>
+          <option value="CDK6">CDK6 gene-rearrangement</option>
+          <option value="CDKN2A">CDKN2A deletion</option>
+          <option value="CIC">CIC gene-rearrangement</option>
+          <option value="COL1A1_PDGFB">COL1A1::PDGFB fusion gene-rearrangement</option>
+          <option value="CSF1">CSF1 gene-rearrangement</option>
+          <option value="DDIT3">DDIT3 gene-rearrangement</option>
+          <option value="EBF1">EBF1 gene-rearrangement</option>
+          <option value="EGFR">EGFR amplification</option>
+          <option value="ERBB2">ERBB2 (HER2) amplification</option>
+          <option value="ERBB3">ERBB3 amplification</option>
+          <option value="ERBB4">ERBB4 amplification</option>
+          <option value="EWSR1">EWSR1 gene-rearrangement</option>
+          <option value="FGFR1">FGFR1 amplification</option>
+          <option value="FN1">FN1 gene-rearrangement</option>
+          <option value="FOXO1">FOXO1 gene-rearrangement</option>
+          <option value="FUS">FUS gene-rearrangement</option>
+          <option value="IDH1">IDH1 gene-rearrangement</option>
+          <option value="JAZF1">JAZF1 gene-rearrangement</option>
+          <option value="KRAS">KRAS amplification</option>
+          <option value="MAML2">MAML2 gene-rearrangement</option>
+          <option value="MAP4">MAP4 gene-rearrangement</option>
+          <option value="MDM2">MDM2 amplification</option>
+          <option value="MEIS1">MEIS1 gene-rearrangement</option>
+          <option value="MET">MET amplification</option>
+          <option value="MYB">MYB gene-rearrangement</option>
+          <option value="MYBL1">MYBL1 gene-rearrangement</option>
+          <option value="MYC_BA">MYC gene-rearrangement</option>
+          <option value="MYC_IGH">MYC::IGH fusion gene-rearrangement</option>
+          <option value="MYCN">MYCN (N-myc) amplification</option>
+          <option value="NAB2_STAT6">NAB2::STAT6 fusion gene-rearrangement</option>
+          <option value="NCOA2">NCOA2 gene-rearrangement</option>
+          <option value="NFIB">NFIB gene-rearrangement</option>
+          <option value="NR4A3">NR4A3 gene-rearrangement</option>
+          <option value="NTRK1">NTRK1 gene-rearrangement</option>
+          <option value="NTRK2">NTRK2 gene-rearrangement</option>
+          <option value="NTRK3">NTRK3 gene-rearrangement</option>
+          <option value="NUTM1">NUTM1 gene-rearrangement</option>
+          <option value="OGA">OGA gene-rearrangement</option>
+          <option value="PHF1">PHF1 gene-rearrangement</option>
+          <option value="PLAG1">PLAG1 gene-rearrangement</option>
+          <option value="PRKCA">PRKCA gene-rearrangement</option>
+          <option value="PTEN">PTEN deletion</option>
+          <option value="RAD51B">RAD51B gene-rearrangement</option>
+          <option value="RAF1">RAF1 gene-rearrangement</option>
+          <option value="RET">RET gene-rearrangement</option>
+          <option value="ROS1">ROS1 gene-rearrangement (CAP Accredited)</option>
+          <option value="SLC44A1">SLC44A1 gene-rearrangement</option>
+          <option value="SS18">SS18 gene-rearrangement</option>
+          <option value="TFE3">TFE3 gene-rearrangement</option>
+          <option value="TFEB">TFEB gene-rearrangement</option>
+          <option value="TGFBR3">TGFBR3 gene-rearrangement</option>
+          <option value="USP6">USP6 gene-rearrangement</option>
+          <option value="WWTR1">WWTR1 gene-rearrangement</option>
+          <option value="YWHAE">YWHAE gene-rearrangement</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label class="description">- Specimen / Block No.:</label></td>
+      <td><input type="text" id="accessionNo" class="element text medium" value="23BX-007074-E3"></td>
+    </tr>
+    <tr>
+      <td><label class="description">- Anatomical Site & Procedure:</label></td>
+      <td><input type="text" id="specimenSite" class="element text large" value="BRAIN, right frontal tumour, excision"></td>
+    </tr>
+    <tr>
+      <td><label class="description">- Neoplastic Cellularity (%):</label></td>
+      <td><input type="text" id="cellularity" class="element text small" value="80%"></td>
+    </tr>
+    <tr>
+      <td><label class="description">- Control Status:</label></td>
+      <td>
+        <select id="controlStatus" class="element select medium">
+          <option value="PASSED" selected>PASSED</option>
+          <option value="FAILED">FAILED</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+</p>
+
+<!-- Dynamic Probe Information Section -->
+<div id="probeInfoCard" class="hidden">
+  <div id="probeInfoContent"></div>
+</div>
+
+<p>
+<fieldset style="border-color:#e6e6ff;">
+  <legend><label class="description">Signal Enumeration & Automated Verdict:</label></legend>
+  <table border="1" width="100%">
+    <col width="50%">
+
+    <tr id="stdScoringRow">
+      <td colspan="2">
+        <label class="description">Interphase Nuclei Counting (Break-Apart / Fusion Probe):</label><br>
+        Nuclei with Unpaired or Fusion Signals: 
+        <input type="text" id="unpairedCount" class="element text small" value="45" size="5" oninput="autoCalcStd()"> 
+        / Total Counted: 
+        <input type="text" id="totalCount" class="element text small" value="50" size="5" oninput="autoCalcStd()"><br><br>
+        <label class="description">Automated / Evaluated Verdict:</label>
+        <input class="element radio" type="radio" name="verdict" value="POSITIVE" id="vPos"><label for="vPos">POSITIVE (Break-Apart ≥15% | Fusion ≥10%)</label>
+        <input class="element radio" type="radio" name="verdict" value="EQUIVOCAL" id="vEquiv"><label for="vEquiv">EQUIVOCAL (Break-Apart 10-14% | Fusion 5-9%)</label>
+        <input class="element radio" type="radio" name="verdict" value="NEGATIVE" id="vNeg"><label for="vNeg">NEGATIVE (Break-Apart <10% | Fusion <5%)</label>
+      </td>
+    </tr>
+
+    <!-- DELETION SCORING ROW WITH 50 NUCLEI LIVE GRID -->
+    <tr id="delScoringRow" class="hidden">
+      <td colspan="2">
+        <label class="description">Gene Deletion Live Calculator & Scoring (CDKN2A / PTEN):</label><br>
+        <button type="button" id="del_toggle_btn" onclick="toggleGrid('del')" style="font-size: 11px; padding: 2px 6px; margin-top: 4px; margin-bottom: 6px;">+ Open 50-Nuclei Live Grid</button>
+
+        <div id="del_grid_container" class="grid-container" style="display:none;">
+          <strong>50-Nucleus Signal Live Counter (Target vs Reference)</strong>
+          <div class="grid-toolbar">
+            <button type="button" onclick="quickFillGrid('del', 2, 2)">Fill Normal (2/2)</button>
+            <button type="button" onclick="quickFillGrid('del', 1, 2)">Fill Hemizygous Del (1/2)</button>
+            <button type="button" onclick="quickFillGrid('del', 0, 2)">Fill Homozygous Del (0/2)</button>
+            <button type="button" onclick="quickFillHeterogeneous25('del', 0, 2)">25 of 50 Homozygous Del (Heterogeneous)</button>
+            <button type="button" onclick="quickFillGrid('del', null, null)">Clear Grid</button>
+          </div>
+          <div id="del_grid_panel"></div>
+        </div>
+        <br>
+        - Homozygous Deletion Nuclei (0 Target / ≥2 Ref): <input type="text" id="homDelPct" class="element text small" value="0.0" size="6" oninput="autoCalcDel()">%<br>
+        - Hemizygous Deletion Nuclei (1 Target / ≥2 Ref): <input type="text" id="hetDelPct" class="element text small" value="0.0" size="6" oninput="autoCalcDel()">%<br>
+        - Mean Reference (CEN) Copy Number / Cell: <input type="text" id="meanCen10" class="element text small" value="2.00" size="6"><br><br>
+        <label class="description">Automated Evaluated Verdict:</label>
+        <input class="element radio" type="radio" name="verdictDel" value="HOMOZYGOUS_DEL" id="vHomDel"><label for="vHomDel">Homozygous Deletion (≥30%)</label>
+        <input class="element radio" type="radio" name="verdictDel" value="HETEROZYGOUS_DEL" id="vHetDel"><label for="vHetDel">Hemizygous Deletion (≥40%)</label>
+        <input class="element radio" type="radio" name="verdictDel" value="EQUIVOCAL" id="vDelEquiv"><label for="vDelEquiv">Equivocal (20-39%)</label>
+        <input class="element radio" type="radio" name="verdictDel" value="NEGATIVE" id="vDelNeg"><label for="vDelNeg">Negative (<20%)</label>
+      </td>
+    </tr>
+
+    <!-- AMPLIFICATION SCORING ROW WITH 50 NUCLEI LIVE GRID -->
+    <tr id="ampScoringRow" class="hidden">
+      <td colspan="2">
+        <label class="description">Gene Amplification Live Calculator & Scoring (MDM2 / EGFR / MET / etc.):</label><br>
+        <button type="button" id="amp_toggle_btn" onclick="toggleGrid('amp')" style="font-size: 11px; padding: 2px 6px; margin-top: 4px; margin-bottom: 6px;">+ Open 50-Nuclei Live Grid</button>
+
+        <div id="amp_grid_container" class="grid-container" style="display:none;">
+          <strong>50-Nucleus Signal Live Counter (Target vs Control / CEN)</strong>
+          <div class="grid-toolbar">
+            <button type="button" onclick="quickFillGrid('amp', 2, 2)">Fill Normal (2/2)</button>
+            <button type="button" onclick="quickFillGrid('amp', 4, 2)">Fill Borderline (4/2)</button>
+            <button type="button" onclick="quickFillGrid('amp', 8, 2)">Fill Amplified (8/2)</button>
+            <button type="button" onclick="quickFillHeterogeneous25('amp', 8, 2)">25 of 50 Amplified (Heterogeneous)</button>
+            <button type="button" onclick="quickFillGrid('amp', null, null)">Clear Grid</button>
+          </div>
+          <div id="amp_grid_panel"></div>
+        </div>
+        <br>
+        - Target / Control Ratio: <input type="text" id="ampRatio" class="element text small" value="1.00" size="6" oninput="autoCalcAmp()"><br>
+        - % Nuclei with ≥ 6 Target Signals: <input type="text" id="pct6Signals" class="element text small" value="0.0" size="6" oninput="autoCalcAmp()">%<br>
+        - Mean CEN Copy Number / Cell: <input type="text" id="meanCen7" class="element text small" value="2.00" size="6"><br><br>
+        <label class="description">Automated Evaluated Verdict:</label>
+        <input class="element radio" type="radio" name="verdictAmp" value="POSITIVE" id="vAmpPos"><label for="vAmpPos">Amplified (Ratio ≥2.0 or ≥10% cells ≥6 signals)</label>
+        <input class="element radio" type="radio" name="verdictAmp" value="EQUIVOCAL" id="vAmpEquiv"><label for="vAmpEquiv">Equivocal (Ratio 1.8 - 1.99)</label>
+        <input class="element radio" type="radio" name="verdictAmp" value="NEGATIVE" id="vAmpNeg"><label for="vAmpNeg">Negative (<1.8)</label>
+      </td>
+    </tr>
+
+    <!-- 1p/19q PANEL WITH EXCEL CALCULATOR (1pq & 19pq) -->
+    <tr id="p19ScoringRow" class="hidden">
+      <td colspan="2">
+        <label class="description">Glioma 1p/19q Co-deletion Enumeration (1p19q.xlsx Calculator):</label><br>
+        <button type="button" id="p19_calc_toggle_btn" onclick="toggle1p19qCalculator()" style="font-size: 11px; padding: 2px 6px; margin-top: 4px; margin-bottom: 6px;">+ Open 1p/19q Calculator</button>
+
+        <div id="p19_excel_calc_box" class="grid-container" style="display:none;">
+          <strong>Per-Cell Signal Counter (1pq & 19pq Tabs)</strong><br>
+          Nuclei to score:
+          <select id="p19CellCount" onchange="rebuild1p19qGrids()">
+            <option value="100" selected>100 nuclei per probe set (Total 200 nuclei)</option>
+            <option value="50">50 nuclei per probe set (Total 100 nuclei)</option>
+          </select>
+          <div class="grid-toolbar">
+            <button type="button" onclick="quickFill1p19q('normal')">Fill Normal (2/2) [100 cells]</button>
+            <button type="button" onclick="quickFill1p19q('codel')">Fill Co-deletion (1/2) [100 cells]</button>
+            <button type="button" onclick="quickFill1p19q('hetero50')">Fill 50% Co-del (Heterogeneous)</button>
+            <button type="button" onclick="quickFill1p19q('sample')">Load 1p19q.xlsx Sample Data</button>
+            <button type="button" onclick="quickFill1p19q('clear')">Clear Cells</button>
+          </div>
+
+          <div class="p19-summary-box">
+            <b>1pq (1p36 Orange / 1q25 Green):</b> Scored = <span id="p1_cnt">0</span> | Avg Orange = <span id="p1_avg_o">0.00</span> | Avg Green = <span id="p1_avg_g">0.00</span><br>
+            <b>19pq (19q13 Orange / 19p13 Green):</b> Scored = <span id="p19_cnt">0</span> | Avg Orange = <span id="p19_avg_o">0.00</span> | Avg Green = <span id="p19_avg_g">0.00</span>
+          </div>
+
+          <p><b>Sheet 1: 1pq (100 cells: Orange 1p / Green 1q; per-cell ratio = Green/Orange, category = 1 if ≥2.0)</b></p>
+          <div id="p19_1pq_panel" style="max-height: 260px; overflow-y: auto; border: 1px solid #ccc;"></div>
+
+          <p><b>Sheet 2: 19pq (100 cells: Orange 19q / Green 19p; per-cell ratio = Green/Orange, category = 1 if ≥2.0)</b></p>
+          <div id="p19_19pq_panel" style="max-height: 260px; overflow-y: auto; border: 1px solid #ccc;"></div>
+        </div>
+        <br>
+        - Ratio 1p to 1q (Orange/Green): <input type="text" id="ratio1p1q" class="element text small" value="0.55" size="6" oninput="autoCalc1p19q()"> | % Cells w/ 1q:1p Ratio ≥ 2.0: <input type="text" id="pct1q1p" class="element text small" value="75.0" size="6" oninput="autoCalc1p19q()">%<br>
+        - Ratio 19q to 19p (Orange/Green): <input type="text" id="ratio19q19p" class="element text small" value="0.48" size="6" oninput="autoCalc1p19q()"> | % Cells w/ 19p:19q Ratio ≥ 2.0: <input type="text" id="pct19p19q" class="element text small" value="82.0" size="6" oninput="autoCalc1p19q()">%<br><br>
+        <b>Automated Evaluated Verdict:</b> <span id="p19AutoStatus"></span><br>
+        <small>Reference range: No deletion if ratio > 0.9; Deletion if ratio ≤ 0.9 AND ≥ 20% of cells showing reference:target ratio ≥ 2:1.</small>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+</p>
+
+<br>
+<input type="button" name="copyform" value="Check your report" onclick="updateDescription(this.form)"/>
+<br>
+<textarea id="holdtext" name="holdtext" class="result-box"></textarea>
+<br><br>
+<button type="button" onclick="CopyToClipboard()">Copy Text to Clipboard</button>
+<input type="reset" value="Reset Form" name="reset" style="float: right;" onclick="setTimeout(function(){ initGrids(); onTestChange(); }, 50);">
+</form>
+
+<br><br>
+<div id="footer">
+Last updated on 23-Nov-2026.<br>
+Supervised vibe coded in Gemini<br>
+Division of Anatomical Pathology, Queen Mary Hospital, Hong Kong.
+</div>
+</div>
+<img id="bottom" src="bottom.png" alt="">
+</body>
+</html>
