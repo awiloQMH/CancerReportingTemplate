@@ -357,7 +357,7 @@ function resetMsd() {
         
         <!-- Calculator 1 -->
         <div class="calc-box">
-          <h4>PD-L1 Calculator (1st gen, Simple)</h4>
+          <h4>PD-L1 Calculator (1st vesion)</h4>
           <table class="calc-table" border="1">
             <tr>
               <th style="width: 65%;">Parameters</th>
@@ -404,23 +404,23 @@ function resetMsd() {
               <td><input type="text" id="gen1_out_total" readonly /></td>
             </tr>
           </table>
-          <div class="calc-note">Linear ratio model (denominator: 100 viable tumor cells). Auto-fills main report.</div>
+          <div class="calc-note">Linear ratio model (denominator: 100 viable tumor cells). <br>TC%+IC% round to =<100.</div>
         </div>
 
         <!-- Calculator 2 -->
         <div class="calc-box">
-          <h4>PD-L1 Calculator (MSD modified)</h4>
+          <h4>PD-L1 Calculator (MSD 2024)</h4>
           <table class="calc-table" border="1">
             <tr>
               <th style="width: 65%;">Parameters</th>
               <th>Percentage</th>
             </tr>
             <tr>
-              <td>Tumor cell % (+TC%)</td>
+              <td>Tumor cell %</td>
               <td><input type="text" id="msd_in_tc" /></td>
             </tr>
             <tr>
-              <td>Immune cell % in tumor (IC%)</td>
+              <td>Immune cell % in tumor</td>
               <td><input type="text" id="msd_in_ic" /></td>
             </tr>
             <tr>
@@ -456,7 +456,7 @@ function resetMsd() {
               <td><input type="text" id="msd_out_total" readonly /></td>
             </tr>
           </table>
-          <div class="calc-note">MSD compartment formula. Auto-fills main report.</div>
+          <div class="calc-note">MSD compartment formula (denominator: 100 viable tumor cells + positive immune cells). <br>(positive TC+ postive IC)/(total TC + positive IC)</div>
         </div>
 
       </div>
@@ -534,7 +534,7 @@ function resetMsd() {
   <br><br>
 
   <div id="footer">
-    Last updated: 23-Nov-2026. <br>
+    Last updated: 24-Nov-2026. <br>
     Form and cascade style sheet are based on <a href="https://www.phpform.org" target="_blank">pform.org</a>. <br>
     Codes and Javascripts are modified from <a href="https://www.w3schools.com/" target="_blank">W3 School tutorials</a> and <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>. <br><br>
     Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
