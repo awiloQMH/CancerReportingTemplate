@@ -719,7 +719,7 @@ function updateDescription(frm) {
     template += "MATERIAL  : Tissue section of formalin-fixed paraffin embedded block, " + accession + ".\n";
     template += "            Neoplastic cellularity " + cellularity + " was noted in the marked area on the slide.\n";
     template += "CONTROL   : FAILED\n";
-    template += "RESULTS   : Control hybridisation failed or hybridization signals were unsatisfactory for scoring.\n\n";
+    template += "RESULTS   : Control hybridization failed or hybridization signals were unsatisfactory for scoring.\n\n";
     template += site + ", " + accession + ", for " + (test.type === "1p19q" ? "1p/19q co-deletion" : test.gene) + " FISH test:\n";
     template += "- " + failedText + "\n\n";
     template += "The test was developed by the laboratory and the performance characteristics were determined by the Molecular Pathology Laboratory, Division of Anatomical Pathology, Queen Mary Hospital, Hong Kong. " + accCreditText;
@@ -893,6 +893,19 @@ function initGrids() {
 <div id="form_container">
   <div class="form_description">
     <h2>FISH Reporting</h2>
+	<p>
+FISH is performed on formalin-fixed paraffin embedded tissue sections. Composed-pseudocoloured images are captured for enumeration. Pathologists might count at least 50 interphase tumor nuclei. Positive cut-off for FISH tests varies on the nature of probes, specific genomic changes and in different diseases. As low as 15% has been proposed in published guidelines for some probes e.g. some types of BRAF translocation in pilocytic astrocytoma, RET translocations in non small cell lung carcinomas, etc.
+</p>
+<p align="center">
+<a href=".\cap\FISH interpretation.jpg" target="_blank"><img src=".\cap\FISH interpretation.jpg" alt="FISH interpretation" width="600"></a>
+</p>
+<p>
+References databases:<br>
+1. <a href="http://atlasgeneticsoncology.org/" target="_blank">Atlas of Genetics and Cytogenetics in Oncology and Haematology</a><br>
+2. <a href="https://cancer.sanger.ac.uk/cosmic/fusion" target="_blank">Catalogue of Somatic Mutations in Cancer COSMIC</a><br>
+3. <a href="https://mitelmandatabase.isb-cgc.org/" target="_blank">Mitelman database</a><br>
+4. <a href="https://www.tumorfusions.org/" target="_blank">Tumor fusion gene data portal</a><br>
+</p>
     <p>Select a FISH test protocol to view probe design, genomic figures/links, and generate standardized clinical reports with live calculators.</p>
   </div>
 
@@ -1132,8 +1145,9 @@ function initGrids() {
 </form>
 
 <br><br>
+
 <div id="footer">
-Last updated on 23-Nov-2026.<br>
+Last updated on 25-Nov-2026.<br>
 Supervised vibe coded in Gemini<br>
 Division of Anatomical Pathology, Queen Mary Hospital, Hong Kong.
 </div>

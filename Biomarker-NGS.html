@@ -105,13 +105,18 @@ Limitations   : The workflow could detect SNV-indel type  mutations with a varia
 <div class="content">
 <p>The <a href="https://www.thermofisher.com/hk/en/home/life-science/sequencing/next-generation-sequencing/ion-torrent-next-generation-sequencing-workflow/ion-torrent-next-generation-sequencing-run-sequence/ion-torrent-genexus-system.html" target="_blank">Ion Torrent Genexus System</a> automates sample and library preparation, sequencing, analysis, and reporting. The Genexus Purification System and Genexus Integrated Sequencer with Genexus Software work together seamlessly, tracking sample information and results automatically through the process. This automated system reduces manual steps and facilitates quality data and quick reports.</p>
 <p>
-Genomic DNA/RNA QC : Quantified by Qubit and the integrity control by conventional PCR<br>
+DNA input QC : Tumor cell macro-dissection followed by DNA extraction<br>
+1. Control PCR: 226bp and 135bp: +ve [Passed]<br>
+2. Genexus on deck input within 6.6 - 13.4ng [Passed]<br>
+RNA input QC : Whole section subjected to RNA extraction<br>
+1. RNA expression controls detected (>=5): 7 [Passed]<br>
+2. Genexus on deck input within 6.6 - 13.4ng [Passed]<br>
 Library QC    : Integrated in the automated system<br>
 DNA Sequencing QC : >=Q20 bases, Uniformity<br>
 RNA Sequencing QC : >=Q20 bases, Mapped<br>
 <br>
 Bioinformatics : Integrated<br>
-The factory bioinformatics reports a standardized table of known variants. An in-house bioinformatic pipeline (GATK-Mutect2) is installed for screening uncalled variants for the 12-gene lung cancer panel. Sequencing data of selected cases is also reviewed by Integrated Genome Viewer (IGV).<br><br>
+The factory bioinformatics reports a standardized table of known variants. An in-house bioinformatic pipeline (GATK-Mutect2) is installed for screening uncalled variants for the 12-gene lung cancer panel. Data pasted onto the excel file for presentation will produce a color-coded view referring to all previous sequencing data from our lab. Sequencing data of selected cases is also reviewed by Integrated Genome Viewer (IGV).<br><br>
 Curation      : <br>
 Human GRCh37/hg19, ClinVar, Genome Nexus, Franklin, VarSome<br>
 <br>
@@ -139,17 +144,20 @@ Limitations   : The workflow could detect SNV-indel type mutations with a varian
 </p>
 -->
 
-<button class="collapsible">BRCA1 and BRCA2 Somatic and Germline Testing (tumor tissue and blood)</button>
+<button class="collapsible">BRCA1 and BRCA2 Germline Testing (blood or normal tissue FFPE block)</button>
+
 <div class="content">
 <p>
-Somatic and germline testing for BRCA1 and BRCA2 genes will be offered for patients with high grade serous carcinoma for determing elligibility to targeted therapy.<br>
+Germline testing for BRCA1 and BRCA2 genes will be offered for patients with high grade serous carcinoma for determing elligibility to PRAP inhibitor as targeted therapy.<br>
 Germline testing for BRCA1 and BRCA2 genes will also be offered for all patients with breast cancers, to assess genetic risk.
 </p>
 <p>
-Somatic mutation testing is done on the FFPE block or cytology cell block. <br><br>
-Germline mutation testing is performed on FFPE block and peripheral white cells from the EDTA blood sample, and is also supplemented by MLPA.
+Germline mutation testing is performed on peripheral white cells from the EDTA blood sample, and is also supplemented by MLPA. FFPE specimens can be used. Due to the lower quality of the DNA, MLPA cannot be performed on FFPE specimens.
 </p>
 
+<p>
+Sequencing: The AmpliSeq for Illumina BRCA Panel is a targeted resequencing assay for somatic and germline variants across BRCA1 and BRCA2 genes, targeting all the coding exonic regions and the flanking intronic sequences of the BRCA1 and BRCA2 genes.
+</p>
 <p>
 Sequencing	  :	The AmpliSeq for Illumina BRCA Panel is a targeted resequencing 
 				assay for somatic and germline variants across BRCA1 and BRCA2 genes, 
@@ -184,7 +192,78 @@ Pamphlets for BRCA testing in breast cancer (<a href=".\cap\BreastLeaflet-e01.do
 </p>
 </div>
 
-<button class="collapsible">Lung Cancer Somatic Mutation Analysis (tumor tissue)</button>
+<button class="collapsible">Homologous Recombination Deficiency (HRD) Testing (tumor tissue FFPE block)</button>
+<div class="content">
+
+<p>
+Somatic mutation testing HRD test is done on the FFPE block or cytology cell block. <br><br>
+</p>
+<p>
+Positive HRD test is defined as BRCA1/2 significant mutations OR GIS score high. A GIS score of 19 is used as the cut-off to classify ovarian tumors as haveing low (<19) or high (>=19) genomic instaiblity status, according to the manufacturer-recommneded work-flow for the comprehensive NGS assay and a propriety algorithm through genome segmentation for the determination of different types of unbalanaced copy number events.
+</p>
+<p>
+There are two components in the HRD test. The first component is BRCA1 and BRCA2 gene somatic variant tests using AmpliSeq for BRCA Panel on the Illumina i-Seq-100. The second componet is the Oncomine Comprehensive Assay Plus running on Ion Torrent Genexus System.<br><br>
+[We intend to migrate to Illumina TSO500 on NextSeq after validation.]
+</p>
+
+<p>
+Sequencing 01 : The AmpliSeq for Illumina BRCA Panel is a targeted resequencing assay for somatic and germline variants across BRCA1 and BRCA2 genes, targeting all the coding exonic regions and the flanking intronic sequences of the BRCA1 and BRCA2 genes. This component of the test is CAP-accredited.
+</p>
+
+<p>
+Sequencing 02 : The Oncomine Comprehensive Assay Plus GX interrogates 517 genes (DNA and RNA) intending for a comprehensive genome profiling on the automated Genexus system. Only the DNA component of the tests is used for the HRD test. <br><br>
+The HRR genes were tested:<br>
+(1) BRCA1 and BRCA2<br>
+(2) ATM, BARD1, BRIP1, CDK12, CHEK1, CHEK2, FANCL, PALB2, RAD51B, RAD51C, RAD51D, RAD54L<br>
+(3) ABRAXAS1, ATR, BAP1, BLM, FANCA, FANCC, FANCD2, FANCE, FANCF, FANCG, FANCI, FANCM, MLH1, MRE11, NBN, PARP1, PARP2, PARP3, POLD1, POLE, PPP2R2A, PTEN, RAD50, RAD51, RAD52, RNASEH2A RNASEH2B, RNASEH2C, RPA1, SLX4, TP53, XRCC2, XRCC3<br><br>
+**(1): SNVs, Indels, CNVs; Gene-level LOH and Large genomic alterations<br>
+**(2): SNVs, Indels, CNVs and Gene-level LOH<br>
+**(3): SNVs, Indels, CNVs<br>
+<br>
+Genomic Scarring for genomic instability: GIM is a proprietary measurement that quantifies genomic scarring associated with Homologous Recombination
+Deficiency (HRD). GIM is a summary of unbalanced copy number changes in autosomes determined using genomic segmentation and generates a value
+between 0-100. The higher the value, the more genomic instability observed in the sample. <br>
+Analysis output:<br>
+• Tumor cellularity (i.e., percentage of the tumor cells in the sample)<br>
+• Loss-of-heterozygosity (LOH) for each genomic segment.<br>
+• Gene level LOH: Segment level LOH events are intersected with targeted gene boundaries to determine LOH events in selected genes.<br>
+• Arm level CNV, determined by aggregation of segment level CN events<br>
+• Sample level % LOH<br>
+• Sample level % telomeric allelic imbalance (TAI)<br>
+• Sample level % large-scale State Transition (LST)<br>
+• Sample Genomic Instability Metric (GIM), summary of unbalanced copy number changes in autosomes<br>
+</p>
+<p>
+All findings are to be confirmed by orthogonal methods, including Sanger sequencing, RT-PCR and FISH. Germline mutations are ideally confirmed in two tissue types.
+</p>
+<p>
+Consent is necessary for ordering this test (either somatic test alone, or somatic and germline tests). <br>
+For ovarian cancers (<a href=".\cap\BRCA12Consent-e01.docx">Engish</a>) (<a href=".\cap\BRCA12Consent-c01.docx">Chinese</a>)<br>
+</p>
+<p>
+Pamphlets for HRD testing in high staged, high grade ovarian cancer (<a href=".\cap\BRCA12Leaflet-e01.pdf" target="_blank">English</a>)(<a href=".\cap\BRCA12Leaflet-c01.pdf" target="_blank">Chinese</a>)<br>
+</p>
+<p>
+<p>
+OCA plus DNA component: 412 gene-panel for hot spot mutations and copy number variants.<br>
+
+CNV gain and hot spot mutations (185 genes):<br>
+ABCB1 ABL1 ABL2 ACVR1* AKT1 AKT2 AKT3 ALK AR ARAF ATP1A1* AURKA AURKC AXL BCL2 BCL2L12 BCL6
+BCR* BMP5* BRAF BTK* CACNA1D* CARD11 CBL CCND1 CCND2 CCND3 CCNE1 CD79B* CDK4 CDK6 CHD4 CSF1R* CTNNB1* CTNND2 CUL1* CYSLTR2* DDR1 DDR2 DGCR8* DROSHA* E2F1* EGFR EIF1AX EMSY EPAS1* ERBB2 ERBB3 ERBB4 ESR1 EZH2 FAM135B FGF19 FGF23 FGF3 FGF4 FGF7* FGF9 FGFR1 FGFR2 FGFR3 FGFR4 FLT3 FLT4 FOXA1 FOXL2* FOXO1* FYN GATA2 GLI1* GLI3 GNA11* GNAQ* GNAS H1-4* H2BC5* H3-3A H3-3B H3C2* HIF1A* HRAS IDH1* IDH2 IGF1R IKBKB IL6ST* IL7R IRF4* IRS4* KDR KIT KLF4* KLF5 KNSTRN* KRAS MAGOH MAP2K1 MAP2K2* MAPK1 MAX MCL1 MDM2 MDM4 MECOM MED12* MEF2B MET MITF MPL MTOR MYC MYCL MYCN MYD88 MYOD1* NFE2L2 NRAS NSD2* NT5C2* NTRK1 NTRK2 NTRK3 NUP93* PAX5* PCBP1 PDGFRA PDGFRB PIK3C2B PIK3CA PIK3CB PIK3CD* PIK3CG* PIK3R2 PIM1 PLCG1 PPP2R1A PPP6C PRKACA PTPN11 PTPRD* PXDNL RAC1 RAF1 RARA RET RGS7* RHEB RHOA* RICTOR RIT1 ROS1 RPL10* RPS6KB1 RPTOR SETBP1 SF3B1 SIX1* SIX2* SLCO1B3 SMC1A SMO SNCAIP* SOS1* SOX2* SPOP SRC SRSF2* STAT3 STAT5B STAT6 TAF1* TERT TGFBR1* TOP1 TPMT TRRAP* TSHR* U2AF1 USP8 WAS* XPO1 YAP1 YES1 ZNF217 ZNF429 <br>
+(* CNV not reported)<br>
+<br>
+CDS gene (227 genes):<br>
+ABRAXAS1 ACVR1B ACVR2A ADAMTS12 ADAMTS2 AMER1 APC ARHGAP35 ARID1A ARID1B ARID2 ARID5B ASXL1 ASXL2 ATM** ATR ATRX AXIN1 AXIN2 B2M BAP1 BARD1** BCOR BLM BMPR2 BRCA1** BRCA2** BRIP1** CALR* CASP8 CBFB CD274 CD276 CDC73 CDH1 CDH10 CDK12** CDKN1A CDKN1B CDKN2A CDKN2B CDKN2C CHEK1** CHEK2** CIC CIITA* CREBBP CSMD3 CTCF CTLA4 CUL3 CUL4A CUL4B CYLD CYP2C9 CYP2D6* DAXX DDX3X DICER1 DNMT3A DOCK3 DPYD DSC1 DSC3 ELF3 ENO1 EP300 EPCAM EPHA2 ERAP1 ERAP2 ERCC2 ERCC4 ERCC5* ERRFI1 ETV6 FANCA FANCC FANCD2 FANCE FANCF FANCG FANCI FANCL** FANCM FAS* FAT1 FBXW7 FUBP1 GATA3 GNA13 GPS2 HDAC2 HDAC9 HLA-A HLA-B HNF1A ID3* INPP4B JAK1 JAK2 JAK3 KDM5C KDM6A KEAP1 KLHL13* KMT2A KMT2B KMT2C KMT2D LARP4B LATS1 LATS2 MAP2K4 MAP2K7 MAP3K1 MAP3K4 MAPK8 MEN1 MGA MLH1 MLH3 MRE11 MSH2 MSH3 MSH6 MTAP MTUS2* MUTYH NBN NCOR1 NF1 NF2 NOTCH1 NOTCH2 NOTCH3 NOTCH4 PALB2** PARP1 PARP2 PARP3 PARP4 PBRM1 PDCD1 PDCD1LG2 PDIA3 PGD PHF6 PIK3R1 PMS1 PMS2 POLD1 POLE POT1 PPM1D PPP2R2A PRDM1 PRDM9 PRKAR1A PSMB10* PSMB8* PSMB9* PTCH1 PTEN PTPRT RAD50 RAD51 RAD51B** RAD51C** RAD51D** RAD52 RAD54L** RASA1 RASA2 RB1 RBM10 RECQL4 RNASEH2A RNASEH2B RNASEH2C RNF43 RPA1 RPL22* RPL5* RUNX1 RUNX1T1 SDHA SDHB SDHC SDHD SETD2 SLX4 SMAD2 SMAD4 SMARCA4 SMARCB1 SOCS1 SOX9 SPEN STAG2 STAT1 STK11 SUFU TAP1 TAP2 TBX3 TCF7L2 TET2 TGFBR2 TMEM132D* TNFAIP3 TNFRSF14 TP53 TP63 TPP2 TSC1 TSC2 UGT1A1* USP9X VHL WT1 XRCC2 XRCC3 ZBTB20* ZFHX3 ZMYM3 ZRSR2<br>
+(* CNV not reported)<br>
+(** Homologous recombination repair genes enabled for gene-level LOH)<br><br>
+
+OCA plus RNA component: Gene fusion (49 genes)<br>
+AKT1 AKT2 AKT3 ALK AR BRAF BRCA1 CDKN2A EGFR ERBB2 ERBB4 ERG ESR1 ETV1 ETV4 ETV5 FGFR1 FGFR2 FGFR3 MAP3K8 MET MTAP MYB MYBL1 NOTCH1 NOTCH2 NOTCH3 NRG1 NTRK1 NTRK2 NTRK3 NUTM1 PIK3CA PIK3CB PPARG PRKACA PRKACB RAF1 RARA RELA RET ROS1 RSPO2 RSPO3 STAT6 TERT TFE3 TFEB YAP1<br>
+</p>
+
+</div>
+
+<button class="collapsible">Lung Cancer Somatic Mutation Analysis (tumor tissue FFPE block)</button>
 <div class="content">
 <p>
 The Oncomine Precision Assay, Ion Torrent Genexus System, is an automatic targeted assay for genetic analysis of 50 genes with known relevance to solid tumors. Variants can be confirmed by orthogonal methods (PCR-Sanger sequencing, RT-PCR + Sanger, FISH, etc.). SNV/indel, CNV and fusion variants are included.
@@ -192,6 +271,9 @@ The Oncomine Precision Assay, Ion Torrent Genexus System, is an automatic target
 <p>
 Actionable variants in a 12-gene lung cancer somatic mutation panel are reported:<br>
 ALK, BRAF, EGFR, ERBB2, KRAS, MET, NTRK1, NTRK2, NTRK3, PIK3CA, RET and ROS1 genes<br>
+</p>
+<p>
+All other significant deleterious and like-deleterious variants will be reported in the COMMENTS. Also 
 </p>
 <p>
 Hot spot mutations (45):<br>
@@ -312,7 +394,7 @@ for (i = 0; i < coll.length; i++) {
  
 <br>
 <div id = "footer">
-Last upated on 16-Jul-2025.<br><br>
+Last upated on 25-Nov-2026.<br><br>
 The html form and cascade style sheet were created on <a href="https://www.phpform.org" target="_blank">pForm</a>,<br>
 with references to Javascripts and codes published in <a href="https://www.w3schools.com/" target="_blank">W3 School</a> and <a href="https://stackoverflow.com/" target="_blank">StackOverflow</a><br>
 and image modified from <a href="https://icons8.com" target="_blank">Icons8</a>.

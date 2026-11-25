@@ -85,18 +85,98 @@ table, th, td {
   margin-top: 6px;
   line-height: 1.3em;
 }
+
+.tumor-table {
+  width: auto;
+  min-width: 440px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.tumor-table th {
+  background: #e6ecff;
+}
+
+.tumor-table label {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
 </style>
 
 <script type="text/javascript">
+function formatPercent(val) {
+  var trimmed = val.trim();
+  if (trimmed === "" || trimmed === "Cannot be determined" || trimmed === "Consensus undefined") return trimmed;
+  return trimmed.slice(-1) === "%" ? trimmed : trimmed + "%";
+}
+
+function getSelectedTumorType() {
+  var radios = document.getElementsByName('tumor_cutoff_type');
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      return radios[i].value;
+    }
+  }
+  return "";
+}
+
+function applyTumorCutoffRules(explicitTpsNum, explicitCpsNum) {
+  var tumorType = getSelectedTumorType();
+  if (tumorType === "") return;
+
+  var a10El = document.getElementById('A10');
+  var a11El = document.getElementById('A11');
+  var a12El = document.getElementById('A12');
+  var a13El = document.getElementById('A13');
+
+  var tpsNum = (typeof explicitTpsNum === "number" && !isNaN(explicitTpsNum))
+    ? explicitTpsNum
+    : parseFloat(a10El.value);
+
+  var cpsNum = (typeof explicitCpsNum === "number" && !isNaN(explicitCpsNum))
+    ? explicitCpsNum
+    : parseFloat(a11El.value);
+
+  if (tumorType === 'lung') {
+    if (!isNaN(tpsNum)) {
+      if (tpsNum < 1) {
+        a12El.value = "Negative (<1%)";
+      } else if (tpsNum < 50) {
+        a12El.value = "Low positive (1-49%)";
+      } else {
+        a12El.value = "High positive (>=50%)";
+      }
+    }
+    if (!isNaN(cpsNum)) {
+      a11El.value = cpsNum.toFixed(2);
+    }
+    a13El.value = (a11El.value === "Cannot be determined") ? "Cannot be determined" : "Consensus undefined";
+  } else {
+    a12El.value = "Consensus undefined";
+
+    if (a11El.value === "Cannot be determined" || isNaN(cpsNum)) {
+      if (a11El.value === "Cannot be determined") {
+        a13El.value = "Cannot be determined";
+      }
+      return;
+    }
+
+    a11El.value = cpsNum.toFixed(2);
+    if (tumorType === 'cps10') {
+      a13El.value = (cpsNum >= 10) ? "Positive (>=10)" : "Negative (<10)";
+    } else {
+      a13El.value = (cpsNum >= 1) ? "Positive (>=1)" : "Negative (<1)";
+    }
+  }
+}
+
 /* --- Main Report Generator --- */
 function updateDescription(frm) {
   var Template = "";
 
   if (frm.A10.value !== "" || frm.A12.value !== "") {
-    var tpsVal = frm.A10.value.trim();
-    if (tpsVal !== "" && tpsVal.slice(-1) !== "%") {
-      tpsVal += "%";
-    }
+    var tpsVal = formatPercent(frm.A10.value);
     Template += "- Tumor Proportion Score (TPS)  : " + tpsVal + "\n" 
       + "  - " + frm.A12.value + "\n";
   }
@@ -107,7 +187,7 @@ function updateDescription(frm) {
   }
 
   if (frm.A04.value !== "") {
-    Template += "\n- Tumor cells with membranous signals > or = 1+ (%) : " + frm.A04.value + "\n";
+    Template += "\n- Tumor cells with membranous signals > or = 1+ (%) : " + formatPercent(frm.A04.value) + "\n";
   }
 
   if (frm.A05.value !== "") {
@@ -115,11 +195,11 @@ function updateDescription(frm) {
   }
 
   if (frm.A06.value !== "") {
-    Template += "- Proportion of immune cells among the tumor (%) : " + frm.A06.value + "\n";
+    Template += "- Proportion of immune cells among the tumor (%) : " + formatPercent(frm.A06.value) + "\n";
   }
 
   if (frm.A07.value !== "") {
-    Template += "  - Proportion of immune cells with > or = 1+ signals,\n    among immune cells (%) : " + frm.A07.value + "\n";
+    Template += "  - Proportion of immune cells with > or = 1+ signals,\n    among immune cells (%) : " + formatPercent(frm.A07.value) + "\n";
   }
 
   if (frm.A01.value !== "") {
@@ -144,14 +224,58 @@ function CopyToClipboard() {
   alert("Report copied to clipboard");
 }
 
+function syncFields(tcVal, icRatioInput, posIcVal, tpsNum, cpsNum, icMissing) {
+  document.getElementById('A04').value = tcVal;
+  document.getElementById('A07').value = posIcVal;
+  document.getElementById('A10').value = (!isNaN(tpsNum)) ? tpsNum.toFixed(2) : "";
+
+  if (icMissing) {
+    document.getElementById('A06').value = "Cannot be determined";
+    document.getElementById('A11').value = "Cannot be determined";
+    document.getElementById('A13').value = "Cannot be determined";
+    applyTumorCutoffRules(tpsNum, NaN);
+  } else {
+    document.getElementById('A06').value = icRatioInput.toFixed(2);
+    document.getElementById('A11').value = (!isNaN(cpsNum)) ? cpsNum.toFixed(2) : "";
+    if (document.getElementById('A13').value === "Cannot be determined") {
+      document.getElementById('A13').value = "";
+    }
+    applyTumorCutoffRules(tpsNum, cpsNum);
+  }
+}
+
 /* --- Calculator 1: First-Generation / Linear Ratio Model --- */
 function calcFirstGen() {
-  var tpsInput = parseFloat(document.getElementById('gen1_in_tps').value);
-  var icRatioInput = parseFloat(document.getElementById('gen1_in_ic_ratio').value);
-  var icPosPctInput = parseFloat(document.getElementById('gen1_in_ic_pos').value);
+  var tpsRaw = document.getElementById('gen1_in_tps').value.trim();
+  var icRatioRaw = document.getElementById('gen1_in_ic_ratio').value.trim();
+  var icPosRaw = document.getElementById('gen1_in_ic_pos').value.trim();
 
-  if (isNaN(tpsInput) || isNaN(icRatioInput) || isNaN(icPosPctInput)) {
-    alert("Please fill in Tumor Cell %, Immune Cell % in Tumor, and +ve Immune Cells %.");
+  var tpsInput = parseFloat(tpsRaw);
+  var icRatioInput = parseFloat(icRatioRaw);
+  var icPosPctInput = parseFloat(icPosRaw);
+
+  var icMissing = (icRatioRaw === "" || isNaN(icRatioInput));
+
+  if (tpsRaw === "" || isNaN(tpsInput)) {
+    alert("Please fill in Tumor cell %.");
+    return;
+  }
+
+  var tpsFormatted = tpsInput.toFixed(2);
+  var posIcFormatted = (icPosRaw !== "" && !isNaN(icPosPctInput)) ? icPosPctInput.toFixed(2) : "";
+
+  document.getElementById('gen1_out_tps').value = tpsFormatted;
+
+  if (icMissing) {
+    document.getElementById('gen1_out_cps').value = "Cannot be determined";
+    document.getElementById('gen1_out_ic').value = "Cannot be determined";
+    document.getElementById('gen1_out_total').value = "Cannot be determined";
+    syncFields(tpsInput.toFixed(2), null, posIcFormatted, tpsInput, NaN, true);
+    return;
+  }
+
+  if (icPosRaw === "" || isNaN(icPosPctInput)) {
+    alert("Please fill in +ve IC % (among ICs).");
     return;
   }
 
@@ -159,19 +283,17 @@ function calcFirstGen() {
   var totalImmuneCells = icRatioInput;
   var posImmuneCells = totalImmuneCells * (icPosPctInput / 100);
 
-  var tps = posTumorCells;
   var rawCps = posTumorCells + posImmuneCells;
   var icScore = posImmuneCells;
   var totalPosPct = ((posTumorCells + posImmuneCells) / (100 + totalImmuneCells)) * 100;
+  var cpsNum = Math.min(rawCps, 100);
+  var cpsFormatted = cpsNum.toFixed(2);
 
-  document.getElementById('gen1_out_tps').value = tps.toFixed(2);
-  document.getElementById('gen1_out_cps').value = Math.min(rawCps, 100).toFixed(2);
+  document.getElementById('gen1_out_cps').value = cpsFormatted;
   document.getElementById('gen1_out_ic').value = icScore.toFixed(2);
   document.getElementById('gen1_out_total').value = totalPosPct.toFixed(2);
 
-  // Auto-populate values into primary report fields
-  document.getElementById('A10').value = tps.toFixed(2);
-  document.getElementById('A11').value = Math.min(rawCps, 100).toFixed(2);
+  syncFields(tpsInput.toFixed(2), icRatioInput, posIcFormatted, tpsInput, cpsNum, false);
 }
 
 function resetFirstGen() {
@@ -187,28 +309,52 @@ function resetFirstGen() {
 
 /* --- Calculator 2: MSD / Weighted Compartment Model --- */
 function calcMsd() {
-  var c4 = parseFloat(document.getElementById('msd_in_tc').value);
-  var c5 = parseFloat(document.getElementById('msd_in_ic').value);
-  var c6 = parseFloat(document.getElementById('msd_in_posic').value);
+  var c4Raw = document.getElementById('msd_in_tc').value.trim();
+  var c5Raw = document.getElementById('msd_in_ic').value.trim();
+  var c6Raw = document.getElementById('msd_in_posic').value.trim();
 
-  if (isNaN(c4) || isNaN(c5) || isNaN(c6)) {
-    alert("Fill in the +TC%, IC% and +IC% please !");
+  var c4 = parseFloat(c4Raw);
+  var c5 = parseFloat(c5Raw);
+  var c6 = parseFloat(c6Raw);
+
+  var icMissing = (c5Raw === "" || isNaN(c5));
+
+  if (c4Raw === "" || isNaN(c4)) {
+    alert("Fill in the Tumor cell % please !");
     return;
   }
 
   var tps = c4.toFixed(2);
-  var cps = ((c4 * (100 - c5) / 100 + c5 * c6 / 100) / ((c4 * (100 - c5) / 100 + c5 * c6 / 100) + (100 - c4) * (100 - c5) / 100) * 100).toFixed(2);
-  var ic = (c5 * c6 / 100).toFixed(2);
-  var total = (c4 * (100 - c5) / 100 + parseFloat(ic)).toFixed(2);
+  var posIcFormatted = (c6Raw !== "" && !isNaN(c6)) ? c6.toFixed(2) : "";
 
   document.getElementById('msd_out_tps').value = tps;
+
+  if (icMissing) {
+    document.getElementById('msd_out_cps').value = "Cannot be determined";
+    document.getElementById('msd_out_ic').value = "Cannot be determined";
+    document.getElementById('msd_out_total').value = "Cannot be determined";
+    syncFields(tps, null, posIcFormatted, c4, NaN, true);
+    return;
+  }
+
+  if (c6Raw === "" || isNaN(c6)) {
+    alert("Fill in the +ve IC % (among ICs) please !");
+    return;
+  }
+
+  var posTc = c4 * (100 - c5) / 100;
+  var posIc = c5 * c6 / 100;
+  var negTc = (100 - c4) * (100 - c5) / 100;
+  var cpsNum = ((posTc + posIc) / ((posTc + posIc) + negTc)) * 100;
+  var cps = cpsNum.toFixed(2);
+  var ic = posIc.toFixed(2);
+  var total = (posTc + posIc).toFixed(2);
+
   document.getElementById('msd_out_cps').value = cps;
   document.getElementById('msd_out_ic').value = ic;
   document.getElementById('msd_out_total').value = total;
 
-  // Auto-populate values into primary report fields
-  document.getElementById('A10').value = tps;
-  document.getElementById('A11').value = cps;
+  syncFields(tps, c5, posIcFormatted, c4, cpsNum, false);
 }
 
 function resetMsd() {
@@ -238,51 +384,179 @@ function resetMsd() {
 
   <form id="main_form">
     <p>
-      Immuno-oncology trends can be followed through portals in <a href="https://www.cancerresearch.org/scientists/immuno-oncology-landscape" target="_blank">Cancer Research Institute</a> (New York), <a href="https://www.keytrudahcp.com/biomarker-testing/" target="_blank">Keytruda: pathologist centre</a> 
-      and staining examples in lung cancers can be found in the <a href=".\cap\iaslc_pd-l1_atlas_mar2018_lo-res.pdf" target="_blank">IASLC Color Atlas</a>.
+      <a href="https://www.keytrudahcp.com/biomarker-testing/" target="_blank">Keytruda: pathologist centre</a><br>
+      <a href=".\cap\iaslc_pd-l1_atlas_mar2018_lo-res.pdf" target="_blank">IASLC Color Atlas</a>, for example pictures in lung cancers.
     </p>
-
-    <p>
-      <table border="1" align="center">
+<p>
+Select the tumor types<br>
+Estimate tumor cells positive% (TPS), immune cells%, immune cell positive% (IC%)<br>
+Use one of the two calculators to get CPS<br>
+Fill in the analytic parameters<br>
+View the report.
+</p>
+    <p align="center">
+      <table border="1" class="tumor-table">
         <tr>
+          <th>Select</th>
           <th>Tumors</th>
-          <th>Positive</th>
+          <th>Positive Criteria</th>
         </tr>
         <tr>
-          <td rowspan="2" valign="top">Lung Cancers</td> 
-          <td>High: TPS >= 50%</td>
+          <td align="center"><input type="radio" name="tumor_cutoff_type" id="tumor_lung" value="lung" onchange="applyTumorCutoffRules()"></td>
+          <td><label for="tumor_lung">Lung Cancers</label></td>
+          <td><label for="tumor_lung">High: TPS >= 50%<br>Low: TPS 1-49% (controversial)</label></td>
         </tr>
         <tr>
-          <td>Low: TPS 1-49%</td>
+          <td align="center"><input type="radio" name="tumor_cutoff_type" id="tumor_hnscc" value="cps1" onchange="applyTumorCutoffRules()"></td>
+          <td><label for="tumor_hnscc">H&N SCC</label></td>
+          <td><label for="tumor_hnscc">CPS >= 1</label></td>
         </tr>
         <tr>
-          <td>H&N SCC</td> 
-          <td>CPS >= 1</td>
+          <td align="center"><input type="radio" name="tumor_cutoff_type" id="tumor_esophagus" value="cps10" onchange="applyTumorCutoffRules()"></td>
+          <td><label for="tumor_esophagus">Esophagus/EGJ carcinoma</label></td>
+          <td><label for="tumor_esophagus">CPS >= 10</label></td>
         </tr>
         <tr>
-          <td>Esophagus/EGJ carcinoma</td>
-          <td>CPS >= 10</td>
+          <td align="center"><input type="radio" name="tumor_cutoff_type" id="tumor_stomach" value="cps1" onchange="applyTumorCutoffRules()"></td>
+          <td><label for="tumor_stomach">Stomach carcinoma</label></td>
+          <td><label for="tumor_stomach">CPS >= 1</label></td>
         </tr>
         <tr>
-          <td>Stomach carcinoma</td>
-          <td>CPS >= 1 (not sure)</td>
+          <td align="center"><input type="radio" name="tumor_cutoff_type" id="tumor_cervical" value="cps1" onchange="applyTumorCutoffRules()"></td>
+          <td><label for="tumor_cervical">Cervical Cancers</label></td>
+          <td><label for="tumor_cervical">CPS >= 1</label></td>
         </tr>
         <tr>
-          <td>Cervical Cancers</td> 
-          <td>CPS >= 1</td>
+          <td align="center"><input type="radio" name="tumor_cutoff_type" id="tumor_tnbc" value="cps10" onchange="applyTumorCutoffRules()"></td>
+          <td><label for="tumor_tnbc">Triple Negative Breast Cancer</label></td>
+          <td><label for="tumor_tnbc">CPS >= 10</label></td>
         </tr>
         <tr>
-          <td>Triple Negative Breast Cancer</td> 
-          <td>CPS >= 10</td>
-        </tr>
-        <tr>
-          <td>All other</td> 
-          <td>CPS >= 1</td>
+          <td align="center"><input type="radio" name="tumor_cutoff_type" id="tumor_other" value="cps1" onchange="applyTumorCutoffRules()"></td>
+          <td><label for="tumor_other">All other tumors</label></td>
+          <td><label for="tumor_other">CPS >= 1</label></td>
         </tr>
       </table>
     </p>
 
-    <fieldset style="border-color:#e6e6ff;"> 
+    <p align="center">
+      <img src=".\cap\PD-L1_percentage_estimation.png" alt="Positive percentage" width="600"><br>
+      (from Roche document SP263 manual)
+    </p>
+    <!-- Embedded Calculators Section -->
+    <fieldset style="border-color:#b3c6ff; background:#fafbff; margin-top:15px;">
+      <legend><label class="description">PD-L1 Calculators:</label></legend>
+	  
+      <div class="calc-wrapper">
+        
+        <!-- Calculator 1 -->
+        <div class="calc-box">
+          <h4>PD-L1 Calculator (original ver.)</h4>
+          <table class="calc-table" border="1">
+            <tr>
+              <th style="width: 65%;">Parameters</th>
+              <th>Percentage</th>
+            </tr>
+            <tr>
+              <td>Tumor cell %</td>
+              <td><input type="text" id="gen1_in_tps" /></td>
+            </tr>
+            <tr>
+              <td>Immune cell % in tumor</td>
+              <td><input type="text" id="gen1_in_ic_ratio" /></td>
+            </tr>
+            <tr>
+              <td>+ve IC % (among ICs)</td>
+              <td><input type="text" id="gen1_in_ic_pos" /></td>
+            </tr>
+          </table>
+
+          <div class="calc-actions">
+            <input type="button" value="Calculate" onclick="calcFirstGen()" />
+            <input type="button" value="Reset" onclick="resetFirstGen()" />
+          </div>
+
+          <table class="calc-table" border="1">
+            <tr>
+              <th style="width: 65%;">Metric Output</th>
+              <th>Score</th>
+            </tr>
+            <tr>
+              <td>TPS or TC%</td>
+              <td><input type="text" id="gen1_out_tps" readonly /></td>
+            </tr>
+            <tr>
+              <td>CPS</td>
+              <td><input type="text" id="gen1_out_cps" readonly style="background-color: #e6f2ff; font-weight: bold;" /></td>
+            </tr>
+            <tr>
+              <td>IC%</td>
+              <td><input type="text" id="gen1_out_ic" readonly /></td>
+            </tr>
+            <tr>
+              <td>Total +ve cells %</td>
+              <td><input type="text" id="gen1_out_total" readonly /></td>
+            </tr>
+          </table>
+          <div class="calc-note">Linear ratio model. <br>CPS=TC%+IC% round to =<100.</div>
+        </div>
+
+        <!-- Calculator 2 -->
+        <div class="calc-box">
+          <h4>PD-L1 Calculator (MSD 2024)</h4>
+          <table class="calc-table" border="1">
+            <tr>
+              <th style="width: 65%;">Parameters</th>
+              <th>Percentage</th>
+            </tr>
+            <tr>
+              <td>Tumor cell %</td>
+              <td><input type="text" id="msd_in_tc" /></td>
+            </tr>
+            <tr>
+              <td>Immune cell % in tumor</td>
+              <td><input type="text" id="msd_in_ic" /></td>
+            </tr>
+            <tr>
+              <td>+ve IC % (among ICs)</td>
+              <td><input type="text" id="msd_in_posic" /></td>
+            </tr>
+          </table>
+
+          <div class="calc-actions">
+            <input type="button" value="Calculate" onclick="calcMsd()" />
+            <input type="button" value="Reset" onclick="resetMsd()" />
+          </div>
+
+          <table class="calc-table" border="1">
+            <tr>
+              <th style="width: 65%;">Metric Output</th>
+              <th>Score</th>
+            </tr>
+            <tr>
+              <td>TPS or TC%</td>
+              <td><input type="text" id="msd_out_tps" readonly /></td>
+            </tr>
+            <tr>
+              <td>CPS</td>
+              <td><input type="text" id="msd_out_cps" readonly style="background-color: #e6f2ff; font-weight: bold;" /></td>
+            </tr>
+            <tr>
+              <td>IC%</td>
+              <td><input type="text" id="msd_out_ic" readonly /></td>
+            </tr>
+            <tr>
+              <td>Total +ve cells %</td>
+              <td><input type="text" id="msd_out_total" readonly /></td>
+            </tr>
+          </table>
+          <div class="calc-note">MSD compartment formula. <br>CPS=(positive TC + postive IC)/(total TC + positive IC)</div>
+        </div>
+
+      </div>
+    </fieldset>
+
+    <fieldset style="border-color:#e6e6ff; margin-top:15px;"> 
       <legend><label class="description">Analytical details:</label></legend>
       <p>
         <table border="1">
@@ -350,124 +624,6 @@ function resetMsd() {
       </p>
     </fieldset>
 
-    <!-- Embedded Calculators Section -->
-    <fieldset style="border-color:#b3c6ff; background:#fafbff; margin-top:15px;">
-      <legend><label class="description">PD-L1 Interactive Calculators:</label></legend>
-      <div class="calc-wrapper">
-        
-        <!-- Calculator 1 -->
-        <div class="calc-box">
-          <h4>PD-L1 Calculator (1st vesion)</h4>
-          <table class="calc-table" border="1">
-            <tr>
-              <th style="width: 65%;">Parameters</th>
-              <th>Percentage</th>
-            </tr>
-            <tr>
-              <td>Tumor cell %</td>
-              <td><input type="text" id="gen1_in_tps" /></td>
-            </tr>
-            <tr>
-              <td>Immune cell % in tumor</td>
-              <td><input type="text" id="gen1_in_ic_ratio" /></td>
-            </tr>
-            <tr>
-              <td>+ve IC % (among ICs)</td>
-              <td><input type="text" id="gen1_in_ic_pos" /></td>
-            </tr>
-          </table>
-
-          <div class="calc-actions">
-            <input type="button" value="Calculate" onclick="calcFirstGen()" />
-            <input type="button" value="Reset" onclick="resetFirstGen()" />
-          </div>
-
-          <table class="calc-table" border="1">
-            <tr>
-              <th style="width: 65%;">Metric Output</th>
-              <th>Score</th>
-            </tr>
-            <tr>
-              <td>TPS or TC%</td>
-              <td><input type="text" id="gen1_out_tps" readonly /></td>
-            </tr>
-            <tr>
-              <td>CPS</td>
-              <td><input type="text" id="gen1_out_cps" readonly style="background-color: #e6f2ff; font-weight: bold;" /></td>
-            </tr>
-            <tr>
-              <td>IC%</td>
-              <td><input type="text" id="gen1_out_ic" readonly /></td>
-            </tr>
-            <tr>
-              <td>Total +ve cells %</td>
-              <td><input type="text" id="gen1_out_total" readonly /></td>
-            </tr>
-          </table>
-          <div class="calc-note">Linear ratio model (denominator: 100 viable tumor cells). <br>CPS=TC%+IC% round to =<100.</div>
-        </div>
-
-        <!-- Calculator 2 -->
-        <div class="calc-box">
-          <h4>PD-L1 Calculator (MSD 2024)</h4>
-          <table class="calc-table" border="1">
-            <tr>
-              <th style="width: 65%;">Parameters</th>
-              <th>Percentage</th>
-            </tr>
-            <tr>
-              <td>Tumor cell %</td>
-              <td><input type="text" id="msd_in_tc" /></td>
-            </tr>
-            <tr>
-              <td>Immune cell % in tumor</td>
-              <td><input type="text" id="msd_in_ic" /></td>
-            </tr>
-            <tr>
-              <td>+ve IC % (among ICs)</td>
-              <td><input type="text" id="msd_in_posic" /></td>
-            </tr>
-          </table>
-
-          <div class="calc-actions">
-            <input type="button" value="Calculate" onclick="calcMsd()" />
-            <input type="button" value="Reset" onclick="resetMsd()" />
-          </div>
-
-          <table class="calc-table" border="1">
-            <tr>
-              <th style="width: 65%;">Metric Output</th>
-              <th>Score</th>
-            </tr>
-            <tr>
-              <td>TPS or TC%</td>
-              <td><input type="text" id="msd_out_tps" readonly /></td>
-            </tr>
-            <tr>
-              <td>CPS</td>
-              <td><input type="text" id="msd_out_cps" readonly style="background-color: #e6f2ff; font-weight: bold;" /></td>
-            </tr>
-            <tr>
-              <td>IC%</td>
-              <td><input type="text" id="msd_out_ic" readonly /></td>
-            </tr>
-            <tr>
-              <td>Total +ve cells %</td>
-              <td><input type="text" id="msd_out_total" readonly /></td>
-            </tr>
-          </table>
-          <div class="calc-note">MSD compartment formula (denominator: 100 viable tumor cells + positive immune cells). <br>CPS=(positive TC+ postive IC)/(total TC + positive IC)</div>
-        </div>
-
-      </div>
-<!--
-      <p align="center" style="font-size: 12px; margin-top: 10px;">
-        <a href=".\cap\PD-L1.xlsx" target="_blank">DOWNLOAD AN EXCEL FILE</a><br><br>
-        <iframe width="453" height="277" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/4e150ef5229d3792/UQSSN50i9Q4VIIBO71IBAAAAADGiu7lwQ89z-xk?em=2&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='Sheet1'!C4&Item='Sheet1'!A1%3AD13&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
-      </p>
--->
-    </fieldset>
-
     <fieldset style="border-color:#e6e6ff; margin-top:15px;">
       <legend><label class="description">PD-L1 scoring:</label></legend>
       <p>
@@ -508,18 +664,9 @@ function resetMsd() {
         </table>
       </p>
 
-      <p>
-        <a href="https://www.keytrudahcp.com/biomarker-testing/" target="_blank">
-          <img src=".\cap\PD-L1 TPS CPS.jpg" alt="TPS CPS for Keytruda" width="600"><br>
-          (from Keytruda website, 14-Aug-2024)
-        </a>
-      </p>
+
     </fieldset>
 
-    <p>
-      <img src=".\cap\PD-L1_percentage_estimation.png" alt="Positive percentage" width="600"><br>
-      (from Roche document SP263 manual)
-    </p>
 
     <br><br>
     <input type="button" name="copyform" value="Check your Report" onclick="updateDescription(this.form)"/>
@@ -534,9 +681,9 @@ function resetMsd() {
   <br><br>
 
   <div id="footer">
-    Last updated: 24-Nov-2026. <br>
+    Last updated: 25-Nov-2026. <br>
     Form and cascade style sheet are based on <a href="https://www.phpform.org" target="_blank">pform.org</a>. <br>
-    Codes and Javascripts are modified from <a href="https://www.w3schools.com/" target="_blank">W3 School tutorials</a> and <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>. <br><br>
+    Codes and Javascripts are modified from <a href="https://www.w3schools.com/" target="_blank">W3 School tutorials</a>, <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>, and, <br>Vibe coded in Gemini.<br><br>
     Anatomical Pathology Division, Queen Mary Hospital, Hong Kong.
   </div>
 </div>
